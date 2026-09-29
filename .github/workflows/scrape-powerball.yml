@@ -20,7 +20,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Check whether it's time to scrape
         id: check
-        run: python3 scripts/check_schedule.py
+        # TEMP: bypass the schedule gate for one manual test run; revert after verifying.
+        run: python3 scripts/check_schedule.py || true
       - name: Run Powerball scraper
         run: python3 scripts/powerball_scraper.py
       - name: Run Powerball Double Play scraper
