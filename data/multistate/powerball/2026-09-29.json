@@ -1,0 +1,36 @@
+{
+  "game": "Powerball",
+  "draw_date": "Mon, Sep 28, 2026",
+  "white_balls": [
+    17,
+    21,
+    29,
+    42,
+    49
+  ],
+  "red_ball": 7,
+  "power_play": 3,
+  "next_drawing": {
+    "next_draw_date": "Wed, Sep 30, 2026",
+    "estimated_jackpot": "409 Million",
+    "cash_value": "170.2 Million"
+  },
+  "winners_by_tier": {
+    "Match 5 + Power Play": {
+      "prize": "2 Million",
+      "states": [
+        "PR"
+      ]
+    },
+    "Match 5": {
+      "prize": "1 Million",
+      "states": [
+        "IL",
+        "NC",
+        "NY"
+      ]
+    }
+  },
+  "fetched_at": "2026-09-29T12:20:03.992982+00:00",
+  "source_url": "https://www.powerball.com/"
+}

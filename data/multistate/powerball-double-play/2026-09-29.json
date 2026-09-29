@@ -1,0 +1,18 @@
+{
+  "game": "Powerball Double Play",
+  "draw_date": "Mon, Sep 28, 2026",
+  "white_balls": [
+    11,
+    20,
+    26,
+    43,
+    46
+  ],
+  "red_ball": 18,
+  "next_drawing": {
+    "next_draw_date": "Wed, Sep 30, 2026",
+    "top_prize": "10 Million"
+  },
+  "fetched_at": "2026-09-29T12:20:04.478304+00:00",
+  "source_url": "https://www.powerball.com/double-play"
+}
