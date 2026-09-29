@@ -36,7 +36,7 @@ REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 
-OUTPUT_DIR = Path("/mnt/user-data/outputs")
+OUTPUT_DIR = Path("data")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 DATE_PATTERN = r"[A-Za-z]{3},\s*[A-Za-z]{3}\s+\d{1,2},\s*\d{4}"  # 例:"Mon, Sep 28, 2026"
@@ -250,9 +250,12 @@ def save_result(result: PowerballResult) -> Path:
     对应 PRD 第4.1节 '州/游戏/日期' 的数据管道设计(这里游戏本身跨州通用,
     所以用 'multistate/powerball' 而不是某个具体州名)。"""
     date_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
-    out_path = OUTPUT_DIR / "multistate" / "powerball" / f"{date_str}.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(result.to_dict(), ensure_ascii=False, indent=2))
+    out_dir = OUTPUT_DIR / "multistate" / "powerball"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(result.to_dict(), ensure_ascii=False, indent=2)
+    out_path = out_dir / f"{date_str}.json"
+    out_path.write_text(payload)
+    (out_dir / "latest.json").write_text(payload)
     log.info("已保存: %s", out_path)
     return out_path
 

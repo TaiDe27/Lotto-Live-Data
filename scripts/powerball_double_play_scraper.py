@@ -43,7 +43,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("powerball_double_play_scraper")
 
 URL = "https://www.powerball.com/double-play"
-OUTPUT_DIR = Path("/mnt/user-data/outputs")
+OUTPUT_DIR = Path("data")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -102,9 +102,12 @@ def fetch() -> DoublePlayResult:
 
 def save_result(result: DoublePlayResult) -> Path:
     date_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
-    out_path = OUTPUT_DIR / "multistate" / "powerball-double-play" / f"{date_str}.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(result.to_dict(), ensure_ascii=False, indent=2))
+    out_dir = OUTPUT_DIR / "multistate" / "powerball-double-play"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(result.to_dict(), ensure_ascii=False, indent=2)
+    out_path = out_dir / f"{date_str}.json"
+    out_path.write_text(payload)
+    (out_dir / "latest.json").write_text(payload)
     log.info("已保存: %s", out_path)
     return out_path
 
