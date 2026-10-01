@@ -1,8 +1,10 @@
 name: Scrape Powerball
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  # GitHub's own `schedule:` cron was unreliable on this account (the daily
+  # schedule job fired 6.5h late), so triggering moved to an external caller
+  # (Google Apps Script time-driven trigger) hitting the workflow_dispatch
+  # API on a tight interval instead. Keep this file schedule-free.
   workflow_dispatch: {}
 
 permissions:
