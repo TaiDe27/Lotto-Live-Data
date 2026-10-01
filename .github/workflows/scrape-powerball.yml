@@ -2,7 +2,7 @@ name: Scrape Powerball
 
 on:
   schedule:
-    - cron: "*/10 2-4 * * 0,2,4"
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -18,9 +18,6 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Check whether it's time to scrape
-        id: check
-        run: python3 scripts/check_schedule.py
       - name: Run Powerball scraper
         run: python3 scripts/powerball_scraper.py
       - name: Run Powerball Double Play scraper
