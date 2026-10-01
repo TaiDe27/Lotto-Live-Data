@@ -14,7 +14,15 @@
       "next_draw_date": "Sat, Oct 3, 2026",
       "top_prize": "10 Million"
     },
-    "fetched_at": "2026-10-01T06:59:07.429683+00:00",
+    "winners_by_tier": {
+      "Double Play JACKPOT": {
+        "states": []
+      },
+      "Match 5": {
+        "states": []
+      }
+    },
+    "fetched_at": "2026-10-01T12:00:26.207028+00:00",
     "source_url": "https://www.powerball.com/double-play"
   }
 ]
