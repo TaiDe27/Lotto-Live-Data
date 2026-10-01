@@ -245,18 +245,40 @@ def fetch() -> PowerballResult:
     raise RuntimeError(f"重试 {MAX_RETRIES} 次后仍然失败") from last_err
 
 
+MAX_HISTORY = 100
+
+
 def save_result(result: PowerballResult) -> Path:
-    """按 游戏/日期 存 JSON,跟之前 fantasy5_scraper.py 的存储结构保持一致,
-    对应 PRD 第4.1节 '州/游戏/日期' 的数据管道设计(这里游戏本身跨州通用,
-    所以用 'multistate/powerball' 而不是某个具体州名)。"""
-    date_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    """只维护一份 latest.json,内容是最近开奖记录组成的数组(最新的在最前
+    面),最多保留 MAX_HISTORY 条——不再按日期单独存一份文件。
+
+    按 draw_date 去重:同一期开奖(比如 41 分钟和 51 分钟那两次检查都抓到
+    了同一期结果)只占数组里的一条,后一次抓到的数据覆盖前一次,而不是
+    往数组里塞两条一模一样的记录,数组里的 100 条才真正对应 100 期不同
+    的开奖,不是 100 次抓取。
+    """
     out_dir = OUTPUT_DIR / "multistate" / "powerball"
     out_dir.mkdir(parents=True, exist_ok=True)
-    payload = json.dumps(result.to_dict(), ensure_ascii=False, indent=2)
-    out_path = out_dir / f"{date_str}.json"
-    out_path.write_text(payload)
-    (out_dir / "latest.json").write_text(payload)
-    log.info("已保存: %s", out_path)
+    out_path = out_dir / "latest.json"
+
+    history: list = []
+    if out_path.exists():
+        try:
+            existing = json.loads(out_path.read_text())
+            if isinstance(existing, list):
+                history = existing
+        except (json.JSONDecodeError, OSError):
+            history = []
+
+    new_entry = result.to_dict()
+    if history and history[0].get("draw_date") == new_entry.get("draw_date"):
+        history[0] = new_entry
+    else:
+        history.insert(0, new_entry)
+    history = history[:MAX_HISTORY]
+
+    out_path.write_text(json.dumps(history, ensure_ascii=False, indent=2))
+    log.info("已保存: %s (%d 条记录)", out_path, len(history))
     return out_path
 
 

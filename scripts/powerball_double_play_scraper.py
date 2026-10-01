@@ -100,15 +100,34 @@ def fetch() -> DoublePlayResult:
     raise RuntimeError(f"重试 {MAX_RETRIES} 次后仍然失败") from last_err
 
 
+MAX_HISTORY = 100
+
+
 def save_result(result: DoublePlayResult) -> Path:
-    date_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    """同 powerball_scraper.save_result:只维护一份 latest.json 数组,最新
+    在最前,按 draw_date 去重,最多 MAX_HISTORY 条,不再按日期单独存文件。"""
     out_dir = OUTPUT_DIR / "multistate" / "powerball-double-play"
     out_dir.mkdir(parents=True, exist_ok=True)
-    payload = json.dumps(result.to_dict(), ensure_ascii=False, indent=2)
-    out_path = out_dir / f"{date_str}.json"
-    out_path.write_text(payload)
-    (out_dir / "latest.json").write_text(payload)
-    log.info("已保存: %s", out_path)
+    out_path = out_dir / "latest.json"
+
+    history: list = []
+    if out_path.exists():
+        try:
+            existing = json.loads(out_path.read_text())
+            if isinstance(existing, list):
+                history = existing
+        except (json.JSONDecodeError, OSError):
+            history = []
+
+    new_entry = result.to_dict()
+    if history and history[0].get("draw_date") == new_entry.get("draw_date"):
+        history[0] = new_entry
+    else:
+        history.insert(0, new_entry)
+    history = history[:MAX_HISTORY]
+
+    out_path.write_text(json.dumps(history, ensure_ascii=False, indent=2))
+    log.info("已保存: %s (%d 条记录)", out_path, len(history))
     return out_path
 
 
