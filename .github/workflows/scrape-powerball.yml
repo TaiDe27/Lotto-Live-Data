@@ -22,8 +22,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Powerball scraper
         run: python3 scripts/powerball_scraper.py
-      - name: Run Powerball Double Play scraper
-        run: python3 scripts/powerball_double_play_scraper.py
       - name: Commit and push if changed
         run: |
           git config user.name "lotto-bot"
@@ -35,4 +33,3 @@ jobs:
         run: |
           REPO="${{ github.repository }}"
           curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/multistate/powerball/latest.json"
-          curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/multistate/powerball-double-play/latest.json"
