@@ -5,23 +5,18 @@ Powerball Double Play 抓取 — powerball.com/double-play
 逻辑,因为用户截图确认了这个页面的 Winning Numbers 区块结构跟主页几乎
 一样(日期 + 6个数字,后面是 View Results / Check Your Numbers 按钮)。
 
-⚠️ 可信度分级(重要,别把这份代码当成跟主脚本一样可靠):
-- 号码抓取部分(parse_winning_numbers):结构跟已验证过的主页面一致,
-  可信度较高
-- 奖金抓取部分(parse_next_drawing 的 "Top Prize" 分支):只根据截图
-  推测,还没拿真实文本流跑过验证,上线前必须实际跑一次这份脚本、把
-  结果贴出来核对
-- Winners 区块(parse_winners_section):**这份脚本没有单独适配**——
-  主脚本里那个函数是按主 Powerball 页面"Match 5 + Power Play"这类
-  tier 名字写的正则,Double Play 页面的 tier 名字是"Double Play"
-  "Match 5"这种不同的措辞,直接套用大概率抓不到东西(不会报错,只是
-  抓到空 dict)。这部分先留空,等有真实文本样本了再补。
+已用真实抓取文本核对过(2026-10-01):号码、Top Prize、Winners 区块三部分
+都验证通过。Winners 区块的 tier 名字跟主 Powerball 页面不一样("Double
+Play" / "Match 5"，不是"Match 5 + Power Play"这种)，所以单独写了一个
+`parse_winners_section`，不是复用主脚本那个按"Match N + Power Play"
+措辞写的版本。
 """
 
 import dataclasses
 import datetime as dt
 import json
 import logging
+import re
 import time
 from pathlib import Path
 from typing import Optional
@@ -33,11 +28,14 @@ from powerball_scraper import (  # noqa: E402  复用主脚本已验证过的函
     parse_winning_numbers,
     parse_next_drawing,
     validate,
+    DATE_PATTERN,
     USER_AGENT,
     REQUEST_TIMEOUT_SEC,
     MAX_RETRIES,
     RETRY_BACKOFF_SEC,
 )
+
+STATES_PATTERN = r"(None|[A-Z]{2}(?:,\s*[A-Z]{2})*)"
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("powerball_double_play_scraper")
@@ -54,11 +52,36 @@ class DoublePlayResult:
     white_balls: list[int]
     red_ball: Optional[int]
     next_drawing: dict
+    winners_by_tier: dict
     fetched_at: str
     source_url: str
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+def parse_winners_section(text: str) -> dict:
+    """'Double Play\\n$10 Million Winners\\nNone\\nMatch 5\\n$500,000 Winners\\nNone' 这种结构——
+    跟主 Powerball 页面"Match 5 + Power Play"式的 tier 措辞不一样，不能复用主脚本那个函数。"""
+    pattern = re.compile(
+        rf"Winners\s*\n\s*{DATE_PATTERN}\s*\n"
+        r"Double Play\s*\n"
+        rf"\$[\d,]+(?:\.\d+)?\s*(?:Million|Billion)?\s*Winners\s*\n{STATES_PATTERN}\s*\n"
+        rf"Match 5\s*\n\$[\d,]+(?:\.\d+)?\s*(?:Million|Billion)?\s*Winners\s*\n{STATES_PATTERN}",
+        re.IGNORECASE,
+    )
+    m = pattern.search(text)
+    if not m:
+        return {}
+
+    def states_list(raw: str) -> list[str]:
+        raw = raw.strip()
+        return [] if raw == "None" else [s.strip() for s in raw.split(",")]
+
+    return {
+        "Double Play JACKPOT": {"states": states_list(m.group(1))},
+        "Match 5": {"states": states_list(m.group(2))},
+    }
 
 
 def fetch() -> DoublePlayResult:
@@ -82,6 +105,7 @@ def fetch() -> DoublePlayResult:
             validate(white_balls, red_ball)
 
             next_drawing = parse_next_drawing(text)
+            winners = parse_winners_section(text)
 
             return DoublePlayResult(
                 game="Powerball Double Play",
@@ -89,6 +113,7 @@ def fetch() -> DoublePlayResult:
                 white_balls=white_balls,
                 red_ball=red_ball,
                 next_drawing=next_drawing,
+                winners_by_tier=winners,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
             )
