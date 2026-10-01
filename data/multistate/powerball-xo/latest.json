@@ -1,0 +1,37 @@
+[
+  {
+    "draw_date": "Sun, Sep 27, 2026",
+    "winning_teams": [
+      "ARI",
+      "CLE",
+      "DET",
+      "HOU",
+      "MIA",
+      "MIN",
+      "NE",
+      "WAS"
+    ],
+    "next_drawing": {
+      "next_draw_date": "Sun, Oct 4, 2026",
+      "estimated_jackpot": "1.20 Million"
+    },
+    "winners_by_tier": {
+      "Match 8 of 8 Teams": {
+        "states": []
+      },
+      "Match 7 of 8 Teams": {
+        "states": [
+          "KS (2)",
+          "KY",
+          "NC",
+          "NJ",
+          "OK",
+          "PA (2)",
+          "SC (2)"
+        ]
+      }
+    },
+    "fetched_at": "2026-10-01T11:39:54.142478+00:00",
+    "source_url": "https://www.powerball.com/xo"
+  }
+]
