@@ -1,5 +1,33 @@
 [
   {
+    "draw_date": "Thu, Oct 1, 2026",
+    "white_balls": [
+      12,
+      16,
+      32,
+      33,
+      56
+    ],
+    "millionaire_ball": 2,
+    "next_drawing": {
+      "next_draw_date": "Fri, Oct 2, 2026",
+      "top_prize": "$1 Million a Year for Life",
+      "cash_option": "18 Million"
+    },
+    "winners_by_tier": {
+      "Top Prize": {
+        "prize": "$1 Million a Year for Life",
+        "states": []
+      },
+      "Match 5": {
+        "prize": "$100,000 a Year for Life",
+        "states": []
+      }
+    },
+    "fetched_at": "2026-10-02T03:55:34.635524+00:00",
+    "source_url": "https://www.powerball.com/millionaire-for-life"
+  },
+  {
     "draw_date": "Wed, Sep 30, 2026",
     "white_balls": [
       13,
