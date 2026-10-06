@@ -11,15 +11,13 @@
     "star_ball": 2,
     "all_star_bonus": 2,
     "next_drawing": {
-      "next_draw_date": "Mon, Oct 5, 2026",
-      "estimated_jackpot": "2.00 Million",
+      "next_draw_date": "Wed, Oct 7, 2026",
+      "estimated_jackpot": "2.05 Million",
       "cash_value": null
     },
     "winners_by_tier": {
       "Jackpot": {
-        "states": [
-          "IA"
-        ]
+        "states": []
       },
       "Match 5 + All Star Bonus": {
         "states": []
@@ -28,7 +26,7 @@
         "states": []
       }
     },
-    "fetched_at": "2026-10-06T03:05:55.068548+00:00",
+    "fetched_at": "2026-10-06T08:55:47.473038+00:00",
     "source_url": "https://www.powerball.com/lotto-america"
   },
   {
