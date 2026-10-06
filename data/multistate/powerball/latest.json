@@ -1,6 +1,38 @@
 [
   {
     "game": "Powerball",
+    "draw_date": "Mon, Oct 5, 2026",
+    "white_balls": [
+      16,
+      23,
+      32,
+      36,
+      54
+    ],
+    "red_ball": 9,
+    "power_play": 2,
+    "next_drawing": {
+      "next_draw_date": "Mon, Oct 5, 2026",
+      "estimated_jackpot": "467 Million",
+      "cash_value": "192.4 Million"
+    },
+    "winners_by_tier": {
+      "Match 5 + Power Play": {
+        "prize": "2 Million",
+        "states": []
+      },
+      "Match 5": {
+        "prize": "1 Million",
+        "states": [
+          "AZ"
+        ]
+      }
+    },
+    "fetched_at": "2026-10-06T03:40:46.332492+00:00",
+    "source_url": "https://www.powerball.com/"
+  },
+  {
+    "game": "Powerball",
     "draw_date": "Wed, Sep 30, 2026",
     "white_balls": [
       4,
