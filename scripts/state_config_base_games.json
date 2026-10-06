@@ -1,0 +1,1488 @@
+{
+  "powerball": {
+    "id": "powerball",
+    "stateCodes": [
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC",
+      "DE",
+      "FL",
+      "GA",
+      "IA",
+      "ID",
+      "IL",
+      "IN",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "MD",
+      "ME",
+      "MI",
+      "MN",
+      "MO",
+      "MS",
+      "MT",
+      "NC",
+      "ND",
+      "NE",
+      "NH",
+      "NJ",
+      "NM",
+      "NY",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "PR",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "VA",
+      "VI",
+      "VT",
+      "WA",
+      "WI",
+      "WV",
+      "WY"
+    ],
+    "name": "Powerball",
+    "type": "multiStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 69,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 2,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 26,
+      "specialName": "Powerball",
+      "addOns": [
+        {
+          "name": "Power Play Option",
+          "price": 1
+        },
+        {
+          "name": "Double Play Option",
+          "price": 1
+        }
+      ]
+    },
+    "drawSchedule": "Monday, Wednesday and Saturday at 10:59 PM Eastern Time (9:59 PM Central Time, 7:59 PM Pacific Time. Double Play at approximately 11:30 PM ET (10:30 PM CT, 8:30 PM PT)",
+    "payoutTable": [
+      {
+        "tierKey": "5+1",
+        "label": "5 + Powerball",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "292,201,338.00",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5+0",
+        "label": "5 + 0",
+        "basePrize": 1000000,
+        "isJackpotTier": false,
+        "odds": "11,688,053.52",
+        "multiplierPrizes": {
+          "2": 2000000,
+          "3": 2000000,
+          "4": 2000000,
+          "5": 2000000,
+          "10": 2000000
+        }
+      },
+      {
+        "tierKey": "4+1",
+        "label": "4 + Powerball",
+        "basePrize": 50000,
+        "isJackpotTier": false,
+        "odds": "913,129.18",
+        "multiplierPrizes": {
+          "2": 100000,
+          "3": 150000,
+          "4": 200000,
+          "5": 250000,
+          "10": 500000
+        }
+      },
+      {
+        "tierKey": "4+0",
+        "label": "4 + 0",
+        "basePrize": 100,
+        "isJackpotTier": false,
+        "odds": "36,525.17",
+        "multiplierPrizes": {
+          "2": 200,
+          "3": 300,
+          "4": 400,
+          "5": 500,
+          "10": 1000
+        }
+      },
+      {
+        "tierKey": "3+1",
+        "label": "3 + Powerball",
+        "basePrize": 100,
+        "isJackpotTier": false,
+        "odds": "14,494.11",
+        "multiplierPrizes": {
+          "2": 200,
+          "3": 300,
+          "4": 400,
+          "5": 500,
+          "10": 1000
+        }
+      },
+      {
+        "tierKey": "3+0",
+        "label": "3 + 0",
+        "basePrize": 7,
+        "isJackpotTier": false,
+        "odds": "579.76",
+        "multiplierPrizes": {
+          "2": 14,
+          "3": 21,
+          "4": 28,
+          "5": 35,
+          "10": 70
+        }
+      },
+      {
+        "tierKey": "2+1",
+        "label": "2 + Powerball",
+        "basePrize": 7,
+        "isJackpotTier": false,
+        "odds": "701.33",
+        "multiplierPrizes": {
+          "2": 14,
+          "3": 21,
+          "4": 28,
+          "5": 35,
+          "10": 70
+        }
+      },
+      {
+        "tierKey": "1+1",
+        "label": "1 + Powerball",
+        "basePrize": 4,
+        "isJackpotTier": false,
+        "odds": "91.98",
+        "multiplierPrizes": {
+          "2": 8,
+          "3": 12,
+          "4": 16,
+          "5": 20,
+          "10": 40
+        }
+      },
+      {
+        "tierKey": "0+1",
+        "label": "0 + Powerball",
+        "basePrize": 4,
+        "isJackpotTier": false,
+        "odds": "38.32",
+        "multiplierPrizes": {
+          "2": 8,
+          "3": 12,
+          "4": 16,
+          "5": 20,
+          "10": 40
+        }
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The starting jackpot is $20 million. The jackpot annuity payout is in 29 years (30 payments).",
+    "overallOddsText": "Overall Odds: 1 in 24.87",
+    "payoutNote": "For states except California.",
+    "powerPlay": {
+      "name": "Power Play",
+      "description": "Power Play prize is X times the regular prize except the jackpot winning and matching 5 of 5 numbers prize will automatically become $2 million cash. The 10X multiplier is available on jackpots up to $150 million. California does not have the Power Play option.",
+      "multipliers": [
+        2,
+        3,
+        4,
+        5,
+        10
+      ],
+      "multiplierOdds": [
+        "1.8",
+        "3.3",
+        "14.3",
+        "21.5",
+        "43"
+      ]
+    },
+    "doublePlay": {
+      "name": "Double Play",
+      "note": "For states with Double Play option.",
+      "tiers": [
+        {
+          "tierKey": "5+1",
+          "prize": 10000000
+        },
+        {
+          "tierKey": "5+0",
+          "prize": 500000
+        },
+        {
+          "tierKey": "4+1",
+          "prize": 50000
+        },
+        {
+          "tierKey": "4+0",
+          "prize": 500
+        },
+        {
+          "tierKey": "3+1",
+          "prize": 500
+        },
+        {
+          "tierKey": "3+0",
+          "prize": 20
+        },
+        {
+          "tierKey": "2+1",
+          "prize": 20
+        },
+        {
+          "tierKey": "1+1",
+          "prize": 10
+        },
+        {
+          "tierKey": "0+1",
+          "prize": 7
+        }
+      ]
+    }
+  },
+  "mega-millions": {
+    "id": "mega-millions",
+    "stateCodes": [
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC",
+      "DE",
+      "FL",
+      "GA",
+      "IA",
+      "ID",
+      "IL",
+      "IN",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "MD",
+      "ME",
+      "MI",
+      "MN",
+      "MO",
+      "MS",
+      "MT",
+      "NC",
+      "ND",
+      "NE",
+      "NH",
+      "NJ",
+      "NM",
+      "NY",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "PR",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "VA",
+      "VI",
+      "VT",
+      "WA",
+      "WI",
+      "WV",
+      "WY"
+    ],
+    "name": "Mega Millions",
+    "type": "multiStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 70,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 2,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 25,
+      "specialName": "Mega Ball"
+    },
+    "drawSchedule": "Tue/Fri 23:00 ET",
+    "payoutTable": [
+      {
+        "tierKey": "5+1",
+        "label": "5 + Mega Ball",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "1 in 302,575,350",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5+0",
+        "label": "5 + 0",
+        "basePrize": 1000000,
+        "isJackpotTier": false,
+        "odds": "1 in 12,607,306",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+1",
+        "label": "4 + Mega Ball",
+        "basePrize": 10000,
+        "isJackpotTier": false,
+        "odds": "1 in 931,001",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+0",
+        "label": "4 + 0",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1 in 38,792",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+1",
+        "label": "3 + Mega Ball",
+        "basePrize": 200,
+        "isJackpotTier": false,
+        "odds": "1 in 14,547",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+0",
+        "label": "3 + 0",
+        "basePrize": 10,
+        "isJackpotTier": false,
+        "odds": "1 in 606",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "2+1",
+        "label": "2 + Mega Ball",
+        "basePrize": 10,
+        "isJackpotTier": false,
+        "odds": "1 in 693",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "1+1",
+        "label": "1 + Mega Ball",
+        "basePrize": 4,
+        "isJackpotTier": false,
+        "odds": "1 in 89",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "0+1",
+        "label": "0 + Mega Ball",
+        "basePrize": 2,
+        "isJackpotTier": false,
+        "odds": "1 in 37",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {}
+  },
+  "powerball-double-play": {
+    "id": "powerball-double-play",
+    "stateCodes": [
+      "AZ",
+      "CO",
+      "CT",
+      "DE",
+      "DC",
+      "FL",
+      "ID",
+      "IN",
+      "IA",
+      "KS",
+      "KY",
+      "ME",
+      "MD",
+      "MI",
+      "MS",
+      "MO",
+      "MT",
+      "NE",
+      "NJ",
+      "NM",
+      "NY",
+      "NC",
+      "OK",
+      "PA",
+      "PR",
+      "SC",
+      "SD",
+      "TN",
+      "VI",
+      "WA"
+    ],
+    "name": "Powerball Double Play",
+    "type": "multiStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 69,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 1,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 26,
+      "specialName": "Powerball",
+      "addOns": []
+    },
+    "drawSchedule": "Monday, Wednesday and Saturday at approximately 11:30 PM Eastern Time, right after the main Powerball drawing.",
+    "payoutTable": [
+      {
+        "tierKey": "5+1",
+        "label": "5 + Powerball",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "292,201,338.00",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5+0",
+        "label": "5 + 0",
+        "basePrize": 500000,
+        "isJackpotTier": false,
+        "odds": "11,688,053.52",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+1",
+        "label": "4 + Powerball",
+        "basePrize": 50000,
+        "isJackpotTier": false,
+        "odds": "913,129.18",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+0",
+        "label": "4 + 0",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "36,525.17",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+1",
+        "label": "3 + Powerball",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "14,494.11",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+0",
+        "label": "3 + 0",
+        "basePrize": 20,
+        "isJackpotTier": false,
+        "odds": "579.76",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "2+1",
+        "label": "2 + Powerball",
+        "basePrize": 20,
+        "isJackpotTier": false,
+        "odds": "701.33",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "1+1",
+        "label": "1 + Powerball",
+        "basePrize": 10,
+        "isJackpotTier": false,
+        "odds": "91.98",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "0+1",
+        "label": "0 + Powerball",
+        "basePrize": 7,
+        "isJackpotTier": false,
+        "odds": "38.32",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
+    "payoutNote": "The Power Play multiplier does not apply to Double Play prizes."
+  },
+  "lotto-america": {
+    "id": "lotto-america",
+    "stateCodes": [
+      "DC",
+      "DE",
+      "ID",
+      "IA",
+      "KS",
+      "ME",
+      "MN",
+      "MS",
+      "MT",
+      "NE",
+      "NM",
+      "ND",
+      "OK",
+      "SD",
+      "TN",
+      "WV"
+    ],
+    "name": "Lotto America",
+    "type": "multiStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 52,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 1,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 10,
+      "specialName": "Star Ball",
+      "addOns": [
+        {
+          "name": "All Star Bonus",
+          "price": 1
+        }
+      ]
+    },
+    "drawSchedule": "Monday, Wednesday and Saturday night.",
+    "payoutTable": [
+      {
+        "tierKey": "5+1",
+        "label": "5 + Star Ball",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5+0",
+        "label": "5 + 0",
+        "basePrize": 20000,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+1",
+        "label": "4 + Star Ball",
+        "basePrize": 1250,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+0",
+        "label": "4 + 0",
+        "basePrize": 100,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+1",
+        "label": "3 + Star Ball",
+        "basePrize": 20,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+0",
+        "label": "3 + 0",
+        "basePrize": 10,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "2+1",
+        "label": "2 + Star Ball",
+        "basePrize": 5,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "1+1",
+        "label": "1 + Star Ball",
+        "basePrize": 4,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "0+1",
+        "label": "0 + Star Ball",
+        "basePrize": 2,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The jackpot starts at $2 million and grows until it's won.",
+    "payoutNote": "For an extra $1 per play, the All Star Bonus feature can multiply non-jackpot prizes 2x-5x.",
+    "multiplierLabel": "All Star Bonus"
+  },
+  "millionaire-for-life": {
+    "id": "millionaire-for-life",
+    "stateCodes": [
+      "AR",
+      "CO",
+      "CT",
+      "DC",
+      "GA",
+      "ID",
+      "IA",
+      "IN",
+      "KS",
+      "KY",
+      "MA",
+      "ME",
+      "MI",
+      "MS",
+      "MT",
+      "NC",
+      "ND",
+      "NE",
+      "NH",
+      "NJ",
+      "NY",
+      "OH",
+      "OK",
+      "PA",
+      "RI",
+      "SD",
+      "TN",
+      "VA",
+      "VT",
+      "WV",
+      "WY"
+    ],
+    "name": "Millionaire for Life",
+    "type": "multiStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 58,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 5,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 5,
+      "specialName": "Millionaire Ball",
+      "addOns": []
+    },
+    "drawSchedule": "Nightly at 11:15 PM Eastern Time.",
+    "payoutTable": [
+      {
+        "tierKey": "5+1",
+        "label": "Top Prize",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5+0",
+        "label": "Match 5",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The top prize is $1 million a year for life; the second prize is $100,000 a year for life. Both can be taken as a lump-sum cash option instead of the annuity."
+  },
+  "powerball-xo": {
+    "id": "powerball-xo",
+    "stateCodes": [
+      "AZ",
+      "CT",
+      "DC",
+      "DE",
+      "IA",
+      "IN",
+      "KS",
+      "KY",
+      "MD",
+      "ME",
+      "MN",
+      "MO",
+      "NC",
+      "NE",
+      "NJ",
+      "OK",
+      "PA",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "VT",
+      "WV"
+    ],
+    "name": "Powerball Xs & Os",
+    "type": "other",
+    "pickRule": null,
+    "drawSchedule": "Weekly, Sunday at 10:00 PM Eastern Time.",
+    "payoutTable": [
+      {
+        "tierKey": "8+1",
+        "label": "Match 8 of 8 Teams",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "10,518,300.00",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "Match 7 of 8 Teams",
+        "label": "Match 7 of 8 Teams",
+        "basePrize": 20000,
+        "isJackpotTier": false,
+        "odds": "54,782.81",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "Match 6 of 8 Teams",
+        "label": "Match 6 of 8 Teams",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1,361.06",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "Match 5 of 8 Teams",
+        "label": "Match 5 of 8 Teams",
+        "basePrize": 40,
+        "isJackpotTier": false,
+        "odds": "92.80",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "Match 4 of 8 Teams",
+        "label": "Match 4 of 8 Teams",
+        "basePrize": 7,
+        "isJackpotTier": false,
+        "odds": "14.14",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Choose eight NFL team logos from all 32 teams. Match all eight to win the rolling cash jackpot, or match some to win a cash prize. Results are randomly drawn and not based on NFL game outcomes.",
+    "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
+    "overallOddsText": "Overall Odds: 1 in 12.16"
+  },
+  "2by2": {
+    "id": "2by2",
+    "stateCodes": [
+      "KS",
+      "NE",
+      "ND",
+      "WY"
+    ],
+    "name": "2by2",
+    "type": "multiStateJackpot",
+    "pickRule": {
+      "mainCount": 2,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 26,
+      "mainMustBeUnique": true,
+      "specialCount": 2,
+      "price": 1,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 26,
+      "specialName": "Red Ball",
+      "addOns": []
+    },
+    "drawSchedule": "Daily, Monday through Sunday.",
+    "payoutTable": [
+      {
+        "tierKey": "2+2",
+        "label": "Match 4",
+        "basePrize": 22000,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "2+1",
+        "label": "Match 3",
+        "basePrize": 100,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "1+1",
+        "label": "Match 2",
+        "basePrize": 3,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Match all four numbers to win the top prize of $22,000. The 2by2 Tuesday feature doubles all Tuesday prizes to $44,000 for eligible multi-draw tickets."
+  },
+  "az-the-pick": {
+    "id": "az-the-pick",
+    "stateCodes": [
+      "AZ"
+    ],
+    "name": "The Pick",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 6,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 40,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 2
+    },
+    "drawSchedule": "Mon/Wed/Sat 19:00 MST",
+    "payoutTable": [
+      {
+        "tierKey": "6",
+        "label": "6 of 6",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "1 in 3,838,380",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5",
+        "label": "5 of 6",
+        "basePrize": 1000,
+        "isJackpotTier": false,
+        "odds": "1 in 18,815.6",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4",
+        "label": "4 of 6",
+        "basePrize": 25,
+        "isJackpotTier": false,
+        "odds": "1 in 456.1",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3",
+        "label": "3 of 6",
+        "basePrize": 2,
+        "isJackpotTier": false,
+        "odds": "1 in 32.1",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The jackpot starts at $1 million and grows until it's won. Split equally if more than one ticket matches all 6 numbers.",
+    "overallOddsText": "Overall Odds: 1 in 30"
+  },
+  "az-fantasy-5": {
+    "id": "az-fantasy-5",
+    "stateCodes": [
+      "AZ"
+    ],
+    "name": "Fantasy 5",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 41,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 1
+    },
+    "drawSchedule": "Daily 19:00 MST",
+    "payoutTable": [
+      {
+        "tierKey": "5",
+        "label": "5 of 5",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "1 in 749,398",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4",
+        "label": "4 of 5",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1 in 4,163",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3",
+        "label": "3 of 5",
+        "basePrize": 5,
+        "isJackpotTier": false,
+        "odds": "1 in 119",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "2",
+        "label": "2 of 5",
+        "basePrize": 1,
+        "isJackpotTier": false,
+        "odds": "1 in 11",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The jackpot starts at $50,000 and grows until it's won. Split equally if more than one ticket matches all 5 numbers.",
+    "overallOddsText": "Overall Odds: 1 in 9.62"
+  },
+  "az-triple-twist": {
+    "id": "az-triple-twist",
+    "stateCodes": [
+      "AZ"
+    ],
+    "name": "Triple Twist",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 6,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 42,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 2
+    },
+    "drawSchedule": "Daily ~21:00 CT (synced to a fixed Central-time slot, not Arizona's own clock)",
+    "payoutTable": [
+      {
+        "tierKey": "6",
+        "label": "6 of 6",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "1 in 5,245,786",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5",
+        "label": "5 of 6",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1 in 24,286",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4",
+        "label": "4 of 6",
+        "basePrize": 10,
+        "isJackpotTier": false,
+        "odds": "1 in 555.1",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3",
+        "label": "3 of 6",
+        "basePrize": 2,
+        "isJackpotTier": false,
+        "odds": "1 in 36.7",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The jackpot grows until it's won. Split equally if more than one ticket matches all 6 numbers. Your ticket's other two (computer-picked) rows are also compared to the same winning numbers for extra chances to win.",
+    "overallOddsText": "Overall Odds: 1 in 7.9"
+  },
+  "az-pick3-midday": {
+    "id": "az-pick3-midday",
+    "stateCodes": [
+      "AZ"
+    ],
+    "name": "Pick 3 (Midday)",
+    "type": "dailyNumbers",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1
+    },
+    "drawSchedule": "Daily 12:00 MST",
+    "payoutTable": [
+      {
+        "tierKey": "straight",
+        "label": "Straight (exact match)",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1 in 1,000",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box3way",
+        "label": "Box (3-way)",
+        "basePrize": 160,
+        "isJackpotTier": false,
+        "odds": "1 in 333",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box6way",
+        "label": "Box (6-way)",
+        "basePrize": 80,
+        "isJackpotTier": false,
+        "odds": "1 in 167",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "frontpair",
+        "label": "Front Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "backpair",
+        "label": "Back Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "payoutNote": "Prizes shown are for a $1 Straight/Box play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting."
+  },
+  "az-pick3-evening": {
+    "id": "az-pick3-evening",
+    "stateCodes": [
+      "AZ"
+    ],
+    "name": "Pick 3 (Evening)",
+    "type": "dailyNumbers",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1
+    },
+    "drawSchedule": "Daily 19:00 MST",
+    "payoutTable": [
+      {
+        "tierKey": "straight",
+        "label": "Straight (exact match)",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1 in 1,000",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box3way",
+        "label": "Box (3-way)",
+        "basePrize": 160,
+        "isJackpotTier": false,
+        "odds": "1 in 333",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box6way",
+        "label": "Box (6-way)",
+        "basePrize": 80,
+        "isJackpotTier": false,
+        "odds": "1 in 167",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "frontpair",
+        "label": "Front Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "backpair",
+        "label": "Back Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "payoutNote": "Prizes shown are for a $1 Straight/Box play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting."
+  },
+  "az-pick4-midday": {
+    "id": "az-pick4-midday",
+    "stateCodes": [
+      "AZ"
+    ],
+    "name": "Pick 4 (Midday)",
+    "type": "dailyNumbers",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1
+    },
+    "drawSchedule": "Daily 12:00 MST",
+    "payoutTable": [
+      {
+        "tierKey": "straight",
+        "label": "Straight",
+        "basePrize": 5000,
+        "isJackpotTier": false,
+        "odds": "1 in 10,000",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box4way",
+        "label": "Box (4-way)",
+        "basePrize": 1200,
+        "isJackpotTier": false,
+        "odds": "1 in 2,500",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box6way",
+        "label": "Box (6-way)",
+        "basePrize": 800,
+        "isJackpotTier": false,
+        "odds": "1 in 1,666.7",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box12way",
+        "label": "Box (12-way)",
+        "basePrize": 400,
+        "isJackpotTier": false,
+        "odds": "1 in 833.3",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box24way",
+        "label": "Box (24-way)",
+        "basePrize": 200,
+        "isJackpotTier": false,
+        "odds": "1 in 416.7",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "frontpair",
+        "label": "Front Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "midpair",
+        "label": "Mid Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "backpair",
+        "label": "Back Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "payoutNote": "Prizes shown are for a $1 Straight/Box play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting."
+  },
+  "az-pick4-evening": {
+    "id": "az-pick4-evening",
+    "stateCodes": [
+      "AZ"
+    ],
+    "name": "Pick 4 (Evening)",
+    "type": "dailyNumbers",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1
+    },
+    "drawSchedule": "Daily 19:00 MST",
+    "payoutTable": [
+      {
+        "tierKey": "straight",
+        "label": "Straight",
+        "basePrize": 5000,
+        "isJackpotTier": false,
+        "odds": "1 in 10,000",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box4way",
+        "label": "Box (4-way)",
+        "basePrize": 1200,
+        "isJackpotTier": false,
+        "odds": "1 in 2,500",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box6way",
+        "label": "Box (6-way)",
+        "basePrize": 800,
+        "isJackpotTier": false,
+        "odds": "1 in 1,666.7",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box12way",
+        "label": "Box (12-way)",
+        "basePrize": 400,
+        "isJackpotTier": false,
+        "odds": "1 in 833.3",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box24way",
+        "label": "Box (24-way)",
+        "basePrize": 200,
+        "isJackpotTier": false,
+        "odds": "1 in 416.7",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "frontpair",
+        "label": "Front Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "midpair",
+        "label": "Mid Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "backpair",
+        "label": "Back Pair",
+        "basePrize": 50,
+        "isJackpotTier": false,
+        "odds": "1 in 100",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "payoutNote": "Prizes shown are for a $1 Straight/Box play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting."
+  },
+  "ks-pick3-midday": {
+    "id": "ks-pick3-midday",
+    "stateCodes": [
+      "KS"
+    ],
+    "name": "Pick 3 (Midday)",
+    "type": "dailyNumbers",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1
+    },
+    "drawSchedule": "Daily 13:10 CT",
+    "payoutTable": [
+      {
+        "tierKey": "straight",
+        "label": "Exact Order (Straight)",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1 in 1,000",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box3way",
+        "label": "Any Order, 3-way box (two digits the same)",
+        "basePrize": 160,
+        "isJackpotTier": false,
+        "odds": "1 in 333.33",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box6way",
+        "label": "Any Order, 6-way box",
+        "basePrize": 80,
+        "isJackpotTier": false,
+        "odds": "1 in 166.67",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting."
+  },
+  "ks-pick3-evening": {
+    "id": "ks-pick3-evening",
+    "stateCodes": [
+      "KS"
+    ],
+    "name": "Pick 3 (Evening)",
+    "type": "dailyNumbers",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1
+    },
+    "drawSchedule": "Daily 21:10 CT",
+    "payoutTable": [
+      {
+        "tierKey": "straight",
+        "label": "Exact Order (Straight)",
+        "basePrize": 500,
+        "isJackpotTier": false,
+        "odds": "1 in 1,000",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box3way",
+        "label": "Any Order, 3-way box (two digits the same)",
+        "basePrize": 160,
+        "isJackpotTier": false,
+        "odds": "1 in 333.33",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "box6way",
+        "label": "Any Order, 6-way box",
+        "basePrize": 80,
+        "isJackpotTier": false,
+        "odds": "1 in 166.67",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting."
+  },
+  "ks-super-kansas-cash": {
+    "id": "ks-super-kansas-cash",
+    "stateCodes": [
+      "KS"
+    ],
+    "name": "Super Kansas Cash",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 32,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 25,
+      "specialName": "Cash Ball",
+      "price": 1
+    },
+    "drawSchedule": "Mon/Wed/Sat 21:10 CT",
+    "payoutTable": [
+      {
+        "tierKey": "5+1",
+        "label": "5 + Cash Ball",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": "1 in 2,517,200",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "5+0",
+        "label": "5 + 0",
+        "basePrize": 2000,
+        "isJackpotTier": false,
+        "odds": "1 in 104,883",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+1",
+        "label": "4 + Cash Ball",
+        "basePrize": 250,
+        "isJackpotTier": false,
+        "odds": "1 in 18,646",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4+0",
+        "label": "4 + 0",
+        "basePrize": 25,
+        "isJackpotTier": false,
+        "odds": "1 in 777",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+1",
+        "label": "3 + Cash Ball",
+        "basePrize": 25,
+        "isJackpotTier": false,
+        "odds": "1 in 717",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3+0",
+        "label": "3 + 0",
+        "basePrize": 2,
+        "isJackpotTier": false,
+        "odds": "1 in 30",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "2+1",
+        "label": "2 + Cash Ball",
+        "basePrize": 2,
+        "isJackpotTier": false,
+        "odds": "1 in 86",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "1+1",
+        "label": "1 + Cash Ball",
+        "basePrize": 1,
+        "isJackpotTier": false,
+        "odds": "1 in 29",
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The jackpot starts at $100,000 and grows until it's won. Paid in one lump sum, split equally if more than one ticket matches all 5 numbers and the Cash Ball.",
+    "overallOddsText": "Overall Odds: 1 in 12",
+    "payoutNote": "The 5+0 prize may become pari-mutuel if not enough funds are available."
+  }
+}
