@@ -14,8 +14,12 @@ TRIPLE TWIST 不一样的地方：
   （"PICK 3 TWO PLAYS FOR $1"），是同一组开奖号码的另一种玩法/赔付表，
   开奖数据完全一样，不需要重复抓。
 
-因为一天两期，latest.json 用 (draw_date, session) 一起去重，不能只按
-draw_date——不然同一天的 Midday 会被 Evening 覆盖掉。
+每次运行会处理最近 FETCH_COUNT 期（不是只取最新一条）：这个游戏一天开两
+次，如果某次运行只抓"最新一条"，而触发时机恰好只覆盖了其中一个场次（比如
+只在晚上触发），当天的 Midday 那期就会永远漏进 latest.json。抓最近几期、
+按 (draw_date, session) 去重合并，不管一天触发几次、谁先谁后，最终都能把
+当天两期都收全，也顺带兜住了"漏跑一整天"这种情况（FETCH_COUNT=6，覆盖
+最近3天）。
 """
 
 import dataclasses
@@ -36,6 +40,7 @@ USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
+FETCH_COUNT = 6  # 一天两期，6条≈最近3天，足够兜住单次漏跑
 
 SESSION_BY_SEQ = {1: "midday", 2: "evening"}
 
@@ -58,7 +63,7 @@ class Pick3Result:
         return dataclasses.asdict(self)
 
 
-def parse_entry(entry: dict) -> Pick3Result:
+def parse_entry(entry: dict, fetched_at: str) -> Pick3Result:
     digits = [int(n) for n in entry["winningNumbers"].split("-")]
     return Pick3Result(
         game="Pick 3",
@@ -67,7 +72,7 @@ def parse_entry(entry: dict) -> Pick3Result:
         digits=digits,
         next_draw_date=entry.get("nextDrawDate"),
         next_session=SESSION_BY_SEQ.get(entry.get("nextGameSeqNum")),
-        fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
+        fetched_at=fetched_at,
         source_url=API_URL,
     )
 
@@ -79,7 +84,8 @@ def validate(result: Pick3Result) -> None:
         raise ValueError(f"数字超出 0-9 范围: {result.digits}")
 
 
-def fetch() -> Pick3Result:
+def fetch() -> list[Pick3Result]:
+    """返回最近 FETCH_COUNT 期，新的在前 —— 不只是最新一条。"""
     import requests
 
     last_err = None
@@ -95,9 +101,11 @@ def fetch() -> Pick3Result:
             if not entries:
                 raise ValueError("接口返回了空列表，没有任何开奖记录")
 
-            result = parse_entry(entries[0])
-            validate(result)
-            return result
+            fetched_at = dt.datetime.now(dt.timezone.utc).isoformat()
+            results = [parse_entry(e, fetched_at) for e in entries[:FETCH_COUNT]]
+            for result in results:
+                validate(result)
+            return results
         except Exception as e:  # noqa: BLE001
             last_err = e
             log.warning("第 %d 次尝试失败: %s", attempt, e)
@@ -109,9 +117,10 @@ def fetch() -> Pick3Result:
 MAX_HISTORY = 100
 
 
-def save_result(result: Pick3Result) -> Path:
-    """按 (draw_date, session) 去重 —— 一天两期，只按日期去重会把同一天
-    的 Midday 结果被 Evening 结果覆盖掉。
+def save_results(results: list[Pick3Result]) -> Path:
+    """按 (draw_date, session) 去重合并 —— 一天两期，只按日期去重会把同
+    一天的 Midday 结果被 Evening 结果覆盖掉。本次抓到的几期直接覆盖旧
+    history 里对应的记录（更新更可信），其余没碰到的旧记录保留不动。
     """
     out_dir = OUTPUT_DIR / "arizona" / "pick-3"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -126,22 +135,22 @@ def save_result(result: Pick3Result) -> Path:
         except (json.JSONDecodeError, OSError):
             history = []
 
-    new_entry = result.to_dict()
-    if history and history[0].get("draw_date") == new_entry.get("draw_date") and history[0].get("session") == new_entry.get("session"):
-        history[0] = new_entry
-    else:
-        history.insert(0, new_entry)
-    history = history[:MAX_HISTORY]
+    new_entries = [r.to_dict() for r in results]
+    new_keys = {(e["draw_date"], e["session"]) for e in new_entries}
+    history = [h for h in history if (h.get("draw_date"), h.get("session")) not in new_keys]
 
-    out_path.write_text(json.dumps(history, ensure_ascii=False, indent=2))
-    log.info("已保存: %s (%d 条记录)", out_path, len(history))
+    merged = new_entries + history
+    merged = merged[:MAX_HISTORY]
+
+    out_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2))
+    log.info("已保存: %s (%d 条记录，本次更新 %d 条)", out_path, len(merged), len(new_entries))
     return out_path
 
 
 def main():
-    result = fetch()
-    log.info("抓取结果: %s", result.to_dict())
-    save_result(result)
+    results = fetch()
+    log.info("抓取结果: %s", [r.to_dict() for r in results])
+    save_results(results)
 
 
 if __name__ == "__main__":
