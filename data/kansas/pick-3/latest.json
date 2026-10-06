@@ -1,0 +1,146 @@
+[
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-05",
+    "session": "evening",
+    "digits": [
+      8,
+      1,
+      4
+    ],
+    "fetched_at": "2026-10-06T09:51:26.249648+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-05",
+    "session": "midday",
+    "digits": [
+      6,
+      7,
+      6
+    ],
+    "fetched_at": "2026-10-06T09:51:24.719628+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-04",
+    "session": "evening",
+    "digits": [
+      2,
+      7,
+      6
+    ],
+    "fetched_at": "2026-10-06T09:51:26.249672+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-04",
+    "session": "midday",
+    "digits": [
+      8,
+      4,
+      1
+    ],
+    "fetched_at": "2026-10-06T09:51:24.719658+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-03",
+    "session": "evening",
+    "digits": [
+      6,
+      5,
+      3
+    ],
+    "fetched_at": "2026-10-06T09:51:26.249689+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-03",
+    "session": "midday",
+    "digits": [
+      6,
+      1,
+      4
+    ],
+    "fetched_at": "2026-10-06T09:51:24.719669+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-02",
+    "session": "evening",
+    "digits": [
+      3,
+      4,
+      5
+    ],
+    "fetched_at": "2026-10-06T09:51:26.249699+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-02",
+    "session": "midday",
+    "digits": [
+      3,
+      5,
+      5
+    ],
+    "fetched_at": "2026-10-06T09:51:24.719678+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-01",
+    "session": "evening",
+    "digits": [
+      0,
+      9,
+      4
+    ],
+    "fetched_at": "2026-10-06T09:51:26.249708+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-01",
+    "session": "midday",
+    "digits": [
+      6,
+      4,
+      3
+    ],
+    "fetched_at": "2026-10-06T09:51:24.719691+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-09-30",
+    "session": "evening",
+    "digits": [
+      7,
+      6,
+      1
+    ],
+    "fetched_at": "2026-10-06T09:51:26.249717+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-09-30",
+    "session": "midday",
+    "digits": [
+      0,
+      2,
+      7
+    ],
+    "fetched_at": "2026-10-06T09:51:24.719705+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  }
+]

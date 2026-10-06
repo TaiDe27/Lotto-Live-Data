@@ -1,0 +1,19 @@
+[
+  {
+    "game": "Super Kansas Cash",
+    "draw_date": "2026-10-05",
+    "numbers": [
+      2,
+      13,
+      14,
+      26,
+      28
+    ],
+    "cash_ball": 8,
+    "jackpot_amount": 1280000.0,
+    "next_draw_date": "2026-10-07",
+    "next_jackpot_amount": 1300000,
+    "fetched_at": "2026-10-06T09:52:14.042782+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=8&jackpotStatus=COMPLETE&page=0&size=100&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  }
+]
