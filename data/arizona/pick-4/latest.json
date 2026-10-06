@@ -1,0 +1,17 @@
+[
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-05",
+    "session": "evening",
+    "digits": [
+      9,
+      6,
+      7,
+      3
+    ],
+    "next_draw_date": "2026-10-06",
+    "next_session": "midday",
+    "fetched_at": "2026-10-06T08:37:18.220643+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
+  }
+]
