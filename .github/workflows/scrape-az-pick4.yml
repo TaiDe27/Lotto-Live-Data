@@ -23,8 +23,30 @@ jobs:
           git config user.name "lotto-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet && echo "没有变化，跳过提交" || git commit -m "Update Arizona Pick 4 data $(date -u +%Y-%m-%d)"
-          git push
+          if git diff --cached --quiet; then
+            echo "没有变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "Update Arizona Pick 4 data $(date -u +%Y-%m-%d)"
+
+          max_retries=2
+          attempt=0
+          until git push; do
+            attempt=$((attempt + 1))
+            if [ "$attempt" -gt "$max_retries" ]; then
+              echo "::error::git push failed after $max_retries retries (push race with another workflow)"
+              exit 1
+            fi
+            # Another workflow likely pushed to main between our checkout and
+            # our push (several scrapers share the same offsetsMinutes in
+            # Scheduler.gs and can fire in the same minute) — wait a random
+            # 1-5 minutes so two racing retries don't immediately collide
+            # again, then rebase onto whatever landed and retry.
+            wait_seconds=$(( (RANDOM % 241) + 60 ))
+            echo "git push rejected (likely a race with another workflow) - retry ${attempt}/${max_retries} in ${wait_seconds}s"
+            sleep "$wait_seconds"
+            git pull --rebase origin main
+          done
       - name: Purge jsDelivr cache
         run: |
           REPO="${{ github.repository }}"
