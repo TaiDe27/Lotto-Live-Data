@@ -1,0 +1,810 @@
+{
+  "schemaVersion": 1,
+  "stateCode": "WY",
+  "routedCourierPlatform": "none",
+  "games": [
+    {
+      "id": "powerball",
+      "stateCodes": [
+        "AR",
+        "AZ",
+        "CA",
+        "CO",
+        "CT",
+        "DC",
+        "DE",
+        "FL",
+        "GA",
+        "IA",
+        "ID",
+        "IL",
+        "IN",
+        "KS",
+        "KY",
+        "LA",
+        "MA",
+        "MD",
+        "ME",
+        "MI",
+        "MN",
+        "MO",
+        "MS",
+        "MT",
+        "NC",
+        "ND",
+        "NE",
+        "NH",
+        "NJ",
+        "NM",
+        "NY",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "PR",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "VA",
+        "VI",
+        "VT",
+        "WA",
+        "WI",
+        "WV",
+        "WY"
+      ],
+      "name": "Powerball",
+      "type": "multiStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 69,
+        "mainMustBeUnique": true,
+        "specialCount": 1,
+        "price": 2,
+        "specialRangeLower": 1,
+        "specialRangeUpper": 26,
+        "specialName": "Powerball",
+        "addOns": [
+          {
+            "name": "Power Play Option",
+            "price": 1
+          },
+          {
+            "name": "Double Play Option",
+            "price": 1
+          }
+        ]
+      },
+      "drawSchedule": "Monday, Wednesday and Saturday at 10:59 PM Eastern Time (9:59 PM Central Time, 7:59 PM Pacific Time. Double Play at approximately 11:30 PM ET (10:30 PM CT, 8:30 PM PT)",
+      "payoutTable": [
+        {
+          "tierKey": "5+1",
+          "label": "5 + Powerball",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "292,201,338.00",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+0",
+          "label": "5 + 0",
+          "basePrize": 1000000,
+          "isJackpotTier": false,
+          "odds": "11,688,053.52",
+          "multiplierPrizes": {
+            "2": 2000000,
+            "3": 2000000,
+            "4": 2000000,
+            "5": 2000000,
+            "10": 2000000
+          }
+        },
+        {
+          "tierKey": "4+1",
+          "label": "4 + Powerball",
+          "basePrize": 50000,
+          "isJackpotTier": false,
+          "odds": "913,129.18",
+          "multiplierPrizes": {
+            "2": 100000,
+            "3": 150000,
+            "4": 200000,
+            "5": 250000,
+            "10": 500000
+          }
+        },
+        {
+          "tierKey": "4+0",
+          "label": "4 + 0",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": "36,525.17",
+          "multiplierPrizes": {
+            "2": 200,
+            "3": 300,
+            "4": 400,
+            "5": 500,
+            "10": 1000
+          }
+        },
+        {
+          "tierKey": "3+1",
+          "label": "3 + Powerball",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": "14,494.11",
+          "multiplierPrizes": {
+            "2": 200,
+            "3": 300,
+            "4": 400,
+            "5": 500,
+            "10": 1000
+          }
+        },
+        {
+          "tierKey": "3+0",
+          "label": "3 + 0",
+          "basePrize": 7,
+          "isJackpotTier": false,
+          "odds": "579.76",
+          "multiplierPrizes": {
+            "2": 14,
+            "3": 21,
+            "4": 28,
+            "5": 35,
+            "10": 70
+          }
+        },
+        {
+          "tierKey": "2+1",
+          "label": "2 + Powerball",
+          "basePrize": 7,
+          "isJackpotTier": false,
+          "odds": "701.33",
+          "multiplierPrizes": {
+            "2": 14,
+            "3": 21,
+            "4": 28,
+            "5": 35,
+            "10": 70
+          }
+        },
+        {
+          "tierKey": "1+1",
+          "label": "1 + Powerball",
+          "basePrize": 4,
+          "isJackpotTier": false,
+          "odds": "91.98",
+          "multiplierPrizes": {
+            "2": 8,
+            "3": 12,
+            "4": 16,
+            "5": 20,
+            "10": 40
+          }
+        },
+        {
+          "tierKey": "0+1",
+          "label": "0 + Powerball",
+          "basePrize": 4,
+          "isJackpotTier": false,
+          "odds": "38.32",
+          "multiplierPrizes": {
+            "2": 8,
+            "3": 12,
+            "4": 16,
+            "5": 20,
+            "10": 40
+          }
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The starting jackpot is $20 million. The jackpot annuity payout is in 29 years (30 payments).",
+      "overallOddsText": "Overall Odds: 1 in 24.87",
+      "payoutNote": "For states except California.",
+      "powerPlay": {
+        "name": "Power Play",
+        "description": "Power Play prize is X times the regular prize except the jackpot winning and matching 5 of 5 numbers prize will automatically become $2 million cash. The 10X multiplier is available on jackpots up to $150 million. California does not have the Power Play option.",
+        "multipliers": [
+          2,
+          3,
+          4,
+          5,
+          10
+        ],
+        "multiplierOdds": [
+          "1.8",
+          "3.3",
+          "14.3",
+          "21.5",
+          "43"
+        ]
+      },
+      "doublePlay": {
+        "name": "Double Play",
+        "note": "For states with Double Play option.",
+        "tiers": [
+          {
+            "tierKey": "5+1",
+            "prize": 10000000
+          },
+          {
+            "tierKey": "5+0",
+            "prize": 500000
+          },
+          {
+            "tierKey": "4+1",
+            "prize": 50000
+          },
+          {
+            "tierKey": "4+0",
+            "prize": 500
+          },
+          {
+            "tierKey": "3+1",
+            "prize": 500
+          },
+          {
+            "tierKey": "3+0",
+            "prize": 20
+          },
+          {
+            "tierKey": "2+1",
+            "prize": 20
+          },
+          {
+            "tierKey": "1+1",
+            "prize": 10
+          },
+          {
+            "tierKey": "0+1",
+            "prize": 7
+          }
+        ]
+      },
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball/latest.json",
+        "cachePath": "live/powerball/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "EEE, MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 22,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_drawing.next_draw_date",
+          "dateFormat": "EEE, MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 22,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "mainNumbersField": "white_balls",
+        "specialNumbers": {
+          "field": "red_ball",
+          "wrapScalar": true
+        },
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "previousEntryLookback",
+          "field": "next_drawing.estimated_jackpot",
+          "moneyFormat": "compactWords",
+          "guardField": "next_drawing.next_draw_date"
+        },
+        "cashValue": {
+          "source": "previousEntryLookback",
+          "field": "next_drawing.cash_value",
+          "moneyFormat": "compactWords",
+          "guardField": "next_drawing.next_draw_date"
+        },
+        "nextJackpot": {
+          "source": "directField",
+          "field": "next_drawing.estimated_jackpot",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "directField",
+          "field": "next_drawing.cash_value",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "multiplierField": "power_play",
+        "winnersByTier": {
+          "mode": "dictionaryByTierName",
+          "field": "winners_by_tier",
+          "countMode": "plain",
+          "tierKeyRemap": {
+            "Powerball JACKPOT": "{mainCount}+1"
+          },
+          "divisionKey": null,
+          "tierKeyTemplate": null,
+          "nearMissTier": null
+        }
+      }
+    },
+    {
+      "id": "mega-millions",
+      "stateCodes": [
+        "AR",
+        "AZ",
+        "CA",
+        "CO",
+        "CT",
+        "DC",
+        "DE",
+        "FL",
+        "GA",
+        "IA",
+        "ID",
+        "IL",
+        "IN",
+        "KS",
+        "KY",
+        "LA",
+        "MA",
+        "MD",
+        "ME",
+        "MI",
+        "MN",
+        "MO",
+        "MS",
+        "MT",
+        "NC",
+        "ND",
+        "NE",
+        "NH",
+        "NJ",
+        "NM",
+        "NY",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "PR",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "VA",
+        "VI",
+        "VT",
+        "WA",
+        "WI",
+        "WV",
+        "WY"
+      ],
+      "name": "Mega Millions",
+      "type": "multiStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 70,
+        "mainMustBeUnique": true,
+        "specialCount": 1,
+        "price": 2,
+        "specialRangeLower": 1,
+        "specialRangeUpper": 25,
+        "specialName": "Mega Ball"
+      },
+      "drawSchedule": "Tue/Fri 23:00 ET",
+      "payoutTable": [
+        {
+          "tierKey": "5+1",
+          "label": "5 + Mega Ball",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 302,575,350",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+0",
+          "label": "5 + 0",
+          "basePrize": 1000000,
+          "isJackpotTier": false,
+          "odds": "1 in 12,607,306",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4+1",
+          "label": "4 + Mega Ball",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": "1 in 931,001",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4+0",
+          "label": "4 + 0",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 38,792",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3+1",
+          "label": "3 + Mega Ball",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 14,547",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3+0",
+          "label": "3 + 0",
+          "basePrize": 10,
+          "isJackpotTier": false,
+          "odds": "1 in 606",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2+1",
+          "label": "2 + Mega Ball",
+          "basePrize": 10,
+          "isJackpotTier": false,
+          "odds": "1 in 693",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "1+1",
+          "label": "1 + Mega Ball",
+          "basePrize": 4,
+          "isJackpotTier": false,
+          "odds": "1 in 89",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "0+1",
+          "label": "0 + Mega Ball",
+          "basePrize": 2,
+          "isJackpotTier": false,
+          "odds": "1 in 37",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/mega-millions/latest.json",
+        "cachePath": "live/mega-millions/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": 10,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": 10,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "mainNumbersField": "white_balls",
+        "specialNumbers": {
+          "field": "mega_ball",
+          "wrapScalar": true
+        },
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "current_prize_pool",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "directField",
+          "field": "current_cash_value",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "directField",
+          "field": "next_prize_pool",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "directField",
+          "field": "next_cash_value",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": {
+          "mode": "singleDivision",
+          "field": "jackpot_winners",
+          "countMode": null,
+          "tierKeyRemap": null,
+          "divisionKey": null,
+          "tierKeyTemplate": "{mainCount}+1",
+          "nearMissTier": {
+            "textField": "match5_winner_text",
+            "containsText": "match 5",
+            "tierKeyTemplate": "{mainCount}+0",
+            "countField": "match5_locations"
+          }
+        }
+      }
+    },
+    {
+      "id": "millionaire-for-life",
+      "stateCodes": [
+        "AR",
+        "CO",
+        "CT",
+        "DC",
+        "GA",
+        "ID",
+        "IA",
+        "IN",
+        "KS",
+        "KY",
+        "MA",
+        "ME",
+        "MI",
+        "MS",
+        "MT",
+        "NC",
+        "ND",
+        "NE",
+        "NH",
+        "NJ",
+        "NY",
+        "OH",
+        "OK",
+        "PA",
+        "RI",
+        "SD",
+        "TN",
+        "VA",
+        "VT",
+        "WV",
+        "WY"
+      ],
+      "name": "Millionaire for Life",
+      "type": "multiStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 58,
+        "mainMustBeUnique": true,
+        "specialCount": 1,
+        "price": 5,
+        "specialRangeLower": 1,
+        "specialRangeUpper": 5,
+        "specialName": "Millionaire Ball",
+        "addOns": []
+      },
+      "drawSchedule": "Nightly at 11:15 PM Eastern Time.",
+      "payoutTable": [
+        {
+          "tierKey": "5+1",
+          "label": "Top Prize",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+0",
+          "label": "Match 5",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The top prize is $1 million a year for life; the second prize is $100,000 a year for life. Both can be taken as a lump-sum cash option instead of the annuity.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/millionaire-for-life/latest.json",
+        "cachePath": "live/millionaire-for-life/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "EEE, MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_drawing.next_draw_date",
+          "dateFormat": "EEE, MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "mainNumbersField": "white_balls",
+        "specialNumbers": {
+          "field": "millionaire_ball",
+          "wrapScalar": true
+        },
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "next_drawing.top_prize",
+          "moneyFormat": "leadingNumber",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "directField",
+          "field": "next_drawing.cash_option",
+          "moneyFormat": "leadingNumber",
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "directField",
+          "field": "next_drawing.top_prize",
+          "moneyFormat": "leadingNumber",
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "directField",
+          "field": "next_drawing.cash_option",
+          "moneyFormat": "leadingNumber",
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": {
+          "mode": "dictionaryByTierName",
+          "field": "winners_by_tier",
+          "countMode": "plain",
+          "tierKeyRemap": {
+            "Top Prize": "{mainCount}+1"
+          },
+          "divisionKey": null,
+          "tierKeyTemplate": null,
+          "nearMissTier": null
+        }
+      }
+    },
+    {
+      "id": "2by2",
+      "stateCodes": [
+        "KS",
+        "NE",
+        "ND",
+        "WY"
+      ],
+      "name": "2by2",
+      "type": "multiStateJackpot",
+      "pickRule": {
+        "mainCount": 2,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 26,
+        "mainMustBeUnique": true,
+        "specialCount": 2,
+        "price": 1,
+        "specialRangeLower": 1,
+        "specialRangeUpper": 26,
+        "specialName": "Red Ball",
+        "addOns": []
+      },
+      "drawSchedule": "Daily, Monday through Sunday.",
+      "payoutTable": [
+        {
+          "tierKey": "2+2",
+          "label": "Match 4",
+          "basePrize": 22000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2+1",
+          "label": "Match 3",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "1+1",
+          "label": "Match 2",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Match all four numbers to win the top prize of $22,000. The 2by2 Tuesday feature doubles all Tuesday prizes to $44,000 for eligible multi-draw tickets.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/2by2/latest.json",
+        "cachePath": "live/2by2/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "EEE, MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 22,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_drawing.next_draw_date",
+          "dateFormat": "EEE, MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 22,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "mainNumbersField": "white_balls",
+        "specialNumbers": {
+          "field": "red_balls",
+          "wrapScalar": false
+        },
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "next_drawing.top_prize",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "directField",
+          "field": "next_drawing.top_prize",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": {
+          "mode": "dictionaryByTierName",
+          "field": "winners_by_tier",
+          "countMode": "plain",
+          "tierKeyRemap": {
+            "Top Prize": "{mainCount}+{specialCount}"
+          },
+          "divisionKey": null,
+          "tierKeyTemplate": null,
+          "nearMissTier": null
+        }
+      }
+    }
+  ]
+}
