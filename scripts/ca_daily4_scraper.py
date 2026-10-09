@@ -50,6 +50,9 @@ class Daily4Result:
     draw_date: str
     draw_number: Optional[str]
     digits: list[int]
+    session: str  # 恒为"evening"——Daily 4一天只开一次(晚上)，这个字段只是为了
+    # 复用App那边给Pick3/4式"一天两场"游戏写的通用session过滤解析逻辑，不代表
+    # 真的有Midday场
     tiers: list[dict]
     fetched_at: str
     source_url: str
@@ -101,6 +104,7 @@ def fetch() -> Daily4Result:
                 draw_date=draw_date,
                 draw_number=draw_number,
                 digits=digits,
+                session="evening",
                 tiers=tiers,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
