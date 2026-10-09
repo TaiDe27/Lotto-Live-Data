@@ -1,0 +1,38 @@
+[
+  {
+    "game": "Fantasy 5",
+    "draw_date": "THU/OCT 8, 2026",
+    "draw_number": "12024",
+    "numbers": [
+      7,
+      10,
+      25,
+      32,
+      33
+    ],
+    "tiers": [
+      {
+        "label": "Matched 5 of 5 numbers",
+        "winners": 2,
+        "prize": "$156,839"
+      },
+      {
+        "label": "Matched 4 of 5 numbers",
+        "winners": 234,
+        "prize": "$402"
+      },
+      {
+        "label": "Matched 3 of 5 numbers",
+        "winners": 7857,
+        "prize": "$14"
+      },
+      {
+        "label": "Matched 2 of 5 numbers",
+        "winners": 86031,
+        "prize": "Free play"
+      }
+    ],
+    "fetched_at": "2026-10-09T12:41:39.602632+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/fantasy-5"
+  }
+]
