@@ -1,0 +1,37 @@
+[
+  {
+    "game": "Daily 4",
+    "draw_date": "THU/OCT 8, 2026",
+    "draw_number": "6717",
+    "digits": [
+      3,
+      8,
+      9,
+      9
+    ],
+    "tiers": [
+      {
+        "label": "Straight",
+        "winners": 1,
+        "prize": "$7,620"
+      },
+      {
+        "label": "Box",
+        "winners": 12,
+        "prize": "$608"
+      },
+      {
+        "label": "Straight and Box",
+        "winners": 4,
+        "prize": "$4,115"
+      },
+      {
+        "label": "Box Only",
+        "winners": 46,
+        "prize": "$304"
+      }
+    ],
+    "fetched_at": "2026-10-09T12:41:50.187422+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-4"
+  }
+]
