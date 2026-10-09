@@ -685,6 +685,702 @@
           "nearMissTier": null
         }
       }
+    },
+    {
+      "id": "ar-lotto",
+      "stateCodes": [
+        "AR"
+      ],
+      "name": "LOTTO",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 6,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 40,
+        "mainMustBeUnique": true,
+        "specialCount": 1,
+        "specialRangeLower": 1,
+        "specialRangeUpper": 40,
+        "specialName": "Bonus",
+        "price": 2
+      },
+      "drawSchedule": "Wed/Sat 21:00 CT",
+      "payoutTable": [
+        {
+          "tierKey": "6+1",
+          "label": "6 of 6",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 3,838,380",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+1",
+          "label": "5 + Bonus",
+          "basePrize": 25000,
+          "isJackpotTier": false,
+          "odds": "1 in 639,730",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+0",
+          "label": "5 of 6",
+          "basePrize": 1500,
+          "isJackpotTier": false,
+          "odds": "1 in 19,386",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4+1",
+          "label": "4 + Bonus",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 7,754",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4+0",
+          "label": "4 of 6",
+          "basePrize": 25,
+          "isJackpotTier": false,
+          "odds": "1 in 485",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3+1",
+          "label": "3 + Bonus",
+          "basePrize": 10,
+          "isJackpotTier": false,
+          "odds": "1 in 364",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3+0",
+          "label": "3 of 6",
+          "basePrize": 2,
+          "isJackpotTier": false,
+          "odds": "1 in 35",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2+1",
+          "label": "2 + Bonus",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": "1 in 47",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $250,000 and grows until won.",
+      "overallOddsText": "Overall Odds: 1 in 18.3",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/lotto/latest.json",
+        "cachePath": "live/ar-lotto/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": {
+          "field": "bonus_number",
+          "wrapScalar": true
+        },
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": null
+    },
+    {
+      "id": "ar-natural-state-jackpot",
+      "stateCodes": [
+        "AR"
+      ],
+      "name": "Natural State Jackpot",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 39,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 20:00 CT",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 575,757",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": 300,
+          "isJackpotTier": false,
+          "odds": "1 in 3,387",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": 7,
+          "isJackpotTier": false,
+          "odds": "1 in 103",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 1,
+          "isJackpotTier": false,
+          "odds": "1 in 10",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $50,000 and grows until won.",
+      "overallOddsText": "Overall Odds: 1 in 9",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/natural-state-jackpot/latest.json",
+        "cachePath": "live/ar-natural-state-jackpot/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": null
+    },
+    {
+      "id": "ar-cash3-midday",
+      "stateCodes": [
+        "AR"
+      ],
+      "name": "Cash 3 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Mon-Sat 12:59 CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Any Order, 3-way box (two digits the same)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 166.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-3/latest.json",
+        "cachePath": "live/ar-cash3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ar-cash3-evening",
+      "stateCodes": [
+        "AR"
+      ],
+      "name": "Cash 3 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 18:59 CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Any Order, 3-way box (two digits the same)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 166.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-3/latest.json",
+        "cachePath": "live/ar-cash3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ar-cash4-midday",
+      "stateCodes": [
+        "AR"
+      ],
+      "name": "Cash 4 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Mon-Sat 12:59 CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Any Order, 4-way box (three digits the same)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box (two pairs)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,666.67",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Any Order, 12-way box (one pair)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Any Order, 24-way box (four unique digits)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 416.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-4/latest.json",
+        "cachePath": "live/ar-cash4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ar-cash4-evening",
+      "stateCodes": [
+        "AR"
+      ],
+      "name": "Cash 4 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 18:59 CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Any Order, 4-way box (three digits the same)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box (two pairs)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,666.67",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Any Order, 12-way box (one pair)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Any Order, 24-way box (four unique digits)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 416.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-4/latest.json",
+        "cachePath": "live/ar-cash4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "MMM d, yyyy",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
     }
   ]
 }
