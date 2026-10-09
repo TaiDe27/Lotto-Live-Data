@@ -35,6 +35,12 @@ from typing import Optional
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ca_superlotto_plus_scraper")
 
+def iso_date(raw: str) -> str:
+    """"WED/OCT 7, 2026" -> "2026-10-07" — calottery.com's own date text, normalized to the
+    same ISO yyyy-MM-dd shape every other scraper in this repo already emits."""
+    import datetime as _dt
+    return _dt.datetime.strptime(raw, "%a/%b %d, %Y").strftime("%Y-%m-%d")
+
 URL = "https://www.calottery.com/en/draw-games/superlotto-plus"
 # calottery.com 对这份代码库其他脚本一直用的"诚实身份"UA
 # (LottoLiveApp/0.1 ...) 做了过滤——确认过是 200 状态码但返回一个假的
@@ -66,6 +72,7 @@ class SuperLottoPlusResult:
     draw_number: Optional[str]
     main_numbers: list[int]  # 5个
     mega_number: Optional[int]
+    jackpot_amount: Optional[str]  # 奖级表第一行("5 + Mega")的奖金，原样保留如"$61,000,000"
     tiers: list[dict]
     fetched_at: str
     source_url: str
@@ -91,7 +98,7 @@ def fetch() -> SuperLottoPlusResult:
                 raise ValueError("页面里没找到 winningNumbers 开奖卡片")
 
             date_el = card.select_one(".draw-cards--draw-date")
-            draw_date = date_el.get_text(strip=True) if date_el else None
+            draw_date = iso_date(date_el.get_text(strip=True)) if date_el else None
             num_el = card.select_one(".draw-cards--draw-number")
             draw_number = num_el.get_text(strip=True).replace("Draw #", "") if num_el else None
 
@@ -120,6 +127,8 @@ def fetch() -> SuperLottoPlusResult:
                     winners = int(re.sub(r"[^\d]", "", winners_text) or 0)
                     tiers.append(dataclasses.asdict(TierResult(label=label, winners=winners, prize=prize)))
 
+            jackpot_amount = tiers[0]["prize"] if tiers else None
+
             if not main_numbers or not draw_date:
                 raise ValueError(f"解析出的数据不完整: main_numbers={main_numbers} draw_date={draw_date}")
 
@@ -129,6 +138,7 @@ def fetch() -> SuperLottoPlusResult:
                 draw_number=draw_number,
                 main_numbers=main_numbers,
                 mega_number=mega_number,
+                jackpot_amount=jackpot_amount,
                 tiers=tiers,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,

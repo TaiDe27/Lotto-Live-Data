@@ -22,6 +22,12 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ca_daily3_scraper")
 
+def iso_date(raw: str) -> str:
+    """"WED/OCT 7, 2026" -> "2026-10-07" — calottery.com's own date text, normalized to the
+    same ISO yyyy-MM-dd shape every other scraper in this repo already emits."""
+    import datetime as _dt
+    return _dt.datetime.strptime(raw, "%a/%b %d, %Y").strftime("%Y-%m-%d")
+
 URL = "https://www.calottery.com/en/draw-games/daily-3"
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
@@ -67,7 +73,7 @@ def fetch() -> list[Daily3Result]:
                 m = re.match(r"(.+?)\s*-\s*(EVENING|MIDDAY)", raw_text, re.I)
                 if not m:
                     continue
-                draw_date, session_label = m.group(1).strip(), m.group(2).upper()
+                draw_date, session_label = iso_date(m.group(1).strip()), m.group(2).upper()
                 session = "evening" if session_label == "EVENING" else "midday"
 
                 num_p = date_p.find_next_sibling("p", class_="draw-cards--draw-number")

@@ -19,6 +19,14 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ar_cash3_scraper")
 
+def iso_date(raw: str) -> str:
+    """"Oct 7, 2026" -> "2026-10-07" — lotteryusa.com's own date text, normalized to the same
+    ISO yyyy-MM-dd shape every other scraper in this repo already emits, so the App's existing
+    `parseLocalDate`/`DateRule` machinery (and `LiveMappingRule`'s own "yyyy-MM-dd" dateFormat)
+    can parse this without a bespoke format just for these four scrapers."""
+    import datetime as _dt
+    return _dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
+
 URLS = {
     "evening": "https://www.lotteryusa.com/arkansas/cash-3/",
     "midday": "https://www.lotteryusa.com/arkansas/midday-cash-3/",
@@ -66,7 +74,7 @@ def fetch_session(session: str) -> list[Cash3Result]:
                 date_el = row.select_one(".c-draw-card__draw-date-sub")
                 if not date_el:
                     continue
-                draw_date = date_el.get_text(strip=True)
+                draw_date = iso_date(date_el.get_text(strip=True))
                 balls = row.select(".c-draw-card__ball-list > li.c-ball")
                 digits = [int(b.get_text(strip=True)) for b in balls]
                 results.append(Cash3Result(

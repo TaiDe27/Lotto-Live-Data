@@ -21,6 +21,12 @@ from typing import Optional
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ca_daily4_scraper")
 
+def iso_date(raw: str) -> str:
+    """"WED/OCT 7, 2026" -> "2026-10-07" — calottery.com's own date text, normalized to the
+    same ISO yyyy-MM-dd shape every other scraper in this repo already emits."""
+    import datetime as _dt
+    return _dt.datetime.strptime(raw, "%a/%b %d, %Y").strftime("%Y-%m-%d")
+
 URL = "https://www.calottery.com/en/draw-games/daily-4"
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
@@ -68,7 +74,7 @@ def fetch() -> Daily4Result:
                 raise ValueError("页面里没找到 winningNumbers 开奖卡片")
 
             date_el = card.select_one(".draw-cards--draw-date")
-            draw_date = date_el.get_text(strip=True) if date_el else None
+            draw_date = iso_date(date_el.get_text(strip=True)) if date_el else None
             num_el = card.select_one(".draw-cards--draw-number")
             draw_number = num_el.get_text(strip=True).replace("Draw #", "").strip() if num_el else None
 

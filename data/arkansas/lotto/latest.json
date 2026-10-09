@@ -1,6 +1,166 @@
 [
   {
     "game": "Arkansas LOTTO",
+    "draw_date": "2026-10-07",
+    "numbers": [
+      7,
+      10,
+      11,
+      15,
+      28,
+      31
+    ],
+    "bonus_number": 39,
+    "jackpot_amount": "2.74 Million",
+    "fetched_at": "2026-10-09T13:01:26.699762+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-10-03",
+    "numbers": [
+      3,
+      4,
+      6,
+      17,
+      27,
+      39
+    ],
+    "bonus_number": 28,
+    "jackpot_amount": "2.71 Million",
+    "fetched_at": "2026-10-09T13:01:26.701924+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-30",
+    "numbers": [
+      5,
+      7,
+      13,
+      19,
+      27,
+      34
+    ],
+    "bonus_number": 16,
+    "jackpot_amount": "2.68 Million",
+    "fetched_at": "2026-10-09T13:01:26.703957+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-26",
+    "numbers": [
+      2,
+      4,
+      25,
+      26,
+      38,
+      39
+    ],
+    "bonus_number": 14,
+    "jackpot_amount": "2.65 Million",
+    "fetched_at": "2026-10-09T13:01:26.705818+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-23",
+    "numbers": [
+      4,
+      8,
+      17,
+      23,
+      28,
+      34
+    ],
+    "bonus_number": 2,
+    "jackpot_amount": "2.62 Million",
+    "fetched_at": "2026-10-09T13:01:26.707783+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-19",
+    "numbers": [
+      6,
+      24,
+      28,
+      30,
+      33,
+      35
+    ],
+    "bonus_number": 2,
+    "jackpot_amount": "2.59 Million",
+    "fetched_at": "2026-10-09T13:01:26.709673+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-16",
+    "numbers": [
+      8,
+      15,
+      19,
+      33,
+      38,
+      40
+    ],
+    "bonus_number": 31,
+    "jackpot_amount": "2.55 Million",
+    "fetched_at": "2026-10-09T13:01:26.711757+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-12",
+    "numbers": [
+      3,
+      6,
+      18,
+      21,
+      25,
+      27
+    ],
+    "bonus_number": 12,
+    "jackpot_amount": "2.52 Million",
+    "fetched_at": "2026-10-09T13:01:26.713636+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-09",
+    "numbers": [
+      4,
+      9,
+      20,
+      21,
+      34,
+      36
+    ],
+    "bonus_number": 2,
+    "jackpot_amount": "2.49 Million",
+    "fetched_at": "2026-10-09T13:01:26.715456+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-09-05",
+    "numbers": [
+      1,
+      6,
+      9,
+      15,
+      27,
+      28
+    ],
+    "bonus_number": 40,
+    "jackpot_amount": "2.45 Million",
+    "fetched_at": "2026-10-09T13:01:26.717289+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
     "draw_date": "Oct 7, 2026",
     "numbers": [
       7,

@@ -19,6 +19,12 @@ from typing import Optional
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ca_fantasy5_scraper")
 
+def iso_date(raw: str) -> str:
+    """"WED/OCT 7, 2026" -> "2026-10-07" — calottery.com's own date text, normalized to the
+    same ISO yyyy-MM-dd shape every other scraper in this repo already emits."""
+    import datetime as _dt
+    return _dt.datetime.strptime(raw, "%a/%b %d, %Y").strftime("%Y-%m-%d")
+
 URL = "https://www.calottery.com/en/draw-games/fantasy-5"
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
@@ -42,6 +48,7 @@ class Fantasy5Result:
     draw_date: str
     draw_number: Optional[str]
     numbers: list[int]
+    jackpot_amount: Optional[str]  # 奖级表第一行("Matched 5 of 5 numbers")的奖金
     tiers: list[dict]
     fetched_at: str
     source_url: str
@@ -66,7 +73,7 @@ def fetch() -> Fantasy5Result:
                 raise ValueError("页面里没找到 winningNumbers 开奖卡片")
 
             date_el = card.select_one(".draw-cards--draw-date")
-            draw_date = date_el.get_text(strip=True) if date_el else None
+            draw_date = iso_date(date_el.get_text(strip=True)) if date_el else None
             num_el = card.select_one(".draw-cards--draw-number")
             draw_number = num_el.get_text(strip=True).replace("Draw #", "") if num_el else None
 
@@ -86,6 +93,8 @@ def fetch() -> Fantasy5Result:
                     winners = int(re.sub(r"[^\d]", "", winners_text) or 0)
                     tiers.append(dataclasses.asdict(TierResult(label=label, winners=winners, prize=prize)))
 
+            jackpot_amount = tiers[0]["prize"] if tiers else None
+
             if not numbers or not draw_date:
                 raise ValueError(f"解析出的数据不完整: numbers={numbers} draw_date={draw_date}")
 
@@ -94,6 +103,7 @@ def fetch() -> Fantasy5Result:
                 draw_date=draw_date,
                 draw_number=draw_number,
                 numbers=numbers,
+                jackpot_amount=jackpot_amount,
                 tiers=tiers,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,

@@ -648,7 +648,7 @@
         "sessionFilter": null,
         "drawDate": {
           "field": "draw_date",
-          "dateFormat": "EEE/MMM d, yyyy",
+          "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Los_Angeles",
           "anchorHour": 19,
@@ -664,9 +664,9 @@
         },
         "winningTeamsField": null,
         "jackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
           "guardField": null
         },
         "cashValue": {
@@ -742,7 +742,7 @@
         "sessionFilter": null,
         "drawDate": {
           "field": "draw_date",
-          "dateFormat": "EEE/MMM d, yyyy",
+          "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Los_Angeles",
           "anchorHour": 18,
@@ -755,9 +755,9 @@
         "specialNumbers": null,
         "winningTeamsField": null,
         "jackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
           "guardField": null
         },
         "cashValue": {
@@ -837,7 +837,7 @@
         },
         "drawDate": {
           "field": "draw_date",
-          "dateFormat": "EEE/MMM d, yyyy",
+          "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Los_Angeles",
           "anchorHour": 13,
@@ -942,7 +942,7 @@
         },
         "drawDate": {
           "field": "draw_date",
-          "dateFormat": "EEE/MMM d, yyyy",
+          "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Los_Angeles",
           "anchorHour": 18,
@@ -1060,7 +1060,7 @@
         "sessionFilter": null,
         "drawDate": {
           "field": "draw_date",
-          "dateFormat": "EEE/MMM d, yyyy",
+          "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Los_Angeles",
           "anchorHour": 18,

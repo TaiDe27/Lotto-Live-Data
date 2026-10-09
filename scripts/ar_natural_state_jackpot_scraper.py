@@ -18,6 +18,14 @@ from typing import Optional
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ar_natural_state_jackpot_scraper")
 
+def iso_date(raw: str) -> str:
+    """"Oct 7, 2026" -> "2026-10-07" — lotteryusa.com's own date text, normalized to the same
+    ISO yyyy-MM-dd shape every other scraper in this repo already emits, so the App's existing
+    `parseLocalDate`/`DateRule` machinery (and `LiveMappingRule`'s own "yyyy-MM-dd" dateFormat)
+    can parse this without a bespoke format just for these four scrapers."""
+    import datetime as _dt
+    return _dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
+
 URL = "https://www.lotteryusa.com/arkansas/natural-state-jackpot/"
 USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
 REQUEST_TIMEOUT_SEC = 15
@@ -69,7 +77,7 @@ def fetch() -> list[NSJResult]:
                 date_el = row.select_one(".c-draw-card__draw-date-sub")
                 if not date_el:
                     continue
-                draw_date = date_el.get_text(strip=True)
+                draw_date = iso_date(date_el.get_text(strip=True))
 
                 balls = row.select(".c-draw-card__ball-list > li.c-ball")
                 numbers = [int(b.get_text(strip=True)) for b in balls]
