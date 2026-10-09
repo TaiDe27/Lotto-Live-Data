@@ -1,0 +1,48 @@
+name: Scrape California SuperLotto Plus
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run California SuperLotto Plus scraper
+        run: python3 scripts/ca_superlotto_plus_scraper.py
+      - name: Commit and push if changed
+        run: |
+          git config user.name "lotto-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "没有变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "Update California SuperLotto Plus data $(date -u +%Y-%m-%d)"
+
+          max_retries=2
+          attempt=0
+          until git push; do
+            attempt=$((attempt + 1))
+            if [ "$attempt" -gt "$max_retries" ]; then
+              echo "::error::git push failed after $max_retries retries (push race with another workflow)"
+              exit 1
+            fi
+            wait_seconds=$(( (RANDOM % 241) + 60 ))
+            echo "git push rejected (likely a race with another workflow) - retry ${attempt}/${max_retries} in ${wait_seconds}s"
+            sleep "$wait_seconds"
+            git pull --rebase origin main
+          done
+      - name: Purge jsDelivr cache
+        run: |
+          REPO="${{ github.repository }}"
+          curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/california/superlotto-plus/latest.json"
