@@ -685,6 +685,1065 @@
           "nearMissTier": null
         }
       }
+    },
+    {
+      "id": "ga-cash3-midday",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Cash 3 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 12:29 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/cash3/latest.json",
+        "cachePath": "live/ga-cash3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-cash4-midday",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Cash 4 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 12:29 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/cash4/latest.json",
+        "cachePath": "live/ga-cash4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-cash3-evening",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Cash 3 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 18:59 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/cash3/latest.json",
+        "cachePath": "live/ga-cash3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-cash4-evening",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Cash 4 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 18:59 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/cash4/latest.json",
+        "cachePath": "live/ga-cash4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-cash3-night",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Cash 3 (Night)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 23:34 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/cash3/latest.json",
+        "cachePath": "live/ga-cash3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "night"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-cash4-night",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Cash 4 (Night)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 23:34 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/cash4/latest.json",
+        "cachePath": "live/ga-cash4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "night"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-georgia-five-midday",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Georgia Five (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 12:29 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Box (5-way)",
+          "basePrize": 2000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Box (10-way)",
+          "basePrize": 1000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Box (20-way)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Box (30-way)",
+          "basePrize": 340,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Box (60-way)",
+          "basePrize": 170,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Box (120-way)",
+          "basePrize": 85,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Straight prize ($10,000) confirmed from the live API; box-tier prizes use an estimated scaling since Georgia's own box-tier figures weren't confirmed from the site.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/georgia-five/latest.json",
+        "cachePath": "live/ga-georgia-five/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-georgia-five-evening",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Georgia Five (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 18:59 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Box (5-way)",
+          "basePrize": 2000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Box (10-way)",
+          "basePrize": 1000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Box (20-way)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Box (30-way)",
+          "basePrize": 340,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Box (60-way)",
+          "basePrize": 170,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Box (120-way)",
+          "basePrize": 85,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Straight prize ($10,000) confirmed from the live API; box-tier prizes use an estimated scaling since Georgia's own box-tier figures weren't confirmed from the site.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/georgia-five/latest.json",
+        "cachePath": "live/ga-georgia-five/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ga-fantasy5",
+      "stateCodes": [
+        "GA"
+      ],
+      "name": "Fantasy 5",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 42,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 23:34 ET",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": 6,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 1,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $100,000 and grows until it's won.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/georgia/fantasy5/latest.json",
+        "cachePath": "live/ga-fantasy5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 34,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
     }
   ]
 }
