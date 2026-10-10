@@ -671,7 +671,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -740,6 +740,1455 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      }
+    },
+    {
+      "id": "fl-lotto",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Florida Lotto",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 6,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 53,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 2
+      },
+      "drawSchedule": "Wed/Sat 23:15 ET",
+      "payoutTable": [
+        {
+          "tierKey": "6",
+          "label": "6 of 6",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 22,957,480",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5",
+          "label": "5 of 6",
+          "basePrize": 6000,
+          "isJackpotTier": false,
+          "odds": "1 in 81,194",
+          "multiplierPrizes": {
+            "3": 9000,
+            "4": 12000,
+            "5": 15000,
+            "10": 30000
+          }
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 6",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": "1 in 924",
+          "multiplierPrizes": {
+            "3": 150,
+            "4": 200,
+            "5": 250,
+            "10": 500
+          }
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 6",
+          "basePrize": 10,
+          "isJackpotTier": false,
+          "odds": "1 in 35",
+          "multiplierPrizes": {
+            "3": 15,
+            "4": 20,
+            "5": 25,
+            "10": 50
+          }
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 6",
+          "basePrize": 0,
+          "isJackpotTier": false,
+          "odds": "1 in 8",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "The 5/4/3-of-6 prizes are randomly multiplied 2x-10x per winning ticket (shown here is the 2x base); 2-of-6 wins a free Quick Pick ticket, not cash.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/lotto/latest.json",
+        "cachePath": "live/fl-lotto/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "fl-jackpot-triple-play",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Jackpot Triple Play",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 6,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 46,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Tue/Fri 23:15 ET",
+      "payoutTable": [
+        {
+          "tierKey": "6",
+          "label": "6 of 6",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 6,724,520",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5",
+          "label": "5 of 6",
+          "basePrize": 870,
+          "isJackpotTier": false,
+          "odds": "1 in 29,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 6",
+          "basePrize": 21,
+          "isJackpotTier": false,
+          "odds": "1 in 629",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 6",
+          "basePrize": 1,
+          "isJackpotTier": false,
+          "odds": "1 in 35",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Jackpot starts at $250,000 and grows until won; three number sets (Lines A/B/C) are generated per play, each a separate entry into every tier.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/jackpot-triple-play/latest.json",
+        "cachePath": "live/fl-jackpot-triple-play/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "fl-fantasy5-midday",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Fantasy 5 (Midday)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 36,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:05 ET",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 376,992",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 2,383",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 83",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 0,
+          "isJackpotTier": false,
+          "odds": "1 in 10",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "5/4/3-of-5 prizes are pari-mutuel (shared among winners, varies by draw); 2-of-5 wins a free Quick Pick ticket.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/fantasy5/latest.json",
+        "cachePath": "live/fl-fantasy5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 13,
+          "anchorMinute": 5,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "fl-fantasy5-evening",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Fantasy 5 (Evening)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 36,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 23:15 ET",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 376,992",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 2,383",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 83",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 0,
+          "isJackpotTier": false,
+          "odds": "1 in 10",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "5/4/3-of-5 prizes are pari-mutuel (shared among winners, varies by draw); 2-of-5 wins a free Quick Pick ticket.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/fantasy5/latest.json",
+        "cachePath": "live/fl-fantasy5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "fl-pick2-midday",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 2 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 2,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:30 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box2way",
+          "label": "Any Order",
+          "basePrize": 25,
+          "isJackpotTier": false,
+          "odds": "1 in 50",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick2/latest.json",
+        "cachePath": "live/fl-pick2/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "fl-pick2-evening",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 2 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 2,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 21:45 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box2way",
+          "label": "Any Order",
+          "basePrize": 25,
+          "isJackpotTier": false,
+          "odds": "1 in 50",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick2/latest.json",
+        "cachePath": "live/fl-pick2/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "fl-pick3-midday",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 3 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:30 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Any Order, 3-way box",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 166.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick3/latest.json",
+        "cachePath": "live/fl-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "fl-pick3-evening",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 3 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 21:45 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Any Order, 3-way box",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 166.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick3/latest.json",
+        "cachePath": "live/fl-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "fl-pick4-midday",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 4 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:30 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Any Order, 4-way box",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,666.67",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Any Order, 12-way box",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Any Order, 24-way box",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 416.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick4/latest.json",
+        "cachePath": "live/fl-pick4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "fl-pick4-evening",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 4 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 21:45 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Any Order, 4-way box",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Any Order, 6-way box",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,666.67",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Any Order, 12-way box",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Any Order, 24-way box",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 416.67",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick4/latest.json",
+        "cachePath": "live/fl-pick4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "fl-pick5-midday",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 5 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:30 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 50000,
+          "isJackpotTier": false,
+          "odds": "1 in 100,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Any Order, 5-way box",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": "1 in 20,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Any Order, 10-way box",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Any Order, 20-way box",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": "1 in 5,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Any Order, 30-way box",
+          "basePrize": 1700,
+          "isJackpotTier": false,
+          "odds": "1 in 3,333.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Any Order, 60-way box",
+          "basePrize": 850,
+          "isJackpotTier": false,
+          "odds": "1 in 1,666.67",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Any Order, 120-way box",
+          "basePrize": 425,
+          "isJackpotTier": false,
+          "odds": "1 in 833.33",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick5/latest.json",
+        "cachePath": "live/fl-pick5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "fl-pick5-evening",
+      "stateCodes": [
+        "FL"
+      ],
+      "name": "Pick 5 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 21:45 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Exact Order (Straight)",
+          "basePrize": 50000,
+          "isJackpotTier": false,
+          "odds": "1 in 100,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Any Order, 5-way box",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": "1 in 20,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Any Order, 10-way box",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Any Order, 20-way box",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": "1 in 5,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Any Order, 30-way box",
+          "basePrize": 1700,
+          "isJackpotTier": false,
+          "odds": "1 in 3,333.33",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Any Order, 60-way box",
+          "basePrize": 850,
+          "isJackpotTier": false,
+          "odds": "1 in 1,666.67",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Any Order, 120-way box",
+          "basePrize": 425,
+          "isJackpotTier": false,
+          "odds": "1 in 833.33",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown are for a $1 play; optional Fireball add-on (extra drawn digit that can substitute into your combo) doubles the wager.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/pick5/latest.json",
+        "cachePath": "live/fl-pick5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "midday": 12,
+            "evening": 19
+          },
+          "sessionField": "next_session"
+        },
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
       }
     }
   ]

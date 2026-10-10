@@ -671,7 +671,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -879,6 +879,448 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      }
+    },
+    {
+      "id": "co-lotto-plus",
+      "stateCodes": [
+        "CO"
+      ],
+      "name": "Colorado Lotto+",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 6,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 40,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 2
+      },
+      "drawSchedule": "Mon/Wed/Sat 19:35 MT",
+      "payoutTable": [
+        {
+          "tierKey": "6",
+          "label": "6 of 6",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 3,838,380",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5",
+          "label": "5 of 6",
+          "basePrize": 250,
+          "isJackpotTier": false,
+          "odds": "1 in 18,816",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 6",
+          "basePrize": 25,
+          "isJackpotTier": false,
+          "odds": "1 in 456",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 6",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": "1 in 32",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $1 million and grows until it's won.",
+      "overallOddsText": "Overall Odds: 1 in 30",
+      "payoutNote": "An optional $1 Plus add-on buys a second, separate drawing with its own prize table (up to $250,000) — not modeled here.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/colorado/lotto-plus/latest.json",
+        "cachePath": "live/co-lotto-plus/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 19,
+          "anchorMinute": 35,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "co-cash5",
+      "stateCodes": [
+        "CO"
+      ],
+      "name": "Cash 5",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 32,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:35 MT",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 201,376",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 1,492",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": 10,
+          "isJackpotTier": false,
+          "odds": "1 in 57",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 1,
+          "isJackpotTier": false,
+          "odds": "1 in 7",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Top prize starts at $20,000 and grows until it's won.",
+      "overallOddsText": "Overall Odds: 1 in 6.2",
+      "payoutNote": "An optional EZ Match add-on offers instant-win prizes from $2 to $500 — not modeled here.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/colorado/cash5/latest.json",
+        "cachePath": "live/co-cash5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 19,
+          "anchorMinute": 35,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "co-pick3-midday",
+      "stateCodes": [
+        "CO"
+      ],
+      "name": "Pick 3 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:30 MT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "frontpair",
+          "label": "Front Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "backpair",
+          "label": "Back Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/colorado/pick3/latest.json",
+        "cachePath": "live/co-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "co-pick3-evening",
+      "stateCodes": [
+        "CO"
+      ],
+      "name": "Pick 3 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:30 MT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "frontpair",
+          "label": "Front Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "backpair",
+          "label": "Back Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/colorado/pick3/latest.json",
+        "cachePath": "live/co-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
       }
     }
   ]

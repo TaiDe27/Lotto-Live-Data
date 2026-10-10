@@ -671,7 +671,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -1066,6 +1066,558 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      }
+    },
+    {
+      "id": "idaho-cash",
+      "stateCodes": [
+        "ID"
+      ],
+      "name": "Idaho Cash",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 45,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 20:00 MT",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 0,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $20,000 and grows until it's won.",
+      "payoutNote": "2-of-5 wins a free ticket, not cash.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/idaho/idaho-cash/latest.json",
+        "cachePath": "live/idaho-cash/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "decimal",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "idaho-pick3-midday",
+      "stateCodes": [
+        "ID"
+      ],
+      "name": "Pick 3 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:59 MT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/idaho/pick3/latest.json",
+        "cachePath": "live/idaho-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "idaho-pick4-midday",
+      "stateCodes": [
+        "ID"
+      ],
+      "name": "Pick 4 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:59 MT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/idaho/pick4/latest.json",
+        "cachePath": "live/idaho-pick4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "idaho-pick3-evening",
+      "stateCodes": [
+        "ID"
+      ],
+      "name": "Pick 3 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:59 MT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/idaho/pick3/latest.json",
+        "cachePath": "live/idaho-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "idaho-pick4-evening",
+      "stateCodes": [
+        "ID"
+      ],
+      "name": "Pick 4 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:59 MT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/idaho/pick4/latest.json",
+        "cachePath": "live/idaho-pick4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
       }
     }
   ]

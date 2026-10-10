@@ -671,7 +671,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -1143,7 +1143,7 @@
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "Choose eight NFL team logos from all 32 teams. Match all eight to win the rolling cash jackpot, or match some to win a cash prize. Results are randomly drawn and not based on NFL game outcomes.",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "overallOddsText": "Overall Odds: 1 in 12.16",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-xo/latest.json",
@@ -1209,6 +1209,1156 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      }
+    },
+    {
+      "id": "dc3-day",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 3 (Day)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:50 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "frontpair",
+          "label": "Front Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "backpair",
+          "label": "Back Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc3/latest.json",
+        "cachePath": "live/dc3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "day"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "dc4-day",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 4 (Day)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:50 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "front3",
+          "label": "Front 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "back3",
+          "label": "Back 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc4/latest.json",
+        "cachePath": "live/dc4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "day"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "dc3-evening",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 3 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:50 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "frontpair",
+          "label": "Front Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "backpair",
+          "label": "Back Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc3/latest.json",
+        "cachePath": "live/dc3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "dc4-evening",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 4 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:50 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "front3",
+          "label": "Front 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "back3",
+          "label": "Back 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc4/latest.json",
+        "cachePath": "live/dc4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "dc3-night",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 3 (Night)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 23:30 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "frontpair",
+          "label": "Front Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "backpair",
+          "label": "Back Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 100",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc3/latest.json",
+        "cachePath": "live/dc3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "night"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "dc4-night",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 4 (Night)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 23:30 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "front3",
+          "label": "Front 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "back3",
+          "label": "Back 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc4/latest.json",
+        "cachePath": "live/dc4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "night"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "dc5-day",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 5 (Day)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:50 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 50000,
+          "isJackpotTier": false,
+          "odds": "1 in 100,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Box (5-way)",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": "1 in 20,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Box (10-way)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Box (20-way)",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": "1 in 5,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Box (30-way)",
+          "basePrize": 1700,
+          "isJackpotTier": false,
+          "odds": "1 in 3,333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Box (60-way)",
+          "basePrize": 850,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Box (120-way)",
+          "basePrize": 425,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "front4",
+          "label": "Front 4",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "back4",
+          "label": "Back 4",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "front3",
+          "label": "Front 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "back3",
+          "label": "Back 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "frontpair",
+          "label": "Front Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "backpair",
+          "label": "Back Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc5/latest.json",
+        "cachePath": "live/dc5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "day"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "dc5-evening",
+      "stateCodes": [
+        "DC"
+      ],
+      "name": "DC 5 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:50 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 50000,
+          "isJackpotTier": false,
+          "odds": "1 in 100,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Box (5-way)",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": "1 in 20,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Box (10-way)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Box (20-way)",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": "1 in 5,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Box (30-way)",
+          "basePrize": 1700,
+          "isJackpotTier": false,
+          "odds": "1 in 3,333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Box (60-way)",
+          "basePrize": 850,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Box (120-way)",
+          "basePrize": 425,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "front4",
+          "label": "Front 4",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "back4",
+          "label": "Back 4",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "front3",
+          "label": "Front 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "back3",
+          "label": "Back 3",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "frontpair",
+          "label": "Front Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "backpair",
+          "label": "Back Pair",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/dc/dc5/latest.json",
+        "cachePath": "live/dc5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
       }
     }
   ]

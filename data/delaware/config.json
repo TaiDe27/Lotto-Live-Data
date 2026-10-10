@@ -671,7 +671,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -1004,7 +1004,7 @@
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "Choose eight NFL team logos from all 32 teams. Match all eight to win the rolling cash jackpot, or match some to win a cash prize. Results are randomly drawn and not based on NFL game outcomes.",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "overallOddsText": "Overall Odds: 1 in 12.16",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-xo/latest.json",
@@ -1070,6 +1070,845 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      }
+    },
+    {
+      "id": "de-play3-day",
+      "stateCodes": [
+        "DE"
+      ],
+      "name": "Play 3 (Day)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:58 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown use the standard nationwide Pick 3 fixed-prize structure for a $1 Straight/Box play — Delaware's own Prizes & Odds page is an image chart, not text, so its real figures weren't confirmed.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/delaware/play-3/latest.json",
+        "cachePath": "live/de-play3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "day"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "de-play4-day",
+      "stateCodes": [
+        "DE"
+      ],
+      "name": "Play 4 (Day)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:58 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown use the standard nationwide Pick 4 fixed-prize structure for a $1 Straight/Box play — Delaware's own Prizes & Odds page is an image chart, not text, so its real figures weren't confirmed.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/delaware/play-4/latest.json",
+        "cachePath": "live/de-play4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "day"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "de-play5-day",
+      "stateCodes": [
+        "DE"
+      ],
+      "name": "Play 5 (Day)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 13:58 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 50000,
+          "isJackpotTier": false,
+          "odds": "1 in 100,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Box (5-way)",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": "1 in 20,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Box (10-way)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Box (20-way)",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": "1 in 5,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Box (30-way)",
+          "basePrize": 1700,
+          "isJackpotTier": false,
+          "odds": "1 in 3,333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Box (60-way)",
+          "basePrize": 850,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Box (120-way)",
+          "basePrize": 425,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown use the standard nationwide Pick 5 fixed-prize structure for a $1 Straight/Box play — Delaware's own Prizes & Odds page is an image chart, not text, so its real figures weren't confirmed.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/delaware/play-5/latest.json",
+        "cachePath": "live/de-play5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "day"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "de-play3-night",
+      "stateCodes": [
+        "DE"
+      ],
+      "name": "Play 3 (Night)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:57 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 1,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": "1 in 333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": "1 in 167",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown use the standard nationwide Pick 3 fixed-prize structure for a $1 Straight/Box play — Delaware's own Prizes & Odds page is an image chart, not text, so its real figures weren't confirmed.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/delaware/play-3/latest.json",
+        "cachePath": "live/de-play3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "night"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "6": "box6way",
+          "3": "box3way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "de-play4-night",
+      "stateCodes": [
+        "DE"
+      ],
+      "name": "Play 4 (Night)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:57 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": "1 in 2,500",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": "1 in 417",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown use the standard nationwide Pick 4 fixed-prize structure for a $1 Straight/Box play — Delaware's own Prizes & Odds page is an image chart, not text, so its real figures weren't confirmed.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/delaware/play-4/latest.json",
+        "cachePath": "live/de-play4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "night"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "24": "box24way",
+          "12": "box12way",
+          "6": "box6way",
+          "4": "box4way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "de-play5-night",
+      "stateCodes": [
+        "DE"
+      ],
+      "name": "Play 5 (Night)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 19:57 ET",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 50000,
+          "isJackpotTier": false,
+          "odds": "1 in 100,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box5way",
+          "label": "Box (5-way)",
+          "basePrize": 10000,
+          "isJackpotTier": false,
+          "odds": "1 in 20,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box10way",
+          "label": "Box (10-way)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": "1 in 10,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box20way",
+          "label": "Box (20-way)",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": "1 in 5,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box30way",
+          "label": "Box (30-way)",
+          "basePrize": 1700,
+          "isJackpotTier": false,
+          "odds": "1 in 3,333",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box60way",
+          "label": "Box (60-way)",
+          "basePrize": 850,
+          "isJackpotTier": false,
+          "odds": "1 in 1,667",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box120way",
+          "label": "Box (120-way)",
+          "basePrize": 425,
+          "isJackpotTier": false,
+          "odds": "1 in 833",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prizes shown use the standard nationwide Pick 5 fixed-prize structure for a $1 Straight/Box play — Delaware's own Prizes & Odds page is an image chart, not text, so its real figures weren't confirmed.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/delaware/play-5/latest.json",
+        "cachePath": "live/de-play5/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "night"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "120": "box120way",
+          "60": "box60way",
+          "30": "box30way",
+          "20": "box20way",
+          "10": "box10way",
+          "5": "box5way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "de-multi-win-lotto",
+      "stateCodes": [
+        "DE"
+      ],
+      "name": "Multi-Win Lotto",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 6,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 35,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 2
+      },
+      "drawSchedule": "Daily 19:57 ET",
+      "payoutTable": [
+        {
+          "tierKey": "6",
+          "label": "6 of 6",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5",
+          "label": "5 of 6",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 6",
+          "basePrize": 20,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 6",
+          "basePrize": 2,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $50,000 and grows until it's won.",
+      "overallOddsText": "Overall Odds: 1 in 5.7 (combined across all three lines on a ticket)",
+      "payoutNote": "Each $2 ticket prints 3 lines of play; prizes shown are for matching numbers on a single line. Delaware also pays separate ‘combination’ prizes for numbers matched across all 3 lines combined (10/9/8/7/6/0-number tiers) — not modeled here, since this app matches one number set per entry, not a 3-line ticket.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/delaware/multi-win-lotto/latest.json",
+        "cachePath": "live/de-multi-win-lotto/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": 57,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
       }
     }
   ]
