@@ -1,0 +1,106 @@
+[
+  {
+    "game": "LOTTO",
+    "draw_date": "2026-10-07",
+    "numbers": [
+      10,
+      31,
+      36,
+      43,
+      44,
+      48
+    ],
+    "fetched_at": "2026-10-10T06:40:32.058462+00:00",
+    "source_url": "https://floridalottery.com/",
+    "next_jackpot_amount": "$3.5 Million",
+    "next_draw_date": "2026-10-10",
+    "tiers": [
+      {
+        "PrizeLevel": "6-of-6",
+        "Winners": 0,
+        "PrizeAmount": "$2.75 Million"
+      },
+      {
+        "PrizeLevel": "5-of-6_2x",
+        "Winners": 3,
+        "PrizeAmount": "$6,000.00"
+      },
+      {
+        "PrizeLevel": "5-of-6_3x",
+        "Winners": 6,
+        "PrizeAmount": "$9,000.00"
+      },
+      {
+        "PrizeLevel": "5-of-6_4x",
+        "Winners": 3,
+        "PrizeAmount": "$12,000.00"
+      },
+      {
+        "PrizeLevel": "5-of-6_5x",
+        "Winners": 0,
+        "PrizeAmount": "$15,000.00"
+      },
+      {
+        "PrizeLevel": "5-of-6_10x",
+        "Winners": 0,
+        "PrizeAmount": "$30,000.00"
+      },
+      {
+        "PrizeLevel": "4-of-6_2x",
+        "Winners": 196,
+        "PrizeAmount": "$100.00"
+      },
+      {
+        "PrizeLevel": "4-of-6_3x",
+        "Winners": 165,
+        "PrizeAmount": "$150.00"
+      },
+      {
+        "PrizeLevel": "4-of-6_4x",
+        "Winners": 121,
+        "PrizeAmount": "$200.00"
+      },
+      {
+        "PrizeLevel": "4-of-6_5x",
+        "Winners": 63,
+        "PrizeAmount": "$250.00"
+      },
+      {
+        "PrizeLevel": "4-of-6_10x",
+        "Winners": 22,
+        "PrizeAmount": "$500.00"
+      },
+      {
+        "PrizeLevel": "3-of-6_2x",
+        "Winners": 4127,
+        "PrizeAmount": "$10.00"
+      },
+      {
+        "PrizeLevel": "3-of-6_3x",
+        "Winners": 3534,
+        "PrizeAmount": "$15.00"
+      },
+      {
+        "PrizeLevel": "3-of-6_4x",
+        "Winners": 2304,
+        "PrizeAmount": "$20.00"
+      },
+      {
+        "PrizeLevel": "3-of-6_5x",
+        "Winners": 1362,
+        "PrizeAmount": "$25.00"
+      },
+      {
+        "PrizeLevel": "3-of-6_10x",
+        "Winners": 451,
+        "PrizeAmount": "$50.00"
+      },
+      {
+        "PrizeLevel": "2-of-6",
+        "Winners": 102214,
+        "PrizeAmount": "Free Ticket"
+      }
+    ],
+    "jackpot_amount": "$2.75 Million"
+  }
+]
