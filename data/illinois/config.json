@@ -546,6 +546,766 @@
           }
         }
       }
+    },
+    {
+      "id": "il-lotto",
+      "stateCodes": [
+        "IL"
+      ],
+      "name": "Lotto",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 6,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 52,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Monday, Thursday and Saturday ~9:22 PM CT",
+      "payoutTable": [
+        {
+          "tierKey": "6",
+          "label": "6 of 6",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5",
+          "label": "5 of 6",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 6",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 6",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $2 million and grows until it's won.",
+      "payoutNote": "Lower-tier dollar amounts are approximate, not independently re-verified against Illinois's official rules. An optional paid 'Extra Shot' bonus ball is captured by the live scraper but not yet modeled for match-checking (same scope cut as California's Daily Derby). The two 'Lotto Million' bonus number sets drawn alongside this game are not modeled \u2014 they aren't an independent game/schedule.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/lotto/latest.json",
+        "cachePath": "live/il-lotto/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": 22,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "il-lucky-day-lotto-midday",
+      "stateCodes": [
+        "IL"
+      ],
+      "name": "Lucky Day Lotto (Midday)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 45,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 12:40 PM CT",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": 15,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 1,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $100,000 and grows until it's won.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/lucky-day-lotto/latest.json",
+        "cachePath": "live/il-lucky-day-lotto/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": 40,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "il-lucky-day-lotto-evening",
+      "stateCodes": [
+        "IL"
+      ],
+      "name": "Lucky Day Lotto (Evening)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 5,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 45,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 9:22 PM CT",
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "5 of 5",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "4 of 5",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "3 of 5",
+          "basePrize": 15,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "2 of 5",
+          "basePrize": 1,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The jackpot starts at $100,000 and grows until it's won.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/lucky-day-lotto/latest.json",
+        "cachePath": "live/il-lucky-day-lotto/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": 22,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "directField",
+          "field": "jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "il-pick3-midday",
+      "stateCodes": [
+        "IL"
+      ],
+      "name": "Pick 3 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 12:40 PM CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Standard $1 straight/box payout figures (confirmed top-prize amount matches the live source page); box-tier amounts not independently re-verified against the state's own official rules PDF. An optional paid add-on digit (Fireball/Superball/Wild Ball) is captured by the live scraper but not yet modeled for match-checking.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/pick3/latest.json",
+        "cachePath": "live/il-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "il-pick3-evening",
+      "stateCodes": [
+        "IL"
+      ],
+      "name": "Pick 3 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 9:22 PM CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way",
+          "label": "Box (3-way)",
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Standard $1 straight/box payout figures (confirmed top-prize amount matches the live source page); box-tier amounts not independently re-verified against the state's own official rules PDF. An optional paid add-on digit (Fireball/Superball/Wild Ball) is captured by the live scraper but not yet modeled for match-checking.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/pick3/latest.json",
+        "cachePath": "live/il-pick3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "il-pick4-midday",
+      "stateCodes": [
+        "IL"
+      ],
+      "name": "Pick 4 (Midday)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 12:40 PM CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Standard $1 straight/box payout figures (confirmed top-prize amount matches the live source page); box-tier amounts not independently re-verified against the state's own official rules PDF. An optional paid add-on digit (Fireball/Superball/Wild Ball) is captured by the live scraper but not yet modeled for match-checking.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/pick4/latest.json",
+        "cachePath": "live/il-pick4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "il-pick4-evening",
+      "stateCodes": [
+        "IL"
+      ],
+      "name": "Pick 4 (Evening)",
+      "type": "dailyNumbers",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily 9:22 PM CT",
+      "payoutTable": [
+        {
+          "tierKey": "straight",
+          "label": "Straight (exact match)",
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way",
+          "label": "Box (4-way)",
+          "basePrize": 1200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way",
+          "label": "Box (6-way)",
+          "basePrize": 800,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way",
+          "label": "Box (12-way)",
+          "basePrize": 400,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way",
+          "label": "Box (24-way)",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Standard $1 straight/box payout figures (confirmed top-prize amount matches the live source page); box-tier amounts not independently re-verified against the state's own official rules PDF. An optional paid add-on digit (Fireball/Superball/Wild Ball) is captured by the live scraper but not yet modeled for match-checking.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/pick4/latest.json",
+        "cachePath": "live/il-pick4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": null,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
     }
   ]
 }
