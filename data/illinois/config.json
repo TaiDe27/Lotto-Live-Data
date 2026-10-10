@@ -617,7 +617,10 @@
         },
         "nextDrawDate": null,
         "mainNumbersField": "numbers",
-        "specialNumbers": null,
+        "specialNumbers": {
+          "field": "bonus_number",
+          "wrapScalar": true
+        },
         "winningTeamsField": null,
         "jackpot": {
           "source": "directField",
