@@ -1770,6 +1770,401 @@
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
       }
+    },
+    {
+      "id": "in-quickdraw-midday",
+      "stateCodes": [
+        "IN"
+      ],
+      "name": "Quick Draw (Midday)",
+      "type": "keno",
+      "pickRule": {
+        "mainCount": 10,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 80,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily ~1:20 PM ET",
+      "payoutTable": [
+        {
+          "tierKey": "10",
+          "label": "10 of 10",
+          "basePrize": 300000,
+          "isJackpotTier": false,
+          "odds": "1 in 8,911,711",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "9",
+          "label": "9 of 10",
+          "basePrize": 4000,
+          "isJackpotTier": false,
+          "odds": "1 in 163,381",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "8",
+          "label": "8 of 10",
+          "basePrize": 250,
+          "isJackpotTier": false,
+          "odds": "1 in 7,385",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "7",
+          "label": "7 of 10",
+          "basePrize": 35,
+          "isJackpotTier": false,
+          "odds": "1 in 621",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "6",
+          "label": "6 of 10",
+          "basePrize": 15,
+          "isJackpotTier": false,
+          "odds": "1 in 87",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5",
+          "label": "5 of 10",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 19",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking \u2014 same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/quickdraw/latest.json",
+        "cachePath": "live/in-quickdraw-midday/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 13,
+          "anchorMinute": 20,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": {
+          "field": "bonus_number",
+          "wrapScalar": true
+        },
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "in-quickdraw-evening",
+      "stateCodes": [
+        "IN"
+      ],
+      "name": "Quick Draw (Evening)",
+      "type": "keno",
+      "pickRule": {
+        "mainCount": 10,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 80,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "Daily ~11:00 PM ET",
+      "payoutTable": [
+        {
+          "tierKey": "10",
+          "label": "10 of 10",
+          "basePrize": 300000,
+          "isJackpotTier": false,
+          "odds": "1 in 8,911,711",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "9",
+          "label": "9 of 10",
+          "basePrize": 4000,
+          "isJackpotTier": false,
+          "odds": "1 in 163,381",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "8",
+          "label": "8 of 10",
+          "basePrize": 250,
+          "isJackpotTier": false,
+          "odds": "1 in 7,385",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "7",
+          "label": "7 of 10",
+          "basePrize": 35,
+          "isJackpotTier": false,
+          "odds": "1 in 621",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "6",
+          "label": "6 of 10",
+          "basePrize": 15,
+          "isJackpotTier": false,
+          "odds": "1 in 87",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5",
+          "label": "5 of 10",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 19",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking \u2014 same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/quickdraw/latest.json",
+        "cachePath": "live/in-quickdraw-evening/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": {
+          "field": "bonus_number",
+          "wrapScalar": true
+        },
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "in-cashpop",
+      "stateCodes": [
+        "IN"
+      ],
+      "name": "Cash POP",
+      "type": "other",
+      "pickRule": {
+        "mainCount": 15,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "5x daily: Morning 9:30 AM, Matinee 1:30 PM, Afternoon 3:30 PM, Evening 7:30 PM, Late Night 11:30 PM ET",
+      "payoutTable": [
+        {
+          "tierKey": "5x",
+          "label": "5x your wager",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 31.05",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "7x",
+          "label": "7x your wager",
+          "basePrize": 7,
+          "isJackpotTier": false,
+          "odds": "1 in 75",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "10x",
+          "label": "10x your wager",
+          "basePrize": 10,
+          "isJackpotTier": false,
+          "odds": "1 in 105",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "15x",
+          "label": "15x your wager",
+          "basePrize": 15,
+          "isJackpotTier": false,
+          "odds": "1 in 180",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "20x",
+          "label": "20x your wager",
+          "basePrize": 20,
+          "isJackpotTier": false,
+          "odds": "1 in 270",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "25x",
+          "label": "25x your wager",
+          "basePrize": 25,
+          "isJackpotTier": false,
+          "odds": "1 in 630",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "50x",
+          "label": "50x your wager",
+          "basePrize": 50,
+          "isJackpotTier": false,
+          "odds": "1 in 2,250",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "100x",
+          "label": "100x your wager",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": "1 in 4,125",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "250x",
+          "label": "250x your wager",
+          "basePrize": 250,
+          "isJackpotTier": false,
+          "odds": "1 in 15,000",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "payoutNote": "Cash POP is not a \"match count\" game: you choose any number of the 15 numbers to play (1 up to all 15, \"Cover All\"), one number is drawn, and you win if the drawn number is among your chosen set. The dollar prize is NOT determined by how many numbers you chose \u2014 it's a random multiplier of your wager (5x-250x at $1, confirmed from the official Hoosier Lottery Prizes & Odds table) assigned per ticket at play time, which this app has no way to know from the public draw results alone. The table above shows the $1-wager reference multipliers/odds for information only; the app can only tell you whether your number matched, not your exact prize.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/cashpop/latest.json",
+        "cachePath": "live/in-cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": null,
+          "anchorHourBySession": {
+            "morning": 9,
+            "matinee": 13,
+            "afternoon": 15,
+            "evening": 19,
+            "latenight": 23
+          },
+          "sessionField": "session"
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
     }
   ]
 }
