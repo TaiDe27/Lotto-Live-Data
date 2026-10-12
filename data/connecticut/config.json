@@ -671,7 +671,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -956,7 +956,7 @@
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "Choose eight NFL team logos from all 32 teams. Match all eight to win the rolling cash jackpot, or match some to win a cash prize. Results are randomly drawn and not based on NFL game outcomes.",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "overallOddsText": "Overall Odds: 1 in 12.16",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-xo/latest.json",
@@ -1064,6 +1064,22 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Wild Ball",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way-addon",
+          "label": "Box (3-way) + Wild Ball",
+          "basePrize": 60,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1115,18 +1131,22 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "wild_ball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
-          "3": "box3way",
-          "6": "box6way"
+          "3": "box3way"
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "3": "box3way-addon"
+        }
       }
     },
     {
@@ -1166,6 +1186,22 @@
           "tierKey": "box6way",
           "label": "Box (6-way)",
           "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Wild Ball",
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way-addon",
+          "label": "Box (3-way) + Wild Ball",
+          "basePrize": 60,
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
@@ -1220,18 +1256,22 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "wild_ball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
-          "3": "box3way",
-          "6": "box6way"
+          "3": "box3way"
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "3": "box3way-addon"
+        }
       }
     },
     {
@@ -1290,6 +1330,46 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Wild Ball",
+          "basePrize": 1400,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way-addon",
+          "label": "Box (4-way) + Wild Ball",
+          "basePrize": 360,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way-addon",
+          "label": "Box (6-way) + Wild Ball",
+          "basePrize": 240,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way-addon",
+          "label": "Box (12-way) + Wild Ball",
+          "basePrize": 120,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way-addon",
+          "label": "Box (24-way) + Wild Ball",
+          "basePrize": 60,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1341,10 +1421,11 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "wild_ball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
           "4": "box4way",
@@ -1354,7 +1435,14 @@
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "4": "box4way-addon",
+          "6": "box6way-addon",
+          "12": "box12way-addon",
+          "24": "box24way-addon"
+        }
       }
     },
     {
@@ -1413,6 +1501,46 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Wild Ball",
+          "basePrize": 1400,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way-addon",
+          "label": "Box (4-way) + Wild Ball",
+          "basePrize": 360,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way-addon",
+          "label": "Box (6-way) + Wild Ball",
+          "basePrize": 240,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way-addon",
+          "label": "Box (12-way) + Wild Ball",
+          "basePrize": 120,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way-addon",
+          "label": "Box (24-way) + Wild Ball",
+          "basePrize": 60,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1464,10 +1592,11 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "wild_ball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
           "4": "box4way",
@@ -1477,7 +1606,14 @@
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "4": "box4way-addon",
+          "6": "box6way-addon",
+          "12": "box12way-addon",
+          "24": "box24way-addon"
+        }
       }
     },
     {

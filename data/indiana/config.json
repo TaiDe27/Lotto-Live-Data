@@ -671,7 +671,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -956,7 +956,7 @@
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "Choose eight NFL team logos from all 32 teams. Match all eight to win the rolling cash jackpot, or match some to win a cash prize. Results are randomly drawn and not based on NFL game outcomes.",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "overallOddsText": "Overall Odds: 1 in 12.16",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-xo/latest.json",
@@ -1355,6 +1355,22 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Superball",
+          "basePrize": 180,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way-addon",
+          "label": "Box (3-way) + Superball",
+          "basePrize": 60,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1406,18 +1422,22 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "superball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
-          "3": "box3way",
-          "6": "box6way"
+          "3": "box3way"
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "3": "box3way-addon"
+        }
       }
     },
     {
@@ -1457,6 +1477,22 @@
           "tierKey": "box6way",
           "label": "Box (6-way)",
           "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Superball",
+          "basePrize": 180,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way-addon",
+          "label": "Box (3-way) + Superball",
+          "basePrize": 60,
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
@@ -1511,18 +1547,22 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "superball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
-          "3": "box3way",
-          "6": "box6way"
+          "3": "box3way"
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "3": "box3way-addon"
+        }
       }
     },
     {
@@ -1581,6 +1621,46 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Superball",
+          "basePrize": 1360,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way-addon",
+          "label": "Box (4-way) + Superball",
+          "basePrize": 340,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way-addon",
+          "label": "Box (6-way) + Superball",
+          "basePrize": 230,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way-addon",
+          "label": "Box (12-way) + Superball",
+          "basePrize": 116,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way-addon",
+          "label": "Box (24-way) + Superball",
+          "basePrize": 58,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1632,10 +1712,11 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "superball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
           "4": "box4way",
@@ -1645,7 +1726,14 @@
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "4": "box4way-addon",
+          "6": "box6way-addon",
+          "12": "box12way-addon",
+          "24": "box24way-addon"
+        }
       }
     },
     {
@@ -1704,6 +1792,46 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Superball",
+          "basePrize": 1360,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way-addon",
+          "label": "Box (4-way) + Superball",
+          "basePrize": 340,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way-addon",
+          "label": "Box (6-way) + Superball",
+          "basePrize": 230,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way-addon",
+          "label": "Box (12-way) + Superball",
+          "basePrize": 116,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way-addon",
+          "label": "Box (24-way) + Superball",
+          "basePrize": 58,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1755,10 +1883,11 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "superball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
           "4": "box4way",
@@ -1768,7 +1897,14 @@
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "4": "box4way-addon",
+          "6": "box6way-addon",
+          "12": "box12way-addon",
+          "24": "box24way-addon"
+        }
       }
     },
     {
@@ -1838,7 +1974,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking \u2014 same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
+      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking — same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/quickdraw/latest.json",
         "cachePath": "live/in-quickdraw-midday/latest.json",
@@ -1959,7 +2095,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking \u2014 same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
+      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking — same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/quickdraw/latest.json",
         "cachePath": "live/in-quickdraw-evening/latest.json",
@@ -2104,7 +2240,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Cash POP is not a \"match count\" game: you choose any number of the 15 numbers to play (1 up to all 15, \"Cover All\"), one number is drawn, and you win if the drawn number is among your chosen set. The dollar prize is NOT determined by how many numbers you chose \u2014 it's a random multiplier of your wager (5x-250x at $1, confirmed from the official Hoosier Lottery Prizes & Odds table) assigned per ticket at play time, which this app has no way to know from the public draw results alone. The table above shows the $1-wager reference multipliers/odds for information only; the app can only tell you whether your number matched, not your exact prize.",
+      "payoutNote": "Cash POP is not a \"match count\" game: you choose any number of the 15 numbers to play (1 up to all 15, \"Cover All\"), one number is drawn, and you win if the drawn number is among your chosen set. The dollar prize is NOT determined by how many numbers you chose — it's a random multiplier of your wager (5x-250x at $1, confirmed from the official Hoosier Lottery Prizes & Odds table) assigned per ticket at play time, which this app has no way to know from the public draw results alone. The table above shows the $1-wager reference multipliers/odds for information only; the app can only tell you whether your number matched, not your exact prize.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/cashpop/latest.json",
         "cachePath": "live/in-cashpop/latest.json",

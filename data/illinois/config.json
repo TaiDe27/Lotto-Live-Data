@@ -896,6 +896,22 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Fireball",
+          "basePrize": 250,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way-addon",
+          "label": "Box (3-way) + Fireball",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -947,18 +963,22 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "fireball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
-          "3": "box3way",
-          "6": "box6way"
+          "3": "box3way"
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "3": "box3way-addon"
+        }
       }
     },
     {
@@ -997,6 +1017,22 @@
         {
           "tierKey": "box6way",
           "label": "Box (6-way)",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Fireball",
+          "basePrize": 250,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box3way-addon",
+          "label": "Box (3-way) + Fireball",
           "basePrize": 80,
           "isJackpotTier": false,
           "odds": null,
@@ -1052,18 +1088,22 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "fireball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
-          "3": "box3way",
-          "6": "box6way"
+          "3": "box3way"
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "3": "box3way-addon"
+        }
       }
     },
     {
@@ -1122,6 +1162,46 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Fireball",
+          "basePrize": 1500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way-addon",
+          "label": "Box (4-way) + Fireball",
+          "basePrize": 360,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way-addon",
+          "label": "Box (6-way) + Fireball",
+          "basePrize": 240,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way-addon",
+          "label": "Box (12-way) + Fireball",
+          "basePrize": 120,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way-addon",
+          "label": "Box (24-way) + Fireball",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1173,10 +1253,11 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "fireball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
           "4": "box4way",
@@ -1186,7 +1267,14 @@
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "4": "box4way-addon",
+          "6": "box6way-addon",
+          "12": "box12way-addon",
+          "24": "box24way-addon"
+        }
       }
     },
     {
@@ -1245,6 +1333,46 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "straight-addon",
+          "label": "Straight + Fireball",
+          "basePrize": 1500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box4way-addon",
+          "label": "Box (4-way) + Fireball",
+          "basePrize": 360,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box6way-addon",
+          "label": "Box (6-way) + Fireball",
+          "basePrize": 240,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box12way-addon",
+          "label": "Box (12-way) + Fireball",
+          "basePrize": 120,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "box24way-addon",
+          "label": "Box (24-way) + Fireball",
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
@@ -1296,10 +1424,11 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "addOnDigitField": "fireball"
       },
       "matchRule": {
-        "kind": "positionalDigits",
+        "kind": "positionalDigitsWithAddOn",
         "straightTierKey": "straight",
         "boxTierKeysByWayCount": {
           "4": "box4way",
@@ -1309,7 +1438,14 @@
         },
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": "straight-addon",
+        "addOnBoxTierKeysByWayCount": {
+          "4": "box4way-addon",
+          "6": "box6way-addon",
+          "12": "box12way-addon",
+          "24": "box24way-addon"
+        }
       }
     }
   ]
