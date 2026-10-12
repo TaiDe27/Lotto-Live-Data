@@ -602,7 +602,12 @@
           "basePrize": 20000,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 40000,
+            "3": 60000,
+            "4": 80000,
+            "5": 100000
+          }
         },
         {
           "tierKey": "4+1",
@@ -610,7 +615,12 @@
           "basePrize": 1250,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 2000,
+            "3": 3000,
+            "4": 4000,
+            "5": 5000
+          }
         },
         {
           "tierKey": "4+0",
@@ -618,7 +628,12 @@
           "basePrize": 100,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 200,
+            "3": 300,
+            "4": 400,
+            "5": 500
+          }
         },
         {
           "tierKey": "3+1",
@@ -626,7 +641,12 @@
           "basePrize": 20,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 40,
+            "3": 60,
+            "4": 80,
+            "5": 100
+          }
         },
         {
           "tierKey": "3+0",
@@ -634,7 +654,12 @@
           "basePrize": 10,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 10,
+            "3": 15,
+            "4": 20,
+            "5": 25
+          }
         },
         {
           "tierKey": "2+1",
@@ -642,7 +667,12 @@
           "basePrize": 5,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 10,
+            "3": 15,
+            "4": 20,
+            "5": 25
+          }
         },
         {
           "tierKey": "1+1",
@@ -650,7 +680,12 @@
           "basePrize": 4,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 4,
+            "3": 6,
+            "4": 8,
+            "5": 10
+          }
         },
         {
           "tierKey": "0+1",
@@ -658,7 +693,12 @@
           "basePrize": 2,
           "isJackpotTier": false,
           "odds": null,
-          "multiplierPrizes": null
+          "multiplierPrizes": {
+            "2": 4,
+            "3": 6,
+            "4": 8,
+            "5": 10
+          }
         }
       ],
       "buyTicketBaseURLs": {},
@@ -732,6 +772,22 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "powerPlay": {
+        "name": "All Star Bonus",
+        "description": "For an extra $1 per play, the All Star Bonus multiplies any non-jackpot prize by 2, 3, 4 or 5 times. The multiplier is drawn at random before each drawing; the jackpot itself is never multiplied.",
+        "multipliers": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "multiplierOdds": [
+          "2.1",
+          "3.2",
+          "8",
+          "10.7"
+        ]
       }
     },
     {
@@ -809,7 +865,7 @@
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "Choose eight NFL team logos from all 32 teams. Match all eight to win the rolling cash jackpot, or match some to win a cash prize. Results are randomly drawn and not based on NFL game outcomes.",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "overallOddsText": "Overall Odds: 1 in 12.16",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-xo/latest.json",
