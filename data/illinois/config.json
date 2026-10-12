@@ -599,7 +599,7 @@
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The jackpot starts at $2 million and grows until it's won.",
-      "payoutNote": "Lower-tier dollar amounts are approximate, not independently re-verified against Illinois's official rules. An optional paid 'Extra Shot' bonus ball is captured by the live scraper but not yet modeled for match-checking (same scope cut as California's Daily Derby). The two 'Lotto Million' bonus number sets drawn alongside this game are not modeled \u2014 they aren't an independent game/schedule.",
+      "payoutNote": "Lower-tier dollar amounts are approximate, not independently re-verified against Illinois's official rules. An optional paid 'Extra Shot' bonus ball is captured by the live scraper but not yet modeled for match-checking (same scope cut as California's Daily Derby). The two 'Lotto Million' bonus number sets drawn alongside this game are not modeled — they aren't an independent game/schedule.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/lotto/latest.json",
         "cachePath": "live/il-lotto/latest.json",
@@ -647,7 +647,9 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "lottoMillion1Field": "lotto_million_1",
+        "lottoMillion2Field": "lotto_million_2"
       }
     },
     {

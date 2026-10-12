@@ -9,8 +9,12 @@ challenge)，没有可用的公开API，跟Arkansas一样是死路。改用lotte
 页面结构里，同一行开奖记录其实塞了三组号码(三个<div class="c-draw-card__ball-box">)：
 第一组标题是"Jackpot"(真正的Lotto主开奖号+可选的"Extra Shot"加购号)，后面两组标题是
 "Lotto Million 1"/"Lotto Million 2"——这两组不是独立游戏/独立开奖时程，只是跟Lotto主
-开奖同时搭售的两组百万奖金号，这次不建模(跟California Daily Derby一样的"先跳过"决定)，
-只取第一组(索引0)。
+开奖同时搭售的两组百万奖金号。
+
+2026-10-12更新：这两组号码现在也抓了，存进latest.json的lotto_million_1/lotto_million_2
+字段，纯展示用(app里直接显示在Lotto卡片上)，不接入matchRule/对奖/赔付逻辑，也不接入
+OCR/My Numbers。跟California Daily Derby那种"完全跳过"不是一回事，这个只是"抓了但不
+建模对奖"。
 
 Extra Shot是个可选加购号(页面上用c-ball--orange标出来，跟c-result__bonus标签包着)，
 这次先存进latest.json的bonus_number字段，不接入matchRule判中逻辑。
@@ -62,6 +66,8 @@ class LottoResult:
     numbers: list[int]
     bonus_number: Optional[int]
     jackpot_amount: Optional[str]
+    lotto_million_1: Optional[list[int]]
+    lotto_million_2: Optional[list[int]]
     fetched_at: str
     source_url: str
 
@@ -93,11 +99,18 @@ def fetch() -> list[LottoResult]:
                 ball_boxes = row.select(".c-draw-card__ball-box")
                 if not ball_boxes:
                     continue
-                jackpot_box = ball_boxes[0]  # "Jackpot" box; Lotto Million 1/2 boxes ignored
+                jackpot_box = ball_boxes[0]  # "Jackpot" box
                 balls = jackpot_box.select("li.c-ball")
                 numbers = [int(b.get_text(strip=True)) for b in balls]
                 bonus_el = jackpot_box.select_one(".c-result__bonus .c-ball")
                 bonus_number = int(bonus_el.get_text(strip=True)) if bonus_el else None
+
+                def read_million_box(box) -> Optional[list[int]]:
+                    nums = [int(b.get_text(strip=True)) for b in box.select("li.c-ball")]
+                    return nums or None
+
+                lotto_million_1 = read_million_box(ball_boxes[1]) if len(ball_boxes) > 1 else None
+                lotto_million_2 = read_million_box(ball_boxes[2]) if len(ball_boxes) > 2 else None
 
                 prize_el = row.select_one(".c-draw-card__prize-value")
                 jackpot_amount = parse_money(prize_el.get_text(strip=True)) if prize_el else None
@@ -108,6 +121,8 @@ def fetch() -> list[LottoResult]:
                     numbers=numbers,
                     bonus_number=bonus_number,
                     jackpot_amount=jackpot_amount,
+                    lotto_million_1=lotto_million_1,
+                    lotto_million_2=lotto_million_2,
                     fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                     source_url=URL,
                 ))
