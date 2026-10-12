@@ -826,7 +826,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "California's Daily 3/4 prizes fluctuate slightly draw to draw rather than being perfectly fixed \u2014 these are typical/representative amounts for a $1 play.",
+      "payoutNote": "California's Daily 3/4 prizes fluctuate slightly draw to draw rather than being perfectly fixed — these are typical/representative amounts for a $1 play.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/california/daily-3/latest.json",
         "cachePath": "live/ca-daily3/latest.json",
@@ -931,7 +931,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "California's Daily 3/4 prizes fluctuate slightly draw to draw rather than being perfectly fixed \u2014 these are typical/representative amounts for a $1 play.",
+      "payoutNote": "California's Daily 3/4 prizes fluctuate slightly draw to draw rather than being perfectly fixed — these are typical/representative amounts for a $1 play.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/california/daily-3/latest.json",
         "cachePath": "live/ca-daily3/latest.json",
@@ -1052,7 +1052,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "California's Daily 3/4 prizes fluctuate slightly draw to draw rather than being perfectly fixed \u2014 these are typical/representative amounts for a $1 play.",
+      "payoutNote": "California's Daily 3/4 prizes fluctuate slightly draw to draw rather than being perfectly fixed — these are typical/representative amounts for a $1 play.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/california/daily-4/latest.json",
         "cachePath": "live/ca-daily4/latest.json",
@@ -1108,6 +1108,159 @@
           "12": "box12way",
           "24": "box24way"
         },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null
+      }
+    },
+    {
+      "id": "ca-dailyderby",
+      "stateCodes": [
+        "CA"
+      ],
+      "name": "Daily Derby",
+      "type": "dailyDerby",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 6,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 2
+      },
+      "drawSchedule": "Daily 18:30 PT",
+      "payoutTable": [
+        {
+          "tierKey": "grandprize+1",
+          "label": "Grand Prize (Trifecta + Race Time)",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 1,320,000",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "trifecta",
+          "label": "Trifecta (1st, 2nd & 3rd) — prize varies by draw",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 1,321",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "exacta-rt",
+          "label": "Exacta + Race Time — prize varies by draw",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "exacta",
+          "label": "Exacta (1st & 2nd) — prize varies by draw",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 147",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "win-rt",
+          "label": "Win + Race Time — prize varies by draw",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "win",
+          "label": "Win (1st place) — prize varies by draw",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 13.2",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "racetime",
+          "label": "Race Time only — prize varies by draw",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": "1 in 1,001",
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Pick 3 horses (1-6, no repeats) to finish 1st, 2nd and 3rd, plus an optional race-time guess. Win by matching your 1st-place pick (Win), 1st+2nd in order (Exacta), or all 3 in order (Trifecta); matching your race-time guess too upgrades a tier to its \"/RT\" combo, and Trifecta + Race Time is the Grand Prize.",
+      "payoutNote": "Only the Grand Prize tier's dollar amount is live, scraped data (the rolling jackpot pool) — every other tier's real prize is pari-mutuel and changes draw to draw; the official site only ever publishes each draw's own tier amounts after the fact, not a fixed reference chart the way Powerball Xs & Os has. This app can tell you which tier you matched, but not its exact dollar amount for tiers below Grand Prize — check the official results for that draw's actual payout.",
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/california/daily-derby/latest.json",
+        "cachePath": "live/ca-dailyderby/latest.json",
+        "shape": "horseRace",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 18,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 18,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "mainNumbersField": null,
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": "derby_positions",
+        "derbyRaceTimeField": "race_time",
+        "jackpot": {
+          "source": "directField",
+          "field": "grand_prize_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "directField",
+          "field": "next_jackpot_estimate",
+          "moneyFormat": "compactWords",
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": {
+          "mode": "singleDivision",
+          "field": "grand_prize_winners",
+          "countMode": null,
+          "tierKeyRemap": null,
+          "divisionKey": null,
+          "tierKeyTemplate": "grandprize+1",
+          "nearMissTier": null
+        }
+      },
+      "matchRule": {
+        "kind": "horseRacePick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
