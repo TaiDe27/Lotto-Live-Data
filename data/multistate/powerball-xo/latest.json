@@ -12,8 +12,8 @@
       "WAS"
     ],
     "next_drawing": {
-      "next_draw_date": "Sun, Oct 11, 2026",
-      "estimated_jackpot": "1.50 Million"
+      "next_draw_date": "Sun, Oct 18, 2026",
+      "estimated_jackpot": "1.70 Million"
     },
     "winners_by_tier": {
       "Match 8 of 8 Teams": {
@@ -21,12 +21,14 @@
       },
       "Match 7 of 8 Teams": {
         "states": [
-          "MD",
-          "MN"
+          "AZ",
+          "NE",
+          "SC (2)",
+          "TN"
         ]
       }
     },
-    "fetched_at": "2026-10-12T02:50:55.958592+00:00",
+    "fetched_at": "2026-10-12T08:40:57.238144+00:00",
     "source_url": "https://www.powerball.com/xo"
   },
   {
