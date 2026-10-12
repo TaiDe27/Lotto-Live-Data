@@ -1,5 +1,35 @@
 [
   {
+    "draw_date": "Sun, Oct 11, 2026",
+    "winning_teams": [
+      "ARI",
+      "DEN",
+      "DET",
+      "MIA",
+      "MIN",
+      "NYG",
+      "TEN",
+      "WAS"
+    ],
+    "next_drawing": {
+      "next_draw_date": "Sun, Oct 11, 2026",
+      "estimated_jackpot": "1.50 Million"
+    },
+    "winners_by_tier": {
+      "Match 8 of 8 Teams": {
+        "states": []
+      },
+      "Match 7 of 8 Teams": {
+        "states": [
+          "MD",
+          "MN"
+        ]
+      }
+    },
+    "fetched_at": "2026-10-12T02:41:00.962094+00:00",
+    "source_url": "https://www.powerball.com/xo"
+  },
+  {
     "draw_date": "Sun, Sep 27, 2026",
     "winning_teams": [
       "ARI",
