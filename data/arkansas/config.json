@@ -332,6 +332,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -545,6 +551,12 @@
             "countField": "match5_locations"
           }
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -684,6 +696,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -823,7 +841,13 @@
         "multiplierField": null,
         "winnersByTier": null
       },
-      "matchRule": null
+      "matchRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ar-natural-state-jackpot",
@@ -924,7 +948,13 @@
         "multiplierField": null,
         "winnersByTier": null
       },
-      "matchRule": null
+      "matchRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ar-cash3-midday",
@@ -969,7 +999,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-3/latest.json",
         "cachePath": "live/ar-cash3/latest.json",
@@ -1029,6 +1059,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1074,7 +1110,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-3/latest.json",
         "cachePath": "live/ar-cash3/latest.json",
@@ -1134,6 +1170,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1195,7 +1237,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-4/latest.json",
         "cachePath": "live/ar-cash4/latest.json",
@@ -1257,6 +1299,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1318,7 +1366,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize \u2014 there is no jackpot or prize splitting.",
+      "payoutNote": "Prizes shown are for a $1 play. Every winning ticket is paid its full fixed prize — there is no jackpot or prize splitting.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/arkansas/cash-4/latest.json",
         "cachePath": "live/ar-cash4/latest.json",
@@ -1380,6 +1428,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     }
   ]

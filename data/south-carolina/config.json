@@ -332,6 +332,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -545,6 +551,12 @@
             "countField": "match5_locations"
           }
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -671,7 +683,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -740,6 +752,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -817,7 +835,7 @@
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "Choose eight NFL team logos from all 32 teams. Match all eight to win the rolling cash jackpot, or match some to win a cash prize. Results are randomly drawn and not based on NFL game outcomes.",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "overallOddsText": "Overall Odds: 1 in 12.16",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-xo/latest.json",
@@ -883,6 +901,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     }
   ]

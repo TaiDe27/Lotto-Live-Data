@@ -332,6 +332,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -545,6 +551,12 @@
             "countField": "match5_locations"
           }
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -740,6 +752,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -983,6 +1001,12 @@
           "8",
           "10.7"
         ]
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1122,6 +1146,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1222,6 +1252,12 @@
         },
         "multiplierField": null,
         "winnersByTier": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1326,6 +1362,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1448,6 +1490,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1552,6 +1600,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -1674,6 +1728,12 @@
         "teamCount": null,
         "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     }
   ]

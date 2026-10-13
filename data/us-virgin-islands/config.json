@@ -332,6 +332,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -545,6 +551,12 @@
             "countField": "match5_locations"
           }
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     },
     {
@@ -671,7 +683,7 @@
         }
       ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
       "payoutNote": "The Power Play multiplier does not apply to Double Play prizes.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/powerball-double-play/latest.json",
@@ -740,6 +752,12 @@
           "tierKeyTemplate": null,
           "nearMissTier": null
         }
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
       }
     }
   ]
