@@ -2186,7 +2186,7 @@
     "buyTicketBaseURLs": {},
     "drawSchedule": "Daily 18:30 PT",
     "id": "ca-dailyderby",
-    "jackpotDescription": "Pick 3 horses (1-6, no repeats) to finish 1st, 2nd and 3rd, plus an optional race-time guess. Win by matching your 1st-place pick (Win), 1st+2nd in order (Exacta), or all 3 in order (Trifecta); matching your race-time guess too upgrades a tier to its \"/RT\" combo, and Trifecta + Race Time is the Grand Prize.",
+    "jackpotDescription": "Pick 3 horses (1-12, no repeats) to finish 1st, 2nd and 3rd, plus an optional race-time guess. Win by matching your 1st-place pick (Win), 1st+2nd in order (Exacta), or all 3 in order (Trifecta); matching your race-time guess too upgrades a tier to its \"/RT\" combo, and Trifecta + Race Time is the Grand Prize.",
     "liveMapping": {
       "cachePath": "live/ca-dailyderby/latest.json",
       "cashValue": {
@@ -2266,7 +2266,7 @@
     "ocrRule": {
       "addOnMarkerPattern": null,
       "boardLabelPattern": null,
-      "boardSplitKind": "letterLabelElseTwoDigitStart",
+      "boardSplitKind": "horsesSelectedHeader",
       "verifiedAgainstRealTicket": true
     },
     "payoutNote": "Only the Grand Prize tier's dollar amount is live, scraped data (the rolling jackpot pool) — every other tier's real prize is pari-mutuel and changes draw to draw; the official site only ever publishes each draw's own tier amounts after the fact, not a fixed reference chart the way Powerball Xs & Os has. This app can tell you which tier you matched, but not its exact dollar amount for tiers below Grand Prize — check the official results for that draw's actual payout.",
@@ -2332,7 +2332,7 @@
       "mainCount": 3,
       "mainMustBeUnique": true,
       "mainRangeLower": 1,
-      "mainRangeUpper": 6,
+      "mainRangeUpper": 12,
       "price": 2,
       "specialCount": 0
     },
