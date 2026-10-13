@@ -2,6 +2,21 @@
   {
     "game": "Pick 4",
     "draw_date": "2026-10-12",
+    "session": "evening",
+    "digits": [
+      1,
+      1,
+      4,
+      3
+    ],
+    "next_draw_date": "2026-10-13",
+    "next_session": "midday",
+    "fetched_at": "2026-10-13T08:41:18.716612+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-12",
     "session": "midday",
     "digits": [
       4,
@@ -11,7 +26,7 @@
     ],
     "next_draw_date": "2026-10-12",
     "next_session": "evening",
-    "fetched_at": "2026-10-13T02:51:07.061487+00:00",
+    "fetched_at": "2026-10-13T08:41:18.716612+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
   },
   {
@@ -26,7 +41,7 @@
     ],
     "next_draw_date": "2026-10-12",
     "next_session": "midday",
-    "fetched_at": "2026-10-13T02:51:07.061487+00:00",
+    "fetched_at": "2026-10-13T08:41:18.716612+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
   },
   {
@@ -41,7 +56,7 @@
     ],
     "next_draw_date": "2026-10-11",
     "next_session": "evening",
-    "fetched_at": "2026-10-13T02:51:07.061487+00:00",
+    "fetched_at": "2026-10-13T08:41:18.716612+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
   },
   {
@@ -56,7 +71,7 @@
     ],
     "next_draw_date": "2026-10-11",
     "next_session": "midday",
-    "fetched_at": "2026-10-13T02:51:07.061487+00:00",
+    "fetched_at": "2026-10-13T08:41:18.716612+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
   },
   {
@@ -71,7 +86,7 @@
     ],
     "next_draw_date": "2026-10-10",
     "next_session": "evening",
-    "fetched_at": "2026-10-13T02:51:07.061487+00:00",
+    "fetched_at": "2026-10-13T08:41:18.716612+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
   },
   {
