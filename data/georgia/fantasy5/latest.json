@@ -1,6 +1,48 @@
 [
   {
     "game": "Fantasy 5",
+    "draw_date": "2026-10-12",
+    "numbers": [
+      3,
+      15,
+      18,
+      28,
+      41
+    ],
+    "jackpot_amount": 37100000,
+    "fetched_at": "2026-10-13T10:15:10.982460+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
+  },
+  {
+    "game": "Fantasy 5",
+    "draw_date": "2026-10-11",
+    "numbers": [
+      24,
+      27,
+      28,
+      39,
+      42
+    ],
+    "jackpot_amount": 27400000,
+    "fetched_at": "2026-10-13T10:15:10.982487+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
+  },
+  {
+    "game": "Fantasy 5",
+    "draw_date": "2026-10-10",
+    "numbers": [
+      6,
+      10,
+      14,
+      23,
+      33
+    ],
+    "jackpot_amount": 20100000,
+    "fetched_at": "2026-10-13T10:15:10.982501+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
+  },
+  {
+    "game": "Fantasy 5",
     "draw_date": "2026-10-09",
     "numbers": [
       4,
@@ -10,7 +52,7 @@
       40
     ],
     "jackpot_amount": 15000000,
-    "fetched_at": "2026-10-10T11:28:37.618014+00:00",
+    "fetched_at": "2026-10-13T10:15:10.982512+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -24,7 +66,7 @@
       40
     ],
     "jackpot_amount": 12500000,
-    "fetched_at": "2026-10-10T11:28:37.618038+00:00",
+    "fetched_at": "2026-10-13T10:15:10.982523+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -38,7 +80,7 @@
       41
     ],
     "jackpot_amount": 15000000,
-    "fetched_at": "2026-10-10T11:28:37.618049+00:00",
+    "fetched_at": "2026-10-13T10:15:10.982532+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -52,7 +94,7 @@
       29
     ],
     "jackpot_amount": 12500000,
-    "fetched_at": "2026-10-10T11:28:37.618056+00:00",
+    "fetched_at": "2026-10-13T10:15:10.982541+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
