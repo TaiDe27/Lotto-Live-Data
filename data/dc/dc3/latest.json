@@ -1,6 +1,18 @@
 [
   {
     "game": "DC 3",
+    "draw_date": "2026-10-14",
+    "session": "day",
+    "digits": [
+      2,
+      5,
+      4
+    ],
+    "fetched_at": "2026-10-14T18:31:01.811123+00:00",
+    "source_url": "https://dclottery.com/games/dc-3"
+  },
+  {
+    "game": "DC 3",
     "draw_date": "2026-10-13",
     "session": "night",
     "digits": [
@@ -8,7 +20,7 @@
       6,
       3
     ],
-    "fetched_at": "2026-10-14T18:11:00.460642+00:00",
+    "fetched_at": "2026-10-14T18:31:01.811123+00:00",
     "source_url": "https://dclottery.com/games/dc-3"
   },
   {
@@ -20,7 +32,7 @@
       6,
       3
     ],
-    "fetched_at": "2026-10-14T18:11:00.460642+00:00",
+    "fetched_at": "2026-10-14T18:31:01.811123+00:00",
     "source_url": "https://dclottery.com/games/dc-3"
   },
   {
