@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-10-13",
+    "draw_number": "10494",
+    "first_place": "02 - Lucky Star",
+    "second_place": "09 - Winning Spirit",
+    "third_place": "08 - Gorgeous George",
+    "derby_positions": [
+      2,
+      9,
+      8
+    ],
+    "race_time": "1:45.71",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$71,610"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$71"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 3,
+        "prize": "$49"
+      },
+      {
+        "label": "Race Time",
+        "winners": 24,
+        "prize": "$46"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 18,
+        "prize": "$502"
+      },
+      {
+        "label": "Exacta",
+        "winners": 159,
+        "prize": "$25"
+      },
+      {
+        "label": "Win",
+        "winners": 2030,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$71,610",
+    "next_draw_date": "2026-10-14",
+    "next_jackpot_estimate": "$71,000",
+    "fetched_at": "2026-10-14T01:57:00.986100+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-10-11",
     "draw_number": "10492",
     "first_place": "07 - Eureka",
