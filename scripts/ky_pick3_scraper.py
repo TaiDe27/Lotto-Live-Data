@@ -1,13 +1,13 @@
 """
-Kentucky Pick 3 抓取 — lotteryusa.com
+Kentucky Pick 3 抓取 — 官网真实接口 (kylottery.com/webhandlers/WinningNumbers.xhtml)
 
-合规说明同本仓库其他州：kylottery.com官网真实开奖数据走的是需要会话令牌的内部API
-(kys-v2.p1.awc.lotteryservices.net/api/v2/draw-games/draws，未登录返回401 NOT_AUTHORIZED)，
-前端页面本身(含/apps/draw_games/pastwinning.html)是JS渲染壳，服务端HTML里没有真实号码。
-改用lotteryusa.com(已有先例的第三方聚合站，低频率抓取事实性开奖数据)。
-
-一天两期：Evening用 /kentucky/pick-3/，Midday用 /kentucky/midday-pick-3/ —— 两个独立页面，
-跟 ar_cash3_scraper.py 的处理方式一样。
+之前版本误判这个接口需要登录会话（实际 401 的是另一个host:
+kys-v2.p1.awc.lotteryservices.net/api/v2/draw-games/draws）。真正展示在官网页面上的开奖数据
+走的是 www.kylottery.com 自己的这个 webhandler，不需要任何 cookie/token：
+  POST https://www.kylottery.com/webhandlers/WinningNumbers.xhtml
+  Content-Type: application/json
+  body: {"gameNumber": "16", "infoRequest": "2"}   # 16 = Pick 3
+一次调用直接返回 DRAW_HISTORY 数组，里面同时包含 MIDDAY 和 EVENING 两期，不用分两次抓。
 """
 
 import dataclasses
@@ -20,22 +20,12 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ky_pick3_scraper")
 
-
-def iso_date(raw: str) -> str:
-    import datetime as _dt
-    return _dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
-
-
-URLS = {
-    "evening": "https://www.lotteryusa.com/kentucky/pick-3/",
-    "midday": "https://www.lotteryusa.com/kentucky/midday-pick-3/",
-}
+URL = "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
+GAME_NUMBER = "16"
 USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
-FETCH_COUNT = 10
-
 OUTPUT_DIR = Path("data")
 
 
@@ -52,41 +42,54 @@ class Pick3Result:
         return dataclasses.asdict(self)
 
 
-def fetch_session(session: str) -> list[Pick3Result]:
-    import requests
-    from bs4 import BeautifulSoup
+def ms_to_iso_date(ms: int) -> str:
+    return dt.datetime.fromtimestamp(ms / 1000, tz=dt.timezone.utc).strftime("%Y-%m-%d")
 
-    url = URLS[session]
+
+def fetch() -> list[Pick3Result]:
+    import requests
+
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
+            resp = requests.post(
+                URL,
+                headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"},
+                json={"gameNumber": GAME_NUMBER, "infoRequest": "2"},
+                timeout=REQUEST_TIMEOUT_SEC,
+            )
             resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
-            rows = soup.select("tr.c-draw-card")[:FETCH_COUNT]
-            if not rows:
-                raise ValueError(f"[{session}] 没找到任何 c-draw-card 行")
+            data = resp.json()
+            history = data.get("DRAW_HISTORY")
+            if not history:
+                raise ValueError(f"响应里没有 DRAW_HISTORY: {data}")
+
             results = []
-            for row in rows:
-                date_el = row.select_one(".c-draw-card__draw-date-sub")
-                if not date_el:
+            for entry in history:
+                draw_time = (entry.get("DRAW_TIME") or "").lower()
+                if draw_time not in ("midday", "evening"):
                     continue
-                draw_date = iso_date(date_el.get_text(strip=True))
-                balls = row.select(".c-draw-card__ball-list > li.c-ball") or row.select("li.c-ball")
-                digits = [int(b.get_text(strip=True)) for b in balls]
+                values = sorted(entry["DRAW_VALUES"], key=lambda v: v["DRAW_NUMBER_POSITION"])
+                digits = [v["DRAW_VALUE"] for v in values]
                 if len(digits) != 3:
                     continue
                 results.append(Pick3Result(
-                    game="Pick 3", draw_date=draw_date, session=session, digits=digits,
-                    fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=url,
+                    game="Pick 3",
+                    draw_date=ms_to_iso_date(entry["DRAW_DATE"]),
+                    session=draw_time,
+                    digits=digits,
+                    fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
+                    source_url=URL,
                 ))
+            if not results:
+                raise ValueError(f"解析出 0 条有效结果: {data}")
             return results
         except Exception as e:  # noqa: BLE001
             last_err = e
-            log.warning("[%s] 第 %d 次尝试失败: %s", session, attempt, e)
+            log.warning("第 %d 次尝试失败: %s", attempt, e)
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_BACKOFF_SEC * attempt)
-    raise RuntimeError(f"[{session}] 重试多次后仍然失败") from last_err
+    raise RuntimeError("重试多次后仍然失败") from last_err
 
 
 def save_results(results: list[Pick3Result]) -> Path:
@@ -104,17 +107,16 @@ def save_results(results: list[Pick3Result]) -> Path:
     new_entries = [r.to_dict() for r in results]
     new_keys = {(e["draw_date"], e["session"]) for e in new_entries}
     history = [h for h in history if (h.get("draw_date"), h.get("session")) not in new_keys]
-    merged = new_entries + history
-    merged = merged[:100]
+    merged = (new_entries + history)[:100]
     out_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2))
     log.info("已保存: %s (%d 条，本次更新 %d 条)", out_path, len(merged), len(new_entries))
     return out_path
 
 
 def main():
-    all_results = fetch_session("evening") + fetch_session("midday")
-    log.info("抓取结果(最新): %s", [r.to_dict() for r in all_results[:4]])
-    save_results(all_results)
+    results = fetch()
+    log.info("抓取结果: %s", [r.to_dict() for r in results])
+    save_results(results)
 
 
 if __name__ == "__main__":

@@ -1,24 +1,21 @@
-"""Kentucky Pick 4 — lotteryusa.com. Same rationale/pattern as ky_pick3_scraper.py."""
-import dataclasses, datetime as dt, json, logging, time
+"""Kentucky Pick 4 — official API (gameNumber=17). Same pattern as ky_pick3_scraper.py."""
+
+import dataclasses
+import datetime as dt
+import json
+import logging
+import time
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ky_pick4_scraper")
 
-
-def iso_date(raw: str) -> str:
-    return dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
-
-
-URLS = {
-    "evening": "https://www.lotteryusa.com/kentucky/pick-4/",
-    "midday": "https://www.lotteryusa.com/kentucky/midday-pick-4/",
-}
+URL = "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
+GAME_NUMBER = "17"
 USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
-FETCH_COUNT = 10
 OUTPUT_DIR = Path("data")
 
 
@@ -35,40 +32,54 @@ class Pick4Result:
         return dataclasses.asdict(self)
 
 
-def fetch_session(session: str) -> list[Pick4Result]:
+def ms_to_iso_date(ms: int) -> str:
+    return dt.datetime.fromtimestamp(ms / 1000, tz=dt.timezone.utc).strftime("%Y-%m-%d")
+
+
+def fetch() -> list[Pick4Result]:
     import requests
-    from bs4 import BeautifulSoup
-    url = URLS[session]
+
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
+            resp = requests.post(
+                URL,
+                headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"},
+                json={"gameNumber": GAME_NUMBER, "infoRequest": "2"},
+                timeout=REQUEST_TIMEOUT_SEC,
+            )
             resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
-            rows = soup.select("tr.c-draw-card")[:FETCH_COUNT]
-            if not rows:
-                raise ValueError(f"[{session}] 没找到任何 c-draw-card 行")
+            data = resp.json()
+            history = data.get("DRAW_HISTORY")
+            if not history:
+                raise ValueError(f"响应里没有 DRAW_HISTORY: {data}")
+
             results = []
-            for row in rows:
-                date_el = row.select_one(".c-draw-card__draw-date-sub")
-                if not date_el:
+            for entry in history:
+                draw_time = (entry.get("DRAW_TIME") or "").lower()
+                if draw_time not in ("midday", "evening"):
                     continue
-                draw_date = iso_date(date_el.get_text(strip=True))
-                balls = row.select(".c-draw-card__ball-list > li.c-ball") or row.select("li.c-ball")
-                digits = [int(b.get_text(strip=True)) for b in balls]
+                values = sorted(entry["DRAW_VALUES"], key=lambda v: v["DRAW_NUMBER_POSITION"])
+                digits = [v["DRAW_VALUE"] for v in values]
                 if len(digits) != 4:
                     continue
                 results.append(Pick4Result(
-                    game="Pick 4", draw_date=draw_date, session=session, digits=digits,
-                    fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=url,
+                    game="Pick 4",
+                    draw_date=ms_to_iso_date(entry["DRAW_DATE"]),
+                    session=draw_time,
+                    digits=digits,
+                    fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
+                    source_url=URL,
                 ))
+            if not results:
+                raise ValueError(f"解析出 0 条有效结果: {data}")
             return results
         except Exception as e:  # noqa: BLE001
             last_err = e
-            log.warning("[%s] 第 %d 次尝试失败: %s", session, attempt, e)
+            log.warning("第 %d 次尝试失败: %s", attempt, e)
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_BACKOFF_SEC * attempt)
-    raise RuntimeError(f"[{session}] 重试多次后仍然失败") from last_err
+    raise RuntimeError("重试多次后仍然失败") from last_err
 
 
 def save_results(results: list[Pick4Result]) -> Path:
@@ -93,9 +104,9 @@ def save_results(results: list[Pick4Result]) -> Path:
 
 
 def main():
-    all_results = fetch_session("evening") + fetch_session("midday")
-    log.info("抓取结果(最新): %s", [r.to_dict() for r in all_results[:4]])
-    save_results(all_results)
+    results = fetch()
+    log.info("抓取结果: %s", [r.to_dict() for r in results])
+    save_results(results)
 
 
 if __name__ == "__main__":

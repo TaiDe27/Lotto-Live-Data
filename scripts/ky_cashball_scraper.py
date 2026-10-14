@@ -1,22 +1,22 @@
-"""Kentucky Cash Ball 225 — lotteryusa.com (official site's real API needs auth, see ky_pick3_scraper.py)."""
-import dataclasses, datetime as dt, json, logging, time
+"""Kentucky Cash Ball 225 — official API (gameNumber=13), real draw ~11pm ET daily."""
+
+import dataclasses
+import datetime as dt
+import json
+import logging
+import time
 from pathlib import Path
 from typing import Optional
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ky_cashball_scraper")
 
-
-def iso_date(raw: str) -> str:
-    return dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
-
-
-URL = "https://www.lotteryusa.com/kentucky/cashball/"
+URL = "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
+GAME_NUMBER = "13"
 USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
-FETCH_COUNT = 10
 OUTPUT_DIR = Path("data")
 
 
@@ -33,36 +33,41 @@ class CashBallResult:
         return dataclasses.asdict(self)
 
 
+def ms_to_iso_date(ms: int) -> str:
+    return dt.datetime.fromtimestamp(ms / 1000, tz=dt.timezone.utc).strftime("%Y-%m-%d")
+
+
 def fetch() -> list[CashBallResult]:
     import requests
-    from bs4 import BeautifulSoup
+
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(URL, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
+            resp = requests.post(
+                URL,
+                headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"},
+                json={"gameNumber": GAME_NUMBER, "infoRequest": "2"},
+                timeout=REQUEST_TIMEOUT_SEC,
+            )
             resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
-            rows = soup.select("tr.c-draw-card")[:FETCH_COUNT]
-            if not rows:
-                raise ValueError("没找到任何 c-draw-card 行")
-            results = []
-            for row in rows:
-                date_el = row.select_one(".c-draw-card__draw-date-sub")
-                if not date_el:
-                    continue
-                draw_date = iso_date(date_el.get_text(strip=True))
-                balls = row.select("li.c-ball")
-                if len(balls) < 4:
-                    continue
-                numbers = [int(b.get_text(strip=True)) for b in balls[:4]]
-                bonus_el = row.select_one(".c-result__bonus .c-ball")
-                bonus_number = int(bonus_el.get_text(strip=True)) if bonus_el else (
-                    int(balls[4].get_text(strip=True)) if len(balls) > 4 else None)
-                results.append(CashBallResult(
-                    game="Cash Ball 225", draw_date=draw_date, numbers=numbers, bonus_number=bonus_number,
-                    fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=URL,
-                ))
-            return results
+            data = resp.json()
+            values = data.get("DRAW_VALUES")
+            if not values:
+                raise ValueError(f"响应里没有 DRAW_VALUES: {data}")
+            values = sorted(values, key=lambda v: v["DRAW_NUMBER_POSITION"])
+            numbers = [v["DRAW_VALUE"] for v in values]
+            if len(numbers) != 4:
+                raise ValueError(f"主号码数量不是4个: {numbers}")
+            bonus = (data.get("SPECIAL_ARGS") or {}).get("CASHBALL")
+            result = CashBallResult(
+                game="Cash Ball 225",
+                draw_date=ms_to_iso_date(data["DRAW_DATE"]),
+                numbers=numbers,
+                bonus_number=bonus,
+                fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
+                source_url=URL,
+            )
+            return [result]
         except Exception as e:  # noqa: BLE001
             last_err = e
             log.warning("第 %d 次尝试失败: %s", attempt, e)
@@ -94,7 +99,7 @@ def save_results(results: list[CashBallResult]) -> Path:
 
 def main():
     results = fetch()
-    log.info("抓取结果(最新3条): %s", [r.to_dict() for r in results[:3]])
+    log.info("抓取结果: %s", [r.to_dict() for r in results])
     save_results(results)
 
 
