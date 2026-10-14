@@ -261,7 +261,12 @@
       "mega-millions",
       "powerball-double-play",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "ky-pick3-evening",
+      "ky-pick3-midday",
+      "ky-pick4-evening",
+      "ky-pick4-midday",
+      "ky-cash-ball-225"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
@@ -270,7 +275,12 @@
     "folder": "louisiana",
     "games": [
       "powerball",
-      "mega-millions"
+      "mega-millions",
+      "la-lotto",
+      "la-easy5",
+      "la-pick3",
+      "la-pick4",
+      "la-pick5"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
@@ -280,7 +290,14 @@
     "games": [
       "powerball",
       "mega-millions",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "ma-mass3",
+      "ma-mass4",
+      "ma-numbers-midday",
+      "ma-numbers-evening",
+      "ma-masscash-midday",
+      "ma-masscash-evening",
+      "ma-megabucks"
     ],
     "routedCourierPlatform": "jackpotcom",
     "schemaVersion": 1
@@ -291,7 +308,15 @@
       "powerball",
       "mega-millions",
       "powerball-double-play",
-      "powerball-xo"
+      "powerball-xo",
+      "md-pick3-midday",
+      "md-pick3-evening",
+      "md-pick4-midday",
+      "md-pick4-evening",
+      "md-pick5-midday",
+      "md-pick5-evening",
+      "md-bonus-match5",
+      "md-multimatch"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
@@ -304,7 +329,13 @@
       "powerball-double-play",
       "lotto-america",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "me-gimme5",
+      "me-pick3-day",
+      "me-pick3-evening",
+      "me-pick4-day",
+      "me-pick4-evening",
+      "me-cashpop"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
@@ -315,7 +346,14 @@
       "powerball",
       "mega-millions",
       "powerball-double-play",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "mi-daily3",
+      "mi-daily4",
+      "mi-daily5",
+      "mi-fantasy5",
+      "mi-classic-lotto-47",
+      "mi-keno",
+      "mi-poker-lotto"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
