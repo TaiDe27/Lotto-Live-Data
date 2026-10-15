@@ -1,6 +1,21 @@
 [
   {
     "game": "Hoosier Lotto",
+    "draw_date": "2026-10-10",
+    "numbers": [
+      5,
+      10,
+      23,
+      24,
+      37,
+      39
+    ],
+    "jackpot_amount": "$1,400,000",
+    "fetched_at": "2026-10-15T03:30:56.951434+00:00",
+    "source_url": "https://www.hoosierlottery.com/games/draw/hoosier-lotto/"
+  },
+  {
+    "game": "Hoosier Lotto",
     "draw_date": "2026-10-07",
     "numbers": [
       6,
