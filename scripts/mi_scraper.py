@@ -19,16 +19,14 @@ lotteryusa.com:
   - Cash Pop: still not found. The real API's `winningNumbers` field returns `null` for
     `logicalGameIdentifier: "CASH_POP"` (confirmed live) — its real winning-number field lives
     somewhere else in the schema, not yet located. Still deferred, not guessed.
-  - Fantasy 5, Classic Lotto 47, Poker Lotto: left on lotteryusa.com (already verified working,
-    not touched this round).
+  - Fantasy 5, Classic Lotto 47: left on lotteryusa.com (already verified working, not touched).
 
-Poker Lotto draws 5 playing cards, not numbers — `li.c-playing-card` each hold a rank span and a
-suit-symbol span (♣♥♦♠); this writes them as "RankSuitLetter" codes (e.g. "6C"/"2H"/"AC") matching
-exactly the format shown on the official app's own results card (confirmed against a user-provided
-screenshot: "6C-2H-AC-10H-4S"). Note: the real GraphQL API's own `winningNumbers.drawNumbers` field
-for `POKER_LOTTO` returns plain integers (e.g. `[51, 25, 33, 40, 49]`), NOT card codes — the
-integer-to-card encoding was not decoded this round, so the existing lotteryusa.com-based card-code
-scraper stays the source of truth for this game, not the GraphQL API.
+2026-10-15 update: Poker Lotto also moved onto the real GraphQL API. `winningNumbers.drawNumbers`
+for `POKER_LOTTO` returns 5 plain integers 1-52 (e.g. `[51, 25, 33, 40, 49]`), NOT card codes. The
+integer→card encoding was decoded and cross-verified against a real screenshot of the official
+app's results card showing exactly K♣ K♦ 8♠ 2♣ J♣ for that same draw — see `decode_poker_card`
+below for the formula. Output is written in the same "RankSuitLetter" code format the existing
+Swift display logic already expects (e.g. "6C"/"2H"/"AC"), so nothing downstream needed to change.
 """
 import dataclasses
 import datetime as dt
@@ -48,7 +46,19 @@ FETCH_COUNT = 10
 OUTPUT_DIR = Path("data") / "michigan"
 GRAPHQL_URL = "https://www.michiganlottery.com/api"
 
-SUIT_LETTER = {"♣": "C", "♥": "H", "♦": "D", "♠": "S"}
+RANK_ORDER = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+SUIT_ORDER = ["H", "D", "S", "C"]  # Hearts 1-13, Diamonds 14-26, Spades 27-39, Clubs 40-52
+
+
+def decode_poker_card(n: int) -> str:
+    """Michigan's real GraphQL API encodes each Poker Lotto card as an integer 1-52: 13-card suit
+    blocks in Hearts/Diamonds/Spades/Clubs order, rank order 2,3,...,10,J,Q,K,A within each suit
+    (2 = lowest, offset 0; A = highest, offset 12). Verified: [51,25,33,40,49] decodes to
+    KC/KD/8S/2C/JC, matching a real screenshot of K♣ K♦ 8♠ 2♣ J♣ for that exact draw."""
+    suit_index = (n - 1) // 13
+    rank_offset = (n - 1) % 13
+    return f"{RANK_ORDER[rank_offset]}{SUIT_ORDER[suit_index]}"
+
 
 DAILY_QUERY = """
 query dailyData($logicalGameIdentifier: String, $drawDate: String) {
@@ -62,6 +72,15 @@ query dailyData($logicalGameIdentifier: String, $drawDate: String) {
 
 KENO_QUERY = """
 query kenoData($logicalGameIdentifier: String, $drawDate: String) {
+  winningNumbers: winningNumbers(logicalGameIdentifier: $logicalGameIdentifier, drawDate: $drawDate) {
+    resultsPending
+    drawNumbers
+  }
+}
+"""
+
+POKER_QUERY = """
+query pokerLottoData($logicalGameIdentifier: String, $drawDate: String) {
   winningNumbers: winningNumbers(logicalGameIdentifier: $logicalGameIdentifier, drawDate: $drawDate) {
     resultsPending
     drawNumbers
@@ -130,6 +149,22 @@ def fetch_keno_real() -> list[dict]:
               "fetched_at": now.isoformat(), "source_url": GRAPHQL_URL}]
 
 
+def fetch_poker_lotto_real() -> list[dict]:
+    """Poker Lotto: real draw is 5 plain integers 1-52 (card codes), decoded via decode_poker_card
+    into the same "RankSuitLetter" format (e.g. "6C"/"AC") the existing Swift display logic expects."""
+    now = dt.datetime.now(dt.timezone.utc)
+    draw_date_param = now.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    data = _graphql("pokerLottoData", POKER_QUERY, {"logicalGameIdentifier": "POKER_LOTTO", "drawDate": draw_date_param})
+    wn = data.get("winningNumbers") or {}
+    if wn.get("resultsPending") or not wn.get("drawNumbers"):
+        log.warning("[POKER_LOTTO] 没有可用数据，跳过本次")
+        return []
+    today = now.date().isoformat()
+    cards = [decode_poker_card(n) for n in wn["drawNumbers"]]
+    return [{"game": "Poker Lotto", "draw_date": today, "cards": cards,
+              "fetched_at": now.isoformat(), "source_url": GRAPHQL_URL}]
+
+
 def iso_date(raw: str) -> str:
     return dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
 
@@ -187,31 +222,6 @@ def fetch_pool(url: str, count: int, label: str) -> list[dict]:
     return out
 
 
-def fetch_poker_lotto(url: str) -> list[dict]:
-    out = []
-    for row in _fetch_rows(url):
-        date_el = row.select_one(".c-draw-card__draw-date-sub")
-        if not date_el:
-            continue
-        draw_date = iso_date(date_el.get_text(strip=True))
-        cards_el = row.select("li.c-playing-card")
-        cards = []
-        for c in cards_el:
-            spans = c.select("span")
-            if len(spans) != 2:
-                continue
-            rank, suit = spans[0].get_text(strip=True), spans[1].get_text(strip=True)
-            letter = SUIT_LETTER.get(suit)
-            if not letter:
-                continue
-            cards.append(f"{rank}{letter}")
-        if len(cards) != 5:
-            continue
-        out.append({"game": "Poker Lotto", "draw_date": draw_date, "cards": cards,
-                    "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url})
-    return out
-
-
 def save(subdir: str, new_entries: list[dict]) -> None:
     out_dir = OUTPUT_DIR / subdir
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -238,7 +248,7 @@ def main():
     save("fantasy5", fetch_pool("https://www.lotteryusa.com/michigan/fantasy-5/", 5, "Fantasy 5"))
     save("classiclotto47", fetch_pool("https://www.lotteryusa.com/michigan/classic-lotto-47/", 6, "Classic Lotto 47"))
     save("keno", fetch_keno_real())
-    save("pokerlotto", fetch_poker_lotto("https://www.lotteryusa.com/michigan/poker-lotto/"))
+    save("pokerlotto", fetch_poker_lotto_real())
     log.info("完成")
 
 
