@@ -1304,673 +1304,673 @@
       "type": "other"
     },
     {
-      "id": "me-gimme5",
-      "stateCodes": [
-        "ME"
-      ],
-      "name": "Gimme 5",
-      "type": "inStateJackpot",
-      "pickRule": {
-        "mainCount": 5,
-        "mainRangeLower": 1,
-        "mainRangeUpper": 39,
-        "mainMustBeUnique": true,
-        "specialCount": 0,
-        "price": 1
-      },
-      "drawSchedule": "Daily 6:59 PM ET",
-      "payoutTable": [
-        {
-          "tierKey": "5",
-          "label": "Match 5",
-          "basePrize": null,
-          "isJackpotTier": true,
-          "odds": null,
-          "multiplierPrizes": null
-        }
-      ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": null,
-      "overallOddsText": null,
-      "payoutNote": null,
-      "powerPlay": null,
       "doublePlay": null,
-      "multiplierLabel": null,
+      "drawSchedule": "Daily 6:59 PM ET",
+      "id": "me-gimme5",
+      "jackpotDescription": null,
       "liveMapping": {
-        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/gimme5/latest.json",
+        "addOnDigitField": null,
         "cachePath": "live/maine/gimme5/latest.json",
-        "shape": "numeric",
-        "sessionFilter": null,
-        "drawDate": {
-          "field": "draw_date",
-          "dateFormat": "yyyy-MM-dd",
-          "truncateToLength": null,
-          "timeZoneIdentifier": "America/New_York",
-          "anchorHour": 18,
-          "anchorMinute": 59,
-          "anchorHourBySession": null,
-          "sessionField": null
+        "cashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
         },
-        "nextDrawDate": null,
-        "mainNumbersField": "numbers",
-        "specialNumbers": null,
-        "winningTeamsField": null,
-        "lottoMillion1Field": null,
-        "lottoMillion2Field": null,
         "derbyPositionsField": null,
         "derbyRaceTimeField": null,
-        "addOnDigitField": null,
+        "drawDate": {
+          "anchorHour": 18,
+          "anchorHourBySession": null,
+          "anchorMinute": 59,
+          "dateFormat": "yyyy-MM-dd",
+          "field": "draw_date",
+          "sessionField": null,
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
+        },
         "jackpot": {
-          "source": "none",
           "field": null,
+          "guardField": null,
           "moneyFormat": null,
-          "guardField": null
+          "source": "none"
         },
-        "cashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "mainNumbersField": "numbers",
         "multiplierField": null,
-        "winnersByTier": null
+        "nextCashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "nextDrawDate": null,
+        "nextJackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "sessionFilter": null,
+        "shape": "numeric",
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/gimme5/latest.json",
+        "specialNumbers": null,
+        "winnersByTier": null,
+        "winningTeamsField": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "multiplierLabel": null,
+      "name": "Gimme 5",
+      "ocrRule": null,
+      "overallOddsText": null,
+      "payoutNote": null,
+      "payoutTable": [
+        {
+          "basePrize": null,
+          "isJackpotTier": true,
+          "label": "Match 5",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "5"
+        }
+      ],
+      "pickRule": {
+        "mainCount": 5,
+        "mainMustBeUnique": true,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 39,
+        "price": 1,
+        "specialCount": 0
+      },
+      "powerPlay": null,
+      "stateCodes": [
+        "ME"
+      ],
+      "type": "inStateJackpot"
     },
     {
+      "buyTicketBaseURLs": {},
+      "doublePlay": null,
+      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
       "id": "me-pick3-day",
-      "stateCodes": [
-        "ME"
-      ],
+      "jackpotDescription": null,
+      "liveMapping": {
+        "addOnDigitField": null,
+        "cachePath": "live/maine/pick3/latest.json",
+        "cashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "drawDate": {
+          "anchorHour": null,
+          "anchorHourBySession": {
+            "day": 13,
+            "evening": 18
+          },
+          "anchorMinute": 0,
+          "dateFormat": "yyyy-MM-dd",
+          "field": "draw_date",
+          "sessionField": "session",
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
+        },
+        "jackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "mainNumbersField": "digits",
+        "multiplierField": null,
+        "nextCashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "nextDrawDate": null,
+        "nextJackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "sessionFilter": {
+          "equals": "day",
+          "field": "session"
+        },
+        "shape": "numeric",
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick3/latest.json",
+        "specialNumbers": null,
+        "winnersByTier": null,
+        "winningTeamsField": null
+      },
+      "matchRule": {
+        "addOnBoxTierKeysByWayCount": null,
+        "addOnStraightTierKey": null,
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "teamCount": null,
+        "teamJackpotTierKey": null,
+        "teamMatchTierKeyTemplate": null
+      },
+      "multiplierLabel": null,
       "name": "Pick 3 (Day)",
-      "type": "dailyNumbers",
-      "pickRule": {
-        "mainCount": 3,
-        "mainRangeLower": 0,
-        "mainRangeUpper": 9,
-        "mainMustBeUnique": false,
-        "specialCount": 0,
-        "price": 1
-      },
-      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
-      "payoutTable": [
-        {
-          "tierKey": "straight",
-          "label": "Exact Order (Straight)",
-          "basePrize": 500,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box3way",
-          "label": "Any Order, 3-way box",
-          "basePrize": 160,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box6way",
-          "label": "Any Order, 6-way box",
-          "basePrize": 80,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        }
-      ],
-      "buyTicketBaseURLs": {},
-      "jackpotDescription": null,
+      "ocrRule": null,
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutTable": [
+        {
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "label": "Exact Order (Straight)",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "straight"
+        },
+        {
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "label": "Any Order, 3-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box3way"
+        },
+        {
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "label": "Any Order, 6-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box6way"
+        }
+      ],
+      "pickRule": {
+        "mainCount": 3,
+        "mainMustBeUnique": false,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "price": 1,
+        "specialCount": 0
+      },
       "powerPlay": null,
-      "doublePlay": null,
-      "multiplierLabel": null,
-      "liveMapping": {
-        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick3/latest.json",
-        "cachePath": "live/maine/pick3/latest.json",
-        "shape": "numeric",
-        "sessionFilter": {
-          "field": "session",
-          "equals": "day"
-        },
-        "drawDate": {
-          "field": "draw_date",
-          "dateFormat": "yyyy-MM-dd",
-          "truncateToLength": null,
-          "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
-          "anchorMinute": 0,
-          "anchorHourBySession": {
-            "day": 13,
-            "evening": 18
-          },
-          "sessionField": "session"
-        },
-        "nextDrawDate": null,
-        "mainNumbersField": "digits",
-        "specialNumbers": null,
-        "winningTeamsField": null,
-        "lottoMillion1Field": null,
-        "lottoMillion2Field": null,
-        "derbyPositionsField": null,
-        "derbyRaceTimeField": null,
-        "addOnDigitField": null,
-        "jackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "cashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "multiplierField": null,
-        "winnersByTier": null
-      },
-      "matchRule": {
-        "kind": "positionalDigits",
-        "straightTierKey": "straight",
-        "boxTierKeysByWayCount": {
-          "3": "box3way",
-          "6": "box6way"
-        },
-        "teamCount": null,
-        "teamMatchTierKeyTemplate": null,
-        "teamJackpotTierKey": null,
-        "addOnStraightTierKey": null,
-        "addOnBoxTierKeysByWayCount": null
-      },
-      "ocrRule": null
+      "stateCodes": [
+        "ME"
+      ],
+      "type": "dailyNumbers"
     },
     {
+      "buyTicketBaseURLs": {},
+      "doublePlay": null,
+      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
       "id": "me-pick3-evening",
-      "stateCodes": [
-        "ME"
-      ],
-      "name": "Pick 3 (Evening)",
-      "type": "dailyNumbers",
-      "pickRule": {
-        "mainCount": 3,
-        "mainRangeLower": 0,
-        "mainRangeUpper": 9,
-        "mainMustBeUnique": false,
-        "specialCount": 0,
-        "price": 1
-      },
-      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
-      "payoutTable": [
-        {
-          "tierKey": "straight",
-          "label": "Exact Order (Straight)",
-          "basePrize": 500,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box3way",
-          "label": "Any Order, 3-way box",
-          "basePrize": 160,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box6way",
-          "label": "Any Order, 6-way box",
-          "basePrize": 80,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        }
-      ],
-      "buyTicketBaseURLs": {},
       "jackpotDescription": null,
-      "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
-      "powerPlay": null,
-      "doublePlay": null,
-      "multiplierLabel": null,
       "liveMapping": {
-        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick3/latest.json",
+        "addOnDigitField": null,
         "cachePath": "live/maine/pick3/latest.json",
-        "shape": "numeric",
-        "sessionFilter": {
-          "field": "session",
-          "equals": "evening"
+        "cashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
         },
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
         "drawDate": {
-          "field": "draw_date",
-          "dateFormat": "yyyy-MM-dd",
-          "truncateToLength": null,
-          "timeZoneIdentifier": "America/New_York",
           "anchorHour": null,
-          "anchorMinute": 0,
           "anchorHourBySession": {
             "day": 13,
             "evening": 18
           },
-          "sessionField": "session"
+          "anchorMinute": 0,
+          "dateFormat": "yyyy-MM-dd",
+          "field": "draw_date",
+          "sessionField": "session",
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
         },
-        "nextDrawDate": null,
-        "mainNumbersField": "digits",
-        "specialNumbers": null,
-        "winningTeamsField": null,
+        "jackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
         "lottoMillion1Field": null,
         "lottoMillion2Field": null,
-        "derbyPositionsField": null,
-        "derbyRaceTimeField": null,
-        "addOnDigitField": null,
-        "jackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "cashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
+        "mainNumbersField": "digits",
         "multiplierField": null,
-        "winnersByTier": null
+        "nextCashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "nextDrawDate": null,
+        "nextJackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "sessionFilter": {
+          "equals": "evening",
+          "field": "session"
+        },
+        "shape": "numeric",
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick3/latest.json",
+        "specialNumbers": null,
+        "winnersByTier": null,
+        "winningTeamsField": null
       },
       "matchRule": {
-        "kind": "positionalDigits",
-        "straightTierKey": "straight",
+        "addOnBoxTierKeysByWayCount": null,
+        "addOnStraightTierKey": null,
         "boxTierKeysByWayCount": {
           "3": "box3way",
           "6": "box6way"
         },
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
         "teamCount": null,
-        "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null,
-        "addOnStraightTierKey": null,
-        "addOnBoxTierKeysByWayCount": null
+        "teamMatchTierKeyTemplate": null
       },
-      "ocrRule": null
+      "multiplierLabel": null,
+      "name": "Pick 3 (Evening)",
+      "ocrRule": null,
+      "overallOddsText": null,
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutTable": [
+        {
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "label": "Exact Order (Straight)",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "straight"
+        },
+        {
+          "basePrize": 160,
+          "isJackpotTier": false,
+          "label": "Any Order, 3-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box3way"
+        },
+        {
+          "basePrize": 80,
+          "isJackpotTier": false,
+          "label": "Any Order, 6-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box6way"
+        }
+      ],
+      "pickRule": {
+        "mainCount": 3,
+        "mainMustBeUnique": false,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "price": 1,
+        "specialCount": 0
+      },
+      "powerPlay": null,
+      "stateCodes": [
+        "ME"
+      ],
+      "type": "dailyNumbers"
     },
     {
+      "buyTicketBaseURLs": {},
+      "doublePlay": null,
+      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
       "id": "me-pick4-day",
-      "stateCodes": [
-        "ME"
-      ],
-      "name": "Pick 4 (Day)",
-      "type": "dailyNumbers",
-      "pickRule": {
-        "mainCount": 4,
-        "mainRangeLower": 0,
-        "mainRangeUpper": 9,
-        "mainMustBeUnique": false,
-        "specialCount": 0,
-        "price": 1
-      },
-      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
-      "payoutTable": [
-        {
-          "tierKey": "straight",
-          "label": "Exact Order (Straight)",
-          "basePrize": 5000,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box4way",
-          "label": "Any Order, 4-way box",
-          "basePrize": 1198,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box6way",
-          "label": "Any Order, 6-way box",
-          "basePrize": 798,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box12way",
-          "label": "Any Order, 12-way box",
-          "basePrize": 399,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box24way",
-          "label": "Any Order, 24-way box",
-          "basePrize": 200,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        }
-      ],
-      "buyTicketBaseURLs": {},
       "jackpotDescription": null,
-      "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
-      "powerPlay": null,
-      "doublePlay": null,
-      "multiplierLabel": null,
       "liveMapping": {
-        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick4/latest.json",
+        "addOnDigitField": null,
         "cachePath": "live/maine/pick4/latest.json",
-        "shape": "numeric",
-        "sessionFilter": {
-          "field": "session",
-          "equals": "day"
+        "cashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
         },
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
         "drawDate": {
-          "field": "draw_date",
-          "dateFormat": "yyyy-MM-dd",
-          "truncateToLength": null,
-          "timeZoneIdentifier": "America/New_York",
           "anchorHour": null,
-          "anchorMinute": 0,
           "anchorHourBySession": {
             "day": 13,
             "evening": 18
           },
-          "sessionField": "session"
+          "anchorMinute": 0,
+          "dateFormat": "yyyy-MM-dd",
+          "field": "draw_date",
+          "sessionField": "session",
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
         },
-        "nextDrawDate": null,
-        "mainNumbersField": "digits",
-        "specialNumbers": null,
-        "winningTeamsField": null,
+        "jackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
         "lottoMillion1Field": null,
         "lottoMillion2Field": null,
-        "derbyPositionsField": null,
-        "derbyRaceTimeField": null,
-        "addOnDigitField": null,
-        "jackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "cashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
+        "mainNumbersField": "digits",
         "multiplierField": null,
-        "winnersByTier": null
+        "nextCashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "nextDrawDate": null,
+        "nextJackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "sessionFilter": {
+          "equals": "day",
+          "field": "session"
+        },
+        "shape": "numeric",
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick4/latest.json",
+        "specialNumbers": null,
+        "winnersByTier": null,
+        "winningTeamsField": null
       },
       "matchRule": {
+        "addOnBoxTierKeysByWayCount": null,
+        "addOnStraightTierKey": null,
+        "boxTierKeysByWayCount": {
+          "12": "box12way",
+          "24": "box24way",
+          "4": "box4way",
+          "6": "box6way"
+        },
         "kind": "positionalDigits",
         "straightTierKey": "straight",
-        "boxTierKeysByWayCount": {
-          "4": "box4way",
-          "6": "box6way",
-          "12": "box12way",
-          "24": "box24way"
-        },
         "teamCount": null,
-        "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null,
-        "addOnStraightTierKey": null,
-        "addOnBoxTierKeysByWayCount": null
+        "teamMatchTierKeyTemplate": null
       },
-      "ocrRule": null
+      "multiplierLabel": null,
+      "name": "Pick 4 (Day)",
+      "ocrRule": null,
+      "overallOddsText": null,
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutTable": [
+        {
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "label": "Exact Order (Straight)",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "straight"
+        },
+        {
+          "basePrize": 1198,
+          "isJackpotTier": false,
+          "label": "Any Order, 4-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box4way"
+        },
+        {
+          "basePrize": 798,
+          "isJackpotTier": false,
+          "label": "Any Order, 6-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box6way"
+        },
+        {
+          "basePrize": 399,
+          "isJackpotTier": false,
+          "label": "Any Order, 12-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box12way"
+        },
+        {
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "label": "Any Order, 24-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box24way"
+        }
+      ],
+      "pickRule": {
+        "mainCount": 4,
+        "mainMustBeUnique": false,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "price": 1,
+        "specialCount": 0
+      },
+      "powerPlay": null,
+      "stateCodes": [
+        "ME"
+      ],
+      "type": "dailyNumbers"
     },
     {
-      "id": "me-pick4-evening",
-      "stateCodes": [
-        "ME"
-      ],
-      "name": "Pick 4 (Evening)",
-      "type": "dailyNumbers",
-      "pickRule": {
-        "mainCount": 4,
-        "mainRangeLower": 0,
-        "mainRangeUpper": 9,
-        "mainMustBeUnique": false,
-        "specialCount": 0,
-        "price": 1
-      },
-      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
-      "payoutTable": [
-        {
-          "tierKey": "straight",
-          "label": "Exact Order (Straight)",
-          "basePrize": 5000,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box4way",
-          "label": "Any Order, 4-way box",
-          "basePrize": 1198,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box6way",
-          "label": "Any Order, 6-way box",
-          "basePrize": 798,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box12way",
-          "label": "Any Order, 12-way box",
-          "basePrize": 399,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        },
-        {
-          "tierKey": "box24way",
-          "label": "Any Order, 24-way box",
-          "basePrize": 200,
-          "isJackpotTier": false,
-          "odds": null,
-          "multiplierPrizes": null
-        }
-      ],
       "buyTicketBaseURLs": {},
-      "jackpotDescription": null,
-      "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
-      "powerPlay": null,
       "doublePlay": null,
-      "multiplierLabel": null,
+      "drawSchedule": "Daily 1:10 PM / 6:50 PM ET",
+      "id": "me-pick4-evening",
+      "jackpotDescription": null,
       "liveMapping": {
-        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick4/latest.json",
+        "addOnDigitField": null,
         "cachePath": "live/maine/pick4/latest.json",
-        "shape": "numeric",
-        "sessionFilter": {
-          "field": "session",
-          "equals": "evening"
+        "cashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
         },
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
         "drawDate": {
-          "field": "draw_date",
-          "dateFormat": "yyyy-MM-dd",
-          "truncateToLength": null,
-          "timeZoneIdentifier": "America/New_York",
           "anchorHour": null,
-          "anchorMinute": 0,
           "anchorHourBySession": {
             "day": 13,
             "evening": 18
           },
-          "sessionField": "session"
+          "anchorMinute": 0,
+          "dateFormat": "yyyy-MM-dd",
+          "field": "draw_date",
+          "sessionField": "session",
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
         },
-        "nextDrawDate": null,
-        "mainNumbersField": "digits",
-        "specialNumbers": null,
-        "winningTeamsField": null,
+        "jackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
         "lottoMillion1Field": null,
         "lottoMillion2Field": null,
-        "derbyPositionsField": null,
-        "derbyRaceTimeField": null,
-        "addOnDigitField": null,
-        "jackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "cashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
+        "mainNumbersField": "digits",
         "multiplierField": null,
-        "winnersByTier": null
+        "nextCashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "nextDrawDate": null,
+        "nextJackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "sessionFilter": {
+          "equals": "evening",
+          "field": "session"
+        },
+        "shape": "numeric",
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/pick4/latest.json",
+        "specialNumbers": null,
+        "winnersByTier": null,
+        "winningTeamsField": null
       },
       "matchRule": {
+        "addOnBoxTierKeysByWayCount": null,
+        "addOnStraightTierKey": null,
+        "boxTierKeysByWayCount": {
+          "12": "box12way",
+          "24": "box24way",
+          "4": "box4way",
+          "6": "box6way"
+        },
         "kind": "positionalDigits",
         "straightTierKey": "straight",
-        "boxTierKeysByWayCount": {
-          "4": "box4way",
-          "6": "box6way",
-          "12": "box12way",
-          "24": "box24way"
-        },
         "teamCount": null,
-        "teamMatchTierKeyTemplate": null,
         "teamJackpotTierKey": null,
-        "addOnStraightTierKey": null,
-        "addOnBoxTierKeysByWayCount": null
+        "teamMatchTierKeyTemplate": null
       },
-      "ocrRule": null
+      "multiplierLabel": null,
+      "name": "Pick 4 (Evening)",
+      "ocrRule": null,
+      "overallOddsText": null,
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutTable": [
+        {
+          "basePrize": 5000,
+          "isJackpotTier": false,
+          "label": "Exact Order (Straight)",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "straight"
+        },
+        {
+          "basePrize": 1198,
+          "isJackpotTier": false,
+          "label": "Any Order, 4-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box4way"
+        },
+        {
+          "basePrize": 798,
+          "isJackpotTier": false,
+          "label": "Any Order, 6-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box6way"
+        },
+        {
+          "basePrize": 399,
+          "isJackpotTier": false,
+          "label": "Any Order, 12-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box12way"
+        },
+        {
+          "basePrize": 200,
+          "isJackpotTier": false,
+          "label": "Any Order, 24-way box",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "box24way"
+        }
+      ],
+      "pickRule": {
+        "mainCount": 4,
+        "mainMustBeUnique": false,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "price": 1,
+        "specialCount": 0
+      },
+      "powerPlay": null,
+      "stateCodes": [
+        "ME"
+      ],
+      "type": "dailyNumbers"
     },
     {
       "buyTicketBaseURLs": {},
       "drawSchedule": "5x daily: Early Bird 9:30 AM, Brunch 12:30 PM, Matinee 2:30 PM, Supper Time 7:30 PM, Night Owl 11:30 PM ET",
       "id": "me-cashpop",
       "liveMapping": {
-        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/cashpop/latest.json",
+        "addOnDigitField": null,
         "cachePath": "live/maine/cashpop/latest.json",
-        "shape": "numeric",
-        "sessionFilter": null,
-        "drawDate": {
-          "field": "draw_date",
-          "dateFormat": "yyyy-MM-dd",
-          "truncateToLength": null,
-          "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
-          "anchorMinute": 30,
-          "anchorHourBySession": {
-            "early_bird": 9,
-            "brunch": 12,
-            "matinee": 14,
-            "supper_time": 19,
-            "night_owl": 23
-          },
-          "sessionField": "session"
+        "cashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
         },
-        "nextDrawDate": null,
-        "mainNumbersField": "numbers",
-        "specialNumbers": null,
-        "winningTeamsField": null,
-        "lottoMillion1Field": null,
-        "lottoMillion2Field": null,
         "derbyPositionsField": null,
         "derbyRaceTimeField": null,
-        "addOnDigitField": null,
-        "pokerCardsField": null,
+        "drawDate": {
+          "anchorHour": null,
+          "anchorHourBySession": {
+            "brunch": 12,
+            "early_bird": 9,
+            "matinee": 14,
+            "night_owl": 23,
+            "supper_time": 19
+          },
+          "anchorMinute": 30,
+          "dateFormat": "yyyy-MM-dd",
+          "field": "draw_date",
+          "sessionField": "session",
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
+        },
         "jackpot": {
-          "source": "none",
           "field": null,
+          "guardField": null,
           "moneyFormat": null,
-          "guardField": null
+          "source": "none"
         },
-        "cashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
-        "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
-          "guardField": null
-        },
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "mainNumbersField": "numbers",
         "multiplierField": null,
-        "winnersByTier": null
+        "nextCashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "nextDrawDate": null,
+        "nextJackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "pokerCardsField": null,
+        "sessionFilter": null,
+        "shape": "numeric",
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maine/cashpop/latest.json",
+        "specialNumbers": null,
+        "winnersByTier": null,
+        "winningTeamsField": null
       },
       "matchRule": {
         "boxTierKeysByWayCount": null,
@@ -2074,6 +2074,121 @@
         "ME"
       ],
       "type": "other"
+    },
+    {
+      "buyTicketBaseURLs": {},
+      "drawSchedule": "Monday, Wednesday, and Saturday nights at approximately 7:59 PM Eastern Time.",
+      "id": "tri-state-megabucks-plus",
+      "jackpotDescription": "Match all 5 main numbers (1-41) plus the Megaball (1-6) to win the jackpot, which starts at $1 million and grows until won. Played across Maine, New Hampshire, and Vermont, sharing the same drawing.",
+      "liveMapping": {
+        "cachePath": "live/tri-state-megabucks-plus/latest.json",
+        "cashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "drawDate": {
+          "anchorHour": 19,
+          "anchorHourBySession": null,
+          "anchorMinute": 59,
+          "dateFormat": "yyyy-MM-dd",
+          "field": "draw_date",
+          "sessionField": null,
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
+        },
+        "jackpot": {
+          "field": "jackpot_amount",
+          "guardField": null,
+          "moneyFormat": "leadingNumber",
+          "source": "directField"
+        },
+        "mainNumbersField": "main_numbers",
+        "multiplierField": null,
+        "nextCashValue": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "nextDrawDate": {
+          "anchorHour": 19,
+          "anchorHourBySession": null,
+          "anchorMinute": 59,
+          "dateFormat": null,
+          "field": null,
+          "sessionField": null,
+          "timeZoneIdentifier": "America/New_York",
+          "truncateToLength": null
+        },
+        "nextJackpot": {
+          "field": null,
+          "guardField": null,
+          "moneyFormat": null,
+          "source": "none"
+        },
+        "sessionFilter": null,
+        "shape": "numeric",
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/multistate/tri-state-megabucks-plus/latest.json",
+        "specialNumbers": {
+          "field": "megaball",
+          "wrapScalar": true
+        },
+        "winnersByTier": {
+          "countMode": "plain",
+          "divisionKey": null,
+          "field": null,
+          "mode": "dictionaryByTierName",
+          "nearMissTier": null,
+          "tierKeyRemap": null,
+          "tierKeyTemplate": null
+        },
+        "winningTeamsField": null
+      },
+      "name": "Tri-State Megabucks Plus",
+      "ocrRule": {
+        "addOnMarkerPattern": null,
+        "boardLabelPattern": null,
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "verifiedAgainstRealTicket": false
+      },
+      "payoutTable": [
+        {
+          "basePrize": null,
+          "isJackpotTier": true,
+          "label": "Match 5 + MB",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "5+1"
+        },
+        {
+          "basePrize": null,
+          "isJackpotTier": false,
+          "label": "Match 5",
+          "multiplierPrizes": null,
+          "odds": null,
+          "tierKey": "5+0"
+        }
+      ],
+      "pickRule": {
+        "addOns": [],
+        "mainCount": 5,
+        "mainMustBeUnique": true,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 41,
+        "price": 2,
+        "specialCount": 1,
+        "specialName": "Megaball",
+        "specialRangeLower": 1,
+        "specialRangeUpper": 6
+      },
+      "stateCodes": [
+        "ME",
+        "NH",
+        "VT"
+      ],
+      "type": "multiStateJackpot"
     }
   ]
 }
