@@ -2099,10 +2099,10 @@
           "truncateToLength": null
         },
         "jackpot": {
-          "field": "jackpot_amount",
+          "field": null,
           "guardField": null,
-          "moneyFormat": "leadingNumber",
-          "source": "directField"
+          "moneyFormat": null,
+          "source": "none"
         },
         "mainNumbersField": "main_numbers",
         "multiplierField": null,
@@ -2123,10 +2123,10 @@
           "truncateToLength": null
         },
         "nextJackpot": {
-          "field": null,
+          "field": "jackpot_amount",
           "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "moneyFormat": "leadingNumber",
+          "source": "directField"
         },
         "sessionFilter": null,
         "shape": "numeric",
