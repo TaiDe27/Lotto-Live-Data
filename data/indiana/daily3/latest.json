@@ -1,15 +1,15 @@
 [
   {
     "game": "Daily 3",
-    "draw_date": "2026-10-14",
+    "draw_date": "2026-10-15",
     "session": "midday",
     "digits": [
-      1,
-      7,
-      0
+      5,
+      4,
+      9
     ],
-    "superball": 9,
-    "fetched_at": "2026-10-15T09:42:57.657000+00:00",
+    "superball": 5,
+    "fetched_at": "2026-10-15T17:41:02.834042+00:00",
     "source_url": "https://www.hoosierlottery.com/games/draw/daily-3/"
   },
   {
@@ -22,7 +22,20 @@
       5
     ],
     "superball": 9,
-    "fetched_at": "2026-10-15T09:42:57.657206+00:00",
+    "fetched_at": "2026-10-15T17:41:02.834178+00:00",
+    "source_url": "https://www.hoosierlottery.com/games/draw/daily-3/"
+  },
+  {
+    "game": "Daily 3",
+    "draw_date": "2026-10-14",
+    "session": "midday",
+    "digits": [
+      1,
+      7,
+      0
+    ],
+    "superball": 9,
+    "fetched_at": "2026-10-15T09:42:57.657000+00:00",
     "source_url": "https://www.hoosierlottery.com/games/draw/daily-3/"
   },
   {
