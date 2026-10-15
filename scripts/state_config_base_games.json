@@ -17758,10 +17758,18 @@
     "payoutTable": [
       {
         "tierKey": "10",
-        "label": "Match 10",
-        "basePrize": null,
+        "label": "Match 10 of 22",
+        "basePrize": 250000,
         "isJackpotTier": true,
-        "odds": null,
+        "odds": "1 in 2,546,203",
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "9",
+        "label": "Match 9 of 22",
+        "basePrize": 2500,
+        "isJackpotTier": false,
+        "odds": "1 in 57,070",
         "multiplierPrizes": null
       }
     ],

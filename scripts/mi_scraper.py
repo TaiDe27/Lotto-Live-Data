@@ -1,18 +1,34 @@
 """
-Michigan own-games — lotteryusa.com. michiganlottery.com's own site runs a GraphQL API
-(confirmed 2026-10-14: `allGames` query works and gave the REAL current game roster — Daily 3/4/5
-Midday+Evening, Fantasy 5, Classic Lotto 47, Daily Keno, Club Keno (separate from Daily Keno),
-Poker Lotto, Cash Pop — but introspection is disabled and the actual draw-results query shape
-wasn't reverse-engineered in the time available this round, so this scraper uses lotteryusa.com
-instead for the real data. Flagged: Daily 3/4/5 only have ONE session on lotteryusa.com (no
-"midday-daily-3"-style URL exists, checked) even though Michigan draws them twice daily — the
-midday session is NOT captured by this scraper, a real known gap, not a silent one. Cash Pop is
-also not on lotteryusa.com (404) — deferred like Maryland's.
+Michigan own-games — mixed sources.
+
+2026-10-14 update: michiganlottery.com's real GraphQL API (`POST /api`) was reverse-engineered via
+real browser network captures (the official app itself calls it) — `drawResults`/`winningNumbers`
+are real fields, confirmed live. Daily 3/4/5 and Daily Keno now use this directly instead of
+lotteryusa.com:
+  - Daily 3/4/5: the real `winningNumbers(logicalGameIdentifier, drawDate)` query returns BOTH
+    `drawNumbersMid` and `drawNumbersEve` in one call — fixes a real gap where the prior
+    lotteryusa.com-based scraper only ever captured ONE session (lotteryusa.com has no
+    "midday-daily-3"-style URL), silently missing Michigan's real twice-daily draws.
+  - Daily Keno: the real draw is **22 numbers** (confirmed live + cross-checked against Michigan's
+    own official prize chart: "Match 10 of 22" / "Match 9 of 22"), NOT 10 — the prior
+    lotteryusa.com-based scraper only captured 10, meaning 12 of the real winning numbers were
+    invisible to this app's matching logic the whole time it was live. This is a real correctness
+    bug fix, not just a new-field addition. `DAILY_KENO` is a distinct GraphQL identifier from
+    `CLUB_KENO` (a separate, much-higher-frequency game this project does not build — see this
+    project's standing "≤10 draws/day" rule) — don't conflate them.
+  - Cash Pop: still not found. The real API's `winningNumbers` field returns `null` for
+    `logicalGameIdentifier: "CASH_POP"` (confirmed live) — its real winning-number field lives
+    somewhere else in the schema, not yet located. Still deferred, not guessed.
+  - Fantasy 5, Classic Lotto 47, Poker Lotto: left on lotteryusa.com (already verified working,
+    not touched this round).
 
 Poker Lotto draws 5 playing cards, not numbers — `li.c-playing-card` each hold a rank span and a
 suit-symbol span (♣♥♦♠); this writes them as "RankSuitLetter" codes (e.g. "6C"/"2H"/"AC") matching
 exactly the format shown on the official app's own results card (confirmed against a user-provided
-screenshot: "6C-2H-AC-10H-4S").
+screenshot: "6C-2H-AC-10H-4S"). Note: the real GraphQL API's own `winningNumbers.drawNumbers` field
+for `POKER_LOTTO` returns plain integers (e.g. `[51, 25, 33, 40, 49]`), NOT card codes — the
+integer-to-card encoding was not decoded this round, so the existing lotteryusa.com-based card-code
+scraper stays the source of truth for this game, not the GraphQL API.
 """
 import dataclasses
 import datetime as dt
@@ -30,8 +46,88 @@ MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 FETCH_COUNT = 10
 OUTPUT_DIR = Path("data") / "michigan"
+GRAPHQL_URL = "https://www.michiganlottery.com/api"
 
 SUIT_LETTER = {"♣": "C", "♥": "H", "♦": "D", "♠": "S"}
+
+DAILY_QUERY = """
+query dailyData($logicalGameIdentifier: String, $drawDate: String) {
+  winningNumbers: winningNumbers(logicalGameIdentifier: $logicalGameIdentifier, drawDate: $drawDate) {
+    resultsPending
+    drawNumbersMid
+    drawNumbersEve
+  }
+}
+"""
+
+KENO_QUERY = """
+query kenoData($logicalGameIdentifier: String, $drawDate: String) {
+  winningNumbers: winningNumbers(logicalGameIdentifier: $logicalGameIdentifier, drawDate: $drawDate) {
+    resultsPending
+    drawNumbers
+  }
+}
+"""
+
+
+def _graphql(operation_name: str, query: str, variables: dict) -> dict:
+    import requests
+    last_err = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = requests.post(
+                GRAPHQL_URL,
+                headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"},
+                json={"operationName": operation_name, "query": query, "variables": variables},
+                timeout=REQUEST_TIMEOUT_SEC,
+            )
+            resp.raise_for_status()
+            payload = resp.json()
+            if payload.get("errors"):
+                raise ValueError(f"GraphQL errors: {payload['errors']}")
+            return payload["data"]
+        except Exception as e:  # noqa: BLE001
+            last_err = e
+            log.warning("[%s] 第 %d 次尝试失败: %s", operation_name, attempt, e)
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF_SEC * attempt)
+    raise RuntimeError(f"[{operation_name}] 重试多次后仍然失败") from last_err
+
+
+def fetch_daily_both_sessions(logical_game_identifier: str, label: str) -> list[dict]:
+    """Daily 3/4/5: one real API call returns BOTH Midday and Evening in the same response —
+    emits two tagged entries per real draw date, same `session`-tagged shape this project's
+    `fetchLiveDigitGameHistory` already expects (no Swift changes needed)."""
+    now = dt.datetime.now(dt.timezone.utc)
+    draw_date_param = now.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    data = _graphql("dailyData", DAILY_QUERY, {"logicalGameIdentifier": logical_game_identifier, "drawDate": draw_date_param})
+    wn = data.get("winningNumbers") or {}
+    if wn.get("resultsPending"):
+        log.warning("[%s] resultsPending=true, 跳过本次", logical_game_identifier)
+        return []
+    today = now.date().isoformat()
+    out = []
+    for session_name, digits in (("midday", wn.get("drawNumbersMid")), ("evening", wn.get("drawNumbersEve"))):
+        if not digits:
+            continue
+        out.append({"game": label, "draw_date": today, "session": session_name, "digits": digits,
+                    "fetched_at": now.isoformat(), "source_url": GRAPHQL_URL})
+    return out
+
+
+def fetch_keno_real() -> list[dict]:
+    """Daily Keno: real draw is 22 numbers (confirmed live + against Michigan's own official prize
+    chart), not 10 — the prior lotteryusa.com scraper under-captured this game's real draw."""
+    now = dt.datetime.now(dt.timezone.utc)
+    draw_date_param = now.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    data = _graphql("kenoData", KENO_QUERY, {"logicalGameIdentifier": "DAILY_KENO", "drawDate": draw_date_param})
+    wn = data.get("winningNumbers") or {}
+    if wn.get("resultsPending") or not wn.get("drawNumbers"):
+        log.warning("[DAILY_KENO] 没有可用数据，跳过本次")
+        return []
+    today = now.date().isoformat()
+    return [{"game": "Keno", "draw_date": today, "numbers": wn["drawNumbers"],
+              "fetched_at": now.isoformat(), "source_url": GRAPHQL_URL}]
 
 
 def iso_date(raw: str) -> str:
@@ -136,12 +232,12 @@ def save(subdir: str, new_entries: list[dict]) -> None:
 
 
 def main():
-    save("daily3", fetch_digit("https://www.lotteryusa.com/michigan/daily-3/", 3, "Daily 3"))
-    save("daily4", fetch_digit("https://www.lotteryusa.com/michigan/daily-4/", 4, "Daily 4"))
-    save("daily5", fetch_digit("https://www.lotteryusa.com/michigan/daily-5/", 5, "Daily 5"))
+    save("daily3", fetch_daily_both_sessions("DAILY_3", "Daily 3"))
+    save("daily4", fetch_daily_both_sessions("DAILY_4", "Daily 4"))
+    save("daily5", fetch_daily_both_sessions("DAILY_5", "Daily 5"))
     save("fantasy5", fetch_pool("https://www.lotteryusa.com/michigan/fantasy-5/", 5, "Fantasy 5"))
     save("classiclotto47", fetch_pool("https://www.lotteryusa.com/michigan/classic-lotto-47/", 6, "Classic Lotto 47"))
-    save("keno", fetch_pool("https://www.lotteryusa.com/michigan/keno/", 10, "Keno"))
+    save("keno", fetch_keno_real())
     save("pokerlotto", fetch_poker_lotto("https://www.lotteryusa.com/michigan/poker-lotto/"))
     log.info("完成")
 
