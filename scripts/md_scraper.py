@@ -1,11 +1,27 @@
 """
-Maryland own-games — lotteryusa.com. mdlottery.com's own site IS reachable with a browser UA
-(confirmed 2026-10-14; this project's identifying UA gets 403), but its real results feed loads via
-a separate call this session didn't have time to reverse-engineer — lotteryusa.com has clean
-per-game pages for everything except Cash POP (404 there), so Cash POP is deferred, not guessed.
+Maryland own-games — mdlottery.com itself (NOT lotteryusa.com).
 
-Bonus Match 5 and Multi-Match reuse the same `tr.c-draw-card` structure already proven for every
-other lotteryusa.com-sourced state in this repo.
+Corrects a wrong conclusion from the first build pass: the official site IS plain
+server-rendered HTML for every game below (confirmed 2026-10-14 with this project's own
+identifying scraper UA, no browser/session needed) — the earlier "results feed loads via a
+separate call this session didn't have time to reverse-engineer" note was simply an incomplete
+investigation, not a real technical block. Pick 3/4/5 share one page
+(mdlottery.com/games/pick-3-pick-4-pick-5/) with three `.single-winning-numbers.pick-N` blocks;
+Cash POP, Bonus Match 5, and Multi-Match each have their own page, structurally identical
+(`.result-container` inside a `.single-winning-numbers.<slug>` wrapper, with the draw date in
+`.result-col.date p`).
+
+Cash POP draws 4x/day (9am/1pm/6pm/11pm ET, confirmed from the page's own How-to-Play text) —
+same `membershipPick` mechanic already built for Indiana/Maine/Kentucky-investigated-and-rejected.
+Unlike Indiana's fixed $1/POP, Maryland lets you wager $1/$2/$5/$10 per POP — doesn't change the
+win/loss determination (still binary: did the drawn number fall in your chosen set), so no scraper
+change needed for that, it only affects a player's real payout multiplier which this app already
+can't compute from public draw data for any Cash POP variant.
+
+Output field shapes (draw_date/session/digits for digit games, draw_date/numbers/bonus_number for
+pool games, draw_date/session/numbers for Cash POP) are kept IDENTICAL to the original
+lotteryusa.com-sourced scraper so the Swift side's `liveMapping`/hardcoded-fallback field names
+don't need to change for Pick 3/4/5/Bonus Match 5/Multi-Match — only Cash POP is new.
 """
 import dataclasses
 import datetime as dt
@@ -20,39 +36,61 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("md_scraper")
 
 USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
+# mdlottery.com's WAF 403s a bare User-Agent-only request (confirmed 2026-10-15) — needs a fuller,
+# browser-like header set (incl. Sec-Fetch-*/Upgrade-Insecure-Requests) to pass reliably; a
+# User-Agent+Accept-Language-only set still passed sometimes but 403'd intermittently in repeated
+# testing, this fuller set passed every time it was tried. Accept-Encoding deliberately excludes
+# "br" (Brotli): without the optional `brotli` package installed, `requests` can't decode a Brotli
+# response body and silently hands back garbled bytes instead of erroring, which is worse than just
+# not offering it.
+REQUEST_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+}
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
-FETCH_COUNT = 10
 OUTPUT_DIR = Path("data") / "maryland"
 
-MONEY_PATTERN = r"\$?([\d,.]+\s*(?:Million|Billion|million|billion)?)"
+# Cash POP's 4 real sessions (9am/1pm/6pm/11pm ET) keyed to the same session-name convention
+# this project already uses for Indiana ("morning"/"matinee"/"afternoon"/"evening"/"latenight")
+# and Maine ("early_bird"/"brunch"/...) — Maryland only has 4, not 5, so its own distinct map.
+SESSION_BY_HOUR_LABEL = {
+    "9 A.M.": "morning",
+    "1 P.M.": "afternoon",
+    "6 P.M.": "evening",
+    "11 P.M.": "latenight",
+}
 
 
 def iso_date(raw: str) -> str:
-    return dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
+    # mdlottery.com prints dates as "10/13/26" (M/D/YY) or "10/13/2026" (Cash POP's "AS OF" line)
+    raw = raw.strip()
+    for fmt in ("%m/%d/%y", "%m/%d/%Y"):
+        try:
+            return dt.datetime.strptime(raw, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    raise ValueError(f"unrecognized date format: {raw!r}")
 
 
-def parse_money(raw: str) -> Optional[str]:
-    if not raw:
-        return None
-    m = re.search(MONEY_PATTERN, raw)
-    return m.group(1).strip() if m else None
-
-
-def _fetch_rows(url: str) -> list:
+def _fetch_soup(url: str):
     import requests
     from bs4 import BeautifulSoup
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
+            resp = requests.get(url, headers=REQUEST_HEADERS, timeout=REQUEST_TIMEOUT_SEC)
             resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
-            rows = soup.select("tr.c-draw-card")[:FETCH_COUNT]
-            if not rows:
-                raise ValueError(f"[{url}] 没找到任何 c-draw-card 行")
-            return rows
+            return BeautifulSoup(resp.text, "html.parser")
         except Exception as e:  # noqa: BLE001
             last_err = e
             log.warning("[%s] 第 %d 次尝试失败: %s", url, attempt, e)
@@ -61,52 +99,119 @@ def _fetch_rows(url: str) -> list:
     raise RuntimeError(f"[{url}] 重试多次后仍然失败") from last_err
 
 
-def fetch_digit_session(url: str, session: str, count: int, label: str) -> list[dict]:
-    rows = _fetch_rows(url)
+def _balls_to_digits(ul) -> list[int]:
     out = []
-    for row in rows:
-        date_el = row.select_one(".c-draw-card__draw-date-sub")
-        if not date_el:
-            continue
-        draw_date = iso_date(date_el.get_text(strip=True))
-        balls = row.select(".c-draw-card__ball-list > li.c-ball") or row.select("li.c-ball")
-        digits = [int(b.get_text(strip=True)) for b in balls]
-        if len(digits) != count:
-            continue
-        out.append({"game": label, "draw_date": draw_date, "session": session, "digits": digits,
-                    "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url})
+    for li in ul.select("li"):
+        classes = li.get("class") or []
+        if "multiplier" in classes and "label" in classes:
+            continue  # the "Midday"/"Evening" text label li, not a real ball
+        out.append(int(li.get_text(strip=True)))
     return out
 
 
-def fetch_pool(url: str, label: str, main_count: int, has_bonus: bool) -> list[dict]:
-    rows = _fetch_rows(url)
-    out = []
-    for row in rows:
-        date_el = row.select_one(".c-draw-card__draw-date-sub")
+def fetch_pick345() -> dict[str, list[dict]]:
+    """Pick 3/4/5 all live on one page, one `.single-winning-numbers.pick-N` block each."""
+    soup = _fetch_soup("https://www.mdlottery.com/games/pick-3-pick-4-pick-5/")
+    now_iso = dt.datetime.now(dt.timezone.utc).isoformat()
+    results: dict[str, list[dict]] = {"pick3": [], "pick4": [], "pick5": []}
+    for n, key in ((3, "pick3"), (4, "pick4"), (5, "pick5")):
+        block = soup.select_one(f".single-winning-numbers.pick-{n}")
+        if not block:
+            log.warning("pick-%d block not found", n)
+            continue
+        date_el = block.select_one(".result-col.date p")
         if not date_el:
             continue
         draw_date = iso_date(date_el.get_text(strip=True))
-        box = row.select_one(".c-draw-card__ball-box") or row
-        balls = box.select("li.c-ball")
-        if has_bonus:
-            bonus_el = box.select_one(".c-result__bonus .c-ball")
-            main_balls = [b for b in balls if b is not bonus_el]
-            numbers = [int(b.get_text(strip=True)) for b in main_balls[:main_count]]
-            bonus_number = int(bonus_el.get_text(strip=True)) if bonus_el else None
+        for session_class, session in (("midday", "midday"), ("evening", "evening")):
+            row = block.select_one(f".result-drawing-row.{session_class}")
+            if not row:
+                continue
+            digits = _balls_to_digits(row.select_one("ul.balls"))
+            if len(digits) != n:
+                log.warning("pick-%d %s: expected %d digits, got %s", n, session, n, digits)
+                continue
+            results[key].append({
+                "game": f"Pick {n} ({session.capitalize()})",
+                "draw_date": draw_date,
+                "session": session,
+                "digits": digits,
+                "fetched_at": now_iso,
+                "source_url": "https://www.mdlottery.com/games/pick-3-pick-4-pick-5/",
+            })
+    return results
+
+
+def fetch_pool(slug: str, label: str, main_count: int, has_bonus: bool) -> list[dict]:
+    url = f"https://www.mdlottery.com/games/{slug}/"
+    soup = _fetch_soup(url)
+    block = soup.select_one(f".single-winning-numbers.{slug}")
+    if not block:
+        log.warning("%s: block not found", slug)
+        return []
+    date_el = block.select_one(".result-col.date p")
+    if not date_el:
+        return []
+    draw_date = iso_date(date_el.get_text(strip=True))
+    row = block.select_one(".result-drawing-row")
+    if not row:
+        return []
+    balls = row.select("ul.balls > li")
+    bonus_number = None
+    numbers = []
+    for li in balls:
+        val = int(li.get_text(strip=True))
+        if has_bonus and "bonus" in (li.get("class") or []):
+            bonus_number = val
         else:
-            numbers = [int(b.get_text(strip=True)) for b in balls[:main_count]]
-            bonus_number = None
-        if len(numbers) != main_count:
-            continue
-        prize_el = row.select_one(".c-draw-card__prize-value")
-        jackpot_amount = parse_money(prize_el.get_text(strip=True)) if prize_el else None
-        entry = {"game": label, "draw_date": draw_date, "numbers": numbers,
-                  "jackpot_amount": jackpot_amount,
-                  "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url}
-        if has_bonus:
-            entry["bonus_number"] = bonus_number
-        out.append(entry)
-    return out
+            numbers.append(val)
+    if len(numbers) != main_count:
+        log.warning("%s: expected %d main numbers, got %s", slug, main_count, numbers)
+        return []
+    entry = {
+        "game": label, "draw_date": draw_date, "numbers": numbers,
+        "jackpot_amount": None,  # not shown on this page for either game; see fork report
+        "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+    }
+    if has_bonus:
+        entry["bonus_number"] = bonus_number
+    return [entry]
+
+
+def fetch_cashpop() -> list[dict]:
+    url = "https://www.mdlottery.com/games/cash-pop/"
+    soup = _fetch_soup(url)
+    block = soup.select_one(".single-winning-numbers.cash-pop")
+    if not block:
+        log.warning("cash-pop: block not found")
+        return []
+    container = block.select_one(".result-container")
+    if not container:
+        return []
+    ball = container.select_one("ul.balls li")
+    if not ball:
+        return []
+    number = int(ball.get_text(strip=True))
+    # "AS OF 10/13/2026 11 P.M." — the <p> right after the balls row, possibly with a <br> before
+    # the "DRAW #..." strong tag, so take only the first line of its text.
+    p = container.find("p")
+    if not p:
+        return []
+    first_line = p.get_text(" ", strip=True).split("DRAW")[0].strip()
+    m = re.match(r"AS OF (\d{1,2}/\d{1,2}/\d{4}) (\d{1,2} [AP]\.M\.)", first_line, re.IGNORECASE)
+    if not m:
+        log.warning("cash-pop: couldn't parse %r", first_line)
+        return []
+    draw_date = iso_date(m.group(1))
+    hour_label = m.group(2).upper()
+    session = SESSION_BY_HOUR_LABEL.get(hour_label)
+    if not session:
+        log.warning("cash-pop: unrecognized session label %r", hour_label)
+        return []
+    return [{
+        "game": "Cash POP", "draw_date": draw_date, "session": session, "numbers": [number],
+        "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+    }]
 
 
 def save(subdir: str, new_entries: list[dict], key_fn) -> None:
@@ -132,14 +237,13 @@ def main():
     by_date = lambda e: e["draw_date"]
     by_date_session = lambda e: (e["draw_date"], e["session"])
 
-    save("pick3", fetch_digit_session("https://www.lotteryusa.com/maryland/midday-pick-3/", "midday", 3, "Pick 3 (Midday)")
-                  + fetch_digit_session("https://www.lotteryusa.com/maryland/pick-3/", "evening", 3, "Pick 3 (Evening)"), by_date_session)
-    save("pick4", fetch_digit_session("https://www.lotteryusa.com/maryland/midday-pick-4/", "midday", 4, "Pick 4 (Midday)")
-                  + fetch_digit_session("https://www.lotteryusa.com/maryland/pick-4/", "evening", 4, "Pick 4 (Evening)"), by_date_session)
-    save("pick5", fetch_digit_session("https://www.lotteryusa.com/maryland/midday-pick-5/", "midday", 5, "Pick 5 (Midday)")
-                  + fetch_digit_session("https://www.lotteryusa.com/maryland/pick-5/", "evening", 5, "Pick 5 (Evening)"), by_date_session)
-    save("bonusmatch5", fetch_pool("https://www.lotteryusa.com/maryland/bonus-match-5/", "Bonus Match 5", 5, True), by_date)
-    save("multimatch", fetch_pool("https://www.lotteryusa.com/maryland/multi-match/", "Multi-Match", 6, False), by_date)
+    picks = fetch_pick345()
+    save("pick3", picks["pick3"], by_date_session)
+    save("pick4", picks["pick4"], by_date_session)
+    save("pick5", picks["pick5"], by_date_session)
+    save("bonusmatch5", fetch_pool("bonus-match-5", "Bonus Match 5", 5, True), by_date)
+    save("multimatch", fetch_pool("multi-match", "Multi-Match", 6, False), by_date)
+    save("cashpop", fetch_cashpop(), by_date_session)
     log.info("完成")
 
 

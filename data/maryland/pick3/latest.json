@@ -8,8 +8,20 @@
       5,
       2
     ],
-    "fetched_at": "2026-10-14T09:34:09.726034+00:00",
-    "source_url": "https://www.lotteryusa.com/maryland/midday-pick-3/"
+    "fetched_at": "2026-10-15T06:23:25.076468+00:00",
+    "source_url": "https://www.mdlottery.com/games/pick-3-pick-4-pick-5/"
+  },
+  {
+    "game": "Pick 3 (Evening)",
+    "draw_date": "2026-10-13",
+    "session": "evening",
+    "digits": [
+      8,
+      2,
+      9
+    ],
+    "fetched_at": "2026-10-15T06:23:25.076468+00:00",
+    "source_url": "https://www.mdlottery.com/games/pick-3-pick-4-pick-5/"
   },
   {
     "game": "Pick 3 (Midday)",
@@ -118,18 +130,6 @@
     ],
     "fetched_at": "2026-10-14T09:34:09.729507+00:00",
     "source_url": "https://www.lotteryusa.com/maryland/midday-pick-3/"
-  },
-  {
-    "game": "Pick 3 (Evening)",
-    "draw_date": "2026-10-13",
-    "session": "evening",
-    "digits": [
-      8,
-      2,
-      9
-    ],
-    "fetched_at": "2026-10-14T09:34:11.013559+00:00",
-    "source_url": "https://www.lotteryusa.com/maryland/pick-3/"
   },
   {
     "game": "Pick 3 (Evening)",

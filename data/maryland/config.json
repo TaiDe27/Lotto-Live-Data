@@ -1886,6 +1886,102 @@
       },
       "matchRule": null,
       "ocrRule": null
+    },
+    {
+      "id": "md-cashpop",
+      "stateCodes": [
+        "MD"
+      ],
+      "name": "Cash POP",
+      "type": "other",
+      "pickRule": {
+        "mainCount": 15,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1
+      },
+      "drawSchedule": "4x daily: 9 AM, 1 PM, 6 PM, 11 PM ET",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": null,
+      "overallOddsText": null,
+      "payoutNote": "Cash POP is not a \"match count\" game: you choose any number of the 15 numbers to play (1 up to all 15), one number is drawn, and you win if the drawn number is among your chosen set. Maryland lets you wager $1, $2, $5, or $10 per POP (confirmed from the official Maryland Lottery How-to-Play page) and the dollar prize is NOT determined by how many numbers you chose or your wager amount alone — it's a random multiplier assigned per ticket at play time, which this app has no way to know from the public draw results alone. The exact multiplier/odds reference table for Maryland specifically was not located and is deliberately left blank here rather than guessed or copied from another state's table; the app can only tell you whether your number matched, not your exact prize.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/maryland/cashpop/latest.json",
+        "cachePath": "live/maryland/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": null,
+          "anchorMinute": 0,
+          "anchorHourBySession": {
+            "morning": 9,
+            "afternoon": 13,
+            "evening": 18,
+            "latenight": 23
+          },
+          "sessionField": "session"
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "boxTierKeysByWayCount": null,
+        "straightTierKey": null,
+        "teamCount": null,
+        "teamJackpotTierKey": null,
+        "teamMatchTierKeyTemplate": null
+      },
+      "ocrRule": {
+        "addOnMarkerPattern": null,
+        "boardLabelPattern": null,
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "verifiedAgainstRealTicket": true
+      }
     }
   ]
 }
