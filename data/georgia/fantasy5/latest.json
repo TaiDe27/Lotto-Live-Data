@@ -1,6 +1,20 @@
 [
   {
     "game": "Fantasy 5",
+    "draw_date": "2026-10-14",
+    "numbers": [
+      10,
+      20,
+      21,
+      26,
+      35
+    ],
+    "jackpot_amount": 60900000,
+    "fetched_at": "2026-10-15T03:58:55.723767+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
+  },
+  {
+    "game": "Fantasy 5",
     "draw_date": "2026-10-13",
     "numbers": [
       1,
@@ -10,7 +24,7 @@
       31
     ],
     "jackpot_amount": 49100000,
-    "fetched_at": "2026-10-14T10:18:58.289754+00:00",
+    "fetched_at": "2026-10-15T03:58:55.723790+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -24,7 +38,7 @@
       41
     ],
     "jackpot_amount": 37100000,
-    "fetched_at": "2026-10-14T10:18:58.289782+00:00",
+    "fetched_at": "2026-10-15T03:58:55.723799+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -38,7 +52,7 @@
       42
     ],
     "jackpot_amount": 27400000,
-    "fetched_at": "2026-10-14T10:18:58.289796+00:00",
+    "fetched_at": "2026-10-15T03:58:55.723806+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -52,7 +66,7 @@
       33
     ],
     "jackpot_amount": 20100000,
-    "fetched_at": "2026-10-14T10:18:58.289806+00:00",
+    "fetched_at": "2026-10-15T03:58:55.723812+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -66,7 +80,7 @@
       40
     ],
     "jackpot_amount": 15000000,
-    "fetched_at": "2026-10-14T10:18:58.289818+00:00",
+    "fetched_at": "2026-10-15T03:58:55.723818+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -80,7 +94,7 @@
       40
     ],
     "jackpot_amount": 12500000,
-    "fetched_at": "2026-10-14T10:18:58.289830+00:00",
+    "fetched_at": "2026-10-15T03:58:55.723824+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
