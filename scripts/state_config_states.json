@@ -366,7 +366,10 @@
       "powerball",
       "mega-millions",
       "lotto-america",
-      "powerball-xo"
+      "powerball-xo",
+      "mn-gopher5",
+      "mn-north5",
+      "mn-pick3"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -377,7 +380,15 @@
       "powerball",
       "mega-millions",
       "powerball-double-play",
-      "powerball-xo"
+      "powerball-xo",
+      "mo-millions",
+      "mo-millions-double-play",
+      "mo-show-me-cash",
+      "mo-pick3-midday",
+      "mo-pick3-evening",
+      "mo-pick4-midday",
+      "mo-pick4-evening",
+      "mo-cashpop"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
@@ -389,7 +400,13 @@
       "mega-millions",
       "powerball-double-play",
       "lotto-america",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "ms-match5",
+      "ms-cash3-midday",
+      "ms-cash3-evening",
+      "ms-cash4-midday",
+      "ms-cash4-evening",
+      "ms-cashpop"
     ],
     "routedCourierPlatform": "jackpotcom",
     "schemaVersion": 1
@@ -401,7 +418,9 @@
       "mega-millions",
       "powerball-double-play",
       "lotto-america",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "mt-big-sky-bonus",
+      "mt-montana-cash"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -439,7 +458,11 @@
       "lotto-america",
       "millionaire-for-life",
       "powerball-xo",
-      "2by2"
+      "2by2",
+      "ne-pick5",
+      "ne-pick3",
+      "ne-pick4",
+      "ne-myday"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
@@ -449,7 +472,13 @@
     "games": [
       "powerball",
       "mega-millions",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "tri-state-megabucks-plus",
+      "me-pick3-day",
+      "me-pick3-evening",
+      "me-pick4-day",
+      "me-pick4-evening",
+      "me-gimme5"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1

@@ -1386,7 +1386,9 @@
       },
       "powerPlay": null,
       "stateCodes": [
-        "ME"
+        "ME",
+        "NH",
+        "VT"
       ],
       "type": "inStateJackpot"
     },
@@ -1507,7 +1509,9 @@
       },
       "powerPlay": null,
       "stateCodes": [
-        "ME"
+        "ME",
+        "NH",
+        "VT"
       ],
       "type": "dailyNumbers"
     },
@@ -1628,7 +1632,9 @@
       },
       "powerPlay": null,
       "stateCodes": [
-        "ME"
+        "ME",
+        "NH",
+        "VT"
       ],
       "type": "dailyNumbers"
     },
@@ -1767,7 +1773,9 @@
       },
       "powerPlay": null,
       "stateCodes": [
-        "ME"
+        "ME",
+        "NH",
+        "VT"
       ],
       "type": "dailyNumbers"
     },
@@ -1906,7 +1914,9 @@
       },
       "powerPlay": null,
       "stateCodes": [
-        "ME"
+        "ME",
+        "NH",
+        "VT"
       ],
       "type": "dailyNumbers"
     },

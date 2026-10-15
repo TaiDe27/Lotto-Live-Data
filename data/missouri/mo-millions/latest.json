@@ -1,0 +1,27 @@
+[
+  {
+    "draw_date": "2026-10-14",
+    "numbers": [
+      1,
+      8,
+      11,
+      12,
+      19,
+      39
+    ],
+    "bullseye_number": 11,
+    "double_play_draw_date": "2026-10-14",
+    "double_play_numbers": [
+      11,
+      13,
+      14,
+      23,
+      31,
+      32
+    ],
+    "double_play_bullseye_number": 13,
+    "next_jackpot_amount": 2300000,
+    "fetched_at": "2026-10-15T12:45:45.497413+00:00",
+    "source_url": "https://www.molottery.com/mo-millions/winning-numbers.do"
+  }
+]
