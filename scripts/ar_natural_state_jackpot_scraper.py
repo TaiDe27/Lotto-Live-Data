@@ -27,7 +27,7 @@ def iso_date(raw: str) -> str:
     return _dt.datetime.strptime(raw, "%b %d, %Y").strftime("%Y-%m-%d")
 
 URL = "https://www.lotteryusa.com/arkansas/natural-state-jackpot/"
-USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5

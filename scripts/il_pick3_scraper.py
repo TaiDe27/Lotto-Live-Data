@@ -26,7 +26,7 @@ URLS = {
     "midday": "https://www.lotteryusa.com/illinois/midday-3/",
     "evening": "https://www.lotteryusa.com/illinois/daily-3/",
 }
-USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5

@@ -44,7 +44,7 @@ log = logging.getLogger("ga_shared")
 
 API_BASE = "https://gas-v2.p1.awc.lotteryservices.net/api/v2/draw-games/draws"
 SOURCE_PAGE = "https://www.galottery.com/en-us/winning-numbers.html"
-USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 ESA_API_KEY = "pMI6ooicQ6aXCYY54xZyyNnyzfaKRp3LG"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3

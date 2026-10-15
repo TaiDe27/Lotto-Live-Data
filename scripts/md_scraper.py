@@ -35,7 +35,7 @@ from typing import Optional
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("md_scraper")
 
-USER_AGENT = "LottoLiveApp/0.1 (+mailto:YOUR-CONTACT-EMAIL@example.com)"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 # mdlottery.com's WAF 403s a bare User-Agent-only request (confirmed 2026-10-15) — needs a fuller,
 # browser-like header set (incl. Sec-Fetch-*/Upgrade-Insecure-Requests) to pass reliably; a
 # User-Agent+Accept-Language-only set still passed sometimes but 403'd intermittently in repeated

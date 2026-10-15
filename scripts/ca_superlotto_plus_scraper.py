@@ -42,13 +42,13 @@ def iso_date(raw: str) -> str:
     return _dt.datetime.strptime(raw, "%a/%b %d, %Y").strftime("%Y-%m-%d")
 
 URL = "https://www.calottery.com/en/draw-games/superlotto-plus"
-# calottery.com 对这份代码库其他脚本一直用的"诚实身份"UA
-# (LottoLiveApp/0.1 ...) 做了过滤——确认过是 200 状态码但返回一个假的
-# "Service Unavailable"维护页面，不是真的服务不可用；换成普通浏览器UA就能
-# 拿到真实内容。条款没禁止爬虫、robots.txt也放行这些页面，只是这一关UA检查
-# 需要绕过，跟对抗Cloudflare那种专门的反爬虫验证不是一回事——这个决定是
-# 跟用户确认过的，仅对 calottery.com 这几个脚本生效，不代表要改其他站点的
-# 爬虫身份策略。
+# calottery.com 最早发现"诚实身份"UA(LottoLiveApp/0.1 ...)会被过滤——
+# 确认过是 200 状态码但返回一个假的"Service Unavailable"维护页面，不是
+# 真的服务不可用；换成普通浏览器UA就能拿到真实内容。条款没禁止爬虫、
+# robots.txt也放行这些页面，只是这一关UA检查需要绕过。2026-10-15起，
+# 这份代码库的所有脚本统一改用浏览器UA(原因：发现占位符邮箱本身会被
+# 其他州的WAF拦截，与其逐个修占位符不如统一换成浏览器UA)，所以这不再
+# 是calottery.com独有的例外。
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
