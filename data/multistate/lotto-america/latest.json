@@ -11,8 +11,8 @@
     "star_ball": 9,
     "all_star_bonus": 2,
     "next_drawing": {
-      "next_draw_date": "Wed, Oct 14, 2026",
-      "estimated_jackpot": "2.20 Million",
+      "next_draw_date": "Sat, Oct 17, 2026",
+      "estimated_jackpot": "2.25 Million",
       "cash_value": null
     },
     "winners_by_tier": {
@@ -20,15 +20,13 @@
         "states": []
       },
       "Match 5 + All Star Bonus": {
-        "states": [
-          "MN"
-        ]
+        "states": []
       },
       "Match 5": {
         "states": []
       }
     },
-    "fetched_at": "2026-10-15T03:05:55.875719+00:00",
+    "fetched_at": "2026-10-15T08:55:56.005760+00:00",
     "source_url": "https://www.powerball.com/lotto-america"
   },
   {
