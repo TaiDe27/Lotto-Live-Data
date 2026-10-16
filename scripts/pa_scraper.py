@@ -161,6 +161,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             log.error("%s 失败: %s", subdir, e)
             errors.append((subdir, e))
+        time.sleep(1.5)
 
     digit_games = [
         ("pick2", 2, "https://www.lotteryusa.com/pennsylvania/midday-pick-2/", "https://www.lotteryusa.com/pennsylvania/pick-2/"),
@@ -176,6 +177,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             log.error("%s day 失败: %s", subdir, e)
             errors.append((f"{subdir}-day", e))
+        time.sleep(1.5)  # lotteryusa.com rate-limited GitHub Actions' IP with zero-delay back-to-back requests (real incident, not a guess)
         try:
             result = fetch_digits(night_url, count, "evening")
             log.info("%s evening: %s", subdir, result)
@@ -183,6 +185,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             log.error("%s evening 失败: %s", subdir, e)
             errors.append((f"{subdir}-evening", e))
+        time.sleep(1.5)
 
     if errors:
         raise RuntimeError(f"{len(errors)} 个游戏抓取失败: {errors}")
