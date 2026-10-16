@@ -1856,7 +1856,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Nebraska-exclusive: pick a calendar date (month 1-12, day 1-31, 2-digit year 00-99), $1/play — `Drawing.mainNumbers` is [month, day, year], display-only for now (see `Game.isDateFieldsPick`'s doc comment for why manual entry/matching/OCR aren't modeled yet for this one mechanic).",
+      "payoutNote": "Nebraska-exclusive: pick a calendar date (month 1-12, day 1-31, 2-digit year 00-99), $1/play — `Drawing.mainNumbers`/`UserNumberEntry.mainNumbers` are [month, day, year] (see `Game.isDateFieldsPick`'s doc comment). Matching/manual entry/quick-pick are fully modeled; OCR is rules-derived, not verified against a real ticket photo (`ocrRule.verifiedAgainstRealTicket` is false).",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1913,8 +1913,22 @@
         "multiplierField": null,
         "winnersByTier": null
       },
-      "matchRule": null,
-      "ocrRule": null
+      "matchRule": {
+        "kind": "dateFieldsMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     }
   ]
 }
