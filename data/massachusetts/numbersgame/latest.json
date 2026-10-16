@@ -3,27 +3,27 @@
     "game": "the_numbers_game",
     "draw_date": "2026-10-15",
     "digits": [
-      5,
-      0,
-      7,
-      1
-    ],
-    "fetched_at": "2026-10-16T01:53:05.577097+00:00",
-    "source_url": "https://www.masslottery.com/api/v1/draw-results",
-    "session": "evening"
-  },
-  {
-    "game": "the_numbers_game",
-    "draw_date": "2026-10-15",
-    "digits": [
       1,
       4,
       1,
       6
     ],
-    "fetched_at": "2026-10-16T01:53:05.577099+00:00",
+    "fetched_at": "2026-10-16T07:42:58.231748+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
     "session": "midday"
+  },
+  {
+    "game": "the_numbers_game",
+    "draw_date": "2026-10-15",
+    "digits": [
+      5,
+      0,
+      7,
+      1
+    ],
+    "fetched_at": "2026-10-16T07:42:58.231751+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results",
+    "session": "evening"
   },
   {
     "game": "the_numbers_game",
