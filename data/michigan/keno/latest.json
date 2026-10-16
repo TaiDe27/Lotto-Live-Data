@@ -1,6 +1,36 @@
 [
   {
     "game": "Keno",
+    "draw_date": "2026-10-16",
+    "numbers": [
+      4,
+      5,
+      6,
+      10,
+      17,
+      23,
+      32,
+      33,
+      34,
+      36,
+      42,
+      52,
+      53,
+      55,
+      60,
+      68,
+      69,
+      71,
+      74,
+      76,
+      79,
+      80
+    ],
+    "fetched_at": "2026-10-16T00:01:04.928888+00:00",
+    "source_url": "https://www.michiganlottery.com/api"
+  },
+  {
+    "game": "Keno",
     "draw_date": "2026-10-15",
     "numbers": [
       4,
