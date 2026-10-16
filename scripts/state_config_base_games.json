@@ -25154,5 +25154,652 @@
     },
     "matchRule": null,
     "ocrRule": null
+  },
+  "sc-pick3-midday": {
+    "id": "sc-pick3-midday",
+    "stateCodes": [
+      "SC"
+    ],
+    "name": "Pick 3 Midday",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Daily 12:59 PM ET",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Straight/3-way-box/6-way-box prize amounts not confirmed from sceducationlottery.com this round \u2014 shown as empty tiers pending that figure.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-carolina/pick3-midday/latest.json",
+      "cachePath": "live/south-carolina/pick3-midday/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 12,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "digits",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    },
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": null,
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": null,
+      "addOnBoxTierKeysByWayCount": null
+    },
+    "ocrRule": null
+  },
+  "sc-pick3-evening": {
+    "id": "sc-pick3-evening",
+    "stateCodes": [
+      "SC"
+    ],
+    "name": "Pick 3 Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Daily 6:59 PM ET",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Straight/3-way-box/6-way-box prize amounts not confirmed from sceducationlottery.com this round \u2014 shown as empty tiers pending that figure.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-carolina/pick3-evening/latest.json",
+      "cachePath": "live/south-carolina/pick3-evening/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 18,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "digits",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    },
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": null,
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": null,
+      "addOnBoxTierKeysByWayCount": null
+    },
+    "ocrRule": null
+  },
+  "sc-pick4-midday": {
+    "id": "sc-pick4-midday",
+    "stateCodes": [
+      "SC"
+    ],
+    "name": "Pick 4 Midday",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Daily 12:59 PM ET",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Straight/3-way-box/6-way-box prize amounts not confirmed from sceducationlottery.com this round \u2014 shown as empty tiers pending that figure.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-carolina/pick4-midday/latest.json",
+      "cachePath": "live/south-carolina/pick4-midday/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 12,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "digits",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    },
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": null,
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": null,
+      "addOnBoxTierKeysByWayCount": null
+    },
+    "ocrRule": null
+  },
+  "sc-pick4-evening": {
+    "id": "sc-pick4-evening",
+    "stateCodes": [
+      "SC"
+    ],
+    "name": "Pick 4 Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Daily 6:59 PM ET",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Straight/3-way-box/6-way-box prize amounts not confirmed from sceducationlottery.com this round \u2014 shown as empty tiers pending that figure.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-carolina/pick4-evening/latest.json",
+      "cachePath": "live/south-carolina/pick4-evening/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 18,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "digits",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    },
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": null,
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": null,
+      "addOnBoxTierKeysByWayCount": null
+    },
+    "ocrRule": null
+  },
+  "sc-cashpop-midday": {
+    "id": "sc-cashpop-midday",
+    "stateCodes": [
+      "SC"
+    ],
+    "name": "Cash POP Midday",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 1,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 15,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Daily 12:59 PM ET",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Instant-multiplier variable-pick game \u2014 no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+    "overallOddsText": null,
+    "payoutNote": "Same membershipPick mechanic as Indiana/Maine/Maryland/Mississippi/Missouri/North Carolina's Cash POP.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-carolina/cashpop-midday/latest.json",
+      "cachePath": "live/south-carolina/cashpop-midday/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 12,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "number",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    },
+    "matchRule": {
+      "kind": "membershipPick",
+      "straightTierKey": null,
+      "boxTierKeysByWayCount": null,
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": null,
+      "addOnBoxTierKeysByWayCount": null
+    },
+    "ocrRule": null
+  },
+  "sc-cashpop-evening": {
+    "id": "sc-cashpop-evening",
+    "stateCodes": [
+      "SC"
+    ],
+    "name": "Cash POP Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 1,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 15,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Daily 6:59 PM ET",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Instant-multiplier variable-pick game \u2014 no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+    "overallOddsText": null,
+    "payoutNote": "Same membershipPick mechanic as Indiana/Maine/Maryland/Mississippi/Missouri/North Carolina's Cash POP.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-carolina/cashpop-evening/latest.json",
+      "cachePath": "live/south-carolina/cashpop-evening/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 18,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "number",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    },
+    "matchRule": {
+      "kind": "membershipPick",
+      "straightTierKey": null,
+      "boxTierKeysByWayCount": null,
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": null,
+      "addOnBoxTierKeysByWayCount": null
+    },
+    "ocrRule": null
+  },
+  "sc-palmettocash5": {
+    "id": "sc-palmettocash5",
+    "stateCodes": [
+      "SC"
+    ],
+    "name": "Palmetto Cash 5",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 42,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 2.0
+    },
+    "drawSchedule": "Daily 6:59 PM ET",
+    "payoutTable": [
+      {
+        "tierKey": "5",
+        "label": "Match 5",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "4",
+        "label": "Match 4",
+        "basePrize": 300,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "3",
+        "label": "Match 3",
+        "basePrize": 5,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "2",
+        "label": "Match 2",
+        "basePrize": 1,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Jackpots start at $100,000 and increase daily by a minimum of $10,000 until won.",
+    "overallOddsText": null,
+    "payoutNote": "Match 2-4 prizes confirmed from sceducationlottery.com's own results page (fixed, not pari-mutuel for these tiers). A random per-play multiplier ('Palmetto Cash 5 Multiplier') prints on some tickets and is not modeled \u2014 same class of unmodeled add-on as other states' optional secondary multipliers.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-carolina/palmettocash5/latest.json",
+      "cachePath": "live/south-carolina/palmettocash5/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 18,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    },
+    "matchRule": null,
+    "ocrRule": null
   }
 }

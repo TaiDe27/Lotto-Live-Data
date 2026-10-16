@@ -627,7 +627,14 @@
       "powerball",
       "mega-millions",
       "powerball-double-play",
-      "powerball-xo"
+      "powerball-xo",
+      "sc-pick3-midday",
+      "sc-pick3-evening",
+      "sc-pick4-midday",
+      "sc-pick4-evening",
+      "sc-cashpop-midday",
+      "sc-cashpop-evening",
+      "sc-palmettocash5"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
