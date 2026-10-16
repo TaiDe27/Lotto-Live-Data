@@ -2,13 +2,25 @@
   {
     "game": "Play 3",
     "draw_date": "2026-10-15",
+    "session": "night",
+    "digits": [
+      0,
+      7,
+      4
+    ],
+    "fetched_at": "2026-10-16T00:17:57.446700+00:00",
+    "source_url": "https://www.delottery.com/Drawing-Games/Play-3"
+  },
+  {
+    "game": "Play 3",
+    "draw_date": "2026-10-15",
     "session": "day",
     "digits": [
       3,
       5,
       8
     ],
-    "fetched_at": "2026-10-15T18:48:57.386408+00:00",
+    "fetched_at": "2026-10-16T00:17:57.446320+00:00",
     "source_url": "https://www.delottery.com/Drawing-Games/Play-3"
   },
   {
