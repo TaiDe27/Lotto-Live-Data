@@ -574,7 +574,9 @@
       "powerball-double-play",
       "lotto-america",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "ok-cash5",
+      "ok-pick3"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
@@ -583,7 +585,13 @@
     "folder": "oregon",
     "games": [
       "powerball",
-      "mega-millions"
+      "mega-millions",
+      "or-megabucks",
+      "or-win-for-life",
+      "or-pick4-1pm",
+      "or-pick4-4pm",
+      "or-pick4-7pm",
+      "or-pick4-10pm"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -595,7 +603,18 @@
       "mega-millions",
       "powerball-double-play",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "pa-cash5",
+      "pa-match6",
+      "pa-treasure-hunt",
+      "pa-pick2-day",
+      "pa-pick2-night",
+      "pa-pick3-day",
+      "pa-pick3-night",
+      "pa-pick4-day",
+      "pa-pick4-night",
+      "pa-pick5-day",
+      "pa-pick5-night"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -605,7 +624,15 @@
     "games": [
       "powerball",
       "mega-millions",
-      "powerball-double-play"
+      "powerball-double-play",
+      "pr-pega2-day",
+      "pr-pega2-night",
+      "pr-pega3-day",
+      "pr-pega3-night",
+      "pr-pega4-day",
+      "pr-pega4-night",
+      "pr-loto-cash",
+      "pr-revancha"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
@@ -616,7 +643,10 @@
       "powerball",
       "mega-millions",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "ri-wild-money",
+      "ri-numbers-midday",
+      "ri-numbers-evening"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
