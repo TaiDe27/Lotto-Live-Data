@@ -1554,7 +1554,7 @@
         "specialRangeUpper": 10,
         "specialName": "Plus"
       },
-      "drawSchedule": "Mon/Wed/Fri — exact time not confirmed from official source",
+      "drawSchedule": "Mon/Wed/Fri 9:00 PM AST",
       "payoutTable": [
         {
           "tierKey": "5",
@@ -1584,7 +1584,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Real schedule confirmed (Mon/Wed/Fri, 5 of 1-35 + Plus 1-10) from loteriasdepuertorico.pr.gov's own FAQ — exact clock time NOT found on the official site despite a real search (game page + FAQ + documents page checked), flagged as an open question rather than guessed. A per-draw Multiplier (2X-5X, applies to non-jackpot prizes, confirmed real/always-drawn not purchase-gated for its existence) is drawn alongside every session — not yet modeled (same class as Power Play, needs the existing multiplier infrastructure wired in a follow-up pass).",
+      "payoutNote": "Real schedule confirmed (Mon/Wed/Fri 9:00 PM AST — quoted from lotteryusa.com/puerto-rico/lotto/: \"Next Loto Cash draw: Today at 9:00 pm AST\"; PR doesn't observe DST) from loteriasdepuertorico.pr.gov's own FAQ (5 of 1-35 + Plus 1-10). A per-draw Multiplier (2X-5X, applies to non-jackpot prizes, confirmed real/always-drawn not purchase-gated for its existence) is drawn alongside every session — not yet modeled (same class as Power Play, needs the existing multiplier infrastructure wired in a follow-up pass).",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1659,7 +1659,7 @@
         "specialCount": 0,
         "price": 1
       },
-      "drawSchedule": "Mon/Wed/Fri — exact time not confirmed from official source",
+      "drawSchedule": "Mon/Wed/Fri 9:00 PM AST",
       "payoutTable": [
         {
           "tierKey": "5",
@@ -1689,7 +1689,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "A genuinely separate drawing held alongside every Loto Cash session (confirmed: 'sorteo adicional que se celebra con cada sorteo de Loto Cash'), same pattern as Powerball Double Play — built as its own game. Requires playing Loto Cash to participate (+$1), same purchase-gating pattern as other Double-Play-style games, which this project already treats as a separate game entity despite the purchase coupling. Exact clock time not confirmed, same open question as Loto Cash.",
+      "payoutNote": "A genuinely separate drawing held alongside every Loto Cash session (confirmed: 'sorteo adicional que se celebra con cada sorteo de Loto Cash'), same pattern as Powerball Double Play — built as its own game. Requires playing Loto Cash to participate (+$1), same purchase-gating pattern as other Double-Play-style games, which this project already treats as a separate game entity despite the purchase coupling. Draw time confirmed Mon/Wed/Fri 9:00 PM AST, same session as Loto Cash (quoted from lotteryusa.com/puerto-rico/lotto/).",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,

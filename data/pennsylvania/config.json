@@ -2368,6 +2368,362 @@
         "multiplierField": null,
         "winnersByTier": null
       }
+    },
+    {
+      "id": "pa-cashpop-morning",
+      "stateCodes": [
+        "PA"
+      ],
+      "name": "Cash Pop (Morning)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9:00 AM ET",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "Real session times confirmed from lottery.net's own FAQ text (\"Morning Buzz at 9:00 AM ET, Lunch Break at 1:35 PM ET, Prime Time at 6:59 PM ET and Night Owl at 11:00 PM ET\"). Same membershipPick mechanic as Indiana/Maine/Maryland/Mississippi/Missouri/North Carolina/South Carolina's Cash POP.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/cashpop-morning/latest.json",
+        "cachePath": "live/pennsylvania/cashpop-morning/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 9,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "pa-cashpop-matinee",
+      "stateCodes": [
+        "PA"
+      ],
+      "name": "Cash Pop (Matinee)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 1:35 PM ET",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "Real session times confirmed from lottery.net's own FAQ text (\"Morning Buzz at 9:00 AM ET, Lunch Break at 1:35 PM ET, Prime Time at 6:59 PM ET and Night Owl at 11:00 PM ET\"). Same membershipPick mechanic as Indiana/Maine/Maryland/Mississippi/Missouri/North Carolina/South Carolina's Cash POP.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/cashpop-matinee/latest.json",
+        "cachePath": "live/pennsylvania/cashpop-matinee/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 13,
+          "anchorMinute": 35,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "pa-cashpop-afternoon",
+      "stateCodes": [
+        "PA"
+      ],
+      "name": "Cash Pop (Afternoon)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 6:59 PM ET",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "Real session times confirmed from lottery.net's own FAQ text (\"Morning Buzz at 9:00 AM ET, Lunch Break at 1:35 PM ET, Prime Time at 6:59 PM ET and Night Owl at 11:00 PM ET\"). Same membershipPick mechanic as Indiana/Maine/Maryland/Mississippi/Missouri/North Carolina/South Carolina's Cash POP.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/cashpop-afternoon/latest.json",
+        "cachePath": "live/pennsylvania/cashpop-afternoon/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 18,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "pa-cashpop-latenight",
+      "stateCodes": [
+        "PA"
+      ],
+      "name": "Cash Pop (Late Night)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 11:00 PM ET",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "Real session times confirmed from lottery.net's own FAQ text (\"Morning Buzz at 9:00 AM ET, Lunch Break at 1:35 PM ET, Prime Time at 6:59 PM ET and Night Owl at 11:00 PM ET\"). Same membershipPick mechanic as Indiana/Maine/Maryland/Mississippi/Missouri/North Carolina/South Carolina's Cash POP.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/cashpop-latenight/latest.json",
+        "cachePath": "live/pennsylvania/cashpop-latenight/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
     }
   ]
 }

@@ -11,11 +11,18 @@ Confirmed real draw times (quoted from oregonlottery.org's own game pages, 2026-
     Saturday at 7:30PM PT." 4 numbers between 1 and 77, no separate bonus ball.
   - Pick 4 (gameSelector=p4): "Drawings: Daily at 1 PM, 4PM, 7PM and 10 PM PT" — 4 sessions/day,
     standard digit game.
-  - Cash Pop (gameSelector=cp) is NOT built — confirmed from oregonlottery.org's own page:
-    "Drawings: Hourly from 7 AM — 10 PM ... you have 16 drawings per day to play" — 16/day
-    exceeds this project's standing ≤10-draws/day cutoff. The gameSelector was fetched and
-    verified during research (confirming `cp` = Cash Pop) but deliberately not wired into a
-    scraper function.
+  - Cash Pop (gameSelector=cp): "Pick a number from 1 – 15 and if it matches the number drawn,
+    you win!" / "DRAWINGS Hourly from 7 AM to 10 PM PT" — 16 sessions/day, genuinely exceeds this
+    project's standing ≤10-draws/day cutoff, but the user explicitly reviewed this and asked to
+    build it anyway (deliberate, informed exception for this one game — not a reason to relax the
+    standing rule elsewhere). Real draw instants are :59 past the hour BEFORE the labeled session
+    (confirmed via the API's own `RoundedDrawDateTime` field, e.g. a `DrawDateTime` of 21:59 has
+    `RoundedDrawDateTime` 22:00 — the "10pm" session), giving 16 real clock times: 06:59, 07:59,
+    08:59, 09:59, 10:59, 11:59, 12:59, 13:59, 14:59, 15:59, 16:59, 17:59, 18:59, 19:59, 20:59,
+    21:59, all PT. Session label is derived from `RoundedDrawDateTime`'s hour (7am..10pm), not
+    hardcoded per slot. `WinningNumbers` is the same 10-slot zero-padded array shape as the other
+    games here, but only ONE slot is ever non-zero for Cash Pop (one number drawn, 1-15) — same
+    `membershipPick` mechanic already built for many other states' Cash POP in this project.
 
 API response shape per gameSelector: `{"OpenDraw": {...not yet drawn...}, "ClosedDraw": {...most
 recent completed draw...}}`, both sharing the same `WinningNumbers` (10-slot, zero-padded) /
@@ -116,6 +123,23 @@ def main():
     except Exception as e:  # noqa: BLE001
         log.error("pick4 失败: %s", e)
         errors.append(("pick4", e))
+
+    try:
+        closed = fetch_draw("cp")
+        draw_date = closed["RoundedDrawDateTime"][:10]
+        rounded_hour = int(closed["RoundedDrawDateTime"][11:13])
+        session = f"{rounded_hour}am" if rounded_hour < 12 else ("12pm" if rounded_hour == 12 else f"{rounded_hour - 12}pm")
+        nums = [n for n in closed["WinningNumbers"] if n]
+        if len(nums) != 1:
+            raise ValueError(f"Cash Pop 应为1个号码，抓到 {nums}")
+        entry = {
+            "draw_date": draw_date, "session": session, "number": str(nums[0]),
+            "draw_number": closed.get("DrawNumber"), "fetched_at": now, "source_url": API_URL,
+        }
+        save_entries("cashpop", [entry], ("draw_date", "session"))
+    except Exception as e:  # noqa: BLE001
+        log.error("cashpop 失败: %s", e)
+        errors.append(("cashpop", e))
 
     if errors:
         raise RuntimeError(f"{len(errors)} 个游戏抓取失败: {errors}")

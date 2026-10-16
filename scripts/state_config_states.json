@@ -591,7 +591,23 @@
       "or-pick4-1pm",
       "or-pick4-4pm",
       "or-pick4-7pm",
-      "or-pick4-10pm"
+      "or-pick4-10pm",
+      "or-cashpop-7am",
+      "or-cashpop-8am",
+      "or-cashpop-9am",
+      "or-cashpop-10am",
+      "or-cashpop-11am",
+      "or-cashpop-12pm",
+      "or-cashpop-1pm",
+      "or-cashpop-2pm",
+      "or-cashpop-3pm",
+      "or-cashpop-4pm",
+      "or-cashpop-5pm",
+      "or-cashpop-6pm",
+      "or-cashpop-7pm",
+      "or-cashpop-8pm",
+      "or-cashpop-9pm",
+      "or-cashpop-10pm"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -614,7 +630,11 @@
       "pa-pick4-day",
       "pa-pick4-night",
       "pa-pick5-day",
-      "pa-pick5-night"
+      "pa-pick5-night",
+      "pa-cashpop-morning",
+      "pa-cashpop-matinee",
+      "pa-cashpop-afternoon",
+      "pa-cashpop-latenight"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1

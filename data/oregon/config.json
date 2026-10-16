@@ -1224,6 +1224,1478 @@
         "multiplierField": null,
         "winnersByTier": null
       }
+    },
+    {
+      "id": "or-cashpop-7am",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (7AM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 7AM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "7am"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 7,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-8am",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (8AM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 8AM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "8am"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 8,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-9am",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (9AM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9AM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "9am"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 9,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-10am",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (10AM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 10AM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "10am"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-11am",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (11AM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 11AM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "11am"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 11,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-12pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (12PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 12PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "12pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 12,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-1pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (1PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 1PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "1pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-2pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (2PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 2PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "2pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 14,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-3pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (3PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 3PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "3pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 15,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-4pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (4PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 4PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "4pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 16,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-5pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (5PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 5PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "5pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 17,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-6pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (6PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 6PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "6pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-7pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (7PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 7PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "7pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 19,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-8pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (8PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 8PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "8pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-9pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (9PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "9pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
+    },
+    {
+      "id": "or-cashpop-10pm",
+      "stateCodes": [
+        "OR"
+      ],
+      "name": "Cash Pop (10PM)",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 15,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 10PM PT",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "Instant-multiplier variable-pick game — no jackpot/payout table (real prize is a random per-ticket multiplier the public draw data can't reveal).",
+      "overallOddsText": null,
+      "payoutNote": "16 sessions/day (hourly 7AM-10PM PT, confirmed from oregonlottery.org's own text: \"Pick a number from 1 – 15 and if it matches the number drawn, you win! ... DRAWINGS Hourly from 7 AM to 10 PM PT\") — exceeds this project's standing ≤ 10-draws/day rule, built as an explicit user-reviewed exception for this one game. Real draw instant is :59 past the hour before the labeled session. Same membershipPick mechanic as every other state's Cash POP in this project.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/oregon/cashpop/latest.json",
+        "cachePath": "live/oregon/cashpop/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "10pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 22,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "number",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": {
+        "kind": "membershipPick",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null
     }
   ]
 }
