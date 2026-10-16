@@ -1603,6 +1603,133 @@
       },
       "matchRule": null,
       "ocrRule": null
+    },
+    {
+      "id": "ny-lotto",
+      "stateCodes": [
+        "NY"
+      ],
+      "name": "New York Lotto",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 6,
+        "mainRangeLower": 1,
+        "mainRangeUpper": 59,
+        "mainMustBeUnique": true,
+        "specialCount": 1,
+        "price": 0.5,
+        "specialRangeLower": 1,
+        "specialRangeUpper": 59,
+        "specialName": "Bonus Number"
+      },
+      "drawSchedule": "Wed/Sat 8:15 PM ET",
+      "payoutTable": [
+        {
+          "tierKey": "6+0",
+          "label": "Match 6",
+          "basePrize": null,
+          "isJackpotTier": true,
+          "odds": "1 in 92.05",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+1",
+          "label": "Match 5 + Bonus",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+0",
+          "label": "Match 5",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4+0",
+          "label": "Match 4",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3+0",
+          "label": "Match 3",
+          "basePrize": null,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        }
+      ],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "New York's own in-state jackpot game, 6 of 1-59 plus a Bonus Number drawn from the same pool. Confirmed real example: Est. jackpot $10.2 million shown for the 2026-10-14 draw on lotteryusa.com.",
+      "overallOddsText": "Overall Odds: 1 in 92.05",
+      "payoutNote": "Non-jackpot tier prize amounts weren't confirmed from a real published payout chart this round (nylottery.ny.gov's own games-catalog API returned an empty odds_prizes array for this game) — shown as tier placeholders pending that figure. Real price is $0.50/play (official site states \"Two Plays: $1\"), not $1 like most other states' own pool games — confirmed, not a typo.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/new-york/lotto/latest.json",
+        "cachePath": "live/new-york/lotto/latest.json",
+        "shape": "numeric",
+        "sessionFilter": null,
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 20,
+          "anchorMinute": 15,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": {
+          "field": "bonus",
+          "wrapScalar": true
+        },
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      },
+      "matchRule": null,
+      "ocrRule": null
     }
   ]
 }

@@ -1,34 +1,55 @@
 """
-New York own-games — sourced from New York State's own open-data portal, `data.ny.gov` (Socrata),
-NOT nylottery.ny.gov itself. Found via web search rather than scraping nylottery.ny.gov's HTML
-directly: NY State publishes official, no-auth, daily-refreshed JSON datasets for exactly these
-games, each confirmed directly against real live data this round:
-  - `hsys-3def` ("Lottery Daily Numbers/Win-4 Winning Numbers: Beginning 1980") — ONE row per day
-    with BOTH games' BOTH sessions as separate fields (`midday_daily`, `evening_daily`,
-    `midday_win_4`, `evening_win_4`), not four separate rows.
-  - `dg63-4siq` ("Lottery Take 5 Winning Numbers: Beginning 1992") — one row per day with
-    `midday_winning_numbers`/`evening_winning_numbers` as space-separated strings.
-  - `bycu-cw7c` ("Lottery Pick 10 Winning Numbers: Beginning 1987") — one row per day,
-    `winning_numbers` holds all 20 drawn numbers (space-separated) for this "pick 10 of 1-80,
-    match against 20 drawn" game.
+New York own-games — sourced from nylottery.ny.gov's OWN real backend API (found via the user's
+browser devtools, 2026-10-16), replacing the previous data.ny.gov (Socrata) open-data source. That
+Socrata source (`hsys-3def`) was confirmed stuck a full day+ behind real draws; this real API is
+extremely fresh (results posted ~10-20 minutes after the actual draw).
 
-Confirmed mechanics:
-  - Numbers / Win 4: standard digit games (3/4-digit), Midday 2:30pm / Evening 10:30pm ET. No
-    Fireball-equivalent add-on (confirmed: no bonus/extra-digit field anywhere in this dataset or in
-    nylottery.org's own "How to Play" page).
-  - Take 5: 5 of 1-39, $1/play, Midday 2:30pm / Evening 10:30pm ET, no special ball.
-  - Pick 10: pick 10 of 1-80; NY draws 20 numbers and pays by how many of the PLAYER's 10 numbers
-    appear among those 20 — this project's generic `matchCombination` formula (a plain
-    `Set(drawing.mainNumbers).intersection(entry.mainNumbers).count`) handles this correctly with no
-    new `MatchRule.Kind` needed, since it never assumes the picked-count and drawn-count are equal;
-    `matchRule: null` is correct here. $1/play, daily 8:30pm ET. FIXED (non-progressive) top prize
-    of $500,000 for matching all 10 — `isJackpotTier: false`, not pulled from a live jackpot field.
-    Real tier table (match 10/9/8/7/6/0 pay; 1-5 pay nothing — a real, intentional "match zero
-    wins" tier, same keno-family shape, not an omission): 10=$500,000, 9=$6,000, 8=$300, 7=$40,
-    6=$10, 0=$4.
+Endpoint: `https://nylottery.ny.gov/nyl-api/games/all/draws` — ONE request returns every NY game's
+recent draws at once, keyed by gameKey. No auth needed (plain GET). `robots.txt` on this domain is
+fully permissive (`Allow: /`) — this is the genuine official state site, unlike `nylottery.org` (a
+third-party reseller whose ToS explicitly bans scraping — confirmed and rejected this session, never
+use that domain).
 
-Deliberately NOT built: Quick Draw (confirmed every-4-minutes draws, same class as every other
-state's 4-minute keno-style game skipped this project).
+Each draw object: `drawTime` (date only, time always 00:00:00 — NOT useful for time-of-day),
+`drawPeriod` (1=midday, 2=evening for Win4/Numbers/Take5, confirmed by cross-checking `resultDate`
+against each game's officially-stated close_time — see below; 0=single daily/weekly session for
+Pick10/Lotto), `resultDate` (epoch ms — this is when results post, close to each game's SALES-CLOSE
+time, NOT the broadcast draw time; do not use it as a draw-time source), `status` (22 = official
+result posted, 4 = pending/no result yet — skip non-22 entries), `results[0].primary`/`.secondary`.
+
+**Real draw times used for Scheduler.gs (confirmed from nylottery.ny.gov's own
+`/drupal-api/api/games?_format=json` catalog endpoint's `draw_time` field — literal official text,
+not inferred from timestamps)**:
+  - Win4 / Numbers / Take 5: `draw_time: "Midday (2:30 PM) Evening (10:30 PM)"` — midday=drawPeriod 1,
+    evening=drawPeriod 2 (cross-validated: `close_time: "2:15 PM & 10:20 PM"` matches each session's
+    observed `resultDate` time-of-day almost exactly, confirming the drawPeriod<->session mapping).
+  - Pick 10: `draw_time: "8:30 PM"` (single session, drawPeriod 0).
+  - Lotto (NY's own in-state 6/59+bonus jackpot game, NEWLY ADDED this pass — previously missed,
+    found via the same catalog endpoint): `draw_time: "8:15 PM"`, `draw_days: ["Wednesdays",
+    "Saturdays"]`. Real pick shape cross-confirmed via lotteryusa.com/new-york/lotto/: "1 to 59"
+    appears for both the 6 main numbers and the Bonus Number (drawn from the same 1-59 pool, not a
+    separate smaller pool like Powerball's red ball). Real price per the catalog's own
+    `pricing_information`: "Two Plays: $1" i.e. $0.50/play — unusually cheap, confirmed, not a typo.
+  - Quick Draw: `draw_time: "Every 4 Mins"` — confirmed continuous, correctly stays out of scope
+    (project's standing ≤10-draws/day rule).
+  - Cash4Life: confirmed retired, not a gap. Catalog shows `alert_message: "Game Closed"`,
+    `close_time: "CLOSED"`, `app_description_long_form_msg: "The final drawing for Cash4Life took
+    place on 2/21/26."` — same class as this project's prior "Lucky for Life is retired" precedent
+    (see KY research). Deliberately not built.
+
+Output JSON shape UNCHANGED from the previous data.ny.gov-based scraper (zero Swift-side impact,
+`BundledDataSource.swift` has no NY-specific hardcoded case — this state has always run through the
+generic config-driven `liveMapping` path):
+  - `data/new-york/numbers/latest.json`: `{draw_date, midday_digits:[3 ints], evening_digits:[3
+    ints], fetched_at}` per day.
+  - `data/new-york/win4/latest.json`: same shape, 4-digit.
+  - `data/new-york/take5/latest.json`: `{draw_date, midday_numbers:[5 ints], evening_numbers:[5
+    ints], fetched_at}`.
+  - `data/new-york/pick10/latest.json`: `{draw_date, numbers:[20 ints], fetched_at}`.
+  - `data/new-york/lotto/latest.json` (NEW): `{draw_date, numbers:[6 ints], bonus:int, fetched_at}`.
+
+Deliberately NOT built: Quick Draw (4-min continuous), Cash4Life (retired), Raffle (out of scope,
+not a regular recurring draw game).
 """
 import datetime as dt
 import json
@@ -40,11 +61,13 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("ny_scraper")
 
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-REQUEST_TIMEOUT_SEC = 15
+REQUEST_TIMEOUT_SEC = 20
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "new-york"
 MAX_HISTORY = 100
+DRAWS_URL = "https://nylottery.ny.gov/nyl-api/games/all/draws"
+STATUS_OFFICIAL = 22
 
 
 def _get_json(url: str):
@@ -52,7 +75,7 @@ def _get_json(url: str):
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
+            resp = requests.get(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"}, timeout=REQUEST_TIMEOUT_SEC)
             resp.raise_for_status()
             return resp.json()
         except Exception as e:  # noqa: BLE001
@@ -63,9 +86,9 @@ def _get_json(url: str):
     raise RuntimeError(f"重试多次后仍然失败: {url}") from last_err
 
 
-def _draw_date(row: dict) -> str:
-    # Socrata returns e.g. "2026-10-14T00:00:00.000"
-    return row["draw_date"][:10]
+def _date_str(draw: dict) -> str:
+    ms = draw["drawTime"]
+    return dt.datetime.fromtimestamp(ms / 1000, tz=dt.timezone.utc).strftime("%Y-%m-%d")
 
 
 def save_results(subdir: str, new_entries: list[dict]) -> Path:
@@ -87,76 +110,111 @@ def save_results(subdir: str, new_entries: list[dict]) -> Path:
     return out_path
 
 
-def scrape_numbers_win4():
-    rows = _get_json("https://data.ny.gov/resource/hsys-3def.json?$limit=100&$order=draw_date%20DESC")
-    numbers_out, win4_out = [], []
-    now = dt.datetime.now(dt.timezone.utc).isoformat()
-    for r in rows:
-        draw_date = _draw_date(r)
-        if r.get("midday_daily") and r.get("evening_daily"):
-            numbers_out.append({
-                "draw_date": draw_date,
-                "midday_digits": [int(d) for d in r["midday_daily"].zfill(3)],
-                "evening_digits": [int(d) for d in r["evening_daily"].zfill(3)],
-                "fetched_at": now,
-            })
-        if r.get("midday_win_4") and r.get("evening_win_4"):
-            win4_out.append({
-                "draw_date": draw_date,
-                "midday_digits": [int(d) for d in r["midday_win_4"].zfill(4)],
-                "evening_digits": [int(d) for d in r["evening_win_4"].zfill(4)],
-                "fetched_at": now,
-            })
-    if not numbers_out or not win4_out:
-        raise ValueError("Numbers/Win4 没解析到任何记录")
-    save_results("numbers", numbers_out)
-    save_results("win4", win4_out)
-    log.info("numbers: 最新一条 %s", numbers_out[0])
-    log.info("win4: 最新一条 %s", win4_out[0])
+def _official_results(draws: list[dict]) -> list[dict]:
+    return [d for d in draws if d.get("status") == STATUS_OFFICIAL and d.get("results")]
 
 
-def scrape_take5():
-    rows = _get_json("https://data.ny.gov/resource/dg63-4siq.json?$limit=100&$order=draw_date%20DESC")
-    out = []
-    now = dt.datetime.now(dt.timezone.utc).isoformat()
-    for r in rows:
-        midday = r.get("midday_winning_numbers")
-        evening = r.get("evening_winning_numbers")
-        if not midday or not evening:
+def scrape_digit_pair(data: dict, game_key: str, subdir: str, digit_count: int):
+    """Win4/Numbers: one row/day with both midday (drawPeriod 1) and evening (drawPeriod 2)."""
+    draws = _official_results(data[game_key]["draws"])
+    by_date: dict[str, dict] = {}
+    for d in draws:
+        date_str = _date_str(d)
+        entry = by_date.setdefault(date_str, {"draw_date": date_str})
+        digits = [int(x) for x in d["results"][0]["primary"]]
+        if len(digits) != digit_count:
             continue
-        out.append({
-            "draw_date": _draw_date(r),
-            "midday_numbers": [int(n) for n in midday.split()],
-            "evening_numbers": [int(n) for n in evening.split()],
-            "fetched_at": now,
-        })
+        if d["drawPeriod"] == 1:
+            entry["midday_digits"] = digits
+        elif d["drawPeriod"] == 2:
+            entry["evening_digits"] = digits
+    now = dt.datetime.now(dt.timezone.utc).isoformat()
+    out = []
+    for date_str in sorted(by_date, reverse=True):
+        e = by_date[date_str]
+        if "midday_digits" in e and "evening_digits" in e:
+            e["fetched_at"] = now
+            out.append(e)
     if not out:
-        raise ValueError("Take 5 没解析到任何记录")
+        raise ValueError(f"{game_key} 没解析到任何完整(午+晚)记录")
+    save_results(subdir, out)
+    log.info("%s: 最新一条 %s", subdir, out[0])
+
+
+def scrape_take5(data: dict):
+    draws = _official_results(data["take5"]["draws"])
+    by_date: dict[str, dict] = {}
+    for d in draws:
+        date_str = _date_str(d)
+        entry = by_date.setdefault(date_str, {"draw_date": date_str})
+        numbers = [int(x) for x in d["results"][0]["primary"]]
+        if len(numbers) != 5:
+            continue
+        if d["drawPeriod"] == 1:
+            entry["midday_numbers"] = numbers
+        elif d["drawPeriod"] == 2:
+            entry["evening_numbers"] = numbers
+    now = dt.datetime.now(dt.timezone.utc).isoformat()
+    out = []
+    for date_str in sorted(by_date, reverse=True):
+        e = by_date[date_str]
+        if "midday_numbers" in e and "evening_numbers" in e:
+            e["fetched_at"] = now
+            out.append(e)
+    if not out:
+        raise ValueError("take5 没解析到任何完整(午+晚)记录")
     save_results("take5", out)
     log.info("take5: 最新一条 %s", out[0])
 
 
-def scrape_pick10():
-    rows = _get_json("https://data.ny.gov/resource/bycu-cw7c.json?$limit=100&$order=draw_date%20DESC")
-    out = []
+def scrape_pick10(data: dict):
+    draws = _official_results(data["pick10"]["draws"])
     now = dt.datetime.now(dt.timezone.utc).isoformat()
-    for r in rows:
-        nums = r.get("winning_numbers")
-        if not nums:
-            continue
-        numbers = [int(n) for n in nums.split()]
+    out = []
+    for d in draws:
+        numbers = [int(x) for x in d["results"][0]["primary"]]
         if len(numbers) != 20:
             continue
-        out.append({"draw_date": _draw_date(r), "numbers": numbers, "fetched_at": now})
+        out.append({"draw_date": _date_str(d), "numbers": numbers, "fetched_at": now})
     if not out:
-        raise ValueError("Pick 10 没解析到任何记录")
+        raise ValueError("pick10 没解析到任何记录")
     save_results("pick10", out)
     log.info("pick10: 最新一条 %s", out[0])
 
 
+def scrape_lotto(data: dict):
+    draws = _official_results(data["lotto"]["draws"])
+    now = dt.datetime.now(dt.timezone.utc).isoformat()
+    out = []
+    for d in draws:
+        res = d["results"][0]
+        numbers = [int(x) for x in res["primary"]]
+        secondary = res.get("secondary") or []
+        if len(numbers) != 6 or not secondary or secondary[0] == "":
+            continue
+        out.append({
+            "draw_date": _date_str(d),
+            "numbers": numbers,
+            "bonus": int(secondary[0]),
+            "fetched_at": now,
+        })
+    if not out:
+        raise ValueError("lotto 没解析到任何记录")
+    save_results("lotto", out)
+    log.info("lotto: 最新一条 %s", out[0])
+
+
 def main():
+    data = _get_json(DRAWS_URL)["data"]
     errors = []
-    for name, fn in [("numbers/win4", scrape_numbers_win4), ("take5", scrape_take5), ("pick10", scrape_pick10)]:
+    jobs = [
+        ("win4", lambda: scrape_digit_pair(data, "win4", "win4", 4)),
+        ("numbers", lambda: scrape_digit_pair(data, "numbers", "numbers", 3)),
+        ("take5", lambda: scrape_take5(data)),
+        ("pick10", lambda: scrape_pick10(data)),
+        ("lotto", lambda: scrape_lotto(data)),
+    ]
+    for name, fn in jobs:
         try:
             fn()
         except Exception as e:  # noqa: BLE001
