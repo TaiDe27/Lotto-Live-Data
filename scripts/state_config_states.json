@@ -432,7 +432,18 @@
       "mega-millions",
       "powerball-double-play",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "nc-pick3-midday",
+      "nc-pick3-evening",
+      "nc-pick4-midday",
+      "nc-pick4-evening",
+      "nc-cash5",
+      "nc-cash5-double-play",
+      "nc-cash-pop-morning-buzz",
+      "nc-cash-pop-lunch-rush",
+      "nc-cash-pop-clock-out-cash",
+      "nc-cash-pop-primetime-pop",
+      "nc-cash-pop-midnight-money"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
@@ -490,7 +501,14 @@
       "mega-millions",
       "powerball-double-play",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "nj-pick3-midday",
+      "nj-pick3-evening",
+      "nj-pick4-midday",
+      "nj-pick4-evening",
+      "nj-cash5",
+      "nj-pick6",
+      "nj-pick6-double-play"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -501,7 +519,12 @@
       "powerball",
       "mega-millions",
       "powerball-double-play",
-      "lotto-america"
+      "lotto-america",
+      "nm-pick3plus-day",
+      "nm-pick3plus-evening",
+      "nm-pick4plus-day",
+      "nm-pick4plus-evening",
+      "nm-roadrunner-cash"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -512,7 +535,14 @@
       "powerball",
       "mega-millions",
       "powerball-double-play",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "ny-numbers-midday",
+      "ny-numbers-evening",
+      "ny-win4-midday",
+      "ny-win4-evening",
+      "ny-take5-midday",
+      "ny-take5-evening",
+      "ny-pick10"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -522,7 +552,15 @@
     "games": [
       "powerball",
       "mega-millions",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "oh-classic-lotto",
+      "oh-pick3-midday",
+      "oh-pick3-evening",
+      "oh-pick4-midday",
+      "oh-pick4-evening",
+      "oh-pick5-midday",
+      "oh-pick5-evening",
+      "oh-rolling-cash5"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
