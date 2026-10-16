@@ -45,6 +45,6 @@ jobs:
       - name: Purge jsDelivr cache
         run: |
           REPO="${{ github.repository }}"
-          for p in numbers win4 take5 pick10; do
+          for p in numbers win4 take5 pick10 lotto; do
             curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/new-york/${p}/latest.json"
           done
