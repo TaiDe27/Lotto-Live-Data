@@ -32562,5 +32562,1159 @@
         "guardField": null
       }
     }
+  },
+  "sd-dakota-cash": {
+    "id": "sd-dakota-cash",
+    "stateCodes": [
+      "SD"
+    ],
+    "name": "Dakota Cash",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 35,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Wed/Sat 9:15 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "South Dakota's only own game, 5 of 1-35, pari-mutuel prizes.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.sd.gov's own game page: \"Drawings are every Wednesday and Saturday night\" / \"Tickets may be purchased until 9 p.m. central on the evening of the draw.\" Exact minute (9:15 PM) confirmed from the real API's own drawTime field, consistent across every draw checked. Optional EZ Match instant-win add-on exists but isn't modelable from public draw data.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": null,
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/south-dakota/dakota-cash/latest.json",
+      "cachePath": "live/south-dakota/dakota-cash/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 21,
+        "anchorMinute": 15,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-cash": {
+    "id": "tn-cash",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Tennessee Cash",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 35,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 1.0,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 5,
+      "specialName": "Cash Ball"
+    },
+    "drawSchedule": "Mon/Wed/Fri 10:30 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Tennessee's own in-state jackpot game, pari-mutuel prizes, $200,000 starting jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule + pick shape confirmed from lottery.net's own page text: \"Players choose five numbers and a separate 'Cash Ball' number in drawings held three times a week on Monday, Wednesday, and Friday at 10:30 PM CT/11:30PM ET\"; pool ranges confirmed from the same page: \"Pick five numbers between 1-35 and one Cash Ball number between 1-5\".",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": null,
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash/latest.json",
+      "cachePath": "live/tennessee/cash/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/New_York",
+        "anchorHour": 22,
+        "anchorMinute": 30,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": {
+        "field": "bonus_ball",
+        "wrapScalar": true
+      },
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-daily-jackpot": {
+    "id": "tn-daily-jackpot",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Tennessee Daily Jackpot",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 38,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Nightly 9:00 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Tennessee's daily 5-number pick, no bonus ball, jackpot grows until won.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.net: \"Draws take place nightly at 9:00 PM CT / 10:00 PM ET.\" Pool size (1-38) confirmed via the real stated odds \"Match 5: 1 in 501,942\" - C(38,5)=501,942 exactly, not a guess.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": null,
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/daily-jackpot/latest.json",
+      "cachePath": "live/tennessee/daily-jackpot/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 21,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-cash3-morning": {
+    "id": "tn-cash3-morning",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Cash 3 Morning",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 9:26 AM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.net's cash-3 page: \"Morning: Monday to Saturday: 9:26 AM CT\", \"Midday: Monday to Saturday: 12:28 PM CT\", \"Evening: Every day 6:28 PM CT\" - no Sunday Morning/Midday session. Has a real Wild Ball add-on digit (drawn separately after the regular numbers, confirmed from the page's own text and present in the real results markup).",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": {
+        "3": "box3way"
+      },
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": "straight-addon",
+      "addOnBoxTierKeysByWayCount": {
+        "3": "box3way-addon"
+      }
+    },
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
+      "cachePath": "live/tennessee/cash3/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "morning"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 9,
+        "anchorMinute": 26,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "wild_ball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-cash3-midday": {
+    "id": "tn-cash3-midday",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Cash 3 Midday",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 12:28 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.net's cash-3 page: \"Morning: Monday to Saturday: 9:26 AM CT\", \"Midday: Monday to Saturday: 12:28 PM CT\", \"Evening: Every day 6:28 PM CT\" - no Sunday Morning/Midday session. Has a real Wild Ball add-on digit (drawn separately after the regular numbers, confirmed from the page's own text and present in the real results markup).",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": {
+        "3": "box3way"
+      },
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": "straight-addon",
+      "addOnBoxTierKeysByWayCount": {
+        "3": "box3way-addon"
+      }
+    },
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
+      "cachePath": "live/tennessee/cash3/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "midday"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 12,
+        "anchorMinute": 28,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "wild_ball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-cash3-evening": {
+    "id": "tn-cash3-evening",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Cash 3 Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Daily 6:28 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.net's cash-3 page: \"Morning: Monday to Saturday: 9:26 AM CT\", \"Midday: Monday to Saturday: 12:28 PM CT\", \"Evening: Every day 6:28 PM CT\" - no Sunday Morning/Midday session. Has a real Wild Ball add-on digit (drawn separately after the regular numbers, confirmed from the page's own text and present in the real results markup).",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": {
+        "3": "box3way"
+      },
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": "straight-addon",
+      "addOnBoxTierKeysByWayCount": {
+        "3": "box3way-addon"
+      }
+    },
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
+      "cachePath": "live/tennessee/cash3/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "evening"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 18,
+        "anchorMinute": 28,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "wild_ball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-cash4-morning": {
+    "id": "tn-cash4-morning",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Cash 4 Morning",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 9:26 AM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.net's cash-4 page: \"Morning: Monday to Saturday: 9:26 AM CDT\", \"Midday: Monday to Saturday: 12:59 PM CT\", \"Evening: Every day: 6:59 PM CT\" - no Sunday Morning/Midday session. Has a real Wild Ball add-on digit, same mechanic as Cash 3.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": {
+        "4": "box4way"
+      },
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": "straight-addon",
+      "addOnBoxTierKeysByWayCount": {
+        "4": "box4way-addon"
+      }
+    },
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
+      "cachePath": "live/tennessee/cash4/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "morning"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 9,
+        "anchorMinute": 26,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "wild_ball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-cash4-midday": {
+    "id": "tn-cash4-midday",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Cash 4 Midday",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 12:59 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.net's cash-4 page: \"Morning: Monday to Saturday: 9:26 AM CDT\", \"Midday: Monday to Saturday: 12:59 PM CT\", \"Evening: Every day: 6:59 PM CT\" - no Sunday Morning/Midday session. Has a real Wild Ball add-on digit, same mechanic as Cash 3.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": {
+        "4": "box4way"
+      },
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": "straight-addon",
+      "addOnBoxTierKeysByWayCount": {
+        "4": "box4way-addon"
+      }
+    },
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
+      "cachePath": "live/tennessee/cash4/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "midday"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 12,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "wild_ball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "tn-cash4-evening": {
+    "id": "tn-cash4-evening",
+    "stateCodes": [
+      "TN"
+    ],
+    "name": "Cash 4 Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Daily 6:59 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from lottery.net's cash-4 page: \"Morning: Monday to Saturday: 9:26 AM CDT\", \"Midday: Monday to Saturday: 12:59 PM CT\", \"Evening: Every day: 6:59 PM CT\" - no Sunday Morning/Midday session. Has a real Wild Ball add-on digit, same mechanic as Cash 3.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": {
+      "kind": "positionalDigitsWithAddOn",
+      "straightTierKey": "straight",
+      "boxTierKeysByWayCount": {
+        "4": "box4way"
+      },
+      "teamCount": null,
+      "teamMatchTierKeyTemplate": null,
+      "teamJackpotTierKey": null,
+      "addOnStraightTierKey": "straight-addon",
+      "addOnBoxTierKeysByWayCount": {
+        "4": "box4way-addon"
+      }
+    },
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
+      "cachePath": "live/tennessee/cash4/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "evening"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 18,
+        "anchorMinute": 59,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "wild_ball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "vi-super-lotto": {
+    "id": "vi-super-lotto",
+    "stateCodes": [
+      "VI"
+    ],
+    "name": "Super Lotto",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 35,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 2.0,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 10,
+      "specialName": "Super Ball"
+    },
+    "drawSchedule": "Tue/Fri 9:00 PM AST",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The Caribbean Lottery's shared Super Lotto jackpot game, offered in USVI.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from thecaribbeanlottery.com/game-schedules (real schedule table: Super Lotto only populated on Tuesday/Friday at 9:00 p.m.). Pick shape confirmed from the game's own \"How to Play\" text: \"the first set from 1 to 35 and the second set from 1 to 10 ... in St. Maarten and USVI each play costs US$2.\"",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": null,
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/super-lotto/latest.json",
+      "cachePath": "live/us-virgin-islands/super-lotto/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Puerto_Rico",
+        "anchorHour": 21,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": {
+        "field": "super_ball",
+        "wrapScalar": true
+      },
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "vi-lucky-pick": {
+    "id": "vi-lucky-pick",
+    "stateCodes": [
+      "VI"
+    ],
+    "name": "Lucky Pick",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 28,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 2.0
+    },
+    "drawSchedule": "Daily 8:00 PM AST",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The Caribbean Lottery's Lucky Pick jackpot game, offered in USVI. Starting jackpot US$40,000.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from thecaribbeanlottery.com/game-schedules (Lucky Pick populated daily at 8:00 p.m.). Pick shape + price confirmed from the game's own \"How to Play\" text: \"Each panel contains numbers 1 to 28 ... Select five (5) numbers\" and \"Lucky Pick tickets cost US $2.00 (EC$5.00) per play with a starting Jackpot of US$40,000\". A per-ticket Multiplier exists but isn't modelable from public draw data. Each draw also produces a separately drawn \"Lucky Pick Double Play\" set, built as its own game (vi-lucky-pick-double-play).",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": null,
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/lucky-pick/latest.json",
+      "cachePath": "live/us-virgin-islands/lucky-pick/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Puerto_Rico",
+        "anchorHour": 20,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "vi-lucky-pick-double-play": {
+    "id": "vi-lucky-pick-double-play",
+    "stateCodes": [
+      "VI"
+    ],
+    "name": "Lucky Pick Double Play",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 5,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 28,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 1.0
+    },
+    "drawSchedule": "Daily 8:00 PM AST",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Lucky Pick's companion Double Play drawing.",
+    "overallOddsText": null,
+    "payoutNote": "Same session as Lucky Pick - a second, separately drawn 5-number set (same pattern as Powerball Double Play / Puerto Rico's Revancha), confirmed from the game's own text: \"Double Play add-on is a second drawing that occurs right after [Lucky Pick]... allows a player to win up to a fixed top prize of US$10,000. Double Play cost US$1.00\".",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": null,
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/lucky-pick-double-play/latest.json",
+      "cachePath": "live/us-virgin-islands/lucky-pick-double-play/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Puerto_Rico",
+        "anchorHour": 20,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
+  },
+  "vi-pay-day": {
+    "id": "vi-pay-day",
+    "stateCodes": [
+      "VI"
+    ],
+    "name": "Pay Day",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 35,
+      "mainMustBeUnique": true,
+      "specialCount": 1,
+      "price": 2.0,
+      "specialRangeLower": 1,
+      "specialRangeUpper": 6,
+      "specialName": "Cash Ball"
+    },
+    "drawSchedule": "Daily 7:30 PM AST",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "The Caribbean Lottery's Pay Day jackpot game, offered in USVI.",
+    "overallOddsText": null,
+    "payoutNote": "Real schedule confirmed from the game's own \"How to Play\" text: \"Drawings are held daily at 7:30p.m.\" Pick shape confirmed from the same text: \"the first set from 1 to 35 and the second set from 1 to 6 ... Choose 4 numbers from the first set ... then choose 1 number from the set ... on the right\". A per-ticket Multiplier (2X-10X) exists but isn't modelable from public draw data.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "matchRule": null,
+    "ocrRule": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pay-day/latest.json",
+      "cachePath": "live/us-virgin-islands/pay-day/latest.json",
+      "shape": "numeric",
+      "sessionFilter": null,
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Puerto_Rico",
+        "anchorHour": 19,
+        "anchorMinute": 30,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": {
+        "field": "cash_ball",
+        "wrapScalar": true
+      },
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "multiplierField": null,
+      "winnersByTier": null
+    }
   }
 }

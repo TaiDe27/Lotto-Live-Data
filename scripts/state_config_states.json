@@ -697,7 +697,8 @@
       "powerball-double-play",
       "lotto-america",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "sd-dakota-cash"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -710,7 +711,15 @@
       "powerball-double-play",
       "lotto-america",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "tn-cash",
+      "tn-daily-jackpot",
+      "tn-cash3-morning",
+      "tn-cash3-midday",
+      "tn-cash3-evening",
+      "tn-cash4-morning",
+      "tn-cash4-midday",
+      "tn-cash4-evening"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -754,7 +763,11 @@
     "games": [
       "powerball",
       "mega-millions",
-      "powerball-double-play"
+      "powerball-double-play",
+      "vi-super-lotto",
+      "vi-lucky-pick",
+      "vi-lucky-pick-double-play",
+      "vi-pay-day"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
