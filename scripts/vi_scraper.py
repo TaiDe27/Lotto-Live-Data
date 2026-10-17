@@ -33,11 +33,20 @@ not guessed):
   complex mechanic not yet modeled anywhere else in this project; full
   pick/match logic deliberately not attempted this round.
 
-Pick 3 and Pick 4 are NOT built here - their real historical data (via the
-site's own check-history endpoint) turned out to show three separate
-numbered result sets ("1st"/"2nd"/"3rd") plus an optional "Mega Ball" per
-session, not the simple single 3-/4-digit draw the landing page implied -
-flagged as an open question rather than guessed at.
+Pick 3 / Pick 4 (confirmed from each game's own "How to Play" page,
+https://www.thecaribbeanlottery.com/games/pick-3 and /pick-4 - not guessed
+from the result-data shape): 4 sessions daily - Morning 10:00 AM, Midday
+1:00 PM, Sunset 6:00 PM, Evening 9:00 PM. Each session genuinely draws
+THREE independent digit sets ("1st"/"2nd"/"3rd" spot - confirmed via
+check-history, and explained by the game's own real prize table, which
+pays a different descending amount per spot for the same bet type, e.g.
+Pick 3 Straight: 1st $400, 2nd $75, 3rd $50). One ticket is checked against
+all three. "Mega Ball" is a real optional purchase-time add-on per the
+rules text ("drawn following the drawing... adds to the player's winnings")
+but every real historical result checked (5+ dates, both games) shows it as
+literally "NONE" with zero evidence it's ever actually active for this
+territory - not modeled, flagged in the Swift-side doc comment instead of
+guessed at.
 """
 import json
 import logging
@@ -162,6 +171,57 @@ def scrape_pay_day():
     save("pay-day", [entry], ["draw_date"])
 
 
+SESSION_SLUG = {"morning": "morning", "midday": "midday", "sunset": "sunset", "evening": "evening"}
+
+
+def scrape_pick_game(slug, digit_count):
+    """Pick 3 (digit_count=3) / Pick 4 (digit_count=4). Uses check-history for yesterday (same
+    reason as Caribbean Numbers: the live page shows "Awaiting Results" for today until each
+    session actually fires, so yesterday via check-history reliably gets a fully-completed day)."""
+    yesterday = (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d")
+    html = fetch_history(slug, yesterday)
+    entries = []
+    for m in re.finditer(
+        r'icon-\w+"></span>\s*([A-Za-z]+)\s*<br[^>]*>\s*#(\d+)</label>(.*?)'
+        r'(?=<div class="flex center">|</div>\s*</div>\s*</li>)',
+        html, re.S,
+    ):
+        label, _draw_id, block = m.groups()
+        session = SESSION_SLUG.get(label.strip().lower())
+        if not session:
+            continue
+        spot_groups = re.findall(
+            r'<li>(1st|2nd|3rd)</li>(.*?)(?=<li>(?:1st|2nd|3rd|Mega Ball)</li>|</ul>\s*</div>)',
+            block, re.S,
+        )
+        spots = []
+        for _tag, nb in spot_groups:
+            nums = [int(x) for x in re.findall(r"<li>(\d+)</li>", nb)]
+            if len(nums) == digit_count:
+                spots.append(nums)
+        if len(spots) != 3:
+            continue
+        entries.append({
+            "draw_date": yesterday,
+            "session": session,
+            "digits": spots[0],
+            "digits_2nd": spots[1],
+            "digits_3rd": spots[2],
+        })
+    if not entries:
+        log.error("%s: no parseable result for %s", slug, yesterday)
+        return
+    save(slug, entries, ["draw_date", "session"])
+
+
+def scrape_pick3():
+    scrape_pick_game("pick-3", 3)
+
+
+def scrape_pick4():
+    scrape_pick_game("pick-4", 4)
+
+
 def scrape_caribbean_numbers():
     # Live page uses the same in-progress "Awaiting Results" pattern as
     # Pick 3/4 for today's date - use yesterday's date via check-history to
@@ -189,7 +249,8 @@ def scrape_caribbean_numbers():
 
 
 def main():
-    for fn in (scrape_super_lotto, scrape_lucky_pick, scrape_pay_day, scrape_caribbean_numbers):
+    for fn in (scrape_super_lotto, scrape_lucky_pick, scrape_pay_day, scrape_caribbean_numbers,
+               scrape_pick3, scrape_pick4):
         try:
             fn()
         except Exception as e:

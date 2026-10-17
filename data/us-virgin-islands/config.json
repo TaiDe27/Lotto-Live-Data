@@ -1091,6 +1091,1643 @@
         "multiplierField": null,
         "winnersByTier": null
       }
+    },
+    {
+      "id": "vi-pick3-morning",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 3 Morning",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 10:00 AM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "morning"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-pick4-morning",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 4 Morning",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 10:00 AM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "morning"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-pick3-midday",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 3 Midday",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 1:00 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-pick4-midday",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 4 Midday",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 1:00 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "midday"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-pick3-sunset",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 3 Sunset",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 6:00 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "sunset"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-pick4-sunset",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 4 Sunset",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 6:00 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "sunset"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-pick3-evening",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 3 Evening",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9:00 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "3": "box3way",
+          "6": "box6way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-3/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-pick4-evening",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Pick 4 Evening",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 4,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 9,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9:00 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "positionalDigitsMultiDraw",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "4": "box4way",
+          "6": "box6way",
+          "12": "box12way",
+          "24": "box24way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
+        "cachePath": "live/us-virgin-islands/pick-4/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "evening"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "digits",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": [
+          "digits_2nd",
+          "digits_3rd"
+        ],
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-quiniela-1pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Quiniela 1 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 1 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Quiniela modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Quiniela (pick 1): wins the prize for EVERY spot matched, ADDITIVELY - the site's own worked example: drawing 5,5,5 on a pick of 5 pays $60+$8+$4=$72. Base price not explicitly stated on this page (no $ wager column shown, unlike Pick 3/4's table) - used $1 as the standard digit-game default, flagged rather than silently assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "1pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-quiniela-3pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Quiniela 3 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 3 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Quiniela modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Quiniela (pick 1): wins the prize for EVERY spot matched, ADDITIVELY - the site's own worked example: drawing 5,5,5 on a pick of 5 pays $60+$8+$4=$72. Base price not explicitly stated on this page (no $ wager column shown, unlike Pick 3/4's table) - used $1 as the standard digit-game default, flagged rather than silently assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "3pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 15,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-quiniela-9pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Quiniela 9 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 1,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": false,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Quiniela modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Quiniela (pick 1): wins the prize for EVERY spot matched, ADDITIVELY - the site's own worked example: drawing 5,5,5 on a pick of 5 pays $60+$8+$4=$72. Base price not explicitly stated on this page (no $ wager column shown, unlike Pick 3/4's table) - used $1 as the standard digit-game default, flagged rather than silently assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "9pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-pale-1pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Pale 1 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 2,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 1 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Pale modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Pale (pick 2): wins only if both picks match 2 of the 3 spots (any of the 3 possible spot-pairs), paying only the highest-value matching pair if more than one applies (site's own rule: \"player can only win the Spot with the highest price\"). Base price not explicitly stated on this page - used $1 as the standard default, flagged not assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "1pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-pale-3pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Pale 3 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 2,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 3 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Pale modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Pale (pick 2): wins only if both picks match 2 of the 3 spots (any of the 3 possible spot-pairs), paying only the highest-value matching pair if more than one applies (site's own rule: \"player can only win the Spot with the highest price\"). Base price not explicitly stated on this page - used $1 as the standard default, flagged not assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "3pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 15,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-pale-9pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Pale 9 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 2,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Pale modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Pale (pick 2): wins only if both picks match 2 of the 3 spots (any of the 3 possible spot-pairs), paying only the highest-value matching pair if more than one applies (site's own rule: \"player can only win the Spot with the highest price\"). Base price not explicitly stated on this page - used $1 as the standard default, flagged not assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "9pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-tripleta-1pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Tripleta 1 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 1 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Tripleta modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Tripleta (pick 3): wins the top prize for matching all 3 spots in any order, or a smaller consolation prize for matching any 2 of 3, again only the highest-paying outcome if multiple apply. Base price not explicitly stated on this page - used $1 as the standard default, flagged not assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "1pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-tripleta-3pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Tripleta 3 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 3 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Tripleta modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Tripleta (pick 3): wins the top prize for matching all 3 spots in any order, or a smaller consolation prize for matching any 2 of 3, again only the highest-paying outcome if multiple apply. Base price not explicitly stated on this page - used $1 as the standard default, flagged not assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "3pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 15,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
+    },
+    {
+      "id": "vi-numbers-tripleta-9pm",
+      "stateCodes": [
+        "VI"
+      ],
+      "name": "Caribbean Numbers Tripleta 9 PM",
+      "type": "inStateJackpot",
+      "pickRule": {
+        "mainCount": 3,
+        "mainRangeLower": 0,
+        "mainRangeUpper": 99,
+        "mainMustBeUnique": true,
+        "specialCount": 0,
+        "price": 1.0
+      },
+      "drawSchedule": "Daily 9 PM AST",
+      "payoutTable": [],
+      "buyTicketBaseURLs": {},
+      "jackpotDescription": "The Caribbean Lottery's Caribbean Numbers! game, Tripleta modality, offered in USVI.",
+      "overallOddsText": null,
+      "payoutNote": "Confirmed from thecaribbeanlottery.com/games/caribbean-numbers's own \"How to Play\"/\"How to Win\" text: 3 sessions daily (1 PM, 3 PM, 9 PM AST). One session draws 3 independent 2-digit (00-99) numbers (1st/2nd/3rd spot). Tripleta (pick 3): wins the top prize for matching all 3 spots in any order, or a smaller consolation prize for matching any 2 of 3, again only the highest-paying outcome if multiple apply. Base price not explicitly stated on this page - used $1 as the standard default, flagged not assumed confirmed.",
+      "powerPlay": null,
+      "doublePlay": null,
+      "multiplierLabel": null,
+      "matchRule": {
+        "kind": "caribbeanNumbersMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": null,
+      "liveMapping": {
+        "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
+        "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
+        "shape": "numeric",
+        "sessionFilter": {
+          "field": "session",
+          "equals": "9pm"
+        },
+        "drawDate": {
+          "field": "draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
+        "nextDrawDate": null,
+        "mainNumbersField": "numbers",
+        "specialNumbers": null,
+        "winningTeamsField": null,
+        "lottoMillion1Field": null,
+        "lottoMillion2Field": null,
+        "derbyPositionsField": null,
+        "derbyRaceTimeField": null,
+        "addOnDigitField": null,
+        "pokerCardsField": null,
+        "bullseyeNumberField": null,
+        "additionalDrawDigitsFields": null,
+        "jackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "cashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextJackpot": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "nextCashValue": {
+          "source": "none",
+          "field": null,
+          "moneyFormat": null,
+          "guardField": null
+        },
+        "multiplierField": null,
+        "winnersByTier": null
+      }
     }
   ]
 }
