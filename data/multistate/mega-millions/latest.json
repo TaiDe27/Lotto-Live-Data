@@ -1,5 +1,34 @@
 [
   {
+    "draw_date": "2026-10-16T00:00:00",
+    "white_balls": [
+      2,
+      15,
+      31,
+      41,
+      68
+    ],
+    "mega_ball": 11,
+    "megaplier": null,
+    "current_prize_pool": 403000000.0,
+    "current_cash_value": 162100000.0,
+    "jackpot_winners": 0,
+    "next_draw_date": "2026-10-20T23:00:00",
+    "next_prize_pool": 413000000.0,
+    "next_cash_value": 170300000.0,
+    "match5_winner_text": "Match 5 + 0:",
+    "match5_locations": [
+      {
+        "PlayDate": "2026-10-16T00:00:00",
+        "PrizeLevel": "5X",
+        "StateCode": "NY",
+        "WinnerCount": 1
+      }
+    ],
+    "fetched_at": "2026-10-17T09:40:59.681487+00:00",
+    "source_url": "https://www.megamillions.com/"
+  },
+  {
     "draw_date": "2026-10-13T00:00:00",
     "white_balls": [
       11,
