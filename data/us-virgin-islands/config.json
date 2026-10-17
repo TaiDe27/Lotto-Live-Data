@@ -1112,7 +1112,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1188,7 +1188,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {
@@ -1211,7 +1212,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1289,7 +1290,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {
@@ -1312,7 +1314,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1388,7 +1390,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {
@@ -1411,7 +1414,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1489,7 +1492,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {
@@ -1512,7 +1516,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1588,7 +1592,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {
@@ -1611,7 +1616,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1689,7 +1694,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {
@@ -1712,7 +1718,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 3 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-3's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1788,7 +1794,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {
@@ -1811,7 +1818,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The Caribbean Lottery's Pick 4 digit game, offered in USVI.",
       "overallOddsText": null,
-      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on is stated in the rules but every real historical result checked shows it as literally \"NONE\" with no evidence it's ever active for this territory - not modeled. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
+      "payoutNote": "Real schedule + mechanic confirmed from thecaribbeanlottery.com/games/pick-4's own \"How to Play\" text: 4 sessions daily (Morning 10AM/Midday 1PM/Sunset 6PM/Evening 9PM), and each session genuinely draws THREE independent digit sets (\"1st\"/\"2nd\"/\"3rd\" spot) checked against one ticket, confirmed via the site's own check-history results and its real prize table (which pays a different, descending amount per spot). \"Mega Ball\" add-on IS modeled (a real binary per-draw outcome, confirmed hitting 14/32 sessions in a wider real sample, not rare/inactive as an earlier narrower sample wrongly concluded) - a flat $1000 bonus on top of an already-won base prize, gated by the player purchasing it. Pair bets (Front/Back/Split Pair) not modeled, consistent with every other Pick3-style game in this app.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1889,7 +1896,8 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "megaBallDrawnField": "mega_ball_drawn"
       }
     },
     {

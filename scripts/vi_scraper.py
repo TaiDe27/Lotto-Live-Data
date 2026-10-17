@@ -41,12 +41,13 @@ THREE independent digit sets ("1st"/"2nd"/"3rd" spot - confirmed via
 check-history, and explained by the game's own real prize table, which
 pays a different descending amount per spot for the same bet type, e.g.
 Pick 3 Straight: 1st $400, 2nd $75, 3rd $50). One ticket is checked against
-all three. "Mega Ball" is a real optional purchase-time add-on per the
-rules text ("drawn following the drawing... adds to the player's winnings")
-but every real historical result checked (5+ dates, both games) shows it as
-literally "NONE" with zero evidence it's ever actually active for this
-territory - not modeled, flagged in the Swift-side doc comment instead of
-guessed at.
+all three. "Mega Ball" is a real optional purchase-time add-on, modeled as
+`mega_ball_drawn` (bool, not a digit) per session - confirmed real via a
+wider 9-date/36-session sample (14/32 real sessions hit, e.g. 2026-10-02
+Morning/Sunset), not the rare/non-existent outcome an earlier 5-date
+sample wrongly concluded. The live page's HTML shows either a literal
+"NONE" row (not drawn) or a colored-marker row with no text (drawn) - see
+`scrape_pick_game`'s Mega Ball extraction below.
 """
 import json
 import logging
@@ -201,9 +202,19 @@ def scrape_pick_game(slug, digit_count):
                 spots.append(nums)
         if len(spots) != 3:
             continue
+        # Mega Ball: a real per-draw published outcome, not a digit. The real HTML shows either a
+        # literal "NONE" row (not drawn) or a colored-marker row with no text, e.g.
+        # `<li style="...background-color: blue">&nbsp;</li>` (drawn) - confirmed via a real hit,
+        # 2026-10-02 Morning/Sunset both showed the colored-marker form. An earlier pass only
+        # checked a handful of all-"NONE" dates and wrongly concluded this was never active.
+        mega_ball_drawn = False
+        mb_match = re.search(r"Mega Ball</li>\s*<li([^>]*)>(.*?)</li>", block, re.S)
+        if mb_match:
+            mega_ball_drawn = mb_match.group(2).strip() != "NONE"
         entries.append({
             "draw_date": yesterday,
             "session": session,
+            "mega_ball_drawn": mega_ball_drawn,
             "digits": spots[0],
             "digits_2nd": spots[1],
             "digits_3rd": spots[2],
