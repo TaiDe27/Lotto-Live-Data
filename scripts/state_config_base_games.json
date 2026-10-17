@@ -31483,12 +31483,12 @@
       }
     }
   },
-  "tx-pick3": {
-    "id": "tx-pick3",
+  "tx-pick3-morning": {
+    "id": "tx-pick3-morning",
     "stateCodes": [
       "TX"
     ],
-    "name": "Pick 3",
+    "name": "Pick 3 Morning",
     "type": "inStateJackpot",
     "pickRule": {
       "mainCount": 3,
@@ -31498,12 +31498,12 @@
       "specialCount": 0,
       "price": 0.5
     },
-    "drawSchedule": "Mon-Sat 10:00 AM, 12:27 PM, 6:00 PM & 10:12 PM CT",
+    "drawSchedule": "Mon-Sat 10:00 AM CT",
     "payoutTable": [],
     "buyTicketBaseURLs": {},
     "jackpotDescription": "Fixed-prize digit game, no jackpot.",
     "overallOddsText": null,
-    "payoutNote": "Straight/box prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as empty tiers pending that figure. Optional FIREBALL add-on digit is captured.",
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
     "powerPlay": null,
     "doublePlay": null,
     "multiplierLabel": null,
@@ -31511,16 +31511,19 @@
       "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/pick3/latest.json",
       "cachePath": "live/texas/pick3/latest.json",
       "shape": "numeric",
-      "sessionFilter": null,
+      "sessionFilter": {
+        "field": "session",
+        "equals": "morning"
+      },
       "drawDate": {
         "field": "draw_date",
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
         "anchorHour": 10,
-        "anchorMinute": 12,
+        "anchorMinute": 0,
         "anchorHourBySession": null,
-        "sessionField": "session"
+        "sessionField": null
       },
       "nextDrawDate": null,
       "mainNumbersField": "numbers",
@@ -31559,12 +31562,249 @@
       }
     }
   },
-  "tx-daily4": {
-    "id": "tx-daily4",
+  "tx-pick3-day": {
+    "id": "tx-pick3-day",
     "stateCodes": [
       "TX"
     ],
-    "name": "Daily 4",
+    "name": "Pick 3 Day",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 12:27 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/pick3/latest.json",
+      "cachePath": "live/texas/pick3/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "day"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 12,
+        "anchorMinute": 27,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-pick3-evening": {
+    "id": "tx-pick3-evening",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "Pick 3 Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 6:00 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/pick3/latest.json",
+      "cachePath": "live/texas/pick3/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "evening"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 18,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-pick3-night": {
+    "id": "tx-pick3-night",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "Pick 3 Night",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 3,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 10:12 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/pick3/latest.json",
+      "cachePath": "live/texas/pick3/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "night"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 22,
+        "anchorMinute": 12,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-daily4-morning": {
+    "id": "tx-daily4-morning",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "Daily 4 Morning",
     "type": "inStateJackpot",
     "pickRule": {
       "mainCount": 4,
@@ -31574,12 +31814,12 @@
       "specialCount": 0,
       "price": 0.5
     },
-    "drawSchedule": "Mon-Sat 10:00 AM, 12:27 PM, 6:00 PM & 10:12 PM CT",
+    "drawSchedule": "Mon-Sat 10:00 AM CT",
     "payoutTable": [],
     "buyTicketBaseURLs": {},
     "jackpotDescription": "Fixed-prize digit game, no jackpot.",
     "overallOddsText": null,
-    "payoutNote": "Straight/box prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as empty tiers pending that figure. Optional FIREBALL add-on digit is captured.",
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
     "powerPlay": null,
     "doublePlay": null,
     "multiplierLabel": null,
@@ -31587,16 +31827,19 @@
       "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/daily4/latest.json",
       "cachePath": "live/texas/daily4/latest.json",
       "shape": "numeric",
-      "sessionFilter": null,
+      "sessionFilter": {
+        "field": "session",
+        "equals": "morning"
+      },
       "drawDate": {
         "field": "draw_date",
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
         "anchorHour": 10,
-        "anchorMinute": 12,
+        "anchorMinute": 0,
         "anchorHourBySession": null,
-        "sessionField": "session"
+        "sessionField": null
       },
       "nextDrawDate": null,
       "mainNumbersField": "numbers",
@@ -31635,12 +31878,249 @@
       }
     }
   },
-  "tx-all-or-nothing": {
-    "id": "tx-all-or-nothing",
+  "tx-daily4-day": {
+    "id": "tx-daily4-day",
     "stateCodes": [
       "TX"
     ],
-    "name": "All or Nothing",
+    "name": "Daily 4 Day",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 12:27 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/daily4/latest.json",
+      "cachePath": "live/texas/daily4/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "day"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 12,
+        "anchorMinute": 27,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-daily4-evening": {
+    "id": "tx-daily4-evening",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "Daily 4 Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 6:00 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/daily4/latest.json",
+      "cachePath": "live/texas/daily4/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "evening"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 18,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-daily4-night": {
+    "id": "tx-daily4-night",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "Daily 4 Night",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 4,
+      "mainRangeLower": 0,
+      "mainRangeUpper": 9,
+      "mainMustBeUnique": false,
+      "specialCount": 0,
+      "price": 0.5
+    },
+    "drawSchedule": "Mon-Sat 10:12 PM CT",
+    "payoutTable": [],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Fixed-prize digit game, no jackpot.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure. Optional FIREBALL add-on digit is captured.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/daily4/latest.json",
+      "cachePath": "live/texas/daily4/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "night"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 22,
+        "anchorMinute": 12,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": "fireball",
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-all-or-nothing-morning": {
+    "id": "tx-all-or-nothing-morning",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "All or Nothing Morning",
     "type": "inStateJackpot",
     "pickRule": {
       "mainCount": 12,
@@ -31650,7 +32130,7 @@
       "specialCount": 0,
       "price": 2.0
     },
-    "drawSchedule": "Mon-Sat 10:00 AM, 12:27 PM, 6:00 PM & 10:12 PM CT",
+    "drawSchedule": "Mon-Sat 10:00 AM CT",
     "payoutTable": [
       {
         "tierKey": "12",
@@ -31688,7 +32168,7 @@
     "buyTicketBaseURLs": {},
     "jackpotDescription": "Win by matching all 12 numbers drawn, or none of them.",
     "overallOddsText": null,
-    "payoutNote": "Fixed prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as empty tiers pending that figure.",
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure.",
     "powerPlay": null,
     "doublePlay": null,
     "multiplierLabel": null,
@@ -31696,16 +32176,355 @@
       "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/all-or-nothing/latest.json",
       "cachePath": "live/texas/all-or-nothing/latest.json",
       "shape": "numeric",
-      "sessionFilter": null,
+      "sessionFilter": {
+        "field": "session",
+        "equals": "morning"
+      },
       "drawDate": {
         "field": "draw_date",
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
         "anchorHour": 10,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-all-or-nothing-day": {
+    "id": "tx-all-or-nothing-day",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "All or Nothing Day",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 12,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 24,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 2.0
+    },
+    "drawSchedule": "Mon-Sat 12:27 PM CT",
+    "payoutTable": [
+      {
+        "tierKey": "12",
+        "label": "Match all 12 or none",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "11",
+        "label": "Match 11 (or 1)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "10",
+        "label": "Match 10 (or 2)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "9",
+        "label": "Match 9 (or 3)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Win by matching all 12 numbers drawn, or none of them.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/all-or-nothing/latest.json",
+      "cachePath": "live/texas/all-or-nothing/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "day"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 12,
+        "anchorMinute": 27,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-all-or-nothing-evening": {
+    "id": "tx-all-or-nothing-evening",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "All or Nothing Evening",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 12,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 24,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 2.0
+    },
+    "drawSchedule": "Mon-Sat 6:00 PM CT",
+    "payoutTable": [
+      {
+        "tierKey": "12",
+        "label": "Match all 12 or none",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "11",
+        "label": "Match 11 (or 1)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "10",
+        "label": "Match 10 (or 2)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "9",
+        "label": "Match 9 (or 3)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Win by matching all 12 numbers drawn, or none of them.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/all-or-nothing/latest.json",
+      "cachePath": "live/texas/all-or-nothing/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "evening"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 18,
+        "anchorMinute": 0,
+        "anchorHourBySession": null,
+        "sessionField": null
+      },
+      "nextDrawDate": null,
+      "mainNumbersField": "numbers",
+      "specialNumbers": null,
+      "winningTeamsField": null,
+      "lottoMillion1Field": null,
+      "lottoMillion2Field": null,
+      "derbyPositionsField": null,
+      "derbyRaceTimeField": null,
+      "addOnDigitField": null,
+      "pokerCardsField": null,
+      "bullseyeNumberField": null,
+      "jackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "cashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextJackpot": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      },
+      "nextCashValue": {
+        "source": "none",
+        "field": null,
+        "moneyFormat": null,
+        "guardField": null
+      }
+    }
+  },
+  "tx-all-or-nothing-night": {
+    "id": "tx-all-or-nothing-night",
+    "stateCodes": [
+      "TX"
+    ],
+    "name": "All or Nothing Night",
+    "type": "inStateJackpot",
+    "pickRule": {
+      "mainCount": 12,
+      "mainRangeLower": 1,
+      "mainRangeUpper": 24,
+      "mainMustBeUnique": true,
+      "specialCount": 0,
+      "price": 2.0
+    },
+    "drawSchedule": "Mon-Sat 10:12 PM CT",
+    "payoutTable": [
+      {
+        "tierKey": "12",
+        "label": "Match all 12 or none",
+        "basePrize": null,
+        "isJackpotTier": true,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "11",
+        "label": "Match 11 (or 1)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "10",
+        "label": "Match 10 (or 2)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      },
+      {
+        "tierKey": "9",
+        "label": "Match 9 (or 3)",
+        "basePrize": null,
+        "isJackpotTier": false,
+        "odds": null,
+        "multiplierPrizes": null
+      }
+    ],
+    "buyTicketBaseURLs": {},
+    "jackpotDescription": "Win by matching all 12 numbers drawn, or none of them.",
+    "overallOddsText": null,
+    "payoutNote": "Prize amounts not confirmed from texaslottery.com's own published chart this round \u2014 shown as placeholders pending that figure.",
+    "powerPlay": null,
+    "doublePlay": null,
+    "multiplierLabel": null,
+    "liveMapping": {
+      "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/texas/all-or-nothing/latest.json",
+      "cachePath": "live/texas/all-or-nothing/latest.json",
+      "shape": "numeric",
+      "sessionFilter": {
+        "field": "session",
+        "equals": "night"
+      },
+      "drawDate": {
+        "field": "draw_date",
+        "dateFormat": "yyyy-MM-dd",
+        "truncateToLength": null,
+        "timeZoneIdentifier": "America/Chicago",
+        "anchorHour": 22,
         "anchorMinute": 12,
         "anchorHourBySession": null,
-        "sessionField": "session"
+        "sessionField": null
       },
       "nextDrawDate": null,
       "mainNumbersField": "numbers",

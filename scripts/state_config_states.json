@@ -723,9 +723,18 @@
       "tx-lotto-texas",
       "tx-texas-two-step",
       "tx-cash-five",
-      "tx-pick3",
-      "tx-daily4",
-      "tx-all-or-nothing"
+      "tx-pick3-morning",
+      "tx-pick3-day",
+      "tx-pick3-evening",
+      "tx-pick3-night",
+      "tx-daily4-morning",
+      "tx-daily4-day",
+      "tx-daily4-evening",
+      "tx-daily4-night",
+      "tx-all-or-nothing-morning",
+      "tx-all-or-nothing-day",
+      "tx-all-or-nothing-evening",
+      "tx-all-or-nothing-night"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
