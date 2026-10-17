@@ -1,6 +1,30 @@
 [
   {
     "game": "Pick 3 (Day)",
+    "draw_date": "2026-10-16",
+    "session": "day",
+    "digits": [
+      6,
+      1,
+      8
+    ],
+    "fetched_at": "2026-10-17T10:11:03.658866+00:00",
+    "source_url": "https://www.mainelottery.com/"
+  },
+  {
+    "game": "Pick 3 (Evening)",
+    "draw_date": "2026-10-16",
+    "session": "evening",
+    "digits": [
+      0,
+      3,
+      8
+    ],
+    "fetched_at": "2026-10-17T10:11:03.659001+00:00",
+    "source_url": "https://www.mainelottery.com/"
+  },
+  {
+    "game": "Pick 3 (Day)",
     "draw_date": "2026-10-15",
     "session": "day",
     "digits": [
