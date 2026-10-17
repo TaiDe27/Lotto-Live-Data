@@ -719,7 +719,13 @@
     "folder": "texas",
     "games": [
       "powerball",
-      "mega-millions"
+      "mega-millions",
+      "tx-lotto-texas",
+      "tx-texas-two-step",
+      "tx-cash-five",
+      "tx-pick3",
+      "tx-daily4",
+      "tx-all-or-nothing"
     ],
     "routedCourierPlatform": "lottocom",
     "schemaVersion": 1
@@ -750,7 +756,13 @@
       "powerball",
       "mega-millions",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "tri-state-megabucks-plus",
+      "me-pick3-day",
+      "me-pick3-evening",
+      "me-pick4-day",
+      "me-pick4-evening",
+      "me-gimme5"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
