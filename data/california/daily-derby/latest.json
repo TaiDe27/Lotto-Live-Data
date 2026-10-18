@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-10-17",
+    "draw_number": "10498",
+    "first_place": "09 - Winning Spirit",
+    "second_place": "02 - Lucky Star",
+    "third_place": "10 - Solid Gold",
+    "derby_positions": [
+      9,
+      2,
+      10
+    ],
+    "race_time": "1:43.55",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$89,352"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$71"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 3,
+        "prize": "$58"
+      },
+      {
+        "label": "Race Time",
+        "winners": 22,
+        "prize": "$55"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 20,
+        "prize": "$503"
+      },
+      {
+        "label": "Exacta",
+        "winners": 271,
+        "prize": "$16"
+      },
+      {
+        "label": "Win",
+        "winners": 2236,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$89,352",
+    "next_draw_date": "2026-10-18",
+    "next_jackpot_estimate": "$89,000",
+    "fetched_at": "2026-10-18T01:56:59.838810+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-10-16",
     "draw_number": "10497",
     "first_place": "12 - Lucky Charms",
