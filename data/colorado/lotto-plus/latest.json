@@ -1,6 +1,21 @@
 [
   {
     "game": "Colorado Lotto+",
+    "draw_date": "2026-10-17",
+    "numbers": [
+      1,
+      3,
+      4,
+      10,
+      13,
+      38
+    ],
+    "jackpot_amount": 3200000,
+    "fetched_at": "2026-10-18T02:16:05.979589+00:00",
+    "source_url": "https://www.coloradolottery.com/en/games/lotto/"
+  },
+  {
+    "game": "Colorado Lotto+",
     "draw_date": "2026-10-14",
     "numbers": [
       4,
