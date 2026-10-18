@@ -1,5 +1,19 @@
 [
   {
+    "draw_date": "2026-10-18",
+    "numbers": [
+      9,
+      12,
+      21,
+      22,
+      38
+    ],
+    "special_number": 24,
+    "draw_id": "5182",
+    "fetched_at": "2026-10-18T23:50:11.860527+00:00",
+    "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
+  },
+  {
     "draw_date": "2026-10-17",
     "numbers": [
       2,
@@ -10,7 +24,7 @@
     ],
     "special_number": 25,
     "draw_id": "5181",
-    "fetched_at": "2026-10-18T18:21:03.318657+00:00",
+    "fetched_at": "2026-10-18T23:50:11.860527+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
@@ -24,7 +38,7 @@
     ],
     "special_number": 2,
     "draw_id": "5180",
-    "fetched_at": "2026-10-18T18:21:03.318657+00:00",
+    "fetched_at": "2026-10-18T23:50:11.860527+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
@@ -38,7 +52,7 @@
     ],
     "special_number": 25,
     "draw_id": "5179",
-    "fetched_at": "2026-10-18T18:21:03.318657+00:00",
+    "fetched_at": "2026-10-18T23:50:11.860527+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
@@ -52,7 +66,7 @@
     ],
     "special_number": 34,
     "draw_id": "5178",
-    "fetched_at": "2026-10-18T18:21:03.318657+00:00",
+    "fetched_at": "2026-10-18T23:50:11.860527+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
