@@ -1,6 +1,22 @@
 [
   {
     "game": "Arkansas LOTTO",
+    "draw_date": "2026-10-17",
+    "numbers": [
+      3,
+      4,
+      8,
+      9,
+      14,
+      39
+    ],
+    "bonus_number": 7,
+    "jackpot_amount": "2.83 Million",
+    "fetched_at": "2026-10-18T02:51:04.682078+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
+  },
+  {
+    "game": "Arkansas LOTTO",
     "draw_date": "2026-10-14",
     "numbers": [
       3,
@@ -12,7 +28,7 @@
     ],
     "bonus_number": 16,
     "jackpot_amount": "2.8 Million",
-    "fetched_at": "2026-10-18T02:41:04.573466+00:00",
+    "fetched_at": "2026-10-18T02:51:04.682947+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -28,7 +44,7 @@
     ],
     "bonus_number": 7,
     "jackpot_amount": "2.77 Million",
-    "fetched_at": "2026-10-18T02:41:04.574374+00:00",
+    "fetched_at": "2026-10-18T02:51:04.683766+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -44,7 +60,7 @@
     ],
     "bonus_number": 39,
     "jackpot_amount": "2.74 Million",
-    "fetched_at": "2026-10-18T02:41:04.575232+00:00",
+    "fetched_at": "2026-10-18T02:51:04.684579+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -60,7 +76,7 @@
     ],
     "bonus_number": 28,
     "jackpot_amount": "2.71 Million",
-    "fetched_at": "2026-10-18T02:41:04.576067+00:00",
+    "fetched_at": "2026-10-18T02:51:04.685397+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -76,7 +92,7 @@
     ],
     "bonus_number": 16,
     "jackpot_amount": "2.68 Million",
-    "fetched_at": "2026-10-18T02:41:04.576939+00:00",
+    "fetched_at": "2026-10-18T02:51:04.686195+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -92,7 +108,7 @@
     ],
     "bonus_number": 14,
     "jackpot_amount": "2.65 Million",
-    "fetched_at": "2026-10-18T02:41:04.577757+00:00",
+    "fetched_at": "2026-10-18T02:51:04.686979+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -108,7 +124,7 @@
     ],
     "bonus_number": 2,
     "jackpot_amount": "2.62 Million",
-    "fetched_at": "2026-10-18T02:41:04.578599+00:00",
+    "fetched_at": "2026-10-18T02:51:04.687792+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -124,7 +140,7 @@
     ],
     "bonus_number": 2,
     "jackpot_amount": "2.59 Million",
-    "fetched_at": "2026-10-18T02:41:04.579425+00:00",
+    "fetched_at": "2026-10-18T02:51:04.688592+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
@@ -140,7 +156,7 @@
     ],
     "bonus_number": 31,
     "jackpot_amount": "2.55 Million",
-    "fetched_at": "2026-10-18T02:41:04.580251+00:00",
+    "fetched_at": "2026-10-18T02:51:04.689403+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/"
   },
   {
