@@ -753,7 +753,16 @@
     "games": [
       "powerball",
       "mega-millions",
-      "millionaire-for-life"
+      "millionaire-for-life",
+      "va-cash5",
+      "va-bank-a-million",
+      "va-pick3-day",
+      "va-pick4-day",
+      "va-pick5-day",
+      "va-pick3-night",
+      "va-pick4-night",
+      "va-pick5-night",
+      "va-cashpop"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -811,7 +820,12 @@
     "games": [
       "powerball",
       "mega-millions",
-      "powerball-double-play"
+      "powerball-double-play",
+      "wa-lotto",
+      "wa-hit5",
+      "wa-match4",
+      "wa-pick3",
+      "wa-cashpop"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
@@ -820,7 +834,14 @@
     "folder": "wisconsin",
     "games": [
       "powerball",
-      "mega-millions"
+      "mega-millions",
+      "wi-pick3-midday",
+      "wi-pick3-evening",
+      "wi-pick4-midday",
+      "wi-pick4-evening",
+      "wi-badger5",
+      "wi-supercash",
+      "wi-megabucks"
     ],
     "routedCourierPlatform": "jackpotcom",
     "schemaVersion": 1
@@ -832,7 +853,10 @@
       "mega-millions",
       "lotto-america",
       "millionaire-for-life",
-      "powerball-xo"
+      "powerball-xo",
+      "wv-daily3",
+      "wv-daily4",
+      "wv-cash25"
     ],
     "routedCourierPlatform": "jackpocket",
     "schemaVersion": 1
@@ -843,7 +867,8 @@
       "powerball",
       "mega-millions",
       "millionaire-for-life",
-      "2by2"
+      "2by2",
+      "wy-cowboy-draw"
     ],
     "routedCourierPlatform": "none",
     "schemaVersion": 1
