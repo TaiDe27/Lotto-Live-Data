@@ -5,12 +5,12 @@
     "digits": [
       3,
       0,
-      3,
-      6
+      4,
+      4
     ],
-    "fetched_at": "2026-10-19T01:52:02.414081+00:00",
+    "fetched_at": "2026-10-19T07:40:57.463521+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
-    "session": "evening"
+    "session": "midday"
   },
   {
     "game": "the_numbers_game",
@@ -18,12 +18,12 @@
     "digits": [
       3,
       0,
-      4,
-      4
+      3,
+      6
     ],
-    "fetched_at": "2026-10-19T01:52:02.414083+00:00",
+    "fetched_at": "2026-10-19T07:40:57.463524+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
-    "session": "midday"
+    "session": "evening"
   },
   {
     "game": "the_numbers_game",
