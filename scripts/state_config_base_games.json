@@ -33388,7 +33388,7 @@
   "va-bank-a-million": {
     "buyTicketBaseURLs": {},
     "doublePlay": null,
-    "drawSchedule": "Weekly (confirm exact day) ET",
+    "drawSchedule": "Wed/Sat 11:00 PM ET",
     "id": "va-bank-a-million",
     "jackpotDescription": "Virginia's own 6-of-40 + separately-drawn Bonus Ball game. Figures below use the standard $2 single-play wager; VA's real wager-split options ($1x2 plays capped at $500k, 50¢x4 plays capped at $250k) are not modeled.",
     "liveMapping": {
@@ -33403,7 +33403,7 @@
       "derbyPositionsField": null,
       "derbyRaceTimeField": null,
       "drawDate": {
-        "anchorHour": null,
+        "anchorHour": 23,
         "anchorHourBySession": null,
         "anchorMinute": 0,
         "dateFormat": "yyyy-MM-dd",
@@ -33798,7 +33798,7 @@
   "va-pick3-day": {
     "buyTicketBaseURLs": {},
     "doublePlay": null,
-    "drawSchedule": "Daily, Day ET",
+    "drawSchedule": "Daily 1:59 PM ET",
     "id": "va-pick3-day",
     "jackpotDescription": null,
     "liveMapping": {
@@ -33943,7 +33943,7 @@
   "va-pick3-night": {
     "buyTicketBaseURLs": {},
     "doublePlay": null,
-    "drawSchedule": "Daily, Night ET",
+    "drawSchedule": "Daily 11:00 PM ET",
     "id": "va-pick3-night",
     "jackpotDescription": null,
     "liveMapping": {
@@ -34088,7 +34088,7 @@
   "va-pick4-day": {
     "buyTicketBaseURLs": {},
     "doublePlay": null,
-    "drawSchedule": "Daily, Day ET",
+    "drawSchedule": "Daily 1:59 PM ET",
     "id": "va-pick4-day",
     "jackpotDescription": null,
     "liveMapping": {
@@ -34261,7 +34261,7 @@
   "va-pick4-night": {
     "buyTicketBaseURLs": {},
     "doublePlay": null,
-    "drawSchedule": "Daily, Night ET",
+    "drawSchedule": "Daily 11:00 PM ET",
     "id": "va-pick4-night",
     "jackpotDescription": null,
     "liveMapping": {
@@ -34434,7 +34434,7 @@
   "va-pick5-day": {
     "buyTicketBaseURLs": {},
     "doublePlay": null,
-    "drawSchedule": "Daily, Day ET",
+    "drawSchedule": "Daily 1:59 PM ET",
     "id": "va-pick5-day",
     "jackpotDescription": null,
     "liveMapping": {
@@ -34651,7 +34651,7 @@
   "va-pick5-night": {
     "buyTicketBaseURLs": {},
     "doublePlay": null,
-    "drawSchedule": "Daily, Night ET",
+    "drawSchedule": "Daily 11:00 PM ET",
     "id": "va-pick5-night",
     "jackpotDescription": null,
     "liveMapping": {
@@ -38109,9 +38109,9 @@
       "derbyPositionsField": null,
       "derbyRaceTimeField": null,
       "drawDate": {
-        "anchorHour": null,
+        "anchorHour": 18,
         "anchorHourBySession": null,
-        "anchorMinute": 0,
+        "anchorMinute": 59,
         "dateFormat": "yyyy-MM-dd",
         "field": "draw_date",
         "sessionField": null,
@@ -38220,9 +38220,9 @@
       "derbyPositionsField": null,
       "derbyRaceTimeField": null,
       "drawDate": {
-        "anchorHour": null,
+        "anchorHour": 18,
         "anchorHourBySession": null,
-        "anchorMinute": 0,
+        "anchorMinute": 59,
         "dateFormat": "yyyy-MM-dd",
         "field": "draw_date",
         "sessionField": null,
@@ -38335,9 +38335,9 @@
       "derbyPositionsField": null,
       "derbyRaceTimeField": null,
       "drawDate": {
-        "anchorHour": null,
+        "anchorHour": 18,
         "anchorHourBySession": null,
-        "anchorMinute": 0,
+        "anchorMinute": 59,
         "dateFormat": "yyyy-MM-dd",
         "field": "draw_date",
         "sessionField": null,
