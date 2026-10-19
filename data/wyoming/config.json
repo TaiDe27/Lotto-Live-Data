@@ -892,7 +892,7 @@
       "name": "Cowboy Draw",
       "ocrRule": null,
       "overallOddsText": "Overall odds of winning any prize are 1 in 6 (confirmed via lotteryusa.com's own Cowboy Draw page).",
-      "payoutNote": "Real prize figures confirmed via lotteryusa.com's own Cowboy Draw page (wyolotto.com's own game page is a client-rendered SPA with no rules in its static HTML). Live data feed NOT yet wired: the real wyolotto.com backend (a Gambyt-hosted draw-data API) returned 'Invalid API Key' for the specific endpoint captured via browser devtools — the browser request includes an API key header this session's capture didn't record. Needs that header (or a different real access path) before scripts/wy_scraper.py can run for real.",
+      "payoutNote": "Real prize figures confirmed via lotteryusa.com's own Cowboy Draw page (wyolotto.com's own game page is a client-rendered SPA with no rules in its static HTML). Live data feed wired via wyolotto.com's real Gambyt-hosted draw-data API, using the public x-api-key/x-client-id headers its own frontend sends on every request (not a server secret, same value for every visitor) — see scripts/wy_scraper.py.",
       "payoutTable": [
         {
           "basePrize": null,

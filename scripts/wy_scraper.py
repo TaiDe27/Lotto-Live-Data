@@ -4,12 +4,19 @@
 Cowboy Draw is Wyoming's only own game (all other WY games are shared
 multi-state ones already covered elsewhere). Source: wyolotto.com's own
 backend, a Gambyt-hosted draw-data API found via the user's own browser
-devtools - re-verified this session with a plain `requests.get` (HTTP 200,
-no API key needed for this specific endpoint, unlike the generic
-list-draw-games endpoint on the same host which does require one):
+devtools:
 
   https://prod.game-data.gambytservices.com/v1/draw-games/<drawGameId>/
   current-and-previous-drawings?asOf=<ISO-8601 UTC timestamp>
+
+This endpoint DOES require an API key - it's not a server-side secret, just
+a public key the wyolotto.com frontend sends on every request (visible to
+anyone who opens that site's own devtools, same `x-client-id:
+product-portal-server` value for all visitors), re-captured from the user's
+own browser session and confirmed working with a plain `requests.get` using
+the same `x-api-key`/`x-client-id`/`Origin`/`Referer` headers. If this ever
+starts 401'ing again, re-capture a fresh key the same way (devtools Network
+tab on https://wyolotto.com/games/cowboy-draw, any request to this host).
 
 It returns `previousDrawing` (the most recently completed draw) and
 `currentDrawing` (the upcoming one, `results.status == "PENDING"` until
@@ -36,7 +43,18 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger(__name__)
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-HEADERS = {"User-Agent": UA}
+# Public frontend key wyolotto.com itself sends on every request (not a server secret -
+# see module docstring). Re-capture from browser devtools if this ever 401s.
+GAMBYT_API_KEY = (
+    "ODRmMzIwYTItMDhlYS00MmVlLTk2MjgtYjRmOTQ5MDhlMjRhOitWQVE4WmgvOWRNeGw2eG42UWFPT0lHNWRCbHVaR1NkaTdkTU9yVUYxTnc9"
+)
+HEADERS = {
+    "User-Agent": UA,
+    "x-api-key": GAMBYT_API_KEY,
+    "x-client-id": "product-portal-server",
+    "Origin": "https://wyolotto.com",
+    "Referer": "https://wyolotto.com/",
+}
 DRAW_GAME_ID = "bafaf5b5-8a50-4401-9684-0dbe85b2afb5"
 API_URL = (
     f"https://prod.game-data.gambytservices.com/v1/draw-games/{DRAW_GAME_ID}"
