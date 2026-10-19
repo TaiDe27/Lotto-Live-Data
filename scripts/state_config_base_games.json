@@ -33438,7 +33438,10 @@
       "sessionFilter": null,
       "shape": "numeric",
       "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/virginia/bank-a-million/latest.json",
-      "specialNumbers": null,
+      "specialNumbers": {
+        "field": "bonus_ball",
+        "wrapScalar": true
+      },
       "winnersByTier": null,
       "winningTeamsField": null
     },
