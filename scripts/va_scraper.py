@@ -143,7 +143,7 @@ def scrape_cash_pop():
         out.append({
             "draw_date": mdy_to_iso(m.group(1)),
             "session": m.group(3).strip().lower().replace(" ", "-"),
-            "number": int(m.group(2)),
+            "numbers": [int(m.group(2))],
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40",
         })

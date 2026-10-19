@@ -952,7 +952,7 @@
       "id": "va-pick3-day",
       "jackpotDescription": null,
       "liveMapping": {
-        "addOnDigitField": null,
+        "addOnDigitField": "fireball",
         "cachePath": "live/virginia/pick3/latest.json",
         "cashValue": {
           "field": null,
@@ -1097,7 +1097,7 @@
       "id": "va-pick4-day",
       "jackpotDescription": null,
       "liveMapping": {
-        "addOnDigitField": null,
+        "addOnDigitField": "fireball",
         "cachePath": "live/virginia/pick4/latest.json",
         "cashValue": {
           "field": null,
@@ -1270,7 +1270,7 @@
       "id": "va-pick5-day",
       "jackpotDescription": null,
       "liveMapping": {
-        "addOnDigitField": null,
+        "addOnDigitField": "fireball",
         "cachePath": "live/virginia/pick5/latest.json",
         "cashValue": {
           "field": null,
@@ -1487,7 +1487,7 @@
       "id": "va-pick3-night",
       "jackpotDescription": null,
       "liveMapping": {
-        "addOnDigitField": null,
+        "addOnDigitField": "fireball",
         "cachePath": "live/virginia/pick3/latest.json",
         "cashValue": {
           "field": null,
@@ -1632,7 +1632,7 @@
       "id": "va-pick4-night",
       "jackpotDescription": null,
       "liveMapping": {
-        "addOnDigitField": null,
+        "addOnDigitField": "fireball",
         "cachePath": "live/virginia/pick4/latest.json",
         "cashValue": {
           "field": null,
@@ -1805,7 +1805,7 @@
       "id": "va-pick5-night",
       "jackpotDescription": null,
       "liveMapping": {
-        "addOnDigitField": null,
+        "addOnDigitField": "fireball",
         "cachePath": "live/virginia/pick5/latest.json",
         "cashValue": {
           "field": null,
@@ -2056,7 +2056,7 @@
         },
         "lottoMillion1Field": null,
         "lottoMillion2Field": null,
-        "mainNumbersField": "number",
+        "mainNumbersField": "numbers",
         "multiplierField": null,
         "nextCashValue": {
           "field": null,

@@ -138,7 +138,7 @@ def scrape_cashpop():
         if len(nums) != 1:
             continue
         out.append({
-            "draw_date": draw_date, "number": nums[0],
+            "draw_date": draw_date, "numbers": [nums[0]],
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "source_url": f"{PAGE_URL}?gamename=cashpop",
         })
