@@ -242,13 +242,31 @@ def save(subdir: str, new_entries: list[dict]) -> None:
 
 
 def main():
-    save("daily3", fetch_daily_both_sessions("DAILY_3", "Daily 3"))
-    save("daily4", fetch_daily_both_sessions("DAILY_4", "Daily 4"))
-    save("daily5", fetch_daily_both_sessions("DAILY_5", "Daily 5"))
-    save("fantasy5", fetch_pool("https://www.lotteryusa.com/michigan/fantasy-5/", 5, "Fantasy 5"))
-    save("classiclotto47", fetch_pool("https://www.lotteryusa.com/michigan/classic-lotto-47/", 6, "Classic Lotto 47"))
-    save("keno", fetch_keno_real())
-    save("pokerlotto", fetch_poker_lotto_real())
+    # 2026-10-19: 每个游戏单独 try/except 隔离（同 va_scraper.py/wa_scraper.py 的写法）——
+    # 之前是从上到下顺序执行、任何一个失败就整体中断，Daily 3 排第一个，只要它卡超时，
+    # 后面 Daily4/5/Fantasy5/Classic Lotto 47/Keno/Poker Lotto 这一轮全部不会被尝试，
+    # 即使它们本来能抓成功。密歇根官网在部分早晨(ET)时段偶发连接卡死到超时（已用真实失败
+    # 日志+本机同请求秒回确认，不是永久性封锁），这个隔离让这种偶发问题只丢一个游戏的数据，
+    # 不连带拖死其余6个。
+    jobs = [
+        ("daily3", lambda: save("daily3", fetch_daily_both_sessions("DAILY_3", "Daily 3"))),
+        ("daily4", lambda: save("daily4", fetch_daily_both_sessions("DAILY_4", "Daily 4"))),
+        ("daily5", lambda: save("daily5", fetch_daily_both_sessions("DAILY_5", "Daily 5"))),
+        ("fantasy5", lambda: save("fantasy5", fetch_pool("https://www.lotteryusa.com/michigan/fantasy-5/", 5, "Fantasy 5"))),
+        ("classiclotto47", lambda: save("classiclotto47", fetch_pool("https://www.lotteryusa.com/michigan/classic-lotto-47/", 6, "Classic Lotto 47"))),
+        ("keno", lambda: save("keno", fetch_keno_real())),
+        ("pokerlotto", lambda: save("pokerlotto", fetch_poker_lotto_real())),
+    ]
+    errors = []
+    for name, fn in jobs:
+        try:
+            fn()
+        except Exception as e:  # noqa: BLE001
+            log.error("%s failed: %s", name, e)
+            errors.append((name, e))
+
+    if errors:
+        raise RuntimeError(f"{len(errors)} game(s) failed: {errors}")
     log.info("完成")
 
 
