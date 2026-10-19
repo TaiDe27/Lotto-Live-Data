@@ -1,6 +1,19 @@
 [
   {
     "game": "Gimme 5",
+    "draw_date": "2026-10-19",
+    "numbers": [
+      1,
+      21,
+      23,
+      24,
+      32
+    ],
+    "fetched_at": "2026-10-19T23:10:59.491264+00:00",
+    "source_url": "https://www.mainelottery.com/"
+  },
+  {
+    "game": "Gimme 5",
     "draw_date": "2026-10-16",
     "numbers": [
       8,
