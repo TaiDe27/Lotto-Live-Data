@@ -2,6 +2,19 @@
   {
     "game": "Pick 4",
     "draw_date": "2026-10-18",
+    "session": "evening",
+    "digits": [
+      1,
+      5,
+      7,
+      1
+    ],
+    "fetched_at": "2026-10-19T03:23:00.502312+00:00",
+    "source_url": "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-18",
     "session": "midday",
     "digits": [
       3,
@@ -9,7 +22,7 @@
       1,
       8
     ],
-    "fetched_at": "2026-10-19T00:03:00.427668+00:00",
+    "fetched_at": "2026-10-19T03:23:00.502339+00:00",
     "source_url": "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
   },
   {
