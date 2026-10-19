@@ -1,6 +1,21 @@
 [
   {
     "game": "Multi-Win Lotto",
+    "draw_date": "2026-10-18",
+    "numbers": [
+      3,
+      11,
+      17,
+      21,
+      23,
+      32
+    ],
+    "jackpot_amount": "$157,500",
+    "fetched_at": "2026-10-19T00:24:03.293127+00:00",
+    "source_url": "https://www.delottery.com/Drawing-Games/Multi-Win-Lotto"
+  },
+  {
+    "game": "Multi-Win Lotto",
     "draw_date": "2026-10-17",
     "numbers": [
       1,
