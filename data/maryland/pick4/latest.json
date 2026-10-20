@@ -1,6 +1,32 @@
 [
   {
     "game": "Pick 4 (Midday)",
+    "draw_date": "2026-10-19",
+    "session": "midday",
+    "digits": [
+      2,
+      6,
+      8,
+      0
+    ],
+    "fetched_at": "2026-10-20T00:18:57.752349+00:00",
+    "source_url": "https://www.mdlottery.com/games/pick-3-pick-4-pick-5/"
+  },
+  {
+    "game": "Pick 4 (Evening)",
+    "draw_date": "2026-10-19",
+    "session": "evening",
+    "digits": [
+      0,
+      8,
+      5,
+      6
+    ],
+    "fetched_at": "2026-10-20T00:18:57.752349+00:00",
+    "source_url": "https://www.mdlottery.com/games/pick-3-pick-4-pick-5/"
+  },
+  {
+    "game": "Pick 4 (Midday)",
     "draw_date": "2026-10-18",
     "session": "midday",
     "digits": [
