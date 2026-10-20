@@ -1,6 +1,34 @@
 [
   {
     "game": "Powerball Double Play",
+    "draw_date": "Mon, Oct 19, 2026",
+    "white_balls": [
+      11,
+      23,
+      24,
+      47,
+      49
+    ],
+    "red_ball": 11,
+    "next_drawing": {
+      "next_draw_date": "Mon, Oct 19, 2026",
+      "top_prize": "10 Million"
+    },
+    "winners_by_tier": {
+      "Double Play JACKPOT": {
+        "states": []
+      },
+      "Match 5": {
+        "states": [
+          "NY"
+        ]
+      }
+    },
+    "fetched_at": "2026-10-20T04:00:02.055521+00:00",
+    "source_url": "https://www.powerball.com/double-play"
+  },
+  {
+    "game": "Powerball Double Play",
     "draw_date": "Sat, Oct 17, 2026",
     "white_balls": [
       13,
