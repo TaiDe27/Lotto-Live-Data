@@ -1,6 +1,80 @@
 [
   {
     "game": "JACKPOT TRIPLE PLAY",
+    "draw_date": "2026-10-20",
+    "numbers": [
+      17,
+      20,
+      26,
+      30,
+      35,
+      44
+    ],
+    "fetched_at": "2026-10-21T03:38:01.595764+00:00",
+    "source_url": "https://floridalottery.com/",
+    "next_jackpot_amount": "$800,000",
+    "next_draw_date": "2026-10-23",
+    "tiers": [
+      {
+        "PrizeLevel": "6-of-6",
+        "PrizeAmount": "$650,000",
+        "Winners": 0
+      },
+      {
+        "PrizeLevel": "5-of-6",
+        "PrizeAmount": "263",
+        "Winners": 37
+      },
+      {
+        "PrizeLevel": "4-of-6",
+        "PrizeAmount": "20",
+        "Winners": 1175
+      },
+      {
+        "PrizeLevel": "3-of-6",
+        "PrizeAmount": "1",
+        "Winners": 19598
+      },
+      {
+        "PrizeLevel": "Combo10+",
+        "PrizeAmount": "10000",
+        "Winners": 1
+      },
+      {
+        "PrizeLevel": "Combo9",
+        "PrizeAmount": "500",
+        "Winners": 10
+      },
+      {
+        "PrizeLevel": "Combo8",
+        "PrizeAmount": "50",
+        "Winners": 57
+      },
+      {
+        "PrizeLevel": "Combo7",
+        "PrizeAmount": "20",
+        "Winners": 513
+      },
+      {
+        "PrizeLevel": "Combo6",
+        "PrizeAmount": "10",
+        "Winners": 2626
+      },
+      {
+        "PrizeLevel": "Combo5",
+        "PrizeAmount": "5",
+        "Winners": 9801
+      },
+      {
+        "PrizeLevel": "Combo4",
+        "PrizeAmount": "Free Ticket",
+        "Winners": 26485
+      }
+    ],
+    "jackpot_amount": "$650,000"
+  },
+  {
+    "game": "JACKPOT TRIPLE PLAY",
     "draw_date": "2026-10-16",
     "numbers": [
       11,
