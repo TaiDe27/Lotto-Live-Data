@@ -13,8 +13,16 @@
     "jackpot_amount": 511000,
     "next_draw_date": "2026-10-21",
     "next_jackpot_amount": 524000,
-    "winners_by_division": {},
-    "fetched_at": "2026-10-21T08:40:01.419203+00:00",
+    "winners_by_division": {
+      "division1": 1730,
+      "division2": 119,
+      "division3": 2,
+      "division4": 1352,
+      "division5": 427,
+      "division6": 85,
+      "division7": 10
+    },
+    "fetched_at": "2026-10-22T02:19:58.242576+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/15/drawings"
   },
   {
