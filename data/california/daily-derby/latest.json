@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-10-21",
+    "draw_number": "10502",
+    "first_place": "11 - Money Bags",
+    "second_place": "02 - Lucky Star",
+    "third_place": "06 - Whirl Win",
+    "derby_positions": [
+      11,
+      2,
+      6
+    ],
+    "race_time": "1:49.73",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$107,194"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$89"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 3,
+        "prize": "$68"
+      },
+      {
+        "label": "Race Time",
+        "winners": 21,
+        "prize": "$65"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 21,
+        "prize": "$537"
+      },
+      {
+        "label": "Exacta",
+        "winners": 202,
+        "prize": "$24"
+      },
+      {
+        "label": "Win",
+        "winners": 2221,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$107,194",
+    "next_draw_date": "2026-10-22",
+    "next_jackpot_estimate": "$108,000",
+    "fetched_at": "2026-10-22T01:56:57.646434+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-10-20",
     "draw_number": "10501",
     "first_place": "08 - Gorgeous George",
