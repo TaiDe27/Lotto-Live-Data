@@ -1,5 +1,35 @@
 [
   {
+    "draw_date": "Wed, Oct 21, 2026",
+    "main_balls": [
+      4,
+      18,
+      38,
+      44,
+      51
+    ],
+    "star_ball": 1,
+    "all_star_bonus": 5,
+    "next_drawing": {
+      "next_draw_date": "Wed, Oct 21, 2026",
+      "estimated_jackpot": "2.35 Million",
+      "cash_value": null
+    },
+    "winners_by_tier": {
+      "Jackpot": {
+        "states": []
+      },
+      "Match 5 + All Star Bonus": {
+        "states": []
+      },
+      "Match 5": {
+        "states": []
+      }
+    },
+    "fetched_at": "2026-10-22T02:35:55.677245+00:00",
+    "source_url": "https://www.powerball.com/lotto-america"
+  },
+  {
     "draw_date": "Mon, Oct 19, 2026",
     "main_balls": [
       14,
