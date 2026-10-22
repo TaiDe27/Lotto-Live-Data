@@ -1,6 +1,19 @@
 [
   {
     "game": "Pick 4",
+    "draw_date": "2026-10-22",
+    "session": "midday",
+    "digits": [
+      4,
+      8,
+      4,
+      0
+    ],
+    "fetched_at": "2026-10-22T20:21:57.395112+00:00",
+    "source_url": "https://www.idaholottery.com/games/draw/pick-4"
+  },
+  {
+    "game": "Pick 4",
     "draw_date": "2026-10-21",
     "session": "evening",
     "digits": [
