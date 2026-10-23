@@ -226,14 +226,19 @@ def fetch_pick(game: str, digit_count: int) -> list[dict]:
         if session is None:
             continue
 
-        digits = [int(n.get_text(strip=True)) for n in item.select(".game-single-calendar__num")]
+        digits = [int(t) for n in item.select(".game-single-calendar__num") if (t := n.get_text(strip=True)).isdigit()]
+        # This item's digits not fully posted yet (placeholder text instead of real numbers) is
+        # expected for whichever session hasn't drawn today — skip just this one item rather than
+        # failing the whole fetch, same fix as pa_scraper.py/wi_scraper.py 2026-10-23.
         if len(digits) != digit_count:
-            raise ValueError(f"应为{digit_count}位数字，抓到 {len(digits)} 个: {digits}")
+            log.info("[%s] %s 还没开奖（预期%d位数字，抓到%d个），正常现象", game, session, digit_count, len(digits))
+            continue
 
         wild_ball = None
         wild_el = item.select_one(".game-single-calendar__wild span")
         if wild_el:
-            wild_ball = int(wild_el.get_text(strip=True))
+            wild_text = wild_el.get_text(strip=True)
+            wild_ball = int(wild_text) if wild_text.isdigit() else None
 
         results.append({
             "draw_date": draw_date,
@@ -281,11 +286,11 @@ def fetch_cash_pop() -> list[dict]:
     # their own `.game-single-calendar__column`.
     main_title = item.select_one(".game-single-calendar__title:not(.game-single-calendar__title_small)")
     if main_title and main_title.find("span"):
-        label = main_title.get_text(strip=True).split(main_title.find("span").get_text(strip=True))[0].strip().lower()
-        number = int(main_title.find("span").get_text(strip=True))
+        span_text = main_title.find("span").get_text(strip=True)
+        label = main_title.get_text(strip=True).split(span_text)[0].strip().lower()
         session = SESSION_LABEL_MAP.get(label)
-        if session:
-            results.append((session, number))
+        if session and span_text.isdigit():
+            results.append((session, int(span_text)))
 
     for col in item.select(".game-single-calendar__column"):
         title = col.select_one(".game-single-calendar__title:not(.game-single-calendar__title_small)")
@@ -294,11 +299,17 @@ def fetch_cash_pop() -> list[dict]:
         span_text = title.find("span").get_text(strip=True)
         label = title.get_text(strip=True).split(span_text)[0].strip().lower()
         session = SESSION_LABEL_MAP.get(label)
-        if session:
+        if session and span_text.isdigit():
             results.append((session, int(span_text)))
 
-    if len(results) != 5:
-        raise ValueError(f"应为5个场次，抓到 {len(results)} 个: {results}")
+    # Cash Pop's 5 sessions post incrementally through the day - fewer than 5 is expected outside
+    # the ~11pm window, not a failure (same fix class as pa_scraper.py 2026-10-23). Only 0 is a
+    # genuine problem.
+    if len(results) == 0:
+        raise ValueError("Cash Pop: 一个场次都没抓到")
+    if len(results) < 5:
+        log.info("Cash Pop: 只抓到 %d 个场次（%s），其余大概率还没开奖，正常现象",
+                  len(results), [r[0] for r in results])
 
     fetched_at = dt.datetime.now(dt.timezone.utc).isoformat()
     return [

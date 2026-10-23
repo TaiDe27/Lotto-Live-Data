@@ -62,7 +62,7 @@ def _date_for_block(block) -> str:
     return iso_date(str(prev))
 
 
-def fetch_all() -> dict[str, list[Result]]:
+def fetch_all() -> tuple[dict[str, list[Result]], list[tuple[str, Exception]]]:
     import requests
     from bs4 import BeautifulSoup
 
@@ -88,34 +88,52 @@ def fetch_all() -> dict[str, list[Result]]:
         raise ValueError(f"预期至少 13 个 .win-numbers block，实际只找到 {len(blocks)} 个 — 页面结构可能变了")
 
     out: dict[str, list[Result]] = {}
+    errors: list[tuple[str, Exception]] = []
+
+    # Per-section try/except (added 2026-10-23, defensive — no real incident observed for ME
+    # specifically yet, unlike PA/WI/MD's confirmed ones, but the homepage's block-per-game layout
+    # has the same theoretical exposure: an unguarded int() on a not-yet-drawn session's text would
+    # crash fetch_all() entirely, losing every OTHER already-parsed game's result too (worse blast
+    # radius than PA/WI since even gimme5 — not even a multi-session game — would be lost). Isolating
+    # each section the same way guards against that regardless of whether it's ever actually fired.
+    def _digits_or_none(text: str) -> Optional[int]:
+        return int(text) if text.isdigit() else None
 
     def simple_pool(idx: int, subdir: str, label: str, expected_count: int):
-        block = blocks[idx]
-        nums = [int(s.get_text(strip=True)) for s in block.select("span") if s.get_text(strip=True).isdigit()]
-        # drop the trailing special-ball number if this game has one and it's included in the span scan
-        nums = nums[:expected_count]
-        if len(nums) != expected_count:
-            log.warning("[%s] 号码数 %d，预期 %d: %s", label, len(nums), expected_count, nums)
-            return
-        draw_date = _date_for_block(block)
-        out[subdir] = [Result(game=label, draw_date=draw_date, numbers=nums,
-                               fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=URL)]
+        try:
+            block = blocks[idx]
+            nums = [n for s in block.select("span") if (n := _digits_or_none(s.get_text(strip=True))) is not None]
+            # drop the trailing special-ball number if this game has one and it's included in the span scan
+            nums = nums[:expected_count]
+            if len(nums) != expected_count:
+                log.warning("[%s] 号码数 %d，预期 %d: %s", label, len(nums), expected_count, nums)
+                return
+            draw_date = _date_for_block(block)
+            out[subdir] = [Result(game=label, draw_date=draw_date, numbers=nums,
+                                   fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=URL)]
+        except Exception as e:  # noqa: BLE001
+            log.error("[%s] 失败: %s", label, e)
+            errors.append((label, e))
 
     simple_pool(7, "gimme5", "Gimme 5", 5)
 
     def digit_block(idx: int, subdir: str, label: str, session: str, count: int):
-        block = blocks[idx]
-        digits = [int(s.get_text(strip=True)) for s in block.select(".ball span")]
-        if len(digits) != count:
-            log.warning("[%s] 位数 %d，预期 %d: %s", label, len(digits), count, digits)
-            return
-        draw_date = _date_for_block(block)
-        # "digits"/"session" keys match this project's shared ScrapedDigitGameResult mapper
-        # (draw_date/session/digits) — same shape every other state's Pick 3/4 scraper emits.
-        out.setdefault(subdir, []).append({
-            "game": label, "draw_date": draw_date, "session": session, "digits": digits,
-            "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": URL,
-        })
+        try:
+            block = blocks[idx]
+            digits = [n for s in block.select(".ball span") if (n := _digits_or_none(s.get_text(strip=True))) is not None]
+            if len(digits) != count:
+                log.warning("[%s] 位数 %d，预期 %d: %s", label, len(digits), count, digits)
+                return
+            draw_date = _date_for_block(block)
+            # "digits"/"session" keys match this project's shared ScrapedDigitGameResult mapper
+            # (draw_date/session/digits) — same shape every other state's Pick 3/4 scraper emits.
+            out.setdefault(subdir, []).append({
+                "game": label, "draw_date": draw_date, "session": session, "digits": digits,
+                "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": URL,
+            })
+        except Exception as e:  # noqa: BLE001
+            log.error("[%s] 失败: %s", label, e)
+            errors.append((label, e))
 
     digit_block(8, "pick3", "Pick 3 (Day)", "day", 3)
     digit_block(9, "pick3", "Pick 3 (Evening)", "evening", 3)
@@ -135,8 +153,9 @@ def fetch_all() -> dict[str, list[Result]]:
                 session = cycle_labels[c]
                 ball_div = div.find_next_sibling("div", class_="ball")
                 if ball_div:
-                    num = int(ball_div.get_text(strip=True))
-                    cp_results.append((session, num))
+                    num = _digits_or_none(ball_div.get_text(strip=True))
+                    if num is not None:
+                        cp_results.append((session, num))
     out["cashpop"] = [
         Result(game=f"Cash POP ({session})", draw_date=cp_draw_date, numbers=[num],
                fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=URL)
@@ -145,7 +164,11 @@ def fetch_all() -> dict[str, list[Result]]:
     # Cash POP's latest.json needs a `session` key the Swift side's shared membership-pick mapper
     # reads — add it as a dict key via a thin wrapper dataclass instead of overloading Result.
     out["cashpop_sessions"] = [{"session": s, "draw_date": cp_draw_date, "numbers": [n]} for s, n in cp_results]
-    return out
+    # Return whatever sections succeeded regardless of `errors` - raising here (even an aggregate
+    # error at the very end) would discard `out` entirely before main() ever gets to save it,
+    # defeating the whole point of isolating sections above. main() decides whether to still
+    # surface `errors` for visibility, AFTER saving what's already safely available.
+    return out, errors
 
 
 def save(subdir: str, entries) -> None:
@@ -175,7 +198,7 @@ def save(subdir: str, entries) -> None:
 
 
 def main():
-    all_results = fetch_all()
+    all_results, errors = fetch_all()
     for subdir, entries in all_results.items():
         if subdir == "cashpop":
             continue  # raw per-session tuples only, superseded by cashpop_sessions
@@ -184,6 +207,8 @@ def main():
         # on save rather than carry the "_sessions" suffix into the live data path.
         out_subdir = "cashpop" if subdir == "cashpop_sessions" else subdir
         save(out_subdir, entries)
+    if errors:
+        raise RuntimeError(f"{len(errors)} 个游戏抓取失败: {errors}")
     log.info("完成")
 
 
