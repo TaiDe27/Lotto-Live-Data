@@ -17,8 +17,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Ohio own-games scraper
+        id: scrape
+        continue-on-error: true
         run: python3 scripts/oh_scraper.py
       - name: Commit and push if changed
+        if: always()
         run: |
           git config user.name "lotto-bot"
           git config user.email "bot@users.noreply.github.com"
@@ -43,8 +46,14 @@ jobs:
             git pull --rebase origin main
           done
       - name: Purge jsDelivr cache
+        if: always()
         run: |
           REPO="${{ github.repository }}"
           for p in classic-lotto pick3-midday pick3-evening pick4-midday pick4-evening pick5-midday pick5-evening rolling-cash5; do
             curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/ohio/${p}/latest.json"
           done
+      - name: Fail job if scraper reported errors
+        if: steps.scrape.outcome == 'failure'
+        run: |
+          echo "::error::scraper reported 1+ game failures this run (see 'Run Ohio own-games scraper' step log) - any games that DID succeed were still committed above"
+          exit 1

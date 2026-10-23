@@ -17,8 +17,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Florida scraper
+        id: scrape
+        continue-on-error: true
         run: python3 scripts/fl_draw_games_scraper.py
       - name: Commit and push if changed
+        if: always()
         run: |
           git config user.name "lotto-bot"
           git config user.email "bot@users.noreply.github.com"
@@ -43,7 +46,13 @@ jobs:
             git pull --rebase origin main
           done
       - name: Purge jsDelivr cache
+        if: always()
         run: |
           for path in lotto jackpot-triple-play fantasy5 pick2 pick3 pick4 pick5 cash-pop; do
             curl -s "https://purge.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/florida/${path}/latest.json" > /dev/null
           done
+      - name: Fail job if scraper reported errors
+        if: steps.scrape.outcome == 'failure'
+        run: |
+          echo "::error::scraper reported 1+ game failures this run (see 'Run Florida scraper' step log) - any games that DID succeed were still committed above"
+          exit 1

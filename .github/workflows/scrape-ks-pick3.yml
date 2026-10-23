@@ -17,8 +17,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Kansas Pick 3 scraper
+        id: scrape
+        continue-on-error: true
         run: python3 scripts/ks_pick3_scraper.py
       - name: Commit and push if changed
+        if: always()
         run: |
           git config user.name "lotto-bot"
           git config user.email "bot@users.noreply.github.com"
@@ -48,6 +51,12 @@ jobs:
             git pull --rebase origin main
           done
       - name: Purge jsDelivr cache
+        if: always()
         run: |
           REPO="${{ github.repository }}"
           curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/kansas/pick-3/latest.json"
+      - name: Fail job if scraper reported errors
+        if: steps.scrape.outcome == 'failure'
+        run: |
+          echo "::error::scraper reported 1+ game failures this run (see 'Run Kansas Pick 3 scraper' step log) - any games that DID succeed were still committed above"
+          exit 1
