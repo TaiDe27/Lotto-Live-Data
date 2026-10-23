@@ -36,6 +36,7 @@ import logging
 import re
 import time
 from pathlib import Path
+from typing import Optional
 
 import requests
 
@@ -102,12 +103,91 @@ def scrape_bank_a_million():
     log.info("bank-a-million: %d entries, latest %s", len(out), out[0] if out else None)
 
 
-def scrape_pick_with_fireball(game_id: int, subdir: str, name: str):
+def _session_label(ul) -> Optional[str]:
+    label_li = ul.select_one("li")
+    if not label_li:
+        return None
+    text = label_li.get_text(strip=True).rstrip(":").lower()
+    return text if text in ("day", "night") else None
+
+
+def fetch_pick_live(game_slug: str, name: str, digit_count: int) -> list[dict]:
+    """valottery.com's live `/data/draw-games/<slug>` page (distinct from the bulk `downloadall`
+    export `scrape_pick_with_fireball` uses) shows the CURRENT date's Day and Night as two
+    independent `<div class="winning-numbers-display">` blocks. Added 2026-10-23: `downloadall`'s
+    one-line-per-date format requires BOTH Day and Night to already be in the export before that
+    date appears as a line at all — confirmed via real run history that Virginia's scraper was
+    never crashing on this (no false-failure emails like PA/WI/MD), but was silently sitting on
+    Day's already-real numbers for hours until Night also posted, with no visibility into that gap
+    at all. This fetch is a same-day supplement merged into scrape_pick_with_fireball's own
+    downloadall-sourced list below, not a replacement for it — downloadall is still the real
+    source for bulk history."""
+    import requests
+    from bs4 import BeautifulSoup
+
+    url = f"https://www.valottery.com/data/draw-games/{game_slug}"
+    last_err = None
+    resp = None
+    for attempt in range(1, 4):
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=15, allow_redirects=True)
+            resp.raise_for_status()
+            break
+        except Exception as e:  # noqa: BLE001
+            last_err = e
+            log.warning("[live %s] attempt %d failed: %s", game_slug, attempt, e)
+            if attempt < 3:
+                time.sleep(5 * attempt)
+    if resp is None:
+        raise RuntimeError(f"[live {game_slug}] gave up after retries") from last_err
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    title_el = soup.select_one("h3.title-display")
+    if not title_el:
+        raise ValueError("[live] h3.title-display not found")
+    m = re.search(r"(\d{1,2}/\d{1,2}/\d{4})", title_el.get_text(strip=True))
+    if not m:
+        raise ValueError(f"[live] unparseable date: {title_el.get_text(strip=True)!r}")
+    draw_date = mdy_to_iso(m.group(1))
+
+    out = []
+    for block in soup.select("div.winning-numbers-display"):
+        ul = block.select_one("ul#ballUL")
+        if not ul:
+            continue
+        session = _session_label(ul)
+        if session is None:
+            continue
+        digits, fireball = [], None
+        for li in ul.select("li"):
+            bonus_span = li.select_one("#bonus-ball-display")
+            if bonus_span is not None:
+                text = bonus_span.get_text(strip=True)
+                if text.isdigit():
+                    fireball = int(text)
+                continue
+            text = li.get_text(strip=True)
+            if text.isdigit():
+                digits.append(int(text))
+        if len(digits) != digit_count or fireball is None:
+            log.info("[live] %s %s: not drawn yet (expected %d digits+fireball, got %s+%s) - normal",
+                      name, session, digit_count, digits, fireball)
+            continue
+        out.append({
+            "game": name, "draw_date": draw_date, "session": session,
+            "digits": digits, "fireball": fireball,
+            "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+        })
+    return out
+
+
+def scrape_pick_with_fireball(game_id: int, subdir: str, name: str, live_slug: str, digit_count: int):
     pattern = re.compile(
         r"(\d{1,2}/\d{1,2}/\d{4});\s*Day:\s*([\d,]+);\s*Fireball:\s*(\d+);\s*"
         r"Night:\s*([\d,]+);\s*Fireball:\s*(\d+)$"
     )
     out = []
+    seen = set()
     for line in fetch_lines(game_id):
         m = pattern.match(line)
         if not m:
@@ -127,6 +207,25 @@ def scrape_pick_with_fireball(game_id: int, subdir: str, name: str):
             "fireball": int(m.group(5)),
             "fetched_at": fetched_at, "source_url": source_url,
         })
+        seen.add((draw_date, "day"))
+        seen.add((draw_date, "night"))
+
+    # Merge in the live page's supplement for whatever downloadall doesn't have yet (today's
+    # just-drawn Day, most of the time) - a separate try/except so a live-page hiccup never costs
+    # the (already working) downloadall-sourced history this function existed to produce.
+    try:
+        for entry in fetch_pick_live(live_slug, name, digit_count):
+            key = (entry["draw_date"], entry["session"])
+            if key not in seen:
+                out.append(entry)
+                seen.add(key)
+    except Exception as e:  # noqa: BLE001
+        log.warning("%s: live supplement failed (downloadall history unaffected): %s", name, e)
+
+    # downloadall's lines are already newest-first; the live supplement (if any) was appended at
+    # the end and needs folding back into date order before save()'s `[:MAX_HISTORY]` truncation,
+    # otherwise today's just-merged entry could get cut off by stale older ones sorted ahead of it.
+    out.sort(key=lambda e: (e["draw_date"], e["session"]), reverse=True)
     save(subdir, out)
     log.info("%s: %d entries, latest %s", name, len(out), out[0] if out else None)
 
@@ -156,9 +255,9 @@ def main():
     jobs = [
         ("Cash 5", lambda: scrape_numbers(1030, "cash5", "Cash 5")),
         ("Bank a Million", scrape_bank_a_million),
-        ("Pick 3", lambda: scrape_pick_with_fireball(1050, "pick3", "Pick 3")),
-        ("Pick 4", lambda: scrape_pick_with_fireball(1040, "pick4", "Pick 4")),
-        ("Pick 5", lambda: scrape_pick_with_fireball(1035, "pick5", "Pick 5")),
+        ("Pick 3", lambda: scrape_pick_with_fireball(1050, "pick3", "Pick 3", "pick3", 3)),
+        ("Pick 4", lambda: scrape_pick_with_fireball(1040, "pick4", "Pick 4", "pick4", 4)),
+        ("Pick 5", lambda: scrape_pick_with_fireball(1035, "pick5", "Pick 5", "pick5", 5)),
         ("Cash Pop", scrape_cash_pop),
     ]
     for name, fn in jobs:
