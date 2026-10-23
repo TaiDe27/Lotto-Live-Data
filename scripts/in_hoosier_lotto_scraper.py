@@ -54,7 +54,12 @@ def fetch() -> tuple[HoosierLottoResult, HoosierLottoResult]:
         if not date_el:
             raise ValueError(f"{game_name}: 没找到日期元素")
         draw_date = shared.iso_date(date_el.get_text(strip=True))
-        numbers = [int(s.get_text(strip=True)) for s in container.select("span.winning-number")]
+        # Defensive guard (2026-10-23, no observed incident) - Hoosier Lotto and +PLUS come from
+        # the same simultaneous Wed/Sat draw so there's no day/evening-style gap between them, but
+        # skip non-numeric placeholder text here too rather than crash, matching every other
+        # scraper's fix this round - validate() below already turns a short/empty list into a
+        # clean error instead of a raw int() traceback.
+        numbers = [int(t) for s in container.select("span.winning-number") if (t := s.get_text(strip=True)).isdigit()]
         return HoosierLottoResult(
             game=game_name,
             draw_date=draw_date,
