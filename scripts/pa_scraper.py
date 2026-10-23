@@ -132,8 +132,16 @@ def fetch_digits_both_sessions(slug: str, digit_count: int) -> list:
             "draw_date": draw_date, "session": session, "digits": digits, "wild_ball": wild_ball,
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
         })
-    if len(results) != 2:
-        raise ValueError(f"{slug}: 应为2个场次(day/evening)，抓到 {len(results)} 个")
+    # Day draws at 1:35pm ET, Evening at 6:59pm ET — the page simply doesn't render Evening's
+    # .drawTime block at all until that draw actually happens, so a scrape in that ~5.5h window
+    # between them finding only 1 of 2 sessions is EXPECTED, not a failure — confirmed 2026-10-23
+    # via a real incident where this hard requirement was generating false-failure emails on every
+    # offsets-based check that landed in that gap. Only 0 results (couldn't even find Day, which
+    # should always be present by the time any check fires) is a genuine problem.
+    if len(results) == 0:
+        raise ValueError(f"{slug}: 一个场次都没抓到（Day/Evening 都没有）")
+    if len(results) == 1:
+        log.info("%s: 只抓到 %s 场，另一场大概率还没开奖，正常现象", slug, results[0]["session"])
     return results
 
 
@@ -165,8 +173,14 @@ def fetch_cash_pop() -> list:
             "draw_date": draw_date, "session": session, "number": number,
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
         })
-    if len(results) != 4:
-        raise ValueError(f"Cash Pop: 应为4个场次，抓到 {len(results)} 个")
+    # Cash Pop's 4 sessions (Morning 9am / Matinee 1:35pm / Afternoon 6:59pm / Late Night 11pm ET)
+    # post incrementally through the day — same reasoning as fetch_digits_both_sessions above,
+    # finding fewer than 4 is expected outside the ~11pm window, not a failure.
+    if len(results) == 0:
+        raise ValueError("Cash Pop: 一个场次都没抓到")
+    if len(results) < 4:
+        log.info("Cash Pop: 只抓到 %d 个场次（%s），其余大概率还没开奖，正常现象",
+                  len(results), [r["session"] for r in results])
     return results
 
 

@@ -100,12 +100,21 @@ def _fetch_soup(url: str):
 
 
 def _balls_to_digits(ul) -> list[int]:
+    # mdlottery.com renders the Evening row's markup *before* that draw actually happens, with
+    # each ball showing a literal "-" placeholder instead of a digit — confirmed via a real
+    # incident (2026-10-22/23) where this crashed on int("-") before the caller's own
+    # `len(digits) != n` check ever got a chance to treat "not drawn yet" as benign (which it
+    # already does - this was the only thing actually broken). Skip non-numeric ball text instead
+    # of raising, so the caller just sees a short list, same as a missing row entirely.
     out = []
     for li in ul.select("li"):
         classes = li.get("class") or []
         if "multiplier" in classes and "label" in classes:
             continue  # the "Midday"/"Evening" text label li, not a real ball
-        out.append(int(li.get_text(strip=True)))
+        text = li.get_text(strip=True)
+        if not text.isdigit():
+            continue
+        out.append(int(text))
     return out
 
 
@@ -160,13 +169,16 @@ def fetch_pool(slug: str, label: str, main_count: int, has_bonus: bool) -> list[
     bonus_number = None
     numbers = []
     for li in balls:
-        val = int(li.get_text(strip=True))
+        text = li.get_text(strip=True)
+        if not text.isdigit():
+            continue  # "-" placeholder - this draw hasn't happened yet, same as Pick 3/4/5 above
+        val = int(text)
         if has_bonus and "bonus" in (li.get("class") or []):
             bonus_number = val
         else:
             numbers.append(val)
     if len(numbers) != main_count:
-        log.warning("%s: expected %d main numbers, got %s", slug, main_count, numbers)
+        log.info("%s: not drawn yet (expected %d main numbers, got %s) - normal if before draw time", slug, main_count, numbers)
         return []
     entry = {
         "game": label, "draw_date": draw_date, "numbers": numbers,
@@ -191,7 +203,10 @@ def fetch_cashpop() -> list[dict]:
     ball = container.select_one("ul.balls li")
     if not ball:
         return []
-    number = int(ball.get_text(strip=True))
+    ball_text = ball.get_text(strip=True)
+    if not ball_text.isdigit():
+        return []  # "-" placeholder - this session hasn't drawn yet
+    number = int(ball_text)
     # "AS OF 10/13/2026 11 P.M." — the <p> right after the balls row, possibly with a <br> before
     # the "DRAW #..." strong tag, so take only the first line of its text.
     p = container.find("p")
@@ -237,13 +252,40 @@ def main():
     by_date = lambda e: e["draw_date"]
     by_date_session = lambda e: (e["draw_date"], e["session"])
 
-    picks = fetch_pick345()
-    save("pick3", picks["pick3"], by_date_session)
-    save("pick4", picks["pick4"], by_date_session)
-    save("pick5", picks["pick5"], by_date_session)
-    save("bonusmatch5", fetch_pool("bonus-match-5", "Bonus Match 5", 5, True), by_date)
-    save("multimatch", fetch_pool("multi-match", "Multi-Match", 6, False), by_date)
-    save("cashpop", fetch_cashpop(), by_date_session)
+    # Per-game try/except isolation (same pattern as mi_scraper.py/pa_scraper.py) - previously a
+    # single uncaught exception from any one of these (e.g. the int("-") crash fixed above) killed
+    # main() immediately, so none of the OTHER games even got attempted that run.
+    errors = []
+
+    try:
+        picks = fetch_pick345()
+        save("pick3", picks["pick3"], by_date_session)
+        save("pick4", picks["pick4"], by_date_session)
+        save("pick5", picks["pick5"], by_date_session)
+    except Exception as e:  # noqa: BLE001
+        log.error("pick345 失败: %s", e)
+        errors.append(("pick345", e))
+
+    try:
+        save("bonusmatch5", fetch_pool("bonus-match-5", "Bonus Match 5", 5, True), by_date)
+    except Exception as e:  # noqa: BLE001
+        log.error("bonusmatch5 失败: %s", e)
+        errors.append(("bonusmatch5", e))
+
+    try:
+        save("multimatch", fetch_pool("multi-match", "Multi-Match", 6, False), by_date)
+    except Exception as e:  # noqa: BLE001
+        log.error("multimatch 失败: %s", e)
+        errors.append(("multimatch", e))
+
+    try:
+        save("cashpop", fetch_cashpop(), by_date_session)
+    except Exception as e:  # noqa: BLE001
+        log.error("cashpop 失败: %s", e)
+        errors.append(("cashpop", e))
+
+    if errors:
+        raise RuntimeError(f"{len(errors)} 个游戏抓取失败: {errors}")
     log.info("完成")
 
 

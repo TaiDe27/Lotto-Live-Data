@@ -132,8 +132,14 @@ def fetch_digits_both_sessions(slug: str, digit_count: int) -> list:
             "draw_date": draw_date, "session": session, "digits": digits,
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
         })
-    if len(results) != 2:
-        raise ValueError(f"{slug}: expected 2 sessions (midday/evening), got {len(results)}")
+    # Midday draws ~1:30pm CT, Evening at 9:00pm CT — the page doesn't render Evening's .drawTime
+    # block until that draw happens, so finding only 1 of 2 sessions outside that late window is
+    # expected, not a failure (same real incident class fixed in pa_scraper.py 2026-10-23). Only 0
+    # results is a genuine problem.
+    if len(results) == 0:
+        raise ValueError(f"{slug}: expected at least 1 session (midday/evening), got 0")
+    if len(results) == 1:
+        log.info("%s: only found %s session, the other is likely not drawn yet - normal", slug, results[0]["session"])
     return results
 
 
