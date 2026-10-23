@@ -3,12 +3,25 @@
     "game": "the_numbers_game",
     "draw_date": "2026-10-22",
     "digits": [
+      4,
+      2,
+      8,
+      6
+    ],
+    "fetched_at": "2026-10-23T01:20:59.419384+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results",
+    "session": "evening"
+  },
+  {
+    "game": "the_numbers_game",
+    "draw_date": "2026-10-22",
+    "digits": [
       8,
       3,
       8,
       0
     ],
-    "fetched_at": "2026-10-23T00:47:00.882421+00:00",
+    "fetched_at": "2026-10-23T01:20:59.419389+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
     "session": "midday"
   },
