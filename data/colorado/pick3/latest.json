@@ -1,6 +1,18 @@
 [
   {
     "game": "Pick 3",
+    "draw_date": "2026-10-23",
+    "session": "midday",
+    "digits": [
+      3,
+      9,
+      9
+    ],
+    "fetched_at": "2026-10-23T19:50:59.190849+00:00",
+    "source_url": "https://www.coloradolottery.com/en/games/pick3/"
+  },
+  {
+    "game": "Pick 3",
     "draw_date": "2026-10-22",
     "session": "evening",
     "digits": [
