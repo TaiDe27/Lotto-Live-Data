@@ -44,7 +44,10 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("wi_scraper")
 
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-REQUEST_TIMEOUT_SEC = 15
+# Same fix as pa_scraper.py (see its comment) - real run-history data showed WI at a 44% failure
+# rate across 43 runs at timeout=15, all TCP connect timeouts, while TN (same host, timeout=20)
+# showed 0% across 50 runs. Bumped to match.
+REQUEST_TIMEOUT_SEC = 20
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "wisconsin"

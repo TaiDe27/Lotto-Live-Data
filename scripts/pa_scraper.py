@@ -51,7 +51,14 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("pa_scraper")
 
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-REQUEST_TIMEOUT_SEC = 15
+# 15s was too tight for lottery.net's PA pages specifically - real run-history data (2026-10-24)
+# showed a 52% failure rate across 50 runs, every single one a TCP connect timeout, while TN (same
+# host, same code shape, timeout=20) showed 0% across the same sample size. Bumped to match TN's
+# proven-reliable value rather than guessing - this was a too-tight timeout, not random bad luck on
+# the runner's IP (an auto-retry-on-a-fresh-runner workflow step added earlier for this symptom
+# didn't fix it, which in hindsight is consistent with a timeout cause: a new runner doesn't get a
+# faster connection, just another shot at the same too-short window).
+REQUEST_TIMEOUT_SEC = 20
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "pennsylvania"
