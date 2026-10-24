@@ -1,6 +1,43 @@
 [
   {
     "game": "Fantasy 5",
+    "draw_date": "2026-10-23",
+    "draw_number": "12039",
+    "numbers": [
+      11,
+      17,
+      19,
+      24,
+      34
+    ],
+    "jackpot_amount": "$68,817",
+    "tiers": [
+      {
+        "label": "Matched 5 of 5 numbers",
+        "winners": 1,
+        "prize": "$68,817"
+      },
+      {
+        "label": "Matched 4 of 5 numbers",
+        "winners": 120,
+        "prize": "$344"
+      },
+      {
+        "label": "Matched 3 of 5 numbers",
+        "winners": 3881,
+        "prize": "$13"
+      },
+      {
+        "label": "Matched 2 of 5 numbers",
+        "winners": 40296,
+        "prize": "Free play"
+      }
+    ],
+    "fetched_at": "2026-10-24T01:54:57.070475+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/fantasy-5"
+  },
+  {
+    "game": "Fantasy 5",
     "draw_date": "2026-10-22",
     "draw_number": "12038",
     "numbers": [
