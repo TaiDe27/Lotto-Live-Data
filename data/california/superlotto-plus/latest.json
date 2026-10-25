@@ -1,6 +1,69 @@
 [
   {
     "game": "SuperLotto Plus",
+    "draw_date": "2026-10-24",
+    "draw_number": "4128",
+    "main_numbers": [
+      1,
+      2,
+      24,
+      31,
+      34
+    ],
+    "mega_number": 17,
+    "jackpot_amount": "$8,000,000",
+    "tiers": [
+      {
+        "label": "5 + Mega",
+        "winners": 0,
+        "prize": "$8,000,000"
+      },
+      {
+        "label": "5",
+        "winners": 0,
+        "prize": "$25,847"
+      },
+      {
+        "label": "4 + Mega",
+        "winners": 5,
+        "prize": "$2,584"
+      },
+      {
+        "label": "4",
+        "winners": 187,
+        "prize": "$115"
+      },
+      {
+        "label": "3 + Mega",
+        "winners": 307,
+        "prize": "$63"
+      },
+      {
+        "label": "3",
+        "winners": 8615,
+        "prize": "$11"
+      },
+      {
+        "label": "2 + Mega",
+        "winners": 4550,
+        "prize": "$11"
+      },
+      {
+        "label": "1 + Mega",
+        "winners": 23135,
+        "prize": "$2"
+      },
+      {
+        "label": "Mega",
+        "winners": 36218,
+        "prize": "$1"
+      }
+    ],
+    "fetched_at": "2026-10-25T03:18:00.775508+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/superlotto-plus"
+  },
+  {
+    "game": "SuperLotto Plus",
     "draw_date": "2026-10-21",
     "draw_number": "4127",
     "main_numbers": [
