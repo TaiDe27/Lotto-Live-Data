@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-10-24",
+    "draw_number": "10505",
+    "first_place": "01 - Gold Rush",
+    "second_place": "10 - Solid Gold",
+    "third_place": "02 - Lucky Star",
+    "derby_positions": [
+      1,
+      10,
+      2
+    ],
+    "race_time": "1:44.40",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$125,169"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$68"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 3,
+        "prize": "$46"
+      },
+      {
+        "label": "Race Time",
+        "winners": 38,
+        "prize": "$43"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 20,
+        "prize": "$638"
+      },
+      {
+        "label": "Exacta",
+        "winners": 224,
+        "prize": "$25"
+      },
+      {
+        "label": "Win",
+        "winners": 2729,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$125,169",
+    "next_draw_date": "2026-10-25",
+    "next_jackpot_estimate": "$125,000",
+    "fetched_at": "2026-10-25T01:56:58.915190+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-10-23",
     "draw_number": "10504",
     "first_place": "02 - Lucky Star",
