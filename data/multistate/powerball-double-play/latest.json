@@ -11,7 +11,7 @@
     ],
     "red_ball": 23,
     "next_drawing": {
-      "next_draw_date": "Sat, Oct 24, 2026",
+      "next_draw_date": "Mon, Oct 26, 2026",
       "top_prize": "10 Million"
     },
     "winners_by_tier": {
@@ -19,10 +19,12 @@
         "states": []
       },
       "Match 5": {
-        "states": []
+        "states": [
+          "AZ"
+        ]
       }
     },
-    "fetched_at": "2026-10-25T03:59:55.624213+00:00",
+    "fetched_at": "2026-10-25T04:19:54.847522+00:00",
     "source_url": "https://www.powerball.com/double-play"
   },
   {
