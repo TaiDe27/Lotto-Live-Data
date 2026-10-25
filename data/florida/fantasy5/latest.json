@@ -1,6 +1,80 @@
 [
   {
     "game": "FANTASY 5",
+    "draw_date": "2026-10-25",
+    "numbers": [
+      8,
+      17,
+      20,
+      21,
+      25
+    ],
+    "fetched_at": "2026-10-25T17:26:01.955654+00:00",
+    "source_url": "https://floridalottery.com/",
+    "session": "midday",
+    "tiers": [
+      {
+        "PrizeLevel": "5-of-5",
+        "PrizeAmount": "53985.57",
+        "Winners": 1
+      },
+      {
+        "PrizeLevel": "4-of-5",
+        "PrizeAmount": "111.5",
+        "Winners": 78
+      },
+      {
+        "PrizeLevel": "3-of-5",
+        "PrizeAmount": "9",
+        "Winners": 2677
+      },
+      {
+        "PrizeLevel": "2-of-5",
+        "PrizeAmount": "Free Ticket",
+        "Winners": 25190
+      }
+    ],
+    "jackpot_amount": "53985.57"
+  },
+  {
+    "game": "FANTASY 5",
+    "draw_date": "2026-10-24",
+    "numbers": [
+      1,
+      5,
+      11,
+      19,
+      34
+    ],
+    "fetched_at": "2026-10-25T17:26:01.955654+00:00",
+    "source_url": "https://floridalottery.com/",
+    "session": "evening",
+    "tiers": [
+      {
+        "PrizeLevel": "5-of-5",
+        "PrizeAmount": "0",
+        "Winners": 0
+      },
+      {
+        "PrizeLevel": "4-of-5",
+        "PrizeAmount": "555",
+        "Winners": 174
+      },
+      {
+        "PrizeLevel": "3-of-5",
+        "PrizeAmount": "16.5",
+        "Winners": 5830
+      },
+      {
+        "PrizeLevel": "2-of-5",
+        "PrizeAmount": "Free Ticket",
+        "Winners": 54371
+      }
+    ],
+    "jackpot_amount": "0"
+  },
+  {
+    "game": "FANTASY 5",
     "draw_date": "2026-10-24",
     "numbers": [
       10,
@@ -32,43 +106,6 @@
         "PrizeLevel": "2-of-5",
         "PrizeAmount": "Free Ticket",
         "Winners": 25949
-      }
-    ],
-    "jackpot_amount": "0"
-  },
-  {
-    "game": "FANTASY 5",
-    "draw_date": "2026-10-24",
-    "numbers": [
-      1,
-      5,
-      11,
-      19,
-      34
-    ],
-    "fetched_at": "2026-10-25T09:58:01.089697+00:00",
-    "source_url": "https://floridalottery.com/",
-    "session": "evening",
-    "tiers": [
-      {
-        "PrizeLevel": "5-of-5",
-        "PrizeAmount": "0",
-        "Winners": 0
-      },
-      {
-        "PrizeLevel": "4-of-5",
-        "PrizeAmount": "555",
-        "Winners": 174
-      },
-      {
-        "PrizeLevel": "3-of-5",
-        "PrizeAmount": "16.5",
-        "Winners": 5830
-      },
-      {
-        "PrizeLevel": "2-of-5",
-        "PrizeAmount": "Free Ticket",
-        "Winners": 54371
       }
     ],
     "jackpot_amount": "0"
