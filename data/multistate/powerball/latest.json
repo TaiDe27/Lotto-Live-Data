@@ -1,6 +1,41 @@
 [
   {
     "game": "Powerball",
+    "draw_date": "Sat, Oct 24, 2026",
+    "white_balls": [
+      4,
+      5,
+      15,
+      19,
+      55
+    ],
+    "red_ball": 19,
+    "power_play": 2,
+    "next_drawing": {
+      "next_draw_date": "Sat, Oct 24, 2026",
+      "estimated_jackpot": "674 Million",
+      "cash_value": "289.1 Million"
+    },
+    "winners_by_tier": {
+      "Match 5 + Power Play": {
+        "prize": "2 Million",
+        "states": [
+          "OH",
+          "PA"
+        ]
+      },
+      "Match 5": {
+        "prize": "1 Million",
+        "states": [
+          "NJ"
+        ]
+      }
+    },
+    "fetched_at": "2026-10-25T03:20:11.421136+00:00",
+    "source_url": "https://www.powerball.com/"
+  },
+  {
+    "game": "Powerball",
     "draw_date": "Wed, Oct 21, 2026",
     "white_balls": [
       1,
