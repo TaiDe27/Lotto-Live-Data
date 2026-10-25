@@ -1,6 +1,14 @@
 [
   {
     "draw_date": "2026-10-24",
+    "session": "6pm",
+    "number": "10",
+    "draw_number": 10396,
+    "fetched_at": "2026-10-25T01:21:57.247323+00:00",
+    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
+  },
+  {
+    "draw_date": "2026-10-24",
     "session": "5pm",
     "number": "8",
     "draw_number": 10395,
@@ -789,14 +797,6 @@
     "number": "6",
     "draw_number": 10297,
     "fetched_at": "2026-10-18T22:51:56.739659+00:00",
-    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
-  },
-  {
-    "draw_date": "2026-10-18",
-    "session": "2pm",
-    "number": "14",
-    "draw_number": 10296,
-    "fetched_at": "2026-10-18T21:51:58.286355+00:00",
     "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
   }
 ]
