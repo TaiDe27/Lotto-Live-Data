@@ -1594,11 +1594,44 @@
       "type": "other",
       "pickRule": null,
       "drawSchedule": "Daily 7:29 PM ET",
-      "payoutTable": [],
+      "payoutTable": [
+        {
+          "tierKey": "5",
+          "label": "Match 5 of 5",
+          "basePrize": 100000,
+          "isJackpotTier": true,
+          "odds": "1 in 2,598,960",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4",
+          "label": "Match 4 of 5",
+          "basePrize": 500,
+          "isJackpotTier": false,
+          "odds": "1 in 11,060",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3",
+          "label": "Match 3 of 5",
+          "basePrize": 25,
+          "isJackpotTier": false,
+          "odds": "1 in 241",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2",
+          "label": "Match 2 of 5",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": "1 in 17",
+          "multiplierPrizes": null
+        }
+      ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Poker Lotto draws a 5-card poker hand instead of numbers — this app shows the drawn hand for reference; matching/payout isn't modeled (see CLAUDE.md-style notes in Game.swift's isCardDraw doc comment).",
+      "payoutNote": "Poker Lotto draws a 5-card poker hand instead of numbers. This app models the nightly Draw mechanic only (match your 5 printed cards against the 5 drawn cards - confirmed from michiganlottery.com's own prize table: Match 5 of 5 = $100,000 fixed top prize, not a rolling jackpot; Match 4 of 5 = $500; Match 3 of 5 = $25; Match 2 of 5 = $3). The separate Instant Win scratch mechanic (your own 5 cards forming a poker hand, independent of the draw) is NOT modeled - deliberately out of scope, see Game.swift's isCardDraw doc comment.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1654,8 +1687,22 @@
         "winnersByTier": null,
         "pokerCardsField": "cards"
       },
-      "matchRule": null,
-      "ocrRule": null
+      "matchRule": {
+        "kind": "cardMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
+      },
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": true,
+        "addOnMarkerPattern": null
+      }
     }
   ]
 }
