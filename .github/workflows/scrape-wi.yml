@@ -1,10 +1,16 @@
 name: Scrape Wisconsin own-games
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      retry_attempt:
+        description: "internal - set automatically by the auto-retry step below, don't set by hand"
+        required: false
+        default: "0"
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   scrape:
@@ -52,6 +58,20 @@ jobs:
           for p in pick3-midday pick3-evening pick4-midday pick4-evening badger-5 super-cash megabucks; do
             curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/wisconsin/${p}/latest.json"
           done
+      - name: Auto-retry once on a fresh runner if the scraper failed
+        # Same cause/fix as PA's scrape-pa.yml (both hit www.lottery.net): lottery.net's own
+        # WAF/Cloudflare occasionally blocks the specific ephemeral IP a GH Actions runner happens
+        # to get, which shows up as every single request of the run timing out at the TCP connect
+        # stage. Retrying in-place would just hit the same bad IP again - only a brand new job (a
+        # brand new runner = a brand new IP) actually has a chance of recovering. Capped at exactly
+        # one automatic retry via `retry_attempt` to avoid a failure storm. Waits before dispatching
+        # rather than retrying immediately, same reasoning and interval as PA's version.
+        if: steps.scrape.outcome == 'failure' && github.event.inputs.retry_attempt != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 180
+          gh workflow run scrape-wi.yml -f retry_attempt=1
       - name: Fail job if scraper reported errors
         if: steps.scrape.outcome == 'failure'
         run: |
