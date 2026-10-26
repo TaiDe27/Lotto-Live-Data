@@ -1174,7 +1174,12 @@
       },
       "multiplierLabel": null,
       "name": "Daily 3",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real prize figures confirmed from wvlottery.com's own Daily 3 prize legend ($1 bet tier). No draw on Sunday.",
       "payoutTable": [
@@ -1291,7 +1296,12 @@
       },
       "multiplierLabel": null,
       "name": "Daily 4",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real prize figures confirmed from wvlottery.com's own Daily 4 prize legend ($1 bet tier). No draw on Sunday.",
       "payoutTable": [
@@ -1410,7 +1420,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Cash 25",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": "Confirmed from wvlottery.com's own Cash 25 prize legend.",
       "payoutNote": "Real prize figures confirmed from wvlottery.com's own Cash 25 prize legend.",
       "payoutTable": [

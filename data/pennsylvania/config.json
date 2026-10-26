@@ -1104,7 +1104,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/cash5/latest.json",
         "cachePath": "live/pennsylvania/cash5/latest.json",
@@ -1209,7 +1214,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/match6/latest.json",
         "cachePath": "live/pennsylvania/match6/latest.json",
@@ -1314,7 +1324,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/treasure-hunt/latest.json",
         "cachePath": "live/pennsylvania/treasure-hunt/latest.json",
@@ -1420,7 +1435,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick2/latest.json",
         "cachePath": "live/pennsylvania/pick2/latest.json",
@@ -1532,7 +1552,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick2/latest.json",
         "cachePath": "live/pennsylvania/pick2/latest.json",
@@ -1664,7 +1689,12 @@
           "3": "box3way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick3/latest.json",
         "cachePath": "live/pennsylvania/pick3/latest.json",
@@ -1796,7 +1826,12 @@
           "3": "box3way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick3/latest.json",
         "cachePath": "live/pennsylvania/pick3/latest.json",
@@ -1924,7 +1959,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick4/latest.json",
         "cachePath": "live/pennsylvania/pick4/latest.json",
@@ -2052,7 +2092,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick4/latest.json",
         "cachePath": "live/pennsylvania/pick4/latest.json",
@@ -2180,7 +2225,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick5/latest.json",
         "cachePath": "live/pennsylvania/pick5/latest.json",
@@ -2308,7 +2358,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/pennsylvania/pick5/latest.json",
         "cachePath": "live/pennsylvania/pick5/latest.json",
@@ -2456,7 +2511,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "pa-cashpop-matinee",
@@ -2545,7 +2605,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "pa-cashpop-afternoon",
@@ -2634,7 +2699,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "pa-cashpop-latenight",
@@ -2723,7 +2793,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     }
   ]
 }

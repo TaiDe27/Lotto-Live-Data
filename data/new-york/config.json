@@ -1001,7 +1001,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ny-numbers-evening",
@@ -1099,7 +1104,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ny-win4-midday",
@@ -1197,7 +1207,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ny-win4-evening",
@@ -1295,7 +1310,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ny-take5-midday",
@@ -1384,7 +1404,12 @@
         "winnersByTier": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ny-take5-evening",
@@ -1473,7 +1498,12 @@
         "winnersByTier": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ny-pick10",
@@ -1602,7 +1632,12 @@
         "winnersByTier": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "ny-lotto",
@@ -1729,7 +1764,12 @@
         "winnersByTier": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     }
   ]
 }

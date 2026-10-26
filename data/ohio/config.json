@@ -815,7 +815,12 @@
         "winnersByTier": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "oh-pick3-midday",
@@ -929,7 +934,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "oh-pick3-evening",
@@ -1043,7 +1053,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "oh-pick4-midday",
@@ -1141,7 +1156,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "oh-pick4-evening",
@@ -1239,7 +1259,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "oh-pick5-midday",
@@ -1337,7 +1362,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "oh-pick5-evening",
@@ -1435,7 +1465,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "oh-rolling-cash5",
@@ -1524,7 +1559,12 @@
         "winnersByTier": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     }
   ]
 }

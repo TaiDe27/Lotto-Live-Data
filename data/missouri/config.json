@@ -1061,7 +1061,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "mo-millions-double-play",
@@ -1215,7 +1220,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "mo-show-me-cash",
@@ -1328,7 +1338,12 @@
         "winnersByTier": null
       },
       "matchRule": null,
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "mo-pick3-midday",
@@ -1451,7 +1466,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "mo-pick3-evening",
@@ -1574,7 +1594,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "mo-pick4-midday",
@@ -1715,7 +1740,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "mo-pick4-evening",
@@ -1856,7 +1886,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     },
     {
       "id": "mo-cashpop",
@@ -1960,7 +1995,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      }
     }
   ]
 }

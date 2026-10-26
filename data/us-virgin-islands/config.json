@@ -788,7 +788,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/super-lotto/latest.json",
         "cachePath": "live/us-virgin-islands/super-lotto/latest.json",
@@ -871,7 +876,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/lucky-pick/latest.json",
         "cachePath": "live/us-virgin-islands/lucky-pick/latest.json",
@@ -951,7 +961,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/lucky-pick-double-play/latest.json",
         "cachePath": "live/us-virgin-islands/lucky-pick-double-play/latest.json",
@@ -1034,7 +1049,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pay-day/latest.json",
         "cachePath": "live/us-virgin-islands/pay-day/latest.json",
@@ -1129,7 +1149,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
         "cachePath": "live/us-virgin-islands/pick-3/latest.json",
@@ -1231,7 +1256,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
         "cachePath": "live/us-virgin-islands/pick-4/latest.json",
@@ -1331,7 +1361,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
         "cachePath": "live/us-virgin-islands/pick-3/latest.json",
@@ -1433,7 +1468,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
         "cachePath": "live/us-virgin-islands/pick-4/latest.json",
@@ -1533,7 +1573,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
         "cachePath": "live/us-virgin-islands/pick-3/latest.json",
@@ -1635,7 +1680,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
         "cachePath": "live/us-virgin-islands/pick-4/latest.json",
@@ -1735,7 +1785,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
         "cachePath": "live/us-virgin-islands/pick-3/latest.json",
@@ -1837,7 +1892,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
         "cachePath": "live/us-virgin-islands/pick-4/latest.json",
@@ -1934,7 +1994,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2027,7 +2092,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2120,7 +2190,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2213,7 +2288,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2306,7 +2386,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2399,7 +2484,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2492,7 +2582,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2585,7 +2680,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",
@@ -2678,7 +2778,12 @@
         "addOnStraightTierKey": null,
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/caribbean-numbers/latest.json",
         "cachePath": "live/us-virgin-islands/caribbean-numbers/latest.json",

@@ -827,7 +827,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/pega2/latest.json",
         "cachePath": "live/puerto-rico/pega2/latest.json",
@@ -955,7 +960,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/pega2/latest.json",
         "cachePath": "live/puerto-rico/pega2/latest.json",
@@ -1087,7 +1097,12 @@
           "3": "box3way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/pega3/latest.json",
         "cachePath": "live/puerto-rico/pega3/latest.json",
@@ -1219,7 +1234,12 @@
           "3": "box3way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/pega3/latest.json",
         "cachePath": "live/puerto-rico/pega3/latest.json",
@@ -1347,7 +1367,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/pega4/latest.json",
         "cachePath": "live/puerto-rico/pega4/latest.json",
@@ -1475,7 +1500,12 @@
         "addOnStraightTierKey": "straight-addon",
         "addOnBoxTierKeysByWayCount": null
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/pega4/latest.json",
         "cachePath": "live/puerto-rico/pega4/latest.json",
@@ -1589,7 +1619,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/loto-cash/latest.json",
         "cachePath": "live/puerto-rico/loto-cash/latest.json",
@@ -1694,7 +1729,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/puerto-rico/revancha/latest.json",
         "cachePath": "live/puerto-rico/revancha/latest.json",

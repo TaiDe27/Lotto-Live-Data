@@ -631,7 +631,12 @@
       },
       "multiplierLabel": null,
       "name": "Daily Pick 3 (Midday)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
@@ -746,7 +751,12 @@
       },
       "multiplierLabel": null,
       "name": "Daily Pick 3 (Evening)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
@@ -863,7 +873,12 @@
       },
       "multiplierLabel": null,
       "name": "Daily Pick 4 (Midday)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
@@ -996,7 +1011,12 @@
       },
       "multiplierLabel": null,
       "name": "Daily Pick 4 (Evening)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
@@ -1115,7 +1135,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Badger 5",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Exact per-tier prize amounts are not confirmed (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment); jackpot/top-prize figure is pulled live, lower tiers pending the state's own published figures.",
       "payoutTable": [],
@@ -1193,7 +1218,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "SuperCash!",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Exact per-tier prize amounts are not confirmed (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment); jackpot/top-prize figure is pulled live, lower tiers pending the state's own published figures.",
       "payoutTable": [],
@@ -1271,7 +1301,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Megabucks",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Exact per-tier prize amounts are not confirmed (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment); jackpot/top-prize figure is pulled live, lower tiers pending the state's own published figures.",
       "payoutTable": [],

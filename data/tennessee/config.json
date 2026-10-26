@@ -1331,7 +1331,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash/latest.json",
         "cachePath": "live/tennessee/cash/latest.json",
@@ -1414,7 +1419,12 @@
       "doublePlay": null,
       "multiplierLabel": null,
       "matchRule": null,
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/daily-jackpot/latest.json",
         "cachePath": "live/tennessee/daily-jackpot/latest.json",
@@ -1507,7 +1517,12 @@
           "3": "box3way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
         "cachePath": "live/tennessee/cash3/latest.json",
@@ -1603,7 +1618,12 @@
           "3": "box3way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
         "cachePath": "live/tennessee/cash3/latest.json",
@@ -1699,7 +1719,12 @@
           "3": "box3way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
         "cachePath": "live/tennessee/cash3/latest.json",
@@ -1795,7 +1820,12 @@
           "4": "box4way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
         "cachePath": "live/tennessee/cash4/latest.json",
@@ -1891,7 +1921,12 @@
           "4": "box4way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
         "cachePath": "live/tennessee/cash4/latest.json",
@@ -1987,7 +2022,12 @@
           "4": "box4way-addon"
         }
       },
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
         "cachePath": "live/tennessee/cash4/latest.json",

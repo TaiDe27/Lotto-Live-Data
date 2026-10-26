@@ -890,7 +890,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Cowboy Draw",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": "Overall odds of winning any prize are 1 in 6 (confirmed via lotteryusa.com's own Cowboy Draw page).",
       "payoutNote": "Real prize figures confirmed via lotteryusa.com's own Cowboy Draw page (wyolotto.com's own game page is a client-rendered SPA with no rules in its static HTML). Live data feed wired via wyolotto.com's real Gambyt-hosted draw-data API, using the public x-api-key/x-client-id headers its own frontend sends on every request (not a server secret, same value for every visitor) — see scripts/wy_scraper.py.",
       "payoutTable": [

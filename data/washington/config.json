@@ -820,7 +820,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Lotto",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": "Overall odds of winning any prize are 1 in 27.1 (confirmed from walottery.com's own Lotto page).",
       "payoutNote": "Real sub-jackpot figures confirmed from walottery.com's own Past Drawings results (fixed prizes: 5of6=$1,000, 4of6=$30, 3of6=$3). Only the 6of6 tier is the real pari-mutuel jackpot.",
       "payoutTable": [
@@ -931,7 +936,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Hit 5",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real sub-jackpot figures confirmed from walottery.com's own Past Drawings results (4of5=$150, 3of5=$15). 2of5 wins a free Hit 5 ticket (non-cash) and is not modeled.",
       "payoutTable": [
@@ -1034,7 +1044,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Match 4",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real figures confirmed from walottery.com's own Match 4 page. Genuinely fixed prizes at every tier (does not divide among multiple winners, does not accumulate between drawings) — unlike most of this project's other 'N of M' in-state games.",
       "payoutTable": [
@@ -1149,7 +1164,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 3",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "walottery.com's own page confirms no Fireball-style bonus digit, and gives Straight=$250/$500 and Box=$40/$80 across its two wager levels without specifying which box way-count each applies to — this app uses its standard Pick 3 default table ($1-play tier) pending that exact breakdown.",
       "payoutTable": [
@@ -1261,7 +1281,12 @@
       },
       "multiplierLabel": null,
       "name": "Cash Pop",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": "Overall odds of winning any prize are 1 in 15.0 (confirmed from walottery.com's own Cash Pop page).",
       "payoutNote": "Same mechanic as other states' Cash Pop: a random prize ($25-$500, confirmed from walottery.com's own page) is printed under each POP at purchase time, not determined by which number you picked. Unlike most other states' Cash Pop, WA draws only ONCE per day (confirmed, not assumed). The app can only tell you whether your number matched, not your exact prize.",
       "payoutTable": [],

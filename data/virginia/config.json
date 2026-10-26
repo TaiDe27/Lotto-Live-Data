@@ -764,7 +764,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Cash 5 with EZ Match",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": "Overall odds of winning a Cash 5 prize: 1 in 11.44 (confirmed from valottery.com's own Cash 5 page).",
       "payoutNote": "Real figures confirmed from valottery.com's own Cash 5 Game Odds table. EZ Match is a separate instant-win add-on not computable from the public draw feed and is not modeled.",
       "payoutTable": [
@@ -878,7 +883,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Bank a Million",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real figures confirmed from valottery.com's own Bank a Million Game Odds table ($2-wager column).",
       "payoutTable": [
@@ -1026,7 +1036,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 3 (Day)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real straight/box/FIREBALL figures confirmed from valottery.com's own game page prize tables ($1-play tier). 50/50 and Combo play-type variants are not modeled (not separate match outcomes).",
       "payoutTable": [
@@ -1175,7 +1190,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 4 (Day)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real straight/box/FIREBALL figures confirmed from valottery.com's own game page prize tables ($1-play tier). 50/50 and Combo play-type variants are not modeled (not separate match outcomes).",
       "payoutTable": [
@@ -1352,7 +1372,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 5 (Day)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real straight/box/FIREBALL figures confirmed from valottery.com's own game page prize tables ($1-play tier). 50/50 and Combo play-type variants are not modeled (not separate match outcomes).",
       "payoutTable": [
@@ -1561,7 +1586,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 3 (Night)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real straight/box/FIREBALL figures confirmed from valottery.com's own game page prize tables ($1-play tier). 50/50 and Combo play-type variants are not modeled (not separate match outcomes).",
       "payoutTable": [
@@ -1710,7 +1740,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 4 (Night)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real straight/box/FIREBALL figures confirmed from valottery.com's own game page prize tables ($1-play tier). 50/50 and Combo play-type variants are not modeled (not separate match outcomes).",
       "payoutTable": [
@@ -1887,7 +1922,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 5 (Night)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Real straight/box/FIREBALL figures confirmed from valottery.com's own game page prize tables ($1-play tier). 50/50 and Combo play-type variants are not modeled (not separate match outcomes).",
       "payoutTable": [
@@ -2093,7 +2133,12 @@
       },
       "multiplierLabel": null,
       "name": "Cash Pop",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Same mechanic/prize structure as other states' Cash POP (IN/ME/MD/MS/MO/NC): the dollar prize is a random multiplier of your wager (5x-250x at $1, confirmed from valottery.com's own Cash Pop Prizes & Odds table) assigned per ticket at play time, not determined by which number you picked. The app can only tell you whether your number matched, not your exact prize.",
       "payoutTable": [

@@ -1363,7 +1363,12 @@
       "matchRule": null,
       "multiplierLabel": null,
       "name": "Gimme 5",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": null,
       "payoutTable": [
@@ -1470,7 +1475,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 3 (Day)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
@@ -1593,7 +1603,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 3 (Evening)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
@@ -1718,7 +1733,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 4 (Day)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
@@ -1859,7 +1879,12 @@
       },
       "multiplierLabel": null,
       "name": "Pick 4 (Evening)",
-      "ocrRule": null,
+      "ocrRule": {
+        "boardSplitKind": "letterLabelElseTwoDigitStart",
+        "boardLabelPattern": null,
+        "verifiedAgainstRealTicket": false,
+        "addOnMarkerPattern": null
+      },
       "overallOddsText": null,
       "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
