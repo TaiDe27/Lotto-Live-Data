@@ -1,5 +1,37 @@
 [
   {
+    "draw_date": "Sun, Oct 25, 2026",
+    "winning_teams": [
+      "CAR",
+      "CLE",
+      "DAL",
+      "GB",
+      "LV",
+      "NE",
+      "NYG",
+      "SF"
+    ],
+    "next_drawing": {
+      "next_draw_date": "Sun, Oct 25, 2026",
+      "estimated_jackpot": "1.80 Million"
+    },
+    "winners_by_tier": {
+      "Match 8 of 8 Teams": {
+        "states": []
+      },
+      "Match 7 of 8 Teams": {
+        "states": [
+          "IN",
+          "MD",
+          "MN",
+          "PA"
+        ]
+      }
+    },
+    "fetched_at": "2026-10-26T02:20:58.529799+00:00",
+    "source_url": "https://www.powerball.com/xo"
+  },
+  {
     "draw_date": "Sun, Oct 18, 2026",
     "winning_teams": [
       "BAL",
