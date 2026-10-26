@@ -1,6 +1,19 @@
 [
   {
     "game": "Pick 4 (Day)",
+    "draw_date": "2026-10-26",
+    "session": "day",
+    "digits": [
+      2,
+      3,
+      2,
+      9
+    ],
+    "fetched_at": "2026-10-26T17:30:57.482412+00:00",
+    "source_url": "https://www.mainelottery.com/"
+  },
+  {
+    "game": "Pick 4 (Day)",
     "draw_date": "2026-10-25",
     "session": "day",
     "digits": [
