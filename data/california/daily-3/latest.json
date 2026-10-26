@@ -27,6 +27,19 @@
   },
   {
     "game": "Daily 3",
+    "draw_date": "2026-10-26",
+    "session": "midday",
+    "draw_number": "21372",
+    "digits": [
+      3,
+      5,
+      0
+    ],
+    "fetched_at": "2026-10-26T20:20:59.184321+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-3"
+  },
+  {
+    "game": "Daily 3",
     "draw_date": "2026-10-25",
     "session": "evening",
     "draw_number": "21371",
@@ -35,7 +48,7 @@
       4,
       2
     ],
-    "fetched_at": "2026-10-26T08:10:57.428501+00:00",
+    "fetched_at": "2026-10-26T20:20:59.184469+00:00",
     "source_url": "https://www.calottery.com/en/draw-games/daily-3"
   },
   {
