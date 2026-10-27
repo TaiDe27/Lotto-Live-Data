@@ -1,5 +1,35 @@
 [
   {
+    "draw_date": "Mon, Oct 26, 2026",
+    "main_balls": [
+      19,
+      24,
+      30,
+      37,
+      50
+    ],
+    "star_ball": 9,
+    "all_star_bonus": 4,
+    "next_drawing": {
+      "next_draw_date": "Mon, Oct 26, 2026",
+      "estimated_jackpot": "2.45 Million",
+      "cash_value": "1.05 Million"
+    },
+    "winners_by_tier": {
+      "Jackpot": {
+        "states": []
+      },
+      "Match 5 + All Star Bonus": {
+        "states": []
+      },
+      "Match 5": {
+        "states": []
+      }
+    },
+    "fetched_at": "2026-10-27T02:35:58.079727+00:00",
+    "source_url": "https://www.powerball.com/lotto-america"
+  },
+  {
     "draw_date": "Sat, Oct 24, 2026",
     "main_balls": [
       15,
