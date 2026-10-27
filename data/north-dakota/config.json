@@ -337,7 +337,9 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "POWER PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryMarkerPattern": "DOUBLE PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryGameID": "powerball-double-play"
       }
     },
     {
@@ -805,7 +807,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "ALL STAR BONUS\\s*(YES|NO)"
       }
     },
     {

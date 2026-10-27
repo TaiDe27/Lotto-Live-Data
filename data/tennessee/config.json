@@ -120,10 +120,12 @@
       },
       "name": "Powerball",
       "ocrRule": {
-        "addOnMarkerPattern": null,
+        "addOnMarkerPattern": "POWER PLAY\\s*[=\\-:]?\\s*(YES|NO)",
         "boardLabelPattern": null,
         "boardSplitKind": "letterLabelElseTwoDigitStart",
-        "verifiedAgainstRealTicket": true
+        "verifiedAgainstRealTicket": true,
+        "secondaryEntryMarkerPattern": "DOUBLE PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryGameID": "powerball-double-play"
       },
       "overallOddsText": "Overall Odds: 1 in 24.87",
       "payoutNote": "For states except California.",
@@ -836,7 +838,7 @@
       "multiplierLabel": "All Star Bonus",
       "name": "Lotto America",
       "ocrRule": {
-        "addOnMarkerPattern": null,
+        "addOnMarkerPattern": "ALL STAR BONUS\\s*(YES|NO)",
         "boardLabelPattern": null,
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "verifiedAgainstRealTicket": true
@@ -1521,7 +1523,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
@@ -1622,7 +1624,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
@@ -1723,7 +1725,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash3/latest.json",
@@ -1824,7 +1826,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
@@ -1925,7 +1927,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",
@@ -2026,7 +2028,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/tennessee/cash4/latest.json",

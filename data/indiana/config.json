@@ -337,7 +337,9 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "POWER PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryMarkerPattern": "DOUBLE PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryGameID": "powerball-double-play"
       }
     },
     {
@@ -1491,7 +1493,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "SUPERBALL\\s*[-=:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1622,7 +1624,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "SUPERBALL\\s*[-=:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1799,7 +1801,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "SUPERBALL\\s*[-=:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1976,7 +1978,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "SUPERBALL\\s*[-=:]?\\s*(YES|NO)"
       }
     },
     {
@@ -2043,10 +2045,90 @@
           "isJackpotTier": false,
           "odds": "1 in 19",
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "1b",
+          "label": "BULLSEYE Bonus (1 of 10)",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 111",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2b",
+          "label": "BULLSEYE Bonus (2 of 10)",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": "1 in 34",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3b",
+          "label": "BULLSEYE Bonus (3 of 10)",
+          "basePrize": 2,
+          "isJackpotTier": false,
+          "odds": "1 in 25",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4b",
+          "label": "BULLSEYE Bonus (4 of 10)",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": "1 in 34",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5b",
+          "label": "BULLSEYE Bonus (5 of 10)",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 78",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "6b",
+          "label": "BULLSEYE Bonus (6 of 10)",
+          "basePrize": 20,
+          "isJackpotTier": false,
+          "odds": "1 in 290",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "7b",
+          "label": "BULLSEYE Bonus (7 of 10)",
+          "basePrize": 90,
+          "isJackpotTier": false,
+          "odds": "1 in 1,773",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "8b",
+          "label": "BULLSEYE Bonus (8 of 10)",
+          "basePrize": 750,
+          "isJackpotTier": false,
+          "odds": "1 in 18,461",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "9b",
+          "label": "BULLSEYE Bonus (9 of 10)",
+          "basePrize": 6000,
+          "isJackpotTier": false,
+          "odds": "1 in 363,070",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "10b",
+          "label": "BULLSEYE Bonus (10 of 10)",
+          "basePrize": 200000,
+          "isJackpotTier": false,
+          "odds": "1 in 17,823,422",
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking — same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
+      "payoutNote": "BULLSEYE is now modeled: pay $1 extra, and if one of your matched numbers is the BULLSEYE-flagged drawn number, you win an ADDITIONAL separate bonus prize on top of the base match-count prize (confirmed real, cross-checked against hoosierlottery.com's own wording - 'win both the Quick Draw and BULLSEYE prizes'; a 10/10 match with BULLSEYE pays $300,000 base + up to $200,000 bonus = $500,000 total, not a flat $200,000). Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 base tiers are omitted since they pay no base cash prize on their own.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/quickdraw/latest.json",
         "cachePath": "live/in-quickdraw-midday/latest.json",
@@ -2067,10 +2149,7 @@
         },
         "nextDrawDate": null,
         "mainNumbersField": "numbers",
-        "specialNumbers": {
-          "field": "bonus_number",
-          "wrapScalar": true
-        },
+        "specialNumbers": null,
         "winningTeamsField": null,
         "jackpot": {
           "source": "none",
@@ -2097,13 +2176,24 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "bullseyeNumberField": "bonus_number"
       },
       "ocrRule": {
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
         "addOnMarkerPattern": null
+      },
+      "matchRule": {
+        "kind": "bullseyeAddOnMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
       }
     },
     {
@@ -2170,10 +2260,90 @@
           "isJackpotTier": false,
           "odds": "1 in 19",
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "1b",
+          "label": "BULLSEYE Bonus (1 of 10)",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 111",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2b",
+          "label": "BULLSEYE Bonus (2 of 10)",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": "1 in 34",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3b",
+          "label": "BULLSEYE Bonus (3 of 10)",
+          "basePrize": 2,
+          "isJackpotTier": false,
+          "odds": "1 in 25",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4b",
+          "label": "BULLSEYE Bonus (4 of 10)",
+          "basePrize": 3,
+          "isJackpotTier": false,
+          "odds": "1 in 34",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5b",
+          "label": "BULLSEYE Bonus (5 of 10)",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 78",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "6b",
+          "label": "BULLSEYE Bonus (6 of 10)",
+          "basePrize": 20,
+          "isJackpotTier": false,
+          "odds": "1 in 290",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "7b",
+          "label": "BULLSEYE Bonus (7 of 10)",
+          "basePrize": 90,
+          "isJackpotTier": false,
+          "odds": "1 in 1,773",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "8b",
+          "label": "BULLSEYE Bonus (8 of 10)",
+          "basePrize": 750,
+          "isJackpotTier": false,
+          "odds": "1 in 18,461",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "9b",
+          "label": "BULLSEYE Bonus (9 of 10)",
+          "basePrize": 6000,
+          "isJackpotTier": false,
+          "odds": "1 in 363,070",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "10b",
+          "label": "BULLSEYE Bonus (10 of 10)",
+          "basePrize": 200000,
+          "isJackpotTier": false,
+          "odds": "1 in 17,823,422",
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
-      "payoutNote": "Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 tiers (free ticket or BULLSEYE-only prizes) are omitted since they pay no base cash prize. An optional $1 BULLSEYE add-on (one of the 20 drawn numbers specially highlighted) is captured for display but not wired into match-checking — same deliberate scope cut as Illinois Lotto's Extra Shot and Connecticut's Wild Ball.",
+      "payoutNote": "BULLSEYE is now modeled: pay $1 extra, and if one of your matched numbers is the BULLSEYE-flagged drawn number, you win an ADDITIONAL separate bonus prize on top of the base match-count prize (confirmed real, cross-checked against hoosierlottery.com's own wording - 'win both the Quick Draw and BULLSEYE prizes'; a 10/10 match with BULLSEYE pays $300,000 base + up to $200,000 bonus = $500,000 total, not a flat $200,000). Prize amounts and odds confirmed directly from the official Hoosier Lottery site's own Prizes & Odds table (based on a $1 wager). Match 0-4 base tiers are omitted since they pay no base cash prize on their own.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/indiana/quickdraw/latest.json",
         "cachePath": "live/in-quickdraw-evening/latest.json",
@@ -2194,10 +2364,7 @@
         },
         "nextDrawDate": null,
         "mainNumbersField": "numbers",
-        "specialNumbers": {
-          "field": "bonus_number",
-          "wrapScalar": true
-        },
+        "specialNumbers": null,
         "winningTeamsField": null,
         "jackpot": {
           "source": "none",
@@ -2224,13 +2391,24 @@
           "guardField": null
         },
         "multiplierField": null,
-        "winnersByTier": null
+        "winnersByTier": null,
+        "bullseyeNumberField": "bonus_number"
       },
       "ocrRule": {
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
         "addOnMarkerPattern": null
+      },
+      "matchRule": {
+        "kind": "bullseyeAddOnMatch",
+        "straightTierKey": null,
+        "boxTierKeysByWayCount": null,
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
       }
     },
     {

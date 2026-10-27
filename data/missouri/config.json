@@ -120,10 +120,12 @@
       },
       "name": "Powerball",
       "ocrRule": {
-        "addOnMarkerPattern": null,
+        "addOnMarkerPattern": "POWER PLAY\\s*[=\\-:]?\\s*(YES|NO)",
         "boardLabelPattern": null,
         "boardSplitKind": "letterLabelElseTwoDigitStart",
-        "verifiedAgainstRealTicket": true
+        "verifiedAgainstRealTicket": true,
+        "secondaryEntryMarkerPattern": "DOUBLE PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryGameID": "powerball-double-play"
       },
       "overallOddsText": "Overall Odds: 1 in 24.87",
       "payoutNote": "For states except California.",
@@ -1470,7 +1472,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1598,7 +1600,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1744,7 +1746,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1890,7 +1892,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "WILD BALL\\s*[=\\-:]?\\s*(YES|NO)"
       }
     },
     {

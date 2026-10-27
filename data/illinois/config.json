@@ -337,7 +337,9 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "POWER PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryMarkerPattern": "DOUBLE PLAY\\s*[=\\-:]?\\s*(YES|NO)",
+        "secondaryEntryGameID": "powerball-double-play"
       }
     },
     {
@@ -571,8 +573,11 @@
         "mainRangeLower": 1,
         "mainRangeUpper": 52,
         "mainMustBeUnique": true,
-        "specialCount": 0,
-        "price": 1
+        "specialCount": 1,
+        "price": 1,
+        "specialRangeLower": 1,
+        "specialRangeUpper": 25,
+        "specialName": "Extra Shot"
       },
       "drawSchedule": "Monday, Thursday and Saturday ~9:22 PM CT",
       "payoutTable": [
@@ -607,11 +612,83 @@
           "isJackpotTier": false,
           "odds": null,
           "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+1",
+          "label": "5 of 6 + Extra Shot",
+          "basePrize": 203975,
+          "isJackpotTier": false,
+          "odds": "1 in 1,504,801",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4+1",
+          "label": "4 of 6 + Extra Shot",
+          "basePrize": 1487.5,
+          "isJackpotTier": false,
+          "odds": "1 in 27,996",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3+1",
+          "label": "3 of 6 + Extra Shot",
+          "basePrize": 125,
+          "isJackpotTier": false,
+          "odds": "1 in 1,150",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "2+1",
+          "label": "2 of 6 + Extra Shot",
+          "basePrize": 25,
+          "isJackpotTier": false,
+          "odds": "1 in 195",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "1+1",
+          "label": "1 of 6 + Extra Shot",
+          "basePrize": 10,
+          "isJackpotTier": false,
+          "odds": "1 in 61",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "0+1",
+          "label": "Extra Shot Only",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": "1 in 56.3",
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "5+0",
+          "label": "5 of 6",
+          "basePrize": 2500,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "4+0",
+          "label": "4 of 6",
+          "basePrize": 100,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
+        },
+        {
+          "tierKey": "3+0",
+          "label": "3 of 6",
+          "basePrize": 5,
+          "isJackpotTier": false,
+          "odds": null,
+          "multiplierPrizes": null
         }
       ],
       "buyTicketBaseURLs": {},
       "jackpotDescription": "The jackpot starts at $2 million and grows until it's won.",
-      "payoutNote": "Lower-tier dollar amounts are approximate, not independently re-verified against Illinois's official rules. An optional paid 'Extra Shot' bonus ball is captured by the live scraper but not yet modeled for match-checking (same scope cut as California's Daily Derby). The two 'Lotto Million' bonus number sets drawn alongside this game are not modeled — they aren't an independent game/schedule.",
+      "payoutNote": "Extra Shot is now modeled: pay $1 for an independently-drawn 1-25 bonus number (confirmed real prize table via lotteryusa-class aggregator data - jackpot ('6') is never affected by Extra Shot). Lower-tier dollar amounts for the base game are approximate, not independently re-verified against Illinois's official rules. The two 'Lotto Million' bonus number sets drawn alongside this game are not modeled - they aren't an independent game/schedule.",
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/illinois/lotto/latest.json",
         "cachePath": "live/il-lotto/latest.json",
@@ -1014,7 +1091,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "FIREBALL\\s*[·\\-=:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1145,7 +1222,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "FIREBALL\\s*[·\\-=:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1322,7 +1399,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "FIREBALL\\s*[·\\-=:]?\\s*(YES|NO)"
       }
     },
     {
@@ -1499,7 +1576,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "FIREBALL\\s*[·\\-=:]?\\s*(YES|NO)"
       }
     }
   ]
