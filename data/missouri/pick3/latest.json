@@ -1,6 +1,18 @@
 [
   {
     "draw_date": "2026-10-26",
+    "session": "evening",
+    "digits": [
+      9,
+      1,
+      5
+    ],
+    "wild_ball": 2,
+    "fetched_at": "2026-10-27T02:20:03.928162+00:00",
+    "source_url": "https://www.molottery.com/pick3/winning-numbers.do"
+  },
+  {
+    "draw_date": "2026-10-26",
     "session": "midday",
     "digits": [
       2,
@@ -8,19 +20,7 @@
       5
     ],
     "wild_ball": 5,
-    "fetched_at": "2026-10-27T00:51:01.278658+00:00",
-    "source_url": "https://www.molottery.com/pick3/winning-numbers.do"
-  },
-  {
-    "draw_date": "2026-10-26",
-    "session": "evening",
-    "digits": [
-      4,
-      0,
-      1
-    ],
-    "wild_ball": 5,
-    "fetched_at": "2026-10-27T00:51:01.278764+00:00",
+    "fetched_at": "2026-10-27T02:20:03.928334+00:00",
     "source_url": "https://www.molottery.com/pick3/winning-numbers.do"
   },
   {
