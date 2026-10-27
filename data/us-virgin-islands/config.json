@@ -1155,7 +1155,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
@@ -1262,7 +1262,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
@@ -1367,7 +1367,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
@@ -1474,7 +1474,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
@@ -1579,7 +1579,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
@@ -1686,7 +1686,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
@@ -1791,7 +1791,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-3/latest.json",
@@ -1898,7 +1898,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": false,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "MEGA BALL\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "liveMapping": {
         "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/us-virgin-islands/pick-4/latest.json",
