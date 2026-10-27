@@ -61,10 +61,18 @@ USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
 # 20s still wasn't enough: 2026-10-27 real run logs showed PA still failing (9 runs in ~6 hours),
 # every one a connect timeout on EVERY page in the run including the very first request - while WI
 # (same host, same 20s timeout, same code shape, just fewer pages per run: 5 vs PA's 8) had zero
-# failures over the same window. Bumped further to 40s and the inter-request delay raised below, as
-# a cheap first experiment before assuming a path-specific block that would need a different fix.
-REQUEST_TIMEOUT_SEC = 40
-MAX_RETRIES = 3
+# failures over the same window. Tried bumping further to 40s - disproved, not just unhelpful: a
+# real 40s-timeout failure (2026-10-27) still timed out on literally every page starting with the
+# first request, identical to 20s, meaning a slow-but-reachable server (which a longer timeout
+# would partially rescue) isn't what's happening here - this reads as a hard per-run connectivity
+# block, not marginal latency. Reverted to 20s (40s only doubled how long a doomed run takes to
+# fail, zero benefit) and MAX_RETRIES cut from 3 to 1 for the same reason: retrying on the same
+# blocked connection within one run never once succeeded in any observed failure, so it's pure
+# wasted time before the real recovery mechanism (the workflow's wait-then-retry-on-a-fresh-runner
+# step) gets a chance to run - cuts a failing run from ~22min down to roughly ~6-7min before that
+# kicks in.
+REQUEST_TIMEOUT_SEC = 20
+MAX_RETRIES = 1
 RETRY_BACKOFF_SEC = 5
 INTER_REQUEST_DELAY_SEC = 4.0
 OUTPUT_DIR = Path("data") / "pennsylvania"
