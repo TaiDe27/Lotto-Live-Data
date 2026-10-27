@@ -1,6 +1,38 @@
 [
   {
     "game": "Lotto",
+    "draw_date": "2026-10-26",
+    "numbers": [
+      6,
+      12,
+      13,
+      14,
+      30,
+      42
+    ],
+    "bonus_number": 9,
+    "jackpot_amount": "7.4 Million",
+    "lotto_million_1": [
+      2,
+      4,
+      6,
+      38,
+      39,
+      45
+    ],
+    "lotto_million_2": [
+      14,
+      18,
+      20,
+      21,
+      27,
+      31
+    ],
+    "fetched_at": "2026-10-27T02:43:00.851771+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/lotto/"
+  },
+  {
+    "game": "Lotto",
     "draw_date": "2026-10-24",
     "numbers": [
       10,
@@ -28,7 +60,7 @@
       40,
       43
     ],
-    "fetched_at": "2026-10-25T09:03:03.475918+00:00",
+    "fetched_at": "2026-10-27T02:43:00.853254+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -60,7 +92,7 @@
       27,
       31
     ],
-    "fetched_at": "2026-10-25T09:03:03.476767+00:00",
+    "fetched_at": "2026-10-27T02:43:00.854645+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -92,7 +124,7 @@
       28,
       49
     ],
-    "fetched_at": "2026-10-25T09:03:03.477546+00:00",
+    "fetched_at": "2026-10-27T02:43:00.855915+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -124,7 +156,7 @@
       46,
       48
     ],
-    "fetched_at": "2026-10-25T09:03:03.478310+00:00",
+    "fetched_at": "2026-10-27T02:43:00.857097+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -156,7 +188,7 @@
       27,
       31
     ],
-    "fetched_at": "2026-10-25T09:03:03.479066+00:00",
+    "fetched_at": "2026-10-27T02:43:00.858270+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -188,7 +220,7 @@
       30,
       44
     ],
-    "fetched_at": "2026-10-25T09:03:03.479812+00:00",
+    "fetched_at": "2026-10-27T02:43:00.859442+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -220,7 +252,7 @@
       22,
       35
     ],
-    "fetched_at": "2026-10-25T09:03:03.480560+00:00",
+    "fetched_at": "2026-10-27T02:43:00.860585+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -252,7 +284,7 @@
       35,
       39
     ],
-    "fetched_at": "2026-10-25T09:03:03.481306+00:00",
+    "fetched_at": "2026-10-27T02:43:00.861829+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
@@ -284,7 +316,7 @@
       46,
       50
     ],
-    "fetched_at": "2026-10-25T09:03:03.482050+00:00",
+    "fetched_at": "2026-10-27T02:43:00.863047+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/"
   },
   {
