@@ -58,9 +58,15 @@ USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
 # the runner's IP (an auto-retry-on-a-fresh-runner workflow step added earlier for this symptom
 # didn't fix it, which in hindsight is consistent with a timeout cause: a new runner doesn't get a
 # faster connection, just another shot at the same too-short window).
-REQUEST_TIMEOUT_SEC = 20
+# 20s still wasn't enough: 2026-10-27 real run logs showed PA still failing (9 runs in ~6 hours),
+# every one a connect timeout on EVERY page in the run including the very first request - while WI
+# (same host, same 20s timeout, same code shape, just fewer pages per run: 5 vs PA's 8) had zero
+# failures over the same window. Bumped further to 40s and the inter-request delay raised below, as
+# a cheap first experiment before assuming a path-specific block that would need a different fix.
+REQUEST_TIMEOUT_SEC = 40
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
+INTER_REQUEST_DELAY_SEC = 4.0
 OUTPUT_DIR = Path("data") / "pennsylvania"
 MAX_HISTORY = 100
 BASE = "https://www.lottery.net/pennsylvania"
@@ -264,7 +270,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             log.error("%s 失败: %s", subdir, e)
             errors.append((subdir, e))
-        time.sleep(1.0)
+        time.sleep(INTER_REQUEST_DELAY_SEC)
 
     digit_games = [("pick2", "pick-2", 2), ("pick3", "pick-3", 3), ("pick4", "pick-4", 4), ("pick5", "pick-5", 5)]
     for subdir, slug, count in digit_games:
@@ -275,7 +281,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             log.error("%s 失败: %s", subdir, e)
             errors.append((subdir, e))
-        time.sleep(1.0)
+        time.sleep(INTER_REQUEST_DELAY_SEC)
 
     try:
         for result in fetch_cash_pop():
