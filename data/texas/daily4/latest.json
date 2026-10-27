@@ -1,6 +1,19 @@
 [
   {
     "draw_date": "2026-10-26",
+    "session": "night",
+    "numbers": [
+      3,
+      3,
+      5,
+      4
+    ],
+    "fireball": 7,
+    "fetched_at": "2026-10-27T03:33:01.183493+00:00",
+    "source_url": "https://www.texaslottery.com/"
+  },
+  {
+    "draw_date": "2026-10-26",
     "session": "morning",
     "numbers": [
       6,
@@ -9,7 +22,7 @@
       8
     ],
     "fireball": 3,
-    "fetched_at": "2026-10-27T00:08:15.077401+00:00",
+    "fetched_at": "2026-10-27T03:33:01.183471+00:00",
     "source_url": "https://www.texaslottery.com/"
   },
   {
@@ -22,7 +35,7 @@
       9
     ],
     "fireball": 4,
-    "fetched_at": "2026-10-27T00:08:15.077418+00:00",
+    "fetched_at": "2026-10-27T03:33:01.183490+00:00",
     "source_url": "https://www.texaslottery.com/"
   },
   {
@@ -35,7 +48,7 @@
       4
     ],
     "fireball": 5,
-    "fetched_at": "2026-10-27T00:08:15.077414+00:00",
+    "fetched_at": "2026-10-27T03:33:01.183486+00:00",
     "source_url": "https://www.texaslottery.com/"
   },
   {
