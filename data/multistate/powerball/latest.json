@@ -12,9 +12,9 @@
     "red_ball": 1,
     "power_play": 3,
     "next_drawing": {
-      "next_draw_date": "Mon, Oct 26, 2026",
-      "estimated_jackpot": "687 Million",
-      "cash_value": "294.7 Million"
+      "next_draw_date": "Wed, Oct 28, 2026",
+      "estimated_jackpot": "716 Million",
+      "cash_value": "307.2 Million"
     },
     "winners_by_tier": {
       "Match 5 + Power Play": {
@@ -23,10 +23,13 @@
       },
       "Match 5": {
         "prize": "1 Million",
-        "states": []
+        "states": [
+          "FL",
+          "GA"
+        ]
       }
     },
-    "fetched_at": "2026-10-27T03:51:00.568468+00:00",
+    "fetched_at": "2026-10-27T09:40:03.587462+00:00",
     "source_url": "https://www.powerball.com/"
   },
   {
