@@ -2,6 +2,19 @@
   {
     "game": "DC 4",
     "draw_date": "2026-10-26",
+    "session": "evening",
+    "digits": [
+      5,
+      7,
+      5,
+      3
+    ],
+    "fetched_at": "2026-10-27T00:13:01.476857+00:00",
+    "source_url": "https://dclottery.com/games/dc-4"
+  },
+  {
+    "game": "DC 4",
+    "draw_date": "2026-10-26",
     "session": "day",
     "digits": [
       8,
@@ -9,7 +22,7 @@
       9,
       0
     ],
-    "fetched_at": "2026-10-26T18:42:59.357420+00:00",
+    "fetched_at": "2026-10-27T00:13:01.476857+00:00",
     "source_url": "https://dclottery.com/games/dc-4"
   },
   {
@@ -22,7 +35,7 @@
       4,
       9
     ],
-    "fetched_at": "2026-10-26T18:42:59.357420+00:00",
+    "fetched_at": "2026-10-27T00:13:01.476857+00:00",
     "source_url": "https://dclottery.com/games/dc-4"
   },
   {
