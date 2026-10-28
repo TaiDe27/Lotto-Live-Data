@@ -58,7 +58,7 @@ jobs:
           for p in cash5 match6 treasure-hunt pick2 pick3 pick4 pick5; do
             curl -s "https://purge.jsdelivr.net/gh/${REPO}@main/data/pennsylvania/${p}/latest.json"
           done
-      - name: Auto-retry once on a fresh runner if the scraper failed
+      - name: Auto-retry on a fresh runner if the scraper failed
         # lottery.net's own WAF/Cloudflare occasionally blocks the specific ephemeral IP a GH
         # Actions runner happens to get - confirmed 2026-10-24 via real failed-run logs showing the
         # very FIRST request of the run (not just later ones) already timing out at the TCP connect
@@ -66,18 +66,30 @@ jobs:
         # command in-place (e.g. a step-level retry action) would just hit the same bad IP again -
         # only a brand new job (a brand new runner = a brand new IP) actually has a chance of
         # recovering, which is exactly what manually clicking "re-run" was already doing by hand.
-        # Capped at exactly one automatic retry via `retry_attempt` to avoid a failure storm.
-        # Waits a few minutes before dispatching rather than retrying immediately - firing right
-        # away risks landing on another runner from the same "hot" IP pool/still inside whatever
-        # window triggered the block in the first place; a short wait gives both a better chance to
-        # clear (confirmed 2026-10-24: 3 immediate/near-immediate attempts in a row all hit the same
+        # Waits before dispatching rather than retrying immediately - firing right away risks
+        # landing on another runner from the same "hot" IP pool/still inside whatever window
+        # triggered the block in the first place; a wait gives both a better chance to clear
+        # (confirmed 2026-10-24: 3 immediate/near-immediate attempts in a row all hit the same
         # failure, while unrelated runs minutes apart on WI/TN succeeded fine).
-        if: steps.scrape.outcome == 'failure' && github.event.inputs.retry_attempt != '1'
+        #
+        # Two retries, not one (2026-10-28): real history showed the single retry itself
+        # occasionally also hits the same block (confirmed twice the same day - PA sat stale for
+        # 1h42m and 3h49m respectively, both times because the one retry failed too and nothing
+        # else was scheduled to try again until the next regular trigger). The 2nd retry waits
+        # longer (10min vs the 1st's 3min) on the theory that whatever transient condition causes
+        # back-to-back blocked IPs needs more than 3 minutes to clear if it's still happening a
+        # second time in a row.
+        if: steps.scrape.outcome == 'failure' && github.event.inputs.retry_attempt != '2'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          sleep 180
-          gh workflow run scrape-pa.yml -f retry_attempt=1
+          if [ "${{ github.event.inputs.retry_attempt }}" = "1" ]; then
+            sleep 600
+            gh workflow run scrape-pa.yml -f retry_attempt=2
+          else
+            sleep 180
+            gh workflow run scrape-pa.yml -f retry_attempt=1
+          fi
       - name: Fail job if scraper reported errors
         if: steps.scrape.outcome == 'failure'
         run: |
