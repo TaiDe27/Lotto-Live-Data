@@ -49,7 +49,7 @@ jobs:
             wait_seconds=$(( (RANDOM % 241) + 60 ))
             echo "git push rejected (likely a race with another workflow) - retry ${attempt}/${max_retries} in ${wait_seconds}s"
             sleep "$wait_seconds"
-            git pull --rebase origin main
+            git pull --rebase -X ours origin main
           done
       - name: Purge jsDelivr cache
         if: always()
