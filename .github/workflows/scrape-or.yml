@@ -47,7 +47,12 @@ jobs:
             wait_seconds=$(( (RANDOM % 241) + 60 ))
             echo "git push rejected (likely a race with another workflow) - retry ${attempt}/${max_retries} in ${wait_seconds}s"
             sleep "$wait_seconds"
-            git pull --rebase origin main
+            # -X ours: these are just-scraped data files, not code - on a genuine content
+            # conflict (not just a clean fast-forward), always keep THIS run's freshly-scraped
+            # version rather than leaving the rebase stuck needing manual resolution (confirmed
+            # real 2026-10-28: concurrency narrowed the push race but didn't eliminate it, and an
+            # unresolved conflict here killed the retry loop outright instead of recovering).
+            git pull --rebase -X ours origin main
           done
       - name: Purge jsDelivr cache
         if: always()
