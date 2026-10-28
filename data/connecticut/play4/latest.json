@@ -1,6 +1,20 @@
 [
   {
     "game": "Play 4",
+    "draw_date": "2026-10-27",
+    "session": "evening",
+    "digits": [
+      9,
+      8,
+      4,
+      4
+    ],
+    "wild_ball": 7,
+    "fetched_at": "2026-10-28T08:33:06.781696+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
+  },
+  {
+    "game": "Play 4",
     "draw_date": "2026-10-26",
     "session": "evening",
     "digits": [
@@ -10,7 +24,7 @@
       9
     ],
     "wild_ball": 4,
-    "fetched_at": "2026-10-28T02:42:59.389971+00:00",
+    "fetched_at": "2026-10-28T08:33:06.782126+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -24,7 +38,7 @@
       7
     ],
     "wild_ball": 5,
-    "fetched_at": "2026-10-28T02:42:59.390592+00:00",
+    "fetched_at": "2026-10-28T08:33:06.782480+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -38,7 +52,7 @@
       8
     ],
     "wild_ball": 8,
-    "fetched_at": "2026-10-28T02:42:59.391149+00:00",
+    "fetched_at": "2026-10-28T08:33:06.782847+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -52,7 +66,7 @@
       1
     ],
     "wild_ball": 5,
-    "fetched_at": "2026-10-28T02:42:59.391526+00:00",
+    "fetched_at": "2026-10-28T08:33:06.783189+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -66,7 +80,7 @@
       7
     ],
     "wild_ball": 8,
-    "fetched_at": "2026-10-28T02:42:59.391877+00:00",
+    "fetched_at": "2026-10-28T08:33:06.783535+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -80,7 +94,7 @@
       0
     ],
     "wild_ball": 6,
-    "fetched_at": "2026-10-28T02:42:59.392240+00:00",
+    "fetched_at": "2026-10-28T08:33:06.783894+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -94,7 +108,7 @@
       5
     ],
     "wild_ball": 8,
-    "fetched_at": "2026-10-28T02:42:59.392670+00:00",
+    "fetched_at": "2026-10-28T08:33:06.784239+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -108,7 +122,7 @@
       9
     ],
     "wild_ball": 4,
-    "fetched_at": "2026-10-28T02:42:59.393311+00:00",
+    "fetched_at": "2026-10-28T08:33:06.784578+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
   },
   {
@@ -122,8 +136,148 @@
       5
     ],
     "wild_ball": 7,
-    "fetched_at": "2026-10-28T02:42:59.394091+00:00",
+    "fetched_at": "2026-10-28T08:33:06.784928+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-27",
+    "session": "midday",
+    "digits": [
+      9,
+      7,
+      2,
+      1
+    ],
+    "wild_ball": 4,
+    "fetched_at": "2026-10-28T08:33:08.131239+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-26",
+    "session": "midday",
+    "digits": [
+      9,
+      1,
+      8,
+      5
+    ],
+    "wild_ball": 5,
+    "fetched_at": "2026-10-28T08:33:08.131606+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-25",
+    "session": "midday",
+    "digits": [
+      1,
+      1,
+      2,
+      7
+    ],
+    "wild_ball": 3,
+    "fetched_at": "2026-10-28T08:33:08.131982+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-24",
+    "session": "midday",
+    "digits": [
+      0,
+      1,
+      8,
+      5
+    ],
+    "wild_ball": 4,
+    "fetched_at": "2026-10-28T08:33:08.132320+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-23",
+    "session": "midday",
+    "digits": [
+      7,
+      1,
+      1,
+      0
+    ],
+    "wild_ball": 5,
+    "fetched_at": "2026-10-28T08:33:08.132669+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-22",
+    "session": "midday",
+    "digits": [
+      8,
+      0,
+      6,
+      6
+    ],
+    "wild_ball": 3,
+    "fetched_at": "2026-10-28T08:33:08.133012+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-21",
+    "session": "midday",
+    "digits": [
+      9,
+      6,
+      9,
+      9
+    ],
+    "wild_ball": 5,
+    "fetched_at": "2026-10-28T08:33:08.133337+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-20",
+    "session": "midday",
+    "digits": [
+      7,
+      9,
+      6,
+      6
+    ],
+    "wild_ball": 2,
+    "fetched_at": "2026-10-28T08:33:08.133668+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-19",
+    "session": "midday",
+    "digits": [
+      5,
+      3,
+      1,
+      4
+    ],
+    "wild_ball": 0,
+    "fetched_at": "2026-10-28T08:33:08.133993+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
+    "draw_date": "2026-10-18",
+    "session": "midday",
+    "digits": [
+      2,
+      6,
+      2,
+      1
+    ],
+    "wild_ball": 0,
+    "fetched_at": "2026-10-28T08:33:08.134316+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
   },
   {
     "game": "Play 4",
@@ -138,146 +292,6 @@
     "wild_ball": 4,
     "fetched_at": "2026-10-28T02:42:59.394448+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/play-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-27",
-    "session": "midday",
-    "digits": [
-      9,
-      7,
-      2,
-      1
-    ],
-    "wild_ball": 4,
-    "fetched_at": "2026-10-28T02:42:59.698588+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-26",
-    "session": "midday",
-    "digits": [
-      9,
-      1,
-      8,
-      5
-    ],
-    "wild_ball": 5,
-    "fetched_at": "2026-10-28T02:42:59.698966+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-25",
-    "session": "midday",
-    "digits": [
-      1,
-      1,
-      2,
-      7
-    ],
-    "wild_ball": 3,
-    "fetched_at": "2026-10-28T02:42:59.699304+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-24",
-    "session": "midday",
-    "digits": [
-      0,
-      1,
-      8,
-      5
-    ],
-    "wild_ball": 4,
-    "fetched_at": "2026-10-28T02:42:59.699631+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-23",
-    "session": "midday",
-    "digits": [
-      7,
-      1,
-      1,
-      0
-    ],
-    "wild_ball": 5,
-    "fetched_at": "2026-10-28T02:42:59.699971+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-22",
-    "session": "midday",
-    "digits": [
-      8,
-      0,
-      6,
-      6
-    ],
-    "wild_ball": 3,
-    "fetched_at": "2026-10-28T02:42:59.700303+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-21",
-    "session": "midday",
-    "digits": [
-      9,
-      6,
-      9,
-      9
-    ],
-    "wild_ball": 5,
-    "fetched_at": "2026-10-28T02:42:59.700623+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-20",
-    "session": "midday",
-    "digits": [
-      7,
-      9,
-      6,
-      6
-    ],
-    "wild_ball": 2,
-    "fetched_at": "2026-10-28T02:42:59.700957+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-19",
-    "session": "midday",
-    "digits": [
-      5,
-      3,
-      1,
-      4
-    ],
-    "wild_ball": 0,
-    "fetched_at": "2026-10-28T02:42:59.701286+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
-  },
-  {
-    "game": "Play 4",
-    "draw_date": "2026-10-18",
-    "session": "midday",
-    "digits": [
-      2,
-      6,
-      2,
-      1
-    ],
-    "wild_ball": 0,
-    "fetched_at": "2026-10-28T02:42:59.701612+00:00",
-    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
   },
   {
     "game": "Play 4",
