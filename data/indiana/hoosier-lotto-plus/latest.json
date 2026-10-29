@@ -1,6 +1,21 @@
 [
   {
     "game": "Hoosier Lotto +PLUS",
+    "draw_date": "2026-10-28",
+    "numbers": [
+      6,
+      15,
+      18,
+      26,
+      30,
+      40
+    ],
+    "jackpot_amount": null,
+    "fetched_at": "2026-10-29T03:31:00.293203+00:00",
+    "source_url": "https://www.hoosierlottery.com/games/draw/hoosier-lotto/"
+  },
+  {
+    "game": "Hoosier Lotto +PLUS",
     "draw_date": "2026-10-24",
     "numbers": [
       1,
