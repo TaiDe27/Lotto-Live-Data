@@ -1,5 +1,28 @@
 [
   {
+    "draw_date": "Wed, Oct 28, 2026",
+    "red_balls": [
+      9,
+      22
+    ],
+    "white_balls": [
+      1,
+      7
+    ],
+    "next_drawing": {
+      "next_draw_date": "Thu, Oct 29, 2026",
+      "top_prize": "$22,000"
+    },
+    "winners_by_tier": {
+      "Top Prize": {
+        "prize": "$22,000",
+        "states": []
+      }
+    },
+    "fetched_at": "2026-10-29T02:50:56.944227+00:00",
+    "source_url": "https://www.powerball.com/2by2"
+  },
+  {
     "draw_date": "Tue, Oct 27, 2026",
     "red_balls": [
       1,
