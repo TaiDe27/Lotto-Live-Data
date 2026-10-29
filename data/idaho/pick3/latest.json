@@ -2,13 +2,25 @@
   {
     "game": "Pick 3",
     "draw_date": "2026-10-28",
+    "session": "evening",
+    "digits": [
+      0,
+      4,
+      9
+    ],
+    "fetched_at": "2026-10-29T02:20:01.346325+00:00",
+    "source_url": "https://www.idaholottery.com/games/draw/pick-3"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-10-28",
     "session": "midday",
     "digits": [
       9,
       5,
       0
     ],
-    "fetched_at": "2026-10-28T20:49:57.494539+00:00",
+    "fetched_at": "2026-10-29T02:20:01.346325+00:00",
     "source_url": "https://www.idaholottery.com/games/draw/pick-3"
   },
   {
