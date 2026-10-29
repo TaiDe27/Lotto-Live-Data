@@ -1,15 +1,15 @@
 [
   {
-    "draw_date": "2026-10-27",
+    "draw_date": "2026-10-28",
     "session": "night",
     "digits": [
-      "6",
-      "1",
-      "2"
+      "0",
+      "8",
+      "3"
     ],
-    "wild_ball": 6,
-    "drawing_number": 8625,
-    "fetched_at": "2026-10-29T01:41:04.893256+00:00",
+    "wild_ball": 4,
+    "drawing_number": 8626,
+    "fetched_at": "2026-10-29T01:51:11.433052+00:00",
     "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
   },
   {
@@ -22,6 +22,19 @@
     ],
     "wild_ball": 2,
     "drawing_number": 4101,
+    "fetched_at": "2026-10-29T01:51:11.433052+00:00",
+    "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
+  },
+  {
+    "draw_date": "2026-10-27",
+    "session": "night",
+    "digits": [
+      "6",
+      "1",
+      "2"
+    ],
+    "wild_ball": 6,
+    "drawing_number": 8625,
     "fetched_at": "2026-10-29T01:41:04.893256+00:00",
     "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
   },
