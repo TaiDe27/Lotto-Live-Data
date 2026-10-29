@@ -1,6 +1,39 @@
 [
   {
     "game": "Powerball",
+    "draw_date": "Wed, Oct 28, 2026",
+    "white_balls": [
+      11,
+      13,
+      16,
+      47,
+      60
+    ],
+    "red_ball": 13,
+    "power_play": 2,
+    "next_drawing": {
+      "next_draw_date": "Wed, Oct 28, 2026",
+      "estimated_jackpot": "716 Million",
+      "cash_value": "307.2 Million"
+    },
+    "winners_by_tier": {
+      "Match 5 + Power Play": {
+        "prize": "2 Million",
+        "states": []
+      },
+      "Match 5": {
+        "prize": "1 Million",
+        "states": [
+          "FL",
+          "GA"
+        ]
+      }
+    },
+    "fetched_at": "2026-10-29T03:19:56.374385+00:00",
+    "source_url": "https://www.powerball.com/"
+  },
+  {
+    "game": "Powerball",
     "draw_date": "Mon, Oct 26, 2026",
     "white_balls": [
       18,
