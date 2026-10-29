@@ -1,6 +1,32 @@
 [
   {
     "game": "Daily 4",
+    "draw_date": "2026-10-29",
+    "session": "midday",
+    "digits": [
+      3,
+      5,
+      7,
+      5
+    ],
+    "fetched_at": "2026-10-29T00:03:05.071189+00:00",
+    "source_url": "https://www.michiganlottery.com/api"
+  },
+  {
+    "game": "Daily 4",
+    "draw_date": "2026-10-29",
+    "session": "evening",
+    "digits": [
+      9,
+      3,
+      7,
+      9
+    ],
+    "fetched_at": "2026-10-29T00:03:05.071189+00:00",
+    "source_url": "https://www.michiganlottery.com/api"
+  },
+  {
+    "game": "Daily 4",
     "draw_date": "2026-10-28",
     "session": "midday",
     "digits": [
