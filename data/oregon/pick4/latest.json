@@ -1,6 +1,19 @@
 [
   {
     "draw_date": "2026-10-28",
+    "session": "7pm",
+    "digits": [
+      "9",
+      "2",
+      "5",
+      "3"
+    ],
+    "draw_number": 36761,
+    "fetched_at": "2026-10-29T02:23:12.162181+00:00",
+    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
+  },
+  {
+    "draw_date": "2026-10-28",
     "session": "4pm",
     "digits": [
       "4",
