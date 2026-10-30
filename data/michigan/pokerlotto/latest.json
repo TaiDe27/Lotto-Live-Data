@@ -1,6 +1,19 @@
 [
   {
     "game": "Poker Lotto",
+    "draw_date": "2026-10-30",
+    "cards": [
+      "3C",
+      "10S",
+      "QC",
+      "4H",
+      "AS"
+    ],
+    "fetched_at": "2026-10-30T00:01:58.424733+00:00",
+    "source_url": "https://www.michiganlottery.com/api"
+  },
+  {
+    "game": "Poker Lotto",
     "draw_date": "2026-10-29",
     "cards": [
       "3C",
