@@ -10,7 +10,21 @@
     ],
     "wild_ball": 7,
     "drawing_number": 6891,
-    "fetched_at": "2026-10-30T18:21:13.262431+00:00",
+    "fetched_at": "2026-10-30T18:41:02.219024+00:00",
+    "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
+  },
+  {
+    "draw_date": "2026-10-30",
+    "session": "day",
+    "digits": [
+      "5",
+      "2",
+      "3",
+      "5"
+    ],
+    "wild_ball": 9,
+    "drawing_number": 4103,
+    "fetched_at": "2026-10-30T18:41:02.219024+00:00",
     "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
   },
   {
