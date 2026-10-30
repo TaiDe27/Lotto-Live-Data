@@ -1,13 +1,24 @@
 [
   {
     "draw_date": "2026-10-30",
+    "session": "evening",
+    "digits": [
+      "1",
+      "2"
+    ],
+    "wild_ball": "5",
+    "fetched_at": "2026-10-30T23:20:10.494741+00:00",
+    "source_url": "https://www.lottery.net/pennsylvania/pick-2/numbers"
+  },
+  {
+    "draw_date": "2026-10-30",
     "session": "day",
     "digits": [
       "1",
       "5"
     ],
     "wild_ball": "0",
-    "fetched_at": "2026-10-30T19:41:15.841030+00:00",
+    "fetched_at": "2026-10-30T23:20:10.494638+00:00",
     "source_url": "https://www.lottery.net/pennsylvania/pick-2/numbers"
   },
   {
