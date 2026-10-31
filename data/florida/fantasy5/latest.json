@@ -1,6 +1,43 @@
 [
   {
     "game": "FANTASY 5",
+    "draw_date": "2026-10-31",
+    "numbers": [
+      3,
+      9,
+      13,
+      22,
+      30
+    ],
+    "fetched_at": "2026-10-31T17:45:59.418090+00:00",
+    "source_url": "https://floridalottery.com/",
+    "session": "midday",
+    "tiers": [
+      {
+        "PrizeLevel": "5-of-5",
+        "PrizeAmount": "60942.28",
+        "Winners": 1
+      },
+      {
+        "PrizeLevel": "4-of-5",
+        "PrizeAmount": "146.5",
+        "Winners": 67
+      },
+      {
+        "PrizeLevel": "3-of-5",
+        "PrizeAmount": "9",
+        "Winners": 2935
+      },
+      {
+        "PrizeLevel": "2-of-5",
+        "PrizeAmount": "Free Ticket",
+        "Winners": 28256
+      }
+    ],
+    "jackpot_amount": "60942.28"
+  },
+  {
+    "game": "FANTASY 5",
     "draw_date": "2026-10-30",
     "numbers": [
       4,
@@ -9,7 +46,7 @@
       25,
       26
     ],
-    "fetched_at": "2026-10-31T17:25:58.036738+00:00",
+    "fetched_at": "2026-10-31T17:45:59.418090+00:00",
     "source_url": "https://floridalottery.com/",
     "session": "evening",
     "tiers": [
