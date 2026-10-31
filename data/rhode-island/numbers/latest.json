@@ -1,5 +1,18 @@
 [
   {
+    "draw_date": "2026-10-31",
+    "session": "midday",
+    "digits": [
+      "7",
+      "7",
+      "3",
+      "0"
+    ],
+    "draw_id": "21729",
+    "fetched_at": "2026-10-31T17:51:11.358425+00:00",
+    "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
+  },
+  {
     "draw_date": "2026-10-30",
     "session": "evening",
     "digits": [
@@ -9,7 +22,7 @@
       "3"
     ],
     "draw_id": "21728",
-    "fetched_at": "2026-10-31T06:10:02.664247+00:00",
+    "fetched_at": "2026-10-31T17:51:11.358425+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
@@ -22,7 +35,7 @@
       "9"
     ],
     "draw_id": "21727",
-    "fetched_at": "2026-10-31T06:10:02.664247+00:00",
+    "fetched_at": "2026-10-31T17:51:11.358425+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
@@ -35,7 +48,7 @@
       "4"
     ],
     "draw_id": "21726",
-    "fetched_at": "2026-10-31T06:10:02.664247+00:00",
+    "fetched_at": "2026-10-31T17:51:11.358425+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
@@ -48,7 +61,7 @@
       "9"
     ],
     "draw_id": "21725",
-    "fetched_at": "2026-10-31T06:10:02.664247+00:00",
+    "fetched_at": "2026-10-31T17:51:11.358425+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
   },
   {
