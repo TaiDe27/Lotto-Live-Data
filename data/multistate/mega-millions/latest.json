@@ -1,5 +1,27 @@
 [
   {
+    "draw_date": "2026-10-30T00:00:00",
+    "white_balls": [
+      5,
+      10,
+      38,
+      49,
+      68
+    ],
+    "mega_ball": 17,
+    "megaplier": null,
+    "current_prize_pool": 463000000.0,
+    "current_cash_value": 194900000.0,
+    "jackpot_winners": 0,
+    "next_draw_date": "2026-11-03T23:00:00",
+    "next_prize_pool": 482000000.0,
+    "next_cash_value": 203600000.0,
+    "match5_winner_text": "Match 5 + 0:",
+    "match5_locations": [],
+    "fetched_at": "2026-10-31T03:20:55.780207+00:00",
+    "source_url": "https://www.megamillions.com/"
+  },
+  {
     "draw_date": "2026-10-27T00:00:00",
     "white_balls": [
       14,
