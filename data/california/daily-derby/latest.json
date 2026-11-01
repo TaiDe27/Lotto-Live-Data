@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-10-31",
+    "draw_number": "10512",
+    "first_place": "01 - Gold Rush",
+    "second_place": "05 - California Classic",
+    "third_place": "04 - Big Ben",
+    "derby_positions": [
+      1,
+      5,
+      4
+    ],
+    "race_time": "1:48.29",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$169,893"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$77"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 2,
+        "prize": "$59"
+      },
+      {
+        "label": "Race Time",
+        "winners": 36,
+        "prize": "$56"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 22,
+        "prize": "$697"
+      },
+      {
+        "label": "Exacta",
+        "winners": 313,
+        "prize": "$21"
+      },
+      {
+        "label": "Win",
+        "winners": 3286,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$169,893",
+    "next_draw_date": "2026-11-01",
+    "next_jackpot_estimate": "$170,000",
+    "fetched_at": "2026-11-01T01:56:58.833601+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-10-30",
     "draw_number": "10511",
     "first_place": "04 - Big Ben",
