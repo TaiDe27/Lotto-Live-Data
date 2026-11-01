@@ -12,21 +12,26 @@
     "red_ball": 20,
     "power_play": 3,
     "next_drawing": {
-      "next_draw_date": "Sat, Oct 31, 2026",
-      "estimated_jackpot": "760 Million",
-      "cash_value": "325.7 Million"
+      "next_draw_date": "Mon, Nov 2, 2026",
+      "estimated_jackpot": "793 Million",
+      "cash_value": "339.9 Million"
     },
     "winners_by_tier": {
       "Match 5 + Power Play": {
         "prize": "2 Million",
-        "states": []
+        "states": [
+          "NC"
+        ]
       },
       "Match 5": {
         "prize": "1 Million",
-        "states": []
+        "states": [
+          "GA",
+          "UK"
+        ]
       }
     },
-    "fetched_at": "2026-11-01T03:40:55.503377+00:00",
+    "fetched_at": "2026-11-01T10:39:56.015683+00:00",
     "source_url": "https://www.powerball.com/"
   },
   {
