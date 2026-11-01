@@ -5,7 +5,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-01T10:57:56.878325+00:00",
+    "fetched_at": "2026-11-01T18:25:57.339224+00:00",
     "source_url": "https://floridalottery.com/",
     "session": "mor"
   },
@@ -15,7 +15,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-01T10:57:56.878325+00:00",
+    "fetched_at": "2026-11-01T18:25:57.339224+00:00",
     "source_url": "https://floridalottery.com/",
     "session": "mat"
   },
@@ -25,7 +25,7 @@
     "numbers": [
       5
     ],
-    "fetched_at": "2026-11-01T10:57:56.878325+00:00",
+    "fetched_at": "2026-11-01T18:25:57.339224+00:00",
     "source_url": "https://floridalottery.com/",
     "session": "aft"
   },
@@ -35,7 +35,7 @@
     "numbers": [
       7
     ],
-    "fetched_at": "2026-11-01T10:57:56.878325+00:00",
+    "fetched_at": "2026-11-01T18:25:57.339224+00:00",
     "source_url": "https://floridalottery.com/",
     "session": "eve"
   },
@@ -45,9 +45,29 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-01T10:57:56.878325+00:00",
+    "fetched_at": "2026-11-01T18:25:57.339224+00:00",
     "source_url": "https://floridalottery.com/",
     "session": "lat"
+  },
+  {
+    "game": "CASH POP",
+    "draw_date": "2026-11-01",
+    "numbers": [
+      4
+    ],
+    "fetched_at": "2026-11-01T18:25:57.339224+00:00",
+    "source_url": "https://floridalottery.com/",
+    "session": "mor"
+  },
+  {
+    "game": "CASH POP",
+    "draw_date": "2026-11-01",
+    "numbers": [
+      11
+    ],
+    "fetched_at": "2026-11-01T18:25:57.339224+00:00",
+    "source_url": "https://floridalottery.com/",
+    "session": "mat"
   },
   {
     "game": "CASH POP",
@@ -978,25 +998,5 @@
     "fetched_at": "2026-10-14T03:37:57.471090+00:00",
     "source_url": "https://floridalottery.com/",
     "session": "aft"
-  },
-  {
-    "game": "CASH POP",
-    "draw_date": "2026-10-12",
-    "numbers": [
-      7
-    ],
-    "fetched_at": "2026-10-14T03:37:57.471090+00:00",
-    "source_url": "https://floridalottery.com/",
-    "session": "eve"
-  },
-  {
-    "game": "CASH POP",
-    "draw_date": "2026-10-12",
-    "numbers": [
-      12
-    ],
-    "fetched_at": "2026-10-14T03:37:57.471090+00:00",
-    "source_url": "https://floridalottery.com/",
-    "session": "lat"
   }
 ]
