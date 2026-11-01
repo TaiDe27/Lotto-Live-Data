@@ -1,6 +1,19 @@
 [
   {
     "game": "Poker Lotto",
+    "draw_date": "2026-11-01",
+    "cards": [
+      "9C",
+      "AC",
+      "AS",
+      "JC",
+      "KC"
+    ],
+    "fetched_at": "2026-11-01T00:03:03.992011+00:00",
+    "source_url": "https://www.michiganlottery.com/api"
+  },
+  {
+    "game": "Poker Lotto",
     "draw_date": "2026-10-31",
     "cards": [
       "9C",
