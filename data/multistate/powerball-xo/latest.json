@@ -12,8 +12,8 @@
       "WAS"
     ],
     "next_drawing": {
-      "next_draw_date": "Sun, Nov 1, 2026",
-      "estimated_jackpot": "2.00 Million"
+      "next_draw_date": "Sun, Nov 8, 2026",
+      "estimated_jackpot": "2.15 Million"
     },
     "winners_by_tier": {
       "Match 8 of 8 Teams": {
@@ -22,11 +22,17 @@
       "Match 7 of 8 Teams": {
         "states": [
           "AZ",
+          "ME",
+          "NC",
+          "NE",
+          "NJ",
+          "PA",
+          "RI",
           "TN"
         ]
       }
     },
-    "fetched_at": "2026-11-02T03:50:59.993431+00:00",
+    "fetched_at": "2026-11-02T09:40:57.397148+00:00",
     "source_url": "https://www.powerball.com/xo"
   },
   {
