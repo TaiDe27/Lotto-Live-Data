@@ -1,6 +1,24 @@
 [
   {
     "game": "Triple Twist",
+    "draw_date": "2026-11-01",
+    "numbers": [
+      11,
+      21,
+      26,
+      28,
+      41,
+      42
+    ],
+    "jackpot_amount": 670000,
+    "next_draw_date": "2026-11-02",
+    "next_jackpot_amount": 679000,
+    "winners_by_division": {},
+    "fetched_at": "2026-11-02T03:20:23.899151+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/15/drawings"
+  },
+  {
+    "game": "Triple Twist",
     "draw_date": "2026-10-31",
     "numbers": [
       14,
