@@ -3,13 +3,27 @@
     "game": "mass_cash",
     "draw_date": "2026-11-01",
     "numbers": [
+      9,
+      10,
+      18,
+      25,
+      30
+    ],
+    "fetched_at": "2026-11-02T02:21:00.489287+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results",
+    "session": "evening"
+  },
+  {
+    "game": "mass_cash",
+    "draw_date": "2026-11-01",
+    "numbers": [
       10,
       20,
       23,
       30,
       31
     ],
-    "fetched_at": "2026-11-02T01:46:02.115750+00:00",
+    "fetched_at": "2026-11-02T02:21:00.489292+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
     "session": "midday"
   },
