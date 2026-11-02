@@ -1,11 +1,20 @@
 [
   {
     "draw_date": "2026-11-01",
+    "session": "after-hours",
+    "numbers": [
+      2
+    ],
+    "fetched_at": "2026-11-02T05:20:17.186831+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
+    "draw_date": "2026-11-01",
     "session": "prime-time",
     "numbers": [
       12
     ],
-    "fetched_at": "2026-11-02T04:53:46.325834+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186852+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -14,7 +23,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.325858+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186859+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -23,7 +32,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.325866+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186865+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -32,7 +41,7 @@
     "numbers": [
       6
     ],
-    "fetched_at": "2026-11-02T04:53:46.325874+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186871+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -41,7 +50,7 @@
     "numbers": [
       5
     ],
-    "fetched_at": "2026-11-02T04:53:46.325879+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186876+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -50,7 +59,7 @@
     "numbers": [
       6
     ],
-    "fetched_at": "2026-11-02T04:53:46.325885+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186881+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -59,7 +68,7 @@
     "numbers": [
       7
     ],
-    "fetched_at": "2026-11-02T04:53:46.325890+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186911+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -68,7 +77,7 @@
     "numbers": [
       5
     ],
-    "fetched_at": "2026-11-02T04:53:46.325894+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186916+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -77,7 +86,7 @@
     "numbers": [
       8
     ],
-    "fetched_at": "2026-11-02T04:53:46.325899+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186921+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -86,7 +95,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.325904+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186926+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -95,7 +104,7 @@
     "numbers": [
       6
     ],
-    "fetched_at": "2026-11-02T04:53:46.325908+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186931+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -104,7 +113,7 @@
     "numbers": [
       5
     ],
-    "fetched_at": "2026-11-02T04:53:46.325913+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186936+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -113,7 +122,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.325918+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186941+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -122,7 +131,7 @@
     "numbers": [
       13
     ],
-    "fetched_at": "2026-11-02T04:53:46.325922+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186945+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -131,7 +140,7 @@
     "numbers": [
       12
     ],
-    "fetched_at": "2026-11-02T04:53:46.325927+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186950+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -140,7 +149,7 @@
     "numbers": [
       13
     ],
-    "fetched_at": "2026-11-02T04:53:46.325932+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186954+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -149,7 +158,7 @@
     "numbers": [
       1
     ],
-    "fetched_at": "2026-11-02T04:53:46.325936+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186959+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -158,7 +167,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.325941+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186964+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -167,7 +176,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.325945+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186969+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -176,7 +185,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.325950+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186973+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -185,7 +194,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.325955+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186978+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -194,7 +203,7 @@
     "numbers": [
       3
     ],
-    "fetched_at": "2026-11-02T04:53:46.325959+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186982+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -203,7 +212,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.325963+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186987+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -212,7 +221,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.325968+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186991+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -221,7 +230,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.325972+00:00",
+    "fetched_at": "2026-11-02T05:20:17.186996+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -230,7 +239,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.325977+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187000+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -239,7 +248,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.325982+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187008+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -248,7 +257,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.325986+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187014+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -257,7 +266,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.325991+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187019+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -266,7 +275,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.325995+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187023+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -275,7 +284,7 @@
     "numbers": [
       7
     ],
-    "fetched_at": "2026-11-02T04:53:46.326000+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187027+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -284,7 +293,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.326004+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187032+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -293,7 +302,7 @@
     "numbers": [
       12
     ],
-    "fetched_at": "2026-11-02T04:53:46.326009+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187037+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -302,7 +311,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.326013+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187041+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -311,7 +320,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.326018+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187045+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -320,7 +329,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326022+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187050+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -329,7 +338,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.326026+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187054+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -338,7 +347,7 @@
     "numbers": [
       3
     ],
-    "fetched_at": "2026-11-02T04:53:46.326031+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187059+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -347,7 +356,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.326036+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187064+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -356,7 +365,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326040+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187068+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -365,7 +374,7 @@
     "numbers": [
       1
     ],
-    "fetched_at": "2026-11-02T04:53:46.326044+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187073+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -374,7 +383,7 @@
     "numbers": [
       1
     ],
-    "fetched_at": "2026-11-02T04:53:46.326049+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187078+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -383,7 +392,7 @@
     "numbers": [
       15
     ],
-    "fetched_at": "2026-11-02T04:53:46.326053+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187082+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -392,7 +401,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326058+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187087+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -401,7 +410,7 @@
     "numbers": [
       8
     ],
-    "fetched_at": "2026-11-02T04:53:46.326063+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187091+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -410,7 +419,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326068+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187096+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -419,7 +428,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326072+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187100+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -428,7 +437,7 @@
     "numbers": [
       1
     ],
-    "fetched_at": "2026-11-02T04:53:46.326077+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187105+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -437,7 +446,7 @@
     "numbers": [
       6
     ],
-    "fetched_at": "2026-11-02T04:53:46.326082+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187110+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -446,7 +455,7 @@
     "numbers": [
       8
     ],
-    "fetched_at": "2026-11-02T04:53:46.326087+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187114+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -455,7 +464,7 @@
     "numbers": [
       1
     ],
-    "fetched_at": "2026-11-02T04:53:46.326091+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187119+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -464,7 +473,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.326096+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187128+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -473,7 +482,7 @@
     "numbers": [
       7
     ],
-    "fetched_at": "2026-11-02T04:53:46.326101+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187133+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -482,7 +491,7 @@
     "numbers": [
       6
     ],
-    "fetched_at": "2026-11-02T04:53:46.326144+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187137+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -491,7 +500,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326151+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187142+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -500,7 +509,7 @@
     "numbers": [
       13
     ],
-    "fetched_at": "2026-11-02T04:53:46.326157+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187146+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -509,7 +518,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.326166+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187151+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -518,7 +527,7 @@
     "numbers": [
       5
     ],
-    "fetched_at": "2026-11-02T04:53:46.326171+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187156+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -527,7 +536,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.326176+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187160+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -536,7 +545,7 @@
     "numbers": [
       8
     ],
-    "fetched_at": "2026-11-02T04:53:46.326180+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187165+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -545,7 +554,7 @@
     "numbers": [
       15
     ],
-    "fetched_at": "2026-11-02T04:53:46.326185+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187169+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -554,7 +563,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326190+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187174+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -563,7 +572,7 @@
     "numbers": [
       1
     ],
-    "fetched_at": "2026-11-02T04:53:46.326195+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187178+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -572,7 +581,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.326199+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187183+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -581,7 +590,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326204+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187187+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -590,7 +599,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.326209+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187192+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -599,7 +608,7 @@
     "numbers": [
       12
     ],
-    "fetched_at": "2026-11-02T04:53:46.326213+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187196+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -608,7 +617,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326218+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187200+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -617,7 +626,7 @@
     "numbers": [
       12
     ],
-    "fetched_at": "2026-11-02T04:53:46.326223+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187205+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -626,7 +635,7 @@
     "numbers": [
       13
     ],
-    "fetched_at": "2026-11-02T04:53:46.326245+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187209+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -635,7 +644,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.326251+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187214+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -644,7 +653,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.326256+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187218+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -653,7 +662,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326260+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187223+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -662,7 +671,7 @@
     "numbers": [
       7
     ],
-    "fetched_at": "2026-11-02T04:53:46.326265+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187228+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -671,7 +680,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.326270+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187233+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -680,7 +689,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.326274+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187237+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -689,7 +698,7 @@
     "numbers": [
       3
     ],
-    "fetched_at": "2026-11-02T04:53:46.326279+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187243+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -698,7 +707,7 @@
     "numbers": [
       3
     ],
-    "fetched_at": "2026-11-02T04:53:46.326284+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187248+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -707,7 +716,7 @@
     "numbers": [
       7
     ],
-    "fetched_at": "2026-11-02T04:53:46.326288+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187256+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -716,7 +725,7 @@
     "numbers": [
       8
     ],
-    "fetched_at": "2026-11-02T04:53:46.326293+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187262+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -725,7 +734,7 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-02T04:53:46.326298+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187266+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -734,7 +743,7 @@
     "numbers": [
       3
     ],
-    "fetched_at": "2026-11-02T04:53:46.326303+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187271+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -743,7 +752,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326307+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187276+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -752,7 +761,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.326312+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187280+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -761,7 +770,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326316+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187285+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -770,7 +779,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.326321+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187289+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -779,7 +788,7 @@
     "numbers": [
       11
     ],
-    "fetched_at": "2026-11-02T04:53:46.326326+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187294+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -788,7 +797,7 @@
     "numbers": [
       12
     ],
-    "fetched_at": "2026-11-02T04:53:46.326330+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187298+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -797,7 +806,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.326335+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187303+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -806,7 +815,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326340+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187307+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -815,7 +824,7 @@
     "numbers": [
       3
     ],
-    "fetched_at": "2026-11-02T04:53:46.326345+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187312+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -824,7 +833,7 @@
     "numbers": [
       8
     ],
-    "fetched_at": "2026-11-02T04:53:46.326350+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187317+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -833,7 +842,7 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-02T04:53:46.326354+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187321+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -842,7 +851,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326359+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187326+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -851,7 +860,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326363+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187331+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -860,7 +869,7 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-02T04:53:46.326368+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187336+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -869,7 +878,7 @@
     "numbers": [
       9
     ],
-    "fetched_at": "2026-11-02T04:53:46.326372+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187340+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -878,7 +887,7 @@
     "numbers": [
       7
     ],
-    "fetched_at": "2026-11-02T04:53:46.326377+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187345+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   },
   {
@@ -887,16 +896,7 @@
     "numbers": [
       2
     ],
-    "fetched_at": "2026-11-02T04:53:46.326381+00:00",
-    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
-  },
-  {
-    "draw_date": "2026-10-12",
-    "session": "after-hours",
-    "numbers": [
-      1
-    ],
-    "fetched_at": "2026-11-02T04:53:46.326386+00:00",
+    "fetched_at": "2026-11-02T05:20:17.187350+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
   }
 ]
