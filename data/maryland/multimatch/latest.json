@@ -1,6 +1,21 @@
 [
   {
     "game": "Multi-Match",
+    "draw_date": "2026-11-02",
+    "numbers": [
+      2,
+      12,
+      19,
+      25,
+      35,
+      39
+    ],
+    "jackpot_amount": null,
+    "fetched_at": "2026-11-03T01:18:59.309395+00:00",
+    "source_url": "https://www.mdlottery.com/games/multi-match/"
+  },
+  {
+    "game": "Multi-Match",
     "draw_date": "2026-10-29",
     "numbers": [
       7,
