@@ -2,8 +2,15 @@
   {
     "game": "megabucks",
     "draw_date": "2026-11-02",
-    "numbers": [],
-    "fetched_at": "2026-11-03T02:26:58.370023+00:00",
+    "numbers": [
+      8,
+      9,
+      10,
+      11,
+      32,
+      39
+    ],
+    "fetched_at": "2026-11-03T02:32:05.769624+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results"
   },
   {
