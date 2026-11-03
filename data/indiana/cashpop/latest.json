@@ -1,6 +1,16 @@
 [
   {
     "game": "Cash POP",
+    "draw_date": "2026-11-03",
+    "session": "morning",
+    "numbers": [
+      4
+    ],
+    "fetched_at": "2026-11-03T14:50:57.171116+00:00",
+    "source_url": "https://www.hoosierlottery.com/games/draw/cash-pop/"
+  },
+  {
+    "game": "Cash POP",
     "draw_date": "2026-11-02",
     "session": "morning",
     "numbers": [
@@ -987,16 +997,6 @@
       9
     ],
     "fetched_at": "2026-10-14T03:55:04.964117+00:00",
-    "source_url": "https://www.hoosierlottery.com/games/draw/cash-pop/"
-  },
-  {
-    "game": "Cash POP",
-    "draw_date": "2026-07-25",
-    "session": "morning",
-    "numbers": [
-      1
-    ],
-    "fetched_at": "2026-10-12T10:38:11.233503+00:00",
     "source_url": "https://www.hoosierlottery.com/games/draw/cash-pop/"
   }
 ]
