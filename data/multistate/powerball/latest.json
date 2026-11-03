@@ -1,6 +1,41 @@
 [
   {
     "game": "Powerball",
+    "draw_date": "Mon, Nov 2, 2026",
+    "white_balls": [
+      7,
+      23,
+      29,
+      64,
+      66
+    ],
+    "red_ball": 23,
+    "power_play": 4,
+    "next_drawing": {
+      "next_draw_date": "Mon, Nov 2, 2026",
+      "estimated_jackpot": "793 Million",
+      "cash_value": "339.9 Million"
+    },
+    "winners_by_tier": {
+      "Match 5 + Power Play": {
+        "prize": "2 Million",
+        "states": [
+          "NC"
+        ]
+      },
+      "Match 5": {
+        "prize": "1 Million",
+        "states": [
+          "GA",
+          "UK"
+        ]
+      }
+    },
+    "fetched_at": "2026-11-03T04:20:14.400314+00:00",
+    "source_url": "https://www.powerball.com/"
+  },
+  {
+    "game": "Powerball",
     "draw_date": "Sat, Oct 31, 2026",
     "white_balls": [
       2,
