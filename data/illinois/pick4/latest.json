@@ -1,6 +1,20 @@
 [
   {
     "game": "Pick 4",
+    "draw_date": "2026-11-02",
+    "session": "evening",
+    "digits": [
+      2,
+      8,
+      3,
+      2
+    ],
+    "fireball": 7,
+    "fetched_at": "2026-11-03T03:49:05.264398+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
+  },
+  {
+    "game": "Pick 4",
     "draw_date": "2026-11-01",
     "session": "evening",
     "digits": [
@@ -10,7 +24,7 @@
       3
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T01:25:03.056524+00:00",
+    "fetched_at": "2026-11-03T03:49:05.264998+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -24,7 +38,7 @@
       2
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T01:25:03.056846+00:00",
+    "fetched_at": "2026-11-03T03:49:05.265536+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -38,7 +52,7 @@
       8
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T01:25:03.057102+00:00",
+    "fetched_at": "2026-11-03T03:49:05.266057+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -52,7 +66,7 @@
       3
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T01:25:03.057359+00:00",
+    "fetched_at": "2026-11-03T03:49:05.266591+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -66,7 +80,7 @@
       0
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T01:25:03.057657+00:00",
+    "fetched_at": "2026-11-03T03:49:05.267097+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -80,7 +94,7 @@
       1
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T01:25:03.057921+00:00",
+    "fetched_at": "2026-11-03T03:49:05.267618+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -94,7 +108,7 @@
       5
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T01:25:03.058173+00:00",
+    "fetched_at": "2026-11-03T03:49:05.268122+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -108,7 +122,7 @@
       1
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T01:25:03.058421+00:00",
+    "fetched_at": "2026-11-03T03:49:05.268648+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
   },
   {
@@ -122,8 +136,148 @@
       9
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T01:25:03.058693+00:00",
+    "fetched_at": "2026-11-03T03:49:05.269154+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-02",
+    "session": "midday",
+    "digits": [
+      4,
+      9,
+      8,
+      9
+    ],
+    "fireball": 8,
+    "fetched_at": "2026-11-03T03:49:05.527018+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-01",
+    "session": "midday",
+    "digits": [
+      7,
+      2,
+      0,
+      0
+    ],
+    "fireball": 8,
+    "fetched_at": "2026-11-03T03:49:05.527592+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-31",
+    "session": "midday",
+    "digits": [
+      0,
+      1,
+      5,
+      2
+    ],
+    "fireball": 3,
+    "fetched_at": "2026-11-03T03:49:05.528099+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-30",
+    "session": "midday",
+    "digits": [
+      2,
+      2,
+      5,
+      4
+    ],
+    "fireball": 6,
+    "fetched_at": "2026-11-03T03:49:05.528616+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-29",
+    "session": "midday",
+    "digits": [
+      5,
+      1,
+      4,
+      5
+    ],
+    "fireball": 3,
+    "fetched_at": "2026-11-03T03:49:05.529111+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-28",
+    "session": "midday",
+    "digits": [
+      1,
+      0,
+      4,
+      3
+    ],
+    "fireball": 1,
+    "fetched_at": "2026-11-03T03:49:05.529638+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-27",
+    "session": "midday",
+    "digits": [
+      4,
+      6,
+      3,
+      1
+    ],
+    "fireball": 8,
+    "fetched_at": "2026-11-03T03:49:05.530151+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-26",
+    "session": "midday",
+    "digits": [
+      6,
+      8,
+      3,
+      3
+    ],
+    "fireball": 2,
+    "fetched_at": "2026-11-03T03:49:05.530661+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-25",
+    "session": "midday",
+    "digits": [
+      6,
+      3,
+      3,
+      5
+    ],
+    "fireball": 1,
+    "fetched_at": "2026-11-03T03:49:05.531151+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-24",
+    "session": "midday",
+    "digits": [
+      4,
+      9,
+      4,
+      5
+    ],
+    "fireball": 0,
+    "fetched_at": "2026-11-03T03:49:05.531662+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
   },
   {
     "game": "Pick 4",
@@ -138,146 +292,6 @@
     "fireball": 7,
     "fetched_at": "2026-11-03T01:25:03.058941+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/daily-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-11-02",
-    "session": "midday",
-    "digits": [
-      4,
-      9,
-      8,
-      9
-    ],
-    "fireball": 8,
-    "fetched_at": "2026-11-03T01:25:03.537753+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-11-01",
-    "session": "midday",
-    "digits": [
-      7,
-      2,
-      0,
-      0
-    ],
-    "fireball": 8,
-    "fetched_at": "2026-11-03T01:25:03.538015+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-31",
-    "session": "midday",
-    "digits": [
-      0,
-      1,
-      5,
-      2
-    ],
-    "fireball": 3,
-    "fetched_at": "2026-11-03T01:25:03.538250+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-30",
-    "session": "midday",
-    "digits": [
-      2,
-      2,
-      5,
-      4
-    ],
-    "fireball": 6,
-    "fetched_at": "2026-11-03T01:25:03.538508+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-29",
-    "session": "midday",
-    "digits": [
-      5,
-      1,
-      4,
-      5
-    ],
-    "fireball": 3,
-    "fetched_at": "2026-11-03T01:25:03.538744+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-28",
-    "session": "midday",
-    "digits": [
-      1,
-      0,
-      4,
-      3
-    ],
-    "fireball": 1,
-    "fetched_at": "2026-11-03T01:25:03.538975+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-27",
-    "session": "midday",
-    "digits": [
-      4,
-      6,
-      3,
-      1
-    ],
-    "fireball": 8,
-    "fetched_at": "2026-11-03T01:25:03.539204+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-26",
-    "session": "midday",
-    "digits": [
-      6,
-      8,
-      3,
-      3
-    ],
-    "fireball": 2,
-    "fetched_at": "2026-11-03T01:25:03.539435+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-25",
-    "session": "midday",
-    "digits": [
-      6,
-      3,
-      3,
-      5
-    ],
-    "fireball": 1,
-    "fetched_at": "2026-11-03T01:25:03.539673+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-24",
-    "session": "midday",
-    "digits": [
-      4,
-      9,
-      4,
-      5
-    ],
-    "fireball": 0,
-    "fetched_at": "2026-11-03T01:25:03.539903+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-4/"
   },
   {
     "game": "Pick 4",
