@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-11-02",
+    "draw_number": "10514",
+    "first_place": "12 - Lucky Charms",
+    "second_place": "08 - Gorgeous George",
+    "third_place": "07 - Eureka",
+    "derby_positions": [
+      12,
+      8,
+      7
+    ],
+    "race_time": "1:48.34",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$184,089"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$70"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 3,
+        "prize": "$48"
+      },
+      {
+        "label": "Race Time",
+        "winners": 45,
+        "prize": "$45"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 26,
+        "prize": "$603"
+      },
+      {
+        "label": "Exacta",
+        "winners": 273,
+        "prize": "$25"
+      },
+      {
+        "label": "Win",
+        "winners": 3247,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$184,089",
+    "next_draw_date": "2026-11-03",
+    "next_jackpot_estimate": "$185,000",
+    "fetched_at": "2026-11-03T02:57:01.256735+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-11-01",
     "draw_number": "10513",
     "first_place": "06 - Whirl Win",
