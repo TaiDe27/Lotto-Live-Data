@@ -1,6 +1,19 @@
 [
   {
     "game": "Pick 3",
+    "draw_date": "2026-11-03",
+    "session": "day",
+    "digits": [
+      6,
+      6,
+      9
+    ],
+    "fireball": 1,
+    "fetched_at": "2026-11-03T19:40:26.360254+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/pick3"
+  },
+  {
+    "game": "Pick 3",
     "draw_date": "2026-11-02",
     "session": "night",
     "digits": [
@@ -9,7 +22,7 @@
       3
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.684834+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777483+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -22,7 +35,7 @@
       9
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.684834+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777483+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -35,7 +48,7 @@
       6
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.684868+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777519+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -48,7 +61,7 @@
       8
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684868+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777519+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -61,7 +74,7 @@
       8
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.684880+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777528+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -74,7 +87,7 @@
       9
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.684880+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777528+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -87,7 +100,7 @@
       1
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684889+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777534+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -100,7 +113,7 @@
       8
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684889+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777534+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -113,7 +126,7 @@
       6
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.684897+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777540+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -126,7 +139,7 @@
       4
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.684897+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777540+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -139,7 +152,7 @@
       0
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.684904+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777544+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -152,7 +165,7 @@
       9
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.684904+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777544+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -165,7 +178,7 @@
       5
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684911+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777549+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -178,7 +191,7 @@
       2
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.684911+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777549+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -191,7 +204,7 @@
       1
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.684923+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777557+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -204,7 +217,7 @@
       7
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684923+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777557+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -217,7 +230,7 @@
       7
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.684930+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777561+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -230,7 +243,7 @@
       1
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.684930+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777561+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -243,7 +256,7 @@
       5
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684936+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777565+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -256,7 +269,7 @@
       2
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.684936+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777565+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -269,7 +282,7 @@
       3
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.684943+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777570+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -282,7 +295,7 @@
       6
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684943+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777570+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -295,7 +308,7 @@
       4
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.684949+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777574+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -308,7 +321,7 @@
       3
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.684949+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777574+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -321,7 +334,7 @@
       9
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.684955+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777579+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -334,7 +347,7 @@
       1
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.684955+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777579+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -347,7 +360,7 @@
       9
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.684961+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777583+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -360,7 +373,7 @@
       7
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.684961+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777583+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -373,7 +386,7 @@
       9
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.684967+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777587+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -386,7 +399,7 @@
       1
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.684967+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777587+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -399,7 +412,7 @@
       2
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.684973+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777591+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -412,7 +425,7 @@
       9
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.684973+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777591+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -425,7 +438,7 @@
       8
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.684980+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777595+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -438,7 +451,7 @@
       2
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.684980+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777595+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -451,7 +464,7 @@
       7
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.684989+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777600+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -464,7 +477,7 @@
       3
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.684989+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777600+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -477,7 +490,7 @@
       0
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.684995+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777605+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -490,7 +503,7 @@
       8
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.684995+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777605+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -503,7 +516,7 @@
       2
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685002+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777609+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -516,7 +529,7 @@
       9
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685002+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777609+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -529,7 +542,7 @@
       1
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.685009+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777613+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -542,7 +555,7 @@
       9
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.685009+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777613+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -555,7 +568,7 @@
       3
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.685016+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777618+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -568,7 +581,7 @@
       9
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.685016+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777618+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -581,7 +594,7 @@
       0
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685022+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777622+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -594,7 +607,7 @@
       8
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.685022+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777622+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -607,7 +620,7 @@
       2
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685028+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777626+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -620,7 +633,7 @@
       6
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.685028+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777626+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -633,7 +646,7 @@
       9
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.685035+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777630+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -646,7 +659,7 @@
       5
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.685035+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777630+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -659,7 +672,7 @@
       3
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.685041+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777635+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -672,7 +685,7 @@
       4
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.685041+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777635+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -685,7 +698,7 @@
       3
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.685048+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777639+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -698,7 +711,7 @@
       1
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.685048+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777639+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -711,7 +724,7 @@
       3
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685055+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777644+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -724,7 +737,7 @@
       2
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685055+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777644+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -737,7 +750,7 @@
       6
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685062+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777648+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -750,7 +763,7 @@
       5
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685062+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777648+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -763,7 +776,7 @@
       2
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.685069+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777652+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -776,7 +789,7 @@
       3
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.685069+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777652+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -789,7 +802,7 @@
       9
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.685075+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777656+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -802,7 +815,7 @@
       9
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.685075+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777656+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -815,7 +828,7 @@
       5
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.685081+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777660+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -828,7 +841,7 @@
       5
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.685081+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777660+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -841,7 +854,7 @@
       3
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.685087+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777664+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -854,7 +867,7 @@
       7
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.685087+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777664+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -867,7 +880,7 @@
       2
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.685094+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777669+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -880,7 +893,7 @@
       8
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685094+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777669+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -893,7 +906,7 @@
       7
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.685100+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777673+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -906,7 +919,7 @@
       7
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685100+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777673+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -919,7 +932,7 @@
       1
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.685107+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777677+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -932,7 +945,7 @@
       6
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685107+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777677+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -945,7 +958,7 @@
       6
     ],
     "fireball": 0,
-    "fetched_at": "2026-11-03T17:51:09.685113+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777681+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -958,7 +971,7 @@
       2
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.685113+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777681+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -971,7 +984,7 @@
       8
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.685119+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777685+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -984,7 +997,7 @@
       2
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.685119+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777685+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -997,7 +1010,7 @@
       8
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685126+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777689+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1010,7 +1023,7 @@
       6
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685126+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777689+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1023,7 +1036,7 @@
       5
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.685134+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777694+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1036,7 +1049,7 @@
       0
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685134+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777694+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1049,7 +1062,7 @@
       1
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685141+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777698+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1062,7 +1075,7 @@
       2
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.685141+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777698+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1075,7 +1088,7 @@
       7
     ],
     "fireball": 2,
-    "fetched_at": "2026-11-03T17:51:09.685147+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777702+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1088,7 +1101,7 @@
       6
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.685147+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777702+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1101,7 +1114,7 @@
       2
     ],
     "fireball": 7,
-    "fetched_at": "2026-11-03T17:51:09.685154+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777726+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1114,7 +1127,7 @@
       7
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685154+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777726+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1127,7 +1140,7 @@
       2
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.685160+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777732+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1140,7 +1153,7 @@
       3
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.685160+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777732+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1153,7 +1166,7 @@
       1
     ],
     "fireball": 4,
-    "fetched_at": "2026-11-03T17:51:09.685166+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777737+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1166,7 +1179,7 @@
       2
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.685166+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777737+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1179,7 +1192,7 @@
       2
     ],
     "fireball": 6,
-    "fetched_at": "2026-11-03T17:51:09.685172+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777741+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1192,7 +1205,7 @@
       0
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.685172+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777741+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1205,7 +1218,7 @@
       8
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.685178+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777745+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1218,7 +1231,7 @@
       3
     ],
     "fireball": 8,
-    "fetched_at": "2026-11-03T17:51:09.685178+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777745+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1231,7 +1244,7 @@
       1
     ],
     "fireball": 9,
-    "fetched_at": "2026-11-03T17:51:09.685187+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777750+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1244,7 +1257,7 @@
       0
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.685187+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777750+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1257,7 +1270,7 @@
       2
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.685193+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777754+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1270,7 +1283,7 @@
       8
     ],
     "fireball": 5,
-    "fetched_at": "2026-11-03T17:51:09.685193+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777754+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   },
   {
@@ -1283,20 +1296,7 @@
       2
     ],
     "fireball": 1,
-    "fetched_at": "2026-11-03T17:51:09.685200+00:00",
-    "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
-  },
-  {
-    "game": "Pick 3",
-    "draw_date": "2026-09-14",
-    "session": "day",
-    "digits": [
-      9,
-      7,
-      1
-    ],
-    "fireball": 3,
-    "fetched_at": "2026-11-03T17:51:09.685200+00:00",
+    "fetched_at": "2026-11-03T19:40:25.777758+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
   }
 ]
