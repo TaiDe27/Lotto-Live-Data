@@ -4,27 +4,13 @@
     "draw_date": "2026-11-03",
     "session": "midday",
     "digits": [
+      2,
+      6,
       9,
-      4,
-      3,
-      8,
-      1
+      1,
+      0
     ],
-    "fetched_at": "2026-11-03T01:48:00.800365+00:00",
-    "source_url": "https://www.michiganlottery.com/api"
-  },
-  {
-    "game": "Daily 5",
-    "draw_date": "2026-11-03",
-    "session": "evening",
-    "digits": [
-      8,
-      4,
-      0,
-      8,
-      1
-    ],
-    "fetched_at": "2026-11-03T01:48:00.800365+00:00",
+    "fetched_at": "2026-11-03T18:20:07.376574+00:00",
     "source_url": "https://www.michiganlottery.com/api"
   },
   {
