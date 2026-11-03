@@ -1,6 +1,13 @@
 [
   {
     "session": "early_bird",
+    "draw_date": "2026-11-03",
+    "numbers": [
+      1
+    ]
+  },
+  {
+    "session": "early_bird",
     "draw_date": "2026-11-02",
     "numbers": [
       1
@@ -690,13 +697,6 @@
     "draw_date": "2026-10-13",
     "numbers": [
       7
-    ]
-  },
-  {
-    "session": "night_owl",
-    "draw_date": "2026-10-13",
-    "numbers": [
-      9
     ]
   }
 ]
