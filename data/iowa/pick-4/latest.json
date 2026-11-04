@@ -1,6 +1,19 @@
 [
   {
     "game": "Pick 4",
+    "draw_date": "2026-11-03",
+    "session": "evening",
+    "digits": [
+      8,
+      5,
+      9,
+      2
+    ],
+    "fetched_at": "2026-11-04T04:23:01.122042+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
+  },
+  {
+    "game": "Pick 4",
     "draw_date": "2026-11-02",
     "session": "evening",
     "digits": [
@@ -9,7 +22,7 @@
       4,
       5
     ],
-    "fetched_at": "2026-11-04T01:02:59.668289+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122176+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -22,7 +35,7 @@
       3,
       8
     ],
-    "fetched_at": "2026-11-04T01:02:59.668422+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122265+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -35,7 +48,7 @@
       3,
       9
     ],
-    "fetched_at": "2026-11-04T01:02:59.668510+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122344+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -48,7 +61,7 @@
       3,
       5
     ],
-    "fetched_at": "2026-11-04T01:02:59.668586+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122417+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -61,7 +74,7 @@
       3,
       6
     ],
-    "fetched_at": "2026-11-04T01:02:59.668661+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122489+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -74,7 +87,7 @@
       8,
       1
     ],
-    "fetched_at": "2026-11-04T01:02:59.668734+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122560+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -87,7 +100,7 @@
       1,
       0
     ],
-    "fetched_at": "2026-11-04T01:02:59.668804+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122629+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -100,7 +113,7 @@
       7,
       3
     ],
-    "fetched_at": "2026-11-04T01:02:59.668935+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122724+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
   },
   {
@@ -113,8 +126,138 @@
       0,
       3
     ],
-    "fetched_at": "2026-11-04T01:02:59.669021+00:00",
+    "fetched_at": "2026-11-04T04:23:01.122804+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-03",
+    "session": "midday",
+    "digits": [
+      9,
+      8,
+      8,
+      1
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282010+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-02",
+    "session": "midday",
+    "digits": [
+      1,
+      7,
+      4,
+      4
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282102+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-01",
+    "session": "midday",
+    "digits": [
+      5,
+      0,
+      4,
+      2
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282175+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-31",
+    "session": "midday",
+    "digits": [
+      8,
+      6,
+      2,
+      8
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282253+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-30",
+    "session": "midday",
+    "digits": [
+      7,
+      3,
+      9,
+      9
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282322+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-29",
+    "session": "midday",
+    "digits": [
+      6,
+      3,
+      8,
+      6
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282389+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-28",
+    "session": "midday",
+    "digits": [
+      7,
+      8,
+      4,
+      2
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282454+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-27",
+    "session": "midday",
+    "digits": [
+      7,
+      6,
+      4,
+      3
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282519+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-26",
+    "session": "midday",
+    "digits": [
+      0,
+      5,
+      7,
+      7
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282582+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-10-25",
+    "session": "midday",
+    "digits": [
+      4,
+      7,
+      6,
+      9
+    ],
+    "fetched_at": "2026-11-04T04:23:01.282646+00:00",
+    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
   },
   {
     "game": "Pick 4",
@@ -128,136 +271,6 @@
     ],
     "fetched_at": "2026-11-04T01:02:59.669095+00:00",
     "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4Win.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-11-03",
-    "session": "midday",
-    "digits": [
-      9,
-      8,
-      8,
-      1
-    ],
-    "fetched_at": "2026-11-04T01:02:59.832836+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-11-02",
-    "session": "midday",
-    "digits": [
-      1,
-      7,
-      4,
-      4
-    ],
-    "fetched_at": "2026-11-04T01:02:59.832948+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-11-01",
-    "session": "midday",
-    "digits": [
-      5,
-      0,
-      4,
-      2
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833056+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-31",
-    "session": "midday",
-    "digits": [
-      8,
-      6,
-      2,
-      8
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833138+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-30",
-    "session": "midday",
-    "digits": [
-      7,
-      3,
-      9,
-      9
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833208+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-29",
-    "session": "midday",
-    "digits": [
-      6,
-      3,
-      8,
-      6
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833275+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-28",
-    "session": "midday",
-    "digits": [
-      7,
-      8,
-      4,
-      2
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833340+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-27",
-    "session": "midday",
-    "digits": [
-      7,
-      6,
-      4,
-      3
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833405+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-26",
-    "session": "midday",
-    "digits": [
-      0,
-      5,
-      7,
-      7
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833475+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
-  },
-  {
-    "game": "Pick 4",
-    "draw_date": "2026-10-25",
-    "session": "midday",
-    "digits": [
-      4,
-      7,
-      6,
-      9
-    ],
-    "fetched_at": "2026-11-04T01:02:59.833541+00:00",
-    "source_url": "https://www.ialottery.com/Pages/Games-Online/Pick4MWin.aspx"
   },
   {
     "game": "Pick 4",
