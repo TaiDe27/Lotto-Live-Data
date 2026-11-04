@@ -1,5 +1,30 @@
 [
   {
+    "draw_date": "Tue, Nov 3, 2026",
+    "red_balls": [
+      8,
+      20
+    ],
+    "white_balls": [
+      9,
+      15
+    ],
+    "next_drawing": {
+      "next_draw_date": "Wed, Nov 4, 2026",
+      "top_prize": "$22,000"
+    },
+    "winners_by_tier": {
+      "Top Prize": {
+        "prize": "$22,000",
+        "states": [
+          "ND"
+        ]
+      }
+    },
+    "fetched_at": "2026-11-04T03:50:58.128854+00:00",
+    "source_url": "https://www.powerball.com/2by2"
+  },
+  {
     "draw_date": "Mon, Nov 2, 2026",
     "red_balls": [
       6,
