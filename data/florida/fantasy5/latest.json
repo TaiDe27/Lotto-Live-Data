@@ -1,6 +1,80 @@
 [
   {
     "game": "FANTASY 5",
+    "draw_date": "2026-11-04",
+    "numbers": [
+      6,
+      10,
+      23,
+      28,
+      29
+    ],
+    "fetched_at": "2026-11-04T18:45:57.974808+00:00",
+    "source_url": "https://floridalottery.com/",
+    "session": "midday",
+    "tiers": [
+      {
+        "PrizeLevel": "5-of-5",
+        "PrizeAmount": "27934.25",
+        "Winners": 2
+      },
+      {
+        "PrizeLevel": "4-of-5",
+        "PrizeAmount": "97.5",
+        "Winners": 92
+      },
+      {
+        "PrizeLevel": "3-of-5",
+        "PrizeAmount": "9",
+        "Winners": 2692
+      },
+      {
+        "PrizeLevel": "2-of-5",
+        "PrizeAmount": "Free Ticket",
+        "Winners": 25602
+      }
+    ],
+    "jackpot_amount": "27934.25"
+  },
+  {
+    "game": "FANTASY 5",
+    "draw_date": "2026-11-03",
+    "numbers": [
+      6,
+      8,
+      22,
+      23,
+      28
+    ],
+    "fetched_at": "2026-11-04T18:45:57.974808+00:00",
+    "source_url": "https://floridalottery.com/",
+    "session": "evening",
+    "tiers": [
+      {
+        "PrizeLevel": "5-of-5",
+        "PrizeAmount": "20680.84",
+        "Winners": 5
+      },
+      {
+        "PrizeLevel": "4-of-5",
+        "PrizeAmount": "111",
+        "Winners": 150
+      },
+      {
+        "PrizeLevel": "3-of-5",
+        "PrizeAmount": "9.5",
+        "Winners": 4749
+      },
+      {
+        "PrizeLevel": "2-of-5",
+        "PrizeAmount": "Free Ticket",
+        "Winners": 46172
+      }
+    ],
+    "jackpot_amount": "20680.84"
+  },
+  {
+    "game": "FANTASY 5",
     "draw_date": "2026-11-03",
     "numbers": [
       10,
@@ -35,43 +109,6 @@
       }
     ],
     "jackpot_amount": "0"
-  },
-  {
-    "game": "FANTASY 5",
-    "draw_date": "2026-11-03",
-    "numbers": [
-      6,
-      8,
-      22,
-      23,
-      28
-    ],
-    "fetched_at": "2026-11-04T18:25:56.470387+00:00",
-    "source_url": "https://floridalottery.com/",
-    "session": "evening",
-    "tiers": [
-      {
-        "PrizeLevel": "5-of-5",
-        "PrizeAmount": "20680.84",
-        "Winners": 5
-      },
-      {
-        "PrizeLevel": "4-of-5",
-        "PrizeAmount": "111",
-        "Winners": 150
-      },
-      {
-        "PrizeLevel": "3-of-5",
-        "PrizeAmount": "9.5",
-        "Winners": 4749
-      },
-      {
-        "PrizeLevel": "2-of-5",
-        "PrizeAmount": "Free Ticket",
-        "Winners": 46172
-      }
-    ],
-    "jackpot_amount": "20680.84"
   },
   {
     "game": "FANTASY 5",
