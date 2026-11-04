@@ -1,13 +1,24 @@
 [
   {
     "game": "Pick 3",
+    "draw_date": "2026-11-03",
+    "digits": [
+      6,
+      0,
+      2
+    ],
+    "fetched_at": "2026-11-04T04:31:03.018970+00:00",
+    "source_url": "https://louisianalottery.com/winning-numbers/"
+  },
+  {
+    "game": "Pick 3",
     "draw_date": "2026-11-02",
     "digits": [
       3,
       9,
       3
     ],
-    "fetched_at": "2026-11-04T04:24:58.242698+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019075+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -18,7 +29,7 @@
       8,
       9
     ],
-    "fetched_at": "2026-11-04T04:24:58.242762+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019191+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -29,7 +40,7 @@
       9,
       6
     ],
-    "fetched_at": "2026-11-04T04:24:58.242841+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019296+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -40,7 +51,7 @@
       6,
       7
     ],
-    "fetched_at": "2026-11-04T04:24:58.242905+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019392+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -51,7 +62,7 @@
       3,
       1
     ],
-    "fetched_at": "2026-11-04T04:24:58.242966+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019493+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -62,7 +73,7 @@
       1,
       0
     ],
-    "fetched_at": "2026-11-04T04:24:58.243027+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019588+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -73,7 +84,7 @@
       0,
       3
     ],
-    "fetched_at": "2026-11-04T04:24:58.243090+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019683+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -84,7 +95,7 @@
       5,
       3
     ],
-    "fetched_at": "2026-11-04T04:24:58.243149+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019781+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
@@ -95,7 +106,7 @@
       2,
       5
     ],
-    "fetched_at": "2026-11-04T04:24:58.243209+00:00",
+    "fetched_at": "2026-11-04T04:31:03.019882+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/"
   },
   {
