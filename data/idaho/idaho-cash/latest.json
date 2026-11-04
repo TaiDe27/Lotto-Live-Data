@@ -1,6 +1,20 @@
 [
   {
     "game": "Idaho Cash",
+    "draw_date": "2026-11-03",
+    "numbers": [
+      16,
+      17,
+      30,
+      34,
+      37
+    ],
+    "jackpot_amount": 88400,
+    "fetched_at": "2026-11-04T03:41:01.462029+00:00",
+    "source_url": "https://www.idaholottery.com/games/draw/idaho-cash"
+  },
+  {
+    "game": "Idaho Cash",
     "draw_date": "2026-11-02",
     "numbers": [
       1,
@@ -10,7 +24,7 @@
       40
     ],
     "jackpot_amount": 86300,
-    "fetched_at": "2026-11-04T03:21:01.478410+00:00",
+    "fetched_at": "2026-11-04T03:41:01.462029+00:00",
     "source_url": "https://www.idaholottery.com/games/draw/idaho-cash"
   },
   {
@@ -24,7 +38,7 @@
       36
     ],
     "jackpot_amount": 84400,
-    "fetched_at": "2026-11-04T03:21:01.478410+00:00",
+    "fetched_at": "2026-11-04T03:41:01.462029+00:00",
     "source_url": "https://www.idaholottery.com/games/draw/idaho-cash"
   },
   {
@@ -38,7 +52,7 @@
       41
     ],
     "jackpot_amount": 82300,
-    "fetched_at": "2026-11-04T03:21:01.478410+00:00",
+    "fetched_at": "2026-11-04T03:41:01.462029+00:00",
     "source_url": "https://www.idaholottery.com/games/draw/idaho-cash"
   },
   {
@@ -52,7 +66,7 @@
       41
     ],
     "jackpot_amount": 80100,
-    "fetched_at": "2026-11-04T03:21:01.478410+00:00",
+    "fetched_at": "2026-11-04T03:41:01.462029+00:00",
     "source_url": "https://www.idaholottery.com/games/draw/idaho-cash"
   },
   {
