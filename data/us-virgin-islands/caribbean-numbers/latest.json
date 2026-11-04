@@ -1,13 +1,24 @@
 [
   {
     "draw_date": "2026-11-03",
+    "session": "9pm",
+    "numbers": [
+      75,
+      71,
+      84
+    ],
+    "fetched_at": "2026-11-04T01:21:13.316646+00:00",
+    "source_url": "https://www.thecaribbeanlottery.com/games/caribbean-numbers"
+  },
+  {
+    "draw_date": "2026-11-03",
     "session": "3pm",
     "numbers": [
       66,
       44,
       90
     ],
-    "fetched_at": "2026-11-04T00:51:16.267753+00:00",
+    "fetched_at": "2026-11-04T01:21:13.316665+00:00",
     "source_url": "https://www.thecaribbeanlottery.com/games/caribbean-numbers"
   },
   {
@@ -18,7 +29,7 @@
       9,
       20
     ],
-    "fetched_at": "2026-11-04T00:51:16.267759+00:00",
+    "fetched_at": "2026-11-04T01:21:13.316667+00:00",
     "source_url": "https://www.thecaribbeanlottery.com/games/caribbean-numbers"
   },
   {
