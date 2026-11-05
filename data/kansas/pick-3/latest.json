@@ -2,13 +2,25 @@
   {
     "game": "Pick 3",
     "draw_date": "2026-11-04",
+    "session": "evening",
+    "digits": [
+      5,
+      7,
+      9
+    ],
+    "fetched_at": "2026-11-05T03:30:57.856877+00:00",
+    "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-11-04",
     "session": "midday",
     "digits": [
       1,
       5,
       8
     ],
-    "fetched_at": "2026-11-05T01:50:58.138531+00:00",
+    "fetched_at": "2026-11-05T03:30:57.631885+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -20,7 +32,7 @@
       3,
       4
     ],
-    "fetched_at": "2026-11-05T01:50:58.275196+00:00",
+    "fetched_at": "2026-11-05T03:30:57.856891+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -32,7 +44,7 @@
       7,
       9
     ],
-    "fetched_at": "2026-11-05T01:50:58.138555+00:00",
+    "fetched_at": "2026-11-05T03:30:57.631905+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -44,7 +56,7 @@
       1,
       5
     ],
-    "fetched_at": "2026-11-05T01:50:58.275211+00:00",
+    "fetched_at": "2026-11-05T03:30:57.856896+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -56,7 +68,7 @@
       1,
       5
     ],
-    "fetched_at": "2026-11-05T01:50:58.138563+00:00",
+    "fetched_at": "2026-11-05T03:30:57.631911+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -68,7 +80,7 @@
       0,
       9
     ],
-    "fetched_at": "2026-11-05T01:50:58.275217+00:00",
+    "fetched_at": "2026-11-05T03:30:57.856900+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -80,7 +92,7 @@
       2,
       8
     ],
-    "fetched_at": "2026-11-05T01:50:58.138569+00:00",
+    "fetched_at": "2026-11-05T03:30:57.631915+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -92,7 +104,7 @@
       4,
       0
     ],
-    "fetched_at": "2026-11-05T01:50:58.275223+00:00",
+    "fetched_at": "2026-11-05T03:30:57.856909+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -104,7 +116,7 @@
       9,
       9
     ],
-    "fetched_at": "2026-11-05T01:50:58.138574+00:00",
+    "fetched_at": "2026-11-05T03:30:57.631920+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -116,7 +128,7 @@
       2,
       7
     ],
-    "fetched_at": "2026-11-05T01:50:58.275228+00:00",
+    "fetched_at": "2026-11-05T03:30:57.856913+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=10&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
@@ -128,7 +140,7 @@
       8,
       7
     ],
-    "fetched_at": "2026-11-05T01:50:58.138579+00:00",
+    "fetched_at": "2026-11-05T03:30:57.631924+00:00",
     "source_url": "https://gateway-web.loyalty.playonkansas.com/services/jackpot/api/v1/jackpot-results?gameId=9&jackpotStatus=COMPLETE&page=0&size=6&sort=externalId,drawDate,desc&doublePlay=FALSE"
   },
   {
