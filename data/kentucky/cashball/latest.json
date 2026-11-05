@@ -1,6 +1,19 @@
 [
   {
     "game": "Cash Ball 225",
+    "draw_date": "2026-11-04",
+    "numbers": [
+      7,
+      12,
+      16,
+      17
+    ],
+    "bonus_number": 1,
+    "fetched_at": "2026-11-05T04:19:00.766592+00:00",
+    "source_url": "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
+  },
+  {
+    "game": "Cash Ball 225",
     "draw_date": "2026-11-03",
     "numbers": [
       5,
