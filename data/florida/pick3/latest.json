@@ -1,6 +1,32 @@
 [
   {
     "game": "PICK 3",
+    "draw_date": "2026-11-04",
+    "digits": [
+      7,
+      2,
+      5
+    ],
+    "fetched_at": "2026-11-05T03:26:06.197920+00:00",
+    "source_url": "https://floridalottery.com/",
+    "fireball": 2,
+    "session": "midday"
+  },
+  {
+    "game": "PICK 3",
+    "draw_date": "2026-11-04",
+    "digits": [
+      9,
+      8,
+      2
+    ],
+    "fetched_at": "2026-11-05T03:26:06.197920+00:00",
+    "source_url": "https://floridalottery.com/",
+    "fireball": 9,
+    "session": "evening"
+  },
+  {
+    "game": "PICK 3",
     "draw_date": "2026-11-03",
     "digits": [
       4,
@@ -24,19 +50,6 @@
     "source_url": "https://floridalottery.com/",
     "fireball": 0,
     "session": "evening"
-  },
-  {
-    "game": "PICK 3",
-    "draw_date": "2026-11-04",
-    "digits": [
-      7,
-      2,
-      5
-    ],
-    "fetched_at": "2026-11-05T03:05:56.898391+00:00",
-    "source_url": "https://floridalottery.com/",
-    "fireball": 2,
-    "session": "midday"
   },
   {
     "game": "PICK 3",
