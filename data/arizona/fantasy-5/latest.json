@@ -1,6 +1,23 @@
 [
   {
     "game": "Fantasy 5",
+    "draw_date": "2026-11-04",
+    "numbers": [
+      1,
+      6,
+      9,
+      27,
+      38
+    ],
+    "jackpot_amount": 134000,
+    "next_draw_date": "2026-11-05",
+    "next_jackpot_amount": 146000,
+    "winners_by_division": {},
+    "fetched_at": "2026-11-05T02:53:01.035801+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/4/drawings"
+  },
+  {
+    "game": "Fantasy 5",
     "draw_date": "2026-11-03",
     "numbers": [
       7,
