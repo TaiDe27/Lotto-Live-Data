@@ -180,6 +180,15 @@ def parse_winners_section(text: str) -> dict:
     'Match 5 $1 Million Winners IL, NC, NY'
     解析成 {tier: {"prize": "...", "states": [...]}}。抓不到就返回空 dict,
     不影响号码本身的抓取结果——这部分是锦上添花,不是核心字段。
+
+    确认真实bug(2026-11-05,真实头奖被中的一期验证到的):头奖那一档
+    官网原文是全大写 "Powerball JACKPOT WINNERS NJ",其他档位是
+    "Match 5 $1 Million Winners None" ——"Winners"大小写不一致,但这
+    条正则原来没加 re.IGNORECASE(这个文件其他正则都加了),导致全大写
+    的 "WINNERS" 永远匹配不上字面量 "Winners",头奖这一档每次都被
+    静默丢掉——不是偶发,是头奖只要被中,一定复现。加 re.IGNORECASE 后,
+    连带着 "None" 哨兵值的判断也要跟着做大小写不敏感(呼应着改,否则
+    理论上官网把 "None" 印成小写时,`states_raw == "None"` 会判断失败)。
     """
     winners = {}
     for m in re.finditer(
@@ -189,10 +198,11 @@ def parse_winners_section(text: str) -> dict:
         # "None" 的开头字母 N 当成一个(不存在的)单字母州代码提前截断匹配
         r"Winners\s+(None|[A-Z]{2}(?:,\s*[A-Z]{2})*)",
         text,
+        re.IGNORECASE,
     ):
         tier, prize, states_raw = m.group(1), m.group(2), m.group(3)
         states_raw = states_raw.strip()
-        states = [] if states_raw == "None" else [s.strip() for s in states_raw.split(",")]
+        states = [] if states_raw.upper() == "NONE" else [s.strip() for s in states_raw.split(",")]
         winners[tier] = {"prize": prize, "states": states}
     return winners
 
