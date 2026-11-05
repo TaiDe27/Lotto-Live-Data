@@ -1,6 +1,38 @@
 [
   {
     "game": "Powerball",
+    "draw_date": "Wed, Nov 4, 2026",
+    "white_balls": [
+      15,
+      34,
+      41,
+      53,
+      56
+    ],
+    "red_ball": 21,
+    "power_play": 2,
+    "next_drawing": {
+      "next_draw_date": "Wed, Nov 4, 2026",
+      "estimated_jackpot": "835 Million",
+      "cash_value": "357.9 Million"
+    },
+    "winners_by_tier": {
+      "Match 5 + Power Play": {
+        "prize": "2 Million",
+        "states": []
+      },
+      "Match 5": {
+        "prize": "1 Million",
+        "states": [
+          "DE"
+        ]
+      }
+    },
+    "fetched_at": "2026-11-05T04:41:08.064884+00:00",
+    "source_url": "https://www.powerball.com/"
+  },
+  {
+    "game": "Powerball",
     "draw_date": "Mon, Nov 2, 2026",
     "white_balls": [
       7,
