@@ -1,6 +1,18 @@
 [
   {
     "game": "Cash 3",
+    "draw_date": "2026-11-04",
+    "session": "evening",
+    "digits": [
+      0,
+      4,
+      6
+    ],
+    "fetched_at": "2026-11-05T01:19:58.489315+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
+  },
+  {
+    "game": "Cash 3",
     "draw_date": "2026-11-03",
     "session": "evening",
     "digits": [
@@ -8,7 +20,7 @@
       3,
       3
     ],
-    "fetched_at": "2026-11-04T19:49:59.392378+00:00",
+    "fetched_at": "2026-11-05T01:19:58.489564+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -20,7 +32,7 @@
       4,
       8
     ],
-    "fetched_at": "2026-11-04T19:49:59.392654+00:00",
+    "fetched_at": "2026-11-05T01:19:58.489719+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -32,7 +44,7 @@
       4,
       9
     ],
-    "fetched_at": "2026-11-04T19:49:59.392855+00:00",
+    "fetched_at": "2026-11-05T01:19:58.489865+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -44,7 +56,7 @@
       7,
       0
     ],
-    "fetched_at": "2026-11-04T19:49:59.393074+00:00",
+    "fetched_at": "2026-11-05T01:19:58.490029+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -56,7 +68,7 @@
       6,
       4
     ],
-    "fetched_at": "2026-11-04T19:49:59.393268+00:00",
+    "fetched_at": "2026-11-05T01:19:58.490166+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -68,7 +80,7 @@
       1,
       6
     ],
-    "fetched_at": "2026-11-04T19:49:59.393447+00:00",
+    "fetched_at": "2026-11-05T01:19:58.490297+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -80,7 +92,7 @@
       8,
       3
     ],
-    "fetched_at": "2026-11-04T19:49:59.393624+00:00",
+    "fetched_at": "2026-11-05T01:19:58.490427+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -92,7 +104,7 @@
       1,
       6
     ],
-    "fetched_at": "2026-11-04T19:49:59.393801+00:00",
+    "fetched_at": "2026-11-05T01:19:58.490555+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
   },
   {
@@ -104,8 +116,128 @@
       6,
       1
     ],
-    "fetched_at": "2026-11-04T19:49:59.393979+00:00",
+    "fetched_at": "2026-11-05T01:19:58.490682+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-11-04",
+    "session": "midday",
+    "digits": [
+      3,
+      4,
+      7
+    ],
+    "fetched_at": "2026-11-05T01:19:58.780070+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-11-03",
+    "session": "midday",
+    "digits": [
+      8,
+      0,
+      3
+    ],
+    "fetched_at": "2026-11-05T01:19:58.780232+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-11-02",
+    "session": "midday",
+    "digits": [
+      3,
+      8,
+      1
+    ],
+    "fetched_at": "2026-11-05T01:19:58.780370+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-10-31",
+    "session": "midday",
+    "digits": [
+      5,
+      9,
+      0
+    ],
+    "fetched_at": "2026-11-05T01:19:58.780511+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-10-30",
+    "session": "midday",
+    "digits": [
+      5,
+      8,
+      7
+    ],
+    "fetched_at": "2026-11-05T01:19:58.780638+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-10-29",
+    "session": "midday",
+    "digits": [
+      7,
+      8,
+      0
+    ],
+    "fetched_at": "2026-11-05T01:19:58.780762+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-10-28",
+    "session": "midday",
+    "digits": [
+      2,
+      4,
+      8
+    ],
+    "fetched_at": "2026-11-05T01:19:58.780897+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-10-27",
+    "session": "midday",
+    "digits": [
+      6,
+      8,
+      3
+    ],
+    "fetched_at": "2026-11-05T01:19:58.781020+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-10-26",
+    "session": "midday",
+    "digits": [
+      3,
+      6,
+      4
+    ],
+    "fetched_at": "2026-11-05T01:19:58.781143+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-10-24",
+    "session": "midday",
+    "digits": [
+      6,
+      3,
+      0
+    ],
+    "fetched_at": "2026-11-05T01:19:58.781310+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
   },
   {
     "game": "Cash 3",
@@ -118,126 +250,6 @@
     ],
     "fetched_at": "2026-11-04T19:49:59.394184+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-11-04",
-    "session": "midday",
-    "digits": [
-      3,
-      4,
-      7
-    ],
-    "fetched_at": "2026-11-04T19:49:59.776350+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-11-03",
-    "session": "midday",
-    "digits": [
-      8,
-      0,
-      3
-    ],
-    "fetched_at": "2026-11-04T19:49:59.776551+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-11-02",
-    "session": "midday",
-    "digits": [
-      3,
-      8,
-      1
-    ],
-    "fetched_at": "2026-11-04T19:49:59.776728+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-31",
-    "session": "midday",
-    "digits": [
-      5,
-      9,
-      0
-    ],
-    "fetched_at": "2026-11-04T19:49:59.776910+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-30",
-    "session": "midday",
-    "digits": [
-      5,
-      8,
-      7
-    ],
-    "fetched_at": "2026-11-04T19:49:59.777103+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-29",
-    "session": "midday",
-    "digits": [
-      7,
-      8,
-      0
-    ],
-    "fetched_at": "2026-11-04T19:49:59.777275+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-28",
-    "session": "midday",
-    "digits": [
-      2,
-      4,
-      8
-    ],
-    "fetched_at": "2026-11-04T19:49:59.777441+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-27",
-    "session": "midday",
-    "digits": [
-      6,
-      8,
-      3
-    ],
-    "fetched_at": "2026-11-04T19:49:59.777604+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-26",
-    "session": "midday",
-    "digits": [
-      3,
-      6,
-      4
-    ],
-    "fetched_at": "2026-11-04T19:49:59.777767+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-24",
-    "session": "midday",
-    "digits": [
-      6,
-      3,
-      0
-    ],
-    "fetched_at": "2026-11-04T19:49:59.777983+00:00",
-    "source_url": "https://www.lotteryusa.com/arkansas/midday-cash-3/"
   },
   {
     "game": "Cash 3",
