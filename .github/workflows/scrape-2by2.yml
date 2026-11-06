@@ -16,6 +16,12 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      # 同域名(powerball.com)requests 间歇性反爬拦截问题,跟 scrape-powerball.yml
+      # 一样改用真实 Chromium 内核的 Playwright 抓取(2026-11-06)。
+      - name: Install Playwright Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
       - name: Run 2by2 scraper
         id: scrape
         continue-on-error: true

@@ -20,6 +20,16 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      # 这个 workflow 专属(2026-11-06):powerball.com 对 requests 这类非
+      # 浏览器请求有间歇性反爬拦截(同一个 URL，实测成功率只有 50%-75%，
+      # 被拦时拿到的是固定大小的假页面，不是连接被拒绝)，改用真实
+      # Chromium 内核的 Playwright 抓取，实测同等条件下连续多次全部成功。
+      # 只给这一个 workflow 装浏览器二进制——其他彩种的 workflow 不受影响，
+      # 也不需要这个体积不小的下载。
+      - name: Install Playwright Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
       - name: Run Powerball scraper
         id: scrape
         continue-on-error: true

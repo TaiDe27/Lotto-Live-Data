@@ -10,6 +10,13 @@ Powerball Double Play 抓取 — powerball.com/double-play
 Play" / "Match 5"，不是"Match 5 + Power Play"这种)，所以单独写了一个
 `parse_winners_section`，不是复用主脚本那个按"Match N + Power Play"
 措辞写的版本。
+
+抓取方式(2026-11-06 改为 Playwright,原因同 powerball_scraper.py):同一个
+powerball.com 域名,同样会遇到 requests 间歇性被反爬拦截的问题,改用真实
+Chromium 内核绕过。本文件 `parse_winners_section` 的 tier dict key 本来
+就是写死的 Title Case 字面量("Double Play JACKPOT"/"Match 5"),不是用
+正则捕获到的原始文本当 key,所以不会受 Playwright innerText 可能的全大写
+渲染影响;匹配用的正则本来就全部带 re.IGNORECASE,大小写也不受影响。
 """
 
 import dataclasses
@@ -24,7 +31,7 @@ from typing import Optional
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from powerball_scraper import (  # noqa: E402  复用主脚本已验证过的函数
-    normalize_text,
+    normalize_lines,
     parse_winning_numbers,
     parse_next_drawing,
     validate,
@@ -85,14 +92,22 @@ def parse_winners_section(text: str) -> dict:
 
 
 def fetch() -> DoublePlayResult:
-    import requests
+    from playwright.sync_api import sync_playwright
 
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(URL, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
-            resp.raise_for_status()
-            text = normalize_text(resp.text)
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(URL, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    page.get_by_text("Winning Numbers").first.wait_for(timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    raw_text = page.inner_text("body")
+                finally:
+                    browser.close()
+
+            text = normalize_lines(raw_text)
 
             draw_date, white_balls, red_ball, _power_play = parse_winning_numbers(text)
             # Double Play 没有 Power Play,_power_play 理论上应该是 None;

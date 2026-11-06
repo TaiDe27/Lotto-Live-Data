@@ -6,6 +6,12 @@ Lotto America（powerball.com/lotto-america）抓取
 不受倍投影响，跟 Power Play 的规则一致所以沿用同样的"数字紧跟标签"解析
 方式）。头奖奖金结构跟 Powerball 主玩法一样，有 Estimated Jackpot +
 Cash Value 两个字段。
+
+抓取方式(2026-11-06 改为 Playwright,原因同 powerball_scraper.py):同一个
+powerball.com 域名,requests 会遇到间歇性反爬拦截,改用真实 Chromium 内核
+绕过。`parse_winners_section` 的 tier key 是写死的 "Jackpot"/"Match 5 +
+All Star Bonus"/"Match 5" 字面量,不受 Playwright innerText 可能的全大写
+渲染影响(正则本身也已带 re.IGNORECASE)。
 """
 
 import dataclasses
@@ -50,11 +56,20 @@ class LottoAmericaResult:
 
 
 def normalize_text(html: str) -> str:
+    """requests+BeautifulSoup 路径用的纯文本清理(现在 fetch() 已经不调用了,
+    留着是因为跟 powerball_scraper.py 保持同样的函数名习惯,降低改动面)。"""
     from bs4 import BeautifulSoup
 
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text("\n")
     lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    return "\n".join(lines)
+
+
+def normalize_lines(raw_text: str) -> str:
+    """Playwright `page.inner_text()` 版本:已经是渲染后的可见文本,不用剥
+    HTML 标签,只做跟 normalize_text() 一样的"每行去空白、丢空行"清理。"""
+    lines = [ln.strip() for ln in raw_text.split("\n") if ln.strip()]
     return "\n".join(lines)
 
 
@@ -133,14 +148,22 @@ def validate(main_balls: list[int], star_ball: Optional[int]) -> None:
 
 
 def fetch() -> LottoAmericaResult:
-    import requests
+    from playwright.sync_api import sync_playwright
 
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(URL, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
-            resp.raise_for_status()
-            text = normalize_text(resp.text)
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(URL, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    page.get_by_text("Winning Numbers").first.wait_for(timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    raw_text = page.inner_text("body")
+                finally:
+                    browser.close()
+
+            text = normalize_lines(raw_text)
 
             draw_date, main_balls, star_ball, all_star_bonus = parse_winning_numbers(text)
             validate(main_balls, star_ball)

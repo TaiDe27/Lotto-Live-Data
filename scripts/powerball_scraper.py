@@ -8,8 +8,18 @@ Jackpot"这些固定英文标签词,数字紧跟在标签后面。既然不知�
 匹配。这样即使真实 HTML 的 class 名字跟猜测的不一样也没关系,只要标签词和
 数字的相对顺序没变,就能抓到;比硬编码 CSS 选择器更抗改版。
 
-前提:开奖号码在服务端渲染的 HTML 源码里(用户已确认,不是 JS 后加载的),
-所以用 requests 就够,不需要 Playwright/浏览器内核。
+抓取方式(2026-11-05 改为 Playwright,之前一直是 requests):确认真实问题
+——powerball.com 对 requests 这类非浏览器请求有间歇性反爬拦截,同一个
+URL、同一套完整浏览器请求头,成功率只有 50%-75%(实测对照:4次里混着
+拿到一个固定 8964 字节的"拦截页",不是连接被拒绝,是正常 200 但内容是
+假的)。换成 Playwright 真实跑 Chromium 内核(能过 JS 挑战、有真实浏览器
+指纹),同等条件下连续测试 5/5 全部拿到真实页面,一次没被拦。所以这份
+脚本用 Playwright 的 `page.inner_text("body")` 代替 requests+
+BeautifulSoup 去拿纯文本——后面的标签词正则匹配逻辑完全不变,只是文本
+来源从"HTML源码经BeautifulSoup提取"换成"浏览器渲染后直接读可见文本"，
+两者格式基本一致(都是每行一个标签/数字,靠`\n`分隔)。
+**仅限这一个脚本**：同样抓 powerball.com 的 Double Play 脚本
+(powerball_double_play_scraper.py)还在用 requests，本次改动故意不碰。
 
 合规提醒(上一轮已经查过 powerball.com 的 Terms & Conditions):
 没有明确禁止 robot/spider 的条款,但有一条覆盖全站的知识产权条款——
@@ -60,12 +70,26 @@ class PowerballResult:
 
 
 def normalize_text(html: str) -> str:
-    """BeautifulSoup 取纯文本流,压缩多余空白/空行,方便后面用宽松的正则匹配。"""
+    """BeautifulSoup 取纯文本流,压缩多余空白/空行,方便后面用宽松的正则匹配。
+
+    这份脚本自己的 fetch() 已经改用 Playwright(见文件头注释),不再调用这个
+    函数——但 powerball_double_play_scraper.py 还在 import 这个函数,用在它
+    自己的 requests+BeautifulSoup 抓取路径上,所以保留不动,不能删。
+    """
     from bs4 import BeautifulSoup
 
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text("\n")
     lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    return "\n".join(lines)
+
+
+def normalize_lines(raw_text: str) -> str:
+    """`normalize_text()` 的 Playwright 版本:浏览器的 `innerText` 已经是渲染后的
+    纯可见文本,没有标签要剥离,只需要做同样的"每行去空白、丢空行"清理,好让
+    后面的正则匹配到的文本格式跟 `normalize_text()` 保持一致。
+    """
+    lines = [ln.strip() for ln in raw_text.split("\n") if ln.strip()]
     return "\n".join(lines)
 
 
@@ -189,10 +213,35 @@ def parse_winners_section(text: str) -> dict:
     静默丢掉——不是偶发,是头奖只要被中,一定复现。加 re.IGNORECASE 后,
     连带着 "None" 哨兵值的判断也要跟着做大小写不敏感(呼应着改,否则
     理论上官网把 "None" 印成小写时,`states_raw == "None"` 会判断失败)。
+
+    第二个确认真实bug(2026-11-05,换成 Playwright 之后用真实 innerText
+    再验证这个正则时发现的):Playwright 读到的可见文本里,"Powerball"
+    和 "JACKPOT" 是分两行渲染的("POWERBALL\nJACKPOT WINNERS\nNJ"),
+    不是同一行用空格隔开——原来的 "Powerball JACKPOT" 字面量只认得中间
+    是一个空格,换行会匹配不上。改成 "Powerball\s+JACKPOT" 兼容换行。
+
+    第三个确认真实bug(同一轮换 Playwright 验证时发现的,比前两个更严重):
+    Playwright 的 innerText 读到的是浏览器"渲染后的可见文本"——如果页面
+    CSS 对这块区域做了 text-transform:uppercase 之类的视觉样式,innerText
+    拿到的就是全大写的 "MATCH 5 + POWER PLAY",跟 BeautifulSoup 直接读
+    HTML 源码拿到的 "Match 5 + Power Play" 大小写不一样,而且这次连里面
+    的换行位置也可能变(实测"Powerball"和"JACKPOT"两个词之间插了个换行)。
+    这件事本身不是 bug(两种工具对同一个页面本来就会读出不同的空白/大小写
+    呈现),但**这个函数返回的 dict 的 key,会被 App 那边当成精确字符串比较**
+    (`LottoTracker/Services/BundledDataSource.swift` 里有
+    `tierName == "Powerball JACKPOT"`,还有别处按 `"Match \(mainCount)"`
+    这种 Title Case 精确匹配/判断前缀)——如果这里原样把抓到的大小写/换行
+    传出去,App 端的字符串比较会直接失配,头奖和"Match N"近似中奖这些数据
+    会在 App 里显示不出来,等于把这次好不容易修好的 bug 换了个地方重新
+    引入一次。所以这里不直接用正则捕获到的原始文本当 key,而是**自己拼出
+    固定大小写、固定格式的 key**("Powerball JACKPOT" / "Match {n}" /
+    "Match {n} + Power Play"),跟抓取时的大小写/换行完全脱钩,保证不管
+    innerText 实际渲染成什么样,输出给 App 的 key 格式永远跟 App 代码里
+    写死的字符串一致。
     """
     winners = {}
     for m in re.finditer(
-        r"(Powerball JACKPOT|Match \d(?:\s*\+\s*Power Play)?)\s*"
+        r"(Powerball\s+JACKPOT|Match \d(?:\s*\+\s*Power Play)?)\s*"
         rf"(?:{MONEY_PATTERN}\s*)?"
         # "None" 必须排在 [A-Z]{2} 州代码这个分支前面,不然贪婪匹配会把
         # "None" 的开头字母 N 当成一个(不存在的)单字母州代码提前截断匹配
@@ -200,7 +249,15 @@ def parse_winners_section(text: str) -> dict:
         text,
         re.IGNORECASE,
     ):
-        tier, prize, states_raw = m.group(1), m.group(2), m.group(3)
+        raw_tier, prize, states_raw = m.group(1), m.group(2), m.group(3)
+        normalized = re.sub(r"\s+", " ", raw_tier).strip()
+        if normalized.upper().startswith("POWERBALL"):
+            tier = "Powerball JACKPOT"
+        else:
+            digit_m = re.search(r"\d", normalized)
+            has_power_play = "power play" in normalized.lower()
+            tier = (f"Match {digit_m.group()}" + (" + Power Play" if has_power_play else "")
+                    if digit_m else normalized)
         states_raw = states_raw.strip()
         states = [] if states_raw.upper() == "NONE" else [s.strip() for s in states_raw.split(",")]
         winners[tier] = {"prize": prize, "states": states}
@@ -221,14 +278,27 @@ def validate(white_balls: list[int], red_ball: Optional[int]) -> None:
 
 
 def fetch() -> PowerballResult:
-    import requests
+    from playwright.sync_api import sync_playwright
 
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(URL, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
-            resp.raise_for_status()
-            text = normalize_text(resp.text)
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(URL, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    # 真实浏览器加载完 HTML 之后,这个页面还要等客户端 JS 把
+                    # 号码渲染出来——实测过(2026-11-05)刚 navigate 完 innerText
+                    # 还很短(没渲染完)。等"Winning Numbers"这个真实文字出现,
+                    # 比写死 sleep 几秒更稳:渲染慢的时候不会等不够,渲染快的
+                    # 时候也不会白等。
+                    page.get_by_text("Winning Numbers").first.wait_for(timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    raw_text = page.inner_text("body")
+                finally:
+                    browser.close()
+
+            text = normalize_lines(raw_text)
 
             draw_date, white_balls, red_ball, power_play = parse_winning_numbers(text)
             validate(white_balls, red_ball)
