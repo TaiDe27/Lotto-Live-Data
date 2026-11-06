@@ -1,6 +1,14 @@
 [
   {
     "game": "mass_cash",
+    "draw_date": "2026-11-06",
+    "numbers": [],
+    "fetched_at": "2026-11-06T19:21:05.888742+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results",
+    "session": "midday"
+  },
+  {
+    "game": "mass_cash",
     "draw_date": "2026-11-05",
     "numbers": [
       5,
