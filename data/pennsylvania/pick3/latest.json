@@ -1,6 +1,18 @@
 [
   {
     "draw_date": "2026-11-05",
+    "session": "evening",
+    "digits": [
+      "5",
+      "5",
+      "0"
+    ],
+    "wild_ball": "4",
+    "fetched_at": "2026-11-06T00:19:32.515375+00:00",
+    "source_url": "https://www.lottery.net/pennsylvania/pick-3/numbers"
+  },
+  {
+    "draw_date": "2026-11-05",
     "session": "day",
     "digits": [
       "2",
@@ -8,7 +20,7 @@
       "9"
     ],
     "wild_ball": "2",
-    "fetched_at": "2026-11-05T20:41:20.985363+00:00",
+    "fetched_at": "2026-11-06T00:19:32.515214+00:00",
     "source_url": "https://www.lottery.net/pennsylvania/pick-3/numbers"
   },
   {
