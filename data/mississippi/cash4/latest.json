@@ -1,6 +1,19 @@
 [
   {
     "draw_date": "2026-11-05",
+    "session": "evening",
+    "numbers": [
+      3,
+      8,
+      4,
+      7
+    ],
+    "fireball": 9,
+    "fetched_at": "2026-11-06T03:51:23.750316+00:00",
+    "source_url": "https://www.mslottery.com/games/cash-4/"
+  },
+  {
+    "draw_date": "2026-11-05",
     "session": "midday",
     "numbers": [
       2,
@@ -9,7 +22,7 @@
       1
     ],
     "fireball": 3,
-    "fetched_at": "2026-11-06T03:11:10.802323+00:00",
+    "fetched_at": "2026-11-06T03:51:23.750404+00:00",
     "source_url": "https://www.mslottery.com/games/cash-4/"
   },
   {
