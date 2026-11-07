@@ -1331,6 +1331,18 @@
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
         "addOnMarkerPattern": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "2": "box2way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
       }
     },
     {
@@ -1435,6 +1447,18 @@
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
         "addOnMarkerPattern": null
+      },
+      "matchRule": {
+        "kind": "positionalDigits",
+        "straightTierKey": "straight",
+        "boxTierKeysByWayCount": {
+          "2": "box2way"
+        },
+        "teamCount": null,
+        "teamMatchTierKeyTemplate": null,
+        "teamJackpotTierKey": null,
+        "addOnStraightTierKey": null,
+        "addOnBoxTierKeysByWayCount": null
       }
     },
     {

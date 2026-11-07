@@ -2183,7 +2183,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "BULLSEYE\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "matchRule": {
         "kind": "bullseyeAddOnMatch",
@@ -2398,7 +2398,7 @@
         "boardSplitKind": "letterLabelElseTwoDigitStart",
         "boardLabelPattern": null,
         "verifiedAgainstRealTicket": true,
-        "addOnMarkerPattern": null
+        "addOnMarkerPattern": "BULLSEYE\\s*[=\\-:]?\\s*(YES|NO)"
       },
       "matchRule": {
         "kind": "bullseyeAddOnMatch",
