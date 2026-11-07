@@ -33028,16 +33028,7 @@
         "moneyFormat": null,
         "source": "none"
       },
-      "nextDrawDate": {
-        "anchorHour": 19,
-        "anchorHourBySession": null,
-        "anchorMinute": 59,
-        "dateFormat": null,
-        "field": null,
-        "sessionField": null,
-        "timeZoneIdentifier": "America/New_York",
-        "truncateToLength": null
-      },
+      "nextDrawDate": null,
       "nextJackpot": {
         "field": "jackpot_amount",
         "guardField": null,
