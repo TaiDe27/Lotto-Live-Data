@@ -968,8 +968,11 @@
           "timeZoneIdentifier": "America/New_York",
           "anchorHour": null,
           "anchorMinute": 0,
-          "anchorHourBySession": null,
-          "sessionField": null
+          "anchorHourBySession": {
+            "midday": 13,
+            "evening": 19
+          },
+          "sessionField": "session"
         },
         "nextDrawDate": null,
         "mainNumbersField": "digits",
@@ -1104,8 +1107,11 @@
           "timeZoneIdentifier": "America/New_York",
           "anchorHour": null,
           "anchorMinute": 0,
-          "anchorHourBySession": null,
-          "sessionField": null
+          "anchorHourBySession": {
+            "midday": 13,
+            "evening": 19
+          },
+          "sessionField": "session"
         },
         "nextDrawDate": null,
         "mainNumbersField": "digits",
@@ -1242,8 +1248,11 @@
           "timeZoneIdentifier": "America/New_York",
           "anchorHour": null,
           "anchorMinute": 0,
-          "anchorHourBySession": null,
-          "sessionField": null
+          "anchorHourBySession": {
+            "midday": 13,
+            "evening": 19
+          },
+          "sessionField": "session"
         },
         "nextDrawDate": null,
         "mainNumbersField": "digits",

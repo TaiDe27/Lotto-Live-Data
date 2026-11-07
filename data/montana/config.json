@@ -1250,8 +1250,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Denver",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 19,
+          "anchorMinute": 30,
           "anchorHourBySession": null,
           "sessionField": null
         },
@@ -1363,7 +1363,7 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Denver",
-          "anchorHour": null,
+          "anchorHour": 20,
           "anchorMinute": 0,
           "anchorHourBySession": null,
           "sessionField": null

@@ -924,14 +924,17 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 19,
+          "anchorMinute": 29,
           "anchorHourBySession": null,
           "sessionField": null
         },
         "nextDrawDate": null,
         "mainNumbersField": "numbers",
-        "specialNumbers": "special_number",
+        "specialNumbers": {
+          "field": "special_number",
+          "wrapScalar": true
+        },
         "winningTeamsField": null,
         "lottoMillion1Field": null,
         "lottoMillion2Field": null,

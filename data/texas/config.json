@@ -761,7 +761,10 @@
         },
         "nextDrawDate": null,
         "mainNumbersField": "numbers",
-        "specialNumbers": "bonus_ball",
+        "specialNumbers": {
+          "field": "bonus_ball",
+          "wrapScalar": true
+        },
         "winningTeamsField": null,
         "lottoMillion1Field": null,
         "lottoMillion2Field": null,

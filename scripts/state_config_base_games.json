@@ -17201,8 +17201,11 @@
         "timeZoneIdentifier": "America/New_York",
         "anchorHour": null,
         "anchorMinute": 0,
-        "anchorHourBySession": null,
-        "sessionField": null
+        "anchorHourBySession": {
+          "midday": 13,
+          "evening": 19
+        },
+        "sessionField": "session"
       },
       "nextDrawDate": null,
       "mainNumbersField": "digits",
@@ -17337,8 +17340,11 @@
         "timeZoneIdentifier": "America/New_York",
         "anchorHour": null,
         "anchorMinute": 0,
-        "anchorHourBySession": null,
-        "sessionField": null
+        "anchorHourBySession": {
+          "midday": 13,
+          "evening": 19
+        },
+        "sessionField": "session"
       },
       "nextDrawDate": null,
       "mainNumbersField": "digits",
@@ -17475,8 +17481,11 @@
         "timeZoneIdentifier": "America/New_York",
         "anchorHour": null,
         "anchorMinute": 0,
-        "anchorHourBySession": null,
-        "sessionField": null
+        "anchorHourBySession": {
+          "midday": 13,
+          "evening": 19
+        },
+        "sessionField": "session"
       },
       "nextDrawDate": null,
       "mainNumbersField": "digits",
@@ -18059,8 +18068,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 18,
+        "anchorMinute": 17,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -18177,8 +18186,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 18,
+        "anchorMinute": 17,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -18287,8 +18296,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 18,
+        "anchorMinute": 17,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -18558,8 +18567,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 20,
+        "anchorMinute": 59,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -18717,8 +18726,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 20,
+        "anchorMinute": 59,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -19392,8 +19401,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 20,
+        "anchorMinute": 59,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -20156,8 +20165,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 21,
+        "anchorMinute": 30,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -20301,8 +20310,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Denver",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 19,
+        "anchorMinute": 30,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -20414,7 +20423,7 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Denver",
-        "anchorHour": null,
+        "anchorHour": 20,
         "anchorMinute": 0,
         "anchorHourBySession": null,
         "sessionField": null
@@ -21586,7 +21595,7 @@
       "derbyPositionsField": null,
       "derbyRaceTimeField": null,
       "drawDate": {
-        "anchorHour": null,
+        "anchorHour": 22,
         "anchorHourBySession": null,
         "anchorMinute": 0,
         "dateFormat": "yyyy-MM-dd",
@@ -21770,7 +21779,7 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
+        "anchorHour": 22,
         "anchorMinute": 0,
         "anchorHourBySession": null,
         "sessionField": null
@@ -21908,7 +21917,7 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
+        "anchorHour": 22,
         "anchorMinute": 0,
         "anchorHourBySession": null,
         "sessionField": null
@@ -22032,7 +22041,7 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
+        "anchorHour": 21,
         "anchorMinute": 0,
         "anchorHourBySession": null,
         "sessionField": null
@@ -25226,8 +25235,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 21,
+        "anchorMinute": 10,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -25339,8 +25348,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Chicago",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 21,
+        "anchorMinute": 10,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -27001,8 +27010,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Los_Angeles",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 19,
+        "anchorMinute": 29,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -27587,8 +27596,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Los_Angeles",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 19,
+        "anchorMinute": 30,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -27697,8 +27706,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/New_York",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 18,
+        "anchorMinute": 59,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -28183,8 +28192,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/New_York",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 18,
+        "anchorMinute": 59,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -29333,8 +29342,8 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/New_York",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 13,
+        "anchorMinute": 35,
         "anchorHourBySession": null,
         "sessionField": null
       },
@@ -30135,14 +30144,17 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Puerto_Rico",
-        "anchorHour": null,
+        "anchorHour": 21,
         "anchorMinute": 0,
         "anchorHourBySession": null,
         "sessionField": null
       },
       "nextDrawDate": null,
       "mainNumbersField": "numbers",
-      "specialNumbers": "special_number",
+      "specialNumbers": {
+        "field": "special_number",
+        "wrapScalar": true
+      },
       "winningTeamsField": null,
       "lottoMillion1Field": null,
       "lottoMillion2Field": null,
@@ -31051,7 +31063,7 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/Puerto_Rico",
-        "anchorHour": null,
+        "anchorHour": 21,
         "anchorMinute": 0,
         "anchorHourBySession": null,
         "sessionField": null
@@ -31398,14 +31410,17 @@
         "dateFormat": "yyyy-MM-dd",
         "truncateToLength": null,
         "timeZoneIdentifier": "America/New_York",
-        "anchorHour": null,
-        "anchorMinute": 0,
+        "anchorHour": 19,
+        "anchorMinute": 29,
         "anchorHourBySession": null,
         "sessionField": null
       },
       "nextDrawDate": null,
       "mainNumbersField": "numbers",
-      "specialNumbers": "special_number",
+      "specialNumbers": {
+        "field": "special_number",
+        "wrapScalar": true
+      },
       "winningTeamsField": null,
       "lottoMillion1Field": null,
       "lottoMillion2Field": null,
@@ -34564,7 +34579,10 @@
       },
       "nextDrawDate": null,
       "mainNumbersField": "numbers",
-      "specialNumbers": "bonus_ball",
+      "specialNumbers": {
+        "field": "bonus_ball",
+        "wrapScalar": true
+      },
       "winningTeamsField": null,
       "lottoMillion1Field": null,
       "lottoMillion2Field": null,

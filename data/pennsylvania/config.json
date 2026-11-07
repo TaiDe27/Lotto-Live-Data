@@ -1122,8 +1122,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 18,
+          "anchorMinute": 59,
           "anchorHourBySession": null,
           "sessionField": null
         },
@@ -1232,8 +1232,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 18,
+          "anchorMinute": 59,
           "anchorHourBySession": null,
           "sessionField": null
         },
@@ -1342,8 +1342,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 13,
+          "anchorMinute": 35,
           "anchorHourBySession": null,
           "sessionField": null
         },

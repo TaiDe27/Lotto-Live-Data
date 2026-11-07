@@ -1010,8 +1010,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Chicago",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 20,
+          "anchorMinute": 59,
           "anchorHourBySession": null,
           "sessionField": null
         },
@@ -1169,8 +1169,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Chicago",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 20,
+          "anchorMinute": 59,
           "anchorHourBySession": null,
           "sessionField": null
         },
@@ -1296,8 +1296,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Chicago",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 20,
+          "anchorMinute": 59,
           "anchorHourBySession": null,
           "sessionField": null
         },

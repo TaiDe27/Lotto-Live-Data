@@ -1215,8 +1215,8 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/Chicago",
-          "anchorHour": null,
-          "anchorMinute": 0,
+          "anchorHour": 21,
+          "anchorMinute": 30,
           "anchorHourBySession": null,
           "sessionField": null
         },
