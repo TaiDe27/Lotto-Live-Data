@@ -86,6 +86,16 @@ def scrape_digit_game(url: str, game_key: str, digit_count: int) -> list[dict]:
 
 
 def scrape_cash5() -> list[dict]:
+    """Jersey Cash 5 draws 5 numbers total, one of which (the Bulls-Eye) is randomly flagged - NOT
+    a separately-drawn 6th number (see module doc comment). lotteryusa.com's page still visually
+    splits the Bulls-Eye into its own box from the other 4, so `c["boxes"]` only has 4 and
+    `c["bonus_number"]` has the 5th - merged back into one 5-element `numbers` list here so the
+    saved shape matches the real mechanic (and Missouri MO Millions' already-correct shape, where
+    the bullseye value is also present inside `numbers`), not lotteryusa.com's own display split.
+    Confirmed real bug 2026-11-07: before this fix, `numbers` only ever had 4 of the 5 real drawn
+    numbers, so a player who picked the actual Bulls-Eye number as one of their 5 picks would never
+    register a match against it.
+    """
     url = "https://www.lotteryusa.com/new-jersey/cash-5/"
     cards = lu.parse_draw_cards(lu.fetch_html(url), max_entries=MAX_HISTORY)
     out = []
@@ -93,10 +103,11 @@ def scrape_cash5() -> list[dict]:
         numbers = next(iter(c["boxes"].values()), [])
         if len(numbers) != 4:  # lotteryusa renders the Bullseye ball separately; main box has 4
             continue
+        bullseye = c["bonus_number"]
         out.append({
             "draw_date": c["draw_date"],
-            "numbers": numbers,
-            "bullseye_number": c["bonus_number"],
+            "numbers": numbers + [bullseye],
+            "bullseye_number": bullseye,
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "source_url": url,
         })
