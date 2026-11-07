@@ -21,6 +21,13 @@ BeautifulSoup 去拿纯文本——后面的标签词正则匹配逻辑完全不
 **仅限这一个脚本**：同样抓 powerball.com 的 Double Play 脚本
 (powerball_double_play_scraper.py)还在用 requests，本次改动故意不碰。
 
+结算值补抓(2026-11-06 新增,见 fetch_settled_jackpot()):首页的 Next Drawing
+只有"下一期"滚动预估,不是"这一期"的最终结算值——之前 App 端一直拿"上一次
+抓到的、开奖前的预估"顶替,平时凑巧接近但不是真值,抓取一旦断档(比如反爬
+拦截那次)就会跟官网结算页对不上。现在开奖后额外抓一次 draw-result 结算页
+(真正定死的 Estimated Jackpot/Cash Value),抓不到就把这两个字段留空,由
+App 端退回原来的预估兜底逻辑,不影响原有行为。
+
 合规提醒(上一轮已经查过 powerball.com 的 Terms & Conditions):
 没有明确禁止 robot/spider 的条款,但有一条覆盖全站的知识产权条款——
 "网站内容不得以任何方式复制,除非是访问和使用网站本身所必需" ——所以这份
@@ -41,6 +48,9 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("powerball_scraper")
 
 URL = "https://www.powerball.com/"
+# 结算页(2026-11-06 新增,见 fetch_settled_jackpot()的说明)的 gc= 参数,实测确认过
+# (page.goto 后 innerText 里能看到真实数据,不是 Powerball 的默认兜底页)。
+DRAW_RESULT_URL_TEMPLATE = "https://www.powerball.com/draw-result?gc=powerball&date={date}"
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
@@ -64,6 +74,11 @@ class PowerballResult:
     winners_by_tier: dict  # 见 parse_winners_section()
     fetched_at: str
     source_url: str
+    # 开奖后结算的真实 Jackpot/Cash Value(见 fetch_settled_jackpot())——抓不到时留 None,
+    # 不是这次开奖没有头奖,只是结算页暂时没抓到;App 端会退回用上一条记录的
+    # next_drawing 预估值兜底,行为跟加这两个字段之前完全一样。
+    settled_jackpot: Optional[str] = None
+    settled_cash_value: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -325,6 +340,82 @@ def fetch() -> PowerballResult:
     raise RuntimeError(f"重试 {MAX_RETRIES} 次后仍然失败") from last_err
 
 
+def draw_date_to_iso(draw_date: str) -> Optional[str]:
+    """"Wed, Nov 4, 2026" -> "2026-11-04",给结算页的 URL 用。"""
+    try:
+        return dt.datetime.strptime(draw_date, "%a, %b %d, %Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return None
+
+
+def existing_settled_jackpot(draw_date: str) -> dict:
+    """开奖之后,这个值就已经定死不会再变了——如果 latest.json 里这期记录已经有
+    settled_jackpot,直接复用,不用每次抓取周期都重新打开一次结算页。"""
+    out_path = OUTPUT_DIR / "multistate" / "powerball" / "latest.json"
+    if not out_path.exists():
+        return {}
+    try:
+        history = json.loads(out_path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return {}
+    if not isinstance(history, list) or not history:
+        return {}
+    entry = history[0]
+    if entry.get("draw_date") != draw_date or not entry.get("settled_jackpot"):
+        return {}
+    return {"settled_jackpot": entry.get("settled_jackpot"), "settled_cash_value": entry.get("settled_cash_value")}
+
+
+def fetch_settled_jackpot(draw_date: str) -> dict:
+    """开奖后,从 draw-result 结算页(不是首页)抓这一期真正定死的 Estimated
+    Jackpot/Cash Value——首页的 Next Drawing 区块只有"下一期"的滚动预估,不是
+    "这一期"的结算值(2026-11-06 跟用户确认过的真实问题:之前一直拿"上一次
+    抓到的、开奖前的预估"顶替"这期的结算值",平时凑巧接近,但只要抓取中间
+    断过档(比如这次 Playwright 迁移之前的反爬拦截),预估值就会停留在开奖前
+    的某个中间值,跟官网结算页上真正的最终金额对不上)。
+
+    最多重试 MAX_RETRIES 次;抓不到就返回空 dict,不抛异常——这是锦上添花的
+    数据,抓不到不能让整个 main() 失败,调用方会自动退回用旧的"上一条记录的
+    next_drawing 预估"兜底,行为跟没有这个函数之前一样。
+    """
+    from playwright.sync_api import sync_playwright
+
+    iso_date = draw_date_to_iso(draw_date)
+    if not iso_date:
+        return {}
+    url = DRAW_RESULT_URL_TEMPLATE.format(date=iso_date)
+
+    last_err = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(url, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    page.get_by_text("ESTIMATED JACKPOT").first.wait_for(timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    raw_text = page.inner_text("body")
+                finally:
+                    browser.close()
+
+            text = normalize_lines(raw_text)
+            jackpot_m = re.search(rf"ESTIMATED JACKPOT:\s*{MONEY_PATTERN}", text, re.IGNORECASE)
+            if not jackpot_m:
+                return {}
+            result = {"settled_jackpot": jackpot_m.group(1).strip()}
+            cash_m = re.search(rf"CASH VALUE:\s*{MONEY_PATTERN}", text, re.IGNORECASE)
+            if cash_m:
+                result["settled_cash_value"] = cash_m.group(1).strip()
+            return result
+        except Exception as e:  # noqa: BLE001
+            last_err = e
+            log.warning("结算页第 %d 次尝试失败: %s", attempt, e)
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF_SEC * attempt)
+    log.warning("结算页重试 %d 次后仍然失败,退回旧的预估兜底逻辑: %s", MAX_RETRIES, last_err)
+    return {}
+
+
 MAX_HISTORY = 100
 
 
@@ -365,6 +456,15 @@ def save_result(result: PowerballResult) -> Path:
 def main():
     result = fetch()
     log.info("抓取结果: %s", result.to_dict())
+
+    if result.draw_date:
+        cached = existing_settled_jackpot(result.draw_date)
+        settled = cached if cached else fetch_settled_jackpot(result.draw_date)
+        if settled:
+            result.settled_jackpot = settled.get("settled_jackpot")
+            result.settled_cash_value = settled.get("settled_cash_value")
+            log.info("结算页数据: %s", settled)
+
     save_result(result)
 
 

@@ -12,6 +12,12 @@ powerball.com 域名,requests 会遇到间歇性反爬拦截,改用真实 Chromi
 绕过。`parse_winners_section` 的 tier key 是写死的 "Jackpot"/"Match 5 +
 All Star Bonus"/"Match 5" 字面量,不受 Playwright innerText 可能的全大写
 渲染影响(正则本身也已带 re.IGNORECASE)。
+
+结算值补抓(2026-11-06 新增,见 fetch_settled_jackpot()):跟 powerball_scraper.py
+的 Powerball 一样,Lotto America 头奖也会滚存,首页 Next Drawing 只有
+"下一期"的滚动预估,不是"这一期"的最终结算值。原来一直靠"上一次抓到的
+预估"顶替,现在开奖后额外抓一次 draw-result 结算页拿真正定死的金额,抓不到
+就留空,由 App 端退回原来的预估兜底逻辑。
 """
 
 import dataclasses
@@ -27,6 +33,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("lotto_america_scraper")
 
 URL = "https://www.powerball.com/lotto-america"
+DRAW_RESULT_URL_TEMPLATE = "https://www.powerball.com/draw-result?gc=lotto-america&date={date}"
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
@@ -50,6 +57,8 @@ class LottoAmericaResult:
     winners_by_tier: dict
     fetched_at: str
     source_url: str
+    settled_jackpot: Optional[str] = None
+    settled_cash_value: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -186,6 +195,71 @@ def fetch() -> LottoAmericaResult:
     raise RuntimeError(f"重试 {MAX_RETRIES} 次后仍然失败") from last_err
 
 
+def draw_date_to_iso(draw_date: str) -> Optional[str]:
+    try:
+        return dt.datetime.strptime(draw_date, "%a, %b %d, %Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return None
+
+
+def existing_settled_jackpot(draw_date: str) -> dict:
+    out_path = OUTPUT_DIR / "multistate" / "lotto-america" / "latest.json"
+    if not out_path.exists():
+        return {}
+    try:
+        history = json.loads(out_path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return {}
+    if not isinstance(history, list) or not history:
+        return {}
+    entry = history[0]
+    if entry.get("draw_date") != draw_date or not entry.get("settled_jackpot"):
+        return {}
+    return {"settled_jackpot": entry.get("settled_jackpot"), "settled_cash_value": entry.get("settled_cash_value")}
+
+
+def fetch_settled_jackpot(draw_date: str) -> dict:
+    """见 powerball_scraper.py 里同名函数的说明——同一套"开奖后抓结算页拿真实
+    Jackpot/Cash Value,抓不到就退回预估兜底"逻辑,只是 URL 换成 Lotto America
+    自己的 gc=lotto-america。"""
+    from playwright.sync_api import sync_playwright
+
+    iso_date = draw_date_to_iso(draw_date)
+    if not iso_date:
+        return {}
+    url = DRAW_RESULT_URL_TEMPLATE.format(date=iso_date)
+
+    last_err = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(url, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    page.get_by_text("ESTIMATED JACKPOT").first.wait_for(timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    raw_text = page.inner_text("body")
+                finally:
+                    browser.close()
+
+            text = normalize_lines(raw_text)
+            jackpot_m = re.search(rf"ESTIMATED JACKPOT:\s*{MONEY_PATTERN}", text, re.IGNORECASE)
+            if not jackpot_m:
+                return {}
+            result = {"settled_jackpot": jackpot_m.group(1).strip()}
+            cash_m = re.search(rf"CASH VALUE:\s*{MONEY_PATTERN}", text, re.IGNORECASE)
+            if cash_m:
+                result["settled_cash_value"] = cash_m.group(1).strip()
+            return result
+        except Exception as e:  # noqa: BLE001
+            last_err = e
+            log.warning("结算页第 %d 次尝试失败: %s", attempt, e)
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_BACKOFF_SEC * attempt)
+    log.warning("结算页重试 %d 次后仍然失败,退回旧的预估兜底逻辑: %s", MAX_RETRIES, last_err)
+    return {}
+
+
 def save_result(result: LottoAmericaResult) -> Path:
     out_dir = OUTPUT_DIR / "multistate" / "lotto-america"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -215,6 +289,15 @@ def save_result(result: LottoAmericaResult) -> Path:
 def main():
     result = fetch()
     log.info("抓取结果: %s", result.to_dict())
+
+    if result.draw_date:
+        cached = existing_settled_jackpot(result.draw_date)
+        settled = cached if cached else fetch_settled_jackpot(result.draw_date)
+        if settled:
+            result.settled_jackpot = settled.get("settled_jackpot")
+            result.settled_cash_value = settled.get("settled_cash_value")
+            log.info("结算页数据: %s", settled)
+
     save_result(result)
 
 
