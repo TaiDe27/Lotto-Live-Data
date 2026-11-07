@@ -1,6 +1,67 @@
 [
   {
     "game": "Daily 4",
+    "draw_date": "2026-11-06",
+    "draw_number": "6746",
+    "digits": [
+      1,
+      5,
+      7,
+      7
+    ],
+    "session": "evening",
+    "tiers": [
+      {
+        "label": "Straight: 5-1-6-3All your numbers must match winning numbers in EXACT orderOdds: 1 in 10,000",
+        "winners": 5163,
+        "prize": "Straight Prize"
+      },
+      {
+        "label": "Box: 1-2-3-4(4 different numbers)ALL your numbers must match ALL winning numbers in any orderOdds: 1 in 417",
+        "winners": 123413241423124313421432213423142413214323412431312432143412314232413421412342134312413242314321,
+        "prize": "Box Prize"
+      },
+      {
+        "label": "Box 1-1-2-3(2 like numbers)ALL your numbers must match ALL winning numbers in any orderOdds: 1 in 833",
+        "winners": 112311321213123113211312231121132131321131123121,
+        "prize": "Box Prize"
+      },
+      {
+        "label": "Box: 1-1-2-2(2 sets of like numbers)ALL your numbers must match ALL winning numbers in any orderOdds: 1 in 1,667",
+        "winners": 112212121221221121212112,
+        "prize": "Box Prize"
+      },
+      {
+        "label": "Box: 6-6-6-4(3 like numbers)ALL your numbers must match ALL winning numbers in any orderOdds: 1 in 2,500",
+        "winners": 6664664664664666,
+        "prize": "Box Prize"
+      },
+      {
+        "label": "Straight/Box: 1-2-3-4(4 different numbers)Match Straight and/or Box playstylesOdds: 1 in 417",
+        "winners": 123413241423124313421432213423142413214323412431312432143412314232413421412342134312413242314321,
+        "prize": "Exact Order: 1/2 Straight & 1/2 Box PrizesAny Order: 1/2 Box Prize Only"
+      },
+      {
+        "label": "Straight/Box: 1-1-2-3(2 like numbers)Match Straight and/or Box playstyles.Odds: 1 in 833",
+        "winners": 112311321213123113211312231121132131321131123121,
+        "prize": "Exact Order: 1/2 Straight & 1/2 Box PrizesAny Order: 1/2 Box Prize Only"
+      },
+      {
+        "label": "Straight/Box: 1-1-2-2(2 sets of like numbers)Match Straight and/or Box playstyles.Odds: 1 in 1,667",
+        "winners": 112212121221221121212112,
+        "prize": "Exact Order: 1/2 Straight & 1/2 Box PrizesAny Order: 1/2 Box Prize Only"
+      },
+      {
+        "label": "Straight/Box: 6-6-6-4(3 like numbers)Match Straight and/or Box playstyles.Odds: 1 in 2,500",
+        "winners": 6664664664664666,
+        "prize": "Exact Order: 1/2 Straight & 1/2 Box PrizesAny Order: 1/2 Box Prize Only"
+      }
+    ],
+    "fetched_at": "2026-11-07T02:52:59.561087+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-4"
+  },
+  {
+    "game": "Daily 4",
     "draw_date": "2026-11-05",
     "draw_number": "6745",
     "digits": [
