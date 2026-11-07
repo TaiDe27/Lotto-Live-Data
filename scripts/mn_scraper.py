@@ -1,15 +1,33 @@
 """
-Minnesota own-games — mnlottery.com's own game pages render the latest winning numbers server-side
-(confirmed: curling /games/lotto/gopher-5, /games/lotto/north-5, /games/lotto/pick-3 with a plain
-browser UA returns a `<ul class="lottery-number-list">` with the real numbers already in the HTML,
-no JS execution needed). mnlottery.com also runs a separate "GameOn" widget
-(widget.gameon.mnlottery.com) for second-chance-drawing logins only — that one's gateway API is
-NOT the winning-numbers source, a dead end checked and ruled out before finding the real pattern
-above.
+Minnesota own-games — mnlottery.com relaunched on a new WordPress theme sometime around
+2026-11-06/07 (confirmed from the page's own asset URLs, e.g. `wp-content/themes/minnesota-
+lottery/dist/blocks/...`), which silently broke this scraper: `.card--lottery`/`.lottery-number-
+list`/`.lottery-drawing` don't exist anywhere in the new markup at all (confirmed via a plain
+`requests` fetch of all 3 game pages - 0 matches for any of those class names).
+
+More importantly, the winning numbers are no longer in the server-rendered HTML `requests` sees at
+all — a plain fetch returns the page shell with none of the actual numbers in it. Confirmed via
+Playwright that the results widget renders them client-side a few seconds after load. So this now
+needs the same real-Chromium approach as the Powerball-family/PA/WI scrapers, not just a CSS
+selector fix.
+
+New format (confirmed 2026-11-07 from Playwright's rendered `innerText` on all 3 real game pages -
+no stable class names found to hang a BeautifulSoup selector on, so this parses the plain visible
+text by its fixed label words instead, same general approach as the Powerball-family scripts):
+  <GAME NAME> ESTIMATED JACKPOT       (Pick 3 instead shows "PICK 3 TOP PRIZE", no dollar line
+  $980,000                             after it at all - it has no jackpot figure to show)
+  11/6/26 RESULTS
+  15                                  (one number per line, `expected_count` of them)
+  25
+  35
+  37
+  39
+  NEXT DRAWING
+  11/9 @ 6:17 PM CST                 (or "Today @ 6:17 PM CST")
 
 North 5 draws daily; Gopher 5 draws Mon/Wed/Fri; Pick 3 draws daily, ONE session per day (no
 midday/evening split, unlike most other states' Pick 3 — confirmed from the same page, which shows
-exactly one `lottery-number-list` block).
+exactly one block of numbers).
 """
 import dataclasses
 import datetime as dt
@@ -51,40 +69,41 @@ class MnResult:
 
 
 def fetch_one(url: str, expected_count: int) -> MnResult:
-    import requests
-    from bs4 import BeautifulSoup
+    from playwright.sync_api import sync_playwright
 
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
-            resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(url, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    page.get_by_text("RESULTS").first.wait_for(timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    text = page.inner_text("body")
+                finally:
+                    browser.close()
 
-            card = soup.select_one(".card--lottery")
-            if card is None:
-                raise ValueError("页面里没找到 .card--lottery 开奖卡片")
+            date_m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{2})\s+RESULTS", text, re.IGNORECASE)
+            if not date_m:
+                raise ValueError("没找到 'M/D/YY RESULTS' 开奖日期行")
+            mm, dd, yy = date_m.groups()
+            draw_date = f"20{yy}-{int(mm):02d}-{int(dd):02d}"
 
-            items = card.select(".lottery-number-list-item")
-            numbers = [int(li.get_text(strip=True)) for li in items]
+            after_results = text[date_m.end():]
+            next_drawing_m = re.search(r"\n\s*NEXT DRAWING", after_results, re.IGNORECASE)
+            numbers_block = after_results[:next_drawing_m.start()] if next_drawing_m else after_results
+            numbers = [int(tok) for tok in numbers_block.splitlines() if tok.strip().isdigit()]
             if len(numbers) != expected_count:
                 raise ValueError(f"应为 {expected_count} 个号码，抓到 {len(numbers)} 个: {numbers}")
 
-            drawing_text = card.select_one(".lottery-drawing")
-            if drawing_text is None:
-                raise ValueError("没找到 .lottery-drawing 开奖日期")
-            m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{2})", drawing_text.get_text())
-            if not m:
-                raise ValueError(f"开奖日期格式不对: {drawing_text.get_text()!r}")
-            mm, dd, yy = m.groups()
-            draw_date = f"20{yy}-{int(mm):02d}-{int(dd):02d}"
-
-            next_jackpot = None
-            jackpot_el = card.select_one(".lottery-payout")
-            if jackpot_el:
-                m2 = re.search(r"\$([\d,]+)", jackpot_el.get_text())
-                if m2:
-                    next_jackpot = int(m2.group(1).replace(",", ""))
+            # The jackpot dollar figure (when this game has one at all - Pick 3 doesn't) sits
+            # somewhere above the date/RESULTS line, as the last "$amount" before it - not grabbing
+            # the first "$..." found on the whole page, which could be an unrelated promo figure
+            # further up in the header/nav.
+            before_results = text[:date_m.start()]
+            jackpot_matches = re.findall(r"\$([\d,]+)", before_results)
+            next_jackpot = int(jackpot_matches[-1].replace(",", "")) if jackpot_matches else None
 
             return MnResult(
                 draw_date=draw_date,

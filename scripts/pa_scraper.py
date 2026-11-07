@@ -81,15 +81,29 @@ BASE = "https://www.lottery.net/pennsylvania"
 
 
 def _fetch_soup(url: str):
-    import requests
+    """2026-11-07 改为 Playwright(之前一直是 requests):lottery.net 这个域名反复出现"整次运行
+    从第一个请求开始就连接超时"的情况(PA/WI 共用同一个域名),之前一直当成"GitHub Actions
+    runner 拿到的临时 IP 偶尔被 WAF 挡住"来处理(workflow 里那个换新 runner 重试的步骤就是为
+    这个加的)。既然 Powerball 那边已经证实 Playwright(真实 Chromium 内核)能稳定绕开同类反爬
+    拦截,这里直接复用同一个思路——用真实浏览器取渲染后的 `page.content()`(完整 HTML),交给
+    BeautifulSoup 解析,后面所有基于 CSS selector 的提取逻辑完全不用改。换新 runner 的那个
+    workflow 重试步骤先保留,不额外删除,当 Playwright 本身也失败时仍然是一层有用的保底。"""
+    from playwright.sync_api import sync_playwright
     from bs4 import BeautifulSoup
 
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
-            resp.raise_for_status()
-            return BeautifulSoup(resp.text, "html.parser")
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(url, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    page.wait_for_selector(".resultBox.firstResult", timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    html = page.content()
+                finally:
+                    browser.close()
+            return BeautifulSoup(html, "html.parser")
         except Exception as e:  # noqa: BLE001
             last_err = e
             log.warning("第 %d 次尝试失败 (%s): %s", attempt, url, e)

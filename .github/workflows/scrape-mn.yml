@@ -16,6 +16,12 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      # 这个 workflow 专属(2026-11-07):mnlottery.com 换了新版 WordPress 主题,开奖号码现在
+      # 改成前端 JS 渲染后才有,requests 直接拿到的是空壳页面,必须用真实 Chromium 内核渲染。
+      - name: Install Playwright Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
       - name: Run Minnesota own-games scraper
         id: scrape
         continue-on-error: true

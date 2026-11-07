@@ -22,6 +22,12 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      # 这个 workflow 专属(2026-11-07):lottery.net 反复出现整次运行从第一个请求起就连接超时,
+      # 跟 Powerball 当初遇到的反爬拦截同一类问题,改用真实 Chromium 内核的 Playwright 抓取。
+      - name: Install Playwright Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
       - name: Run Pennsylvania own-games scraper
         id: scrape
         continue-on-error: true

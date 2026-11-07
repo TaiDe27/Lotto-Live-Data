@@ -56,15 +56,31 @@ BASE = "https://www.lottery.net/wisconsin"
 
 
 def _fetch_soup(url: str):
-    import requests
+    """2026-11-07 changed to Playwright (was requests) - same fix, same reasoning as
+    pa_scraper.py's own version of this function (see its comment): lottery.net (shared by both
+    PA and WI) repeatedly shows a whole run timing out from the very first request, previously
+    treated purely as "the runner's ephemeral IP got WAF-blocked." Reusing the real-Chromium
+    approach already proven against powerball.com's own anti-bot blocking - fetch the rendered
+    `page.content()` and hand it to BeautifulSoup unchanged, so every existing CSS-selector-based
+    extraction function below needs no changes at all. The fresh-runner auto-retry workflow step
+    is left in place as a fallback for whenever Playwright itself still fails.
+    """
+    from playwright.sync_api import sync_playwright
     from bs4 import BeautifulSoup
 
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
-            resp.raise_for_status()
-            return BeautifulSoup(resp.text, "html.parser")
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                try:
+                    page = browser.new_page(user_agent=USER_AGENT)
+                    page.goto(url, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
+                    page.wait_for_selector(".resultBox.firstResult", timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    html = page.content()
+                finally:
+                    browser.close()
+            return BeautifulSoup(html, "html.parser")
         except Exception as e:  # noqa: BLE001
             last_err = e
             log.warning("attempt %d failed (%s): %s", attempt, url, e)

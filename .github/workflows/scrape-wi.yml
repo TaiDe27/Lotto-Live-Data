@@ -22,6 +22,12 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      # 这个 workflow 专属(2026-11-07):同一个 lottery.net 域名,同样改用 Playwright,原因同
+      # scrape-pa.yml。
+      - name: Install Playwright Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
       - name: Run Wisconsin own-games scraper
         id: scrape
         continue-on-error: true
