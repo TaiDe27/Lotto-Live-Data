@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-11-06",
+    "draw_number": "10518",
+    "first_place": "01 - Gold Rush",
+    "second_place": "04 - Big Ben",
+    "third_place": "05 - California Classic",
+    "derby_positions": [
+      1,
+      4,
+      5
+    ],
+    "race_time": "1:43.50",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$217,625"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 1,
+        "prize": "$70"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 7,
+        "prize": "$50"
+      },
+      {
+        "label": "Race Time",
+        "winners": 49,
+        "prize": "$47"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 47,
+        "prize": "$411"
+      },
+      {
+        "label": "Exacta",
+        "winners": 363,
+        "prize": "$23"
+      },
+      {
+        "label": "Win",
+        "winners": 4097,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$217,625",
+    "next_draw_date": "2026-11-07",
+    "next_jackpot_estimate": "$218,000",
+    "fetched_at": "2026-11-07T02:57:00.428576+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-11-05",
     "draw_number": "10517",
     "first_place": "10 - Solid Gold",
