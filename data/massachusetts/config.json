@@ -765,7 +765,7 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
+          "anchorHour": 22,
           "anchorMinute": 0,
           "anchorHourBySession": null,
           "sessionField": null
@@ -901,7 +901,7 @@
           "dateFormat": "yyyy-MM-dd",
           "truncateToLength": null,
           "timeZoneIdentifier": "America/New_York",
-          "anchorHour": null,
+          "anchorHour": 22,
           "anchorMinute": 0,
           "anchorHourBySession": null,
           "sessionField": null
