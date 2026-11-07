@@ -1,6 +1,20 @@
 [
   {
     "game": "Cash5",
+    "draw_date": "2026-11-06",
+    "numbers": [
+      12,
+      14,
+      15,
+      21,
+      28
+    ],
+    "jackpot_amount": "100,000",
+    "fetched_at": "2026-11-07T09:11:02.244226+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
+  },
+  {
+    "game": "Cash5",
     "draw_date": "2026-11-05",
     "numbers": [
       10,
@@ -10,7 +24,7 @@
       35
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.537005+00:00",
+    "fetched_at": "2026-11-07T09:11:02.244534+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -24,7 +38,7 @@
       31
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.537417+00:00",
+    "fetched_at": "2026-11-07T09:11:02.244745+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -38,7 +52,7 @@
       34
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.537742+00:00",
+    "fetched_at": "2026-11-07T09:11:02.244941+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -52,7 +66,7 @@
       32
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.538046+00:00",
+    "fetched_at": "2026-11-07T09:11:02.245132+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -66,7 +80,7 @@
       33
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.538362+00:00",
+    "fetched_at": "2026-11-07T09:11:02.245320+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -80,7 +94,7 @@
       25
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.538665+00:00",
+    "fetched_at": "2026-11-07T09:11:02.245533+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -94,7 +108,7 @@
       19
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.538959+00:00",
+    "fetched_at": "2026-11-07T09:11:02.245718+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -108,7 +122,7 @@
       32
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.539264+00:00",
+    "fetched_at": "2026-11-07T09:11:02.245901+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
@@ -122,7 +136,7 @@
       28
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-07T03:21:09.539559+00:00",
+    "fetched_at": "2026-11-07T09:11:02.246084+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/cash-5/"
   },
   {
