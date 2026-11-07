@@ -2,13 +2,25 @@
   {
     "game": "Pick 3",
     "draw_date": "2026-11-06",
+    "session": "evening",
+    "digits": [
+      8,
+      4,
+      0
+    ],
+    "fetched_at": "2026-11-07T03:11:05.414709+00:00",
+    "source_url": "https://www.coloradolottery.com/en/games/pick3/"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-11-06",
     "session": "midday",
     "digits": [
       5,
       4,
       5
     ],
-    "fetched_at": "2026-11-07T02:51:04.592961+00:00",
+    "fetched_at": "2026-11-07T03:11:05.414529+00:00",
     "source_url": "https://www.coloradolottery.com/en/games/pick3/"
   },
   {
