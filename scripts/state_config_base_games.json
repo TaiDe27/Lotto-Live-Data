@@ -17790,7 +17790,7 @@
     "liveMapping": {
       "sourceURL": "https://cdn.jsdelivr.net/gh/TaiDe27/Lotto-Live-Data@main/data/michigan/pokerlotto/latest.json",
       "cachePath": "live/michigan/pokerlotto/latest.json",
-      "shape": "numeric",
+      "shape": "cardDraw",
       "sessionFilter": null,
       "drawDate": {
         "field": "draw_date",
