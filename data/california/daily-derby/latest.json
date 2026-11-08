@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-11-07",
+    "draw_number": "10519",
+    "first_place": "08 - Gorgeous George",
+    "second_place": "02 - Lucky Star",
+    "third_place": "04 - Big Ben",
+    "derby_positions": [
+      8,
+      2,
+      4
+    ],
+    "race_time": "1:44.56",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$226,579"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$59"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 7,
+        "prize": "$38"
+      },
+      {
+        "label": "Race Time",
+        "winners": 69,
+        "prize": "$35"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 44,
+        "prize": "$443"
+      },
+      {
+        "label": "Exacta",
+        "winners": 350,
+        "prize": "$24"
+      },
+      {
+        "label": "Win",
+        "winners": 4069,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$226,579",
+    "next_draw_date": "2026-11-08",
+    "next_jackpot_estimate": "$228,000",
+    "fetched_at": "2026-11-08T02:57:02.965246+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-11-06",
     "draw_number": "10518",
     "first_place": "01 - Gold Rush",
