@@ -1,5 +1,20 @@
 [
   {
+    "draw_date": "2026-11-07",
+    "numbers": [
+      17,
+      29,
+      36,
+      38,
+      46,
+      48
+    ],
+    "next_jackpot_amount": 2100000.0,
+    "draw_number": 5524,
+    "fetched_at": "2026-11-08T03:41:06.800514+00:00",
+    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
+  },
+  {
     "draw_date": "2026-11-04",
     "numbers": [
       2,
