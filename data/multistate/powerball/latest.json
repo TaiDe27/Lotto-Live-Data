@@ -12,16 +12,14 @@
     "red_ball": 21,
     "power_play": 2,
     "next_drawing": {
-      "next_draw_date": "Sat, Nov 7, 2026",
-      "estimated_jackpot": "20 Million",
-      "cash_value": "8.6 Million"
+      "next_draw_date": "Mon, Nov 9, 2026",
+      "estimated_jackpot": "30 Million",
+      "cash_value": "12.9 Million"
     },
     "winners_by_tier": {
       "Powerball JACKPOT": {
         "prize": null,
-        "states": [
-          "NJ"
-        ]
+        "states": []
       },
       "Match 5 + Power Play": {
         "prize": "2 MILLION",
@@ -32,7 +30,7 @@
         "states": []
       }
     },
-    "fetched_at": "2026-11-08T04:51:28.920717+00:00",
+    "fetched_at": "2026-11-08T10:40:17.044359+00:00",
     "source_url": "https://www.powerball.com/",
     "settled_jackpot": "847 MILLION",
     "settled_cash_value": "363.1 MILLION"
