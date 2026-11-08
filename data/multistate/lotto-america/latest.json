@@ -1,5 +1,37 @@
 [
   {
+    "draw_date": "Sat, Nov 7, 2026",
+    "main_balls": [
+      2,
+      10,
+      16,
+      20,
+      35
+    ],
+    "star_ball": 1,
+    "all_star_bonus": 2,
+    "next_drawing": {
+      "next_draw_date": "Sat, Nov 7, 2026",
+      "estimated_jackpot": "2.70 Million",
+      "cash_value": "1.16 Million"
+    },
+    "winners_by_tier": {
+      "Jackpot": {
+        "states": []
+      },
+      "Match 5 + All Star Bonus": {
+        "states": []
+      },
+      "Match 5": {
+        "states": []
+      }
+    },
+    "fetched_at": "2026-11-08T03:36:10.572130+00:00",
+    "source_url": "https://www.powerball.com/lotto-america",
+    "settled_jackpot": "2.65 MILLION",
+    "settled_cash_value": "1.13 MILLION"
+  },
+  {
     "draw_date": "Wed, Nov 4, 2026",
     "main_balls": [
       10,
