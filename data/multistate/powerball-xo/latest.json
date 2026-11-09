@@ -1,5 +1,42 @@
 [
   {
+    "draw_date": "Sun, Nov 8, 2026",
+    "winning_teams": [
+      "ATL",
+      "CAR",
+      "DAL",
+      "DEN",
+      "DET",
+      "NE",
+      "PHI",
+      "SF"
+    ],
+    "next_drawing": {
+      "next_draw_date": "Sun, Nov 8, 2026",
+      "estimated_jackpot": "2.15 Million"
+    },
+    "winners_by_tier": {
+      "Match 8 of 8 Teams": {
+        "states": []
+      },
+      "Match 7 of 8 Teams": {
+        "states": [
+          "AZ",
+          "ME",
+          "NC",
+          "NE",
+          "NJ",
+          "PA",
+          "RI",
+          "TN"
+        ]
+      }
+    },
+    "fetched_at": "2026-11-09T03:21:18.773968+00:00",
+    "source_url": "https://www.powerball.com/xo",
+    "settled_jackpot": "1.99 MILLION"
+  },
+  {
     "draw_date": "Sun, Nov 1, 2026",
     "winning_teams": [
       "ARI",
