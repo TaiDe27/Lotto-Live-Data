@@ -12,8 +12,8 @@
       "SF"
     ],
     "next_drawing": {
-      "next_draw_date": "Sun, Nov 8, 2026",
-      "estimated_jackpot": "2.15 Million"
+      "next_draw_date": "Sun, Nov 15, 2026",
+      "estimated_jackpot": "2.35 Million"
     },
     "winners_by_tier": {
       "Match 8 of 8 Teams": {
@@ -21,18 +21,14 @@
       },
       "Match 7 of 8 Teams": {
         "states": [
-          "AZ",
-          "ME",
-          "NC",
-          "NE",
-          "NJ",
-          "PA",
-          "RI",
-          "TN"
+          "CT",
+          "KS",
+          "MD",
+          "MO"
         ]
       }
     },
-    "fetched_at": "2026-11-09T03:41:18.819760+00:00",
+    "fetched_at": "2026-11-09T03:51:16.984277+00:00",
     "source_url": "https://www.powerball.com/xo",
     "settled_jackpot": "1.99 MILLION"
   },
