@@ -811,7 +811,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": {
           "field": "super_ball",
@@ -838,9 +847,9 @@
           "guardField": null
         },
         "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
           "guardField": null
         },
         "nextCashValue": {
@@ -899,7 +908,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -923,9 +941,9 @@
           "guardField": null
         },
         "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
           "guardField": null
         },
         "nextCashValue": {
@@ -984,7 +1002,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1008,9 +1035,9 @@
           "guardField": null
         },
         "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
           "guardField": null
         },
         "nextCashValue": {
@@ -1072,7 +1099,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 19,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": {
           "field": "cash_ball",
@@ -1099,9 +1135,9 @@
           "guardField": null
         },
         "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
           "guardField": null
         },
         "nextCashValue": {
@@ -1175,7 +1211,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1282,7 +1327,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1387,7 +1441,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1494,7 +1557,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1599,7 +1671,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1706,7 +1787,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1811,7 +1901,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1918,7 +2017,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2020,7 +2128,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2118,7 +2235,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 15,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2216,7 +2342,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2314,7 +2449,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2412,7 +2556,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 15,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2510,7 +2663,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2608,7 +2770,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2706,7 +2877,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 15,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2804,7 +2984,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Puerto_Rico",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,

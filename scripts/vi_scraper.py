@@ -55,6 +55,7 @@ import os
 import re
 import time
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -90,6 +91,22 @@ def fetch_live(slug):
     r = requests.get(f"{BASE}/games/{slug}", headers=HEADERS, timeout=20)
     r.raise_for_status()
     return r.text
+
+
+def extract_next_draw_info(html):
+    """Every thecaribbeanlottery.com game page carries a "Next draw! <date>" `<time>` tag plus a
+    currency-selector block whose first ("United State Dollars") `<option>` holds the page's own
+    displayed JACKPOT figure in plain USD cents-free integer form — both confirmed live
+    2026-11-10 across Super Lotto/Lucky Pick/Pay Day (Lucky Pick's page literally labels its own
+    figure "JACKPOT" too, even though the real per-ticket payout also involves an unmodeled
+    multiplier — same "display the real page figure as-is, don't model the multiplier" class as
+    this project's other Cash POP-style add-ons). Returns {"next_draw_date": "yyyy-MM-dd"|None,
+    "next_jackpot_amount": str|None}."""
+    idx = html.find("Next draw!")
+    next_draw_date = parse_time_tag(html[idx: idx + 200]) if idx != -1 else None
+    m = re.search(r'<option value="(\d+)" data-sign="USD \$">', html)
+    next_jackpot_amount = f"${int(m.group(1)):,}" if m else None
+    return {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
 
 
 def fetch_history(slug, date_str):
@@ -143,7 +160,8 @@ def scrape_super_lotto():
     if not date or "White Balls" not in groups:
         log.error("super-lotto: no parseable result")
         return
-    entry = {"draw_date": date, "numbers": groups["White Balls"]}
+    next_draw = extract_next_draw_info(html)
+    entry = {"draw_date": date, "numbers": groups["White Balls"], **next_draw}
     if "Super Ball" in groups:
         entry["super_ball"] = groups["Super Ball"][0]
     save("super-lotto", [entry], ["draw_date"])
@@ -155,9 +173,10 @@ def scrape_lucky_pick():
     if not date or "Winning Numbers" not in groups:
         log.error("lucky-pick: no parseable result")
         return
-    save("lucky-pick", [{"draw_date": date, "numbers": groups["Winning Numbers"]}], ["draw_date"])
+    next_draw = extract_next_draw_info(html)
+    save("lucky-pick", [{"draw_date": date, "numbers": groups["Winning Numbers"], **next_draw}], ["draw_date"])
     if "LUCKY PICK DOUBLE PLAY" in groups:
-        save("lucky-pick-double-play", [{"draw_date": date, "numbers": groups["LUCKY PICK DOUBLE PLAY"]}], ["draw_date"])
+        save("lucky-pick-double-play", [{"draw_date": date, "numbers": groups["LUCKY PICK DOUBLE PLAY"], **next_draw}], ["draw_date"])
 
 
 def scrape_pay_day():
@@ -166,13 +185,32 @@ def scrape_pay_day():
     if not date or "White Balls" not in groups:
         log.error("pay-day: no parseable result")
         return
-    entry = {"draw_date": date, "numbers": groups["White Balls"]}
+    next_draw = extract_next_draw_info(html)
+    entry = {"draw_date": date, "numbers": groups["White Balls"], **next_draw}
     if "Cash Ball" in groups:
         entry["cash_ball"] = groups["Cash Ball"][0]
     save("pay-day", [entry], ["draw_date"])
 
 
 SESSION_SLUG = {"morning": "morning", "midday": "midday", "sunset": "sunset", "evening": "evening"}
+
+VI_TZ = ZoneInfo("America/Puerto_Rico")
+PICK_SESSION_ANCHOR = {"morning": 10, "midday": 13, "sunset": 18, "evening": 21}
+CARIBBEAN_SESSION_ANCHOR = {"1pm": 13, "3pm": 15, "9pm": 21}
+
+
+def next_session_draw_date(anchor_hour, anchor_minute=0):
+    """Pick 3/4 and Caribbean Numbers run every day with no stated day-skip (the schedule table
+    this file's module doc quotes lists no exceptions, unlike SC/TX/TN) and their pages show no
+    forward-looking ticker at all (confirmed live 2026-11-10, unlike Super Lotto/Lucky Pick/Pay
+    Day's "Next draw!" widget) — so this computes the next occurrence of ONE session directly
+    from the current time in the same America/Puerto_Rico timezone this game's own
+    `drawDate.timeZoneIdentifier` already uses: today if that session's anchor time hasn't passed
+    yet, else tomorrow."""
+    now = datetime.now(VI_TZ)
+    anchor_today = now.replace(hour=anchor_hour, minute=anchor_minute, second=0, microsecond=0)
+    target = anchor_today if now < anchor_today else anchor_today + timedelta(days=1)
+    return target.date().isoformat()
 
 
 def scrape_pick_game(slug, digit_count):
@@ -218,6 +256,7 @@ def scrape_pick_game(slug, digit_count):
             "digits": spots[0],
             "digits_2nd": spots[1],
             "digits_3rd": spots[2],
+            "next_draw_date": next_session_draw_date(PICK_SESSION_ANCHOR[session]),
         })
     if not entries:
         log.error("%s: no parseable result for %s", slug, yesterday)
@@ -248,10 +287,12 @@ def scrape_caribbean_numbers():
         nums = [int(x) for x in re.findall(r"<li>(\d+)</li>", nums_block)]
         if len(nums) != 3:
             continue
+        session = session_label.strip().replace(" ", "").lower()
         entries.append({
             "draw_date": yesterday,
-            "session": session_label.strip().replace(" ", "").lower(),
+            "session": session,
             "numbers": nums,
+            "next_draw_date": next_session_draw_date(CARIBBEAN_SESSION_ANCHOR[session]) if session in CARIBBEAN_SESSION_ANCHOR else None,
         })
     if not entries:
         log.error("caribbean-numbers: no parseable result for %s", yesterday)

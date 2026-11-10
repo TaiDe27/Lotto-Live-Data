@@ -633,7 +633,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 22,
+          "anchorMinute": 12,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -657,15 +666,15 @@
           "guardField": null
         },
         "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
           "guardField": null
         },
         "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_cash_value",
+          "moneyFormat": "compactWords",
           "guardField": null
         }
       },
@@ -759,7 +768,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 22,
+          "anchorMinute": 12,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": {
           "field": "bonus_ball",
@@ -877,7 +895,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 22,
+          "anchorMinute": 12,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1747,7 +1774,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1865,7 +1901,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": 27,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1983,7 +2028,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -2101,7 +2155,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 22,
+          "anchorMinute": 12,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,

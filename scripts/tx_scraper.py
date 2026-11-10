@@ -113,17 +113,52 @@ def extract_sessions(html, ball_class="winningNumberBalls", has_fireball=False, 
     return results
 
 
-def next_draw_date(after_date_iso):
-    """texaslottery.com's own Pick 3/Daily 4 page shows only past results under #LastDraw, no
-    forward-looking element (confirmed live 2026-11-10) — the page's own text says drawings run
-    "every Monday - Saturday" for all 4 sessions, so this computes the next Mon-Sat day after the
-    most recent real result rather than scraping a date that isn't published."""
+def next_draw_date(after_date_iso, allowed_weekdays=(0, 1, 2, 3, 4, 5)):
+    """texaslottery.com's own per-game pages under #LastDraw show only past results, no
+    forward-looking element for any TX game checked (confirmed live 2026-11-10) — each game's own
+    "How to Play" text states a fixed weekly schedule instead (quoted in this file's module doc),
+    so this computes the next occurrence from that known schedule rather than scraping a date that
+    isn't published. Default `allowed_weekdays` is Mon-Sat (skip Sunday only, 0=Mon..6=Sun) —
+    Pick 3/Daily 4/Cash Five/All or Nothing's real schedule; pass a narrower tuple for games with a
+    tighter schedule (Lotto Texas: Mon/Wed/Sat; Texas Two Step: Mon/Thu)."""
     d = date.fromisoformat(after_date_iso)
     for offset in range(1, 8):
         candidate = d + timedelta(days=offset)
-        if candidate.weekday() != 6:  # skip Sunday
+        if candidate.weekday() in allowed_weekdays:
             return candidate.isoformat()
-    raise AssertionError("unreachable: a Mon-Sat day occurs at least once within a week")
+    raise AssertionError("unreachable: an allowed weekday occurs at least once within a week")
+
+
+LOTTO_TEXAS_WEEKDAYS = (0, 2, 5)   # Mon/Wed/Sat
+TWO_STEP_WEEKDAYS = (0, 3)         # Mon/Thu
+MON_SAT_WEEKDAYS = (0, 1, 2, 3, 4, 5)
+
+
+def extract_lotto_texas_jackpot(html):
+    """texaslottery.com embeds the SAME 3-game jackpot ticker (Powerball/Mega Millions/Lotto
+    Texas) on every single game's page, not just Lotto Texas's own — confirmed by checking Texas
+    Two Step's page, which shows the identical 3 entries. Locates the "Lotto Texas logo" image,
+    the one anchor shared across every page that's unambiguous (unlike the surrounding HTML
+    comments, which aren't guaranteed stable markup), then reads the jackpot/cash-value/date text
+    that follows it. Returns {"next_draw_date": "yyyy-MM-dd"|None, "next_jackpot_amount": str|None,
+    "next_cash_value": str|None}."""
+    idx = html.find('alt="Lotto Texas logo"')
+    if idx == -1:
+        return {"next_draw_date": None, "next_jackpot_amount": None, "next_cash_value": None}
+    chunk = html[idx: idx + 600]
+    m = re.search(
+        r"Est\. Annuitized Jackpot for (\d{2})/(\d{2})/(\d{4}):</p>\s*<h1>([^<]+)</h1>\s*"
+        r"<div><p>Est\. Cash Value: <strong>([^<]+)</strong>",
+        chunk,
+    )
+    if not m:
+        return {"next_draw_date": None, "next_jackpot_amount": None, "next_cash_value": None}
+    mm, dd, yyyy, jackpot, cash = m.groups()
+    return {
+        "next_draw_date": f"{yyyy}-{mm}-{dd}",
+        "next_jackpot_amount": jackpot.strip(),
+        "next_cash_value": cash.strip(),
+    }
 
 
 def add_next_draw_dates(entries):
@@ -191,8 +226,26 @@ def main():
         if not sessions:
             log.error("no sessions parsed for %s", path)
             continue
-        if folder in ("pick3", "daily4"):
+        if folder in ("pick3", "daily4", "all-or-nothing"):
             sessions = add_next_draw_dates(sessions)
+        elif folder == "cash-five":
+            latest = max(e["draw_date"] for e in sessions)
+            nd = next_draw_date(latest, MON_SAT_WEEKDAYS)
+            for e in sessions:
+                e["next_draw_date"] = nd
+        elif folder == "two-step":
+            latest = max(e["draw_date"] for e in sessions)
+            nd = next_draw_date(latest, TWO_STEP_WEEKDAYS)
+            for e in sessions:
+                e["next_draw_date"] = nd
+        elif folder == "lotto-texas":
+            latest = max(e["draw_date"] for e in sessions)
+            jackpot_info = extract_lotto_texas_jackpot(html)
+            nd = jackpot_info["next_draw_date"] or next_draw_date(latest, LOTTO_TEXAS_WEEKDAYS)
+            for e in sessions:
+                e["next_draw_date"] = nd
+                e["next_jackpot_amount"] = jackpot_info["next_jackpot_amount"]
+                e["next_cash_value"] = jackpot_info["next_cash_value"]
         save(folder, sessions, key_fields)
         time.sleep(1)
 
