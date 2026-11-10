@@ -2149,12 +2149,21 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": "jackpot_amount",
-          "guardField": null,
-          "moneyFormat": "leadingNumber",
-          "source": "directField"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",

@@ -592,17 +592,26 @@
         "mainNumbersField": "main_numbers",
         "multiplierField": null,
         "nextCashValue": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_cash_value",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 19,
+          "anchorMinute": 57,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",
@@ -748,12 +757,21 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 18,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",
