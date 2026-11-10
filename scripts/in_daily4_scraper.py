@@ -21,6 +21,8 @@ class Daily4Result:
     session: str
     digits: list[int]
     superball: Optional[int]
+    next_draw_date: Optional[str]
+    next_session: Optional[str]
     fetched_at: str
     source_url: str
 
@@ -53,6 +55,7 @@ def fetch() -> list[Daily4Result]:
         else:
             main_spans, superball = spans, None
         digits = [int(s.get_text(strip=True)) for s in main_spans]
+        next_draw_date, next_session = shared.next_draw()
 
         results.append(Daily4Result(
             game="Daily 4",
@@ -60,6 +63,8 @@ def fetch() -> list[Daily4Result]:
             session=session,
             digits=digits,
             superball=superball,
+            next_draw_date=next_draw_date,
+            next_session=next_session,
             fetched_at=shared.fetched_at_now(),
             source_url=URL,
         ))

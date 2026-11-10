@@ -21,6 +21,7 @@ import logging
 import re
 import time
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("in_shared")
@@ -30,6 +31,32 @@ REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 MAX_HISTORY = 100
+
+# Daily 3 / Daily 4 / Quick Draw 共享同一个开奖时间表——分别直接抓取
+# hoosierlottery.com 对应游戏页面上的文字确认的（不是互相假设抄来的）：
+# "Midday drawings occur daily around 1:20 PM ET" / "Evening drawings occur
+# daily around 11:00 PM ET"，三个游戏页面用词完全一致，且都是"Daily"/
+# "available 7 days a week"——没有跳过的日子。用 America/Indiana/Indianapolis
+# （常年随美东时区走，含DST）锚定本地时间。
+INDIANA_TZ = ZoneInfo("America/Indiana/Indianapolis")
+MIDDAY_DRAW_TIME = dt.time(13, 20)
+EVENING_DRAW_TIME = dt.time(23, 0)
+
+
+def next_draw(now: Optional[dt.datetime] = None) -> tuple[str, str]:
+    """Daily 3 / Daily 4 / Quick Draw 的下一期日期+场次：如果当前(本地时间)还没到
+    今天的Midday(1:20pm)，下一期就是今天Midday；如果已经过了Midday但没到今天
+    Evening(11pm)，下一期是今天Evening；如果已经过了今天Evening，下一期是明天
+    Midday。每天都开两期，没有跳过的日子。"""
+    now = dt.datetime.now(INDIANA_TZ) if now is None else now.astimezone(INDIANA_TZ)
+    today = now.date()
+    midday_dt = dt.datetime.combine(today, MIDDAY_DRAW_TIME, tzinfo=INDIANA_TZ)
+    evening_dt = dt.datetime.combine(today, EVENING_DRAW_TIME, tzinfo=INDIANA_TZ)
+    if now < midday_dt:
+        return today.isoformat(), "midday"
+    if now < evening_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "midday"
 
 _ORDINAL_RE = re.compile(r"(\d+)(st|nd|rd|th)", re.IGNORECASE)
 

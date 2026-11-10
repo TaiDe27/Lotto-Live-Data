@@ -34,6 +34,8 @@ class QuickDrawResult:
     # (same draw_date/session/numbers/bonus_number/jackpot_amount shape already used by IL Lotto's
     # Extra Shot etc.) instead of writing a new hardcoded mapper from scratch.
     bonus_number: Optional[int]
+    next_draw_date: Optional[str]
+    next_session: Optional[str]
     fetched_at: str
     source_url: str
 
@@ -63,6 +65,7 @@ def fetch() -> QuickDrawResult:
     main_spans = [s for s in spans if s is not bullseye_span]
     numbers = [int(s.get_text(strip=True)) for s in main_spans]
     bullseye = int(bullseye_span.get_text(strip=True)) if bullseye_span else None
+    next_draw_date, next_session = shared.next_draw()
 
     return QuickDrawResult(
         game="Quick Draw",
@@ -70,6 +73,8 @@ def fetch() -> QuickDrawResult:
         session=session,
         numbers=numbers,
         bonus_number=bullseye,
+        next_draw_date=next_draw_date,
+        next_session=next_session,
         fetched_at=shared.fetched_at_now(),
         source_url=URL,
     )
