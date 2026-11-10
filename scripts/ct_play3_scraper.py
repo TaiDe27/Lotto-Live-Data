@@ -7,8 +7,9 @@ means" 访问本站内容——比 Arkansas 当年查到的那条更直接（这
 说的，不是第三方站点），所以这次直接放弃官方站，改用 lotteryusa.com（同样已经
 跟用户确认过风险、按低频率抓取事实性开奖数据继续用的第三方聚合站）。
 
-Play3 一天两期：Day（lotteryusa.com 页面叫 "Midday"，约中午12:30 ET）+ Night
-（页面叫 "Evening"，约晚上9:50 ET）——两个场次各自独立的页面
+Play3 一天两期：Day（lotteryusa.com 页面叫 "Midday"，官方ctlottery.com /play3
+页面确认实际开奖时间是1:57 PM ET）+ Night（页面叫 "Evening"，官方页面确认是
+10:29 PM ET）——两个场次各自独立的页面
 (/connecticut/midday-3/ 是Day, /connecticut/play-3/ 是Night)，这里统一用
 App端其它所有digit game都用的 "midday"/"evening" 这两个session值存进JSON
 （跟ScrapedDigitGameResult/fetchLiveDigitGameHistory的既有假设一致），不用
@@ -19,6 +20,12 @@ Connecticut自己叫的"Day"/"Night"这两个词——games.json里这两个Game
 在c-ball--sm的主3位之外），这是个可选side bet，这次先只把它存进latest.json
 的wild_ball字段，不接入matchRule判中逻辑（跟Illinois Fireball/Indiana
 Superball同样的"先存不判"克制决定）。
+
+next_draw_date/next_session：官方ctlottery.com /play3页面确认Day开奖时间
+"1:57 PM ET"、Night开奖时间"10:29 PM ET"，且"DRAWING DAYS Every Day & Night"
+（每天都开，没有跳过的日子）——跟in_shared.py的next_draw()同一个算法：本地
+时间(America/New_York)还没到今天Day时刻，下一期就是今天Day；过了Day但没到
+今天Night，下一期是今天Night；过了今天Night，下一期是明天Day。
 """
 
 import dataclasses
@@ -28,9 +35,28 @@ import logging
 import time
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ct_play3_scraper")
+
+CT_TZ = ZoneInfo("America/New_York")
+DAY_DRAW_TIME = dt.time(13, 57)
+NIGHT_DRAW_TIME = dt.time(22, 29)
+
+
+def next_draw(now: Optional[dt.datetime] = None) -> tuple[str, str]:
+    """下一期日期+场次，session命名跟本文件其余字段一致，用"midday"/"evening"
+    （不是CT自己叫的"Day"/"Night"）。"""
+    now = dt.datetime.now(CT_TZ) if now is None else now.astimezone(CT_TZ)
+    today = now.date()
+    day_dt = dt.datetime.combine(today, DAY_DRAW_TIME, tzinfo=CT_TZ)
+    night_dt = dt.datetime.combine(today, NIGHT_DRAW_TIME, tzinfo=CT_TZ)
+    if now < day_dt:
+        return today.isoformat(), "midday"
+    if now < night_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "midday"
 
 
 def iso_date(raw: str) -> str:
@@ -59,6 +85,8 @@ class Play3Result:
     session: str
     digits: list[int]
     wild_ball: Optional[int]
+    next_draw_date: Optional[str]
+    next_session: Optional[str]
     fetched_at: str
     source_url: str
 
@@ -66,7 +94,7 @@ class Play3Result:
         return dataclasses.asdict(self)
 
 
-def fetch_session(session: str) -> list[Play3Result]:
+def fetch_session(session: str, next_draw_date: str, next_session: str) -> list[Play3Result]:
     import requests
     from bs4 import BeautifulSoup
 
@@ -97,6 +125,8 @@ def fetch_session(session: str) -> list[Play3Result]:
                     session=session,
                     digits=digits,
                     wild_ball=wild_ball,
+                    next_draw_date=next_draw_date,
+                    next_session=next_session,
                     fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                     source_url=url,
                 ))
@@ -117,7 +147,8 @@ def validate(result: Play3Result) -> None:
 
 
 def fetch() -> list[Play3Result]:
-    return fetch_session("evening") + fetch_session("midday")
+    next_draw_date, next_session = next_draw()
+    return fetch_session("evening", next_draw_date, next_session) + fetch_session("midday", next_draw_date, next_session)
 
 
 def save_results(results: list[Play3Result]) -> Path:

@@ -1,5 +1,9 @@
 """Connecticut Play4 抓取 — lotteryusa.com。合规说明/Wild Ball处理/session命名同
 ct_play3_scraper.py，这里不重复。
+
+next_draw_date/next_session：官方ctlottery.com /play4页面同样确认Day开奖时间
+"1:57 PM ET"、Night开奖时间"10:29 PM ET"，跟Play3同一张开奖时刻表，每天都开，
+没有跳过的日子——next_draw()算法同ct_play3_scraper.py。
 """
 
 import dataclasses
@@ -9,9 +13,26 @@ import logging
 import time
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ct_play4_scraper")
+
+CT_TZ = ZoneInfo("America/New_York")
+DAY_DRAW_TIME = dt.time(13, 57)
+NIGHT_DRAW_TIME = dt.time(22, 29)
+
+
+def next_draw(now: Optional[dt.datetime] = None) -> tuple[str, str]:
+    now = dt.datetime.now(CT_TZ) if now is None else now.astimezone(CT_TZ)
+    today = now.date()
+    day_dt = dt.datetime.combine(today, DAY_DRAW_TIME, tzinfo=CT_TZ)
+    night_dt = dt.datetime.combine(today, NIGHT_DRAW_TIME, tzinfo=CT_TZ)
+    if now < day_dt:
+        return today.isoformat(), "midday"
+    if now < night_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "midday"
 
 
 def iso_date(raw: str) -> str:
@@ -40,6 +61,8 @@ class Play4Result:
     session: str
     digits: list[int]
     wild_ball: Optional[int]
+    next_draw_date: Optional[str]
+    next_session: Optional[str]
     fetched_at: str
     source_url: str
 
@@ -47,7 +70,7 @@ class Play4Result:
         return dataclasses.asdict(self)
 
 
-def fetch_session(session: str) -> list[Play4Result]:
+def fetch_session(session: str, next_draw_date: str, next_session: str) -> list[Play4Result]:
     import requests
     from bs4 import BeautifulSoup
 
@@ -78,6 +101,8 @@ def fetch_session(session: str) -> list[Play4Result]:
                     session=session,
                     digits=digits,
                     wild_ball=wild_ball,
+                    next_draw_date=next_draw_date,
+                    next_session=next_session,
                     fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                     source_url=url,
                 ))
@@ -98,7 +123,8 @@ def validate(result: Play4Result) -> None:
 
 
 def fetch() -> list[Play4Result]:
-    return fetch_session("evening") + fetch_session("midday")
+    next_draw_date, next_session = next_draw()
+    return fetch_session("evening", next_draw_date, next_session) + fetch_session("midday", next_draw_date, next_session)
 
 
 def save_results(results: list[Play4Result]) -> Path:

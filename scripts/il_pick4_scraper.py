@@ -1,4 +1,8 @@
-"""Illinois Pick 4 抓取 — lotteryusa.com。合规说明/Fireball处理同 il_pick3_scraper.py。"""
+"""Illinois Pick 4 抓取 — lotteryusa.com。合规说明/Fireball处理同 il_pick3_scraper.py。
+
+next_draw_date/next_session：同il_pick3_scraper.py——Midday 12:40 PM CT、
+Evening 9:22 PM CT，每天都开，next_draw()算法同样锚定America/Chicago。
+"""
 
 import dataclasses
 import datetime as dt
@@ -7,9 +11,26 @@ import logging
 import time
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("il_pick4_scraper")
+
+IL_TZ = ZoneInfo("America/Chicago")
+MIDDAY_DRAW_TIME = dt.time(12, 40)
+EVENING_DRAW_TIME = dt.time(21, 22)
+
+
+def next_draw(now: Optional[dt.datetime] = None) -> tuple[str, str]:
+    now = dt.datetime.now(IL_TZ) if now is None else now.astimezone(IL_TZ)
+    today = now.date()
+    midday_dt = dt.datetime.combine(today, MIDDAY_DRAW_TIME, tzinfo=IL_TZ)
+    evening_dt = dt.datetime.combine(today, EVENING_DRAW_TIME, tzinfo=IL_TZ)
+    if now < midday_dt:
+        return today.isoformat(), "midday"
+    if now < evening_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "midday"
 
 
 def iso_date(raw: str) -> str:
@@ -38,6 +59,8 @@ class Pick4Result:
     session: str
     digits: list[int]
     fireball: Optional[int]
+    next_draw_date: Optional[str]
+    next_session: Optional[str]
     fetched_at: str
     source_url: str
 
@@ -45,7 +68,7 @@ class Pick4Result:
         return dataclasses.asdict(self)
 
 
-def fetch_session(session: str) -> list[Pick4Result]:
+def fetch_session(session: str, next_draw_date: str, next_session: str) -> list[Pick4Result]:
     import requests
     from bs4 import BeautifulSoup
 
@@ -76,6 +99,8 @@ def fetch_session(session: str) -> list[Pick4Result]:
                     session=session,
                     digits=digits,
                     fireball=fireball,
+                    next_draw_date=next_draw_date,
+                    next_session=next_session,
                     fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                     source_url=url,
                 ))
@@ -96,7 +121,8 @@ def validate(result: Pick4Result) -> None:
 
 
 def fetch() -> list[Pick4Result]:
-    return fetch_session("evening") + fetch_session("midday")
+    next_draw_date, next_session = next_draw()
+    return fetch_session("evening", next_draw_date, next_session) + fetch_session("midday", next_draw_date, next_session)
 
 
 def save_results(results: list[Pick4Result]) -> Path:

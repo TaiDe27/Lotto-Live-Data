@@ -3,6 +3,12 @@
 一天两期：Midday(/illinois/midday-3/) + Evening(/illinois/daily-3/)。页面上的
 "Fireball"加购数字跟CT的Wild Ball、IL Lotto的Extra Shot同样处理：存进
 latest.json的fireball字段，不接入matchRule判中逻辑。
+
+next_draw_date/next_session：多个独立来源(含Google对illinoislottery.com自己
+"How to Play Pick 3"/"Jackpot and Daily Games Draw Times"页面的索引摘要——官方
+站点本身对自动化请求返回403，无法直接WebFetch核实)一致确认Midday开奖时间
+12:40 PM CT、Evening开奖时间9:22 PM CT，每天都开，没有跳过的日子——跟
+in_shared.py的next_draw()同一个算法，锚定America/Chicago本地时间。
 """
 
 import dataclasses
@@ -12,9 +18,26 @@ import logging
 import time
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("il_pick3_scraper")
+
+IL_TZ = ZoneInfo("America/Chicago")
+MIDDAY_DRAW_TIME = dt.time(12, 40)
+EVENING_DRAW_TIME = dt.time(21, 22)
+
+
+def next_draw(now: Optional[dt.datetime] = None) -> tuple[str, str]:
+    now = dt.datetime.now(IL_TZ) if now is None else now.astimezone(IL_TZ)
+    today = now.date()
+    midday_dt = dt.datetime.combine(today, MIDDAY_DRAW_TIME, tzinfo=IL_TZ)
+    evening_dt = dt.datetime.combine(today, EVENING_DRAW_TIME, tzinfo=IL_TZ)
+    if now < midday_dt:
+        return today.isoformat(), "midday"
+    if now < evening_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "midday"
 
 
 def iso_date(raw: str) -> str:
@@ -43,6 +66,8 @@ class Pick3Result:
     session: str
     digits: list[int]
     fireball: Optional[int]
+    next_draw_date: Optional[str]
+    next_session: Optional[str]
     fetched_at: str
     source_url: str
 
@@ -50,7 +75,7 @@ class Pick3Result:
         return dataclasses.asdict(self)
 
 
-def fetch_session(session: str) -> list[Pick3Result]:
+def fetch_session(session: str, next_draw_date: str, next_session: str) -> list[Pick3Result]:
     import requests
     from bs4 import BeautifulSoup
 
@@ -81,6 +106,8 @@ def fetch_session(session: str) -> list[Pick3Result]:
                     session=session,
                     digits=digits,
                     fireball=fireball,
+                    next_draw_date=next_draw_date,
+                    next_session=next_session,
                     fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                     source_url=url,
                 ))
@@ -101,7 +128,8 @@ def validate(result: Pick3Result) -> None:
 
 
 def fetch() -> list[Pick3Result]:
-    return fetch_session("evening") + fetch_session("midday")
+    next_draw_date, next_session = next_draw()
+    return fetch_session("evening", next_draw_date, next_session) + fetch_session("midday", next_draw_date, next_session)
 
 
 def save_results(results: list[Pick3Result]) -> Path:
