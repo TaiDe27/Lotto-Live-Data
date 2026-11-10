@@ -15,6 +15,7 @@ import json
 import logging
 import re
 import time
+import zoneinfo
 from pathlib import Path
 from typing import Optional
 
@@ -27,6 +28,21 @@ MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "oklahoma"
 MAX_HISTORY = 100
+
+# Pick 3 is single-session only — confirmed via play.lottery.ok.gov/play/draw/pick3 ("Tickets may
+# be purchased until 8:59 pm the evening of the drawing, and drawings are held nightly after 9:00
+# P.M.") and the official lottery.ok.gov Pick 3 page (same wording). No midday session exists;
+# don't re-add one without a new official citation.
+OK_TZ = zoneinfo.ZoneInfo("America/Chicago")
+OK_PICK3_DRAW_HOUR = 21  # 9:00 PM CT
+
+
+def compute_ok_pick3_next_draw_date() -> str:
+    now = dt.datetime.now(OK_TZ)
+    next_draw = now.replace(hour=OK_PICK3_DRAW_HOUR, minute=0, second=0, microsecond=0)
+    if now >= next_draw:
+        next_draw += dt.timedelta(days=1)
+    return next_draw.date().isoformat()
 
 
 @dataclasses.dataclass
@@ -151,6 +167,7 @@ def main():
 
     try:
         result = fetch_digits("https://www.lotteryusa.com/oklahoma/pick-3/", digit_count=3)
+        result["next_draw_date"] = compute_ok_pick3_next_draw_date()
         log.info("pick3: %s", result)
         save_results("pick3", result)
     except Exception as e:  # noqa: BLE001

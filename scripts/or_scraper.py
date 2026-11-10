@@ -32,6 +32,7 @@ import datetime as dt
 import json
 import logging
 import time
+import zoneinfo
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -45,6 +46,25 @@ API_URL = "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
 SUBSCRIPTION_KEY = "683ab88d339c4b22b2b276e3c2713809"  # public, embedded in oregonlottery.org's own homepage HTML
 OUTPUT_DIR = Path("data") / "oregon"
 MAX_HISTORY = 100
+
+# Pick 4 session times — re-confirmed via oregonlottery.org/jackpot/pick-4/ directly (same figures
+# already quoted in this file's docstring, 2026-10-16): "Drawings: Daily at 1 PM, 4PM, 7PM and
+# 10 PM PT" — genuinely 4 sessions every day, not a modeling error.
+OR_TZ = zoneinfo.ZoneInfo("America/Los_Angeles")
+PICK4_SESSION_TIMES = [("1pm", 13, 0), ("4pm", 16, 0), ("7pm", 19, 0), ("10pm", 22, 0)]
+
+
+def compute_or_pick4_next_draw() -> tuple:
+    """Returns (next_draw_date, next_session) for whichever Pick 4 session comes next from now."""
+    now = dt.datetime.now(OR_TZ)
+    candidates = []
+    for session, hour, minute in PICK4_SESSION_TIMES:
+        t = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+        if t <= now:
+            t += dt.timedelta(days=1)
+        candidates.append((t, session))
+    next_time, next_session = min(candidates, key=lambda c: c[0])
+    return next_time.date().isoformat(), next_session
 
 
 def fetch_draw(game_selector: str) -> dict:
@@ -115,8 +135,10 @@ def main():
         session_by_time = {"13:00": "1pm", "16:00": "4pm", "19:00": "7pm", "22:00": "10pm"}
         session = session_by_time.get(draw_time, draw_time)
         digits = [str(n) for n in closed["WinningNumbers"] if n][:4]
+        next_draw_date, next_session = compute_or_pick4_next_draw()
         entry = {
             "draw_date": draw_date, "session": session, "digits": digits,
+            "next_draw_date": next_draw_date, "next_session": next_session,
             "draw_number": closed.get("DrawNumber"), "fetched_at": now, "source_url": API_URL,
         }
         save_entries("pick4", [entry], ("draw_date", "session"))

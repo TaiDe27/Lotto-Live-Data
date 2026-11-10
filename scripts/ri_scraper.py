@@ -35,6 +35,7 @@ import datetime as dt
 import json
 import logging
 import time
+import zoneinfo
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -47,6 +48,25 @@ RETRY_BACKOFF_SEC = 5
 API_URL = "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
 OUTPUT_DIR = Path("data") / "rhode-island"
 MAX_HISTORY = 100
+
+# Numbers session times — re-confirmed via web search against rilot.com's own game pages (same
+# figures already quoted in this file's docstring, 2026-10-16): Midday 1:30 PM ET, Evening
+# 7:29 PM ET, both daily.
+RI_TZ = zoneinfo.ZoneInfo("America/New_York")
+NUMBERS_SESSION_TIMES = [("midday", 13, 30), ("evening", 19, 29)]
+
+
+def compute_ri_numbers_next_draw() -> tuple:
+    """Returns (next_draw_date, next_session) for whichever Numbers session comes next from now."""
+    now = dt.datetime.now(RI_TZ)
+    candidates = []
+    for session, hour, minute in NUMBERS_SESSION_TIMES:
+        t = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+        if t <= now:
+            t += dt.timedelta(days=1)
+        candidates.append((t, session))
+    next_time, next_session = min(candidates, key=lambda c: c[0])
+    return next_time.date().isoformat(), next_session
 
 
 def fetch_draws() -> list:
@@ -132,6 +152,10 @@ def main():
         errors.append(("wild-money", "无数据"))
 
     if numbers_entries:
+        next_draw_date, next_session = compute_ri_numbers_next_draw()
+        for e in numbers_entries:
+            e["next_draw_date"] = next_draw_date
+            e["next_session"] = next_session
         save_entries("numbers", numbers_entries, ("draw_date", "session"))
     else:
         errors.append(("numbers", "无数据"))
