@@ -34,6 +34,19 @@ Confirmed mechanics (unchanged from before):
 
 Deliberately NOT built: KENO (confirmed ~4-minute draws, ~245/day — far over this project's
 standing "≤10 draws/day" cutoff, same class as Missouri's Club Keno).
+
+2026-11-10 update: each `cmsNumbers` game object also carries a sibling `NextDrawDate` field
+(ISO datetime with offset, e.g. "2026-11-10T19:05:00-05:00") alongside `Draws` — but verified live
+(via a throwaway debug-logging branch dispatched through the real `scrape-oh.yml` workflow, since
+this field isn't visible from `Draws` alone) that it is only genuinely POPULATED for `rollingcash5`;
+`ClassicLotto`, `Pick3`, `Pick4`, and `Pick5` all return the literal .NET null-date sentinel
+"0001-01-01T00:00:00" for this field — a real gap on ohiolottery.com's own data, not a scraping
+gap, so those five stay without next-draw-date capture. No jackpot/next-jackpot-estimate field was
+found anywhere in the non-Draws payload for any game (Rolling Cash 5's only jackpot-adjacent figure
+is each past draw's own `PrizePool`, which is the AWARDED amount for that already-drawn jackpot, not
+a forward-looking next-draw estimate — using it as such would require re-deriving pari-mutuel
+rollover math this project doesn't model, so nextJackpot/nextCashValue stay "none" for Rolling
+Cash 5 too).
 """
 import datetime as dt
 import json
@@ -91,14 +104,31 @@ def to_draw_date(draw: dict) -> str:
     return draw["DrawDate"].split("T")[0]
 
 
-def extract_pool_game(game: dict) -> list[dict]:
+NULL_NEXT_DRAW_DATE_SENTINEL = "0001-01-01"
+
+
+def next_draw_date(game: dict) -> "str | None":
+    """Extracts the game-level `NextDrawDate` sibling field (see module docstring's 2026-11-10
+    update) as a plain "yyyy-MM-dd" date, or None if the source left it at its .NET null-date
+    sentinel (confirmed the case for ClassicLotto/Pick3/Pick4/Pick5 — a real source-side gap)."""
+    raw = game.get("NextDrawDate")
+    if not raw or raw.startswith(NULL_NEXT_DRAW_DATE_SENTINEL):
+        return None
+    return raw.split("T")[0]
+
+
+def extract_pool_game(game: dict, include_next_draw_date: bool = False) -> list[dict]:
     out = []
     now = dt.datetime.now(dt.timezone.utc).isoformat()
+    next_date = next_draw_date(game) if include_next_draw_date else None
     for draw in game.get("Draws") or []:
-        out.append({
+        entry = {
             "draw_date": to_draw_date(draw), "numbers": draw_values(draw),
             "fetched_at": now, "source_url": DRAW_GAMES_URL,
-        })
+        }
+        if next_date:
+            entry["next_draw_date"] = next_date
+        out.append(entry)
     return out
 
 
@@ -122,7 +152,7 @@ def main():
 
     jobs = [
         ("classic-lotto", lambda: extract_pool_game(games_by_id["ClassicLotto"])),
-        ("rolling-cash5", lambda: extract_pool_game(games_by_id["rollingcash5"])),
+        ("rolling-cash5", lambda: extract_pool_game(games_by_id["rollingcash5"], include_next_draw_date=True)),
     ]
     for subdir, fn in jobs:
         try:
