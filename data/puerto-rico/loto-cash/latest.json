@@ -1,5 +1,21 @@
 [
   {
+    "draw_date": "2026-11-09",
+    "numbers": [
+      1,
+      10,
+      16,
+      25,
+      26
+    ],
+    "special_number": 6,
+    "multiplier": 5,
+    "next_jackpot_amount": 730000.0,
+    "drawing_number": 3392,
+    "fetched_at": "2026-11-10T02:21:03.453560+00:00",
+    "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
+  },
+  {
     "draw_date": "2026-11-06",
     "numbers": [
       9,
