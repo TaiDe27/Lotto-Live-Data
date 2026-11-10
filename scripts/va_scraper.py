@@ -62,6 +62,23 @@ def mdy_to_iso(mdy: str) -> str:
     return f"{int(y):04d}-{int(m):02d}-{int(d):02d}"
 
 
+def _next_pick_draw(draw_date: str, session: str) -> tuple[str, str]:
+    """Pick 3/4/5's day+night cards show a shared `next-drawing-date` HTML field on
+    valottery.com's live page, not a separate structured field per session - but each
+    game's own `/data/draw-games/<slug>` how-to-play text confirms, in plain English,
+    a FIXED daily schedule with no skipped days: 'Day drawing: Daily at 1:59 p.m. ET.'
+    / 'Night drawing: Daily at 11 p.m. ET.' (verified this session directly against
+    pick3/pick4/pick5's own pages - identical wording/times on all three). Since the
+    schedule never varies, the draw immediately following any given result is a pure
+    function of that result's own (draw_date, session) - never real wall-clock time -
+    so this needs no datetime.now()/zoneinfo at all: day -> night same date, night ->
+    day the following date."""
+    if session == "day":
+        return draw_date, "night"
+    next_date = dt.date.fromisoformat(draw_date) + dt.timedelta(days=1)
+    return next_date.isoformat(), "day"
+
+
 def save(subdir: str, entries: list[dict]):
     out_dir = OUTPUT_DIR / subdir
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -173,9 +190,11 @@ def fetch_pick_live(game_slug: str, name: str, digit_count: int) -> list[dict]:
             log.info("[live] %s %s: not drawn yet (expected %d digits+fireball, got %s+%s) - normal",
                       name, session, digit_count, digits, fireball)
             continue
+        next_draw_date, next_session = _next_pick_draw(draw_date, session)
         out.append({
             "game": name, "draw_date": draw_date, "session": session,
             "digits": digits, "fireball": fireball,
+            "next_draw_date": next_draw_date, "next_session": next_session,
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
         })
     return out
@@ -195,16 +214,20 @@ def scrape_pick_with_fireball(game_id: int, subdir: str, name: str, live_slug: s
         draw_date = mdy_to_iso(m.group(1))
         fetched_at = dt.datetime.now(dt.timezone.utc).isoformat()
         source_url = f"https://www.valottery.com/data/draw-games/{subdir}?gameId={game_id}"
+        day_next_date, day_next_session = _next_pick_draw(draw_date, "day")
+        night_next_date, night_next_session = _next_pick_draw(draw_date, "night")
         out.append({
             "game": name, "draw_date": draw_date, "session": "day",
             "digits": [int(x) for x in m.group(2).split(",")],
             "fireball": int(m.group(3)),
+            "next_draw_date": day_next_date, "next_session": day_next_session,
             "fetched_at": fetched_at, "source_url": source_url,
         })
         out.append({
             "game": name, "draw_date": draw_date, "session": "night",
             "digits": [int(x) for x in m.group(4).split(",")],
             "fireball": int(m.group(5)),
+            "next_draw_date": night_next_date, "next_session": night_next_session,
             "fetched_at": fetched_at, "source_url": source_url,
         })
         seen.add((draw_date, "day"))
