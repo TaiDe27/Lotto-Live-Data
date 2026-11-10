@@ -1,5 +1,71 @@
 [
   {
+    "draw_date": "2026-11-09",
+    "session": "sunset",
+    "mega_ball_drawn": true,
+    "digits": [
+      2,
+      0,
+      2
+    ],
+    "digits_2nd": [
+      0,
+      7,
+      5
+    ],
+    "digits_3rd": [
+      3,
+      2,
+      6
+    ],
+    "fetched_at": "2026-11-10T00:13:06.404626+00:00",
+    "source_url": "https://www.thecaribbeanlottery.com/games/pick-3"
+  },
+  {
+    "draw_date": "2026-11-09",
+    "session": "morning",
+    "mega_ball_drawn": true,
+    "digits": [
+      2,
+      3,
+      6
+    ],
+    "digits_2nd": [
+      7,
+      3,
+      4
+    ],
+    "digits_3rd": [
+      0,
+      2,
+      6
+    ],
+    "fetched_at": "2026-11-10T00:13:06.404646+00:00",
+    "source_url": "https://www.thecaribbeanlottery.com/games/pick-3"
+  },
+  {
+    "draw_date": "2026-11-09",
+    "session": "midday",
+    "mega_ball_drawn": true,
+    "digits": [
+      5,
+      7,
+      0
+    ],
+    "digits_2nd": [
+      6,
+      4,
+      6
+    ],
+    "digits_3rd": [
+      3,
+      3,
+      6
+    ],
+    "fetched_at": "2026-11-10T00:13:06.404642+00:00",
+    "source_url": "https://www.thecaribbeanlottery.com/games/pick-3"
+  },
+  {
     "draw_date": "2026-11-08",
     "session": "sunset",
     "mega_ball_drawn": false,
