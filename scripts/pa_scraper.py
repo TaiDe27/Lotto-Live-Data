@@ -46,6 +46,7 @@ import logging
 import re
 import time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("pa_scraper")
@@ -78,6 +79,31 @@ INTER_REQUEST_DELAY_SEC = 4.0
 OUTPUT_DIR = Path("data") / "pennsylvania"
 MAX_HISTORY = 100
 BASE = "https://www.lottery.net/pennsylvania"
+
+# Pick 2/3/4/5's next_draw_date/next_session aren't given by the scrape source (lottery.net's
+# results page only shows past draws), so they're computed locally from the real draw clock
+# times. Confirmed directly on palottery.pa.gov's own PICK-2/PICK-3/PICK-4/PICK-5 pages
+# (2026-11-10): "the Day draw takes place at 1:35 PM ET, and the Evening draw is held at 6:59 PM
+# ET" for all four games, every day of the week (no skipped days) - matches the lottery.net
+# quote already on file above, now independently re-confirmed against the official site itself.
+PA_ET = ZoneInfo("America/New_York")
+PICK_DAY_DRAW_TIME = dt.time(13, 35)
+PICK_EVENING_DRAW_TIME = dt.time(18, 59)
+
+
+def compute_next_pick_draw(now: dt.datetime) -> tuple[str, str]:
+    """Next upcoming Pick-game draw (date, session) relative to `now` (must be tz-aware, any
+    tz - converted to America/New_York here). Both sessions run every day, so this is a pure
+    clock comparison, no day-of-week handling needed."""
+    now_et = now.astimezone(PA_ET)
+    today = now_et.date()
+    day_dt = dt.datetime.combine(today, PICK_DAY_DRAW_TIME, tzinfo=PA_ET)
+    evening_dt = dt.datetime.combine(today, PICK_EVENING_DRAW_TIME, tzinfo=PA_ET)
+    if now_et < day_dt:
+        return today.isoformat(), "day"
+    if now_et < evening_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "day"
 
 
 def _fetch_soup(url: str):
@@ -163,8 +189,10 @@ def fetch_digits_both_sessions(slug: str, digit_count: int) -> list:
         if len(digits) != digit_count:
             raise ValueError(f"{slug} {session} 应为{digit_count}位数字，抓到 {len(digits)} 个: {digits}")
         wild_ball = wild_li.get_text(strip=True) if wild_li else None
+        next_draw_date, next_session = compute_next_pick_draw(dt.datetime.now(dt.timezone.utc))
         results.append({
             "draw_date": draw_date, "session": session, "digits": digits, "wild_ball": wild_ball,
+            "next_draw_date": next_draw_date, "next_session": next_session,
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
         })
     # Day draws at 1:35pm ET, Evening at 6:59pm ET — the page simply doesn't render Evening's
