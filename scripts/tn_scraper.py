@@ -30,7 +30,7 @@ import logging
 import os
 import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -127,6 +127,33 @@ def extract_multi_session(html, ball_class):
     return entries
 
 
+def _next_draw_date(after_date_iso, skip_sunday):
+    """lottery.net's TN archive pages show only past results, no forward-looking element
+    (confirmed live 2026-11-10) — Cash 3/4's own page text (quoted in this file's module doc)
+    confirms Morning/Midday skip Sunday while Evening runs every day, so this computes the next
+    occurrence from that known schedule."""
+    d = datetime.strptime(after_date_iso, "%Y-%m-%d").date()
+    for offset in range(1, 8):
+        candidate = d + timedelta(days=offset)
+        if skip_sunday and candidate.weekday() == 6:
+            continue
+        return candidate.isoformat()
+    raise AssertionError("unreachable: a valid draw day occurs at least once within a week")
+
+
+def add_next_draw_dates(entries):
+    by_session = {}
+    for e in entries:
+        by_session.setdefault(e.get("session"), []).append(e)
+    for session, group in by_session.items():
+        latest = max(e["draw_date"] for e in group)
+        skip_sunday = session in ("morning", "midday")
+        nd = _next_draw_date(latest, skip_sunday)
+        for e in group:
+            e["next_draw_date"] = nd
+    return entries
+
+
 def save(game_folder, new_entries, key_fields):
     path = os.path.join(OUT_DIR, game_folder, "latest.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -173,7 +200,7 @@ def main():
         html = fetch("cash-3")
         entries = extract_multi_session(html, "tn-cash-3")
         if entries:
-            save("cash3", entries, ["draw_date", "session"])
+            save("cash3", add_next_draw_dates(entries), ["draw_date", "session"])
     except Exception as e:
         log.error("tn cash-3 failed: %s", e)
     time.sleep(1)
@@ -182,7 +209,7 @@ def main():
         html = fetch("cash-4")
         entries = extract_multi_session(html, "tn-cash-4")
         if entries:
-            save("cash4", entries, ["draw_date", "session"])
+            save("cash4", add_next_draw_dates(entries), ["draw_date", "session"])
     except Exception as e:
         log.error("tn cash-4 failed: %s", e)
 

@@ -60,7 +60,12 @@ def save_results(subdir: str, new_entries: list[dict]) -> Path:
 
 
 def scrape_digit_game(url: str, digit_count: int) -> list[dict]:
-    cards = lu.parse_draw_cards(lu.fetch_html(url), max_entries=MAX_HISTORY)
+    """2026-11-10: `next_draw_date` added — each session's own URL has its own correctly-scoped
+    `.c-state-short-info` widget (confirmed live, same pattern as nj_scraper.py's digit games).
+    Fixed-$500/$5,000-prize games, no jackpot concept, so no jackpot field is captured."""
+    html = lu.fetch_html(url)
+    next_draw_date = lu.parse_next_draw_info(html)["next_draw_date"]
+    cards = lu.parse_draw_cards(html, max_entries=MAX_HISTORY)
     out = []
     for c in cards:
         digits = next(iter(c["boxes"].values()), [])
@@ -69,6 +74,7 @@ def scrape_digit_game(url: str, digit_count: int) -> list[dict]:
         out.append({
             "draw_date": c["draw_date"], "digits": digits, "fireball": c["bonus_number"],
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+            "next_draw_date": next_draw_date,
         })
     return out
 

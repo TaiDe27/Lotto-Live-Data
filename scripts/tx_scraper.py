@@ -21,7 +21,7 @@ import logging
 import os
 import re
 import time
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import requests
 
@@ -113,6 +113,35 @@ def extract_sessions(html, ball_class="winningNumberBalls", has_fireball=False, 
     return results
 
 
+def next_draw_date(after_date_iso):
+    """texaslottery.com's own Pick 3/Daily 4 page shows only past results under #LastDraw, no
+    forward-looking element (confirmed live 2026-11-10) — the page's own text says drawings run
+    "every Monday - Saturday" for all 4 sessions, so this computes the next Mon-Sat day after the
+    most recent real result rather than scraping a date that isn't published."""
+    d = date.fromisoformat(after_date_iso)
+    for offset in range(1, 8):
+        candidate = d + timedelta(days=offset)
+        if candidate.weekday() != 6:  # skip Sunday
+            return candidate.isoformat()
+    raise AssertionError("unreachable: a Mon-Sat day occurs at least once within a week")
+
+
+def add_next_draw_dates(entries):
+    """Groups `entries` (already session-tagged by `extract_sessions`) by session and stamps each
+    with the next occurrence of ITS OWN session after that session's most recent real draw_date —
+    multi-session games here draw 4x/day, so a single global next-date would misattribute which
+    session is actually next."""
+    by_session = {}
+    for e in entries:
+        by_session.setdefault(e.get("session"), []).append(e)
+    for session, group in by_session.items():
+        latest = max(e["draw_date"] for e in group)
+        nd = next_draw_date(latest)
+        for e in group:
+            e["next_draw_date"] = nd
+    return entries
+
+
 def save(game_folder, new_entries, key_fields):
     path = os.path.join(OUT_DIR, game_folder, "latest.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -162,6 +191,8 @@ def main():
         if not sessions:
             log.error("no sessions parsed for %s", path)
             continue
+        if folder in ("pick3", "daily4"):
+            sessions = add_next_draw_dates(sessions)
         save(folder, sessions, key_fields)
         time.sleep(1)
 

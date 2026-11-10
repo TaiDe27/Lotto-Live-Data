@@ -917,7 +917,7 @@
         "SC"
       ],
       "name": "Pick 3 Midday",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 3,
         "mainRangeLower": 0,
@@ -950,7 +950,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1011,7 +1020,7 @@
         "SC"
       ],
       "name": "Pick 3 Evening",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 3,
         "mainRangeLower": 0,
@@ -1044,7 +1053,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 18,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1105,7 +1123,7 @@
         "SC"
       ],
       "name": "Pick 4 Midday",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 4,
         "mainRangeLower": 0,
@@ -1138,7 +1156,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 12,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1199,7 +1226,7 @@
         "SC"
       ],
       "name": "Pick 4 Evening",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 4,
         "mainRangeLower": 0,
@@ -1232,7 +1259,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 18,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "digits",
         "specialNumbers": null,
         "winningTeamsField": null,

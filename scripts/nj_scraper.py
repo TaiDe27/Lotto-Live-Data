@@ -68,8 +68,16 @@ def scrape_digit_game(url: str, game_key: str, digit_count: int) -> list[dict]:
     actually draws twice daily, so lotteryusa.com's per-day row is the EVENING draw unless the URL
     explicitly says otherwise. Confirmed: lotteryusa.com splits NJ's two Pick-3/4 sessions onto two
     separate URLs (`/pick-3/` = evening, `/pick-3-midday/` = midday), same convention used for every
-    other two-session state's lotteryusa.com fallback in this project."""
-    cards = lu.parse_draw_cards(lu.fetch_html(url), max_entries=MAX_HISTORY)
+    other two-session state's lotteryusa.com fallback in this project.
+
+    2026-11-10: `next_draw_date` added — each of these 4 per-session URLs has its OWN
+    `.c-state-short-info` widget correctly scoped to that exact session (e.g. midday-pick-3's own
+    page says "Next Pick-3 Midday draw", not the evening one), confirmed live, so no cross-session
+    imprecision like FL Fantasy 5's shared one. These are fixed-$500/$5,000-prize digit games (no
+    jackpot concept), so no jackpot field is captured here."""
+    html = lu.fetch_html(url)
+    next_draw_date = lu.parse_next_draw_info(html)["next_draw_date"]
+    cards = lu.parse_draw_cards(html, max_entries=MAX_HISTORY)
     out = []
     for c in cards:
         digits = next(iter(c["boxes"].values()), [])
@@ -80,6 +88,7 @@ def scrape_digit_game(url: str, game_key: str, digit_count: int) -> list[dict]:
             "digits": digits,
             "fireball": c["bonus_number"],
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "next_draw_date": next_draw_date,
             "source_url": url,
         })
     return out

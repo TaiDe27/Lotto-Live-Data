@@ -76,6 +76,23 @@ def save_results(subdir: str, new_entries: list[dict]) -> None:
     log.info("已保存: %s (%d 条记录)", out_path, len(merged))
 
 
+def _next_draw_date(after_date_iso: str, skip_sunday: bool) -> str:
+    """sceducationlottery.com's result pages show no forward-looking 'next draw' element at all
+    (confirmed live 2026-11-10) — Pick 3/4's own page text states the fixed schedule instead
+    ("Evening drawings held every evening"; "Midday drawings...Monday through Saturday...No midday
+    drawings are held on Sundays or on Christmas Day"), so this computes the next occurrence from
+    that known schedule rather than scraping a date that isn't published."""
+    d = dt.date.fromisoformat(after_date_iso)
+    for offset in range(1, 8):
+        candidate = d + dt.timedelta(days=offset)
+        if skip_sunday and candidate.weekday() == 6:
+            continue
+        if candidate.month == 12 and candidate.day == 25:
+            continue
+        return candidate.isoformat()
+    raise AssertionError("unreachable: a valid draw day occurs at least once within a week")
+
+
 def scrape_digit_game(url: str) -> dict[str, list[dict]]:
     soup = BeautifulSoup(fetch_html(url), "html.parser")
     by_session: dict[str, list[dict]] = {"Midday": [], "Evening": []}
@@ -99,6 +116,13 @@ def scrape_digit_game(url: str) -> dict[str, list[dict]]:
             "source_url": url,
         }
         by_session[session].append(entry)
+    for session, entries in by_session.items():
+        if not entries:
+            continue
+        latest_date = max(e["draw_date"] for e in entries)
+        next_date = _next_draw_date(latest_date, skip_sunday=(session == "Midday"))
+        for e in entries:
+            e["next_draw_date"] = next_date
     return by_session
 
 

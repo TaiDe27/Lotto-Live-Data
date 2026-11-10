@@ -926,7 +926,7 @@
         "TX"
       ],
       "name": "Pick 3 Morning",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 3,
         "mainRangeLower": 0,
@@ -962,7 +962,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1011,7 +1020,7 @@
         "TX"
       ],
       "name": "Pick 3 Day",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 3,
         "mainRangeLower": 0,
@@ -1047,7 +1056,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": 27,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1096,7 +1114,7 @@
         "TX"
       ],
       "name": "Pick 3 Evening",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 3,
         "mainRangeLower": 0,
@@ -1132,7 +1150,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1181,7 +1208,7 @@
         "TX"
       ],
       "name": "Pick 3 Night",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 3,
         "mainRangeLower": 0,
@@ -1217,7 +1244,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 22,
+          "anchorMinute": 12,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1266,7 +1302,7 @@
         "TX"
       ],
       "name": "Daily 4 Morning",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 4,
         "mainRangeLower": 0,
@@ -1302,7 +1338,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 10,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1351,7 +1396,7 @@
         "TX"
       ],
       "name": "Daily 4 Day",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 4,
         "mainRangeLower": 0,
@@ -1387,7 +1432,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 12,
+          "anchorMinute": 27,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1436,7 +1490,7 @@
         "TX"
       ],
       "name": "Daily 4 Evening",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 4,
         "mainRangeLower": 0,
@@ -1472,7 +1526,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 18,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1521,7 +1584,7 @@
         "TX"
       ],
       "name": "Daily 4 Night",
-      "type": "inStateJackpot",
+      "type": "dailyNumbers",
       "pickRule": {
         "mainCount": 4,
         "mainRangeLower": 0,
@@ -1557,7 +1620,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 22,
+          "anchorMinute": 12,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
