@@ -27,6 +27,16 @@ integer→card encoding was decoded and cross-verified against a real screenshot
 app's results card showing exactly K♣ K♦ 8♠ 2♣ J♣ for that same draw — see `decode_poker_card`
 below for the formula. Output is written in the same "RankSuitLetter" code format the existing
 Swift display logic already expects (e.g. "6C"/"2H"/"AC"), so nothing downstream needed to change.
+
+2026-11-10 update: Poker Lotto gained a `next_draw_date` field (app-side needs it to show the
+"NEXT DRAWING" card; fixed prize is already wired app-side, not this project's concern). Poker
+Lotto draws exactly once/day at 7:29 p.m. Eastern (confirmed directly against michiganlottery.com's
+own "Poker Lotto: Nightly Drawing" post and corroborated by lotteryusa.com/lotterypost.com/etc —
+"Every night at 7:29 p.m., five winning cards are randomly drawn"; sales close 7:08 p.m.; drawn
+every day of the week, no skipped days). Michigan is genuinely Eastern Time (America/Detroit), not
+a copy-paste from another state — double-checked, not assumed. No `next_session` field: single
+daily draw, no sessions. Computed locally in Python (no official next-draw-date API for this game),
+following the field-naming shape already used by az_pick3_scraper.py's `next_draw_date`.
 """
 import dataclasses
 import datetime as dt
@@ -34,6 +44,7 @@ import json
 import logging
 import time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("mi_scraper")
@@ -48,6 +59,19 @@ GRAPHQL_URL = "https://www.michiganlottery.com/api"
 
 RANK_ORDER = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 SUIT_ORDER = ["H", "D", "S", "C"]  # Hearts 1-13, Diamonds 14-26, Spades 27-39, Clubs 40-52
+
+
+POKER_LOTTO_TZ = "America/Detroit"  # Eastern Time — verified directly, not assumed from another state
+POKER_LOTTO_DRAW_TIME = dt.time(19, 29)  # 7:29 p.m. ET, confirmed via michiganlottery.com
+
+
+def next_draw_date(tz_name: str, draw_time: dt.time) -> str:
+    """Single-draw-per-day games only: if local now is before today's draw time, next draw is
+    today (hasn't happened yet); otherwise it's tomorrow."""
+    now_local = dt.datetime.now(ZoneInfo(tz_name))
+    if now_local.time() < draw_time:
+        return now_local.date().isoformat()
+    return (now_local.date() + dt.timedelta(days=1)).isoformat()
 
 
 def decode_poker_card(n: int) -> str:
@@ -162,6 +186,7 @@ def fetch_poker_lotto_real() -> list[dict]:
     today = now.date().isoformat()
     cards = [decode_poker_card(n) for n in wn["drawNumbers"]]
     return [{"game": "Poker Lotto", "draw_date": today, "cards": cards,
+              "next_draw_date": next_draw_date(POKER_LOTTO_TZ, POKER_LOTTO_DRAW_TIME),
               "fetched_at": now.isoformat(), "source_url": GRAPHQL_URL}]
 
 

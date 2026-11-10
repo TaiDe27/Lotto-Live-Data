@@ -12,6 +12,16 @@ separate "Month"/"Day"/"Year" columns rather than one combined number list. Mode
 side as `Game.isDateFieldsPick` (display-only; see that property's doc comment for why matching/
 entry/OCR aren't modeled yet for this one mechanic) — `numbers` here is `[month, day, year]` in that
 fixed order, matching `Drawing.mainNumbers`'s expected shape for this game.
+
+2026-11-10 update: MyDaY gained a `next_draw_date` field (app-side needs it to show the "NEXT
+DRAWING" card; the $5,000 match-everything prize is already wired app-side, not this project's
+concern). Confirmed directly against nelottery.com's own MyDaY page: "Drawings Seven Days a Week
+— The winning numbers are announced Monday through Sunday in time for the ten o'clock news"
+(10:00 p.m. Central), with ticket sales open until 9:00 p.m./blocked only 9:00-9:03 p.m. on drawing
+nights — single draw/day, every day, no skipped days. Computed locally in Python (no official
+next-draw-date API for this game), following the field-naming shape already used by
+az_pick3_scraper.py's `next_draw_date`. Pick 5/Pick 3/Pick 4 (sharing `save_results` below) are
+NOT in scope for this field and are left untouched.
 """
 import dataclasses
 import datetime as dt
@@ -20,6 +30,8 @@ import logging
 import re
 import time
 from pathlib import Path
+from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ne_scraper")
@@ -30,6 +42,18 @@ MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "nebraska"
 MAX_HISTORY = 100
+
+MYDAY_TZ = "America/Chicago"  # Central Time, confirmed on nelottery.com's own MyDaY page
+MYDAY_DRAW_TIME = dt.time(22, 0)  # 10:00 p.m. CT ("in time for the ten o'clock news")
+
+
+def next_draw_date(tz_name: str, draw_time: dt.time) -> str:
+    """Single-draw-per-day games only: if local now is before today's draw time, next draw is
+    today (hasn't happened yet); otherwise it's tomorrow."""
+    now_local = dt.datetime.now(ZoneInfo(tz_name))
+    if now_local.time() < draw_time:
+        return now_local.date().isoformat()
+    return (now_local.date() + dt.timedelta(days=1)).isoformat()
 
 
 def _get(url: str) -> str:
@@ -88,7 +112,13 @@ def fetch_latest_row(gamename: str, expected_cols: int) -> tuple[str, list[int]]
     return draw_date, values
 
 
-def save_results(subdir: str, draw_date: str, numbers: list[int], source_url: str) -> Path:
+def save_results(
+    subdir: str,
+    draw_date: str,
+    numbers: list[int],
+    source_url: str,
+    next_draw_date_value: Optional[str] = None,
+) -> Path:
     out_dir = OUTPUT_DIR / subdir
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "latest.json"
@@ -106,6 +136,10 @@ def save_results(subdir: str, draw_date: str, numbers: list[int], source_url: st
         "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "source_url": source_url,
     }
+    # Only MyDaY passes next_draw_date_value — Pick 5/3/4 are out of scope for this field and
+    # keep their existing shape untouched.
+    if next_draw_date_value is not None:
+        new_entry["next_draw_date"] = next_draw_date_value
     history = [h for h in history if h.get("draw_date") != draw_date]
     merged = ([new_entry] + history)[:MAX_HISTORY]
     out_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2))
@@ -128,7 +162,8 @@ def main():
             draw_date, numbers = fetch_latest_row(gamename, expected_cols)
             url = f"https://nelottery.com/lotto-detail?gamename={gamename.replace(' ', '+')}"
             log.info("%s: draw_date=%s numbers=%s", subdir, draw_date, numbers)
-            save_results(subdir, draw_date, numbers, url)
+            next_draw_date_value = next_draw_date(MYDAY_TZ, MYDAY_DRAW_TIME) if gamename == "MyDaY" else None
+            save_results(subdir, draw_date, numbers, url, next_draw_date_value)
         except Exception as e:  # noqa: BLE001
             log.error("%s 失败: %s", subdir, e)
             errors.append((subdir, e))
