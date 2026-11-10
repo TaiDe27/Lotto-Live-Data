@@ -1,6 +1,19 @@
 [
   {
     "draw_date": "2026-11-09",
+    "session": "7pm",
+    "digits": [
+      "8",
+      "1",
+      "9",
+      "1"
+    ],
+    "draw_number": 36809,
+    "fetched_at": "2026-11-10T03:23:00.024739+00:00",
+    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
+  },
+  {
+    "draw_date": "2026-11-09",
     "session": "4pm",
     "digits": [
       "8",
