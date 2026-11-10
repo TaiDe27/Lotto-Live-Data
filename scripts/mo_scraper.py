@@ -32,6 +32,7 @@ import re
 import time
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("mo_scraper")
@@ -42,6 +43,27 @@ MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "missouri"
 MAX_HISTORY = 100
+
+# Pick 3 / Pick 4 both draw daily (seven days a week, no skipped days) at the same two CT times,
+# confirmed directly from molottery.com's own pick3/pick3-rules.jsp: "The Midday drawing is at
+# approximately 12:45 p.m. and the Evening drawing is at approximately 8:59 p.m." — same schedule
+# applies to Pick 4 (same draw mechanism, different digit count).
+CENTRAL_TZ = ZoneInfo("America/Chicago")
+PICK_MIDDAY_TIME = dt.time(12, 45)
+PICK_EVENING_TIME = dt.time(20, 59)
+
+
+def compute_next_draw(now_ct: dt.datetime, midday_time: dt.time, evening_time: dt.time) -> tuple[str, str]:
+    """返回 (next_draw_date ISO 字符串, next_session)。在今天 midday 之前 -> 今天 midday；
+    在今天 evening 之前 -> 今天 evening；否则 -> 明天 midday。"""
+    today = now_ct.date()
+    midday_dt = dt.datetime.combine(today, midday_time, tzinfo=CENTRAL_TZ)
+    evening_dt = dt.datetime.combine(today, evening_time, tzinfo=CENTRAL_TZ)
+    if now_ct < midday_dt:
+        return today.isoformat(), "midday"
+    if now_ct < evening_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "midday"
 
 
 def _get(url: str):
@@ -250,6 +272,13 @@ def fetch_pick(game: str, digit_count: int) -> list[dict]:
         })
     if not results:
         raise ValueError("解析出 0 条结果")
+
+    next_draw_date, next_session = compute_next_draw(
+        dt.datetime.now(CENTRAL_TZ), PICK_MIDDAY_TIME, PICK_EVENING_TIME
+    )
+    for r in results:
+        r["next_draw_date"] = next_draw_date
+        r["next_session"] = next_session
     return results
 
 

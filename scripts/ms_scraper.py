@@ -17,6 +17,7 @@ import re
 import time
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ms_scraper")
@@ -27,6 +28,26 @@ MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "mississippi"
 MAX_HISTORY = 100
+
+# Cash 3 / Cash 4 both draw daily (no skipped days) at the same two CT times, confirmed directly
+# from mslottery.com's own game pages (games/cash-3/, games/cash-4/): "Numbers Available by 3 p.m.
+# (Midday Drawing) and 10 p.m. (Evening Drawing)" -> draws themselves at 2:30pm/9:30pm CT.
+CENTRAL_TZ = ZoneInfo("America/Chicago")
+CASH34_MIDDAY_TIME = dt.time(14, 30)
+CASH34_EVENING_TIME = dt.time(21, 30)
+
+
+def compute_next_draw(now_ct: dt.datetime, midday_time: dt.time, evening_time: dt.time) -> tuple[str, str]:
+    """返回 (next_draw_date ISO 字符串, next_session)。在今天 midday 之前 -> 今天 midday；
+    在今天 evening 之前 -> 今天 evening；否则 -> 明天 midday。"""
+    today = now_ct.date()
+    midday_dt = dt.datetime.combine(today, midday_time, tzinfo=CENTRAL_TZ)
+    evening_dt = dt.datetime.combine(today, evening_time, tzinfo=CENTRAL_TZ)
+    if now_ct < midday_dt:
+        return today.isoformat(), "midday"
+    if now_ct < evening_dt:
+        return today.isoformat(), "evening"
+    return (today + dt.timedelta(days=1)).isoformat(), "midday"
 
 
 @dataclasses.dataclass
@@ -151,7 +172,12 @@ def fetch_match5(url: str) -> SingleResult:
     raise RuntimeError(f"重试多次后仍然失败: {url}") from last_err
 
 
-def save_session_results(subdir: str, results: list[SessionResult]) -> Path:
+def save_session_results(
+    subdir: str, results: list[SessionResult], next_draw: Optional[tuple[str, str]] = None
+) -> Path:
+    """`next_draw`, when given, is (next_draw_date, next_session) and gets stamped onto every
+    entry this call writes — only cash3/cash4 pass it (PRD scope for this field so far); other
+    callers (cashpop, match5) are left exactly as before, with no new keys added."""
     out_dir = OUTPUT_DIR / subdir
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "latest.json"
@@ -164,6 +190,11 @@ def save_session_results(subdir: str, results: list[SessionResult]) -> Path:
         except (json.JSONDecodeError, OSError):
             history = []
     new_entries = [r.to_dict() for r in results]
+    if next_draw is not None:
+        next_draw_date, next_session = next_draw
+        for e in new_entries:
+            e["next_draw_date"] = next_draw_date
+            e["next_session"] = next_session
     new_keys = {(e["draw_date"], e["session"]) for e in new_entries}
     history = [h for h in history if (h.get("draw_date"), h.get("session")) not in new_keys]
     merged = (new_entries + history)[:MAX_HISTORY]
@@ -194,10 +225,13 @@ def save_single_result(subdir: str, result: SingleResult) -> Path:
 
 def main():
     errors = []
+    now_ct = dt.datetime.now(CENTRAL_TZ)
+    cash34_next_draw = compute_next_draw(now_ct, CASH34_MIDDAY_TIME, CASH34_EVENING_TIME)
+
     try:
         results = fetch_session_game("https://www.mslottery.com/games/cash-3/", "cash3winnumbers-wrap", has_fireball=True)
         log.info("cash3: %s", [r.to_dict() for r in results])
-        save_session_results("cash3", results)
+        save_session_results("cash3", results, next_draw=cash34_next_draw)
     except Exception as e:  # noqa: BLE001
         log.error("cash3 失败: %s", e)
         errors.append(("cash3", e))
@@ -205,7 +239,7 @@ def main():
     try:
         results = fetch_session_game("https://www.mslottery.com/games/cash-4/", "cash4winnumbers-wrap", has_fireball=True)
         log.info("cash4: %s", [r.to_dict() for r in results])
-        save_session_results("cash4", results)
+        save_session_results("cash4", results, next_draw=cash34_next_draw)
     except Exception as e:  # noqa: BLE001
         log.error("cash4 失败: %s", e)
         errors.append(("cash4", e))
