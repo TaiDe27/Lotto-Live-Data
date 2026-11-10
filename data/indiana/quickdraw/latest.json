@@ -1,6 +1,38 @@
 [
   {
     "game": "Quick Draw",
+    "draw_date": "2026-11-10",
+    "session": "midday",
+    "numbers": [
+      1,
+      4,
+      7,
+      10,
+      12,
+      14,
+      15,
+      22,
+      33,
+      34,
+      37,
+      43,
+      47,
+      51,
+      54,
+      62,
+      68,
+      70,
+      71,
+      73
+    ],
+    "bonus_number": 62,
+    "next_draw_date": "2026-11-10",
+    "next_session": "evening",
+    "fetched_at": "2026-11-10T19:05:02.103448+00:00",
+    "source_url": "https://www.hoosierlottery.com/games/draw/quick-draw/"
+  },
+  {
+    "game": "Quick Draw",
     "draw_date": "2026-11-09",
     "session": "evening",
     "numbers": [
