@@ -1,12 +1,22 @@
 [
   {
     "draw_date": "2026-11-09",
+    "session": "evening",
+    "numbers": [
+      11
+    ],
+    "fireball": null,
+    "fetched_at": "2026-11-10T03:51:14.150728+00:00",
+    "source_url": "https://www.mslottery.com/games/cash-pop/"
+  },
+  {
+    "draw_date": "2026-11-09",
     "session": "midday",
     "numbers": [
       8
     ],
     "fireball": null,
-    "fetched_at": "2026-11-10T03:11:18.214339+00:00",
+    "fetched_at": "2026-11-10T03:51:14.150829+00:00",
     "source_url": "https://www.mslottery.com/games/cash-pop/"
   },
   {
