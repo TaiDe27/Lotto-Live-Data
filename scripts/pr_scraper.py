@@ -31,12 +31,24 @@ Cash/Kino pages and FAQ, 2026-10-16):
 
 API gameIDs used: 2=Pega 2 día, 3=Pega 3 día, 4=Pega 4 día, 5=Pega 2 noche, 6=Pega 3 noche,
 7=Pega 4 noche, 8=Loto, 9=Revancha.
+
+next_draw_date/next_session for Pega 2/3/4 — confirmed the raw ElectronicDrawing API response
+has NO next-draw-shaped field at all (no nextDrawDate/nextGameSeqNum like Arizona's own API has),
+so unlike az_pick3_scraper.py this can't just be decoded off the response; it's computed here from
+wall-clock time instead. Schedule re-confirmed directly against loteriasdepuertorico.pr.gov's own
+"Pega 2, 3, 4" page (https://loteriasdepuertorico.pr.gov/loteria-electronica/pega-2-3-4/, raw HTML
+fetched 2026-11-10): "Para jugarle a los Pega tienes 2 oportunidades diarias de lunes a sábado con
+sorteos diurnos a las 2pm y nocturnos a las 10pm." — Monday-Saturday ONLY (no Sunday draw for any
+of the 3 games), day session 2:00 PM AST, night session 10:00 PM AST (Puerto Rico observes no DST,
+so AST == America/Puerto_Rico year-round). compute_next_pega_draw() below walks forward from "now"
+in that zone, skipping Sunday entirely, to find the next day/night session.
 """
 import dataclasses
 import datetime as dt
 import json
 import logging
 import time
+import zoneinfo
 from pathlib import Path
 from typing import Optional
 
@@ -50,6 +62,29 @@ RETRY_BACKOFF_SEC = 5
 API_URL = "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
 OUTPUT_DIR = Path("data") / "puerto-rico"
 MAX_HISTORY = 100
+
+PR_TZ = zoneinfo.ZoneInfo("America/Puerto_Rico")  # AST year-round, no DST
+PEGA_SESSION_HOUR = {"day": 14, "night": 22}  # 2:00 PM / 10:00 PM AST
+
+
+def compute_next_pega_draw(now: dt.datetime) -> tuple[str, str]:
+    """Next Pega 2/3/4 day/night session at-or-after `now` (any tz-aware datetime),
+    honoring the Monday-Saturday-only schedule (no Sunday draws). Returns
+    (next_draw_date "YYYY-MM-DD", next_session "day"|"night")."""
+    candidate = now.astimezone(PR_TZ)
+    while True:
+        if candidate.weekday() == 6:  # Sunday: no draws at all, skip to Monday 00:00
+            next_day = candidate.date() + dt.timedelta(days=1)
+            candidate = dt.datetime.combine(next_day, dt.time(0, 0), tzinfo=PR_TZ)
+            continue
+        for session in ("day", "night"):
+            session_dt = candidate.replace(
+                hour=PEGA_SESSION_HOUR[session], minute=0, second=0, microsecond=0
+            )
+            if candidate <= session_dt:
+                return candidate.date().isoformat(), session
+        next_day = candidate.date() + dt.timedelta(days=1)
+        candidate = dt.datetime.combine(next_day, dt.time(0, 0), tzinfo=PR_TZ)
 
 
 def fetch_all() -> list:
@@ -99,7 +134,9 @@ def main():
         gid = rec.get("gameID")
         by_id.setdefault(gid, []).append(rec)
 
-    now = dt.datetime.now(dt.timezone.utc).isoformat()
+    now_dt = dt.datetime.now(dt.timezone.utc)
+    now = now_dt.isoformat()
+    next_draw_date, next_session = compute_next_pega_draw(now_dt)
 
     pega_map = [
         (2, "pega2", "day"), (5, "pega2", "night"),
@@ -119,6 +156,7 @@ def main():
         entry = {
             "draw_date": draw_date, "session": session, "digits": digits,
             "wild_ball": rec.get("wildBall"),
+            "next_draw_date": next_draw_date, "next_session": next_session,
             "drawing_number": rec.get("drawingNumber"), "fetched_at": now,
             "source_url": API_URL,
         }
