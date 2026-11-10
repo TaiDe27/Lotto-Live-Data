@@ -50,9 +50,27 @@ class TriStateMegabucksResult:
     jackpot_amount: Optional[str]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+DRAW_WEEKDAYS = {0, 2, 5}  # Mon=0, Wed=2, Sat=5 — per mainelottery.com's own published schedule
+
+
+def next_draw_date_after(draw_date_iso: str) -> str:
+    """Megabucks Plus draws Monday/Wednesday/Saturday nights — a fixed weekly schedule, not
+    something the homepage states as an explicit date (it only gives the *estimated jackpot* for
+    that next draw, no date string), so this computes it deterministically from the schedule
+    rather than scraping a date that isn't there."""
+    d = dt.date.fromisoformat(draw_date_iso)
+    for offset in range(1, 8):
+        candidate = d + dt.timedelta(days=offset)
+        if candidate.weekday() in DRAW_WEEKDAYS:
+            return candidate.isoformat()
+    raise AssertionError("unreachable: a draw weekday occurs at least once within 7 days")
 
 
 def fetch() -> list[TriStateMegabucksResult]:
@@ -86,6 +104,13 @@ def fetch() -> list[TriStateMegabucksResult]:
 
             jackpot_el = row.select_one(".homejackpot .cash")
             jackpot_amount = jackpot_el.get_text(strip=True) if jackpot_el else None
+            # `.homejackpot`'s own label text is literally "Next estimated jackpot is $X" — this
+            # page never shows the amount actually WON by `draw_date` above, only the forward-looking
+            # estimate for the next draw. `jackpot_amount` (pre-existing field, left as-is to avoid
+            # disturbing whatever already consumes it) is really this same next-draw figure, not
+            # draw_date's own jackpot; next_jackpot_amount below is the correctly-labeled version.
+            next_jackpot_amount = jackpot_amount
+            next_draw_date = next_draw_date_after(draw_date)
 
             now_iso = dt.datetime.now(dt.timezone.utc).isoformat()
             result = TriStateMegabucksResult(
@@ -95,6 +120,8 @@ def fetch() -> list[TriStateMegabucksResult]:
                 jackpot_amount=jackpot_amount,
                 fetched_at=now_iso,
                 source_url=URL,
+                next_draw_date=next_draw_date,
+                next_jackpot_amount=next_jackpot_amount,
             )
             return [result]
         except Exception as e:

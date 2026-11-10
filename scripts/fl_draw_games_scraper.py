@@ -34,6 +34,8 @@ import time
 from pathlib import Path
 from typing import Optional
 
+import lotteryusa_shared as lu
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("fl_draw_games_scraper")
 
@@ -115,9 +117,29 @@ def extract_numbers(entry: dict) -> tuple[list[int], Optional[int]]:
     return numbers, fb
 
 
+FANTASY5_LOTTERYUSA_URL = "https://www.lotteryusa.com/florida/fantasy-5/"
+
+
+def fetch_fantasy5_next_draw_info() -> dict:
+    """Unlike LOTTO/JACKPOT TRIPLE PLAY, the official API's FANTASY 5 entries carry no
+    `NextJackpotAmount`/`NextJackpotDate` keys at all (confirmed 2026-11-10 — floridalottery.com's
+    own game page likewise only shows a static 'typical' $100,000 estimate, not a real per-draw
+    one). lotteryusa.com's Fantasy 5 page does publish a real forward-looking 'Next top prize'
+    + draw date, so this is a second, independent request purely for that supplementary data."""
+    import requests
+    try:
+        resp = requests.get(FANTASY5_LOTTERYUSA_URL, headers={"User-Agent": lu.USER_AGENT}, timeout=lu.REQUEST_TIMEOUT_SEC)
+        resp.raise_for_status()
+        return lu.parse_next_draw_info(resp.text)
+    except Exception as e:  # noqa: BLE001
+        log.warning("抓取lotteryusa.com的Fantasy 5 next-draw信息失败（不影响本期开奖结果的抓取）: %s", e)
+        return {"next_draw_date": None, "next_jackpot_amount": None}
+
+
 def main():
     raw = fetch_all()
     fetched_at = dt.datetime.now(dt.timezone.utc).isoformat()
+    fantasy5_next_draw = fetch_fantasy5_next_draw_info()
 
     by_game: dict[str, list[dict]] = {}
     for entry in raw:
@@ -145,6 +167,11 @@ def main():
             record["next_jackpot_amount"] = entry["NextJackpotAmount"]
         if entry.get("NextJackpotDate"):
             record["next_draw_date"] = iso_date(entry["NextJackpotDate"])
+        elif name == "FANTASY 5":
+            if fantasy5_next_draw["next_jackpot_amount"]:
+                record["next_jackpot_amount"] = fantasy5_next_draw["next_jackpot_amount"]
+            if fantasy5_next_draw["next_draw_date"]:
+                record["next_draw_date"] = fantasy5_next_draw["next_draw_date"]
         tiers = entry.get("Tiers")
         if tiers:
             record["tiers"] = tiers

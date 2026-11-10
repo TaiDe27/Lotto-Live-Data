@@ -16,6 +16,8 @@ import time
 from pathlib import Path
 from typing import Optional
 
+import lotteryusa_shared as lu
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ca_fantasy5_scraper")
 
@@ -52,9 +54,32 @@ class Fantasy5Result:
     tiers: list[dict]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+LOTTERYUSA_URL = "https://www.lotteryusa.com/california/fantasy-5/"
+
+
+def fetch_next_draw_info() -> dict:
+    """calottery.com's own Fantasy 5 page has no forward-looking jackpot widget at all (confirmed
+    2026-11-10 — unlike SuperLotto Plus/Mega Millions/Powerball, Fantasy 5 doesn't even get a card
+    in calottery.com's homepage `#draw-game-listing` carousel). lotteryusa.com's per-game page
+    does publish a 'Next Fantasy 5 draw' + 'Next est. jackpot' pair though (same `.c-state-short-info`
+    widget used by this project's other lotteryusa.com-sourced scrapers), so this is a second,
+    independent request purely for that supplementary data — the historical results above still
+    come from calottery.com, unchanged."""
+    import requests
+    try:
+        resp = requests.get(LOTTERYUSA_URL, headers={"User-Agent": lu.USER_AGENT}, timeout=lu.REQUEST_TIMEOUT_SEC)
+        resp.raise_for_status()
+        return lu.parse_next_draw_info(resp.text)
+    except Exception as e:  # noqa: BLE001
+        log.warning("抓取lotteryusa.com的next-draw信息失败（不影响本期开奖结果的抓取）: %s", e)
+        return {"next_draw_date": None, "next_jackpot_amount": None}
 
 
 def fetch() -> Fantasy5Result:
@@ -98,6 +123,8 @@ def fetch() -> Fantasy5Result:
             if not numbers or not draw_date:
                 raise ValueError(f"解析出的数据不完整: numbers={numbers} draw_date={draw_date}")
 
+            next_draw = fetch_next_draw_info()
+
             return Fantasy5Result(
                 game="Fantasy 5",
                 draw_date=draw_date,
@@ -107,6 +134,8 @@ def fetch() -> Fantasy5Result:
                 tiers=tiers,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
+                next_draw_date=next_draw["next_draw_date"],
+                next_jackpot_amount=next_draw["next_jackpot_amount"],
             )
         except Exception as e:  # noqa: BLE001
             last_err = e

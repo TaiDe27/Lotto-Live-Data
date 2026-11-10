@@ -76,10 +76,67 @@ class SuperLottoPlusResult:
     tiers: list[dict]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[str] = None
+    next_cash_value: Optional[str] = None
 
     def to_dict(self) -> dict:
         d = dataclasses.asdict(self)
         return d
+
+
+HOMEPAGE_URL = "https://www.calottery.com/"
+
+
+def fetch_next_draw_info() -> dict:
+    """calottery.com's own per-game page (`URL` above) never shows a forward-looking jackpot
+    estimate — only the homepage does, via a `#draw-game-listing` carousel of `.card` elements per
+    game (confirmed 2026-11-10: Mega Millions/Powerball/SuperLotto Plus all appear there with
+    `.draw-cards--lottery-amount` / `.draw-cards--cash-value` / `.draw-cards--next-draw-date`;
+    SuperLotto Plus's card carries class `superlotto`). A second, separate request — the per-game
+    page above has no equivalent element to reuse."""
+    import requests
+    from bs4 import BeautifulSoup
+
+    try:
+        resp = requests.get(HOMEPAGE_URL, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+        card = soup.select_one("#draw-game-listing .card.superlotto")
+        if card is None:
+            return {"next_draw_date": None, "next_jackpot_amount": None, "next_cash_value": None}
+
+        amount_el = card.select_one(".draw-cards--lottery-amount")
+        cash_el = card.select_one(".draw-cards--cash-value")
+        next_el = card.select_one(".draw-cards--next-draw-date")
+
+        next_jackpot_amount = parse_money_dollar(amount_el.get_text(strip=True)) if amount_el else None
+        next_cash_value = parse_money_dollar(cash_el.get_text(strip=True)) if cash_el else None
+        next_draw_date = None
+        if next_el is not None:
+            m = re.search(r"([A-Za-z]{3})/([A-Za-z]{3})\s+(\d{1,2}),\s*(\d{4})", next_el.get_text(strip=True))
+            if m:
+                _, month_abbr, day, year = m.groups()
+                month = dt.datetime.strptime(month_abbr, "%b").month
+                next_draw_date = dt.date(int(year), month, int(day)).isoformat()
+        return {
+            "next_draw_date": next_draw_date,
+            "next_jackpot_amount": next_jackpot_amount,
+            "next_cash_value": next_cash_value,
+        }
+    except Exception as e:  # noqa: BLE001
+        log.warning("抓取首页next-draw信息失败（不影响本期开奖结果的抓取）: %s", e)
+        return {"next_draw_date": None, "next_jackpot_amount": None, "next_cash_value": None}
+
+
+def parse_money_dollar(raw: str) -> Optional[str]:
+    """"$13 MILLION*" -> "$13 MILLION", "Estimated Cash Value $5,500,000" -> "$5,500,000" —
+    strips the asterisk/footnote marker and any leading label text, keeps the rest as-is for the
+    App's existing money-text parsers (same convention as `jackpot_amount` above)."""
+    if not raw:
+        return None
+    m = re.search(r"\$[\d,.]+(?:\s*(?:MILLION|BILLION|Million|Billion))?", raw)
+    return m.group(0).strip() if m else None
 
 
 def fetch() -> SuperLottoPlusResult:
@@ -132,6 +189,8 @@ def fetch() -> SuperLottoPlusResult:
             if not main_numbers or not draw_date:
                 raise ValueError(f"解析出的数据不完整: main_numbers={main_numbers} draw_date={draw_date}")
 
+            next_draw = fetch_next_draw_info()
+
             return SuperLottoPlusResult(
                 game="SuperLotto Plus",
                 draw_date=draw_date,
@@ -142,6 +201,9 @@ def fetch() -> SuperLottoPlusResult:
                 tiers=tiers,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
+                next_draw_date=next_draw["next_draw_date"],
+                next_jackpot_amount=next_draw["next_jackpot_amount"],
+                next_cash_value=next_draw["next_cash_value"],
             )
         except Exception as e:  # noqa: BLE001
             last_err = e

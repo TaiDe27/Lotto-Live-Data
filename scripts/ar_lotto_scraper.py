@@ -32,6 +32,8 @@ import time
 from pathlib import Path
 from typing import Optional
 
+import lotteryusa_shared as lu
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ar_lotto_scraper")
 
@@ -64,6 +66,8 @@ class LottoResult:
     jackpot_amount: Optional[str]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -92,6 +96,8 @@ def fetch() -> list[LottoResult]:
             if not rows:
                 raise ValueError("页面里没找到任何 c-draw-card 开奖记录行")
 
+            next_draw = lu.parse_next_draw_info(resp.text)
+
             results = []
             for row in rows:
                 date_el = row.select_one(".c-draw-card__draw-date-sub")
@@ -115,6 +121,8 @@ def fetch() -> list[LottoResult]:
                     jackpot_amount=jackpot_amount,
                     fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                     source_url=URL,
+                    next_draw_date=next_draw["next_draw_date"],
+                    next_jackpot_amount=next_draw["next_jackpot_amount"],
                 ))
             return results
         except Exception as e:  # noqa: BLE001

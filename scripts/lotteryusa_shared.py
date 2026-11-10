@@ -2,6 +2,13 @@
 Shared parser for lotteryusa.com's `.c-draw-card` results-table markup — reused by nj_scraper.py,
 nc_scraper.py, and oh_scraper.py. All three states' own games are pulled from lotteryusa.com rather
 than each state's own official site:
+
+2026-11-10 update: added `parse_next_draw_info` — a second, independent parser for the
+`.c-state-short-info` "Next draw" widget that sits above the results table on every lotteryusa.com
+game page. This one is imported directly by individual per-game scrapers (not just the three listed
+above) that need next-draw-date/next-jackpot-estimate data for their own `latest.json`, regardless of
+whether that scraper otherwise uses `parse_draw_cards`/`fetch_html` from this module or has its own
+duplicated history-table parsing.
   - NC: official nclottery.com confirmed blocked (403 on every plain request, same WAF-style block
     class as Montana/Tennessee/Oklahoma/Pennsylvania before it) — this project's established
     fallback precedent for that class of block.
@@ -116,3 +123,58 @@ def dedup_merge(existing: list[dict], new_entries: list[dict], key_field: str, m
     seen = {e[key_field] for e in new_entries}
     merged = new_entries + [e for e in existing if e.get(key_field) not in seen]
     return merged[:max_history]
+
+
+def _parse_next_draw_date_text(text: str) -> Optional[str]:
+    """Handles every date phrasing seen across lotteryusa.com's game pages: 'Today at 11:34 pm EST',
+    'Tomorrow, Nov 11, 2026', and 'Thursday, Nov 12, 2026'. 'Today'/'Tomorrow' are resolved against
+    the scraper's own run date (UTC), same approximation this project already accepts elsewhere for
+    relative schedule anchoring — exact to within a day at the US/UTC boundary, which every consumer
+    of this field already tolerates (the app anchors the real draw hour separately, per game)."""
+    text = text.strip()
+    lowered = text.lower()
+    today = dt.datetime.now(dt.timezone.utc).date()
+    if lowered.startswith("today"):
+        return today.isoformat()
+    if lowered.startswith("tomorrow"):
+        return (today + dt.timedelta(days=1)).isoformat()
+    m = re.search(r"([A-Za-z]{3,9})\s+(\d{1,2}),\s*(\d{4})", text)
+    if not m:
+        return None
+    month_name, day, year = m.groups()
+    try:
+        month = dt.datetime.strptime(month_name[:3], "%b").month
+    except ValueError:
+        return None
+    return dt.date(int(year), month, int(day)).isoformat()
+
+
+def parse_next_draw_info(html: str) -> dict:
+    """Parses the `.c-state-short-info` widget present on lotteryusa.com's per-game pages (confirmed
+    across Illinois/Arkansas/Georgia/Texas/Connecticut/Pennsylvania game pages on 2026-11-10): always
+    exactly two rows, 'Next <game> draw' -> date text, and 'Next est. jackpot' (or 'Next top prize' on
+    non-jackpot-pool games) -> a '$X' amount. No cash-value row exists anywhere on lotteryusa.com for
+    any game checked, so this never returns one — callers should leave next_cash_value unset/None.
+    Returns {"next_draw_date": "yyyy-MM-dd" | None, "next_jackpot_amount": raw "$X" text | None}.
+    """
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "html.parser")
+    block = soup.select_one(".c-state-short-info")
+    if block is None:
+        return {"next_draw_date": None, "next_jackpot_amount": None}
+
+    next_draw_date = None
+    next_jackpot_amount = None
+    for row in block.select(".c-state-short-info__row"):
+        title_el = row.select_one(".c-state-short-info__title")
+        val_el = row.select_one(".c-state-short-info__subtitle")
+        if title_el is None or val_el is None:
+            continue
+        title = title_el.get_text(strip=True).lower()
+        value = val_el.get_text(strip=True)
+        if "draw" in title:
+            next_draw_date = _parse_next_draw_date_text(value)
+        elif "jackpot" in title or "prize" in title:
+            next_jackpot_amount = value
+
+    return {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
