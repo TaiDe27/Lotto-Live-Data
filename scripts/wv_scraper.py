@@ -137,6 +137,16 @@ def main():
             "fetched_at": datetime.now(tz=ZoneInfo("UTC")).isoformat(),
             "source_url": PAGE_URL,
         }
+        # Cash 25 only (gameNumber "10"): the same jackpotResults list also carries an OPEN entry
+        # for the upcoming (not-yet-drawn) draw, with its own real `drawingDate` - confirmed live
+        # 2026-11-10. Cash 25's top prize is FIXED ($25,000 every draw, prizeType "FIXED" on the
+        # PAYABLE entry, not a growing pari-mutuel jackpot), so only next_draw_date is captured
+        # here, not a next_jackpot_amount (the app's fixedTopPrizeAmount fallback already shows the
+        # fixed $25,000 figure). Daily 3/4 left untouched - out of this task's assigned scope.
+        if game_number == "10":
+            open_entries = [res for res in results if res.get("jackpotStatus") == "OPEN"]
+            if open_entries and open_entries[0].get("drawingDate"):
+                entry["next_draw_date"] = open_entries[0]["drawingDate"]
         save(folder, [entry])
 
 

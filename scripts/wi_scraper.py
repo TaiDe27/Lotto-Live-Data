@@ -39,6 +39,7 @@ import logging
 import re
 import time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("wi_scraper")
@@ -53,9 +54,11 @@ RETRY_BACKOFF_SEC = 5
 OUTPUT_DIR = Path("data") / "wisconsin"
 MAX_HISTORY = 100
 BASE = "https://www.lottery.net/wisconsin"
+WI_TZ = ZoneInfo("America/Chicago")
+NEXT_DRAW_TIMER_RE = re.compile(r'drawTimer\("[^"]+",\s*"([^"]+)"\)')
 
 
-def _fetch_soup(url: str):
+def _fetch_soup(url: str, wait_selector: str = ".resultBox.firstResult"):
     """2026-11-07 changed to Playwright (was requests) - same fix, same reasoning as
     pa_scraper.py's own version of this function (see its comment): lottery.net (shared by both
     PA and WI) repeatedly shows a whole run timing out from the very first request, previously
@@ -64,6 +67,10 @@ def _fetch_soup(url: str):
     `page.content()` and hand it to BeautifulSoup unchanged, so every existing CSS-selector-based
     extraction function below needs no changes at all. The fresh-runner auto-retry workflow step
     is left in place as a fallback for whenever Playwright itself still fails.
+
+    `wait_selector` defaults to the `/numbers` history pages' own result box; the jackpot-game
+    landing pages (`/wisconsin/<slug>`, no `/numbers`) use `.heroJackpot` instead - confirmed by
+    inspecting both pages directly, not assumed to share markup.
     """
     from playwright.sync_api import sync_playwright
     from bs4 import BeautifulSoup
@@ -76,7 +83,7 @@ def _fetch_soup(url: str):
                 try:
                     page = browser.new_page(user_agent=USER_AGENT)
                     page.goto(url, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
-                    page.wait_for_selector(".resultBox.firstResult", timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    page.wait_for_selector(wait_selector, timeout=REQUEST_TIMEOUT_SEC * 1000)
                     html = page.content()
                 finally:
                     browser.close()
@@ -103,6 +110,27 @@ def _first_result_box(soup):
     if box is None:
         raise ValueError("no .resultBox.firstResult found")
     return box
+
+
+def fetch_next_draw_info(slug: str) -> dict:
+    """The jackpot-game landing page (`/wisconsin/<slug>`, no `/numbers`) exposes real forward-
+    looking next-draw data - confirmed live 2026-11-10 for Badger 5/Super Cash!/Megabucks:
+    `.heroJackpot` holds the next estimated jackpot ("$10,000"/"$3.8 Million" style strings), and
+    an inline `drawTimer("jackpot-timer-N", "<ISO datetime>")` script call holds the exact next
+    draw instant - confirmed UTC (e.g. "2026-11-11T03:00:00" = Tue 9:00 PM CT, matching Badger 5's
+    confirmed nightly 9pm CT draw time). No cash-value option found on any of these 3 pages' text -
+    WI's own in-state games are lump-sum only, not a scraping gap.
+    """
+    url = f"{BASE}/{slug}"
+    soup = _fetch_soup(url, wait_selector=".heroJackpot")
+    hero = soup.select_one(".heroJackpot")
+    jackpot_text = hero.get_text(strip=True) if hero else None
+    match = NEXT_DRAW_TIMER_RE.search(str(soup))
+    next_draw_date = None
+    if match:
+        next_dt_utc = dt.datetime.fromisoformat(match.group(1)).replace(tzinfo=dt.timezone.utc)
+        next_draw_date = next_dt_utc.astimezone(WI_TZ).date().isoformat()
+    return {"next_draw_date": next_draw_date, "next_jackpot_amount": jackpot_text}
 
 
 def fetch_pool(slug: str, main_count: int) -> dict:
@@ -203,14 +231,23 @@ def save_digits(subdir: str, new_entry: dict) -> Path:
 def main():
     errors = []
 
+    # landing_slug differs from the /numbers slug for Super Cash! specifically ("super-cash" vs
+    # "supercash") - confirmed by fetching both URLs directly, not assumed to match.
     pool_games = [
-        ("badger-5", "badger-5", 5),
-        ("super-cash", "supercash", 6),
-        ("megabucks", "megabucks", 6),
+        ("badger-5", "badger-5", "badger-5", 5),
+        ("super-cash", "supercash", "super-cash", 6),
+        ("megabucks", "megabucks", "megabucks", 6),
     ]
-    for subdir, slug, count in pool_games:
+    for subdir, slug, landing_slug, count in pool_games:
         try:
             result = fetch_pool(slug, count)
+            try:
+                result.update(fetch_next_draw_info(landing_slug))
+            except Exception as e:  # noqa: BLE001
+                # Next-draw widget is a bonus on top of the real past-draw numbers above - a
+                # failure here must not discard the real draw result (same partial-failure policy
+                # already applied elsewhere in this project).
+                log.warning("%s next-draw info failed: %s", subdir, e)
             log.info("%s: %s", subdir, result)
             save_pool(subdir, result)
         except Exception as e:  # noqa: BLE001

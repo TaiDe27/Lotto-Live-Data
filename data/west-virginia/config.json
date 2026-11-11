@@ -1033,7 +1033,7 @@
         "verifiedAgainstRealTicket": true
       },
       "overallOddsText": "Overall Odds: 1 in 12.16",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "payoutTable": [
         {
           "basePrize": null,
@@ -1405,7 +1405,16 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 18,
+          "anchorMinute": 59,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
           "field": null,
           "guardField": null,

@@ -31,14 +31,17 @@ import re
 import subprocess
 import time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("wa_scraper")
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 PAGE_URL = "https://walottery.com/WinningNumbers/PastDrawings.aspx"
+HOMEPAGE_URL = "https://walottery.com/"
 OUTPUT_DIR = Path("data") / "washington"
 MAX_HISTORY = 100
+WA_TZ = ZoneInfo("America/Los_Angeles")
 
 DATE_NUMS_RE = re.compile(r"([A-Za-z]{3}, [A-Za-z]{3} \d{1,2}, \d{4}) ((?:\d+ ){1,})Prize")
 
@@ -90,7 +93,7 @@ def save(subdir: str, entries: list[dict]):
     log.info("saved %s (%d entries)", out_path, min(len(merged), MAX_HISTORY))
 
 
-def scrape_numbers(game_id: str, subdir: str, expected_count: int, field: str = "numbers"):
+def scrape_numbers(game_id: str, subdir: str, expected_count: int, field: str = "numbers", next_draw_info=None):
     out = []
     for draw_date, nums in fetch_rows(game_id):
         if len(nums) != expected_count:
@@ -100,8 +103,78 @@ def scrape_numbers(game_id: str, subdir: str, expected_count: int, field: str = 
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "source_url": f"{PAGE_URL}?gamename={game_id}",
         })
+    # next_draw_info (from the homepage's real forward-looking widget, or a deterministic
+    # schedule computation) belongs only on the most-recent entry - `fetch_rows` returns newest
+    # first, matching every other scraper's convention this project's interpreter relies on.
+    if out and next_draw_info:
+        out[0].update(next_draw_info)
     save(subdir, out)
     log.info("%s: %d entries, latest %s", subdir, len(out), out[0] if out else None)
+
+
+def parse_wa_next_draw_label(label: str, now_pt: dt.datetime) -> str:
+    """Parses walottery.com homepage's own "WED/NOV 11" / "TONIGHT" next-draw label into an ISO
+    date, relative to `now_pt` (America/Los_Angeles) - confirmed real text format live 2026-11-10."""
+    label = label.strip().upper()
+    if label == "TONIGHT":
+        return now_pt.date().isoformat()
+    _, _, month_day = label.partition("/")
+    month_abbr, _, day_num = month_day.strip().partition(" ")
+    month = dt.datetime.strptime(month_abbr[:3].capitalize(), "%b").month
+    year = now_pt.year
+    candidate = dt.date(year, month, int(day_num))
+    if candidate < now_pt.date():
+        candidate = candidate.replace(year=year + 1)
+    return candidate.isoformat()
+
+
+def fetch_homepage_next_draw_info() -> dict:
+    """walottery.com's own homepage (server-rendered - a plain `curl` returns the same text as a
+    rendered browser, confirmed live) features real forward-looking "Next Draw"/jackpot widgets
+    per game, inside a `.game-bucket-<slug>` block - confirmed live 2026-11-10 for Lotto and Hit 5
+    specifically (the only 2 of this file's games featured on the homepage; Match 4/Pick 3/
+    Cash Pop are not, confirmed by inspecting the full rendered page, not assumed). Lotto's own
+    block additionally shows a real "Cash Option" dollar figure; Hit 5's does not (confirmed no
+    cash option text anywhere in its block). Returns {slug: {...}}; a missing/unparseable slug is
+    simply absent from the result, not an error - a bonus feature on top of the real draw numbers.
+    """
+    html = fetch_html(HOMEPAGE_URL)
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "html.parser")
+    now_pt = dt.datetime.now(WA_TZ)
+    out: dict = {}
+    for slug in ("lotto", "hit5"):
+        bucket = soup.select_one(f".game-bucket-{slug}")
+        if bucket is None:
+            continue
+        text = bucket.get_text(" ", strip=True)
+        info: dict = {}
+        m_label = re.search(r"Next Draw:\s*([A-Za-z]{3}/[A-Za-z]{3}\s*\d{1,2}|TONIGHT)", text)
+        if m_label:
+            try:
+                info["next_draw_date"] = parse_wa_next_draw_label(m_label.group(1), now_pt)
+            except ValueError:
+                pass
+        m_jackpot = re.match(r"\$([\d,.]+(?:\s*(?:Million|Thousand|Billion))?)", text)
+        if m_jackpot:
+            info["next_jackpot_amount"] = f"${m_jackpot.group(1)}"
+        m_cash = re.search(r"Cash Option \$([\d,.]+(?:\s*(?:Million|Thousand|Billion))?)", text)
+        if m_cash:
+            info["next_cash_value"] = f"${m_cash.group(1)}"
+        if info:
+            out[slug] = info
+    return out
+
+
+def compute_wa_nightly_next_draw(anchor_hour: int = 20, anchor_minute: int = 0) -> str:
+    """Match 4 draws every single night at 8pm PT (confirmed, no off days) and isn't featured on
+    the homepage widget - deterministic schedule computation instead, same pattern already used
+    elsewhere in this project (e.g. Oregon/Tri-State's own `_next_draw_date` helpers)."""
+    now = dt.datetime.now(WA_TZ)
+    t = now.replace(hour=anchor_hour, minute=anchor_minute, second=0, microsecond=0)
+    if t <= now:
+        t += dt.timedelta(days=1)
+    return t.date().isoformat()
 
 
 PICK3_RE = re.compile(r"([A-Za-z]{3}, [A-Za-z]{3} \d{1,2}, \d{4}) (\d) (\d) (\d)\b")
@@ -148,10 +221,16 @@ def scrape_cashpop():
 
 def main():
     errors = []
+    try:
+        homepage_info = fetch_homepage_next_draw_info()
+    except Exception as e:  # noqa: BLE001
+        log.warning("homepage next-draw info failed: %s", e)
+        homepage_info = {}
+
     jobs = [
-        ("lotto", lambda: scrape_numbers("lotto", "lotto", 6)),
-        ("hit5", lambda: scrape_numbers("hit5", "hit5", 5)),
-        ("match4", lambda: scrape_numbers("match4", "match4", 4)),
+        ("lotto", lambda: scrape_numbers("lotto", "lotto", 6, next_draw_info=homepage_info.get("lotto"))),
+        ("hit5", lambda: scrape_numbers("hit5", "hit5", 5, next_draw_info=homepage_info.get("hit5"))),
+        ("match4", lambda: scrape_numbers("match4", "match4", 4, next_draw_info={"next_draw_date": compute_wa_nightly_next_draw()})),
         ("pick3", scrape_pick3),
         ("cashpop", scrape_cashpop),
     ]

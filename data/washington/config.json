@@ -565,7 +565,7 @@
       "buyTicketBaseURLs": {},
       "drawSchedule": "Monday, Wednesday and Saturday at approximately 11:30 PM Eastern Time, right after the main Powerball drawing.",
       "id": "powerball-double-play",
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
       "liveMapping": {
         "cachePath": "live/powerball-double-play/latest.json",
         "cashValue": {
@@ -800,17 +800,26 @@
         "mainNumbersField": "numbers",
         "multiplierField": null,
         "nextCashValue": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_cash_value",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",
@@ -921,12 +930,21 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",
@@ -1029,7 +1047,16 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Los_Angeles",
+          "anchorHour": 20,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
           "field": null,
           "guardField": null,
@@ -1053,7 +1080,7 @@
         "addOnMarkerPattern": null
       },
       "overallOddsText": null,
-      "payoutNote": "Real figures confirmed from walottery.com's own Match 4 page. Genuinely fixed prizes at every tier (does not divide among multiple winners, does not accumulate between drawings) — unlike most of this project's other 'N of M' in-state games.",
+      "payoutNote": "Real figures confirmed from walottery.com's own Match 4 page. Genuinely fixed prizes at every tier (does not divide among multiple winners, does not accumulate between drawings) \u2014 unlike most of this project's other 'N of M' in-state games.",
       "payoutTable": [
         {
           "basePrize": 10000,
@@ -1173,7 +1200,7 @@
         "addOnMarkerPattern": null
       },
       "overallOddsText": null,
-      "payoutNote": "walottery.com's own page confirms no Fireball-style bonus digit, and gives Straight=$250/$500 and Box=$40/$80 across its two wager levels without specifying which box way-count each applies to — this app uses its standard Pick 3 default table ($1-play tier) pending that exact breakdown.",
+      "payoutNote": "walottery.com's own page confirms no Fireball-style bonus digit, and gives Straight=$250/$500 and Box=$40/$80 across its two wager levels without specifying which box way-count each applies to \u2014 this app uses its standard Pick 3 default table ($1-play tier) pending that exact breakdown.",
       "payoutTable": [
         {
           "basePrize": 500,

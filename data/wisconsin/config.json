@@ -640,7 +640,7 @@
         "addOnMarkerPattern": null
       },
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
         {
           "basePrize": 500,
@@ -760,7 +760,7 @@
         "addOnMarkerPattern": null
       },
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
         {
           "basePrize": 500,
@@ -882,7 +882,7 @@
         "addOnMarkerPattern": null
       },
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
         {
           "basePrize": 5000,
@@ -1020,7 +1020,7 @@
         "addOnMarkerPattern": null
       },
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending Wisconsin's own exact published figures (wilottery.com's official site is TLS/WAF-blocked from this project's scraping environment) \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "payoutTable": [
         {
           "basePrize": 5000,
@@ -1120,12 +1120,21 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",
@@ -1203,12 +1212,21 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",
@@ -1248,7 +1266,7 @@
       "doublePlay": null,
       "drawSchedule": "Wed/Sat 9:00 PM CT",
       "id": "wi-megabucks",
-      "jackpotDescription": "Wisconsin's own 6-of-49 in-state jackpot game (branded \"Very Own Megabucks\" — distinct from any multi-state game of a similar name).",
+      "jackpotDescription": "Wisconsin's own 6-of-49 in-state jackpot game (branded \"Very Own Megabucks\" \u2014 distinct from any multi-state game of a similar name).",
       "liveMapping": {
         "addOnDigitField": null,
         "cachePath": "live/wisconsin/megabucks/latest.json",
@@ -1286,12 +1304,21 @@
           "moneyFormat": null,
           "source": "none"
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Chicago",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "nextJackpot": {
-          "field": null,
-          "guardField": null,
-          "moneyFormat": null,
-          "source": "none"
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "compactWords",
+          "guardField": null
         },
         "sessionFilter": null,
         "shape": "numeric",

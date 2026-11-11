@@ -67,7 +67,23 @@ def compute_or_pick4_next_draw() -> tuple:
     return next_time.date().isoformat(), next_session
 
 
-def fetch_draw(game_selector: str) -> dict:
+def compute_or_cashpop_next_draw(session_hour: int) -> str:
+    """Returns the ISO date on which this specific Cash Pop session (labeled by its rounded hour,
+    7..22 i.e. 7am..10pm PT) will next occur, relative to now. Each session fires once/day, so this
+    is "today" if that hour hasn't happened yet today, else "tomorrow" - same deterministic-
+    schedule pattern as `compute_or_pick4_next_draw` above, generalized from 4 sessions to 16."""
+    now = dt.datetime.now(OR_TZ)
+    t = now.replace(hour=session_hour, minute=0, second=0, microsecond=0)
+    if t <= now:
+        t += dt.timedelta(days=1)
+    return t.date().isoformat()
+
+
+def fetch_both_draws(game_selector: str) -> tuple:
+    """Returns (closed, open) - `OpenDraw` is the API's own real upcoming (not-yet-drawn) entry,
+    sharing the same `DrawDateTime`/`EstimatedJackpot` shape as `ClosedDraw` (see module docstring).
+    Used to populate genuinely forward-looking `next_draw_date`/`next_jackpot_amount` instead of
+    reusing the just-completed `ClosedDraw`'s own (now-stale) estimate."""
     import requests
 
     headers = {"User-Agent": USER_AGENT, "Ocp-Apim-Subscription-Key": SUBSCRIPTION_KEY}
@@ -80,13 +96,18 @@ def fetch_draw(game_selector: str) -> dict:
             closed = data.get("ClosedDraw")
             if not closed:
                 raise ValueError(f"响应里没有 ClosedDraw: {list(data.keys())}")
-            return closed
+            return closed, data.get("OpenDraw")
         except Exception as e:  # noqa: BLE001
             last_err = e
             log.warning("第 %d 次尝试失败 (%s): %s", attempt, game_selector, e)
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_BACKOFF_SEC * attempt)
     raise RuntimeError(f"重试多次后仍然失败: {game_selector}") from last_err
+
+
+def fetch_draw(game_selector: str) -> dict:
+    closed, _ = fetch_both_draws(game_selector)
+    return closed
 
 
 def save_entries(subdir: str, new_entries: list, key_fields: tuple) -> Path:
@@ -115,14 +136,24 @@ def main():
 
     for subdir, selector, count in [("megabucks", "mb", 6), ("win-for-life", "wf", 4)]:
         try:
-            closed = fetch_draw(selector)
+            closed, open_draw = fetch_both_draws(selector)
             draw_date = closed["DrawDateTime"][:10]
             nums = [n for n in closed["WinningNumbers"] if n][:count]
             entry = {
                 "draw_date": draw_date, "numbers": nums,
-                "next_jackpot_amount": closed.get("EstimatedJackpot"),
                 "draw_number": closed.get("DrawNumber"), "fetched_at": now, "source_url": API_URL,
             }
+            # `OpenDraw` is the API's own real next (not-yet-drawn) entry - confirmed live
+            # 2026-11-10: Megabucks' OpenDraw.EstimatedJackpot is a genuine growing jackpot figure
+            # (e.g. $2.3M), while Win for Life's is always 0.0 (it's a fixed $1,000/week-for-life
+            # top prize, not a pari-mutuel jackpot - confirmed 0.0 on both ClosedDraw and OpenDraw,
+            # not just a momentary zero) - so only Megabucks gets next_jackpot_amount.
+            if open_draw and open_draw.get("DrawDateTime"):
+                entry["next_draw_date"] = open_draw["DrawDateTime"][:10]
+                if subdir == "megabucks":
+                    next_jackpot = open_draw.get("EstimatedJackpot")
+                    if next_jackpot:
+                        entry["next_jackpot_amount"] = next_jackpot
             save_entries(subdir, [entry], ("draw_date",))
         except Exception as e:  # noqa: BLE001
             log.error("%s 失败: %s", subdir, e)
@@ -156,6 +187,7 @@ def main():
             raise ValueError(f"Cash Pop 应为1个号码，抓到 {nums}")
         entry = {
             "draw_date": draw_date, "session": session, "number": str(nums[0]),
+            "next_draw_date": compute_or_cashpop_next_draw(rounded_hour),
             "draw_number": closed.get("DrawNumber"), "fetched_at": now, "source_url": API_URL,
         }
         save_entries("cashpop", [entry], ("draw_date", "session"))

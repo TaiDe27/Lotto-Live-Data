@@ -112,6 +112,26 @@ def main():
         "fetched_at": datetime.now(tz=timezone.utc).isoformat(),
         "source_url": "https://www.wyolotto.com/games/cowboy-draw",
     }
+
+    # `currentDrawing` is this same API's own real upcoming (PENDING) draw - confirmed live
+    # 2026-11-10: its `when.drawTime` is the next real Mon/Thu 2pm MT draw instant, and its
+    # `progressiveJackpot.jackpot.formattedJackpot.formatA` is a genuine growing pari-mutuel
+    # jackpot already formatted as a "$340,000"-style string (same shape `compactWords` already
+    # parses elsewhere in this project). `jackpotCashAmountInCents`/`formattedCashJackpot` were
+    # both null on every draw checked this session - Cowboy Draw has no cash-option alternative,
+    # not a gap, so no next_cash_value is captured.
+    current = data.get("currentDrawing") or {}
+    current_when = current.get("when") or {}
+    current_draw_time = current_when.get("drawTime")
+    if current_draw_time:
+        next_draw_dt_utc = datetime.fromisoformat(current_draw_time.replace("Z", "+00:00"))
+        entry["next_draw_date"] = next_draw_dt_utc.astimezone(MT).strftime("%Y-%m-%d")
+    next_jackpot_text = (
+        (current.get("progressiveJackpot") or {}).get("jackpot") or {}
+    ).get("formattedJackpot", {}).get("formatA")
+    if next_jackpot_text:
+        entry["next_jackpot_amount"] = next_jackpot_text
+
     save("cowboy-draw", [entry])
 
 
