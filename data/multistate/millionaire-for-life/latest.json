@@ -10,7 +10,7 @@
     ],
     "millionaire_ball": 3,
     "next_drawing": {
-      "next_draw_date": "Tue, Nov 10, 2026",
+      "next_draw_date": "Wed, Nov 11, 2026",
       "top_prize": "$1 Million a Year for Life",
       "cash_option": "18 Million"
     },
@@ -21,10 +21,12 @@
       },
       "Match 5": {
         "prize": "$100,000 A YEAR FOR LIFE",
-        "states": []
+        "states": [
+          "VA"
+        ]
       }
     },
-    "fetched_at": "2026-11-11T04:36:18.979600+00:00",
+    "fetched_at": "2026-11-11T04:56:28.673001+00:00",
     "source_url": "https://www.powerball.com/millionaire-for-life"
   },
   {
