@@ -50,12 +50,30 @@ generic config-driven `liveMapping` path):
 
 Deliberately NOT built: Quick Draw (4-min continuous), Cash4Life (retired), Raffle (out of scope,
 not a regular recurring draw game).
+
+2026-11-10 update: every game object in this endpoint's `data` dict also carries a top-level
+`next_draw`/`last_draw` pair (epoch ms, confirmed real/live by cross-checking against each game's
+official `draw_time`/`close_time` text from the `/drupal-api/api/games` catalog endpoint). It is
+ONE shared value per game, not per session — for Win4/Numbers/Take5 (each modeled as two separate
+App-side game entries, midday vs evening) it's bucketed here into separate
+`midday_next_draw_date`/`evening_next_draw_date` fields by whether its ET hour falls before or
+after `MIDDAY_EVENING_HOUR_CUTOFF` (the real sales-close times are ~2:15 PM and ~10:20 PM ET, with
+a wide safety margin either side of the cutoff): an upcoming midday close means neither session has
+drawn yet today, so both next-dates are today; an upcoming evening close means today's midday
+already happened, so midday rolls to tomorrow while evening stays today. Pick 10 and Lotto are
+single-session games, so their `next_draw` date is used directly as `next_draw_date`. No numeric
+next-jackpot-estimate field was found anywhere in this endpoint or the `/drupal-api/api/games`
+catalog for Take5/Lotto (their `odds_prizes` "Jackpot" row is pari-mutuel text like "Jackpot*"/
+"$57,575.70**" with asterisked caveats, not a clean forward-looking estimate safe to re-publish) —
+confirmed gap, left unmapped. Pick 10's own top prize is a fixed, non-progressive $500,000 (already
+modeled as a flat `payoutTable` tier, not a `nextJackpot`), so it needs no jackpot wiring either.
 """
 import datetime as dt
 import json
 import logging
 import time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ny_scraper")
@@ -89,6 +107,36 @@ def _get_json(url: str):
 def _date_str(draw: dict) -> str:
     ms = draw["drawTime"]
     return dt.datetime.fromtimestamp(ms / 1000, tz=dt.timezone.utc).strftime("%Y-%m-%d")
+
+
+MIDDAY_EVENING_HOUR_CUTOFF = 18  # ET hour: below = upcoming midday close; at/above = upcoming evening close
+NY_TZ = ZoneInfo("America/New_York")
+
+
+def _next_draw_et(next_draw_ms) -> "dt.datetime | None":
+    if not next_draw_ms:
+        return None
+    return dt.datetime.fromtimestamp(next_draw_ms / 1000, tz=dt.timezone.utc).astimezone(NY_TZ)
+
+
+def _single_session_next_draw_date(game: dict) -> "str | None":
+    """Pick 10 / Lotto: one session a day (or per draw day), so the game-level `next_draw` date is
+    used as-is."""
+    et = _next_draw_et(game.get("next_draw"))
+    return et.date().isoformat() if et is not None else None
+
+
+def _session_next_draw_dates(game: dict) -> "tuple[str, str] | tuple[None, None]":
+    """Win4/Numbers/Take5: `next_draw` is ONE shared value (the nearer of the two sessions' sales
+    closes) - see module docstring's 2026-11-10 update for the bucketing rationale."""
+    et = _next_draw_et(game.get("next_draw"))
+    if et is None:
+        return None, None
+    today_str = et.date().isoformat()
+    if et.hour < MIDDAY_EVENING_HOUR_CUTOFF:
+        return today_str, today_str
+    tomorrow_str = (et.date() + dt.timedelta(days=1)).isoformat()
+    return tomorrow_str, today_str
 
 
 def save_results(subdir: str, new_entries: list[dict]) -> Path:
@@ -129,11 +177,16 @@ def scrape_digit_pair(data: dict, game_key: str, subdir: str, digit_count: int):
         elif d["drawPeriod"] == 2:
             entry["evening_digits"] = digits
     now = dt.datetime.now(dt.timezone.utc).isoformat()
+    midday_next, evening_next = _session_next_draw_dates(data[game_key])
     out = []
     for date_str in sorted(by_date, reverse=True):
         e = by_date[date_str]
         if "midday_digits" in e and "evening_digits" in e:
             e["fetched_at"] = now
+            if midday_next:
+                e["midday_next_draw_date"] = midday_next
+            if evening_next:
+                e["evening_next_draw_date"] = evening_next
             out.append(e)
     if not out:
         raise ValueError(f"{game_key} 没解析到任何完整(午+晚)记录")
@@ -155,11 +208,16 @@ def scrape_take5(data: dict):
         elif d["drawPeriod"] == 2:
             entry["evening_numbers"] = numbers
     now = dt.datetime.now(dt.timezone.utc).isoformat()
+    midday_next, evening_next = _session_next_draw_dates(data["take5"])
     out = []
     for date_str in sorted(by_date, reverse=True):
         e = by_date[date_str]
         if "midday_numbers" in e and "evening_numbers" in e:
             e["fetched_at"] = now
+            if midday_next:
+                e["midday_next_draw_date"] = midday_next
+            if evening_next:
+                e["evening_next_draw_date"] = evening_next
             out.append(e)
     if not out:
         raise ValueError("take5 没解析到任何完整(午+晚)记录")
@@ -170,12 +228,16 @@ def scrape_take5(data: dict):
 def scrape_pick10(data: dict):
     draws = _official_results(data["pick10"]["draws"])
     now = dt.datetime.now(dt.timezone.utc).isoformat()
+    next_draw_date = _single_session_next_draw_date(data["pick10"])
     out = []
     for d in draws:
         numbers = [int(x) for x in d["results"][0]["primary"]]
         if len(numbers) != 20:
             continue
-        out.append({"draw_date": _date_str(d), "numbers": numbers, "fetched_at": now})
+        entry = {"draw_date": _date_str(d), "numbers": numbers, "fetched_at": now}
+        if next_draw_date:
+            entry["next_draw_date"] = next_draw_date
+        out.append(entry)
     if not out:
         raise ValueError("pick10 没解析到任何记录")
     save_results("pick10", out)
@@ -185,6 +247,7 @@ def scrape_pick10(data: dict):
 def scrape_lotto(data: dict):
     draws = _official_results(data["lotto"]["draws"])
     now = dt.datetime.now(dt.timezone.utc).isoformat()
+    next_draw_date = _single_session_next_draw_date(data["lotto"])
     out = []
     for d in draws:
         res = d["results"][0]
@@ -192,12 +255,15 @@ def scrape_lotto(data: dict):
         secondary = res.get("secondary") or []
         if len(numbers) != 6 or not secondary or secondary[0] == "":
             continue
-        out.append({
+        entry = {
             "draw_date": _date_str(d),
             "numbers": numbers,
             "bonus": int(secondary[0]),
             "fetched_at": now,
-        })
+        }
+        if next_draw_date:
+            entry["next_draw_date"] = next_draw_date
+        out.append(entry)
     if not out:
         raise ValueError("lotto 没解析到任何记录")
     save_results("lotto", out)
