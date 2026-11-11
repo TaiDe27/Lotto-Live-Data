@@ -17,8 +17,15 @@
     "next_prize_pool": 555000000.0,
     "next_cash_value": 235200000.0,
     "match5_winner_text": "Match 5 + 0:",
-    "match5_locations": [],
-    "fetched_at": "2026-11-11T04:50:56.780526+00:00",
+    "match5_locations": [
+      {
+        "PlayDate": "2026-11-10T00:00:00",
+        "PrizeLevel": "3X",
+        "StateCode": "TX",
+        "WinnerCount": 1
+      }
+    ],
+    "fetched_at": "2026-11-11T10:40:56.878322+00:00",
     "source_url": "https://www.megamillions.com/"
   },
   {
