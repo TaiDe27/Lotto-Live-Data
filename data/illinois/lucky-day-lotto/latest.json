@@ -1,6 +1,21 @@
 [
   {
     "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-10",
+    "session": "evening",
+    "numbers": [
+      1,
+      16,
+      27,
+      34,
+      43
+    ],
+    "jackpot_amount": "800,000",
+    "fetched_at": "2026-11-11T03:45:01.973886+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
+  },
+  {
+    "game": "Lucky Day Lotto",
     "draw_date": "2026-11-09",
     "session": "evening",
     "numbers": [
@@ -11,7 +26,7 @@
       39
     ],
     "jackpot_amount": "700,000",
-    "fetched_at": "2026-11-11T01:20:59.213752+00:00",
+    "fetched_at": "2026-11-11T03:45:01.974248+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -26,7 +41,7 @@
       31
     ],
     "jackpot_amount": "600,000",
-    "fetched_at": "2026-11-11T01:20:59.214078+00:00",
+    "fetched_at": "2026-11-11T03:45:01.974511+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -41,7 +56,7 @@
       34
     ],
     "jackpot_amount": "500,000",
-    "fetched_at": "2026-11-11T01:20:59.214288+00:00",
+    "fetched_at": "2026-11-11T03:45:01.974788+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -56,7 +71,7 @@
       43
     ],
     "jackpot_amount": "400,000",
-    "fetched_at": "2026-11-11T01:20:59.214488+00:00",
+    "fetched_at": "2026-11-11T03:45:01.975083+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -71,7 +86,7 @@
       44
     ],
     "jackpot_amount": "300,000",
-    "fetched_at": "2026-11-11T01:20:59.214681+00:00",
+    "fetched_at": "2026-11-11T03:45:01.975334+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -86,7 +101,7 @@
       36
     ],
     "jackpot_amount": "200,000",
-    "fetched_at": "2026-11-11T01:20:59.214875+00:00",
+    "fetched_at": "2026-11-11T03:45:01.975581+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -101,7 +116,7 @@
       45
     ],
     "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-11T01:20:59.215079+00:00",
+    "fetched_at": "2026-11-11T03:45:01.975850+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -116,7 +131,7 @@
       43
     ],
     "jackpot_amount": "1.35 Million",
-    "fetched_at": "2026-11-11T01:20:59.215270+00:00",
+    "fetched_at": "2026-11-11T03:45:01.976137+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
   },
   {
@@ -131,8 +146,158 @@
       30
     ],
     "jackpot_amount": "1.25 Million",
-    "fetched_at": "2026-11-11T01:20:59.215465+00:00",
+    "fetched_at": "2026-11-11T03:45:01.976384+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-10",
+    "session": "midday",
+    "numbers": [
+      9,
+      15,
+      20,
+      39,
+      41
+    ],
+    "jackpot_amount": "750,000",
+    "fetched_at": "2026-11-11T03:45:02.461871+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-09",
+    "session": "midday",
+    "numbers": [
+      5,
+      6,
+      30,
+      34,
+      45
+    ],
+    "jackpot_amount": "650,000",
+    "fetched_at": "2026-11-11T03:45:02.462153+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-08",
+    "session": "midday",
+    "numbers": [
+      3,
+      29,
+      36,
+      40,
+      45
+    ],
+    "jackpot_amount": "550,000",
+    "fetched_at": "2026-11-11T03:45:02.462393+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-07",
+    "session": "midday",
+    "numbers": [
+      22,
+      28,
+      37,
+      44,
+      45
+    ],
+    "jackpot_amount": "450,000",
+    "fetched_at": "2026-11-11T03:45:02.462628+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-06",
+    "session": "midday",
+    "numbers": [
+      4,
+      11,
+      15,
+      31,
+      43
+    ],
+    "jackpot_amount": "350,000",
+    "fetched_at": "2026-11-11T03:45:02.462883+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-05",
+    "session": "midday",
+    "numbers": [
+      9,
+      16,
+      20,
+      27,
+      37
+    ],
+    "jackpot_amount": "250,000",
+    "fetched_at": "2026-11-11T03:45:02.463120+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-04",
+    "session": "midday",
+    "numbers": [
+      9,
+      19,
+      32,
+      43,
+      45
+    ],
+    "jackpot_amount": "150,000",
+    "fetched_at": "2026-11-11T03:45:02.463345+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-03",
+    "session": "midday",
+    "numbers": [
+      1,
+      4,
+      16,
+      21,
+      24
+    ],
+    "jackpot_amount": "100,000",
+    "fetched_at": "2026-11-11T03:45:02.463574+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-02",
+    "session": "midday",
+    "numbers": [
+      19,
+      29,
+      30,
+      32,
+      35
+    ],
+    "jackpot_amount": "1.3 Million",
+    "fetched_at": "2026-11-11T03:45:02.463802+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-01",
+    "session": "midday",
+    "numbers": [
+      5,
+      28,
+      30,
+      35,
+      40
+    ],
+    "jackpot_amount": "1.2 Million",
+    "fetched_at": "2026-11-11T03:45:02.464066+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
   },
   {
     "game": "Lucky Day Lotto",
@@ -148,156 +313,6 @@
     "jackpot_amount": "1.15 Million",
     "fetched_at": "2026-11-11T01:20:59.215655+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-10",
-    "session": "midday",
-    "numbers": [
-      9,
-      15,
-      20,
-      39,
-      41
-    ],
-    "jackpot_amount": "750,000",
-    "fetched_at": "2026-11-11T01:20:59.547594+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-09",
-    "session": "midday",
-    "numbers": [
-      5,
-      6,
-      30,
-      34,
-      45
-    ],
-    "jackpot_amount": "650,000",
-    "fetched_at": "2026-11-11T01:20:59.547815+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-08",
-    "session": "midday",
-    "numbers": [
-      3,
-      29,
-      36,
-      40,
-      45
-    ],
-    "jackpot_amount": "550,000",
-    "fetched_at": "2026-11-11T01:20:59.548002+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-07",
-    "session": "midday",
-    "numbers": [
-      22,
-      28,
-      37,
-      44,
-      45
-    ],
-    "jackpot_amount": "450,000",
-    "fetched_at": "2026-11-11T01:20:59.548207+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-06",
-    "session": "midday",
-    "numbers": [
-      4,
-      11,
-      15,
-      31,
-      43
-    ],
-    "jackpot_amount": "350,000",
-    "fetched_at": "2026-11-11T01:20:59.548389+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-05",
-    "session": "midday",
-    "numbers": [
-      9,
-      16,
-      20,
-      27,
-      37
-    ],
-    "jackpot_amount": "250,000",
-    "fetched_at": "2026-11-11T01:20:59.548573+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-04",
-    "session": "midday",
-    "numbers": [
-      9,
-      19,
-      32,
-      43,
-      45
-    ],
-    "jackpot_amount": "150,000",
-    "fetched_at": "2026-11-11T01:20:59.548750+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-03",
-    "session": "midday",
-    "numbers": [
-      1,
-      4,
-      16,
-      21,
-      24
-    ],
-    "jackpot_amount": "100,000",
-    "fetched_at": "2026-11-11T01:20:59.548932+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-02",
-    "session": "midday",
-    "numbers": [
-      19,
-      29,
-      30,
-      32,
-      35
-    ],
-    "jackpot_amount": "1.3 Million",
-    "fetched_at": "2026-11-11T01:20:59.549121+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
-  },
-  {
-    "game": "Lucky Day Lotto",
-    "draw_date": "2026-11-01",
-    "session": "midday",
-    "numbers": [
-      5,
-      28,
-      30,
-      35,
-      40
-    ],
-    "jackpot_amount": "1.2 Million",
-    "fetched_at": "2026-11-11T01:20:59.549296+00:00",
-    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
   },
   {
     "game": "Lucky Day Lotto",
