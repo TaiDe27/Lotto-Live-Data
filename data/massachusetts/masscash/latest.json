@@ -4,28 +4,28 @@
     "draw_date": "2026-11-10",
     "numbers": [
       1,
-      10,
-      12,
-      19,
-      26
+      2,
+      3,
+      7,
+      16
     ],
-    "fetched_at": "2026-11-11T02:57:57.419300+00:00",
+    "fetched_at": "2026-11-11T08:40:59.486380+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
-    "session": "evening"
+    "session": "midday"
   },
   {
     "game": "mass_cash",
     "draw_date": "2026-11-10",
     "numbers": [
       1,
-      2,
-      3,
-      7,
-      16
+      10,
+      12,
+      19,
+      26
     ],
-    "fetched_at": "2026-11-11T02:57:57.419302+00:00",
+    "fetched_at": "2026-11-11T08:40:59.486384+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
-    "session": "midday"
+    "session": "evening"
   },
   {
     "game": "mass_cash",
