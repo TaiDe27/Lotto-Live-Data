@@ -2,13 +2,25 @@
   {
     "game": "Cash 3",
     "draw_date": "2026-11-10",
+    "session": "night",
+    "digits": [
+      0,
+      0,
+      9
+    ],
+    "fetched_at": "2026-11-11T04:55:00.963608+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
+  },
+  {
+    "game": "Cash 3",
+    "draw_date": "2026-11-10",
     "session": "evening",
     "digits": [
       5,
       8,
       9
     ],
-    "fetched_at": "2026-11-11T00:50:04.014864+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963651+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -20,7 +32,7 @@
       7,
       1
     ],
-    "fetched_at": "2026-11-11T00:50:04.014919+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963664+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -32,7 +44,7 @@
       6,
       3
     ],
-    "fetched_at": "2026-11-11T00:50:04.014932+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963674+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -44,7 +56,7 @@
       0,
       6
     ],
-    "fetched_at": "2026-11-11T00:50:04.014942+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963683+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -56,7 +68,7 @@
       6,
       4
     ],
-    "fetched_at": "2026-11-11T00:50:04.014952+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963693+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -68,7 +80,7 @@
       7,
       5
     ],
-    "fetched_at": "2026-11-11T00:50:04.014962+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963702+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -80,7 +92,7 @@
       5,
       8
     ],
-    "fetched_at": "2026-11-11T00:50:04.014970+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963710+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -92,7 +104,7 @@
       5,
       7
     ],
-    "fetched_at": "2026-11-11T00:50:04.014977+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963718+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -104,7 +116,7 @@
       5,
       6
     ],
-    "fetched_at": "2026-11-11T00:50:04.014984+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963726+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -116,7 +128,7 @@
       5,
       5
     ],
-    "fetched_at": "2026-11-11T00:50:04.014990+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963734+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -128,7 +140,7 @@
       4,
       6
     ],
-    "fetched_at": "2026-11-11T00:50:04.014997+00:00",
+    "fetched_at": "2026-11-11T04:55:00.963742+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   },
   {
@@ -1185,18 +1197,6 @@
       7
     ],
     "fetched_at": "2026-10-10T11:28:32.158800+00:00",
-    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
-  },
-  {
-    "game": "Cash 3",
-    "draw_date": "2026-10-08",
-    "session": "evening",
-    "digits": [
-      5,
-      1,
-      7
-    ],
-    "fetched_at": "2026-10-10T11:28:32.158810+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
   }
 ]
