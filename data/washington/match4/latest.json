@@ -1,5 +1,17 @@
 [
   {
+    "draw_date": "2026-11-11",
+    "numbers": [
+      9,
+      10,
+      16,
+      24
+    ],
+    "fetched_at": "2026-11-12T04:41:17.756717+00:00",
+    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=match4",
+    "next_draw_date": "2026-11-12"
+  },
+  {
     "draw_date": "2026-11-10",
     "numbers": [
       8,
@@ -7,9 +19,8 @@
       16,
       20
     ],
-    "fetched_at": "2026-11-12T04:21:16.673659+00:00",
-    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=match4",
-    "next_draw_date": "2026-11-12"
+    "fetched_at": "2026-11-12T04:41:17.756729+00:00",
+    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=match4"
   },
   {
     "draw_date": "2026-11-09",
@@ -19,7 +30,7 @@
       16,
       23
     ],
-    "fetched_at": "2026-11-12T04:21:16.673672+00:00",
+    "fetched_at": "2026-11-12T04:41:17.756732+00:00",
     "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=match4"
   },
   {
