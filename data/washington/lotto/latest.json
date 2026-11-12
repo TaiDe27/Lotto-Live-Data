@@ -1,5 +1,21 @@
 [
   {
+    "draw_date": "2026-11-11",
+    "numbers": [
+      18,
+      21,
+      27,
+      32,
+      37,
+      47
+    ],
+    "fetched_at": "2026-11-12T04:51:22.377983+00:00",
+    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=lotto",
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$4.80 Million",
+    "next_cash_value": "$2.40 Million"
+  },
+  {
     "draw_date": "2026-11-09",
     "numbers": [
       3,
@@ -9,10 +25,8 @@
       33,
       45
     ],
-    "fetched_at": "2026-11-12T04:41:14.740549+00:00",
-    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=lotto",
-    "next_jackpot_amount": "$4.70 Million",
-    "next_cash_value": "$2.35 Million"
+    "fetched_at": "2026-11-12T04:51:22.377999+00:00",
+    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=lotto"
   },
   {
     "draw_date": "2026-11-07",
@@ -24,7 +38,7 @@
       37,
       45
     ],
-    "fetched_at": "2026-11-12T04:41:14.740560+00:00",
+    "fetched_at": "2026-11-12T04:51:22.378002+00:00",
     "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=lotto"
   },
   {

@@ -1,5 +1,19 @@
 [
   {
+    "draw_date": "2026-11-11",
+    "numbers": [
+      1,
+      13,
+      20,
+      33,
+      38
+    ],
+    "fetched_at": "2026-11-12T04:51:24.117815+00:00",
+    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=hit5",
+    "next_draw_date": "2026-11-12",
+    "next_jackpot_amount": "$100,000"
+  },
+  {
     "draw_date": "2026-11-10",
     "numbers": [
       8,
@@ -8,9 +22,8 @@
       37,
       41
     ],
-    "fetched_at": "2026-11-12T04:41:16.237611+00:00",
-    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=hit5",
-    "next_jackpot_amount": "$1,080,000"
+    "fetched_at": "2026-11-12T04:51:24.117831+00:00",
+    "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=hit5"
   },
   {
     "draw_date": "2026-11-09",
@@ -21,7 +34,7 @@
       32,
       41
     ],
-    "fetched_at": "2026-11-12T04:41:16.237624+00:00",
+    "fetched_at": "2026-11-12T04:51:24.117833+00:00",
     "source_url": "https://walottery.com/WinningNumbers/PastDrawings.aspx?gamename=hit5"
   },
   {
