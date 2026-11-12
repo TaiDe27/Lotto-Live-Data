@@ -1,6 +1,21 @@
 [
   {
     "draw_date": "2026-11-11",
+    "session": "evening",
+    "digits": [
+      "0",
+      "9",
+      "3",
+      "5"
+    ],
+    "draw_id": "21752",
+    "fetched_at": "2026-11-12T00:50:03.598947+00:00",
+    "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
+    "next_draw_date": "2026-11-12",
+    "next_session": "midday"
+  },
+  {
+    "draw_date": "2026-11-11",
     "session": "midday",
     "digits": [
       "4",
@@ -9,10 +24,10 @@
       "3"
     ],
     "draw_id": "21751",
-    "fetched_at": "2026-11-11T19:21:16.129269+00:00",
+    "fetched_at": "2026-11-12T00:50:03.598947+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
-    "next_draw_date": "2026-11-11",
-    "next_session": "evening"
+    "next_draw_date": "2026-11-12",
+    "next_session": "midday"
   },
   {
     "draw_date": "2026-11-10",
@@ -24,10 +39,10 @@
       "8"
     ],
     "draw_id": "21750",
-    "fetched_at": "2026-11-11T19:21:16.129269+00:00",
+    "fetched_at": "2026-11-12T00:50:03.598947+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
-    "next_draw_date": "2026-11-11",
-    "next_session": "evening"
+    "next_draw_date": "2026-11-12",
+    "next_session": "midday"
   },
   {
     "draw_date": "2026-11-10",
@@ -39,10 +54,10 @@
       "8"
     ],
     "draw_id": "21749",
-    "fetched_at": "2026-11-11T19:21:16.129269+00:00",
+    "fetched_at": "2026-11-12T00:50:03.598947+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
-    "next_draw_date": "2026-11-11",
-    "next_session": "evening"
+    "next_draw_date": "2026-11-12",
+    "next_session": "midday"
   },
   {
     "draw_date": "2026-11-09",
@@ -54,10 +69,10 @@
       "9"
     ],
     "draw_id": "21748",
-    "fetched_at": "2026-11-11T19:21:16.129269+00:00",
+    "fetched_at": "2026-11-12T00:50:03.598947+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
-    "next_draw_date": "2026-11-11",
-    "next_session": "evening"
+    "next_draw_date": "2026-11-12",
+    "next_session": "midday"
   },
   {
     "draw_date": "2026-11-09",
