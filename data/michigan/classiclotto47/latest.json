@@ -1,6 +1,20 @@
 [
   {
     "game": "Classic Lotto 47",
+    "draw_date": "2026-11-11",
+    "numbers": [
+      1,
+      20,
+      28,
+      30,
+      40,
+      42
+    ],
+    "fetched_at": "2026-11-12T01:01:59.800288+00:00",
+    "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
+  },
+  {
+    "game": "Classic Lotto 47",
     "draw_date": "2026-11-07",
     "numbers": [
       6,
@@ -10,7 +24,7 @@
       32,
       43
     ],
-    "fetched_at": "2026-11-12T00:56:00.409397+00:00",
+    "fetched_at": "2026-11-12T01:01:59.800538+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -24,7 +38,7 @@
       30,
       41
     ],
-    "fetched_at": "2026-11-12T00:56:00.409601+00:00",
+    "fetched_at": "2026-11-12T01:01:59.800761+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -38,7 +52,7 @@
       32,
       44
     ],
-    "fetched_at": "2026-11-12T00:56:00.409770+00:00",
+    "fetched_at": "2026-11-12T01:01:59.800980+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -52,7 +66,7 @@
       39,
       45
     ],
-    "fetched_at": "2026-11-12T00:56:00.409931+00:00",
+    "fetched_at": "2026-11-12T01:01:59.801229+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -66,7 +80,7 @@
       42,
       43
     ],
-    "fetched_at": "2026-11-12T00:56:00.410087+00:00",
+    "fetched_at": "2026-11-12T01:01:59.801448+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -80,7 +94,7 @@
       33,
       38
     ],
-    "fetched_at": "2026-11-12T00:56:00.410276+00:00",
+    "fetched_at": "2026-11-12T01:01:59.801671+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -94,7 +108,7 @@
       33,
       37
     ],
-    "fetched_at": "2026-11-12T00:56:00.410437+00:00",
+    "fetched_at": "2026-11-12T01:01:59.801886+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -108,7 +122,7 @@
       28,
       31
     ],
-    "fetched_at": "2026-11-12T00:56:00.410593+00:00",
+    "fetched_at": "2026-11-12T01:01:59.802121+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
@@ -122,7 +136,7 @@
       35,
       40
     ],
-    "fetched_at": "2026-11-12T00:56:00.410750+00:00",
+    "fetched_at": "2026-11-12T01:01:59.802340+00:00",
     "source_url": "https://www.lotteryusa.com/michigan/classic-lotto-47/"
   },
   {
