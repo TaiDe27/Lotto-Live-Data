@@ -1,5 +1,23 @@
 [
   {
+    "draw_date": "2026-11-11",
+    "evening_digits": [
+      1,
+      8,
+      8,
+      5
+    ],
+    "midday_digits": [
+      9,
+      5,
+      3,
+      9
+    ],
+    "fetched_at": "2026-11-12T03:51:07.103464+00:00",
+    "midday_next_draw_date": "2026-11-12",
+    "evening_next_draw_date": "2026-11-12"
+  },
+  {
     "draw_date": "2026-11-10",
     "evening_digits": [
       4,
@@ -13,9 +31,9 @@
       2,
       3
     ],
-    "fetched_at": "2026-11-12T02:23:56.449443+00:00",
+    "fetched_at": "2026-11-12T03:51:07.103464+00:00",
     "midday_next_draw_date": "2026-11-12",
-    "evening_next_draw_date": "2026-11-11"
+    "evening_next_draw_date": "2026-11-12"
   },
   {
     "draw_date": "2026-11-09",
@@ -31,9 +49,9 @@
       9,
       3
     ],
-    "fetched_at": "2026-11-12T02:23:56.449443+00:00",
+    "fetched_at": "2026-11-12T03:51:07.103464+00:00",
     "midday_next_draw_date": "2026-11-12",
-    "evening_next_draw_date": "2026-11-11"
+    "evening_next_draw_date": "2026-11-12"
   },
   {
     "draw_date": "2026-11-08",
@@ -49,9 +67,9 @@
       2,
       3
     ],
-    "fetched_at": "2026-11-12T02:23:56.449443+00:00",
+    "fetched_at": "2026-11-12T03:51:07.103464+00:00",
     "midday_next_draw_date": "2026-11-12",
-    "evening_next_draw_date": "2026-11-11"
+    "evening_next_draw_date": "2026-11-12"
   },
   {
     "draw_date": "2026-11-07",
@@ -1587,22 +1605,6 @@
       9,
       2,
       2,
-      6
-    ],
-    "fetched_at": "2026-10-16T07:22:57.186101+00:00"
-  },
-  {
-    "draw_date": "2026-08-03",
-    "midday_digits": [
-      3,
-      1,
-      2,
-      1
-    ],
-    "evening_digits": [
-      5,
-      8,
-      0,
       6
     ],
     "fetched_at": "2026-10-16T07:22:57.186101+00:00"
