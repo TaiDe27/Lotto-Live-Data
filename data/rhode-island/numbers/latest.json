@@ -1,5 +1,20 @@
 [
   {
+    "draw_date": "2026-11-12",
+    "session": "midday",
+    "digits": [
+      "9",
+      "1",
+      "2",
+      "4"
+    ],
+    "draw_id": "21753",
+    "fetched_at": "2026-11-12T18:51:03.559882+00:00",
+    "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
+    "next_draw_date": "2026-11-12",
+    "next_session": "evening"
+  },
+  {
     "draw_date": "2026-11-11",
     "session": "evening",
     "digits": [
@@ -9,10 +24,10 @@
       "5"
     ],
     "draw_id": "21752",
-    "fetched_at": "2026-11-12T07:09:58.370199+00:00",
+    "fetched_at": "2026-11-12T18:51:03.559882+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
     "next_draw_date": "2026-11-12",
-    "next_session": "midday"
+    "next_session": "evening"
   },
   {
     "draw_date": "2026-11-11",
@@ -24,10 +39,10 @@
       "3"
     ],
     "draw_id": "21751",
-    "fetched_at": "2026-11-12T07:09:58.370199+00:00",
+    "fetched_at": "2026-11-12T18:51:03.559882+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
     "next_draw_date": "2026-11-12",
-    "next_session": "midday"
+    "next_session": "evening"
   },
   {
     "draw_date": "2026-11-10",
@@ -39,10 +54,10 @@
       "8"
     ],
     "draw_id": "21750",
-    "fetched_at": "2026-11-12T07:09:58.370199+00:00",
+    "fetched_at": "2026-11-12T18:51:03.559882+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
     "next_draw_date": "2026-11-12",
-    "next_session": "midday"
+    "next_session": "evening"
   },
   {
     "draw_date": "2026-11-10",
@@ -54,10 +69,10 @@
       "8"
     ],
     "draw_id": "21749",
-    "fetched_at": "2026-11-12T07:09:58.370199+00:00",
+    "fetched_at": "2026-11-12T18:51:03.559882+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0",
     "next_draw_date": "2026-11-12",
-    "next_session": "midday"
+    "next_session": "evening"
   },
   {
     "draw_date": "2026-11-09",
