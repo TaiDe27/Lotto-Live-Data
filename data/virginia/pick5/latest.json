@@ -1,6 +1,23 @@
 [
   {
     "game": "Pick 5",
+    "draw_date": "2026-11-12",
+    "session": "day",
+    "digits": [
+      2,
+      8,
+      9,
+      3,
+      0
+    ],
+    "fireball": 7,
+    "next_draw_date": "2026-11-12",
+    "next_session": "night",
+    "fetched_at": "2026-11-12T19:20:16.510224+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/pick5"
+  },
+  {
+    "game": "Pick 5",
     "draw_date": "2026-11-11",
     "session": "night",
     "digits": [
@@ -13,7 +30,7 @@
     "fireball": 3,
     "next_draw_date": "2026-11-12",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831117+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188003+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -30,7 +47,7 @@
     "fireball": 8,
     "next_draw_date": "2026-11-11",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831117+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188003+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -47,7 +64,7 @@
     "fireball": 8,
     "next_draw_date": "2026-11-11",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831154+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188039+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -64,7 +81,7 @@
     "fireball": 3,
     "next_draw_date": "2026-11-10",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831154+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188039+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -81,7 +98,7 @@
     "fireball": 5,
     "next_draw_date": "2026-11-10",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831162+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188050+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -98,7 +115,7 @@
     "fireball": 9,
     "next_draw_date": "2026-11-09",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831162+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188050+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -115,7 +132,7 @@
     "fireball": 0,
     "next_draw_date": "2026-11-09",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831169+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188059+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -132,7 +149,7 @@
     "fireball": 1,
     "next_draw_date": "2026-11-08",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831169+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188059+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -149,7 +166,7 @@
     "fireball": 8,
     "next_draw_date": "2026-11-08",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831175+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188068+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -166,7 +183,7 @@
     "fireball": 0,
     "next_draw_date": "2026-11-07",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831175+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188068+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -183,7 +200,7 @@
     "fireball": 1,
     "next_draw_date": "2026-11-07",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831181+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188076+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -200,7 +217,7 @@
     "fireball": 4,
     "next_draw_date": "2026-11-06",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831181+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188076+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -217,7 +234,7 @@
     "fireball": 1,
     "next_draw_date": "2026-11-06",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831186+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188083+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -234,7 +251,7 @@
     "fireball": 5,
     "next_draw_date": "2026-11-05",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831186+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188083+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -251,7 +268,7 @@
     "fireball": 6,
     "next_draw_date": "2026-11-05",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831191+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188091+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -268,7 +285,7 @@
     "fireball": 7,
     "next_draw_date": "2026-11-04",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831191+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188091+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -285,7 +302,7 @@
     "fireball": 0,
     "next_draw_date": "2026-11-04",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831196+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188099+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -302,7 +319,7 @@
     "fireball": 2,
     "next_draw_date": "2026-11-03",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831196+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188099+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -319,7 +336,7 @@
     "fireball": 5,
     "next_draw_date": "2026-11-03",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831201+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188106+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -336,7 +353,7 @@
     "fireball": 5,
     "next_draw_date": "2026-11-02",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831201+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188106+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -353,7 +370,7 @@
     "fireball": 0,
     "next_draw_date": "2026-11-02",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831206+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188114+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -370,7 +387,7 @@
     "fireball": 6,
     "next_draw_date": "2026-11-01",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831206+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188114+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -387,7 +404,7 @@
     "fireball": 2,
     "next_draw_date": "2026-11-01",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831211+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188122+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -404,7 +421,7 @@
     "fireball": 4,
     "next_draw_date": "2026-10-31",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831211+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188122+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -421,7 +438,7 @@
     "fireball": 7,
     "next_draw_date": "2026-10-31",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831216+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188130+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -438,7 +455,7 @@
     "fireball": 3,
     "next_draw_date": "2026-10-30",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831216+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188130+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -455,7 +472,7 @@
     "fireball": 6,
     "next_draw_date": "2026-10-30",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831222+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188138+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -472,7 +489,7 @@
     "fireball": 1,
     "next_draw_date": "2026-10-29",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831222+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188138+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -489,7 +506,7 @@
     "fireball": 9,
     "next_draw_date": "2026-10-29",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831227+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188145+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -506,7 +523,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-28",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831227+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188145+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -523,7 +540,7 @@
     "fireball": 9,
     "next_draw_date": "2026-10-28",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831232+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188153+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -540,7 +557,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-27",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831232+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188153+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -557,7 +574,7 @@
     "fireball": 3,
     "next_draw_date": "2026-10-27",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831237+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188162+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -574,7 +591,7 @@
     "fireball": 0,
     "next_draw_date": "2026-10-26",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831237+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188162+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -591,7 +608,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-26",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831243+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188169+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -608,7 +625,7 @@
     "fireball": 9,
     "next_draw_date": "2026-10-25",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831243+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188169+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -625,7 +642,7 @@
     "fireball": 1,
     "next_draw_date": "2026-10-25",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831248+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188177+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -642,7 +659,7 @@
     "fireball": 6,
     "next_draw_date": "2026-10-24",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831248+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188177+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -659,7 +676,7 @@
     "fireball": 6,
     "next_draw_date": "2026-10-24",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831254+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188185+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -676,7 +693,7 @@
     "fireball": 1,
     "next_draw_date": "2026-10-23",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831254+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188185+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -693,7 +710,7 @@
     "fireball": 8,
     "next_draw_date": "2026-10-23",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831259+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188193+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -710,7 +727,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-22",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831259+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188193+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -727,7 +744,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-22",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831264+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188201+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -744,7 +761,7 @@
     "fireball": 7,
     "next_draw_date": "2026-10-21",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831264+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188201+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -761,7 +778,7 @@
     "fireball": 3,
     "next_draw_date": "2026-10-21",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831269+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188208+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -778,7 +795,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-20",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831269+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188208+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -795,7 +812,7 @@
     "fireball": 0,
     "next_draw_date": "2026-10-20",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831275+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188217+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -812,7 +829,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-19",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831275+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188217+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -829,7 +846,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-19",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831280+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188225+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -846,7 +863,7 @@
     "fireball": 7,
     "next_draw_date": "2026-10-18",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831280+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188225+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -863,7 +880,7 @@
     "fireball": 6,
     "next_draw_date": "2026-10-18",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831285+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188255+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -880,7 +897,7 @@
     "fireball": 4,
     "next_draw_date": "2026-10-17",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831285+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188255+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -897,7 +914,7 @@
     "fireball": 4,
     "next_draw_date": "2026-10-17",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831291+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188265+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -914,7 +931,7 @@
     "fireball": 9,
     "next_draw_date": "2026-10-16",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831291+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188265+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -931,7 +948,7 @@
     "fireball": 0,
     "next_draw_date": "2026-10-16",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831298+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188274+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -948,7 +965,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-15",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831298+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188274+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -965,7 +982,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-15",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831304+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188282+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -982,7 +999,7 @@
     "fireball": 0,
     "next_draw_date": "2026-10-14",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831304+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188282+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -999,7 +1016,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-14",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831309+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188289+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1016,7 +1033,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-13",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831309+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188289+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1033,7 +1050,7 @@
     "fireball": 3,
     "next_draw_date": "2026-10-13",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831314+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188297+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1050,7 +1067,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-12",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831314+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188297+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1067,7 +1084,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-12",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831320+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188305+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1084,7 +1101,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-11",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831320+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188305+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1101,7 +1118,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-11",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831325+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188313+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1118,7 +1135,7 @@
     "fireball": 7,
     "next_draw_date": "2026-10-10",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831325+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188313+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1135,7 +1152,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-10",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831331+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188321+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1152,7 +1169,7 @@
     "fireball": 8,
     "next_draw_date": "2026-10-09",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831331+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188321+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1169,7 +1186,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-09",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831337+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188329+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1186,7 +1203,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-08",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831337+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188329+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1203,7 +1220,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-08",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831342+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188336+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1220,7 +1237,7 @@
     "fireball": 1,
     "next_draw_date": "2026-10-07",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831342+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188336+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1237,7 +1254,7 @@
     "fireball": 1,
     "next_draw_date": "2026-10-07",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831347+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188344+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1254,7 +1271,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-06",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831347+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188344+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1271,7 +1288,7 @@
     "fireball": 0,
     "next_draw_date": "2026-10-06",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831353+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188351+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1288,7 +1305,7 @@
     "fireball": 1,
     "next_draw_date": "2026-10-05",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831353+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188351+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1305,7 +1322,7 @@
     "fireball": 8,
     "next_draw_date": "2026-10-05",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831359+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188359+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1322,7 +1339,7 @@
     "fireball": 8,
     "next_draw_date": "2026-10-04",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831359+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188359+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1339,7 +1356,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-04",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831366+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188368+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1356,7 +1373,7 @@
     "fireball": 5,
     "next_draw_date": "2026-10-03",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831366+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188368+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1373,7 +1390,7 @@
     "fireball": 8,
     "next_draw_date": "2026-10-03",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831373+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188375+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1390,7 +1407,7 @@
     "fireball": 2,
     "next_draw_date": "2026-10-02",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831373+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188375+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1407,7 +1424,7 @@
     "fireball": 9,
     "next_draw_date": "2026-10-02",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831378+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188383+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1424,7 +1441,7 @@
     "fireball": 0,
     "next_draw_date": "2026-10-01",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831378+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188383+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1441,7 +1458,7 @@
     "fireball": 0,
     "next_draw_date": "2026-10-01",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831384+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188391+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1458,7 +1475,7 @@
     "fireball": 8,
     "next_draw_date": "2026-09-30",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831384+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188391+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1475,7 +1492,7 @@
     "fireball": 8,
     "next_draw_date": "2026-09-30",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831389+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188399+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1492,7 +1509,7 @@
     "fireball": 9,
     "next_draw_date": "2026-09-29",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831389+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188399+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1509,7 +1526,7 @@
     "fireball": 9,
     "next_draw_date": "2026-09-29",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831395+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188406+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1526,7 +1543,7 @@
     "fireball": 9,
     "next_draw_date": "2026-09-28",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831395+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188406+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1543,7 +1560,7 @@
     "fireball": 2,
     "next_draw_date": "2026-09-28",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831401+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188413+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1560,7 +1577,7 @@
     "fireball": 8,
     "next_draw_date": "2026-09-27",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831401+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188413+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1577,7 +1594,7 @@
     "fireball": 3,
     "next_draw_date": "2026-09-27",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831406+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188422+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1594,7 +1611,7 @@
     "fireball": 4,
     "next_draw_date": "2026-09-26",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831406+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188422+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1611,7 +1628,7 @@
     "fireball": 4,
     "next_draw_date": "2026-09-26",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831411+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188430+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1628,7 +1645,7 @@
     "fireball": 8,
     "next_draw_date": "2026-09-25",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831411+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188430+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1645,7 +1662,7 @@
     "fireball": 0,
     "next_draw_date": "2026-09-25",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831416+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188438+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1662,7 +1679,7 @@
     "fireball": 4,
     "next_draw_date": "2026-09-24",
     "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831416+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188438+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   },
   {
@@ -1679,24 +1696,7 @@
     "fireball": 5,
     "next_draw_date": "2026-09-24",
     "next_session": "day",
-    "fetched_at": "2026-11-12T17:51:11.831422+00:00",
-    "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
-  },
-  {
-    "game": "Pick 5",
-    "draw_date": "2026-09-23",
-    "session": "day",
-    "digits": [
-      9,
-      9,
-      1,
-      1,
-      0
-    ],
-    "fireball": 5,
-    "next_draw_date": "2026-09-23",
-    "next_session": "night",
-    "fetched_at": "2026-11-12T17:51:11.831422+00:00",
+    "fetched_at": "2026-11-12T19:20:16.188445+00:00",
     "source_url": "https://www.valottery.com/data/draw-games/pick5?gameId=1035"
   }
 ]
