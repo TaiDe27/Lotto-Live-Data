@@ -1,6 +1,63 @@
 [
   {
     "game": "Daily Derby",
+    "draw_date": "2026-11-11",
+    "draw_number": "10523",
+    "first_place": "11 - Money Bags",
+    "second_place": "02 - Lucky Star",
+    "third_place": "04 - Big Ben",
+    "derby_positions": [
+      11,
+      2,
+      4
+    ],
+    "race_time": "1:49.18",
+    "tiers": [
+      {
+        "label": "Grand Prize",
+        "winners": 0,
+        "prize": "$56,283"
+      },
+      {
+        "label": "Exacta / RT",
+        "winners": 0,
+        "prize": "$77"
+      },
+      {
+        "label": "Win / RT",
+        "winners": 0,
+        "prize": "$58"
+      },
+      {
+        "label": "Race Time",
+        "winners": 27,
+        "prize": "$55"
+      },
+      {
+        "label": "Trifecta",
+        "winners": 22,
+        "prize": "$486"
+      },
+      {
+        "label": "Exacta",
+        "winners": 207,
+        "prize": "$22"
+      },
+      {
+        "label": "Win",
+        "winners": 2081,
+        "prize": "$3"
+      }
+    ],
+    "grand_prize_winners": 0,
+    "grand_prize_amount": "$56,283",
+    "next_draw_date": "2026-11-12",
+    "next_jackpot_estimate": "$57,000",
+    "fetched_at": "2026-11-12T02:57:08.011635+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-derby"
+  },
+  {
+    "game": "Daily Derby",
     "draw_date": "2026-11-10",
     "draw_number": "10522",
     "first_place": "12 - Lucky Charms",
