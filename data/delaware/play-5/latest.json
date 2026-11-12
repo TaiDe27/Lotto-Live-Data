@@ -2,6 +2,20 @@
   {
     "game": "Play 5",
     "draw_date": "2026-11-11",
+    "session": "night",
+    "digits": [
+      7,
+      3,
+      8,
+      1,
+      1
+    ],
+    "fetched_at": "2026-11-12T01:22:01.218520+00:00",
+    "source_url": "https://www.delottery.com/Drawing-Games/Play-5"
+  },
+  {
+    "game": "Play 5",
+    "draw_date": "2026-11-11",
     "session": "day",
     "digits": [
       8,
@@ -10,7 +24,7 @@
       6,
       1
     ],
-    "fetched_at": "2026-11-11T19:52:59.942712+00:00",
+    "fetched_at": "2026-11-12T01:22:01.218058+00:00",
     "source_url": "https://www.delottery.com/Drawing-Games/Play-5"
   },
   {
