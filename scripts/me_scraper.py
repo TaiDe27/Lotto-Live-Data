@@ -50,9 +50,28 @@ class Result:
     numbers: list[int]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+GIMME5_WEEKDAYS = (0, 1, 2, 3, 4)  # Mon-Fri, confirmed from gimme5.html's own "How to Play" text
+
+
+def gimme5_next_draw_date(after_date_iso: str) -> str:
+    """mainelottery.com's homepage card shows "Top prize is $100,000!" — Gimme 5's real jackpot is
+    a FIXED, non-progressive $100,000 every draw (confirmed from the game's own how-to-play page:
+    "$100,000 Cash Jackpot"), not a forward-looking estimate, and no explicit next-draw date is
+    shown anywhere — but that same page states a fixed schedule ("Drawings every Monday, Tuesday,
+    Wednesday, Thursday, and Friday"), so this computes the next occurrence from it."""
+    d = dt.date.fromisoformat(after_date_iso)
+    for offset in range(1, 8):
+        candidate = d + dt.timedelta(days=offset)
+        if candidate.weekday() in GIMME5_WEEKDAYS:
+            return candidate.isoformat()
+    raise AssertionError("unreachable: a Mon-Fri day occurs at least once within a week")
 
 
 def _date_for_block(block) -> str:
@@ -109,8 +128,11 @@ def fetch_all() -> tuple[dict[str, list[Result]], list[tuple[str, Exception]]]:
                 log.warning("[%s] 号码数 %d，预期 %d: %s", label, len(nums), expected_count, nums)
                 return
             draw_date = _date_for_block(block)
+            next_draw_date = gimme5_next_draw_date(draw_date) if subdir == "gimme5" else None
+            next_jackpot_amount = "$100,000" if subdir == "gimme5" else None
             out[subdir] = [Result(game=label, draw_date=draw_date, numbers=nums,
-                                   fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=URL)]
+                                   fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=URL,
+                                   next_draw_date=next_draw_date, next_jackpot_amount=next_jackpot_amount)]
         except Exception as e:  # noqa: BLE001
             log.error("[%s] 失败: %s", label, e)
             errors.append((label, e))
