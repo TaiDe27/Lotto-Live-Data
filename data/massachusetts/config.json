@@ -1490,7 +1490,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 21,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1512,15 +1521,15 @@
           "guardField": null
         },
         "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "decimal",
           "guardField": null
         },
         "nextCashValue": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_cash_value",
+          "moneyFormat": "decimal",
           "guardField": null
         },
         "multiplierField": null,

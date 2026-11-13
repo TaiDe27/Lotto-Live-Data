@@ -84,6 +84,16 @@ def main():
     log.info("API 返回 %d 条记录，gameIdentifier 分布: %s", len(rows),
               sorted({r.get("gameIdentifier") for r in rows}))
 
+    # 2026-11-11: the SAME API response's top-level `estimatedJackpot` array carries each game's
+    # real forward-looking next-draw date/jackpot/cash-option — confirmed live (megabucks IS one
+    # of the 4 games in it; mass_cash/mass_3/mass_4/the_numbers_game are NOT, genuinely absent,
+    # not missed — those stay without this field). Keyed by gameIdentifier, same key space as
+    # `winningNumbers` above.
+    next_draw_by_game = {
+        item["gameIdentifier"]: item for item in data.get("estimatedJackpot", [])
+        if item.get("gameIdentifier")
+    }
+
     buckets: dict[str, list[dict]] = {v: [] for v in OWN_GAMES.values()}
     for r in rows:
         gid = r.get("gameIdentifier")
@@ -105,6 +115,13 @@ def main():
             entry["session"] = "midday" if r.get("drawSequence") == 1 else "evening"
         if subdir == "megabucks" and r.get("jackpotAmount"):
             entry["jackpot_amount"] = str(r["jackpotAmount"])
+        next_draw = next_draw_by_game.get(gid)
+        if next_draw:
+            entry["next_draw_date"] = next_draw.get("drawDateFor")
+            if next_draw.get("estimatedJackpotUSD") is not None:
+                entry["next_jackpot_amount"] = next_draw["estimatedJackpotUSD"]
+            if next_draw.get("estimatedCashOptionUSD") is not None:
+                entry["next_cash_value"] = next_draw["estimatedCashOptionUSD"]
         buckets.setdefault(subdir, []).append(entry)
 
     for subdir, entries in buckets.items():
