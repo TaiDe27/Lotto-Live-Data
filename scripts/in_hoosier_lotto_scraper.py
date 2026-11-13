@@ -13,6 +13,7 @@ Scheduler.gs重复轮询、每次append一条，积累到MAX_HISTORY。
 
 import dataclasses
 import json
+import re
 import time
 from pathlib import Path
 from typing import Optional
@@ -31,9 +32,23 @@ class HoosierLottoResult:
     jackpot_amount: Optional[str]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[object] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+def _find_plus_fixed_prize(soup) -> Optional[int]:
+    """+PLUS 是固定 $1,000,000 头奖，不滚存——不是从某个"滚存jackpot"数字抓来的，
+    是直接从页面明文营销文字"Add +PLUS for a chance to win $1,000,000"里按$金额
+    动态抓的（不是在Python里硬编码1000000），如果官方以后改了这个金额，这里也会
+    跟着变，不是写死的假设。"""
+    text_el = soup.find(string=re.compile(r"chance to win \$[\d,]+"))
+    if not text_el:
+        return None
+    m = re.search(r"chance to win \$([\d,]+)", text_el)
+    return int(m.group(1).replace(",", "")) if m else None
 
 
 def fetch() -> tuple[HoosierLottoResult, HoosierLottoResult]:
@@ -48,8 +63,9 @@ def fetch() -> tuple[HoosierLottoResult, HoosierLottoResult]:
     # Site-wide jackpot ticker only carries the real rolling-jackpot game (Hoosier Lotto), not
     # the fixed-prize +PLUS add-on drawing — see in_shared.find_jackpot_amount's docstring.
     jackpot_amount = shared.find_jackpot_amount(soup, "hoosier-lotto")
+    plus_fixed_prize = _find_plus_fixed_prize(soup)
 
-    def parse_container(container, game_name: str, jackpot: Optional[str]) -> HoosierLottoResult:
+    def parse_container(container, game_name: str, jackpot: Optional[str], next_jackpot: Optional[object], next_draw_date: Optional[str]) -> HoosierLottoResult:
         date_el = container.find_previous("span", class_="sub-title")
         if not date_el:
             raise ValueError(f"{game_name}: 没找到日期元素")
@@ -67,10 +83,18 @@ def fetch() -> tuple[HoosierLottoResult, HoosierLottoResult]:
             jackpot_amount=jackpot,
             fetched_at=shared.fetched_at_now(),
             source_url=URL,
+            next_draw_date=next_draw_date,
+            next_jackpot_amount=next_jackpot,
         )
 
-    main = parse_container(containers[0], "Hoosier Lotto", jackpot_amount)
-    plus = parse_container(containers[1], "Hoosier Lotto +PLUS", None)
+    main = parse_container(containers[0], "Hoosier Lotto", jackpot_amount, None, None)
+    # Hero header (.jackpot-amount/.drawing-date) on this page belongs to Hoosier Lotto (the
+    # main game this page is titled for) — resolved against Hoosier Lotto's own just-scraped
+    # draw_date before being reused for +PLUS below (same simultaneous draw, same next date).
+    next_draw_info = shared.find_next_draw_info(soup, main.draw_date)
+    main.next_draw_date = next_draw_info["next_draw_date"]
+    main.next_jackpot_amount = next_draw_info["next_jackpot_amount"]
+    plus = parse_container(containers[1], "Hoosier Lotto +PLUS", None, plus_fixed_prize, next_draw_info["next_draw_date"])
     return main, plus
 
 

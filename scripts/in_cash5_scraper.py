@@ -24,6 +24,8 @@ class Cash5Result:
     jackpot_amount: Optional[str]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[int] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -44,6 +46,7 @@ def fetch() -> Cash5Result:
     draw_date = shared.iso_date(date_el.get_text(strip=True))
     numbers = [int(s.get_text(strip=True)) for s in container.select("span.winning-number")]
     jackpot_amount = shared.find_jackpot_amount(soup, "cash-5")
+    next_draw_info = shared.find_next_draw_info(soup, draw_date)
 
     return Cash5Result(
         game="CA$H 5",
@@ -52,6 +55,8 @@ def fetch() -> Cash5Result:
         jackpot_amount=jackpot_amount,
         fetched_at=shared.fetched_at_now(),
         source_url=URL,
+        next_draw_date=next_draw_info["next_draw_date"],
+        next_jackpot_amount=next_draw_info["next_jackpot_amount"],
     )
 
 

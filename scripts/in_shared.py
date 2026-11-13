@@ -95,6 +95,49 @@ def fetched_at_now() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat()
 
 
+def resolve_forward_date(month_name: str, day: str, after_iso_date: str) -> Optional[str]:
+    """跟上面 iso_date() 反过来——"下一期"的日期一定在 after_iso_date(最近一期实际
+    开奖日，带年份)之后，不是之前，所以年份推断方向要反过来：按 after_iso_date 的
+    年份算出来的日期如果落在它之前或等于它，说明跨年了，年份要+1。"""
+    try:
+        after_date = dt.date.fromisoformat(after_iso_date)
+        candidate = dt.datetime.strptime(f"{month_name} {day} {after_date.year}", "%B %d %Y").date()
+        if candidate <= after_date:
+            candidate = dt.datetime.strptime(f"{month_name} {day} {after_date.year + 1}", "%B %d %Y").date()
+        return candidate.isoformat()
+    except ValueError:
+        return None
+
+
+def find_next_draw_info(soup, after_iso_date: str) -> dict:
+    """每个开奖游戏自己的页面(非ticker)上有一块独立的"大标题"区域——跟站点共用的
+    .jackpot-alert-card滚动条是两个完全不同的DOM，这里的 class 名没有"alert"/
+    "title"前缀冲突：<span class="jackpot-amount">$<span class="counter"
+    data-amount="85000"></span></span> + <span class="drawing-date">Next Drawing
+    - Friday, November 13th</span>（没带年份，用 after_iso_date 推断）。实测确认
+    (2026-11-11，Hoosier Lotto / CA$H 5 页面)：这个滚存jackpot数字跟"目前还没被
+    中走、下一期能中的金额"是同一个数——中走了才会重置变小，没有单独的"下一期预估"
+    跟"现在"分开两个数字的情况，所以直接拿来当 next_jackpot_amount 用。页面上没找
+    到任何 Cash Value / 现金选项文字——hoosierlottery.com 的滚存游戏都是一次性
+    现金支付，没有年金/现金二选一。"""
+    next_jackpot_amount = None
+    amount_el = soup.select_one("span.jackpot-amount .counter")
+    if amount_el and amount_el.get("data-amount"):
+        try:
+            next_jackpot_amount = int(amount_el["data-amount"])
+        except ValueError:
+            next_jackpot_amount = None
+
+    next_draw_date = None
+    drawing_date_el = soup.select_one(".drawing-date")
+    if drawing_date_el:
+        m = re.search(r"Next Drawing\s*-\s*[A-Za-z]+,\s*([A-Za-z]+)\s+(\d{1,2})", drawing_date_el.get_text(strip=True))
+        if m:
+            next_draw_date = resolve_forward_date(m.group(1), m.group(2), after_iso_date)
+
+    return {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
+
+
 def find_jackpot_amount(soup, game_path_fragment: str) -> Optional[str]:
     """Every hoosierlottery.com page carries the same site-wide "Current Jackpots" ticker
     (`.jackpot-alert-card`, one per rolling-jackpot game, each linking to that game's own
