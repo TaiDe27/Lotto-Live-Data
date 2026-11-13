@@ -291,6 +291,21 @@
   },
   {
     "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-13",
+    "session": "midday",
+    "numbers": [
+      5,
+      13,
+      18,
+      24,
+      39
+    ],
+    "jackpot_amount": "200,000",
+    "fetched_at": "2026-11-13T19:09:12.232111+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/midday-lucky-day-lotto/"
+  },
+  {
+    "game": "Lucky Day Lotto",
     "draw_date": "2026-11-12",
     "session": "midday",
     "numbers": [
