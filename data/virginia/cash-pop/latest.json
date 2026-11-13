@@ -1,5 +1,23 @@
 [
   {
+    "draw_date": "2026-11-13",
+    "session": "coffee-break",
+    "numbers": [
+      14
+    ],
+    "fetched_at": "2026-11-13T14:10:25.245372+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
+    "draw_date": "2026-11-12",
+    "session": "after-hours",
+    "numbers": [
+      3
+    ],
+    "fetched_at": "2026-11-13T14:10:25.245398+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
     "draw_date": "2026-11-12",
     "session": "after-hours",
     "numbers": [
