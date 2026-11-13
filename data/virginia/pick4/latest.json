@@ -2,6 +2,22 @@
   {
     "game": "Pick 4",
     "draw_date": "2026-11-12",
+    "session": "night",
+    "digits": [
+      2,
+      5,
+      9,
+      0
+    ],
+    "fireball": 7,
+    "next_draw_date": "2026-11-13",
+    "next_session": "day",
+    "fetched_at": "2026-11-13T04:18:33.106131+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/pick4?gameId=1040"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-12",
     "session": "day",
     "digits": [
       1,
