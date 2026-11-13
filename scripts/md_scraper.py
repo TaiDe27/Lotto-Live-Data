@@ -151,9 +151,30 @@ def fetch_pick345() -> dict[str, list[dict]]:
     return results
 
 
+def _next_drawing_mmdd(soup) -> "str | None":
+    """Multi-Match's own page states "Next Drawing: <M>/<D>" in plain text (no year, no jackpot
+    figure anywhere on the page — confirmed live 2026-11-11; Bonus Match 5's page has no such
+    element at all). Resolves the year by assuming the next occurrence from today, same
+    convention every other scraper in this repo uses for a bare month/day with no year."""
+    el = soup.select_one(".next-drawing")
+    if el is None:
+        return None
+    m = re.search(r"Next Drawing:\s*(\d{1,2})/(\d{1,2})", el.get_text())
+    if not m:
+        return None
+    month, day = int(m.group(1)), int(m.group(2))
+    today = dt.date.today()
+    year = today.year
+    candidate = dt.date(year, month, day)
+    if candidate < today:
+        candidate = dt.date(year + 1, month, day)
+    return candidate.isoformat()
+
+
 def fetch_pool(slug: str, label: str, main_count: int, has_bonus: bool) -> list[dict]:
     url = f"https://www.mdlottery.com/games/{slug}/"
     soup = _fetch_soup(url)
+    next_draw_date = _next_drawing_mmdd(soup) if slug == "multi-match" else None
     block = soup.select_one(f".single-winning-numbers.{slug}")
     if not block:
         log.warning("%s: block not found", slug)
@@ -183,6 +204,7 @@ def fetch_pool(slug: str, label: str, main_count: int, has_bonus: bool) -> list[
     entry = {
         "game": label, "draw_date": draw_date, "numbers": numbers,
         "jackpot_amount": None,  # not shown on this page for either game; see fork report
+        "next_draw_date": next_draw_date,
         "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
     }
     if has_bonus:
