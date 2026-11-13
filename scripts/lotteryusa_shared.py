@@ -175,6 +175,13 @@ def parse_next_draw_info(html: str) -> dict:
         if "draw" in title:
             next_draw_date = _parse_next_draw_date_text(value)
         elif "jackpot" in title or "prize" in title:
-            next_jackpot_amount = value
+            # 2026-11-11 发现: 刚好在"今晚要开的这期"之前、网站自己还没算出预估
+            # 奖金的那个小窗口里，这一格实际内容是纯文字"Updating"(不是"$X")——
+            # 亲眼在 Illinois Lucky Day Lotto Evening 页面上抓到过(confirmed
+            # live)。这种非"$"开头的值不是真的奖金数字，不能当 next_jackpot_amount
+            # 存下来，否则下游会把"Updating"这几个字当金额去解析。宁可留空(下一次
+            # 抓取、网站更新后会有真的数字)，不要把这串文字硬塞进去。
+            if value.strip().startswith("$"):
+                next_jackpot_amount = value
 
     return {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
