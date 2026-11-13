@@ -21,7 +21,7 @@ BACKFILL_COUNT = 7
 OUTPUT_DIR = Path("data")
 
 
-def to_record(draw: dict) -> dict:
+def to_record(draw: dict, next_draw_info: Optional[dict] = None) -> dict:
     numbers = [int(x) for x in draw["results"][0]["primary"]]
     if len(numbers) != MAIN_COUNT:
         raise ValueError(f"号码数不对，抓到 {len(numbers)} 个: {numbers}")
@@ -33,7 +33,7 @@ def to_record(draw: dict) -> dict:
     if jackpots:
         jackpot_amount = jackpots[0].get("amount")
 
-    return {
+    record = {
         "game": "Fantasy 5",
         "draw_date": shared.draw_date_iso(draw),
         "numbers": numbers,
@@ -41,6 +41,12 @@ def to_record(draw: dict) -> dict:
         "fetched_at": shared.fetched_at_now(),
         "source_url": shared.SOURCE_PAGE,
     }
+    if next_draw_info:
+        if next_draw_info.get("next_draw_date"):
+            record["next_draw_date"] = next_draw_info["next_draw_date"]
+        if next_draw_info.get("next_jackpot_amount") is not None:
+            record["next_jackpot_amount"] = next_draw_info["next_jackpot_amount"]
+    return record
 
 
 def save_results(records: list[dict]) -> Path:
@@ -70,7 +76,8 @@ def save_results(records: list[dict]) -> Path:
 
 def main():
     draws = shared.fetch_recent_draws(ESA_GAME_NAME, BACKFILL_COUNT)
-    records = [to_record(d) for d in draws]
+    next_draw_info = shared.fetch_next_draw_info(ESA_GAME_NAME)
+    records = [to_record(d, next_draw_info) for d in draws]
     shared.log.info("抓取结果: %s", records)
     save_results(records)
 

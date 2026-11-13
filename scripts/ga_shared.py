@@ -122,3 +122,27 @@ def draw_date_iso(draw: dict) -> str:
 
 def fetched_at_now() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat()
+
+
+def fetch_next_draw_info(esa_game_name: str) -> dict:
+    """id=0 总是指向"下一期"（status=OPEN，drawTime 在未来，还没开奖）。这期本身自带
+    drawTime（下次开奖时间）和 estimatedJackpot（下次开奖的预估奖金）——跟已开奖结果
+    走的是同一个 API，不是另外猜的。实测确认（2026-11-10，FANTASY 5）：响应里只有
+    一个 jackpots[0].amount，跟 estimatedJackpot 相等，没有单独的现金一次性领取金额
+    字段——即没有 cash value。拿不到时返回全 None，不让这个失败影响主开奖结果抓取。"""
+    try:
+        next_draw = fetch_draw(esa_game_name, 0)
+    except Exception as e:  # noqa: BLE001
+        log.warning("拿下一期预告信息失败 (%s): %s", esa_game_name, e)
+        return {"next_draw_date": None, "next_jackpot_amount": None}
+
+    if not next_draw or "drawTime" not in next_draw:
+        return {"next_draw_date": None, "next_jackpot_amount": None}
+
+    from zoneinfo import ZoneInfo
+
+    ms = next_draw["drawTime"]
+    eastern = dt.datetime.fromtimestamp(ms / 1000, tz=ZoneInfo("America/New_York"))
+    next_draw_date = eastern.strftime("%Y-%m-%d")
+    next_jackpot_amount = next_draw.get("estimatedJackpot")
+    return {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
