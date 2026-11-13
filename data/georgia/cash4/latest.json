@@ -1,6 +1,32 @@
 [
   {
     "game": "Cash 4",
+    "draw_date": "2026-11-13",
+    "session": "midday",
+    "digits": [
+      3,
+      4,
+      4,
+      7
+    ],
+    "fetched_at": "2026-11-13T20:31:20.382625+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
+  },
+  {
+    "game": "Cash 4",
+    "draw_date": "2026-11-12",
+    "session": "night",
+    "digits": [
+      4,
+      1,
+      9,
+      6
+    ],
+    "fetched_at": "2026-11-13T20:31:20.382652+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html"
+  },
+  {
+    "game": "Cash 4",
     "draw_date": "2026-11-12",
     "session": "night",
     "digits": [
