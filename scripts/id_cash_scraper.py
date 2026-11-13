@@ -44,6 +44,50 @@ def iso_date(raw: str) -> str:
     return dt.datetime.strptime(raw.strip(), "%m/%d/%y").strftime("%Y-%m-%d")
 
 
+def _resolve_month_day_year(month: str, day: str, after_iso_date: str) -> Optional[str]:
+    """页面顶部"Next Draw: Wed/Nov 11"这种文字不带年份，结合最近一期实际开奖日期
+    (after_iso_date，一定带年份)推断：算出来的日期如果落在它之前或等于它，说明
+    跨年了，年份要+1。"""
+    try:
+        after_date = dt.date.fromisoformat(after_iso_date)
+        candidate = dt.datetime.strptime(f"{month} {day} {after_date.year}", "%b %d %Y").date()
+        if candidate <= after_date:
+            candidate = dt.datetime.strptime(f"{month} {day} {after_date.year + 1}", "%b %d %Y").date()
+        return candidate.isoformat()
+    except ValueError:
+        return None
+
+
+def _parse_next_draw_info(html: str, latest_draw_date: str) -> dict:
+    """顶部摘要卡片里有一块跟历史表格(#tab4)完全独立的 DOM——"Next Estimated
+    Jackpot"(.jackpot__header 紧跟着的 <h5>) + "Next Draw: Wed/Nov 11"
+    (.numbers__header.header2，不带年份，用最近一期的实际开奖日期推断年份)。
+    实测确认(2026-11-10)：这一块没有任何"Cash Value"/现金选项文字——免责声明
+    里写明"The Jackpot prize is paid in one lump-sum, cash payment"，也就是
+    jackpot本身就是现金一次性领取，没有另外的"年金/现金"二选一，所以不设
+    next_cash_value。"""
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "html.parser")
+
+    next_jackpot_amount = None
+    jackpot_header = soup.select_one(".jackpot__header")
+    if jackpot_header and "next estimated jackpot" in jackpot_header.get_text(strip=True).lower():
+        amount_el = jackpot_header.find_next_sibling("h5")
+        if amount_el:
+            m = re.search(r"\$([\d,]+)", amount_el.get_text())
+            if m:
+                next_jackpot_amount = int(m.group(1).replace(",", ""))
+
+    next_draw_date = None
+    header2 = soup.select_one(".numbers__header.header2")
+    if header2:
+        m = re.search(r"Next Draw:\s*[A-Za-z]{3}/([A-Za-z]{3})\s+(\d{1,2})", header2.get_text())
+        if m:
+            next_draw_date = _resolve_month_day_year(m.group(1), m.group(2), latest_draw_date)
+
+    return {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
+
+
 @dataclasses.dataclass
 class CashResult:
     game: str
@@ -52,6 +96,8 @@ class CashResult:
     jackpot_amount: Optional[int]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[int] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -81,8 +127,12 @@ def fetch() -> list[CashResult]:
                 raise ValueError("Past Drawings 表格里没解析出任何行")
 
             fetched_at = dt.datetime.now(dt.timezone.utc).isoformat()
+            parsed_rows = [(iso_date(date_raw), numbers_html, jackpot_raw) for date_raw, numbers_html, jackpot_raw in rows]
+            latest_draw_date = max(d for d, _, _ in parsed_rows)
+            next_draw_info = _parse_next_draw_info(html, latest_draw_date)
+
             results = []
-            for date_raw, numbers_html, jackpot_raw in rows:
+            for draw_date, numbers_html, jackpot_raw in parsed_rows:
                 numbers = [int(n) for n in re.findall(r"<li>(\d+)</li>", numbers_html)]
                 jackpot_amount = None
                 m = re.search(r"\$([\d,]+)", jackpot_raw)
@@ -90,11 +140,13 @@ def fetch() -> list[CashResult]:
                     jackpot_amount = int(m.group(1).replace(",", ""))
                 results.append(CashResult(
                     game="Idaho Cash",
-                    draw_date=iso_date(date_raw),
+                    draw_date=draw_date,
                     numbers=numbers,
                     jackpot_amount=jackpot_amount,
                     fetched_at=fetched_at,
                     source_url=URL,
+                    next_draw_date=next_draw_info["next_draw_date"],
+                    next_jackpot_amount=next_draw_info["next_jackpot_amount"],
                 ))
             return results
         except Exception as e:  # noqa: BLE001
