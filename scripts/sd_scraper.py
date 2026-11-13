@@ -17,6 +17,16 @@ Wednesday and Saturday night" and "Tickets may be purchased until 9 p.m.
 central on the evening of the draw." The real API's own `drawTime` field is
 consistently 9:15 PM CT across every real draw checked this session - used
 as the exact minute (ticket sales close at 9, draw itself 15 min later).
+
+2026-11-11: added next_draw_date/next_jackpot_amount. The same IGT/AWC API, requested with
+`next-draws` appended, returns the upcoming not-yet-drawn Dakota Cash entry too (status "OPEN",
+no `results` key) - confirmed live: only the SOONEST such entry carries real `drawTime`/
+`estimatedJackpot` fields populated (farther-out entries have both null, presumably because the
+lottery hasn't posted that far ahead yet), so this always picks the earliest OPEN entry that has
+`estimatedJackpot` set, not just the earliest OPEN entry overall. `estimatedJackpot` is in CENTS -
+confirmed by cross-referencing the SAME entry's own `jackpots[0].amount` field (e.g.
+estimatedJackpot=12,600,000 alongside jackpots=[{"amount": 126000, ...}] - $126,000 is a plausible
+Dakota Cash jackpot size, $12.6 million is not for this small-state game).
 """
 import json
 import logging
@@ -31,7 +41,7 @@ log = logging.getLogger(__name__)
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 HEADERS = {"User-Agent": UA}
-API_URL = "https://lottery.sd.gov/api/igt/games/v2/draw-games/draws/?game-names=Dakota%20Cash&previous-draws=10"
+API_URL = "https://lottery.sd.gov/api/igt/games/v2/draw-games/draws/?game-names=Dakota%20Cash&previous-draws=10&next-draws=2"
 CT = ZoneInfo("America/Chicago")
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "south-dakota")
@@ -60,6 +70,18 @@ def main():
     r = requests.get(API_URL, headers=HEADERS, timeout=20)
     r.raise_for_status()
     data = r.json()
+
+    open_with_jackpot = [
+        d for d in data.get("draws", [])
+        if not d.get("results") and d.get("drawTime") and d.get("estimatedJackpot") is not None
+    ]
+    next_draw_date = None
+    next_jackpot_amount = None
+    if open_with_jackpot:
+        soonest = min(open_with_jackpot, key=lambda d: d["drawTime"])
+        next_draw_date = datetime.fromtimestamp(soonest["drawTime"] / 1000, tz=CT).strftime("%Y-%m-%d")
+        next_jackpot_amount = soonest["estimatedJackpot"] / 100
+
     entries = []
     for draw in data.get("draws", []):
         results = draw.get("results")
@@ -70,12 +92,17 @@ def main():
             continue
         draw_time_ms = draw.get("drawTime")
         draw_dt_ct = datetime.fromtimestamp(draw_time_ms / 1000, tz=CT)
-        entries.append({
+        entry = {
             "draw_date": draw_dt_ct.strftime("%Y-%m-%d"),
             "numbers": [int(n) for n in primary],
             "fetched_at": datetime.now(tz=ZoneInfo("UTC")).isoformat(),
             "source_url": "https://lottery.sd.gov/game/dakota-cash/",
-        })
+        }
+        if next_draw_date is not None:
+            entry["next_draw_date"] = next_draw_date
+        if next_jackpot_amount is not None:
+            entry["next_jackpot_amount"] = next_jackpot_amount
+        entries.append(entry)
     if not entries:
         log.error("no draws with results parsed")
         return

@@ -67,6 +67,22 @@ PR_TZ = zoneinfo.ZoneInfo("America/Puerto_Rico")  # AST year-round, no DST
 PEGA_SESSION_HOUR = {"day": 14, "night": 22}  # 2:00 PM / 10:00 PM AST
 
 
+LOTO_WEEKDAYS = {0, 2, 4}  # Monday, Wednesday, Friday
+
+
+def compute_next_loto_draw(after_date_iso: str) -> str:
+    """Next Loto Cash/Revancha session strictly after the most recently scraped draw's own date
+    (not "now" — see module doc for why: exact clock time is unconfirmed, so stepping from the
+    latest real draw avoids needing it, same pattern as sc_scraper.py's/tn_scraper.py's own
+    `_next_draw_date`)."""
+    d = dt.date.fromisoformat(after_date_iso)
+    for offset in range(1, 8):
+        candidate = d + dt.timedelta(days=offset)
+        if candidate.weekday() in LOTO_WEEKDAYS:
+            return candidate.isoformat()
+    raise AssertionError("unreachable: a valid draw day occurs at least once within a week")
+
+
 def compute_next_pega_draw(now: dt.datetime) -> tuple[str, str]:
     """Next Pega 2/3/4 day/night session at-or-after `now` (any tz-aware datetime),
     honoring the Monday-Saturday-only schedule (no Sunday draws). Returns
@@ -171,7 +187,8 @@ def main():
             "draw_date": draw_date, "numbers": nums[:5],
             "special_number": int(rec["formattedPlus"]) if rec.get("formattedPlus") else None,
             "multiplier": int(rec["formattedMultiplier"]) if rec.get("formattedMultiplier") else None,
-            "next_jackpot_amount": rec.get("nextJackpot"), "drawing_number": rec.get("drawingNumber"),
+            "next_jackpot_amount": rec.get("nextJackpot"), "next_draw_date": compute_next_loto_draw(draw_date),
+            "drawing_number": rec.get("drawingNumber"),
             "fetched_at": now, "source_url": API_URL,
         }
         save_entries("loto-cash", [entry], ("draw_date",))
@@ -186,7 +203,8 @@ def main():
         entry = {
             "draw_date": draw_date, "numbers": nums[:5],
             "special_number": int(rec["formattedPlus"]) if rec.get("formattedPlus") else None,
-            "next_jackpot_amount": rec.get("nextJackpot"), "drawing_number": rec.get("drawingNumber"),
+            "next_jackpot_amount": rec.get("nextJackpot"), "next_draw_date": compute_next_loto_draw(draw_date),
+            "drawing_number": rec.get("drawingNumber"),
             "fetched_at": now, "source_url": API_URL,
         }
         save_entries("revancha", [entry], ("draw_date",))

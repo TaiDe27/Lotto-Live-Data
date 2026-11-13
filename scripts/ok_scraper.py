@@ -8,16 +8,26 @@ Only 2 OK-exclusive own-games exist (confirmed from lotteryusa.com's own Oklahom
 rest of OK's catalog is multistate games already covered elsewhere in this project):
   - Cash 5: 5 of 1-36, $1/play, daily 9:00 PM CT (Oklahoma local time).
   - Pick 3: standard digit game, daily 9:00 PM CT, no add-on digit mentioned on lotteryusa.com.
+
+2026-11-13: added next_draw_date/next_jackpot_amount for Cash 5 — confirmed live on
+lotteryusa.com/oklahoma/cash-5/'s own `.c-state-short-info` "Next draw" widget ("Next Cash 5 draw"
+-> "Today at 9:00 pm CST", "Next top prize" -> "$25,000"), real published forward-looking data, not
+a guess. Parsed via the shared `lotteryusa_shared.parse_next_draw_info` helper already used by other
+lotteryusa.com-sourced states this session.
 """
 import dataclasses
 import datetime as dt
 import json
 import logging
 import re
+import sys
 import time
 import zoneinfo
 from pathlib import Path
 from typing import Optional
+
+sys.path.insert(0, str(Path(__file__).parent))
+import lotteryusa_shared as lu
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ok_scraper")
@@ -51,6 +61,8 @@ class OkResult:
     numbers: list
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -89,9 +101,13 @@ def fetch_one(url: str, main_count: int) -> OkResult:
             if len(numbers) != main_count:
                 raise ValueError(f"应为{main_count}个号码，抓到 {len(numbers)} 个: {numbers}")
 
+            next_info = lu.parse_next_draw_info(resp.text)
+
             return OkResult(
                 draw_date=draw_date, numbers=numbers,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=url,
+                next_draw_date=next_info.get("next_draw_date"),
+                next_jackpot_amount=next_info.get("next_jackpot_amount"),
             )
         except Exception as e:  # noqa: BLE001
             last_err = e

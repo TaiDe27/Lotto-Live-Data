@@ -24,6 +24,15 @@ Real confirmed schedule (quoted from each game's own page text):
   1-38 via the real stated odds "Match 5: 1 in 501,942" (C(38,5)=501,942
   exactly, not a guess). "Draws take place nightly at 9:00 PM CT / 10:00 PM
   ET."
+
+2026-11-11: added next_draw_date/next_jackpot_amount for Cash and Daily Jackpot. The `/numbers`
+archive page used above has no forward-looking element (same conclusion as Cash 3/4's own
+`_next_draw_date`), BUT each game's plain lottery.net LANDING page (`/tennessee/cash`,
+`/tennessee/daily-jackpot` — no `/numbers` suffix) carries real live data confirmed directly: a
+`.nextDrawDate` div ("<Weekday>'s Estimated Jackpot:"), `.heroJackpot` (the dollar figure, e.g.
+"$420,000"), and a `drawTimer("jackpot-timer-N", "<ISO UTC datetime>")` script giving the exact
+next-draw instant in UTC (e.g. Cash's "...T04:30:00" UTC = 11:30 PM ET, matching its own confirmed
+real draw time quoted above).
 """
 import json
 import logging
@@ -31,8 +40,14 @@ import os
 import re
 import time
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 import requests
+
+TN_ET = ZoneInfo("America/New_York")
+TN_CT = ZoneInfo("America/Chicago")
+HERO_JACKPOT_RE = re.compile(r'class="heroJackpot">\s*(.*?)\s*</div>', re.S)
+DRAW_TIMER_RE = re.compile(r'drawTimer\("jackpot-timer-\d+",\s*"([^"]+)"\)')
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
@@ -55,6 +70,32 @@ def fetch(slug):
     r = requests.get(f"{BASE}/{slug}/numbers", headers=HEADERS, timeout=20)
     r.raise_for_status()
     return r.text
+
+
+def fetch_landing(slug):
+    r = requests.get(f"{BASE}/{slug}", headers=HEADERS, timeout=20)
+    r.raise_for_status()
+    return r.text
+
+
+def extract_hero_info(html, zone):
+    """Parses the landing page's `.heroJackpot`/`drawTimer(...)` block (see module doc). Returns
+    (next_jackpot_amount: str|None, next_draw_date: "yyyy-MM-dd"|None, converted from the embedded
+    UTC timestamp into `zone`)."""
+    jackpot_text = None
+    jm = HERO_JACKPOT_RE.search(html)
+    if jm:
+        jackpot_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", jm.group(1))).strip() or None
+
+    next_draw_date = None
+    tm = DRAW_TIMER_RE.search(html)
+    if tm:
+        try:
+            utc_dt = datetime.strptime(tm.group(1), "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
+            next_draw_date = utc_dt.astimezone(zone).date().isoformat()
+        except ValueError:
+            pass
+    return jackpot_text, next_draw_date
 
 
 def parse_date(label):
@@ -182,6 +223,15 @@ def main():
         html = fetch("cash")
         entries = extract_single_session(html, "tn-cash", has_bonus=True)
         if entries:
+            try:
+                jackpot_text, next_draw_date = extract_hero_info(fetch_landing("cash"), TN_ET)
+                for e in entries:
+                    if next_draw_date is not None:
+                        e["next_draw_date"] = next_draw_date
+                    if jackpot_text is not None:
+                        e["next_jackpot_amount"] = jackpot_text
+            except Exception as e2:
+                log.warning("tn cash hero info failed (results still saved): %s", e2)
             save("cash", entries, ["draw_date"])
     except Exception as e:
         log.error("tn cash failed: %s", e)
@@ -191,6 +241,15 @@ def main():
         html = fetch("daily-jackpot")
         entries = extract_single_session(html, "tn-daily-jackpot", has_bonus=False)
         if entries:
+            try:
+                jackpot_text, next_draw_date = extract_hero_info(fetch_landing("daily-jackpot"), TN_CT)
+                for e in entries:
+                    if next_draw_date is not None:
+                        e["next_draw_date"] = next_draw_date
+                    if jackpot_text is not None:
+                        e["next_jackpot_amount"] = jackpot_text
+            except Exception as e2:
+                log.warning("tn daily-jackpot hero info failed (results still saved): %s", e2)
             save("daily-jackpot", entries, ["draw_date"])
     except Exception as e:
         log.error("tn daily-jackpot failed: %s", e)

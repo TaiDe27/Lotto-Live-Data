@@ -30,6 +30,19 @@ Confirmed real mechanics/schedule (quoted from rilot.com's own game pages, 2026-
     WPRI-TV 12 at 7:29 p.m." — a 4-digit base draw (confirmed: "4 Digit - Choose 1 digit in each
     column") offering Front/Back sub-wagers (2/3-digit) on the same underlying draw; only the base
     4-digit straight/box tiers are modeled this round.
+
+2026-11-11 correction: the "Monday and Thursday" Wild Money schedule quoted above is STALE — the
+live `ris-draw-p1.ilotterydrawri.com` API itself (re-checked directly, not re-trusting the old
+page quote) shows real, actually-drawn `results` for Wild Money on 10 CONSECUTIVE calendar days
+(2026-10-31 through 2026-11-10, every single day), each at a consistent ~18:50 ET `drawTime` —
+Wild Money now draws DAILY, not twice a week. This doesn't change any existing stored field (no
+code here ever computed a "next Monday/Thursday" schedule), but next_draw_date added below is
+sourced directly from the API's own real `drawTime`/`estimatedJackpot` for the nearest still-open
+(not-yet-drawn) draw rather than from any assumed weekly pattern, so it's correct either way.
+`estimatedJackpot` is in CENTS (confirmed by cross-referencing consecutive days' values, e.g.
+9,800,000/9,200,000/8,700,000 escalating by a realistic ~$5-10k/day when divided by 100 — i.e.
+$98,000/$92,000/$87,000 — versus an implausible $9.8M/$9.2M/$8.7M jackpot for this small-state
+game if taken at face value).
 """
 import datetime as dt
 import json
@@ -45,7 +58,7 @@ USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
 REQUEST_TIMEOUT_SEC = 15
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 5
-API_URL = "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=0"
+API_URL = "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2"
 OUTPUT_DIR = Path("data") / "rhode-island"
 MAX_HISTORY = 100
 
@@ -117,6 +130,24 @@ def main():
     wild_money_entries = []
     numbers_entries = []
 
+    # Next Wild Money draw: the soonest still-open (not-yet-drawn) "Wild Money" entry's own real
+    # `drawTime`/`estimatedJackpot` — sourced directly from the live API, not an assumed weekly
+    # pattern (see module doc's 2026-11-11 correction). `estimatedJackpot` is in cents.
+    open_wild_money = [
+        d for d in draws
+        if d.get("gameName") == "Wild Money" and not d.get("results") and d.get("drawTime")
+    ]
+    next_wild_money_date = None
+    next_wild_money_jackpot = None
+    if open_wild_money:
+        soonest = min(open_wild_money, key=lambda d: d["drawTime"])
+        next_wild_money_date = dt.datetime.fromtimestamp(
+            soonest["drawTime"] / 1000, tz=RI_TZ
+        ).date().isoformat()
+        est = soonest.get("estimatedJackpot")
+        if est is not None:
+            next_wild_money_jackpot = est / 100
+
     for d in draws:
         if not d.get("results"):
             continue
@@ -147,6 +178,11 @@ def main():
 
     errors = []
     if wild_money_entries:
+        for e in wild_money_entries:
+            if next_wild_money_date is not None:
+                e["next_draw_date"] = next_wild_money_date
+            if next_wild_money_jackpot is not None:
+                e["next_jackpot_amount"] = next_wild_money_jackpot
         save_entries("wild-money", wild_money_entries, ("draw_date",))
     else:
         errors.append(("wild-money", "无数据"))

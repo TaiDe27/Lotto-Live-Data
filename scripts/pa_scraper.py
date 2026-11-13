@@ -90,6 +90,23 @@ PA_ET = ZoneInfo("America/New_York")
 PICK_DAY_DRAW_TIME = dt.time(13, 35)
 PICK_EVENING_DRAW_TIME = dt.time(18, 59)
 
+# Cash Pop's 4 sessions run every day (confirmed from lottery.net's own FAQ text quoted in the
+# module docstring: "There are four drawings every day") — a pure clock comparison like
+# compute_next_pick_draw above, no scrape needed since the schedule never skips a day.
+CASH_POP_SESSION_TIME = {
+    "morning": dt.time(9, 0), "matinee": dt.time(13, 35),
+    "afternoon": dt.time(18, 59), "latenight": dt.time(23, 0),
+}
+
+
+def compute_next_cash_pop_draw(session: str, now: dt.datetime) -> str:
+    now_et = now.astimezone(PA_ET)
+    today = now_et.date()
+    draw_dt = dt.datetime.combine(today, CASH_POP_SESSION_TIME[session], tzinfo=PA_ET)
+    if now_et >= draw_dt:
+        today += dt.timedelta(days=1)
+    return today.isoformat()
+
 
 def compute_next_pick_draw(now: dt.datetime) -> tuple[str, str]:
     """Next upcoming Pick-game draw (date, session) relative to `now` (must be tz-aware, any
@@ -106,7 +123,7 @@ def compute_next_pick_draw(now: dt.datetime) -> tuple[str, str]:
     return (today + dt.timedelta(days=1)).isoformat(), "day"
 
 
-def _fetch_soup(url: str):
+def _fetch_soup(url: str, wait_selector: str = ".resultBox.firstResult"):
     """2026-11-07 改为 Playwright(之前一直是 requests):lottery.net 这个域名反复出现"整次运行
     从第一个请求开始就连接超时"的情况(PA/WI 共用同一个域名),之前一直当成"GitHub Actions
     runner 拿到的临时 IP 偶尔被 WAF 挡住"来处理(workflow 里那个换新 runner 重试的步骤就是为
@@ -125,7 +142,7 @@ def _fetch_soup(url: str):
                 try:
                     page = browser.new_page(user_agent=USER_AGENT)
                     page.goto(url, timeout=REQUEST_TIMEOUT_SEC * 1000, wait_until="domcontentloaded")
-                    page.wait_for_selector(".resultBox.firstResult", timeout=REQUEST_TIMEOUT_SEC * 1000)
+                    page.wait_for_selector(wait_selector, timeout=REQUEST_TIMEOUT_SEC * 1000)
                     html = page.content()
                 finally:
                     browser.close()
@@ -154,6 +171,35 @@ def _first_result_box(soup):
     return box
 
 
+def fetch_hero_info(slug: str) -> dict:
+    """Cash 5 / Match 6 Lotto / Treasure Hunt all show real forward-looking next-draw data on
+    their lottery.net LANDING page (`/pennsylvania/<slug>`, NOT `/numbers` — that one is
+    historical-only, confirmed live 2026-11-11 to have no next-draw/jackpot info at all): a
+    `.landingPageHeroBlock` with `.nextDrawDate` ("<Weekday>'s Top Prize:"/"Estimated Jackpot:"),
+    `.heroJackpot` (the dollar figure, e.g. "$800,000" or "$1.63 Million"), and a
+    `drawTimer("jackpot-timer-N", "<ISO UTC datetime>")` script giving the exact next-draw instant
+    (confirmed to match each game's own known real draw time once converted out of UTC, e.g. PA
+    Cash 5's "...T23:59:00" UTC = 6:59 PM ET). Returns
+    {"next_draw_date": "yyyy-MM-dd"|None, "next_jackpot_amount": "$X"|None}."""
+    url = f"{BASE}/{slug}"
+    soup = _fetch_soup(url, wait_selector=".landingPageHeroBlock")
+    hero = soup.select_one(".landingPageHeroBlock")
+    next_jackpot_amount = None
+    next_draw_date = None
+    if hero is not None:
+        jackpot_el = hero.select_one(".heroJackpot")
+        if jackpot_el is not None:
+            next_jackpot_amount = jackpot_el.get_text(strip=True)
+        m = re.search(r'drawTimer\("jackpot-timer-\d+",\s*"([^"]+)"\)', str(hero))
+        if m:
+            try:
+                utc_dt = dt.datetime.strptime(m.group(1), "%Y-%m-%dT%H:%M:%S").replace(tzinfo=dt.timezone.utc)
+                next_draw_date = utc_dt.astimezone(PA_ET).date().isoformat()
+            except ValueError:
+                pass
+    return {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
+
+
 def fetch_pool(slug: str, main_count: int) -> dict:
     url = f"{BASE}/{slug}/numbers"
     soup = _fetch_soup(url)
@@ -164,10 +210,19 @@ def fetch_pool(slug: str, main_count: int) -> dict:
     numbers = [int(b.get_text(strip=True)) for b in balls]
     if len(numbers) != main_count:
         raise ValueError(f"应为{main_count}个号码，抓到 {len(numbers)} 个: {numbers}")
-    return {
+    result = {
         "draw_date": draw_date, "numbers": numbers,
         "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
     }
+    time.sleep(2.0)
+    try:
+        hero = fetch_hero_info(slug)
+        for k, v in hero.items():
+            if v is not None:
+                result[k] = v
+    except Exception as e:  # noqa: BLE001
+        log.warning("%s hero info 获取失败（不影响历史数据保存）: %s", slug, e)
+    return result
 
 
 def fetch_digits_both_sessions(slug: str, digit_count: int) -> list:
@@ -234,6 +289,7 @@ def fetch_cash_pop() -> list:
         number = ball_el.get_text(strip=True)
         results.append({
             "draw_date": draw_date, "session": session, "number": number,
+            "next_draw_date": compute_next_cash_pop_draw(session, dt.datetime.now(dt.timezone.utc)),
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
         })
     # Cash Pop's 4 sessions (Morning 9am / Matinee 1:35pm / Afternoon 6:59pm / Late Night 11pm ET)
