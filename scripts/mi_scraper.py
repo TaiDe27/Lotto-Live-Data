@@ -46,6 +46,8 @@ import time
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import lotteryusa_shared as lu
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("mi_scraper")
 
@@ -232,6 +234,20 @@ def fetch_digit(url: str, count: int, label: str) -> list[dict]:
 
 
 def fetch_pool(url: str, count: int, label: str) -> list[dict]:
+    """2026-11-11: Fantasy 5/Classic Lotto 47 both have a real "Next <game> draw"/"Next est.
+    jackpot" widget on their lotteryusa.com page (confirmed live), same `.c-state-short-info`
+    pattern used elsewhere in this project — fetched once via a second lightweight request
+    (`_fetch_rows` only returns the already-parsed `.c-draw-card` row elements, not the raw page
+    text this widget lives in)."""
+    import requests
+    next_draw = {"next_draw_date": None, "next_jackpot_amount": None}
+    try:
+        resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT_SEC)
+        resp.raise_for_status()
+        next_draw = lu.parse_next_draw_info(resp.text)
+    except Exception as e:  # noqa: BLE001
+        log.warning("[%s] 抓取next-draw信息失败（不影响本期开奖结果）: %s", url, e)
+
     out = []
     for row in _fetch_rows(url):
         date_el = row.select_one(".c-draw-card__draw-date-sub")
@@ -243,7 +259,9 @@ def fetch_pool(url: str, count: int, label: str) -> list[dict]:
         if len(numbers) != count:
             continue
         out.append({"game": label, "draw_date": draw_date, "numbers": numbers,
-                    "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url})
+                    "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+                    "next_draw_date": next_draw["next_draw_date"],
+                    "next_jackpot_amount": next_draw["next_jackpot_amount"]})
     return out
 
 
