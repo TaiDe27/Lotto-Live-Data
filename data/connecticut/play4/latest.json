@@ -161,6 +161,22 @@
   },
   {
     "game": "Play 4",
+    "draw_date": "2026-11-13",
+    "session": "midday",
+    "digits": [
+      0,
+      7,
+      2,
+      9
+    ],
+    "wild_ball": 2,
+    "next_draw_date": "2026-11-13",
+    "next_session": "evening",
+    "fetched_at": "2026-11-13T23:45:29.975681+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/midday-4/"
+  },
+  {
+    "game": "Play 4",
     "draw_date": "2026-11-12",
     "session": "midday",
     "digits": [
