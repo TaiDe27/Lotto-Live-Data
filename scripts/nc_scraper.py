@@ -80,8 +80,19 @@ def scrape_digit_game(url: str, digit_count: int) -> list[dict]:
 
 
 def scrape_cash5() -> tuple[list[dict], list[dict]]:
+    """2026-11-11: `next_draw_date`/`next_jackpot_amount` added to the main draw — confirmed live via
+    this exact URL's own `.c-state-short-info` widget, cross-checked against nclottery.com's own
+    server-rendered Cash 5 header widget (`lblC5Prize`/`lblC5DrawDateNext`) at the same moment: both
+    showed the identical $173,000 / Wed Nov 11 figures, so lotteryusa.com's reading here is trustworthy
+    and we don't need a second nclottery.com-specific scrape path. Double Play's top prize is fixed
+    ($50,000, not progressive — see module doc), so no jackpot field is captured for it, only the
+    shared next-draw date (it draws from the same machine run as the main game, same night)."""
     url = "https://www.lotteryusa.com/north-carolina/cash-5/"
-    cards = lu.parse_draw_cards(lu.fetch_html(url), max_entries=MAX_HISTORY)
+    html = lu.fetch_html(url)
+    next_info = lu.parse_next_draw_info(html)
+    next_draw_date = next_info["next_draw_date"]
+    next_jackpot_amount = next_info["next_jackpot_amount"]
+    cards = lu.parse_draw_cards(html, max_entries=MAX_HISTORY)
     main_out, dp_out = [], []
     for c in cards:
         main_numbers = c["boxes"].get("Main draw") or c["boxes"].get("")
@@ -90,17 +101,26 @@ def scrape_cash5() -> tuple[list[dict], list[dict]]:
             main_out.append({
                 "draw_date": c["draw_date"], "numbers": main_numbers,
                 "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+                "next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount,
             })
         if dp_numbers and len(dp_numbers) == 5:
             dp_out.append({
                 "draw_date": c["draw_date"], "numbers": dp_numbers,
                 "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+                "next_draw_date": next_draw_date,
             })
     return main_out, dp_out
 
 
 def scrape_cash_pop(url: str) -> list[dict]:
-    cards = lu.parse_draw_cards(lu.fetch_html(url), max_entries=MAX_HISTORY)
+    """2026-11-11: `next_draw_date`/`next_jackpot_amount` added — each session's own URL has its own
+    correctly-scoped `.c-state-short-info` widget (confirmed live for all 5 sessions, each returning
+    the same $250 'Next top prize' figure — Cash POP's advertised ceiling for a $1 play, a real static
+    value published by the site, NOT the random per-ticket multiplier this project already ruled
+    uncomputable; same class as the fixed-$500/$5,000 top prize already captured for Pick 3/4)."""
+    html = lu.fetch_html(url)
+    next_info = lu.parse_next_draw_info(html)
+    cards = lu.parse_draw_cards(html, max_entries=MAX_HISTORY)
     out = []
     for c in cards:
         numbers = next(iter(c["boxes"].values()), [])
@@ -109,6 +129,8 @@ def scrape_cash_pop(url: str) -> list[dict]:
         out.append({
             "draw_date": c["draw_date"], "number": numbers[0],
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+            "next_draw_date": next_info["next_draw_date"],
+            "next_jackpot_amount": next_info["next_jackpot_amount"],
         })
     return out
 

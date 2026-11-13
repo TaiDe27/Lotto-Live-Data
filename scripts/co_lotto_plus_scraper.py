@@ -47,9 +47,56 @@ class LottoPlusResult:
     jackpot_amount: Optional[int]  # 整数美元，如 2800000
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None  # ISO yyyy-MM-dd
+    next_jackpot_amount: Optional[int] = None
+    next_cash_value: Optional[int] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+def _resolve_month_day_year(month_day_text: str, after_iso_date: str) -> Optional[str]:
+    """页面顶部 "Next Drawing" 横幅只给"Wednesday, November 11"这种不带年份的文字，
+    年份要结合"抓到的最近一期实际开奖日期"(after_iso_date，一定带年份)推断：下一期
+    肯定在最近一期之后，如果按"最近一期的年份"算出来的日期反而落在它之前或等于它，
+    说明跨年了，年份要+1。"""
+    m = re.search(r"([A-Za-z]+)\s+(\d{1,2})\s*$", month_day_text.strip())
+    if not m:
+        return None
+    month_name, day_str = m.group(1), m.group(2)
+    try:
+        after_date = dt.date.fromisoformat(after_iso_date)
+        candidate = dt.datetime.strptime(f"{month_name} {day_str} {after_date.year}", "%B %d %Y").date()
+        if candidate <= after_date:
+            candidate = dt.datetime.strptime(f"{month_name} {day_str} {after_date.year + 1}", "%B %d %Y").date()
+        return candidate.isoformat()
+    except ValueError:
+        return None
+
+
+def _parse_next_draw_banner(soup) -> dict:
+    """页面顶部的 jackpotWrapper/nextDate 横幅——跟历史开奖列表(allDraws)是页面里
+    完全独立的两块DOM，class名不会和历史记录的 .drawJackpot 冲突。"""
+    result = {"next_draw_date_text": None, "next_jackpot_amount": None, "next_cash_value": None}
+
+    next_date_el = soup.select_one(".nextDate.panel strong, .nextDate strong")
+    if next_date_el:
+        result["next_draw_date_text"] = next_date_el.get_text(strip=True)
+
+    jackpot_wrapper = soup.select_one(".jackpotWrapper")
+    if jackpot_wrapper:
+        amount_el = jackpot_wrapper.select_one(".amount")
+        if amount_el:
+            m = re.search(r"\$([\d,]+)", amount_el.get_text())
+            if m:
+                result["next_jackpot_amount"] = int(m.group(1).replace(",", ""))
+        cash_el = jackpot_wrapper.select_one(".amountCash")
+        if cash_el:
+            m = re.search(r"\$([\d,]+)", cash_el.get_text())
+            if m:
+                result["next_cash_value"] = int(m.group(1).replace(",", ""))
+
+    return result
 
 
 def fetch() -> LottoPlusResult:
@@ -89,6 +136,11 @@ def fetch() -> LottoPlusResult:
             if len(numbers) != 6:
                 raise ValueError(f"主号码应为6个，抓到 {len(numbers)} 个: {numbers}")
 
+            banner = _parse_next_draw_banner(soup)
+            next_draw_date = None
+            if banner["next_draw_date_text"]:
+                next_draw_date = _resolve_month_day_year(banner["next_draw_date_text"], draw_date)
+
             return LottoPlusResult(
                 game="Colorado Lotto+",
                 draw_date=draw_date,
@@ -96,6 +148,9 @@ def fetch() -> LottoPlusResult:
                 jackpot_amount=jackpot_amount,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
+                next_draw_date=next_draw_date,
+                next_jackpot_amount=banner["next_jackpot_amount"],
+                next_cash_value=banner["next_cash_value"],
             )
         except Exception as e:  # noqa: BLE001
             last_err = e

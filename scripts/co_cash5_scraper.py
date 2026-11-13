@@ -37,9 +37,50 @@ class Cash5Result:
     jackpot_amount: Optional[int]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None  # ISO yyyy-MM-dd
+    next_jackpot_amount: Optional[int] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+def _resolve_month_day_year(month_day_text: str, after_iso_date: str) -> Optional[str]:
+    """同 co_lotto_plus_scraper.py 的同名函数——页面顶部"Next Drawing"横幅不带年份，
+    结合最近一期实际开奖日期(一定带年份)推断：算出来的日期如果落在它之前或等于它，
+    说明跨年了，年份要+1。"""
+    m = re.search(r"([A-Za-z]+)\s+(\d{1,2})\s*$", month_day_text.strip())
+    if not m:
+        return None
+    month_name, day_str = m.group(1), m.group(2)
+    try:
+        after_date = dt.date.fromisoformat(after_iso_date)
+        candidate = dt.datetime.strptime(f"{month_name} {day_str} {after_date.year}", "%B %d %Y").date()
+        if candidate <= after_date:
+            candidate = dt.datetime.strptime(f"{month_name} {day_str} {after_date.year + 1}", "%B %d %Y").date()
+        return candidate.isoformat()
+    except ValueError:
+        return None
+
+
+def _parse_next_draw_banner(soup) -> dict:
+    """页面顶部的 jackpotWrapper/nextDate 横幅。Cash 5 页面上没有 .amountCash 节点
+    （实测确认，2026-11-10）——固定顶奖玩法本来就没有现金一次性领取的"折现"概念，
+    跟 Lotto+ 的滚存奖池不是一回事，所以这里不读 cash value。"""
+    result = {"next_draw_date_text": None, "next_jackpot_amount": None}
+
+    next_date_el = soup.select_one(".nextDate.panel strong, .nextDate strong")
+    if next_date_el:
+        result["next_draw_date_text"] = next_date_el.get_text(strip=True)
+
+    jackpot_wrapper = soup.select_one(".jackpotWrapper")
+    if jackpot_wrapper:
+        amount_el = jackpot_wrapper.select_one(".amount")
+        if amount_el:
+            m = re.search(r"\$([\d,]+)", amount_el.get_text())
+            if m:
+                result["next_jackpot_amount"] = int(m.group(1).replace(",", ""))
+
+    return result
 
 
 def fetch() -> Cash5Result:
@@ -77,6 +118,11 @@ def fetch() -> Cash5Result:
             if len(numbers) != 5:
                 raise ValueError(f"号码应为5个，抓到 {len(numbers)} 个: {numbers}")
 
+            banner = _parse_next_draw_banner(soup)
+            next_draw_date = None
+            if banner["next_draw_date_text"]:
+                next_draw_date = _resolve_month_day_year(banner["next_draw_date_text"], draw_date)
+
             return Cash5Result(
                 game="Cash 5",
                 draw_date=draw_date,
@@ -84,6 +130,8 @@ def fetch() -> Cash5Result:
                 jackpot_amount=jackpot_amount,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
+                next_draw_date=next_draw_date,
+                next_jackpot_amount=banner["next_jackpot_amount"],
             )
         except Exception as e:  # noqa: BLE001
             last_err = e

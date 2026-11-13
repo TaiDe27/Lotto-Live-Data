@@ -104,9 +104,15 @@ def scrape_cash5() -> list[dict]:
     Confirmed real bug 2026-11-07: before this fix, `numbers` only ever had 4 of the 5 real drawn
     numbers, so a player who picked the actual Bulls-Eye number as one of their 5 picks would never
     register a match against it.
+
+    2026-11-11: `next_draw_date`/`next_jackpot_amount` added — confirmed live via this URL's own
+    `.c-state-short-info` widget (Jersey Cash 5 is a real pari-mutuel progressive jackpot, no fixed
+    top prize, so this is a genuine estimated-jackpot figure, not a static ceiling).
     """
     url = "https://www.lotteryusa.com/new-jersey/cash-5/"
-    cards = lu.parse_draw_cards(lu.fetch_html(url), max_entries=MAX_HISTORY)
+    html = lu.fetch_html(url)
+    next_info = lu.parse_next_draw_info(html)
+    cards = lu.parse_draw_cards(html, max_entries=MAX_HISTORY)
     out = []
     for c in cards:
         numbers = next(iter(c["boxes"].values()), [])
@@ -119,13 +125,21 @@ def scrape_cash5() -> list[dict]:
             "bullseye_number": bullseye,
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "source_url": url,
+            "next_draw_date": next_info["next_draw_date"],
+            "next_jackpot_amount": next_info["next_jackpot_amount"],
         })
     return out
 
 
 def scrape_pick6() -> tuple[list[dict], list[dict]]:
+    """2026-11-11: `next_draw_date`/`next_jackpot_amount` added to the main draw — confirmed live
+    (returned $18.4 Million for the upcoming Thu 11/12 drawing, consistent with Pick-6's real
+    Mon/Thu/Sat schedule). Double Play's top prize is fixed ($250,000 pari-mutuel, not progressive —
+    see module doc), so only the shared next-draw date is captured for it, same draw night as main."""
     url = "https://www.lotteryusa.com/new-jersey/pick-6/"
-    cards = lu.parse_draw_cards(lu.fetch_html(url), max_entries=MAX_HISTORY)
+    html = lu.fetch_html(url)
+    next_info = lu.parse_next_draw_info(html)
+    cards = lu.parse_draw_cards(html, max_entries=MAX_HISTORY)
     main_out, dp_out = [], []
     for c in cards:
         main_numbers = c["boxes"].get("Main draw") or c["boxes"].get("")
@@ -134,11 +148,14 @@ def scrape_pick6() -> tuple[list[dict], list[dict]]:
             main_out.append({
                 "draw_date": c["draw_date"], "numbers": main_numbers,
                 "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+                "next_draw_date": next_info["next_draw_date"],
+                "next_jackpot_amount": next_info["next_jackpot_amount"],
             })
         if dp_numbers and len(dp_numbers) == 6:
             dp_out.append({
                 "draw_date": c["draw_date"], "numbers": dp_numbers,
                 "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": url,
+                "next_draw_date": next_info["next_draw_date"],
             })
     return main_out, dp_out
 
