@@ -2,6 +2,21 @@
   {
     "game": "Pick 3",
     "draw_date": "2026-11-12",
+    "session": "night",
+    "digits": [
+      7,
+      2,
+      7
+    ],
+    "fireball": 3,
+    "next_draw_date": "2026-11-13",
+    "next_session": "day",
+    "fetched_at": "2026-11-13T04:15:44.224181+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-11-12",
     "session": "day",
     "digits": [
       6,
