@@ -8,6 +8,14 @@ Multi-Win Lotto：6个号码从1-35，无特殊球，每天开一次(晚7:57pm E
 jackpot金额本身就是明文文本，不是图片。日期格式是"Friday, October 09,
 2026"这种完整英文格式。
 
+2026-11-10更新：页面上的"Current top prize"是"还没被中走、累积到现在"的滚存
+金额——不是刚开完那期的中奖金额，而是下一期可以中的金额(两者在没人中大奖之前
+是同一个数，中走了才会重置变小，重新滚存)，所以直接拿它当 next_jackpot_amount
+用是对的，不是另外猜的。页面没有单独的"Next Drawing"日期文字，但官网明文写着
+"DRAWINGS: Everyday at 7:57 p.m."(每天开，没有例外的"周几开")——这是页面上
+确认过的固定排期，不是猜的，next_draw_date 直接按"最近一期开奖日 + 1天"算。
+页面上也没找到"Cash Value"/现金选项的字样，这游戏没有现金一次性领取选项。
+
 跟Play 3/4/5一样，详细的全部奖级payout表在"Prizes & Odds"分Tab里，同样是
 图片(不是文字)，没有去抓——奖级金额用games.json里按官方"Current top
 prize"区间($50,000起步，滚存)+常见Multi-Win Lotto奖级结构配置，不是从这个
@@ -49,6 +57,8 @@ class MultiWinLottoResult:
     jackpot_amount: Optional[str]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None  # ISO yyyy-MM-dd；按"每天开"的固定排期算
+    next_jackpot_amount: Optional[str] = None  # 跟 jackpot_amount 是同一个滚存金额
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -77,6 +87,8 @@ def fetch() -> MultiWinLottoResult:
             if not numbers or not draw_date:
                 raise ValueError(f"解析出的数据不完整: numbers={numbers} draw_date={draw_date}")
 
+            next_draw_date = (dt.date.fromisoformat(draw_date) + dt.timedelta(days=1)).isoformat()
+
             return MultiWinLottoResult(
                 game="Multi-Win Lotto",
                 draw_date=draw_date,
@@ -84,6 +96,8 @@ def fetch() -> MultiWinLottoResult:
                 jackpot_amount=jackpot_amount,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
+                next_draw_date=next_draw_date,
+                next_jackpot_amount=jackpot_amount,
             )
         except Exception as e:  # noqa: BLE001
             last_err = e
