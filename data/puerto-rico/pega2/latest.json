@@ -10,7 +10,21 @@
     "next_draw_date": "2026-11-12",
     "next_session": "night",
     "drawing_number": 6902,
-    "fetched_at": "2026-11-12T18:51:03.366869+00:00",
+    "fetched_at": "2026-11-13T00:40:59.946025+00:00",
+    "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
+  },
+  {
+    "draw_date": "2026-11-12",
+    "session": "day",
+    "digits": [
+      "2",
+      "8"
+    ],
+    "wild_ball": 7,
+    "next_draw_date": "2026-11-12",
+    "next_session": "night",
+    "drawing_number": 4114,
+    "fetched_at": "2026-11-13T00:40:59.946025+00:00",
     "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
   },
   {
