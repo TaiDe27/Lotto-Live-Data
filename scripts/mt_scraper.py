@@ -23,6 +23,8 @@ import time
 from pathlib import Path
 from typing import Optional
 
+import lotteryusa_shared as lu
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("mt_scraper")
 
@@ -40,8 +42,9 @@ class MtResult:
     numbers: list[int]
     bonus_number: Optional[int]
     next_jackpot_amount: Optional[int]
-    fetched_at: str
-    source_url: str
+    next_draw_date: Optional[str] = None
+    fetched_at: str = ""
+    source_url: str = ""
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -87,16 +90,23 @@ def fetch_one(url: str, main_count: int, has_bonus: bool) -> MtResult:
                     raise ValueError("没找到 Bonus Number")
                 bonus_number = int(bonus_el.get_text(strip=True))
 
+            # 2026-11-10: this used to read `.c-draw-card__prize-value` off the SAME historical
+            # `.c-draw-card` row as the draw's own numbers above — that's the prize *won* in that
+            # past draw, not a forward-looking figure, despite the field's "next_" name (same
+            # mislabeling class found and fixed in tristate_megabucks_scraper.py this session).
+            # The page's own separate `.c-state-short-info` "Next <game> draw"/"Next est. jackpot"
+            # widget is the real forward-looking source.
+            next_draw = lu.parse_next_draw_info(resp.text)
             next_jackpot = None
-            prize_el = row.select_one(".c-draw-card__prize-value")
-            if prize_el:
-                m2 = re.search(r"\$([\d,]+)", prize_el.get_text())
+            if next_draw["next_jackpot_amount"]:
+                m2 = re.search(r"\$([\d,]+)", next_draw["next_jackpot_amount"])
                 if m2:
                     next_jackpot = int(m2.group(1).replace(",", ""))
 
             return MtResult(
                 draw_date=draw_date, numbers=numbers, bonus_number=bonus_number,
                 next_jackpot_amount=next_jackpot,
+                next_draw_date=next_draw["next_draw_date"],
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=url,
             )
         except Exception as e:  # noqa: BLE001
