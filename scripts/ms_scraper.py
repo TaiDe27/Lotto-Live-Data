@@ -69,6 +69,8 @@ class SingleResult:
     numbers: list[int]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
+    next_jackpot_amount: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -160,9 +162,40 @@ def fetch_match5(url: str) -> SingleResult:
             if len(numbers) != 5:
                 raise ValueError(f"应为5个号码，抓到 {len(numbers)} 个: {numbers}")
 
+            # 2026-11-13: mslottery.com's own page carries a real "Next Draw: Fri, November 13"
+            # marker plus a "Next Est. Jackpot:* $60 thousand"-style figure (confirmed live) —
+            # both found just above the results block, not inside `.match5winnumbers-wrap`.
+            next_draw_date = None
+            next_text_node = soup.find(string=re.compile(r"Next Draw:"))
+            if next_text_node:
+                m = re.search(r"Next Draw:\s*[A-Za-z]+,\s*([A-Za-z]+)\s+(\d{1,2})", next_text_node.parent.get_text())
+                if m:
+                    month = dt.datetime.strptime(m.group(1)[:3], "%b").month
+                    day = int(m.group(2))
+                    today = dt.datetime.now(dt.timezone.utc).date()
+                    year = today.year
+                    candidate = dt.date(year, month, day)
+                    if (today - candidate).days > 1:
+                        candidate = dt.date(year + 1, month, day)
+                    next_draw_date = candidate.isoformat()
+            next_jackpot_amount = None
+            jackpot_el = soup.select_one(".currentjackpot-number")
+            if jackpot_el:
+                amount_m = re.search(r"([\d.]+)", jackpot_el.get_text())
+                unit_el = jackpot_el.select_one(".jackpot-value")
+                unit = unit_el.get_text(strip=True).lower() if unit_el else ""
+                if amount_m:
+                    value = float(amount_m.group(1))
+                    if unit.startswith("million"):
+                        value *= 1_000_000
+                    elif unit.startswith("thousand"):
+                        value *= 1_000
+                    next_jackpot_amount = str(int(value))
+
             return SingleResult(
                 draw_date=draw_date, numbers=numbers,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(), source_url=url,
+                next_draw_date=next_draw_date, next_jackpot_amount=next_jackpot_amount,
             )
         except Exception as e:  # noqa: BLE001
             last_err = e
