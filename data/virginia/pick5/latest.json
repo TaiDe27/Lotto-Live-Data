@@ -1,6 +1,23 @@
 [
   {
     "game": "Pick 5",
+    "draw_date": "2026-11-13",
+    "session": "day",
+    "digits": [
+      9,
+      5,
+      2,
+      2,
+      3
+    ],
+    "fireball": 8,
+    "next_draw_date": "2026-11-13",
+    "next_session": "night",
+    "fetched_at": "2026-11-13T19:26:52.931183+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/pick5"
+  },
+  {
+    "game": "Pick 5",
     "draw_date": "2026-11-12",
     "session": "night",
     "digits": [
