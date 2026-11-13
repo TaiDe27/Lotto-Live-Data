@@ -1,4 +1,11 @@
-"""Kentucky Cash Ball 225 — official API (gameNumber=13), real draw ~11pm ET daily."""
+"""Kentucky Cash Ball 225 — official API (gameNumber=13), real draw ~11pm ET daily.
+
+2026-11-13更新：同一个官方API，infoRequest 换成 "5"（不是抓历史结果用的"2"）会
+返回一个完全不同形状的响应，里面直接带 NEXT_DRAW_DATE 字段（实测确认：
+{"GAME_NUMBER":[13],"DRAW_DATE":[...],"GAME_NAME":["CASHBALL"],
+"NEXT_DRAW_DATE":[...]}）——不是自己按"每天开"推算出来的，是官方API自己返回的
+下一期日期，比猜排期更可靠。Cash Ball 225 顶奖是固定$225,000，不是滚存jackpot，
+这个游戏本来就没有 nextJackpot 的需求（跟现有 jackpot:none 配置一致）。"""
 
 import dataclasses
 import datetime as dt
@@ -28,6 +35,7 @@ class CashBallResult:
     bonus_number: Optional[int]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -35,6 +43,30 @@ class CashBallResult:
 
 def ms_to_iso_date(ms: int) -> str:
     return dt.datetime.fromtimestamp(ms / 1000, tz=dt.timezone.utc).strftime("%Y-%m-%d")
+
+
+def fetch_next_draw_date() -> Optional[str]:
+    """同一个官方API，infoRequest="5" 返回里直接带 NEXT_DRAW_DATE（一个单元素
+    列表），跟抓历史结果用的 infoRequest="2" 是两个不同形状的响应，不冲突。拿不到
+    时返回 None，不让这个失败影响主开奖结果抓取。"""
+    import requests
+
+    try:
+        resp = requests.post(
+            URL,
+            headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"},
+            json={"gameNumber": GAME_NUMBER, "infoRequest": "5"},
+            timeout=REQUEST_TIMEOUT_SEC,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        values = data.get("NEXT_DRAW_DATE")
+        if not values:
+            return None
+        return ms_to_iso_date(values[0])
+    except Exception as e:  # noqa: BLE001
+        log.warning("拿下一期开奖日期失败（不影响本期开奖结果的抓取）: %s", e)
+        return None
 
 
 def fetch() -> list[CashBallResult]:
@@ -66,6 +98,7 @@ def fetch() -> list[CashBallResult]:
                 bonus_number=bonus,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=URL,
+                next_draw_date=fetch_next_draw_date(),
             )
             return [result]
         except Exception as e:  # noqa: BLE001

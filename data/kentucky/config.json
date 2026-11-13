@@ -1647,7 +1647,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 23,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": {
           "field": "bonus_number",
