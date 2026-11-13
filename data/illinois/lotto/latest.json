@@ -1,6 +1,40 @@
 [
   {
     "game": "Lotto",
+    "draw_date": "2026-11-12",
+    "numbers": [
+      2,
+      7,
+      39,
+      41,
+      43,
+      49
+    ],
+    "bonus_number": 16,
+    "jackpot_amount": "2.9 Million",
+    "lotto_million_1": [
+      1,
+      4,
+      8,
+      10,
+      12,
+      31
+    ],
+    "lotto_million_2": [
+      15,
+      22,
+      39,
+      45,
+      46,
+      48
+    ],
+    "fetched_at": "2026-11-13T07:31:08.309288+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/lotto/",
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
+  },
+  {
+    "game": "Lotto",
     "draw_date": "2026-11-09",
     "numbers": [
       7,
@@ -28,10 +62,10 @@
       39,
       44
     ],
-    "fetched_at": "2026-11-10T10:02:56.976395+00:00",
+    "fetched_at": "2026-11-13T07:31:08.309965+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -62,10 +96,10 @@
       46,
       49
     ],
-    "fetched_at": "2026-11-10T10:02:56.976978+00:00",
+    "fetched_at": "2026-11-13T07:31:08.310574+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -96,10 +130,10 @@
       35,
       50
     ],
-    "fetched_at": "2026-11-10T10:02:56.977465+00:00",
+    "fetched_at": "2026-11-13T07:31:08.311240+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -130,10 +164,10 @@
       44,
       45
     ],
-    "fetched_at": "2026-11-10T10:02:56.977942+00:00",
+    "fetched_at": "2026-11-13T07:31:08.311922+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -164,10 +198,10 @@
       36,
       47
     ],
-    "fetched_at": "2026-11-10T10:02:56.978414+00:00",
+    "fetched_at": "2026-11-13T07:31:08.312570+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -198,10 +232,10 @@
       45,
       49
     ],
-    "fetched_at": "2026-11-10T10:02:56.978886+00:00",
+    "fetched_at": "2026-11-13T07:31:08.313217+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -232,10 +266,10 @@
       27,
       31
     ],
-    "fetched_at": "2026-11-10T10:02:56.979347+00:00",
+    "fetched_at": "2026-11-13T07:31:08.313875+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -266,10 +300,10 @@
       40,
       43
     ],
-    "fetched_at": "2026-11-10T10:02:56.979812+00:00",
+    "fetched_at": "2026-11-13T07:31:08.314510+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
@@ -300,10 +334,10 @@
       27,
       31
     ],
-    "fetched_at": "2026-11-10T10:02:56.980272+00:00",
+    "fetched_at": "2026-11-13T07:31:08.315167+00:00",
     "source_url": "https://www.lotteryusa.com/illinois/lotto/",
-    "next_draw_date": "2026-11-12",
-    "next_jackpot_amount": "$2.9 Million"
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": "$3.05 Million"
   },
   {
     "game": "Lotto",
