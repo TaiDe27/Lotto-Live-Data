@@ -98,6 +98,23 @@ def _parse_date_title(title: str, year_hint: int) -> str:
     return candidate.isoformat()
 
 
+def _parse_next_date_title(title: str, year_hint: int) -> "str | None":
+    """e.g. 'Next Drawing: Saturday, Nov 14' -> '2026-11-14' — the forward-looking counterpart of
+    `_parse_date_title` above: anchors to year_hint, bumping to year_hint+1 only on the Dec->Jan
+    rollover (if the parsed date would otherwise be more than a day in the PAST, since this text
+    always describes an upcoming draw, never a past one)."""
+    m = re.search(r"Next Drawing:\s*[A-Za-z]+,\s*([A-Za-z]{3,9})\s+(\d{1,2})", title)
+    if not m:
+        return None
+    month_name, day = m.group(1), int(m.group(2))
+    month = dt.datetime.strptime(month_name[:3], "%b").month
+    candidate = dt.date(year_hint, month, day)
+    today = dt.datetime.now(dt.timezone.utc).date()
+    if (today - candidate).days > 1:
+        candidate = dt.date(year_hint + 1, month, day)
+    return candidate.isoformat()
+
+
 def save_results(subdir: str, new_entries: list[dict], key_fields: tuple[str, ...]) -> Path:
     out_dir = OUTPUT_DIR / subdir
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -162,9 +179,11 @@ def fetch_mo_millions() -> dict:
     dp_nums, dp_bullseye = parse_numbers(double_play_item)
 
     next_jackpot = None
+    next_draw_date = None
     bottom = soup.select_one(".game-single-calendar__bottom")
     if bottom:
-        m = re.search(r"\$([\d.]+)\s*(Million|Thousand)?", bottom.get_text())
+        bottom_text = bottom.get_text()
+        m = re.search(r"\$([\d.]+)\s*(Million|Thousand)?", bottom_text)
         if m:
             value = float(m.group(1))
             unit = (m.group(2) or "").lower()
@@ -173,6 +192,7 @@ def fetch_mo_millions() -> dict:
             elif unit == "thousand":
                 value *= 1_000
             next_jackpot = int(value)
+        next_draw_date = _parse_next_date_title(bottom_text, today_year)
 
     fetched_at = dt.datetime.now(dt.timezone.utc).isoformat()
     return {
@@ -183,6 +203,7 @@ def fetch_mo_millions() -> dict:
         "double_play_numbers": dp_nums,
         "double_play_bullseye_number": dp_bullseye,
         "next_jackpot_amount": next_jackpot,
+        "next_draw_date": next_draw_date,
         "fetched_at": fetched_at,
         "source_url": "https://www.molottery.com/mo-millions/winning-numbers.do",
     }
@@ -210,9 +231,21 @@ def fetch_show_me_cash() -> dict:
     if len(nums) != 5:
         raise ValueError(f"应为5个号码，抓到 {len(nums)} 个: {nums}")
 
+    next_jackpot = None
+    next_draw_date = None
+    bottom = soup.select_one(".game-single-calendar__bottom")
+    if bottom:
+        bottom_text = bottom.get_text()
+        m = re.search(r"\$([\d,]+)", bottom_text)
+        if m:
+            next_jackpot = int(m.group(1).replace(",", ""))
+        next_draw_date = _parse_next_date_title(bottom_text, dt.datetime.now(dt.timezone.utc).year)
+
     return {
         "draw_date": draw_date,
         "numbers": nums,
+        "next_jackpot_amount": next_jackpot,
+        "next_draw_date": next_draw_date,
         "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "source_url": "https://www.molottery.com/show-me-cash/winning-numbers.do",
     }
