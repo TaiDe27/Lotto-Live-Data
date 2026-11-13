@@ -24,6 +24,19 @@
     "game": "the_numbers_game",
     "draw_date": "2026-11-12",
     "digits": [
+      1,
+      6,
+      9,
+      9
+    ],
+    "fetched_at": "2026-11-13T02:18:01.899474+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results",
+    "session": "evening"
+  },
+  {
+    "game": "the_numbers_game",
+    "draw_date": "2026-11-12",
+    "digits": [
       9,
       9,
       6,
