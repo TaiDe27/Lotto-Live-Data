@@ -63,9 +63,41 @@ class MnResult:
     next_jackpot_amount: Optional[int]
     fetched_at: str
     source_url: str
+    next_draw_date: Optional[str] = None  # yyyy-MM-dd
 
     def to_dict(self) -> dict:
         return dataclasses.asdict(self)
+
+
+def _resolve_mm_dd(month: str, day: str, after_iso_date: str) -> Optional[str]:
+    """"NEXT DRAWING"后面的"11/9 @ 6:17 PM CST"不带年份，用最近一期实际开奖日期
+    (after_iso_date，一定带年份)推断：按它的年份算出来的日期如果落在它之前或等于
+    它，说明跨年了，年份要+1。"""
+    try:
+        after_date = dt.date.fromisoformat(after_iso_date)
+        candidate = dt.date(after_date.year, int(month), int(day))
+        if candidate <= after_date:
+            candidate = dt.date(after_date.year + 1, int(month), int(day))
+        return candidate.isoformat()
+    except ValueError:
+        return None
+
+
+def _parse_next_draw_date(after_next_drawing: str, after_iso_date: str) -> Optional[str]:
+    """"NEXT DRAWING"标签后面跟的是"11/9 @ 6:17 PM CST"或"Today @ 6:17 PM CST"这种
+    文字（实测确认，2026-11-07/11-13，Gopher 5 / North 5 页面）。"Today"按抓取时的
+    UTC日期算（跟 lotteryusa_shared.py 的"Today"处理一样，容许一天以内的误差，这个
+    项目其它地方已经接受这个近似）。"""
+    m_mmdd = re.search(r"\b(\d{1,2})/(\d{1,2})\s*@", after_next_drawing)
+    if m_mmdd:
+        return _resolve_mm_dd(m_mmdd.group(1), m_mmdd.group(2), after_iso_date)
+    m_rel = re.search(r"\b(Today|Tomorrow)\b", after_next_drawing, re.IGNORECASE)
+    if m_rel:
+        today = dt.datetime.now(dt.timezone.utc).date()
+        if m_rel.group(1).lower() == "today":
+            return today.isoformat()
+        return (today + dt.timedelta(days=1)).isoformat()
+    return None
 
 
 def fetch_one(url: str, expected_count: int) -> MnResult:
@@ -101,9 +133,26 @@ def fetch_one(url: str, expected_count: int) -> MnResult:
             # somewhere above the date/RESULTS line, as the last "$amount" before it - not grabbing
             # the first "$..." found on the whole page, which could be an unrelated promo figure
             # further up in the header/nav.
+            #
+            # 2026-11-13 发现+修复: 原来的 r"\$([\d,]+)" 正则在真实的"$1.16 MILLION"
+            # 这种写法上会出真实bug——"."不在字符类里，只会匹配到小数点前的"1"，
+            # 把1.16M存成了"1"（亲眼在Gopher 5实际抓到的页面文本上confirmed）。
+            # North 5/Pick 5这类不到$1M的奖池页面上是纯"$27,000"这种整数写法，
+            # 之前凑巧没暴露这个bug。现在改成能同时处理两种写法，再统一换算成整数
+            # 美元存，不改变这个字段本来就是"存整数"的约定。
             before_results = text[:date_m.start()]
-            jackpot_matches = re.findall(r"\$([\d,]+)", before_results)
-            next_jackpot = int(jackpot_matches[-1].replace(",", "")) if jackpot_matches else None
+            jackpot_matches = list(re.finditer(r"\$([\d,]+(?:\.\d+)?)\s*(million|thousand)?", before_results, re.IGNORECASE))
+            next_jackpot = None
+            if jackpot_matches:
+                amount_str, unit = jackpot_matches[-1].groups()
+                value = float(amount_str.replace(",", ""))
+                if unit:
+                    value *= 1_000_000 if unit.lower() == "million" else 1_000
+                next_jackpot = int(round(value))
+
+            next_draw_date = None
+            if next_drawing_m:
+                next_draw_date = _parse_next_draw_date(after_results[next_drawing_m.end():], draw_date)
 
             return MnResult(
                 draw_date=draw_date,
@@ -111,6 +160,7 @@ def fetch_one(url: str, expected_count: int) -> MnResult:
                 next_jackpot_amount=next_jackpot,
                 fetched_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                 source_url=url,
+                next_draw_date=next_draw_date,
             )
         except Exception as e:  # noqa: BLE001
             last_err = e
