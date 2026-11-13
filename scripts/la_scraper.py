@@ -17,6 +17,7 @@ import dataclasses
 import datetime as dt
 import json
 import logging
+import re
 import time
 from pathlib import Path
 from typing import Optional
@@ -39,6 +40,49 @@ GAMES = [
     (5, "pick4", "Pick 4", 4, True),
     (6, "pick3", "Pick 3", 3, True),
 ]
+
+# 2026-11-13新增：这个页面顶部单独有一块"Latest Jackpots & Winning Numbers"卡片
+# 区(.win-summary，每个游戏一张卡)，跟下面按固定位置索引抓的历史表格(GAMES)是
+# 完全独立的两块DOM——这里明文写着"Next Draw: Saturday November 14, 2026"(带
+# 年份，不用像有些州那样推断)和"$1,000,000"+"Cash Prize"(Lotto/Easy 5都是这个
+# 标签，不是"Estimated Advertised Annuity Jackpot"——跟Powerball/Mega Millions
+# 不一样，Lotto/Easy 5 没有年金/现金二选一，这个数字本身就是一次性现金奖金，
+# 所以不设 next_cash_value，现有 cashValue:none 配置是对的)。按卡片里
+# figure>a 的 href 末尾 slug("lotto"/"easy-5")匹配到对应游戏。
+NEXT_DRAW_SLUG_TO_SUBDIR = {"lotto": "lotto", "easy-5": "easy5"}
+
+
+def parse_next_draw_cards(html: str) -> dict[str, dict]:
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(html, "html.parser")
+    out: dict[str, dict] = {}
+    for article in soup.select("article.win-summary"):
+        link = article.select_one(".win-summary__logo a")
+        href = link.get("href") if link else None
+        m = re.search(r"/draw-games/([a-z0-9-]+)/?", href or "")
+        if not m:
+            continue
+        subdir = NEXT_DRAW_SLUG_TO_SUBDIR.get(m.group(1))
+        if not subdir:
+            continue
+
+        next_draw_date = None
+        accent = article.select_one(".win-summary__accent")
+        if accent:
+            dm = re.search(r"([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})", accent.get_text(strip=True))
+            if dm:
+                month_name, day, year = dm.groups()
+                try:
+                    next_draw_date = dt.datetime.strptime(f"{month_name} {day} {year}", "%B %d %Y").date().isoformat()
+                except ValueError:
+                    next_draw_date = None
+
+        amount_el = article.select_one(".win-summary__amount em")
+        next_jackpot_amount = amount_el.get_text(strip=True) if amount_el else None
+
+        out[subdir] = {"next_draw_date": next_draw_date, "next_jackpot_amount": next_jackpot_amount}
+    return out
 
 
 def fetch_all() -> dict[str, list[dict]]:
@@ -65,6 +109,8 @@ def fetch_all() -> dict[str, list[dict]]:
     wraps = soup.select(".game-table__table-wrap")
     if len(wraps) < 7:
         raise ValueError(f"预期至少 7 个 game-table__table-wrap，实际只找到 {len(wraps)} 个 — 页面结构可能变了")
+
+    next_draw_by_subdir = parse_next_draw_cards(html)
 
     out: dict[str, list[dict]] = {}
     for idx, subdir, label, expected_count, is_digit_game in GAMES:
@@ -96,6 +142,12 @@ def fetch_all() -> dict[str, list[dict]]:
                 ("digits" if is_digit_game else "numbers"): numbers,
                 "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "source_url": URL,
             }
+            next_draw_info = next_draw_by_subdir.get(subdir)
+            if next_draw_info:
+                if next_draw_info.get("next_draw_date"):
+                    entry["next_draw_date"] = next_draw_info["next_draw_date"]
+                if next_draw_info.get("next_jackpot_amount"):
+                    entry["next_jackpot_amount"] = next_draw_info["next_jackpot_amount"]
             results.append(entry)
         out[subdir] = results
     return out
