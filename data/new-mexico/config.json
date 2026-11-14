@@ -565,7 +565,7 @@
       "buyTicketBaseURLs": {},
       "drawSchedule": "Monday, Wednesday and Saturday at approximately 11:30 PM Eastern Time, right after the main Powerball drawing.",
       "id": "powerball-double-play",
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
       "liveMapping": {
         "cachePath": "live/powerball-double-play/latest.json",
         "cashValue": {
@@ -1078,7 +1078,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1200,7 +1209,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 21,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1306,7 +1324,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 13,
+          "anchorMinute": 0,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,
@@ -1412,7 +1439,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/Denver",
+          "anchorHour": 21,
+          "anchorMinute": 30,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,

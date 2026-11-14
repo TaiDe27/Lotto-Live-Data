@@ -27,8 +27,18 @@ as the live products, so only those two are scraped here):
     jackpot-pool games: powerball/megamillions/hotlotto/lottoamerica/roadrunnercash/
     redhotjackpotbingo), and `GetDrawNumbersList` (its sibling endpoint, past-winning-numbers only)
     has no `pick3plus`/`pick4plus` keys either (only legacy `pick3`/`pick4`, already-drawn) — so
-    Pick 3 Plus/Pick 4 Plus genuinely have no live next-draw-date source anywhere on this site;
-    confirmed gap, left unmapped.
+    Pick 3 Plus/Pick 4 Plus genuinely have no live next-draw-date source anywhere on this site.
+
+2026-11-14 re-check: re-fetched nmlottery.com's own Pick 3 Plus/Pick 4 Plus game pages fresh (not
+just the webservices this module already checked) — reconfirmed no live next-draw date and no
+printed prize figures in the page's own HTML (its "Box"/"Prize" nav text is boilerplate, not actual
+numbers). The real fixed straight/box prizes ARE published (nmlottery.com's own "How to Play"
+subpages: Pick 3 Plus $500 straight/$160 3-way box/$80 6-way box; Pick 4 Plus $5,000 straight) and
+are already wired as this game's static `payoutTable` in config.json, not a live field — same class
+as every other fixed-prize digit game in this project. `next_draw_date`/`next_session` ARE now
+computed locally from the page's own confirmed fixed Day 1:00pm/Evening 9:30pm MT schedule (same
+times already in config.json's `drawDate` rule), since no live source for it exists anywhere on
+this site — same pattern as mo_scraper.py's own `compute_next_draw` for Pick 3/4.
 
 New Mexico observes Mountain Time WITH DST (`America/Denver`), unlike Arizona's fixed-offset zone.
 """
@@ -54,6 +64,28 @@ ROW_RE = re.compile(
     re.S,
 )
 BALL_RE = re.compile(r"<li>(\d+)</li>")
+
+# Pick 3 Plus/Pick 4 Plus's real confirmed fixed Day/Evening MT schedule (see module doc) — used to
+# compute `next_draw_date`/`next_session` locally since no live source for it exists on this site.
+from zoneinfo import ZoneInfo  # noqa: E402
+
+MOUNTAIN_TZ = ZoneInfo("America/Denver")
+PLUS_DAY_TIME = dt.time(13, 0)
+PLUS_EVENING_TIME = dt.time(21, 30)
+
+
+def compute_next_plus_draw(now_mt: dt.datetime) -> tuple[str, str]:
+    """Same two-session next-draw style as mo_scraper.py's `compute_next_draw`, with this game's
+    own real session labels ("DAY"/"EVE", matching this widget's own `<h3>` text and config.json's
+    `sessionFilter`)."""
+    today = now_mt.date()
+    day_dt = dt.datetime.combine(today, PLUS_DAY_TIME, tzinfo=MOUNTAIN_TZ)
+    evening_dt = dt.datetime.combine(today, PLUS_EVENING_TIME, tzinfo=MOUNTAIN_TZ)
+    if now_mt < day_dt:
+        return today.isoformat(), "DAY"
+    if now_mt < evening_dt:
+        return today.isoformat(), "EVE"
+    return (today + dt.timedelta(days=1)).isoformat(), "DAY"
 
 
 def _get(url: str) -> str:
@@ -151,9 +183,13 @@ def save_results(subdir: str, new_entries: list[dict], key_fields: tuple[str, ..
 def main():
     errors = []
 
+    plus_next_draw_date, plus_next_session = compute_next_plus_draw(dt.datetime.now(MOUNTAIN_TZ))
     for subdir, game_id in [("pick3plus", "pick3plus"), ("pick4plus", "pick4plus")]:
         try:
             rows = fetch_rows(game_id)
+            for row in rows:
+                row["next_draw_date"] = plus_next_draw_date
+                row["next_session"] = plus_next_session
             save_results(subdir, rows, ("draw_date", "session"))
             log.info("%s: 最新一条 %s", subdir, rows[0])
         except Exception as e:  # noqa: BLE001

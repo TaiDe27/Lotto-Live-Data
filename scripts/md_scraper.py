@@ -22,6 +22,16 @@ Output field shapes (draw_date/session/digits for digit games, draw_date/numbers
 pool games, draw_date/session/numbers for Cash POP) are kept IDENTICAL to the original
 lotteryusa.com-sourced scraper so the Swift side's `liveMapping`/hardcoded-fallback field names
 don't need to change for Pick 3/4/5/Bonus Match 5/Multi-Match — only Cash POP is new.
+
+2026-11-14 re-check: re-fetched mdlottery.com/games/bonus-match-5/ fresh — reconfirmed it still has
+no next-drawing element and no stated top-prize dollar figure anywhere on the page itself (same as
+the original 2026-11-11 finding, not a stale read). But Bonus Match 5's real top prize is a FIXED
+$50,000 (cross-checked across 3 independent lottery aggregators — us-lotteries.com/lottoedge.com/
+thelotterylab.com — plus lotteryusa.com's own page, which also independently states "$50,000" and a
+next-draw time matching this game's known nightly 7:56 PM ET schedule) — same class of fix as Maine
+Gimme 5's fixed $100k. Wired as a constant `next_jackpot_amount`, with `next_draw_date` computed
+locally from the confirmed fixed daily 7:56 PM ET schedule (mirrors mi_scraper.py's single-session
+`next_draw_date` helper for Poker Lotto) since mdlottery.com's own page has no live field for it.
 """
 import dataclasses
 import datetime as dt
@@ -31,6 +41,7 @@ import re
 import time
 from pathlib import Path
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("md_scraper")
@@ -69,6 +80,21 @@ SESSION_BY_HOUR_LABEL = {
     "6 P.M.": "evening",
     "11 P.M.": "latenight",
 }
+
+# Bonus Match 5's real top prize is a fixed, non-progressive $50,000 (confirmed 2026-11-14, see
+# module doc) — not a live-changing jackpot, so this is a constant, not something fetched per-run.
+BONUS_MATCH5_FIXED_JACKPOT = 50_000
+BONUS_MATCH5_DRAW_TIME = dt.time(19, 56)  # nightly 7:56 PM ET, confirmed from mdlottery.com's own page
+
+
+def _next_draw_date_single_session(tz_name: str, draw_time: dt.time) -> str:
+    """Single-draw-per-day games only: if local now is before today's draw time, next draw is
+    today (hasn't happened yet); otherwise it's tomorrow. Same helper shape as
+    mi_scraper.py's `next_draw_date` for Poker Lotto."""
+    now_local = dt.datetime.now(ZoneInfo(tz_name))
+    if now_local.time() < draw_time:
+        return now_local.date().isoformat()
+    return (now_local.date() + dt.timedelta(days=1)).isoformat()
 
 
 def iso_date(raw: str) -> str:
@@ -174,7 +200,14 @@ def _next_drawing_mmdd(soup) -> "str | None":
 def fetch_pool(slug: str, label: str, main_count: int, has_bonus: bool) -> list[dict]:
     url = f"https://www.mdlottery.com/games/{slug}/"
     soup = _fetch_soup(url)
-    next_draw_date = _next_drawing_mmdd(soup) if slug == "multi-match" else None
+    if slug == "multi-match":
+        next_draw_date = _next_drawing_mmdd(soup)
+    elif slug == "bonus-match-5":
+        # No next-drawing element on this page (re-confirmed 2026-11-14) — computed locally from
+        # the known fixed nightly schedule instead. See module doc.
+        next_draw_date = _next_draw_date_single_session("America/New_York", BONUS_MATCH5_DRAW_TIME)
+    else:
+        next_draw_date = None
     block = soup.select_one(f".single-winning-numbers.{slug}")
     if not block:
         log.warning("%s: block not found", slug)
@@ -209,6 +242,8 @@ def fetch_pool(slug: str, label: str, main_count: int, has_bonus: bool) -> list[
     }
     if has_bonus:
         entry["bonus_number"] = bonus_number
+    if slug == "bonus-match-5":
+        entry["next_jackpot_amount"] = BONUS_MATCH5_FIXED_JACKPOT
     return [entry]
 
 

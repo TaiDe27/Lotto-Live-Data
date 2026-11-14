@@ -23,6 +23,16 @@ Swift — `MatchRule.Kind.bullseyeMatch`):
 Club Keno (4-minute draws, confirmed from molottery.com's own game rules page: "drawings ... take
 place at four-minute intervals, daily from 5:04 a.m. to 1:52 a.m.") is deliberately NOT built —
 ~260 draws/day, far over this project's standing "≤10 draws/day" cutoff.
+
+2026-11-14 re-check: re-fetched molottery.com/cash-pop/winning-numbers.do fresh (full page, not
+just the `.game-single-calendar__bottom` element the prior pass looked at) — reconfirmed it
+genuinely has no next-drawing text anywhere on the page (no "Next Drawing"/date string of any
+kind), and Cash Pop's prize is a random per-ticket multiplier per standing project policy, so no
+jackpot field either. `next_draw_date` IS now computed locally from the confirmed fixed 5-session
+schedule (Early Bird 8am/Late Morning 11am/Matinee 3pm/Prime Time 7pm/Night Owl 11pm CT, same times
+already in this module's own doc comment above and independently cross-checked against
+lotteryusa.com) — same pattern as this file's own `compute_next_draw` for Pick 3/4, just extended to
+5 sessions instead of 2.
 """
 import dataclasses
 import datetime as dt
@@ -64,6 +74,27 @@ def compute_next_draw(now_ct: dt.datetime, midday_time: dt.time, evening_time: d
     if now_ct < evening_dt:
         return today.isoformat(), "evening"
     return (today + dt.timedelta(days=1)).isoformat(), "midday"
+
+
+# Cash Pop's 5 real CT session times, confirmed from molottery.com's own game rules page (see module
+# doc) and independently cross-checked against lotteryusa.com's own listing of the same 5 times.
+CASHPOP_SESSION_TIMES: list[tuple[str, dt.time]] = [
+    ("early_bird", dt.time(8, 0)),
+    ("late_morning", dt.time(11, 0)),
+    ("matinee", dt.time(15, 0)),
+    ("prime_time", dt.time(19, 0)),
+    ("night_owl", dt.time(23, 0)),
+]
+
+
+def compute_next_cash_pop_draw(now_ct: dt.datetime) -> tuple[str, str]:
+    """Same style as `compute_next_draw` above, extended from 2 sessions to Cash Pop's 5."""
+    today = now_ct.date()
+    for session, t in CASHPOP_SESSION_TIMES:
+        session_dt = dt.datetime.combine(today, t, tzinfo=CENTRAL_TZ)
+        if now_ct < session_dt:
+            return today.isoformat(), session
+    return (today + dt.timedelta(days=1)).isoformat(), CASHPOP_SESSION_TIMES[0][0]
 
 
 def _get(url: str):
@@ -374,11 +405,15 @@ def fetch_cash_pop() -> list[dict]:
                   len(results), [r[0] for r in results])
 
     fetched_at = dt.datetime.now(dt.timezone.utc).isoformat()
+    next_draw_date, next_session = compute_next_cash_pop_draw(dt.datetime.now(CENTRAL_TZ))
     return [
         # `numbers` wraps the single drawn number in a 1-element array, matching every other Cash
         # POP state's scraper convention (`RemoteGameConfigInterpreter.intArray`'s numeric shape
-        # expects an array field, not a bare scalar).
-        {"draw_date": draw_date, "session": session, "numbers": [number], "fetched_at": fetched_at, "source_url": url}
+        # expects an array field, not a bare scalar). `next_draw_date`/`next_session` are computed
+        # locally from the confirmed fixed 5-session schedule (re-checked 2026-11-14: the page
+        # itself has no live next-drawing field) — same as Pick 3/4's `compute_next_draw` above.
+        {"draw_date": draw_date, "session": session, "numbers": [number], "fetched_at": fetched_at,
+         "source_url": url, "next_draw_date": next_draw_date, "next_session": next_session}
         for session, number in results
     ]
 

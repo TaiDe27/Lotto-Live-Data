@@ -565,7 +565,7 @@
       "buyTicketBaseURLs": {},
       "drawSchedule": "Monday, Wednesday and Saturday at approximately 11:30 PM Eastern Time, right after the main Powerball drawing.",
       "id": "powerball-double-play",
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
       "liveMapping": {
         "cachePath": "live/powerball-double-play/latest.json",
         "cashValue": {
@@ -840,7 +840,7 @@
         "verifiedAgainstRealTicket": true
       },
       "overallOddsText": "Overall Odds: 1 in 12.16",
-      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing — this app always shows the standard amount, not a live pari-mutuel recalculation.",
+      "payoutNote": "$5 per play. Prizes for 4-7 of 8 matches are the standard listed amount (powerball.com/xo-prize-chart); lower-tier prizes may become pari-mutuel in some circumstances, so the actual amount paid can be less on a given drawing \u2014 this app always shows the standard amount, not a live pari-mutuel recalculation.",
       "payoutTable": [
         {
           "basePrize": null,
@@ -956,7 +956,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1082,7 +1082,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1224,7 +1224,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1368,7 +1368,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1512,7 +1512,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1656,7 +1656,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1790,7 +1790,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": 56,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": {
           "field": "bonus_number",
@@ -1815,9 +1824,9 @@
           "guardField": null
         },
         "nextJackpot": {
-          "source": "none",
-          "field": null,
-          "moneyFormat": null,
+          "source": "directField",
+          "field": "next_jackpot_amount",
+          "moneyFormat": "decimal",
           "guardField": null
         },
         "nextCashValue": {
@@ -1958,7 +1967,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Cash POP is not a \"match count\" game: you choose any number of the 15 numbers to play (1 up to all 15), one number is drawn, and you win if the drawn number is among your chosen set. Maryland lets you wager $1, $2, $5, or $10 per POP (confirmed from the official Maryland Lottery How-to-Play page) and the dollar prize is NOT determined by how many numbers you chose or your wager amount alone — it's a random multiplier assigned per ticket at play time, which this app has no way to know from the public draw results alone. The exact multiplier/odds reference table for Maryland specifically was not located and is deliberately left blank here rather than guessed or copied from another state's table; the app can only tell you whether your number matched, not your exact prize.",
+      "payoutNote": "Cash POP is not a \"match count\" game: you choose any number of the 15 numbers to play (1 up to all 15), one number is drawn, and you win if the drawn number is among your chosen set. Maryland lets you wager $1, $2, $5, or $10 per POP (confirmed from the official Maryland Lottery How-to-Play page) and the dollar prize is NOT determined by how many numbers you chose or your wager amount alone \u2014 it's a random multiplier assigned per ticket at play time, which this app has no way to know from the public draw results alone. The exact multiplier/odds reference table for Maryland specifically was not located and is deliberately left blank here rather than guessed or copied from another state's table; the app can only tell you whether your number matched, not your exact prize.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,

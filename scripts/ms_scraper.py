@@ -8,6 +8,14 @@ winning numbers server-side, confirmed by curling each page with a plain browser
   - /games/mm5/ (Mississippi Match 5 — NOT a guessable "/games/match-5/" slug, which 404s; the real
     page was found via the "mm5"/"csh3"/"csh4"/"cpop" game codes used by mslottery.com's own
     "Past Drawings" links): `.match5winnumbers-wrap`, single daily session, no Fireball.
+
+2026-11-14 re-check: re-fetched mslottery.com/games/cash-pop/ fresh (full page) — its own text reads
+"You can choose the day (2:30 p.m.) or evening (9:30 p.m.) drawings" — the EXACT same two CT times
+as Cash 3/Cash 4 above (`CASH34_MIDDAY_TIME`/`CASH34_EVENING_TIME`), confirmed directly, not assumed
+from the shared page template. No live next-drawing field or jackpot on the page itself (Cash Pop's
+prize is a random per-ticket multiplier per standing project policy, so no jackpot field regardless)
+— `next_draw_date`/`next_session` are now stamped onto cashpop entries too, reusing the SAME
+`cash34_next_draw` tuple `main()` already computes for Cash 3/Cash 4, rather than duplicating it.
 """
 import dataclasses
 import datetime as dt
@@ -280,7 +288,9 @@ def main():
     try:
         results = fetch_session_game("https://www.mslottery.com/games/cash-pop/", "cashpopwinnumbers-wrap", has_fireball=False)
         log.info("cashpop: %s", [r.to_dict() for r in results])
-        save_session_results("cashpop", results)
+        # 2026-11-14: Cash Pop's own page confirms the same 2:30pm/9:30pm CT schedule as Cash 3/4 —
+        # reuse the same computed next-draw tuple instead of leaving this one game without it.
+        save_session_results("cashpop", results, next_draw=cash34_next_draw)
     except Exception as e:  # noqa: BLE001
         log.error("cashpop 失败: %s", e)
         errors.append(("cashpop", e))

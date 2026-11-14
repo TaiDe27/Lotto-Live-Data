@@ -565,7 +565,7 @@
       "buyTicketBaseURLs": {},
       "drawSchedule": "Monday, Wednesday and Saturday at approximately 11:30 PM Eastern Time, right after the main Powerball drawing.",
       "id": "powerball-double-play",
-      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize — unlike the main Powerball drawing, it does not roll over and grow.",
+      "jackpotDescription": "Double Play's top prize is a fixed $10 million cash prize \u2014 unlike the main Powerball drawing, it does not roll over and grow.",
       "liveMapping": {
         "cachePath": "live/powerball-double-play/latest.json",
         "cashValue": {
@@ -952,7 +952,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1091,7 +1091,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1232,7 +1232,7 @@
       "buyTicketBaseURLs": {},
       "jackpotDescription": null,
       "overallOddsText": null,
-      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures — confirm against the state's real prize chart before trusting exact dollar amounts.",
+      "payoutNote": "Prizes shown use this app's standard Pick-game prize table pending this state's own exact published figures \u2014 confirm against the state's real prize chart before trusting exact dollar amounts.",
       "powerPlay": null,
       "doublePlay": null,
       "multiplierLabel": null,
@@ -1570,7 +1570,16 @@
           "anchorHourBySession": null,
           "sessionField": null
         },
-        "nextDrawDate": null,
+        "nextDrawDate": {
+          "field": "next_draw_date",
+          "dateFormat": "yyyy-MM-dd",
+          "truncateToLength": null,
+          "timeZoneIdentifier": "America/New_York",
+          "anchorHour": 19,
+          "anchorMinute": 29,
+          "anchorHourBySession": null,
+          "sessionField": null
+        },
         "mainNumbersField": "numbers",
         "specialNumbers": null,
         "winningTeamsField": null,

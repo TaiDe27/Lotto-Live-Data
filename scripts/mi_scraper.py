@@ -37,6 +37,19 @@ every day of the week, no skipped days). Michigan is genuinely Eastern Time (Ame
 a copy-paste from another state — double-checked, not assumed. No `next_session` field: single
 daily draw, no sessions. Computed locally in Python (no official next-draw-date API for this game),
 following the field-naming shape already used by az_pick3_scraper.py's `next_draw_date`.
+
+2026-11-14: Daily Keno was never actually assessed for a schedule until now (its own GraphQL query
+above only ever returned winning numbers, no next-draw info). Checked two independent sources
+(michiganlotterynumbers.com's own drawing schedule + lottery.net's Michigan Keno page): Daily Keno
+draws exactly ONCE per day, at 7:29 p.m. ET — the SAME nightly draw event as Poker Lotto/the Daily
+3/4/5 evening session, sales closing 7:08 p.m. — not the much-higher-frequency Club Keno this
+project deliberately excludes (see the 2026-10-14 note above; this is genuinely the once-daily game,
+confirmed, not a guess). Well under the standing "≤10 draws/day" cutoff, so `next_draw_date` is now
+wired the same way as Poker Lotto, reusing the same `next_draw_date(tz_name, draw_time)` helper and
+the same `POKER_LOTTO_TZ`/`POKER_LOTTO_DRAW_TIME` constants (same timezone, same exact clock time —
+not a coincidence, Michigan runs these as one combined nightly drawing). Fixed top prize ($250,000,
+per Michigan's own prize chart) is already wired app-side as a static `payoutTable` entry, not a
+live field — same as Poker Lotto's $100,000, no live jackpot lookup needed.
 """
 import dataclasses
 import datetime as dt
@@ -171,7 +184,10 @@ def fetch_keno_real() -> list[dict]:
         log.warning("[DAILY_KENO] 没有可用数据，跳过本次")
         return []
     today = now.date().isoformat()
+    # 2026-11-14: confirmed once-daily, same 7:29 p.m. ET nightly draw event as Poker Lotto (see
+    # module doc) — reuses that same helper/constants rather than duplicating them.
     return [{"game": "Keno", "draw_date": today, "numbers": wn["drawNumbers"],
+              "next_draw_date": next_draw_date(POKER_LOTTO_TZ, POKER_LOTTO_DRAW_TIME),
               "fetched_at": now.isoformat(), "source_url": GRAPHQL_URL}]
 
 

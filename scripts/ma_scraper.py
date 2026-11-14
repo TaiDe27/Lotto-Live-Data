@@ -11,6 +11,18 @@ surfaces Mega Millions/Powerball/Megabucks/Mass 3/Mass 4/The Numbers Game/Mass C
 Millionaire for Life/mega_millions in the confirmed sample. Megabucks here is Massachusetts' OWN
 6/44 game — distinct from Maine/NH/VT's shared "Tri-State Megabucks Plus" (not the same game,
 despite the similar name — do not merge these two game catalogs).
+
+2026-11-13 re-check: re-fetched this same API fresh — mass_cash is STILL genuinely absent from
+`estimatedJackpot` (reconfirmed, not a stale earlier read). But Mass Cash's real top prize is a
+FIXED $100,000 (confirmed via masslottery.com's own game description + corroborated independently
+by lotteryusa.com/jackpot.com/lottery.net: "$100,000 top prize... fixed... does not roll over") —
+same class of fix as Maine Gimme 5's fixed $100k. Wired as a constant `next_jackpot_amount` on every
+mass_cash entry. No cash-option field: this is a single lump-sum prize, not an annuity, so there is
+no separate cash value to report. `next_draw_date` is computed locally from the confirmed fixed
+2:00 PM / 9:00 PM ET schedule (same `drawSchedule` already in config.json) — the live API has no
+forward-looking field for this game, so this mirrors mo_scraper.py's/ms_scraper.py's existing
+`compute_next_draw`-for-known-fixed-schedule pattern rather than guessing a live source that
+doesn't exist.
 """
 import dataclasses
 import datetime as dt
@@ -18,6 +30,7 @@ import json
 import logging
 import time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("ma_scraper")
@@ -37,6 +50,25 @@ OWN_GAMES = {
     "mass_cash": "masscash",
     "megabucks": "megabucks",
 }
+
+# Mass Cash's real top prize is a fixed, non-progressive $100,000 (confirmed 2026-11-13, see module
+# doc) — not a live-changing jackpot, so this is a constant, not something fetched per-run.
+MASSCASH_FIXED_JACKPOT = 100_000
+EASTERN_TZ = ZoneInfo("America/New_York")
+MASSCASH_MIDDAY_TIME = dt.time(14, 0)
+MASSCASH_EVENING_TIME = dt.time(21, 0)
+
+
+def _compute_next_two_session_draw(now_local: dt.datetime, midday_time: dt.time, evening_time: dt.time) -> str:
+    """Same two-session next-draw logic as mo_scraper.py's/ms_scraper.py's `compute_next_draw`,
+    returning just the ISO date string (Mass Cash's session is already implied by the subdir this
+    caller writes to, unlike those digit games which tag `next_session` onto the entry too)."""
+    today = now_local.date()
+    midday_dt = dt.datetime.combine(today, midday_time, tzinfo=now_local.tzinfo)
+    evening_dt = dt.datetime.combine(today, evening_time, tzinfo=now_local.tzinfo)
+    if now_local < midday_dt or now_local < evening_dt:
+        return today.isoformat()
+    return (today + dt.timedelta(days=1)).isoformat()
 
 
 def fetch() -> dict:
@@ -122,6 +154,15 @@ def main():
                 entry["next_jackpot_amount"] = next_draw["estimatedJackpotUSD"]
             if next_draw.get("estimatedCashOptionUSD") is not None:
                 entry["next_cash_value"] = next_draw["estimatedCashOptionUSD"]
+        elif gid == "mass_cash":
+            # Re-confirmed 2026-11-13: mass_cash is genuinely still absent from estimatedJackpot
+            # (re-fetched fresh, not trusting the earlier read) — but its real top prize is a fixed
+            # $100,000 and its draw schedule is a known fixed 2:00 PM / 9:00 PM ET, so both are
+            # computed/constant here instead of left empty. See module doc.
+            entry["next_jackpot_amount"] = MASSCASH_FIXED_JACKPOT
+            entry["next_draw_date"] = _compute_next_two_session_draw(
+                dt.datetime.now(EASTERN_TZ), MASSCASH_MIDDAY_TIME, MASSCASH_EVENING_TIME
+            )
         buckets.setdefault(subdir, []).append(entry)
 
     for subdir, entries in buckets.items():
