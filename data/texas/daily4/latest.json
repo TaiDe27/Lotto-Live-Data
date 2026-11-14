@@ -141,6 +141,20 @@
   },
   {
     "draw_date": "2026-11-13",
+    "session": "evening",
+    "numbers": [
+      5,
+      3,
+      7,
+      8
+    ],
+    "fireball": 5,
+    "next_draw_date": "2026-11-14",
+    "fetched_at": "2026-11-14T16:23:42.012281+00:00",
+    "source_url": "https://www.texaslottery.com/"
+  },
+  {
+    "draw_date": "2026-11-13",
     "session": "day",
     "numbers": [
       0,
