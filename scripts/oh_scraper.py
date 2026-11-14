@@ -41,18 +41,41 @@ standing "≤10 draws/day" cutoff, same class as Missouri's Club Keno).
 this field isn't visible from `Draws` alone) that it is only genuinely POPULATED for `rollingcash5`;
 `ClassicLotto`, `Pick3`, `Pick4`, and `Pick5` all return the literal .NET null-date sentinel
 "0001-01-01T00:00:00" for this field — a real gap on ohiolottery.com's own data, not a scraping
-gap, so those five stay without next-draw-date capture. No jackpot/next-jackpot-estimate field was
-found anywhere in the non-Draws payload for any game (Rolling Cash 5's only jackpot-adjacent figure
-is each past draw's own `PrizePool`, which is the AWARDED amount for that already-drawn jackpot, not
-a forward-looking next-draw estimate — using it as such would require re-deriving pari-mutuel
-rollover math this project doesn't model, so nextJackpot/nextCashValue stay "none" for Rolling
-Cash 5 too).
+gap, so those five stay without next-draw-date capture from this source. No jackpot/next-jackpot-
+estimate field was found anywhere in the non-Draws payload for any game (Rolling Cash 5's only
+jackpot-adjacent figure is each past draw's own `PrizePool`, which is the AWARDED amount for that
+already-drawn jackpot, not a forward-looking next-draw estimate — using it as such would require
+re-deriving pari-mutuel rollover math this project doesn't model, so nextJackpot/nextCashValue stay
+"none" for Rolling Cash 5 too).
+
+2026-11-13 update (Classic Lotto + Pick 3/4/5 next-draw wiring): re-confirmed the above gap is
+still live today (production `latest.json` for classic-lotto/pick3/pick4/pick5 fetched via the real
+`scrape-oh.yml` run this morning carries no `next_draw_date`, while the same run's rolling-cash5
+entry does) — ohiolottery.com itself is also presently behind an active Cloudflare "Attention
+Required!" challenge from this machine's network path (both a direct `requests` call and a separate
+fetch-tool call got 403"ed), so no fresh fetch of it was possible this round; relying on that
+same-day production snapshot as the live check instead of a redundant fetch.
+  - Classic Lotto: it DOES have a real jackpot (unlike the digit games) and IS covered by
+    lotteryusa.com's `.c-state-short-info` "Next draw" widget (confirmed live via
+    `lu.parse_next_draw_info` just now: "Next Draw Date: Tomorrow, Nov 14, 2026" / "Next est.
+    jackpot $5.5 Million" — correctly Mon/Wed/Sat-aware, Nov 13 2026 is a Friday) — the same widget
+    NJ/NC already lean on via this shared helper for their own ohiolottery.com-shaped gaps. No
+    cash-value row exists on lotteryusa.com for any game (see `lotteryusa_shared.parse_next_draw_info`'s
+    own docstring), so Classic Lotto's nextCashValue stays "none".
+  - Pick 3/4/5 (all three, both sessions): digit games have no jackpot concept, and the official
+    source still doesn't carry next-draw-date — but the real schedule is fixed and already confirmed
+    in this module's text above ("midday draw is at 12:29 p.m. and the evening draw is at 7:29 p.m.
+    ... every day"), so `next_session_draw_date()` below computes each session's own next
+    occurrence deterministically instead of scraping it (each session saved to its own
+    `latest.json`, so no shared/session-lookup value is needed — simpler than
+    `il_pick3_scraper.py`/`in_shared.py.next_draw()`'s single-shared-file session split).
 """
 import datetime as dt
 import json
 import logging
 import re
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -65,6 +88,16 @@ OUTPUT_DIR = Path("data") / "ohio"
 MAX_HISTORY = 100
 DRAW_GAMES_URL = "https://www.ohiolottery.com/games/draw-games"
 MIDDAY_HOUR_CUTOFF = 15  # ImportedOn hour < this => midday session, else evening
+
+CLASSIC_LOTTO_LOTTERYUSA_URL = "https://www.lotteryusa.com/ohio/classic-lotto/"
+
+# Pick 3/4/5 share one fixed daily schedule, confirmed on lotteryusa.com's own Ohio game pages:
+# "the midday draw is at 12:29 p.m. and the evening draw is at 7:29 p.m." — every day, no days
+# skipped (the module docstring's small Saturday-evening Cash Explosion shift is already-accepted
+# slop, same tolerance this project gives similar minor variances elsewhere).
+OH_TZ = ZoneInfo("America/New_York")
+DIGIT_MIDDAY_DRAW_TIME = dt.time(12, 29)
+DIGIT_EVENING_DRAW_TIME = dt.time(19, 29)
 
 
 def save_results(subdir: str, new_entries: list[dict]) -> Path:
@@ -117,10 +150,34 @@ def next_draw_date(game: dict) -> "str | None":
     return raw.split("T")[0]
 
 
-def extract_pool_game(game: dict, include_next_draw_date: bool = False) -> list[dict]:
+def fetch_classic_lotto_next_draw_info() -> dict:
+    """Classic Lotto's official-source `NextDrawDate` is the confirmed .NET null-date sentinel (see
+    `next_draw_date()` above), and no jackpot/next-jackpot field exists anywhere in the cmsNumbers
+    payload for any game (module docstring). Unlike the digit games, Classic Lotto DOES have a real
+    growing jackpot, and lotteryusa.com's `.c-state-short-info` "Next draw" widget on its own
+    Classic Lotto page carries both pieces (verified live 2026-11-13, see module docstring's
+    2026-11-13 update) — reusing the same `lu.parse_next_draw_info` helper NJ/NC already lean on for
+    their own ohiolottery.com-shaped gaps. Returns
+    {"next_draw_date": "yyyy-MM-dd" | None, "next_jackpot_amount": raw "$X" text | None}; failure to
+    fetch degrades to both None rather than raising, so a lotteryusa.com hiccup doesn't also take
+    down Classic Lotto's own real draw-history save."""
+    try:
+        html = lu.fetch_html(CLASSIC_LOTTO_LOTTERYUSA_URL)
+    except Exception as e:  # noqa: BLE001
+        log.warning("classic-lotto 的 lotteryusa.com next-draw 信息抓取失败: %s", e)
+        return {"next_draw_date": None, "next_jackpot_amount": None}
+    return lu.parse_next_draw_info(html)
+
+
+def extract_pool_game(
+    game: dict,
+    include_next_draw_date: bool = False,
+    extra_next_draw_date: "str | None" = None,
+    extra_next_jackpot_amount: "str | None" = None,
+) -> list[dict]:
     out = []
     now = dt.datetime.now(dt.timezone.utc).isoformat()
-    next_date = next_draw_date(game) if include_next_draw_date else None
+    next_date = next_draw_date(game) if include_next_draw_date else extra_next_draw_date
     for draw in game.get("Draws") or []:
         entry = {
             "draw_date": to_draw_date(draw), "numbers": draw_values(draw),
@@ -128,13 +185,34 @@ def extract_pool_game(game: dict, include_next_draw_date: bool = False) -> list[
         }
         if next_date:
             entry["next_draw_date"] = next_date
+        if extra_next_jackpot_amount:
+            entry["next_jackpot_amount"] = extra_next_jackpot_amount
         out.append(entry)
     return out
+
+
+def next_session_draw_date(draw_time: dt.time, now: "dt.datetime | None" = None) -> str:
+    """Single-session-per-day next draw date: if local (Eastern) now is before today's draw time,
+    the next draw is today; otherwise it's tomorrow. Mirrors `mi_scraper.py`'s own
+    `next_draw_date()` helper for single-draw-per-day games — applied here once per Pick 3/4/5
+    SESSION (not once for the combined midday+evening schedule): unlike AZ/IL's one-shared-file-
+    plus-sessionFilter approach, Ohio's own `save_results` already writes midday and evening to two
+    separate `latest.json` files, so each file's own "next draw" must always be a same-session
+    occurrence — stamping a single shared "whichever session comes next" value onto both files
+    would wrongly tell the midday file its next draw is tonight's evening draw (or vice versa)."""
+    now = dt.datetime.now(OH_TZ) if now is None else now.astimezone(OH_TZ)
+    today = now.date()
+    draw_dt = dt.datetime.combine(today, draw_time, tzinfo=OH_TZ)
+    if now < draw_dt:
+        return today.isoformat()
+    return (today + dt.timedelta(days=1)).isoformat()
 
 
 def extract_digit_game_split(game: dict) -> tuple[list[dict], list[dict]]:
     midday, evening = [], []
     now = dt.datetime.now(dt.timezone.utc).isoformat()
+    next_midday_date = next_session_draw_date(DIGIT_MIDDAY_DRAW_TIME)
+    next_evening_date = next_session_draw_date(DIGIT_EVENING_DRAW_TIME)
     for draw in game.get("Draws") or []:
         entry = {
             "draw_date": to_draw_date(draw), "digits": draw_values(draw),
@@ -142,16 +220,26 @@ def extract_digit_game_split(game: dict) -> tuple[list[dict], list[dict]]:
         }
         imported_on = draw.get("ImportedOn") or ""
         hour = int(imported_on.split("T")[1].split(":")[0]) if "T" in imported_on else 12
-        (midday if hour < MIDDAY_HOUR_CUTOFF else evening).append(entry)
+        if hour < MIDDAY_HOUR_CUTOFF:
+            entry["next_draw_date"] = next_midday_date
+            midday.append(entry)
+        else:
+            entry["next_draw_date"] = next_evening_date
+            evening.append(entry)
     return midday, evening
 
 
 def main():
     errors = []
     games_by_id = {g["StringIdentifier"]: g for g in fetch_cms_numbers()}
+    classic_lotto_next_info = fetch_classic_lotto_next_draw_info()
 
     jobs = [
-        ("classic-lotto", lambda: extract_pool_game(games_by_id["ClassicLotto"])),
+        ("classic-lotto", lambda: extract_pool_game(
+            games_by_id["ClassicLotto"],
+            extra_next_draw_date=classic_lotto_next_info.get("next_draw_date"),
+            extra_next_jackpot_amount=classic_lotto_next_info.get("next_jackpot_amount"),
+        )),
         ("rolling-cash5", lambda: extract_pool_game(games_by_id["rollingcash5"], include_next_draw_date=True)),
     ]
     for subdir, fn in jobs:
