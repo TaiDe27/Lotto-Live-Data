@@ -10,9 +10,25 @@
       8
     ],
     "superball": 1,
-    "next_draw_date": "2026-11-13",
-    "next_session": "evening",
-    "fetched_at": "2026-11-13T19:23:14.012444+00:00",
+    "next_draw_date": "2026-11-14",
+    "next_session": "midday",
+    "fetched_at": "2026-11-14T05:24:05.337685+00:00",
+    "source_url": "https://www.hoosierlottery.com/games/draw/daily-4/"
+  },
+  {
+    "game": "Daily 4",
+    "draw_date": "2026-11-13",
+    "session": "evening",
+    "digits": [
+      4,
+      4,
+      0,
+      1
+    ],
+    "superball": 4,
+    "next_draw_date": "2026-11-14",
+    "next_session": "midday",
+    "fetched_at": "2026-11-14T05:24:05.337830+00:00",
     "source_url": "https://www.hoosierlottery.com/games/draw/daily-4/"
   },
   {
