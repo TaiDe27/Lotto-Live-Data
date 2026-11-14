@@ -1,6 +1,21 @@
 [
   {
     "draw_date": "2026-11-13",
+    "session": "evening",
+    "digits": [
+      4,
+      2,
+      8,
+      3
+    ],
+    "wild_ball": 7,
+    "fetched_at": "2026-11-14T03:30:50.029821+00:00",
+    "source_url": "https://www.molottery.com/pick4/winning-numbers.do",
+    "next_draw_date": "2026-11-14",
+    "next_session": "midday"
+  },
+  {
+    "draw_date": "2026-11-13",
     "session": "midday",
     "digits": [
       6,
@@ -9,25 +24,10 @@
       0
     ],
     "wild_ball": 1,
-    "fetched_at": "2026-11-13T19:03:32.208809+00:00",
+    "fetched_at": "2026-11-14T03:30:50.029984+00:00",
     "source_url": "https://www.molottery.com/pick4/winning-numbers.do",
-    "next_draw_date": "2026-11-13",
-    "next_session": "evening"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "digits": [
-      4,
-      3,
-      6,
-      9
-    ],
-    "wild_ball": 7,
-    "fetched_at": "2026-11-13T19:03:32.208957+00:00",
-    "source_url": "https://www.molottery.com/pick4/winning-numbers.do",
-    "next_draw_date": "2026-11-13",
-    "next_session": "evening"
+    "next_draw_date": "2026-11-14",
+    "next_session": "midday"
   },
   {
     "draw_date": "2026-11-12",
