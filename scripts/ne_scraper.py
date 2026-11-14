@@ -109,7 +109,20 @@ def fetch_latest_row(gamename: str, expected_cols: int) -> tuple[str, list[int]]
 
     if len(values) != expected_cols:
         raise ValueError(f"应为{expected_cols}个数字，抓到 {len(values)} 个: {values}")
-    return draw_date, values
+    return draw_date, values, html
+
+
+def extract_pick5_next_jackpot(html: str) -> tuple[Optional[str], Optional[str]]:
+    """Pick 5's own page states "Estimated Jackpot for <M>/<D>/<YYYY> is $<amount>" right above
+    the results table (confirmed live 2026-11-14) — a real, forward-looking per-draw figure, not
+    the generic "jackpot begins at $50,000 and grows" rules-page text. The page's own "Drawings
+    Seven Days a Week" text (module doc already notes this) confirms no skipped days."""
+    m = re.search(r"Estimated Jackpot for (\d{1,2})/(\d{1,2})/(\d{4}) is\s*<br\s*/?>\s*<span[^>]*><strong>\s*\$([\d,]+)", html)
+    if not m:
+        return None, None
+    mm, dd, yyyy, amount = m.groups()
+    next_draw_date_value = f"{yyyy}-{int(mm):02d}-{int(dd):02d}"
+    return next_draw_date_value, amount.replace(",", "")
 
 
 def save_results(
@@ -118,6 +131,7 @@ def save_results(
     numbers: list[int],
     source_url: str,
     next_draw_date_value: Optional[str] = None,
+    next_jackpot_amount: Optional[str] = None,
 ) -> Path:
     out_dir = OUTPUT_DIR / subdir
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -140,6 +154,8 @@ def save_results(
     # keep their existing shape untouched.
     if next_draw_date_value is not None:
         new_entry["next_draw_date"] = next_draw_date_value
+    if next_jackpot_amount is not None:
+        new_entry["next_jackpot_amount"] = next_jackpot_amount
     history = [h for h in history if h.get("draw_date") != draw_date]
     merged = ([new_entry] + history)[:MAX_HISTORY]
     out_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2))
@@ -159,11 +175,14 @@ def main():
     errors = []
     for gamename, subdir, expected_cols in GAMES:
         try:
-            draw_date, numbers = fetch_latest_row(gamename, expected_cols)
+            draw_date, numbers, html = fetch_latest_row(gamename, expected_cols)
             url = f"https://nelottery.com/lotto-detail?gamename={gamename.replace(' ', '+')}"
             log.info("%s: draw_date=%s numbers=%s", subdir, draw_date, numbers)
             next_draw_date_value = next_draw_date(MYDAY_TZ, MYDAY_DRAW_TIME) if gamename == "MyDaY" else None
-            save_results(subdir, draw_date, numbers, url, next_draw_date_value)
+            next_jackpot_amount = None
+            if gamename == "Pick 5":
+                next_draw_date_value, next_jackpot_amount = extract_pick5_next_jackpot(html)
+            save_results(subdir, draw_date, numbers, url, next_draw_date_value, next_jackpot_amount)
         except Exception as e:  # noqa: BLE001
             log.error("%s 失败: %s", subdir, e)
             errors.append((subdir, e))

@@ -87,7 +87,37 @@ def save(subdir: str, entries: list[dict]):
     log.info("saved %s (%d entries)", out_path, min(len(entries), MAX_HISTORY))
 
 
+def fetch_next_drawing(page_slug: str) -> tuple[Optional[str], Optional[str]]:
+    """valottery.com's own game page (distinct from the plain-text `/api/v1/downloadall` export
+    used for history above) has a real `.next-drawing-date` pair — one span holding the dollar
+    jackpot, the other the "<Weekday> <M>/<D>/<YYYY>[ <time>]" next-draw datetime — confirmed live
+    2026-11-14 for both Cash 5 ($245,000/Sat 11/14/2026 11:00 PM) and Bank a Million ($1,000,000,
+    fixed/Sat 11/14/2026). An earlier attempt this session got a transient 403 on this same URL/UA
+    combo; retried later with no header changes and got a clean 200 — not a real block, just a
+    transient one; retry normally, no bypass needed."""
+    import requests
+    try:
+        resp = requests.get(f"https://www.valottery.com/data/draw-games/{page_slug}",
+                             headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+    except Exception as e:  # noqa: BLE001
+        log.warning("[%s] 抓取next-draw信息失败（不影响历史开奖数据的抓取）: %s", page_slug, e)
+        return None, None
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(resp.text, "html.parser")
+    els = soup.select(".next-drawing-date")
+    if len(els) < 2:
+        return None, None
+    jackpot_text, date_text = (el.get_text(strip=True) for el in els[:2])
+    m = re.search(r"[A-Za-z]{3}\s+(\d{1,2})/(\d{1,2})/(\d{4})", date_text)
+    next_draw_date = f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}" if m else None
+    amount_m = re.search(r"\$([\d,]+)", jackpot_text)
+    next_jackpot_amount = amount_m.group(1).replace(",", "") if amount_m else None
+    return next_draw_date, next_jackpot_amount
+
+
 def scrape_numbers(game_id: int, subdir: str, name: str):
+    next_draw_date, next_jackpot_amount = fetch_next_drawing("cash5")
     out = []
     for line in fetch_lines(game_id):
         m = re.match(r"(\d{1,2}/\d{1,2}/\d{4});\s*([\d,]+)$", line)
@@ -98,12 +128,15 @@ def scrape_numbers(game_id: int, subdir: str, name: str):
             "numbers": [int(x) for x in m.group(2).split(",")],
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "source_url": f"https://www.valottery.com/data/draw-games/cash5?gameId={game_id}",
+            "next_draw_date": next_draw_date,
+            "next_jackpot_amount": next_jackpot_amount,
         })
     save(subdir, out)
     log.info("%s: %d entries, latest %s", name, len(out), out[0] if out else None)
 
 
 def scrape_bank_a_million():
+    next_draw_date, next_jackpot_amount = fetch_next_drawing("bankamillion")
     out = []
     for line in fetch_lines(1070):
         m = re.match(r"(\d{1,2}/\d{1,2}/\d{4});\s*([\d,]+);\s*Bonus Ball:\s*(\d+)$", line)
@@ -115,6 +148,8 @@ def scrape_bank_a_million():
             "bonus_ball": int(m.group(3)),
             "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "source_url": "https://www.valottery.com/data/draw-games/bankamillion?gameId=1070",
+            "next_draw_date": next_draw_date,
+            "next_jackpot_amount": next_jackpot_amount,
         })
     save("bank-a-million", out)
     log.info("bank-a-million: %d entries, latest %s", len(out), out[0] if out else None)
