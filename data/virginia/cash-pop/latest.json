@@ -1,5 +1,50 @@
 [
   {
+    "draw_date": "2026-11-14",
+    "session": "lunch-break",
+    "numbers": [
+      12
+    ],
+    "fetched_at": "2026-11-14T19:21:27.307883+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
+    "draw_date": "2026-11-14",
+    "session": "coffee-break",
+    "numbers": [
+      15
+    ],
+    "fetched_at": "2026-11-14T19:21:27.307927+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
+    "draw_date": "2026-11-13",
+    "session": "after-hours",
+    "numbers": [
+      6
+    ],
+    "fetched_at": "2026-11-14T19:21:27.307934+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
+    "draw_date": "2026-11-13",
+    "session": "prime-time",
+    "numbers": [
+      15
+    ],
+    "fetched_at": "2026-11-14T19:21:27.307943+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
+    "draw_date": "2026-11-13",
+    "session": "rush-hour",
+    "numbers": [
+      6
+    ],
+    "fetched_at": "2026-11-14T19:21:27.307950+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/cashpop?gameId=40"
+  },
+  {
     "draw_date": "2026-11-13",
     "session": "after-hours",
     "numbers": [

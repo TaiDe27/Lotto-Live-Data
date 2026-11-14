@@ -1,6 +1,36 @@
 [
   {
     "game": "Pick 3",
+    "draw_date": "2026-11-14",
+    "session": "day",
+    "digits": [
+      3,
+      8,
+      0
+    ],
+    "fireball": 8,
+    "next_draw_date": "2026-11-14",
+    "next_session": "night",
+    "fetched_at": "2026-11-14T19:21:12.816822+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/pick3"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-11-13",
+    "session": "night",
+    "digits": [
+      0,
+      1,
+      1
+    ],
+    "fireball": 6,
+    "next_draw_date": "2026-11-14",
+    "next_session": "day",
+    "fetched_at": "2026-11-14T19:21:12.280172+00:00",
+    "source_url": "https://www.valottery.com/data/draw-games/pick3?gameId=1050"
+  },
+  {
+    "game": "Pick 3",
     "draw_date": "2026-11-13",
     "session": "night",
     "digits": [
