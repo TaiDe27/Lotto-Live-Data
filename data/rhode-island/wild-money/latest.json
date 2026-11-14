@@ -1,5 +1,21 @@
 [
   {
+    "draw_date": "2026-11-13",
+    "numbers": [
+      6,
+      9,
+      26,
+      29,
+      34
+    ],
+    "special_number": 38,
+    "draw_id": "5208",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
+    "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": 125000.0
+  },
+  {
     "draw_date": "2026-11-12",
     "numbers": [
       4,
@@ -10,10 +26,10 @@
     ],
     "special_number": 3,
     "draw_id": "5207",
-    "fetched_at": "2026-11-13T15:51:07.872471+00:00",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": 117000.0
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": 125000.0
   },
   {
     "draw_date": "2026-11-11",
@@ -26,10 +42,10 @@
     ],
     "special_number": 24,
     "draw_id": "5206",
-    "fetched_at": "2026-11-13T15:51:07.872471+00:00",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": 117000.0
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": 125000.0
   },
   {
     "draw_date": "2026-11-10",
@@ -42,10 +58,10 @@
     ],
     "special_number": 25,
     "draw_id": "5205",
-    "fetched_at": "2026-11-13T15:51:07.872471+00:00",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": 117000.0
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": 125000.0
   },
   {
     "draw_date": "2026-11-09",
@@ -58,10 +74,10 @@
     ],
     "special_number": 29,
     "draw_id": "5204",
-    "fetched_at": "2026-11-13T15:51:07.872471+00:00",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": 117000.0
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": 125000.0
   },
   {
     "draw_date": "2026-11-08",

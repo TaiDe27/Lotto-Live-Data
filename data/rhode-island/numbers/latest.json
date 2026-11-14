@@ -1,5 +1,35 @@
 [
   {
+    "draw_date": "2026-11-13",
+    "session": "evening",
+    "digits": [
+      "7",
+      "4",
+      "7",
+      "4"
+    ],
+    "draw_id": "21756",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
+    "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
+    "next_draw_date": "2026-11-14",
+    "next_session": "midday"
+  },
+  {
+    "draw_date": "2026-11-13",
+    "session": "midday",
+    "digits": [
+      "0",
+      "3",
+      "2",
+      "6"
+    ],
+    "draw_id": "21755",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
+    "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
+    "next_draw_date": "2026-11-14",
+    "next_session": "midday"
+  },
+  {
     "draw_date": "2026-11-12",
     "session": "evening",
     "digits": [
@@ -9,9 +39,9 @@
       "4"
     ],
     "draw_id": "21754",
-    "fetched_at": "2026-11-13T15:51:07.872471+00:00",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
-    "next_draw_date": "2026-11-13",
+    "next_draw_date": "2026-11-14",
     "next_session": "midday"
   },
   {
@@ -24,9 +54,9 @@
       "4"
     ],
     "draw_id": "21753",
-    "fetched_at": "2026-11-13T15:51:07.872471+00:00",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
-    "next_draw_date": "2026-11-13",
+    "next_draw_date": "2026-11-14",
     "next_session": "midday"
   },
   {
@@ -39,9 +69,9 @@
       "5"
     ],
     "draw_id": "21752",
-    "fetched_at": "2026-11-13T15:51:07.872471+00:00",
+    "fetched_at": "2026-11-14T02:21:26.035509+00:00",
     "source_url": "https://ris-draw-p1.ilotterydrawri.com/api/v2/draw-games/draws?previous-draws=5&next-draws=2",
-    "next_draw_date": "2026-11-13",
+    "next_draw_date": "2026-11-14",
     "next_session": "midday"
   },
   {
