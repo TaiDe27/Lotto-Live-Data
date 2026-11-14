@@ -1,6 +1,22 @@
 [
   {
     "game": "Cash 5",
+    "draw_date": "2026-11-13",
+    "numbers": [
+      9,
+      12,
+      19,
+      26,
+      27
+    ],
+    "jackpot_amount": 20000,
+    "fetched_at": "2026-11-14T23:35:22.656521+00:00",
+    "source_url": "https://www.coloradolottery.com/en/games/cash5/",
+    "next_draw_date": "2026-11-14",
+    "next_jackpot_amount": 20000
+  },
+  {
+    "game": "Cash 5",
     "draw_date": "2026-11-12",
     "numbers": [
       5,
