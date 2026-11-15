@@ -1,6 +1,30 @@
 [
   {
     "game": "Pick 3",
+    "draw_date": "2026-11-14",
+    "session": "evening",
+    "digits": [
+      7,
+      0,
+      5
+    ],
+    "fetched_at": "2026-11-15T04:13:03.173113+00:00",
+    "source_url": "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
+  },
+  {
+    "game": "Pick 3",
+    "draw_date": "2026-11-14",
+    "session": "midday",
+    "digits": [
+      8,
+      7,
+      6
+    ],
+    "fetched_at": "2026-11-15T04:13:03.173137+00:00",
+    "source_url": "https://www.kylottery.com/webhandlers/WinningNumbers.xhtml"
+  },
+  {
+    "game": "Pick 3",
     "draw_date": "2026-11-13",
     "session": "evening",
     "digits": [
