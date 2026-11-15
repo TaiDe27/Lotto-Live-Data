@@ -1,6 +1,23 @@
 [
   {
     "game": "Lucky Day Lotto",
+    "draw_date": "2026-11-14",
+    "session": "evening",
+    "numbers": [
+      8,
+      11,
+      19,
+      30,
+      35
+    ],
+    "jackpot_amount": "350,000",
+    "fetched_at": "2026-11-15T03:48:31.535108+00:00",
+    "source_url": "https://www.lotteryusa.com/illinois/lucky-day-lotto-evening/",
+    "next_draw_date": "2026-11-16",
+    "next_jackpot_amount": null
+  },
+  {
+    "game": "Lucky Day Lotto",
     "draw_date": "2026-11-13",
     "session": "evening",
     "numbers": [
