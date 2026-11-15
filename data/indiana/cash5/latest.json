@@ -1,6 +1,22 @@
 [
   {
     "game": "CA$H 5",
+    "draw_date": "2026-11-14",
+    "numbers": [
+      7,
+      11,
+      19,
+      29,
+      36
+    ],
+    "jackpot_amount": "$90,000",
+    "fetched_at": "2026-11-15T04:27:35.674831+00:00",
+    "source_url": "https://www.hoosierlottery.com/games/draw/cash-5/",
+    "next_draw_date": "2026-11-15",
+    "next_jackpot_amount": 90000
+  },
+  {
+    "game": "CA$H 5",
     "draw_date": "2026-11-12",
     "numbers": [
       4,
