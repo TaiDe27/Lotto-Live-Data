@@ -1,5 +1,35 @@
 [
   {
+    "draw_date": "2026-11-14",
+    "session": "night",
+    "digits": [
+      "8",
+      "1",
+      "4"
+    ],
+    "wild_ball": 0,
+    "next_draw_date": "2026-11-16",
+    "next_session": "day",
+    "drawing_number": 8641,
+    "fetched_at": "2026-11-15T06:51:42.520047+00:00",
+    "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
+  },
+  {
+    "draw_date": "2026-11-14",
+    "session": "day",
+    "digits": [
+      "8",
+      "6",
+      "1"
+    ],
+    "wild_ball": 7,
+    "next_draw_date": "2026-11-16",
+    "next_session": "day",
+    "drawing_number": 4116,
+    "fetched_at": "2026-11-15T06:51:42.520047+00:00",
+    "source_url": "https://wordpresswebapi.azurewebsites.net/api/ElectronicDrawing"
+  },
+  {
     "draw_date": "2026-11-13",
     "session": "night",
     "digits": [
