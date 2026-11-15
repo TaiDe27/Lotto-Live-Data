@@ -1,6 +1,23 @@
 [
   {
     "game": "megabucks",
+    "draw_date": "2026-11-14",
+    "numbers": [
+      8,
+      17,
+      19,
+      21,
+      33,
+      38
+    ],
+    "fetched_at": "2026-11-15T07:40:37.683973+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results",
+    "next_draw_date": "2026-11-16",
+    "next_jackpot_amount": 3400000,
+    "next_cash_value": 2180000
+  },
+  {
+    "game": "megabucks",
     "draw_date": "2026-11-11",
     "numbers": [
       2,
