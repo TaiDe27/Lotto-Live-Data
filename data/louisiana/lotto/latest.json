@@ -1,6 +1,22 @@
 [
   {
     "game": "Lotto",
+    "draw_date": "2026-11-14",
+    "numbers": [
+      1,
+      7,
+      21,
+      25,
+      27,
+      33
+    ],
+    "fetched_at": "2026-11-15T04:34:16.444562+00:00",
+    "source_url": "https://louisianalottery.com/winning-numbers/",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
+  },
+  {
+    "game": "Lotto",
     "draw_date": "2026-11-11",
     "numbers": [
       8,
@@ -12,8 +28,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.714462+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -28,8 +44,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.714604+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -44,8 +60,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.714727+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -60,8 +76,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.714846+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -76,8 +92,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.714962+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -92,8 +108,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.715099+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -108,8 +124,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.715217+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -124,8 +140,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.715331+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
@@ -140,8 +156,8 @@
     ],
     "fetched_at": "2026-11-15T04:19:50.715444+00:00",
     "source_url": "https://louisianalottery.com/winning-numbers/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$1,000,000"
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": "$1,025,000"
   },
   {
     "game": "Lotto",
