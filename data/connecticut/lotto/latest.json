@@ -1,6 +1,23 @@
 [
   {
     "game": "LOTTO!",
+    "draw_date": "2026-11-13",
+    "numbers": [
+      7,
+      10,
+      12,
+      31,
+      32,
+      44
+    ],
+    "jackpot_amount": "4.6 Million",
+    "fetched_at": "2026-11-15T03:33:04.296997+00:00",
+    "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
+  },
+  {
+    "game": "LOTTO!",
     "draw_date": "2026-11-10",
     "numbers": [
       13,
@@ -11,10 +28,10 @@
       40
     ],
     "jackpot_amount": "4.5 Million",
-    "fetched_at": "2026-11-13T06:28:19.020145+00:00",
+    "fetched_at": "2026-11-15T03:33:04.297324+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -28,10 +45,10 @@
       41
     ],
     "jackpot_amount": "4.4 Million",
-    "fetched_at": "2026-11-13T06:28:19.021191+00:00",
+    "fetched_at": "2026-11-15T03:33:04.297587+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -45,10 +62,10 @@
       36
     ],
     "jackpot_amount": "4.3 Million",
-    "fetched_at": "2026-11-13T06:28:19.022068+00:00",
+    "fetched_at": "2026-11-15T03:33:04.297842+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -62,10 +79,10 @@
       44
     ],
     "jackpot_amount": "4.2 Million",
-    "fetched_at": "2026-11-13T06:28:19.023650+00:00",
+    "fetched_at": "2026-11-15T03:33:04.298082+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -79,10 +96,10 @@
       36
     ],
     "jackpot_amount": "4.1 Million",
-    "fetched_at": "2026-11-13T06:28:19.024565+00:00",
+    "fetched_at": "2026-11-15T03:33:04.298304+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -96,10 +113,10 @@
       44
     ],
     "jackpot_amount": "4 Million",
-    "fetched_at": "2026-11-13T06:28:19.025652+00:00",
+    "fetched_at": "2026-11-15T03:33:04.298529+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -113,10 +130,10 @@
       44
     ],
     "jackpot_amount": "3.9 Million",
-    "fetched_at": "2026-11-13T06:28:19.026917+00:00",
+    "fetched_at": "2026-11-15T03:33:04.298746+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -130,10 +147,10 @@
       43
     ],
     "jackpot_amount": "3.8 Million",
-    "fetched_at": "2026-11-13T06:28:19.027778+00:00",
+    "fetched_at": "2026-11-15T03:33:04.298977+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
@@ -147,10 +164,10 @@
       44
     ],
     "jackpot_amount": "3.7 Million",
-    "fetched_at": "2026-11-13T06:28:19.028588+00:00",
+    "fetched_at": "2026-11-15T03:33:04.299201+00:00",
     "source_url": "https://www.lotteryusa.com/connecticut/classic-lotto/",
-    "next_draw_date": "2026-11-13",
-    "next_jackpot_amount": "$4.6 Million"
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$4.7 Million"
   },
   {
     "game": "LOTTO!",
