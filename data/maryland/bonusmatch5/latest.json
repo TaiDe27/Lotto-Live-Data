@@ -1,6 +1,22 @@
 [
   {
     "game": "Bonus Match 5",
+    "draw_date": "2026-11-14",
+    "numbers": [
+      3,
+      5,
+      7,
+      14,
+      23
+    ],
+    "jackpot_amount": null,
+    "next_draw_date": null,
+    "fetched_at": "2026-11-15T04:32:55.823411+00:00",
+    "source_url": "https://www.mdlottery.com/games/bonus-match-5/",
+    "bonus_number": 16
+  },
+  {
+    "game": "Bonus Match 5",
     "draw_date": "2026-11-13",
     "numbers": [
       11,
