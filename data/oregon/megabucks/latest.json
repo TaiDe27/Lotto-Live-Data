@@ -1,5 +1,21 @@
 [
   {
+    "draw_date": "2026-11-14",
+    "numbers": [
+      4,
+      6,
+      14,
+      32,
+      34,
+      40
+    ],
+    "draw_number": 5527,
+    "fetched_at": "2026-11-15T08:31:44.571483+00:00",
+    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws",
+    "next_draw_date": "2026-11-16",
+    "next_jackpot_amount": 2500000.0
+  },
+  {
     "draw_date": "2026-11-11",
     "numbers": [
       6,
