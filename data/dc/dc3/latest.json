@@ -1,6 +1,42 @@
 [
   {
     "game": "DC 3",
+    "draw_date": "2026-11-16",
+    "session": "night",
+    "digits": [
+      4,
+      0,
+      7
+    ],
+    "fetched_at": "2026-11-17T19:11:01.647455+00:00",
+    "source_url": "https://dclottery.com/games/dc-3"
+  },
+  {
+    "game": "DC 3",
+    "draw_date": "2026-11-16",
+    "session": "evening",
+    "digits": [
+      7,
+      5,
+      6
+    ],
+    "fetched_at": "2026-11-17T19:11:01.647455+00:00",
+    "source_url": "https://dclottery.com/games/dc-3"
+  },
+  {
+    "game": "DC 3",
+    "draw_date": "2026-11-16",
+    "session": "day",
+    "digits": [
+      8,
+      3,
+      6
+    ],
+    "fetched_at": "2026-11-17T19:11:01.647455+00:00",
+    "source_url": "https://dclottery.com/games/dc-3"
+  },
+  {
+    "game": "DC 3",
     "draw_date": "2026-11-14",
     "session": "day",
     "digits": [
@@ -26,35 +62,11 @@
   {
     "game": "DC 3",
     "draw_date": "2026-11-13",
-    "session": "evening",
-    "digits": [
-      4,
-      0,
-      4
-    ],
-    "fetched_at": "2026-11-14T19:19:03.935386+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-11-13",
     "session": "night",
     "digits": [
       7,
       1,
       2
-    ],
-    "fetched_at": "2026-11-14T16:20:51.165690+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "digits": [
-      4,
-      0,
-      4
     ],
     "fetched_at": "2026-11-14T16:20:51.165690+00:00",
     "source_url": "https://dclottery.com/games/dc-3"
@@ -69,6 +81,30 @@
       2
     ],
     "fetched_at": "2026-11-14T19:18:20.379026+00:00",
+    "source_url": "https://dclottery.com/games/dc-3"
+  },
+  {
+    "game": "DC 3",
+    "draw_date": "2026-11-13",
+    "session": "evening",
+    "digits": [
+      4,
+      0,
+      4
+    ],
+    "fetched_at": "2026-11-14T19:19:03.935386+00:00",
+    "source_url": "https://dclottery.com/games/dc-3"
+  },
+  {
+    "game": "DC 3",
+    "draw_date": "2026-11-13",
+    "session": "evening",
+    "digits": [
+      4,
+      0,
+      4
+    ],
+    "fetched_at": "2026-11-14T16:20:51.165690+00:00",
     "source_url": "https://dclottery.com/games/dc-3"
   },
   {
@@ -1161,90 +1197,6 @@
       3
     ],
     "fetched_at": "2026-10-15T18:41:01.664860+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-10-14",
-    "session": "day",
-    "digits": [
-      2,
-      5,
-      4
-    ],
-    "fetched_at": "2026-10-15T18:10:57.605159+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-10-13",
-    "session": "night",
-    "digits": [
-      0,
-      6,
-      3
-    ],
-    "fetched_at": "2026-10-15T00:41:04.533848+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-10-13",
-    "session": "evening",
-    "digits": [
-      5,
-      6,
-      3
-    ],
-    "fetched_at": "2026-10-14T18:40:59.181722+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-10-13",
-    "session": "day",
-    "digits": [
-      7,
-      0,
-      6
-    ],
-    "fetched_at": "2026-10-14T18:11:00.460642+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-10-12",
-    "session": "night",
-    "digits": [
-      4,
-      1,
-      1
-    ],
-    "fetched_at": "2026-10-14T00:40:59.758912+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-10-12",
-    "session": "evening",
-    "digits": [
-      9,
-      5,
-      4
-    ],
-    "fetched_at": "2026-10-13T18:40:59.015403+00:00",
-    "source_url": "https://dclottery.com/games/dc-3"
-  },
-  {
-    "game": "DC 3",
-    "draw_date": "2026-10-12",
-    "session": "day",
-    "digits": [
-      2,
-      3,
-      4
-    ],
-    "fetched_at": "2026-10-13T18:10:56.252683+00:00",
     "source_url": "https://dclottery.com/games/dc-3"
   }
 ]
