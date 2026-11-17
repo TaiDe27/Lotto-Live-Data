@@ -1,5 +1,41 @@
 [
   {
+    "draw_date": "2026-11-16",
+    "evening_digits": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "midday_digits": [
+      4,
+      0,
+      0,
+      9
+    ],
+    "fetched_at": "2026-11-17T19:51:03.729821+00:00",
+    "midday_next_draw_date": "2026-11-18",
+    "evening_next_draw_date": "2026-11-17"
+  },
+  {
+    "draw_date": "2026-11-15",
+    "evening_digits": [
+      7,
+      6,
+      8,
+      5
+    ],
+    "midday_digits": [
+      7,
+      0,
+      7,
+      4
+    ],
+    "fetched_at": "2026-11-17T19:51:03.729821+00:00",
+    "midday_next_draw_date": "2026-11-18",
+    "evening_next_draw_date": "2026-11-17"
+  },
+  {
     "draw_date": "2026-11-14",
     "evening_digits": [
       3,
@@ -13,9 +49,9 @@
       5,
       7
     ],
-    "fetched_at": "2026-11-15T07:36:25.536772+00:00",
-    "midday_next_draw_date": "2026-11-15",
-    "evening_next_draw_date": "2026-11-15"
+    "fetched_at": "2026-11-17T19:51:03.729821+00:00",
+    "midday_next_draw_date": "2026-11-18",
+    "evening_next_draw_date": "2026-11-17"
   },
   {
     "draw_date": "2026-11-13",
@@ -31,9 +67,9 @@
       4,
       9
     ],
-    "fetched_at": "2026-11-15T07:36:25.536772+00:00",
-    "midday_next_draw_date": "2026-11-15",
-    "evening_next_draw_date": "2026-11-15"
+    "fetched_at": "2026-11-17T19:51:03.729821+00:00",
+    "midday_next_draw_date": "2026-11-18",
+    "evening_next_draw_date": "2026-11-17"
   },
   {
     "draw_date": "2026-11-12",
@@ -1580,38 +1616,6 @@
       8,
       8,
       9
-    ],
-    "fetched_at": "2026-10-16T07:22:57.186101+00:00"
-  },
-  {
-    "draw_date": "2026-08-08",
-    "midday_digits": [
-      5,
-      3,
-      5,
-      6
-    ],
-    "evening_digits": [
-      9,
-      8,
-      1,
-      7
-    ],
-    "fetched_at": "2026-10-16T07:22:57.186101+00:00"
-  },
-  {
-    "draw_date": "2026-08-07",
-    "midday_digits": [
-      0,
-      5,
-      8,
-      8
-    ],
-    "evening_digits": [
-      1,
-      8,
-      9,
-      6
     ],
     "fetched_at": "2026-10-16T07:22:57.186101+00:00"
   }
