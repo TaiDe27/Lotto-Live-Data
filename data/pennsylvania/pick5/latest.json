@@ -1,5 +1,37 @@
 [
   {
+    "draw_date": "2026-11-16",
+    "session": "evening",
+    "digits": [
+      "2",
+      "9",
+      "4",
+      "3",
+      "6"
+    ],
+    "wild_ball": "3",
+    "next_draw_date": "2026-11-17",
+    "next_session": "day",
+    "fetched_at": "2026-11-17T14:22:13.645759+00:00",
+    "source_url": "https://www.lottery.net/pennsylvania/pick-5/numbers"
+  },
+  {
+    "draw_date": "2026-11-16",
+    "session": "day",
+    "digits": [
+      "0",
+      "3",
+      "4",
+      "6",
+      "6"
+    ],
+    "wild_ball": "0",
+    "next_draw_date": "2026-11-17",
+    "next_session": "day",
+    "fetched_at": "2026-11-17T14:22:13.645634+00:00",
+    "source_url": "https://www.lottery.net/pennsylvania/pick-5/numbers"
+  },
+  {
     "draw_date": "2026-11-14",
     "session": "day",
     "digits": [
