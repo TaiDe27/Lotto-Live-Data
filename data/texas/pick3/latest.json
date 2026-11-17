@@ -1,5 +1,57 @@
 [
   {
+    "draw_date": "2026-11-17",
+    "session": "morning",
+    "numbers": [
+      0,
+      8,
+      0
+    ],
+    "fireball": 3,
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T16:20:40.255914+00:00",
+    "source_url": "https://www.texaslottery.com/"
+  },
+  {
+    "draw_date": "2026-11-16",
+    "session": "night",
+    "numbers": [
+      0,
+      6,
+      2
+    ],
+    "fireball": 9,
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T16:20:40.255930+00:00",
+    "source_url": "https://www.texaslottery.com/"
+  },
+  {
+    "draw_date": "2026-11-16",
+    "session": "evening",
+    "numbers": [
+      1,
+      5,
+      9
+    ],
+    "fireball": 6,
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T16:20:40.255927+00:00",
+    "source_url": "https://www.texaslottery.com/"
+  },
+  {
+    "draw_date": "2026-11-16",
+    "session": "day",
+    "numbers": [
+      9,
+      1,
+      1
+    ],
+    "fireball": 0,
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T16:20:40.255924+00:00",
+    "source_url": "https://www.texaslottery.com/"
+  },
+  {
     "draw_date": "2026-11-14",
     "session": "morning",
     "numbers": [
@@ -10,19 +62,6 @@
     "fireball": 7,
     "next_draw_date": "2026-11-16",
     "fetched_at": "2026-11-14T16:08:29.497633+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "night",
-    "numbers": [
-      8,
-      1,
-      0
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:08:29.497650+00:00",
     "source_url": "https://www.texaslottery.com/"
   },
   {
@@ -49,305 +88,6 @@
     "fireball": 9,
     "next_draw_date": "2026-11-14",
     "fetched_at": "2026-11-14T11:16:07.067952+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T11:16:07.067965+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:08:29.497648+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:09:24.808755+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:16:06.050701+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:19:12.798614+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:19:44.307313+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:23:40.870659+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:21:40.358750+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:32:13.350473+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:31:44.761483+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:41:45.886911+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:50:50.745655+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:50:01.272713+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:52:42.733816+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T16:56:24.876900+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:03:10.897043+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:12:06.264271+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:17:26.493184+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:22:04.949151+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:33:57.838742+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:39:21.514942+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:43:51.769244+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      7,
-      5,
-      3
-    ],
-    "fireball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T17:50:40.254017+00:00",
     "source_url": "https://www.texaslottery.com/"
   },
   {
@@ -1482,54 +1222,6 @@
     ],
     "fireball": 5,
     "fetched_at": "2026-10-19T21:41:02.841050+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-10-17",
-    "session": "day",
-    "numbers": [
-      7,
-      9,
-      8
-    ],
-    "fireball": 5,
-    "fetched_at": "2026-10-19T15:51:07.333829+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-10-16",
-    "session": "night",
-    "numbers": [
-      2,
-      9,
-      0
-    ],
-    "fireball": 6,
-    "fetched_at": "2026-10-18T00:08:05.953838+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-10-16",
-    "session": "morning",
-    "numbers": [
-      1,
-      0,
-      4
-    ],
-    "fireball": 0,
-    "fetched_at": "2026-10-17T07:47:22.542900+00:00",
-    "source_url": "https://www.texaslottery.com/"
-  },
-  {
-    "draw_date": "2026-10-16",
-    "session": "evening",
-    "numbers": [
-      1,
-      3,
-      4
-    ],
-    "fireball": 4,
-    "fetched_at": "2026-10-17T21:40:59.988727+00:00",
     "source_url": "https://www.texaslottery.com/"
   }
 ]
