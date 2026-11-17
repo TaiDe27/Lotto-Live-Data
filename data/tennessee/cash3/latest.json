@@ -1,5 +1,57 @@
 [
   {
+    "draw_date": "2026-11-17",
+    "session": "morning",
+    "numbers": [
+      4,
+      3,
+      6
+    ],
+    "wild_ball": 1,
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003301+00:00",
+    "source_url": "https://www.lottery.net/"
+  },
+  {
+    "draw_date": "2026-11-16",
+    "session": "morning",
+    "numbers": [
+      1,
+      3,
+      0
+    ],
+    "wild_ball": 9,
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003311+00:00",
+    "source_url": "https://www.lottery.net/"
+  },
+  {
+    "draw_date": "2026-11-16",
+    "session": "midday",
+    "numbers": [
+      3,
+      3,
+      6
+    ],
+    "wild_ball": 2,
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003315+00:00",
+    "source_url": "https://www.lottery.net/"
+  },
+  {
+    "draw_date": "2026-11-16",
+    "session": "evening",
+    "numbers": [
+      2,
+      5,
+      9
+    ],
+    "wild_ball": 9,
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003341+00:00",
+    "source_url": "https://www.lottery.net/"
+  },
+  {
     "draw_date": "2026-11-14",
     "session": "morning",
     "numbers": [
@@ -8,8 +60,34 @@
       6
     ],
     "wild_ball": 1,
-    "next_draw_date": "2026-11-16",
-    "fetched_at": "2026-11-14T15:46:03.828355+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003344+00:00",
+    "source_url": "https://www.lottery.net/"
+  },
+  {
+    "draw_date": "2026-11-14",
+    "session": "midday",
+    "numbers": [
+      9,
+      2,
+      4
+    ],
+    "wild_ball": 4,
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003347+00:00",
+    "source_url": "https://www.lottery.net/"
+  },
+  {
+    "draw_date": "2026-11-14",
+    "session": "evening",
+    "numbers": [
+      4,
+      4,
+      1
+    ],
+    "wild_ball": 2,
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003349+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -21,8 +99,8 @@
       3
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120837+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003352+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -34,8 +112,8 @@
       0
     ],
     "wild_ball": 7,
-    "next_draw_date": "2026-11-16",
-    "fetched_at": "2026-11-14T18:47:35.125432+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003354+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -47,21 +125,8 @@
       4
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120848+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-11-13",
-    "session": "evening",
-    "numbers": [
-      9,
-      4,
-      4
-    ],
-    "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120850+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003357+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -73,8 +138,8 @@
       3
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120852+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003359+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -86,8 +151,8 @@
       2
     ],
     "wild_ball": 3,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120853+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003362+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -99,8 +164,8 @@
       6
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120855+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003364+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -112,8 +177,8 @@
       2
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120857+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003366+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -125,8 +190,8 @@
       7
     ],
     "wild_ball": 0,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120858+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003369+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -138,8 +203,8 @@
       1
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120860+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003371+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -151,8 +216,8 @@
       1
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120862+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003374+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -164,8 +229,8 @@
       2
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120863+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003377+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -177,8 +242,8 @@
       4
     ],
     "wild_ball": 8,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120865+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003379+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -190,8 +255,8 @@
       0
     ],
     "wild_ball": 1,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120866+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003381+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -203,8 +268,8 @@
       6
     ],
     "wild_ball": 3,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120868+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003384+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -216,8 +281,8 @@
       6
     ],
     "wild_ball": 5,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120870+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003386+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -229,8 +294,8 @@
       1
     ],
     "wild_ball": 3,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120871+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003389+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -242,8 +307,8 @@
       0
     ],
     "wild_ball": 5,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120873+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003391+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -255,8 +320,8 @@
       8
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120875+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003394+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -268,8 +333,8 @@
       4
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120876+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003396+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -281,8 +346,8 @@
       0
     ],
     "wild_ball": 9,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120878+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003399+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -294,8 +359,8 @@
       9
     ],
     "wild_ball": 1,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120879+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003401+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -307,8 +372,8 @@
       8
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120881+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003404+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -320,8 +385,8 @@
       1
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120882+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003406+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -333,8 +398,8 @@
       9
     ],
     "wild_ball": 8,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120884+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003409+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -346,8 +411,8 @@
       5
     ],
     "wild_ball": 3,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120885+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003412+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -359,8 +424,8 @@
       8
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120887+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003414+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -372,8 +437,8 @@
       4
     ],
     "wild_ball": 5,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120889+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003417+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -385,8 +450,8 @@
       8
     ],
     "wild_ball": 0,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120890+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003419+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -398,8 +463,8 @@
       6
     ],
     "wild_ball": 9,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120892+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003422+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -411,8 +476,8 @@
       0
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120893+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003424+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -424,8 +489,8 @@
       6
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120895+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003427+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -437,8 +502,8 @@
       7
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120896+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003429+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -450,8 +515,8 @@
       2
     ],
     "wild_ball": 3,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120898+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003432+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -463,8 +528,8 @@
       3
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120900+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003434+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -476,8 +541,8 @@
       7
     ],
     "wild_ball": 5,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120901+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003437+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -489,8 +554,8 @@
       1
     ],
     "wild_ball": 3,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120903+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003439+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -502,8 +567,8 @@
       2
     ],
     "wild_ball": 5,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120904+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003442+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -515,8 +580,8 @@
       5
     ],
     "wild_ball": 7,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120906+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003444+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -528,8 +593,8 @@
       0
     ],
     "wild_ball": 5,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120907+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003447+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -541,8 +606,8 @@
       2
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120909+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003450+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -554,8 +619,8 @@
       3
     ],
     "wild_ball": 1,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120910+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003452+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -567,8 +632,8 @@
       4
     ],
     "wild_ball": 5,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120912+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003455+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -580,8 +645,8 @@
       6
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120913+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003457+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -593,8 +658,8 @@
       5
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120915+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003460+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -606,8 +671,8 @@
       0
     ],
     "wild_ball": 3,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120916+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003462+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -619,8 +684,8 @@
       0
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120917+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003465+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -632,8 +697,8 @@
       6
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120919+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003467+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -645,8 +710,8 @@
       6
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120921+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003470+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -658,8 +723,8 @@
       3
     ],
     "wild_ball": 9,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120923+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003472+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -671,8 +736,8 @@
       5
     ],
     "wild_ball": 0,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120924+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003475+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -684,8 +749,8 @@
       8
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120926+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003477+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -697,8 +762,8 @@
       0
     ],
     "wild_ball": 8,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120927+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003480+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -710,8 +775,8 @@
       5
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120929+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003482+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -723,8 +788,8 @@
       3
     ],
     "wild_ball": 8,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120930+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003484+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -736,8 +801,8 @@
       2
     ],
     "wild_ball": 0,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120932+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003487+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -749,8 +814,8 @@
       3
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120933+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003490+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -762,8 +827,8 @@
       2
     ],
     "wild_ball": 1,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120935+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003493+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -775,8 +840,8 @@
       4
     ],
     "wild_ball": 2,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120937+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003496+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -788,8 +853,8 @@
       8
     ],
     "wild_ball": 9,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120938+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003499+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -801,8 +866,8 @@
       6
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120940+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003501+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -814,8 +879,8 @@
       2
     ],
     "wild_ball": 9,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120942+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003504+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -827,8 +892,8 @@
       7
     ],
     "wild_ball": 7,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120943+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003506+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -840,8 +905,8 @@
       6
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120945+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003509+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -853,8 +918,8 @@
       9
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120946+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003511+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -866,8 +931,8 @@
       7
     ],
     "wild_ball": 6,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120948+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003514+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -879,8 +944,8 @@
       0
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120949+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003516+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -892,8 +957,8 @@
       6
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120951+00:00",
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-17T15:47:04.003519+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -905,8 +970,8 @@
       6
     ],
     "wild_ball": 7,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120952+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003521+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -918,8 +983,8 @@
       6
     ],
     "wild_ball": 4,
-    "next_draw_date": "2026-11-14",
-    "fetched_at": "2026-11-14T14:20:54.120954+00:00",
+    "next_draw_date": "2026-11-17",
+    "fetched_at": "2026-11-17T15:47:04.003523+00:00",
     "source_url": "https://www.lottery.net/"
   },
   {
@@ -1226,90 +1291,6 @@
     ],
     "wild_ball": 4,
     "fetched_at": "2026-11-08T07:08:59.743662+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-10-08",
-    "session": "morning",
-    "numbers": [
-      8,
-      1,
-      5
-    ],
-    "wild_ball": 4,
-    "fetched_at": "2026-11-07T19:52:05.387465+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-10-08",
-    "session": "midday",
-    "numbers": [
-      3,
-      6,
-      6
-    ],
-    "wild_ball": 4,
-    "fetched_at": "2026-11-07T19:52:05.387468+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-10-08",
-    "session": "evening",
-    "numbers": [
-      2,
-      6,
-      6
-    ],
-    "wild_ball": 8,
-    "fetched_at": "2026-11-07T19:52:05.387470+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-10-07",
-    "session": "morning",
-    "numbers": [
-      8,
-      9,
-      0
-    ],
-    "wild_ball": 7,
-    "fetched_at": "2026-11-06T22:07:00.349925+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-10-07",
-    "session": "midday",
-    "numbers": [
-      7,
-      3,
-      6
-    ],
-    "wild_ball": 6,
-    "fetched_at": "2026-11-06T22:07:00.349927+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-10-07",
-    "session": "evening",
-    "numbers": [
-      3,
-      3,
-      6
-    ],
-    "wild_ball": 5,
-    "fetched_at": "2026-11-06T22:07:00.349929+00:00",
-    "source_url": "https://www.lottery.net/"
-  },
-  {
-    "draw_date": "2026-10-06",
-    "session": "morning",
-    "numbers": [
-      6,
-      4,
-      1
-    ],
-    "wild_ball": 8,
-    "fetched_at": "2026-11-05T19:52:06.095793+00:00",
     "source_url": "https://www.lottery.net/"
   }
 ]
