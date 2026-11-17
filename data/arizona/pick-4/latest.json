@@ -1,6 +1,66 @@
 [
   {
     "game": "Pick 4",
+    "draw_date": "2026-11-16",
+    "session": "evening",
+    "digits": [
+      1,
+      4,
+      4,
+      5
+    ],
+    "next_draw_date": "2026-11-17",
+    "next_session": "midday",
+    "fetched_at": "2026-11-17T19:22:59.168442+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-16",
+    "session": "midday",
+    "digits": [
+      4,
+      6,
+      7,
+      9
+    ],
+    "next_draw_date": "2026-11-16",
+    "next_session": "evening",
+    "fetched_at": "2026-11-17T19:22:59.168442+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-15",
+    "session": "evening",
+    "digits": [
+      9,
+      3,
+      0,
+      1
+    ],
+    "next_draw_date": "2026-11-16",
+    "next_session": "midday",
+    "fetched_at": "2026-11-17T19:22:59.168442+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
+  },
+  {
+    "game": "Pick 4",
+    "draw_date": "2026-11-15",
+    "session": "midday",
+    "digits": [
+      0,
+      9,
+      4,
+      7
+    ],
+    "next_draw_date": "2026-11-15",
+    "next_session": "evening",
+    "fetched_at": "2026-11-17T19:22:59.168442+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
+  },
+  {
+    "game": "Pick 4",
     "draw_date": "2026-11-14",
     "session": "evening",
     "digits": [
@@ -11,7 +71,7 @@
     ],
     "next_draw_date": "2026-11-15",
     "next_session": "midday",
-    "fetched_at": "2026-11-15T07:44:29.157759+00:00",
+    "fetched_at": "2026-11-17T19:22:59.168442+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
   },
   {
@@ -26,7 +86,7 @@
     ],
     "next_draw_date": "2026-11-14",
     "next_session": "evening",
-    "fetched_at": "2026-11-15T07:44:29.157759+00:00",
+    "fetched_at": "2026-11-17T19:22:59.168442+00:00",
     "source_url": "https://api.arizonalottery.com/v2/drawgames/25/drawings"
   },
   {
