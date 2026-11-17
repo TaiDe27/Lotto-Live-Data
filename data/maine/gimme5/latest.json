@@ -1,6 +1,21 @@
 [
   {
     "game": "Gimme 5",
+    "draw_date": "2026-11-16",
+    "numbers": [
+      2,
+      20,
+      24,
+      32,
+      38
+    ],
+    "fetched_at": "2026-11-17T13:51:00.333637+00:00",
+    "source_url": "https://www.mainelottery.com/",
+    "next_draw_date": "2026-11-17",
+    "next_jackpot_amount": "$100,000"
+  },
+  {
+    "game": "Gimme 5",
     "draw_date": "2026-11-13",
     "numbers": [
       2,
