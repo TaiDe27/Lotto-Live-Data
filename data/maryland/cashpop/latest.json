@@ -1,6 +1,16 @@
 [
   {
     "game": "Cash POP",
+    "draw_date": "2026-11-18",
+    "session": "morning",
+    "numbers": [
+      14
+    ],
+    "fetched_at": "2026-11-18T14:24:58.357158+00:00",
+    "source_url": "https://www.mdlottery.com/games/cash-pop/"
+  },
+  {
+    "game": "Cash POP",
     "draw_date": "2026-11-17",
     "session": "latenight",
     "numbers": [
@@ -987,16 +997,6 @@
       3
     ],
     "fetched_at": "2026-10-21T09:50:58.905642+00:00",
-    "source_url": "https://www.mdlottery.com/games/cash-pop/"
-  },
-  {
-    "game": "Cash POP",
-    "draw_date": "2026-10-20",
-    "session": "evening",
-    "numbers": [
-      10
-    ],
-    "fetched_at": "2026-10-21T01:00:57.564307+00:00",
     "source_url": "https://www.mdlottery.com/games/cash-pop/"
   }
 ]
