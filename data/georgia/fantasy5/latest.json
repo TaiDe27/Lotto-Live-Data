@@ -1,6 +1,54 @@
 [
   {
     "game": "Fantasy 5",
+    "draw_date": "2026-11-17",
+    "numbers": [
+      1,
+      12,
+      20,
+      26,
+      42
+    ],
+    "jackpot_amount": 25900000,
+    "fetched_at": "2026-11-18T04:58:59.675536+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 12500000
+  },
+  {
+    "game": "Fantasy 5",
+    "draw_date": "2026-11-16",
+    "numbers": [
+      2,
+      13,
+      21,
+      30,
+      31
+    ],
+    "jackpot_amount": 17500000,
+    "fetched_at": "2026-11-18T04:58:59.675558+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 12500000
+  },
+  {
+    "game": "Fantasy 5",
+    "draw_date": "2026-11-15",
+    "numbers": [
+      23,
+      26,
+      28,
+      34,
+      41
+    ],
+    "jackpot_amount": 15000000,
+    "fetched_at": "2026-11-18T04:58:59.675572+00:00",
+    "source_url": "https://www.galottery.com/en-us/winning-numbers.html",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 12500000
+  },
+  {
+    "game": "Fantasy 5",
     "draw_date": "2026-11-14",
     "numbers": [
       6,
@@ -10,10 +58,10 @@
       36
     ],
     "jackpot_amount": 12500000,
-    "fetched_at": "2026-11-15T05:12:29.329045+00:00",
+    "fetched_at": "2026-11-18T04:58:59.675584+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html",
-    "next_draw_date": "2026-11-15",
-    "next_jackpot_amount": 15000000
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 12500000
   },
   {
     "game": "Fantasy 5",
@@ -26,10 +74,10 @@
       34
     ],
     "jackpot_amount": 21400000,
-    "fetched_at": "2026-11-15T05:12:29.329065+00:00",
+    "fetched_at": "2026-11-18T04:58:59.675594+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html",
-    "next_draw_date": "2026-11-15",
-    "next_jackpot_amount": 15000000
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 12500000
   },
   {
     "game": "Fantasy 5",
@@ -42,10 +90,10 @@
       23
     ],
     "jackpot_amount": 15000000,
-    "fetched_at": "2026-11-15T05:12:29.329075+00:00",
+    "fetched_at": "2026-11-18T04:58:59.675604+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html",
-    "next_draw_date": "2026-11-15",
-    "next_jackpot_amount": 15000000
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 12500000
   },
   {
     "game": "Fantasy 5",
@@ -58,10 +106,10 @@
       37
     ],
     "jackpot_amount": 12500000,
-    "fetched_at": "2026-11-15T05:12:29.329084+00:00",
+    "fetched_at": "2026-11-18T04:58:59.675614+00:00",
     "source_url": "https://www.galottery.com/en-us/winning-numbers.html",
-    "next_draw_date": "2026-11-15",
-    "next_jackpot_amount": 15000000
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 12500000
   },
   {
     "game": "Fantasy 5",
