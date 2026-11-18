@@ -1,14 +1,25 @@
 [
   {
     "draw_date": "2026-11-18",
+    "session": "matinee",
+    "numbers": [
+      12
+    ],
+    "fetched_at": "2026-11-18T21:21:04.468291+00:00",
+    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
+    "next_draw_date": "2026-11-18",
+    "next_session": "prime_time"
+  },
+  {
+    "draw_date": "2026-11-18",
     "session": "late_morning",
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-18T20:40:58.226933+00:00",
+    "fetched_at": "2026-11-18T21:21:04.468291+00:00",
     "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
     "next_draw_date": "2026-11-18",
-    "next_session": "matinee"
+    "next_session": "prime_time"
   },
   {
     "draw_date": "2026-11-18",
@@ -16,10 +27,10 @@
     "numbers": [
       10
     ],
-    "fetched_at": "2026-11-18T20:40:58.226933+00:00",
+    "fetched_at": "2026-11-18T21:21:04.468291+00:00",
     "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
     "next_draw_date": "2026-11-18",
-    "next_session": "matinee"
+    "next_session": "prime_time"
   },
   {
     "draw_date": "2026-11-18",
@@ -27,10 +38,10 @@
     "numbers": [
       14
     ],
-    "fetched_at": "2026-11-18T20:40:58.226933+00:00",
+    "fetched_at": "2026-11-18T21:21:04.468291+00:00",
     "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
     "next_draw_date": "2026-11-18",
-    "next_session": "matinee"
+    "next_session": "prime_time"
   },
   {
     "draw_date": "2026-11-18",
@@ -38,21 +49,10 @@
     "numbers": [
       4
     ],
-    "fetched_at": "2026-11-18T20:40:58.226933+00:00",
+    "fetched_at": "2026-11-18T21:21:04.468291+00:00",
     "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
     "next_draw_date": "2026-11-18",
-    "next_session": "matinee"
-  },
-  {
-    "draw_date": "2026-11-18",
-    "session": "matinee",
-    "numbers": [
-      9
-    ],
-    "fetched_at": "2026-11-18T20:40:58.226933+00:00",
-    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
-    "next_draw_date": "2026-11-18",
-    "next_session": "matinee"
+    "next_session": "prime_time"
   },
   {
     "draw_date": "2026-11-17",
