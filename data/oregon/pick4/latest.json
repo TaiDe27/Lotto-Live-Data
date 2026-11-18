@@ -1,6 +1,21 @@
 [
   {
     "draw_date": "2026-11-17",
+    "session": "4pm",
+    "digits": [
+      "1",
+      "9",
+      "9",
+      "5"
+    ],
+    "next_draw_date": "2026-11-17",
+    "next_session": "7pm",
+    "draw_number": 36840,
+    "fetched_at": "2026-11-18T00:20:59.517721+00:00",
+    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
+  },
+  {
+    "draw_date": "2026-11-17",
     "session": "1pm",
     "digits": [
       "6",
@@ -1280,18 +1295,6 @@
     ],
     "draw_number": 36728,
     "fetched_at": "2026-10-21T01:51:57.280092+00:00",
-    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
-  },
-  {
-    "draw_date": "2026-10-20",
-    "session": "1pm",
-    "digits": [
-      "2",
-      "1",
-      "9"
-    ],
-    "draw_number": 36727,
-    "fetched_at": "2026-10-20T22:52:10.109904+00:00",
     "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws"
   }
 ]
