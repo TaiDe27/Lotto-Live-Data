@@ -1,6 +1,22 @@
 [
   {
     "game": "mass_cash",
+    "draw_date": "2026-11-18",
+    "numbers": [
+      10,
+      12,
+      17,
+      19,
+      24
+    ],
+    "fetched_at": "2026-11-18T19:21:23.673688+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results",
+    "session": "midday",
+    "next_jackpot_amount": 100000,
+    "next_draw_date": "2026-11-18"
+  },
+  {
+    "game": "mass_cash",
     "draw_date": "2026-11-17",
     "numbers": [
       1,
