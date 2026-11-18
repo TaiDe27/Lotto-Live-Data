@@ -1,6 +1,70 @@
 [
   {
     "game": "Idaho Cash",
+    "draw_date": "2026-11-17",
+    "numbers": [
+      5,
+      7,
+      22,
+      39,
+      42
+    ],
+    "jackpot_amount": 120000,
+    "fetched_at": "2026-11-18T03:21:13.305773+00:00",
+    "source_url": "https://www.idaholottery.com/games/draw/idaho-cash",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 129688
+  },
+  {
+    "game": "Idaho Cash",
+    "draw_date": "2026-11-16",
+    "numbers": [
+      1,
+      13,
+      24,
+      26,
+      34
+    ],
+    "jackpot_amount": 117700,
+    "fetched_at": "2026-11-18T03:21:13.305773+00:00",
+    "source_url": "https://www.idaholottery.com/games/draw/idaho-cash",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 129688
+  },
+  {
+    "game": "Idaho Cash",
+    "draw_date": "2026-11-15",
+    "numbers": [
+      21,
+      26,
+      29,
+      34,
+      45
+    ],
+    "jackpot_amount": 115800,
+    "fetched_at": "2026-11-18T03:21:13.305773+00:00",
+    "source_url": "https://www.idaholottery.com/games/draw/idaho-cash",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 129688
+  },
+  {
+    "game": "Idaho Cash",
+    "draw_date": "2026-11-14",
+    "numbers": [
+      10,
+      12,
+      14,
+      20,
+      28
+    ],
+    "jackpot_amount": 113400,
+    "fetched_at": "2026-11-18T03:21:13.305773+00:00",
+    "source_url": "https://www.idaholottery.com/games/draw/idaho-cash",
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 129688
+  },
+  {
+    "game": "Idaho Cash",
     "draw_date": "2026-11-13",
     "numbers": [
       1,
@@ -10,10 +74,10 @@
       35
     ],
     "jackpot_amount": 110900,
-    "fetched_at": "2026-11-15T00:46:44.254146+00:00",
+    "fetched_at": "2026-11-18T03:21:13.305773+00:00",
     "source_url": "https://www.idaholottery.com/games/draw/idaho-cash",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": 119777
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 129688
   },
   {
     "game": "Idaho Cash",
