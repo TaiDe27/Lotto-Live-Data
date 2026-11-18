@@ -1,5 +1,60 @@
 [
   {
+    "draw_date": "2026-11-18",
+    "session": "early_bird",
+    "numbers": [
+      10
+    ],
+    "fetched_at": "2026-11-18T14:20:59.048641+00:00",
+    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
+    "next_draw_date": "2026-11-18",
+    "next_session": "late_morning"
+  },
+  {
+    "draw_date": "2026-11-18",
+    "session": "night_owl",
+    "numbers": [
+      14
+    ],
+    "fetched_at": "2026-11-18T14:20:59.048641+00:00",
+    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
+    "next_draw_date": "2026-11-18",
+    "next_session": "late_morning"
+  },
+  {
+    "draw_date": "2026-11-18",
+    "session": "prime_time",
+    "numbers": [
+      4
+    ],
+    "fetched_at": "2026-11-18T14:20:59.048641+00:00",
+    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
+    "next_draw_date": "2026-11-18",
+    "next_session": "late_morning"
+  },
+  {
+    "draw_date": "2026-11-18",
+    "session": "matinee",
+    "numbers": [
+      9
+    ],
+    "fetched_at": "2026-11-18T14:20:59.048641+00:00",
+    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
+    "next_draw_date": "2026-11-18",
+    "next_session": "late_morning"
+  },
+  {
+    "draw_date": "2026-11-18",
+    "session": "late_morning",
+    "numbers": [
+      3
+    ],
+    "fetched_at": "2026-11-18T14:20:59.048641+00:00",
+    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do",
+    "next_draw_date": "2026-11-18",
+    "next_session": "late_morning"
+  },
+  {
     "draw_date": "2026-11-17",
     "session": "night_owl",
     "numbers": [
@@ -862,51 +917,6 @@
       13
     ],
     "fetched_at": "2026-10-29T08:40:00.813222+00:00",
-    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do"
-  },
-  {
-    "draw_date": "2026-10-28",
-    "session": "late_morning",
-    "numbers": [
-      2
-    ],
-    "fetched_at": "2026-10-29T08:40:00.813222+00:00",
-    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do"
-  },
-  {
-    "draw_date": "2026-10-28",
-    "session": "early_bird",
-    "numbers": [
-      14
-    ],
-    "fetched_at": "2026-10-29T08:40:00.813222+00:00",
-    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do"
-  },
-  {
-    "draw_date": "2026-10-27",
-    "session": "night_owl",
-    "numbers": [
-      10
-    ],
-    "fetched_at": "2026-10-28T08:40:01.840215+00:00",
-    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do"
-  },
-  {
-    "draw_date": "2026-10-27",
-    "session": "prime_time",
-    "numbers": [
-      11
-    ],
-    "fetched_at": "2026-10-28T08:40:01.840215+00:00",
-    "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do"
-  },
-  {
-    "draw_date": "2026-10-27",
-    "session": "matinee",
-    "numbers": [
-      11
-    ],
-    "fetched_at": "2026-10-28T08:40:01.840215+00:00",
     "source_url": "https://www.molottery.com/cash-pop/winning-numbers.do"
   }
 ]
