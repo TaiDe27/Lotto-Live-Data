@@ -22,7 +22,7 @@
       3
     ],
     "next_draw_date": "2026-11-18",
-    "fetched_at": "2026-11-18T00:51:09.124732+00:00",
+    "fetched_at": "2026-11-18T01:21:16.373713+00:00",
     "source_url": "https://www.thecaribbeanlottery.com/games/pick-4"
   },
   {
@@ -48,7 +48,7 @@
       9
     ],
     "next_draw_date": "2026-11-18",
-    "fetched_at": "2026-11-18T00:51:09.124744+00:00",
+    "fetched_at": "2026-11-18T01:21:16.373717+00:00",
     "source_url": "https://www.thecaribbeanlottery.com/games/pick-4"
   },
   {
@@ -74,7 +74,33 @@
       5
     ],
     "next_draw_date": "2026-11-18",
-    "fetched_at": "2026-11-18T00:51:09.124741+00:00",
+    "fetched_at": "2026-11-18T01:21:16.373715+00:00",
+    "source_url": "https://www.thecaribbeanlottery.com/games/pick-4"
+  },
+  {
+    "draw_date": "2026-11-17",
+    "session": "evening",
+    "mega_ball_drawn": false,
+    "digits": [
+      2,
+      7,
+      4,
+      2
+    ],
+    "digits_2nd": [
+      8,
+      2,
+      7,
+      6
+    ],
+    "digits_3rd": [
+      5,
+      1,
+      4,
+      2
+    ],
+    "next_draw_date": "2026-11-18",
+    "fetched_at": "2026-11-18T01:21:16.373706+00:00",
     "source_url": "https://www.thecaribbeanlottery.com/games/pick-4"
   },
   {
@@ -2503,31 +2529,6 @@
       8
     ],
     "fetched_at": "2026-10-24T23:53:03.655017+00:00",
-    "source_url": "https://www.thecaribbeanlottery.com/games/pick-4"
-  },
-  {
-    "draw_date": "2026-10-22",
-    "session": "sunset",
-    "mega_ball_drawn": false,
-    "digits": [
-      0,
-      4,
-      3,
-      3
-    ],
-    "digits_2nd": [
-      2,
-      6,
-      0,
-      6
-    ],
-    "digits_3rd": [
-      8,
-      7,
-      0,
-      2
-    ],
-    "fetched_at": "2026-10-23T23:53:04.079539+00:00",
     "source_url": "https://www.thecaribbeanlottery.com/games/pick-4"
   }
 ]
