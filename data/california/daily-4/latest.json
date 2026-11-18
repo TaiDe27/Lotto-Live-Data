@@ -1,6 +1,42 @@
 [
   {
     "game": "Daily 4",
+    "draw_date": "2026-11-17",
+    "draw_number": "6757",
+    "digits": [
+      2,
+      2,
+      5,
+      7
+    ],
+    "session": "evening",
+    "tiers": [
+      {
+        "label": "Straight",
+        "winners": 3,
+        "prize": "$3,486"
+      },
+      {
+        "label": "Box",
+        "winners": 19,
+        "prize": "$278"
+      },
+      {
+        "label": "Straight and Box",
+        "winners": 11,
+        "prize": "$1,882"
+      },
+      {
+        "label": "Box Only",
+        "winners": 63,
+        "prize": "$139"
+      }
+    ],
+    "fetched_at": "2026-11-18T02:52:58.751916+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/daily-4"
+  },
+  {
+    "game": "Daily 4",
     "draw_date": "2026-11-13",
     "draw_number": "6753",
     "digits": [
