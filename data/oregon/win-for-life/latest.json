@@ -1,5 +1,18 @@
 [
   {
+    "draw_date": "2026-11-18",
+    "numbers": [
+      7,
+      20,
+      65,
+      69
+    ],
+    "draw_number": 4031,
+    "fetched_at": "2026-11-19T03:41:09.916754+00:00",
+    "source_url": "https://api2.oregonlottery.org/drawresults/MostRecentDraws",
+    "next_draw_date": "2026-11-21"
+  },
+  {
     "draw_date": "2026-11-16",
     "numbers": [
       11,
