@@ -3,15 +3,15 @@
     "game": "mass_cash",
     "draw_date": "2026-11-18",
     "numbers": [
-      3,
-      4,
-      25,
-      28,
-      31
+      10,
+      12,
+      17,
+      19,
+      24
     ],
-    "fetched_at": "2026-11-19T03:09:05.030156+00:00",
+    "fetched_at": "2026-11-19T08:41:01.819571+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
-    "session": "evening",
+    "session": "midday",
     "next_jackpot_amount": 100000,
     "next_draw_date": "2026-11-19"
   },
@@ -19,15 +19,15 @@
     "game": "mass_cash",
     "draw_date": "2026-11-18",
     "numbers": [
-      10,
-      12,
-      17,
-      19,
-      24
+      3,
+      4,
+      25,
+      28,
+      31
     ],
-    "fetched_at": "2026-11-19T03:09:05.030181+00:00",
+    "fetched_at": "2026-11-19T08:41:01.819587+00:00",
     "source_url": "https://www.masslottery.com/api/v1/draw-results",
-    "session": "midday",
+    "session": "evening",
     "next_jackpot_amount": 100000,
     "next_draw_date": "2026-11-19"
   },
