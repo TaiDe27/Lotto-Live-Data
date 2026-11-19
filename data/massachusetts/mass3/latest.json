@@ -1,6 +1,13 @@
 [
   {
     "game": "mass_3",
+    "draw_date": "2026-11-18",
+    "digits": [],
+    "fetched_at": "2026-11-19T03:03:11.202679+00:00",
+    "source_url": "https://www.masslottery.com/api/v1/draw-results"
+  },
+  {
+    "game": "mass_3",
     "draw_date": "2026-11-17",
     "digits": [
       3,
