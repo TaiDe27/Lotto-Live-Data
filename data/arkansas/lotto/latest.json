@@ -1,6 +1,42 @@
 [
   {
     "game": "Arkansas LOTTO",
+    "draw_date": "2026-11-18",
+    "numbers": [
+      1,
+      8,
+      19,
+      23,
+      38,
+      39
+    ],
+    "bonus_number": 32,
+    "jackpot_amount": "3.12 Million",
+    "fetched_at": "2026-11-19T03:21:09.076970+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
+  },
+  {
+    "game": "Arkansas LOTTO",
+    "draw_date": "2026-11-14",
+    "numbers": [
+      7,
+      17,
+      23,
+      30,
+      33,
+      38
+    ],
+    "bonus_number": 22,
+    "jackpot_amount": "3.09 Million",
+    "fetched_at": "2026-11-19T03:21:09.077338+00:00",
+    "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
+  },
+  {
+    "game": "Arkansas LOTTO",
     "draw_date": "2026-11-11",
     "numbers": [
       2,
@@ -12,10 +48,10 @@
     ],
     "bonus_number": 33,
     "jackpot_amount": "3.06 Million",
-    "fetched_at": "2026-11-12T09:40:56.275630+00:00",
+    "fetched_at": "2026-11-19T03:21:09.077637+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
@@ -30,10 +66,10 @@
     ],
     "bonus_number": 22,
     "jackpot_amount": "3.02 Million",
-    "fetched_at": "2026-11-12T09:40:56.276027+00:00",
+    "fetched_at": "2026-11-19T03:21:09.077940+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
@@ -48,10 +84,10 @@
     ],
     "bonus_number": 40,
     "jackpot_amount": "2.99 Million",
-    "fetched_at": "2026-11-12T09:40:56.276335+00:00",
+    "fetched_at": "2026-11-19T03:21:09.078235+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
@@ -66,10 +102,10 @@
     ],
     "bonus_number": 6,
     "jackpot_amount": "2.96 Million",
-    "fetched_at": "2026-11-12T09:40:56.276622+00:00",
+    "fetched_at": "2026-11-19T03:21:09.078517+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
@@ -84,10 +120,10 @@
     ],
     "bonus_number": 24,
     "jackpot_amount": "2.92 Million",
-    "fetched_at": "2026-11-12T09:40:56.276902+00:00",
+    "fetched_at": "2026-11-19T03:21:09.078809+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
@@ -102,10 +138,10 @@
     ],
     "bonus_number": 14,
     "jackpot_amount": "2.89 Million",
-    "fetched_at": "2026-11-12T09:40:56.277182+00:00",
+    "fetched_at": "2026-11-19T03:21:09.079092+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
@@ -120,10 +156,10 @@
     ],
     "bonus_number": 15,
     "jackpot_amount": "2.86 Million",
-    "fetched_at": "2026-11-12T09:40:56.277457+00:00",
+    "fetched_at": "2026-11-19T03:21:09.079371+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
@@ -138,10 +174,10 @@
     ],
     "bonus_number": 7,
     "jackpot_amount": "2.83 Million",
-    "fetched_at": "2026-11-12T09:40:56.277733+00:00",
+    "fetched_at": "2026-11-19T03:21:09.079646+00:00",
     "source_url": "https://www.lotteryusa.com/arkansas/lotto/",
-    "next_draw_date": "2026-11-14",
-    "next_jackpot_amount": "$3.09 Million"
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$3.15 Million"
   },
   {
     "game": "Arkansas LOTTO",
