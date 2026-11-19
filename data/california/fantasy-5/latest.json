@@ -1,6 +1,24 @@
 [
   {
     "game": "Fantasy 5",
+    "draw_date": "2026-11-18",
+    "draw_number": "12065",
+    "numbers": [
+      20,
+      26,
+      27,
+      33,
+      38
+    ],
+    "jackpot_amount": null,
+    "tiers": [],
+    "fetched_at": "2026-11-19T02:54:59.252535+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/fantasy-5",
+    "next_draw_date": "2026-11-20",
+    "next_jackpot_amount": null
+  },
+  {
+    "game": "Fantasy 5",
     "draw_date": "2026-11-17",
     "draw_number": "12064",
     "numbers": [
