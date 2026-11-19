@@ -1,6 +1,28 @@
 [
   {
     "game": "The Pick",
+    "draw_date": "2026-11-16",
+    "numbers": [
+      4,
+      5,
+      28,
+      34,
+      37,
+      39
+    ],
+    "jackpot_amount": 5000000,
+    "next_draw_date": "2026-11-18",
+    "next_jackpot_amount": 5100000,
+    "winners_by_division": {
+      "division1": 6,
+      "division2": 301,
+      "division3": 4244
+    },
+    "fetched_at": "2026-11-19T02:20:58.884855+00:00",
+    "source_url": "https://api.arizonalottery.com/v2/drawgames/26/drawings"
+  },
+  {
+    "game": "The Pick",
     "draw_date": "2026-11-11",
     "numbers": [
       4,
