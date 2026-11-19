@@ -1,6 +1,72 @@
 [
   {
     "game": "SuperLotto Plus",
+    "draw_date": "2026-11-18",
+    "draw_number": "4135",
+    "main_numbers": [
+      1,
+      6,
+      15,
+      29,
+      37
+    ],
+    "mega_number": 16,
+    "jackpot_amount": "$15,000,000",
+    "tiers": [
+      {
+        "label": "5 + Mega",
+        "winners": 0,
+        "prize": "$15,000,000"
+      },
+      {
+        "label": "5",
+        "winners": 1,
+        "prize": "$28,246"
+      },
+      {
+        "label": "4 + Mega",
+        "winners": 6,
+        "prize": "$2,353"
+      },
+      {
+        "label": "4",
+        "winners": 244,
+        "prize": "$96"
+      },
+      {
+        "label": "3 + Mega",
+        "winners": 368,
+        "prize": "$57"
+      },
+      {
+        "label": "3",
+        "winners": 10379,
+        "prize": "$9"
+      },
+      {
+        "label": "2 + Mega",
+        "winners": 4953,
+        "prize": "$11"
+      },
+      {
+        "label": "1 + Mega",
+        "winners": 23539,
+        "prize": "$2"
+      },
+      {
+        "label": "Mega",
+        "winners": 36255,
+        "prize": "$1"
+      }
+    ],
+    "fetched_at": "2026-11-19T04:17:57.455322+00:00",
+    "source_url": "https://www.calottery.com/en/draw-games/superlotto-plus",
+    "next_draw_date": "2026-11-21",
+    "next_jackpot_amount": "$16 MILLION",
+    "next_cash_value": "$6,600,000"
+  },
+  {
+    "game": "SuperLotto Plus",
     "draw_date": "2026-11-11",
     "draw_number": "4133",
     "main_numbers": [
